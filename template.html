@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Games</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="fontawesome/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+  <form id="game_form">
+    <input class="layout-toggle-checkbox" type="radio" id="games-toggle" name="layout" value="games" checked>
+    <input class="layout-toggle-checkbox" type="radio" id="grid-toggle" name="layout" value="grid">
+    <input class="layout-toggle-checkbox" type="radio" id="list-toggle" name="layout" value="list">
+    <div class="header">
+      <div class="container">
+        <div class="controls">
+          <h1>Game Library</h1>
+          <div class="button-group">
+            <label class="button" for="games-toggle"><i class="fa-regular fa-grid-2"></i></label>
+            <label class="button" for="grid-toggle"><i class="fa-regular fa-grid"></i></label>
+            <label class="button" for="list-toggle"><i class="fa-regular fa-list"></i></label>
+          </div>
+          <div class="form-field search-field">
+            <div class="search-icon">
+              <i class="fa-regular fa-magnifying-glass"></i>
+            </div>
+            <input type="text" name="q" id="q">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="container">
+        <div class="game-grid">
+          {{game-grid}}
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <script src="client.js"></script>
+</body>
+</html>

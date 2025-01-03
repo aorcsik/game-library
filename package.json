@@ -1,0 +1,23 @@
+{
+  "name": "game-library",
+  "version": "1.0.0",
+  "main": "build.cjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build_prod": "./build.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aorcsik/game-library.git"
+  },
+  "author": "aorcsik@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aorcsik/game-library/issues"
+  },
+  "homepage": "https://github.com/aorcsik/game-library#readme",
+  "description": "",
+  "dependencies": {
+    "@fortawesome/fontawesome-pro": "^6.7.2"
+  }
+}
