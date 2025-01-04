@@ -32,16 +32,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     img.replaceWith(svgElement);
   };
 
-  // Select all <img> tags with the "icon" class
-  const svgImages = document.querySelectorAll("img.game-platform");
-
-  await Promise.all([...svgImages].reduce((svgs, img) => {
-    if (!svgs.includes(img.src)) svgs.push(img.src);
-    return svgs;
-  }, []).map(src => fetchSvgText(src)));
-
-  await Promise.all([...svgImages].map(img => replaceSvgImage(img)));
-
   const gamesHeader = document.querySelector(".games-header");
   const gameRowTitle = document.createElement("div");
   gameRowTitle.className = "game-row-title"
@@ -58,6 +48,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   let url = new URL(document.location);
   form.q.value = url.searchParams.get("q");
   form.layout.value = url.searchParams.get("layout");
+
+  if (window.innerWidth <= 600) {
+    form.layout.value = "games";
+  }
 
   const handleSearch = () => {
     const words = form.q.value.toLowerCase().trim().replaceAll(/\s+/g, " ").split(" ").filter(word => word.length > 0);
@@ -95,4 +89,14 @@ document.addEventListener("DOMContentLoaded", async () => {
       handleFormChange();
     }, 500);
   });
+
+  // Select all <img> tags with the "icon" class
+  const svgImages = document.querySelectorAll("img.game-platform");
+
+  await Promise.all([...svgImages].reduce((svgs, img) => {
+    if (!svgs.includes(img.src)) svgs.push(img.src);
+    return svgs;
+  }, []).map(src => fetchSvgText(src)));
+
+  await Promise.all([...svgImages].map(img => replaceSvgImage(img)));
 });
