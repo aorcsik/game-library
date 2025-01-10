@@ -83,6 +83,7 @@ const sameGames = [
   ["Broken Sword 2 - the Smoking Mirror: Remastered (2010)", "Broken Sword 2: Remastered"],
   ["Superbrothers: Sword&Sworcery", "Superbrothers: Sword & Sworcery EP"],
   ["Middle-earth™: Shadow of Mordor™", "Middle-earth™: Shadow of Mordor™ - Game of the Year Edition"],
+  ["The Stanley Parable", "The Stanley Parable Ultra Deluxe", "The Stanley Parable: Ultra Deluxe"]
 ];
 
 const createKey = (title) => {
@@ -235,7 +236,7 @@ const formatTitle = (title) => {
 
   const gameGridHeader = Object.keys(platforms).map(platform => {
     return `<h2 class="game-header-cell">
-      <img class="game-platform" alt="${platforms[platform]}" src="images/${platform}-logo.svg">
+      <img class="game-platform" alt="${platforms[platform].name}" src="images/${platform}-logo.svg">
       <strong>${platforms[platform].name}</strong>
       <span class="platform-count">${platforms[platform].count}</span>
     </h2>`;
@@ -261,14 +262,14 @@ const formatTitle = (title) => {
           <div class="game-cover" style="background-image: url('${cover}');"></div>
           <div class="game-info">
             <div class="game-title">${title}${collection ? "<div class='game-collection'>(" + collection + ")</div>" : ""}</div>
-            <img class="game-platform" alt="${platforms[platform]}" src="images/${platform}-logo.svg">
+            <img class="game-platform" alt="${platforms[platform].name}" src="images/${platform}-logo.svg">
           </div>
         </div>`;
       } else {
         gameGrid += `
         <div class="game-cell game-placeholder game-${platform}">
           <div class="game-info">
-            <img class="game-platform" alt="${platforms[platform]}" src="images/${platform}-logo.svg">
+            <img class="game-platform" alt="${platforms[platform].name}" src="images/${platform}-logo.svg">
           </div>
         </div>`;
       }  

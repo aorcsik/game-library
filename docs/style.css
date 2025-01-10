@@ -303,6 +303,9 @@ h1, h2, h3, h4, h5, h6 {
       bottom: .5rem;
     }
 
+    &.game-steam {
+      z-index: 1;
+    }
     &.game-steam .game-platform{
       left: calc(.5rem + 0 * (100% / 7));
     }
