@@ -259,7 +259,7 @@ const formatTitle = (title) => {
 
         gameGrid += `
         <div class="game-cell game-card game-${platform}">
-          <div class="game-cover" style="background-image: url('${cover}');"></div>
+          <div class="game-cover"><div class="game-cover-image" style="background-image: url('${cover}');"></div></div>
           <div class="game-info">
             <div class="game-title">${title}${collection ? "<div class='game-collection'>(" + collection + ")</div>" : ""}</div>
             <img class="game-platform" alt="${platforms[platform].name}" src="images/${platform}-logo.svg">

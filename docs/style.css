@@ -7,6 +7,7 @@ body {
   --background: #F9F9F9;
   --text: #212121;
   --subtle-accent: #ddd;
+  --accent: #666;
   --card-background: #F5F5F5;
   --card-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   --card-hover-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
@@ -38,6 +39,7 @@ h1, h2, h3, h4, h5, h6 {
     --background: #121212;
     --text: #E0E0E0;
     --subtle-accent: #333;
+    --accent: #666;
     --card-background: #242424;
     --card-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
     --card-hover-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4), 0px 0px 8px rgba(255, 255, 255, 0.2);
@@ -98,10 +100,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.2rem;
 
   & .platform-count {
-    background: var(--subtle-accent);
-    border-radius: .25rem;
-    padding: .125rem .25rem;
-    font-size: .8rem;
+    color: var(--accent);
   }
 }
 
@@ -136,9 +135,22 @@ h1, h2, h3, h4, h5, h6 {
       width: 100%;
       padding-bottom: 57%;
       overflow: hidden;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center center;
+      position: relative;
+
+      & .game-cover-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform: translateX(-50%);
+        left: 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        transition: transform .3s;
+      }
+    }
+    &:hover .game-cover-image {
+      transform: translateX(-50%) scale(1.25);
     }
   }
 
@@ -154,7 +166,7 @@ h1, h2, h3, h4, h5, h6 {
       word-wrap: break-word;
 
       & .game-collection {
-        opacity: .5;
+        color: var(--accent);
       }
     }
 
@@ -188,6 +200,14 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 1.5rem 0 0;
     border-right: 1px solid var(--subtle-accent);
     white-space: nowrap;
+
+    & .game-count {
+      color: var(--accent);
+    }
+    & .game-count::before {
+      content: " ";
+      color: var(--subtle-accent);
+    }
   }
 }
 
@@ -206,14 +226,19 @@ h1, h2, h3, h4, h5, h6 {
 .button-group {
   display: inline-flex;
 
+  & .button {
+    border-radius: 0;
+    border-left-width: 0;
+  }
+
   & .button:first-child {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+    border-left-width: 1px;
   }
   & .button:last-child {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    border-left-width: 0;
+    border-top-right-radius: .25rem;
+    border-bottom-right-radius: .25rem;
   }
 }
 
@@ -238,17 +263,41 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   &.search-field {
+    position: relative;
+
     & input {
       padding-left: 2.5rem;
+      padding-right: 2.5rem;
     }
 
-    & .search-icon {
+    & input::-webkit-search-cancel-button {
+      color: var(--text);
+    }
+
+    & .search-icon,
+    & .cancel-button {
       position: absolute;
       height: 2.5rem;
       min-width: 2.5rem;
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+
+    & .cancel-button {
+      right: 0;
+      display: none;
+      background-color: transparent;
+      border: 0;
+      outline: 0;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      color: var(--text);
+    }
+
+    & input:valid ~ .cancel-button {
+      display: flex;
     }
   }
 }
@@ -282,6 +331,10 @@ h1, h2, h3, h4, h5, h6 {
 
     &.hidden {
       display: none;
+    }
+
+    &:hover .game-cover-image {
+      transform: translateX(-50%) scale(1.1);
     }
   }
 

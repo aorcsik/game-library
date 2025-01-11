@@ -19,7 +19,7 @@
     <div class="header">
       <div class="container">
         <div class="controls">
-          <h1>Game Library</h1>
+          <h1>Game Library<span class="game-count">0</span></h1>
           <div class="button-group layout-switcher">
             <label class="button" for="games-toggle"><i class="fa-regular fa-grid-2"></i></label>
             <label class="button" for="grid-toggle"><i class="fa-regular fa-grid"></i></label>
@@ -29,7 +29,10 @@
             <div class="search-icon">
               <i class="fa-regular fa-magnifying-glass"></i>
             </div>
-            <input type="text" name="q" id="q">
+            <input type="text" name="q" id="q" required>
+            <button class="cancel-button">
+              <i class="fa-regular fa-xmark"></i>
+            </button>
           </div>
         </div>
       </div>

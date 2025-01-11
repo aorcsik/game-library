@@ -83,15 +83,24 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 
   let searchDebounce = null;
-  document.getElementById("q").addEventListener("keyup", event => {
+  form.q.addEventListener("keyup", event => {
     if (searchDebounce) window.clearTimeout(searchDebounce);
     searchDebounce = window.setTimeout(() => {
       handleFormChange();
     }, 500);
   });
+  form.q.addEventListener("invalid", event => {
+    event.preventDefault();
+  });
+  form.q.parentNode.querySelector(".cancel-button").addEventListener("click", event => {
+    form.q.value = "";
+    handleFormChange();
+  });
 
   // Select all <img> tags with the "icon" class
   const svgImages = document.querySelectorAll("img.game-platform");
+
+  document.querySelector(".game-count").innerHTML = document.querySelectorAll(".game-row").length;
 
   await Promise.all([...svgImages].reduce((svgs, img) => {
     if (!svgs.includes(img.src)) svgs.push(img.src);
