@@ -1614,7 +1614,8 @@
     "title": "BioShock Infinite",
     "key": "bioshockinfinite",
     "sameGame": [
-      "Bioshock Infinite: The Complete Edition"
+      "Bioshock Infinite: The Complete Edition",
+      "BioShock Infinite Complete Edition"
     ],
     "openCriticId": "2975/bioshock-the-collection",
     "openCriticData": {
@@ -1628,6 +1629,8 @@
     "steam": "BioShock Infinite",
     "steam_cover": "https://steamcdn-a.akamaihd.net/steam/apps/8870/header.jpg",
     "steam_icon": "http://media.steampowered.com/steamcommunity/public/images/apps/8870/4ebaf5f9ee74f50152f7ff361debef7553fa0e4e.jpg",
+    "gog": "BioShock Infinite Complete Edition",
+    "gog_cover": "https://images.gog.com/77ad37d4690675e04e9d77dcdbb95175cc4726b720a5453282a13c660ae72caa.jpg?namespace=gamesdb",
     "playstation": "BioShock Infinite",
     "playstation_cover": "https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA03985_00/5/i_c2d46f13eb8b06dab285522426cc37d3b336bf1b6059321edf81d68d6a4123c1/i/icon0.png?w=180",
     "playstation_collection": "BioShock: The Collection"
@@ -2847,6 +2850,9 @@
   "talosprinciplethe": {
     "title": "The Talos Principle",
     "key": "talosprinciplethe",
+    "sameGame": [
+      "The Talos Principle: Gold Edition"
+    ],
     "openCriticId": "613/the-talos-principle",
     "openCriticData": {
       "tier": "mighty",
@@ -2858,7 +2864,9 @@
     },
     "steam": "The Talos Principle",
     "steam_cover": "https://steamcdn-a.akamaihd.net/steam/apps/257510/header.jpg",
-    "steam_icon": "http://media.steampowered.com/steamcommunity/public/images/apps/257510/8222673c1eb13e6a8a8367ec0e2940a887ecf270.jpg"
+    "steam_icon": "http://media.steampowered.com/steamcommunity/public/images/apps/257510/8222673c1eb13e6a8a8367ec0e2940a887ecf270.jpg",
+    "gog": "The Talos Principle: Gold Edition",
+    "gog_cover": "https://images.gog.com/ad741b8148f92dbe5963d98083ca90f8de14bb8407acfb4f77aa6f4a51938c79.jpg?namespace=gamesdb"
   },
   "bindingofisaacrebirththe": {
     "title": "The Binding of Isaac: Rebirth",
@@ -3904,7 +3912,9 @@
     },
     "steam": "Beyond Blue",
     "steam_cover": "https://steamcdn-a.akamaihd.net/steam/apps/883360/header.jpg",
-    "steam_icon": "http://media.steampowered.com/steamcommunity/public/images/apps/883360/7a9f7b1e47ced5a735c72359277a8fd8c761142a.jpg"
+    "steam_icon": "http://media.steampowered.com/steamcommunity/public/images/apps/883360/7a9f7b1e47ced5a735c72359277a8fd8c761142a.jpg",
+    "epic": "Beyond Blue",
+    "epic_cover": "https://cdn1.epicgames.com/bd9fd28ca1214868922f2ab41d6d3b65/item/EGS_BeyondBlue_ELineMedia_S1-2560x1440-5d205f1273f6b805db82bc525a1432b9.jpg"
   },
   "shenmueiii": {
     "title": "Shenmue I & II",
@@ -5551,6 +5561,24 @@
     "epic": "[REDACTED]",
     "epic_cover": "https://cdn1.epicgames.com/spt-assets/38d7f3e2a3854e9fa4c31456b87c899f/redacted-1ouju.jpg"
   },
+  "areyousmarterthana5thgrader": {
+    "title": "Are You Smarter Than A 5th Grader?",
+    "key": "areyousmarterthana5thgrader",
+    "openCriticId": "13574/are-you-smarter-than-a-5th-grader-",
+    "sameGame": [
+      "Are You Smarter Than A 5th Grader"
+    ],
+    "openCriticData": {
+      "tier": "weak",
+      "score": 61,
+      "critics": 17,
+      "cover": "https://img.opencritic.com/game/13574/lY1RBM26.jpg",
+      "releaseDate": "2022-08-23T00:00:00.000Z",
+      "updated": "2025-02-09T04:59:39.329Z"
+    },
+    "epic": "Are You Smarter Than A 5th Grader",
+    "epic_cover": "https://cdn1.epicgames.com/spt-assets/d85122f25bd4406fb6b9bcf7aaa5da2a/are-you-smarter-than-a-5th-grader-offer-l6781.png"
+  },
   "asteroidsrecharged": {
     "title": "Asteroids: Recharged",
     "key": "asteroidsrecharged",
@@ -5580,6 +5608,23 @@
     },
     "epic": "Atari Mania",
     "epic_cover": "https://cdn1.epicgames.com/spt-assets/5746db3ba7f6444297c956754e1838af/atari-mania-offer-5561u.png"
+  },
+  "behindtheframethefinestscenery": {
+    "title": "Behind the Frame: The Finest Scenery",
+    "key": "behindtheframethefinestscenery",
+    "openCriticId": "11866/behind-the-frame-the-finest-scenery",
+    "openCriticData": {
+      "tier": "strong",
+      "score": 78,
+      "critics": 80,
+      "cover": "https://img.opencritic.com/game/11866/81PgxJ2g.jpg",
+      "releaseDate": "2021-08-25T00:00:00.000Z",
+      "updated": "2025-02-09T04:59:44.884Z"
+    },
+    "epic": "Behind the Frame: The Finest Scenery",
+    "epic_cover": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_BehindtheFrameTheFinestScenery_SilverLiningStudio_S1_2560x1440-6aecd08e68bad5772e080342679154d0",
+    "amazon": "Behind the Frame: The Finest Scenery",
+    "amazon_cover": "https://m.media-amazon.com/images/I/91gCrvC4-QL.jpg"
   },
   "beholder": {
     "title": "Beholder",
@@ -6196,6 +6241,21 @@
     "epic": "Spirit of the North",
     "epic_cover": "https://cdn1.epicgames.com/spt-assets/177dc72233934ac487abd83b01587086/spirit-of-the-north-offer-wih1t.jpg"
   },
+  "starstuff": {
+    "title": "Star Stuff",
+    "key": "starstuff",
+    "openCriticId": "16956/star-stuff",
+    "openCriticData": {
+      "tier": null,
+      "score": null,
+      "critics": null,
+      "cover": "https://img.opencritic.com/game/16956/gA6raAB5.jpg",
+      "releaseDate": "2024-06-07T00:00:00.000Z",
+      "updated": "2025-02-10T14:26:09.245Z"
+    },
+    "epic": "Star Stuff",
+    "epic_cover": "https://cdn1.epicgames.com/spt-assets/b8391cee76b54db5bbc81e0fc6e56d51/star-stuff-1owse.jpg"
+  },
   "stasisbonetotem": {
     "title": "STASIS : BONE TOTEM",
     "key": "stasisbonetotem",
@@ -6225,6 +6285,21 @@
     },
     "epic": "Tales from the Borderlands",
     "epic_cover": "https://cdn1.epicgames.com/da0fa474b1c04bfe8ee6c1f980285214/item/EGS_TalesfromtheBorderlands_TelltaleGames_S5-1920x1080-9461ecb6c4ec0002fdb7aab6d1e89541.jpg"
+  },
+  "totherescue": {
+    "title": "To The Rescue",
+    "key": "totherescue",
+    "openCriticId": "12261/to-the-rescue-",
+    "openCriticData": {
+      "tier": "strong",
+      "score": 75,
+      "critics": 31,
+      "cover": "https://img.opencritic.com/game/12261/8py2qhAj.jpg",
+      "releaseDate": "2021-11-04T00:00:00.000Z",
+      "updated": "2025-02-10T14:55:07.782Z"
+    },
+    "epic": "To The Rescue",
+    "epic_cover": "https://cdn1.epicgames.com/spt-assets/4f4c43a9b75247b8b4f80e0ac27475f9/to-the-rescue-offer-kljd3.jpg"
   },
   "turmoil": {
     "title": "Turmoil",
@@ -6256,24 +6331,6 @@
     "epic": "Yars: Recharged",
     "epic_cover": "https://cdn1.epicgames.com/spt-assets/e90f8c27e4a74a67aab8f456f2942284/yars-revenge-recharged-offer-2dwev.png"
   },
-  "areyousmarterthana5thgrader": {
-    "title": "Are You Smarter Than A 5th Grader?",
-    "key": "areyousmarterthana5thgrader",
-    "openCriticId": "13574/are-you-smarter-than-a-5th-grader-",
-    "sameGame": [
-      "Are You Smarter Than A 5th Grader"
-    ],
-    "openCriticData": {
-      "tier": "weak",
-      "score": 61,
-      "critics": 17,
-      "cover": "https://img.opencritic.com/game/13574/lY1RBM26.jpg",
-      "releaseDate": "2022-08-23T00:00:00.000Z",
-      "updated": "2025-02-09T04:59:39.329Z"
-    },
-    "epic": "Are You Smarter Than A 5th Grader",
-    "epic_cover": "https://cdn1.epicgames.com/spt-assets/d85122f25bd4406fb6b9bcf7aaa5da2a/are-you-smarter-than-a-5th-grader-offer-l6781.png"
-  },
   "zombiearmy4deadwar": {
     "title": "Zombie Army 4 Dead War",
     "key": "zombiearmy4deadwar",
@@ -6289,52 +6346,97 @@
     "epic": "Zombie Army 4 Dead War",
     "epic_cover": "https://cdn1.epicgames.com/dfd2530e80e4425d801913b0879be444/item/Diesel_productv2_zombie-army-4-dead-war_home_EGS_REBELLION_ZOMBIEARMY4_EDITIONCAPSULE_STANDARDEDITION-900x450-d9c7708b9ce7262d605151d696ae85a1ca513d20-900x450-3228a9f6390e741fc297097869bf1cec.png"
   },
-  "totherescue": {
-    "title": "To The Rescue",
-    "key": "totherescue",
-    "openCriticId": "12261/to-the-rescue-",
+  "humankind": {
+    "title": "HUMANKIND™",
+    "key": "humankind",
+    "openCriticId": "10977/humankind",
     "openCriticData": {
       "tier": "strong",
-      "score": 75,
+      "score": 79,
+      "critics": 63,
+      "cover": "https://img.opencritic.com/game/10977/7anZeAW6.jpg",
+      "releaseDate": "2021-08-17T00:00:00.000Z",
+      "updated": "2025-02-11T03:40:23.686Z"
+    },
+    "epic": "HUMANKIND™",
+    "epic_cover": "https://cdn1.epicgames.com/offer/02c14a01b7044db98de3f3a10813a42e/HK_Landscape_2560x1440-0233eae757a0e921c879b7be3a697d97"
+  },
+  "dungeonoftheendlessapogee": {
+    "title": "Dungeon of the Endless: Apogee",
+    "key": "dungeonoftheendlessapogee",
+    "openCriticId": "1189/dungeon-of-the-endless",
+    "openCriticData": {
+      "tier": "strong",
+      "score": 79,
+      "critics": 68,
+      "cover": "https://img.opencritic.com/game/1189/VJOXCyL3.jpg",
+      "releaseDate": "2013-12-11T00:00:00.000Z",
+      "updated": "2025-02-11T03:39:57.056Z"
+    },
+    "epic": "Dungeon of the Endless: Apogee",
+    "epic_cover": "https://cdn1.epicgames.com/spt-assets/0d1876a6c2da426280732d0255689ff4/dungeon-of-the-endless-apogee-11avm.jpg"
+  },
+  "enderliliesquietusoftheknights": {
+    "title": "ENDER LILIES: Quietus of the Knights",
+    "key": "enderliliesquietusoftheknights",
+    "openCriticId": "10886/ender-lilies-quietus-of-the-knights",
+    "openCriticData": {
+      "tier": "mighty",
+      "score": 85,
+      "critics": 89,
+      "cover": "https://img.opencritic.com/game/10886/ZHkYO9Wa.jpg",
+      "releaseDate": "2021-01-21T00:00:00.000Z",
+      "updated": "2025-02-11T03:40:12.033Z"
+    },
+    "epic": "ENDER LILIES: Quietus of the Knights",
+    "epic_cover": "https://cdn1.epicgames.com/spt-assets/f94ccf7b87ea450e91b0313d483f8de7/ender-lilies-quietus-of-the-knights-gv9lw.jpg",
+    "playstation": "ENDER LILIES : Quietus of the Knights",
+    "playstation_cover": "https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA26116_00/5/i_63ebcb62b493054d0260e137759cad60c2c5e15666eec1d7b179cf4a9c212554/i/icon0.png?w=180"
+  },
+  "supermeatboyforever": {
+    "title": "Super Meat Boy Forever",
+    "key": "supermeatboyforever",
+    "openCriticId": "7498/super-meat-boy-forever",
+    "openCriticData": {
+      "tier": "fair",
+      "score": 67,
+      "critics": 37,
+      "cover": "https://img.opencritic.com/game/7498/Uc0GvWH7.jpg",
+      "releaseDate": "2019-07-01T00:00:00.000Z",
+      "updated": "2025-02-11T03:40:55.531Z"
+    },
+    "epic": "Super Meat Boy Forever",
+    "epic_cover": "https://cdn1.epicgames.com/moose/item/EGS_SuperMeatBoyForever_TeamMeat_S5-1920x1080-9929c76d5f016bb9046fe90b9e897cb4.jpg"
+  },
+  "akxolotltogether": {
+    "title": "AK-xolotl: Together",
+    "key": "akxolotltogether",
+    "openCriticId": "15496/ak-xolotl",
+    "openCriticData": {
+      "tier": "fair",
+      "score": 69,
       "critics": 31,
-      "cover": "https://img.opencritic.com/game/12261/8py2qhAj.jpg",
-      "releaseDate": "2021-11-04T00:00:00.000Z",
-      "updated": "2025-02-10T14:55:07.782Z"
+      "cover": "https://img.opencritic.com/game/15496/a6PdttjO.jpg",
+      "releaseDate": "2023-09-14T00:00:00.000Z",
+      "updated": "2025-02-11T03:37:46.247Z"
     },
-    "epic": "To The Rescue",
-    "epic_cover": "https://cdn1.epicgames.com/spt-assets/4f4c43a9b75247b8b4f80e0ac27475f9/to-the-rescue-offer-kljd3.jpg"
+    "epic": "AK-xolotl: Together",
+    "epic_cover": "https://cdn1.epicgames.com/spt-assets/f6e3235f6d194a41ba7f20365963c1dd/akxolotl-1mnmp.png"
   },
-  "behindtheframethefinestscenery": {
-    "title": "Behind the Frame: The Finest Scenery",
-    "key": "behindtheframethefinestscenery",
-    "openCriticId": "11866/behind-the-frame-the-finest-scenery",
-    "openCriticData": {
-      "tier": "strong",
-      "score": 78,
-      "critics": 80,
-      "cover": "https://img.opencritic.com/game/11866/81PgxJ2g.jpg",
-      "releaseDate": "2021-08-25T00:00:00.000Z",
-      "updated": "2025-02-09T04:59:44.884Z"
-    },
-    "epic": "Behind the Frame: The Finest Scenery",
-    "epic_cover": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_BehindtheFrameTheFinestScenery_SilverLiningStudio_S1_2560x1440-6aecd08e68bad5772e080342679154d0",
-    "amazon": "Behind the Frame: The Finest Scenery",
-    "amazon_cover": "https://m.media-amazon.com/images/I/91gCrvC4-QL.jpg"
-  },
-  "starstuff": {
-    "title": "Star Stuff",
-    "key": "starstuff",
-    "openCriticId": "16956/star-stuff",
+  "sandsofaura": {
+    "title": "Sands of Aura",
+    "key": "sandsofaura",
+    "openCriticId": "15749/sands-of-aura",
     "openCriticData": {
       "tier": null,
       "score": null,
       "critics": null,
-      "cover": "https://img.opencritic.com/game/16956/gA6raAB5.jpg",
-      "releaseDate": "2024-06-07T00:00:00.000Z",
-      "updated": "2025-02-10T14:26:09.245Z"
+      "cover": "https://img.opencritic.com/game/15749/OQbHuadw.jpg",
+      "releaseDate": "2023-10-27T00:00:00.000Z",
+      "updated": "2025-02-11T03:40:36.710Z"
     },
-    "epic": "Star Stuff",
-    "epic_cover": "https://cdn1.epicgames.com/spt-assets/b8391cee76b54db5bbc81e0fc6e56d51/star-stuff-1owse.jpg"
+    "epic": "Sands of Aura",
+    "epic_cover": "https://cdn1.epicgames.com/spt-assets/ed9f70161f3741108ff8dfae2d56993d/sands-of-aura-eje2o.png"
   },
   "onsenmaster": {
     "title": "Onsen Master",
@@ -7171,6 +7273,21 @@
     "amazon": "Spirit Mancer",
     "amazon_cover": "https://m.media-amazon.com/images/I/913PjQxQjiL.jpg"
   },
+  "spitlings": {
+    "title": "Spitlings",
+    "key": "spitlings",
+    "openCriticId": "9922/spitlings",
+    "openCriticData": {
+      "tier": "fair",
+      "score": 73,
+      "critics": 33,
+      "cover": "https://img.opencritic.com/game/9922/KV0oLO5y.jpg",
+      "releaseDate": "2020-08-04T00:00:00.000Z",
+      "updated": "2025-02-11T03:40:45.791Z"
+    },
+    "amazon": "Spitlings",
+    "amazon_cover": "https://m.media-amazon.com/images/I/91kJItX7oiL.jpg"
+  },
   "planetoflana": {
     "title": "Planet of Lana",
     "key": "planetoflana",
@@ -7723,6 +7840,21 @@
     },
     "gog": "The Dark Eye: Chains of Satinav",
     "gog_cover": "https://images.gog.com/6e11c9cd7ff5e38abf3172fb59e65e6d79fae2eabb65a4cbe51a48bb92c8a6c6.jpg?namespace=gamesdb"
+  },
+  "bloodwest": {
+    "title": "Blood West",
+    "key": "bloodwest",
+    "openCriticId": "15940/blood-west",
+    "openCriticData": {
+      "tier": "strong",
+      "score": 82,
+      "critics": 90,
+      "cover": "https://img.opencritic.com/game/undefined/gxu7Q5GC.jpg",
+      "releaseDate": "2023-12-05T00:00:00.000Z",
+      "updated": "2025-02-11T03:38:51.180Z"
+    },
+    "gog": "Blood West",
+    "gog_cover": "https://images.gog.com/ba3267e80f3b672a905ddaa0e8ec7a29795d875c6aa84d647c0c483f5106503f.jpg?namespace=gamesdb"
   },
   "baldursgateiienhancededition": {
     "title": "Baldur's Gate II: Enhanced Edition",
@@ -9866,21 +9998,6 @@
     },
     "playstation": "Five Nights at Freddy's: Security Breach",
     "playstation_cover": "https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA29533_00/2/i_1ad1de4c8c550874026b771512eb912f5bc218fb1359d3a3ad328ee12a27aa3f/i/icon0.png?w=180"
-  },
-  "enderliliesquietusoftheknights": {
-    "title": "ENDER LILIES : Quietus of the Knights",
-    "key": "enderliliesquietusoftheknights",
-    "openCriticId": "10886/ender-lilies-quietus-of-the-knights",
-    "openCriticData": {
-      "tier": "mighty",
-      "score": 85,
-      "critics": 89,
-      "cover": "https://img.opencritic.com/game/10886/ZHkYO9Wa.jpg",
-      "releaseDate": "2021-01-21T00:00:00.000Z",
-      "updated": "2025-02-09T06:04:15.097Z"
-    },
-    "playstation": "ENDER LILIES : Quietus of the Knights",
-    "playstation_cover": "https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA26116_00/5/i_63ebcb62b493054d0260e137759cad60c2c5e15666eec1d7b179cf4a9c212554/i/icon0.png?w=180"
   },
   "nhl24": {
     "title": "NHL 24",

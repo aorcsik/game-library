@@ -98,7 +98,8 @@
   {
     "title": "BioShock Infinite",
     "sameGame": [
-      "Bioshock Infinite: The Complete Edition"
+      "Bioshock Infinite: The Complete Edition",
+      "BioShock Infinite Complete Edition"
     ],
     "openCriticId": "2975/bioshock-the-collection",
     "openCriticData": {
@@ -8680,6 +8681,9 @@
   },
   {
     "title": "The Talos Principle",
+    "sameGame": [
+      "The Talos Principle: Gold Edition"
+    ],
     "openCriticId": "613/the-talos-principle",
     "openCriticData": {
       "tier": "mighty",
@@ -9823,6 +9827,102 @@
       "cover": "https://img.opencritic.com/game/11833/1jHRFSHf.jpg",
       "releaseDate": "2021-08-18T00:00:00.000Z",
       "updated": "2025-02-10T15:14:36.108Z"
+    }
+  },
+  {
+    "title": "AK-xolotl: Together",
+    "openCriticId": "15496/ak-xolotl",
+    "openCriticData": {
+      "tier": "fair",
+      "score": 69,
+      "critics": 31,
+      "cover": "https://img.opencritic.com/game/15496/a6PdttjO.jpg",
+      "releaseDate": "2023-09-14T00:00:00.000Z",
+      "updated": "2025-02-11T03:37:46.247Z"
+    }
+  },
+  {
+    "title": "Blood West",
+    "openCriticId": "15940/blood-west",
+    "openCriticData": {
+      "tier": "strong",
+      "score": 82,
+      "critics": 90,
+      "cover": "https://img.opencritic.com/game/undefined/gxu7Q5GC.jpg",
+      "releaseDate": "2023-12-05T00:00:00.000Z",
+      "updated": "2025-02-11T03:38:51.180Z"
+    }
+  },
+  {
+    "title": "Dungeon of the Endless: Apogee",
+    "openCriticId": "1189/dungeon-of-the-endless",
+    "openCriticData": {
+      "tier": "strong",
+      "score": 79,
+      "critics": 68,
+      "cover": "https://img.opencritic.com/game/1189/VJOXCyL3.jpg",
+      "releaseDate": "2013-12-11T00:00:00.000Z",
+      "updated": "2025-02-11T03:39:57.056Z"
+    }
+  },
+  {
+    "title": "ENDER LILIES: Quietus of the Knights",
+    "openCriticId": "10886/ender-lilies-quietus-of-the-knights",
+    "openCriticData": {
+      "tier": "mighty",
+      "score": 85,
+      "critics": 89,
+      "cover": "https://img.opencritic.com/game/10886/ZHkYO9Wa.jpg",
+      "releaseDate": "2021-01-21T00:00:00.000Z",
+      "updated": "2025-02-11T03:40:12.033Z"
+    }
+  },
+  {
+    "title": "HUMANKIND™",
+    "openCriticId": "10977/humankind",
+    "openCriticData": {
+      "tier": "strong",
+      "score": 79,
+      "critics": 63,
+      "cover": "https://img.opencritic.com/game/10977/7anZeAW6.jpg",
+      "releaseDate": "2021-08-17T00:00:00.000Z",
+      "updated": "2025-02-11T03:40:23.686Z"
+    }
+  },
+  {
+    "title": "Sands of Aura",
+    "openCriticId": "15749/sands-of-aura",
+    "openCriticData": {
+      "tier": null,
+      "score": null,
+      "critics": null,
+      "cover": "https://img.opencritic.com/game/15749/OQbHuadw.jpg",
+      "releaseDate": "2023-10-27T00:00:00.000Z",
+      "updated": "2025-02-11T03:40:36.710Z"
+    }
+  },
+  {
+    "title": "Spitlings",
+    "openCriticId": "9922/spitlings",
+    "openCriticData": {
+      "tier": "fair",
+      "score": 73,
+      "critics": 33,
+      "cover": "https://img.opencritic.com/game/9922/KV0oLO5y.jpg",
+      "releaseDate": "2020-08-04T00:00:00.000Z",
+      "updated": "2025-02-11T03:40:45.791Z"
+    }
+  },
+  {
+    "title": "Super Meat Boy Forever",
+    "openCriticId": "7498/super-meat-boy-forever",
+    "openCriticData": {
+      "tier": "fair",
+      "score": 67,
+      "critics": 37,
+      "cover": "https://img.opencritic.com/game/7498/Uc0GvWH7.jpg",
+      "releaseDate": "2019-07-01T00:00:00.000Z",
+      "updated": "2025-02-11T03:40:55.531Z"
     }
   }
 ]
