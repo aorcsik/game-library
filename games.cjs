@@ -43,55 +43,6 @@ const gameCollections = {
   ]
 };
 
-const sameGames = [
-  ["ABZÛ", "ABZU"],
-  ["Aliens: Fireteam Elite", "Aliens: Fireteam Elite (PS5)"],
-  ["Beholder", "Beholder: Complete Edition"],
-  ["BioShock Infinite", "Bioshock Infinite: The Complete Edition"],
-  ["Control", "Control Ultimate Edition"],
-  ["Dead Island", "Dead Island - Definitive Edition"],
-  ["Dead Island Riptide", "Dead Island: Riptide - Definitive Edition"],
-  ["Diablo III", "Diablo III: Eternal Collection", "Diablo III: Reaper of Souls – Ultimate Evil Edition"],
-  ["Ori and the Blind Forest", "Ori and the Blind Forest: Definitive Edition"],
-  ["Overcooked", "Overcooked: Gourmet Edition"],
-  ["Worms", "Worms United"],
-  ["Grand Mountain Adventure", "Grand Mountain Adventure: Wonderlands"],
-  ["Traffix", "Traffix: City Rush"],
-  ["Pavilion", "Pavilion: Touch Edition"],
-  ["Monument Valley 2", "Monument Valley 2: Panoramic Edition"],
-  ["Mini Motor Racing", "Mini Motor Racing X"],
-  ["INSIDE", "Playdead's INSIDE"],
-  ["OXENFREE", "OXENFREE Mobile"],
-  ["Manticore - Galaxy on Fire", "Galaxy on Fire 3"],
-  ["This War of Mine", "This War of Mine: The Little Ones"],
-  ["Never Alone (Kisima Ingitchuna)", "Never Alone: Ki Edition"],
-  ["Perchang", "Perchang: A Portal Puzzler"],
-  ["Hitman GO", "Hitman GO: Definitive Edition"],
-  ["Don't Starve", "Don't Starve: Pocket Edition"],
-  ["Syberia", "Syberia (FULL)"],
-  ["Syberia 2", "Syberia 2 (FULL)"],
-  ["Monument Valley", "Monument Valley: Panoramic Edition"],
-  ["Republique", "République"],
-  ["LIMBO", "Playdead's LIMBO"],
-  ["Fetch™", "Fetch - A Boy and his Dog"],
-  ["BADLAND", "BADLAND: Game of the Year Edition"],
-  ["Azkend 2: The World Beneath", "Azkend 2: The Puzzle Adventure"],
-  ["Broken Sword - Shadow of the Templars", "Broken Sword 1: Director's Cut"],
-  ["Galaxy on Fire 2™ HD", "Galaxy on Fire 2™ Full HD"],
-  ["EDGE", "EDGE Extended"],
-  ["Another World", "Another World – 20th Anniversary Edition", "Another World - 20th"],
-  ["Broken Sword 2 - the Smoking Mirror: Remastered (2010)", "Broken Sword 2: Remastered"],
-  ["Superbrothers: Sword&Sworcery", "Superbrothers: Sword & Sworcery EP"],
-  ["Middle-earth™: Shadow of Mordor™", "Middle-earth™: Shadow of Mordor™ - Game of the Year Edition"],
-  ["The Stanley Parable", "The Stanley Parable Ultra Deluxe", "The Stanley Parable: Ultra Deluxe"]
-];
-
-const createKey = (title) => {
-  const sameGame = sameGames.filter(sameGame => sameGame.includes(title));
-  title = sameGame[0] ? sameGame[0][0] : title;
-  return title.replace(/^(A|An|The) (.*)$/, "$2, $1").replaceAll(/[^A-Za-z0-9]/g, "").toLowerCase();
-};
-
 const formatTitle = (title) => {
   title = title.replace("Ⓡ", "®");
   return title;
@@ -112,6 +63,22 @@ const formatTitle = (title) => {
     appstore: { name: "Apple App Store", count: 0 },
   };
 
+  const gamesConfig = JSON.parse(await fs.promises.readFile("./games.json"));
+  const findGameConfig = (title) => {
+    return gamesConfig.filter(gameConfig => gameConfig.title === title || (gameConfig.sameGame && gameConfig.sameGame.includes(title))).pop();
+  };
+  const createGameSlug = (title) => {
+    return title.replace(/^(A|An|The) (.*)$/, "$2, $1").replaceAll(/[^A-Za-z0-9]/g, "").toLowerCase();
+  };
+  const getGameConfig = (title) => {
+    const gameConfig = findGameConfig(title);
+    return {
+      title: title,
+      key: createGameSlug(gameConfig ? gameConfig.title : title),
+      ...gameConfig
+    };
+  };
+
   const steam_api_response = await fetch(config.steam_library);
   const steam_data = await steam_api_response.json();
   steam_data.response.games.forEach(element => {
@@ -121,20 +88,20 @@ const formatTitle = (title) => {
     if (gameCollections[element.name]) {
       gameCollections[element.name].forEach(collectionItem => {
         const collectionTitle = formatTitle(collectionItem.title);
-        const key = createKey(collectionTitle);
-        if (!games[key]) games[key] = {};
-        games[key].steam = collectionTitle;
-        games[key].steam_collection = title;
-        games[key].steam_cover = `https://steamcdn-a.akamaihd.net/steam/apps/${element.appid}/header.jpg`;
-        games[key].steam_icon = `http://media.steampowered.com/steamcommunity/public/images/apps/${element.appid}/${element.img_icon_url}.jpg`;
+        const gameConfig = getGameConfig(collectionTitle);
+        if (!games[gameConfig.key]) games[gameConfig.key] = gameConfig;
+        games[gameConfig.key].steam = collectionTitle;
+        games[gameConfig.key].steam_collection = title;
+        games[gameConfig.key].steam_cover = `https://steamcdn-a.akamaihd.net/steam/apps/${element.appid}/header.jpg`;
+        games[gameConfig.key].steam_icon = `http://media.steampowered.com/steamcommunity/public/images/apps/${element.appid}/${element.img_icon_url}.jpg`;
         platforms.steam.count++;
       });
     } else {
-      const key = createKey(title);
-      if (!games[key]) games[key] = {};
-      games[key].steam = title;
-      games[key].steam_cover = `https://steamcdn-a.akamaihd.net/steam/apps/${element.appid}/header.jpg`;
-      games[key].steam_icon = `http://media.steampowered.com/steamcommunity/public/images/apps/${element.appid}/${element.img_icon_url}.jpg`;
+      const gameConfig = getGameConfig(title);
+      if (!games[gameConfig.key]) games[gameConfig.key] = gameConfig;
+      games[gameConfig.key].steam = title;
+      games[gameConfig.key].steam_cover = `https://steamcdn-a.akamaihd.net/steam/apps/${element.appid}/header.jpg`;
+      games[gameConfig.key].steam_icon = `http://media.steampowered.com/steamcommunity/public/images/apps/${element.appid}/${element.img_icon_url}.jpg`;
       platforms.steam.count++;
     }
   });
@@ -147,10 +114,10 @@ const formatTitle = (title) => {
     }
 
     const title = formatTitle(element.title);
-    const key = createKey(title);
-    if (!games[key]) games[key] = {};
-    games[key].epic = title;
-    games[key].epic_cover = element.art_cover;
+    const gameConfig = getGameConfig(title);
+    if (!games[gameConfig.key]) games[gameConfig.key] = gameConfig;
+    games[gameConfig.key].epic = title;
+    games[gameConfig.key].epic_cover = element.art_cover;
     platforms.epic.count++;
   });
 
@@ -162,10 +129,10 @@ const formatTitle = (title) => {
     }
 
     const title = formatTitle(element.title);
-    const key = createKey(title);
-    if (!games[key]) games[key] = {};
-    games[key].amazon = title;
-    games[key].amazon_cover = element.art_cover;
+    const gameConfig = getGameConfig(title);
+    if (!games[gameConfig.key]) games[gameConfig.key] = gameConfig;
+    games[gameConfig.key].amazon = title;
+    games[gameConfig.key].amazon_cover = element.art_cover;
     platforms.amazon.count++;
   });
 
@@ -177,10 +144,10 @@ const formatTitle = (title) => {
     }
  
     const title = formatTitle(element.title);
-    const key = createKey(title);
-    if (!games[key]) games[key] = {};
-    games[key].gog = title;
-    games[key].gog_cover = element.art_cover;
+    const gameConfig = getGameConfig(title);
+    if (!games[gameConfig.key]) games[gameConfig.key] = gameConfig;
+    games[gameConfig.key].gog = title;
+    games[gameConfig.key].gog_cover = element.art_cover;
     platforms.gog.count++;
   });
 
@@ -188,10 +155,10 @@ const formatTitle = (title) => {
   Object.keys(nintendo_data).forEach(purchase => {
     nintendo_data[purchase].forEach(element => {
       const title = formatTitle(element.title);
-      const key = createKey(title);
-      if (!games[key]) games[key] = {};
-      games[key].switch = title;
-      games[key].switch_cover = element.cover;
+      const gameConfig = getGameConfig(title);
+      if (!games[gameConfig.key]) games[gameConfig.key] = gameConfig;
+      games[gameConfig.key].switch = title;
+      games[gameConfig.key].switch_cover = element.cover;
       platforms.switch.count++;
     });
   });
@@ -200,10 +167,10 @@ const formatTitle = (title) => {
   Object.keys(appstore_data).forEach(purchase => {
     appstore_data[purchase].forEach(element => {
       const title = formatTitle(element.title);
-      const key = createKey(title);
-      if (!games[key]) games[key] = {};
-      games[key].appstore = title;
-      games[key].appstore_cover = element.cover;
+      const gameConfig = getGameConfig(title);
+      if (!games[gameConfig.key]) games[gameConfig.key] = gameConfig;
+      games[gameConfig.key].appstore = title;
+      games[gameConfig.key].appstore_cover = element.cover;
       platforms.appstore.count++;
     });
   });
@@ -217,18 +184,18 @@ const formatTitle = (title) => {
       if (playstation_data.collections[purchase.titleName]) {
         playstation_data.collections[purchase.titleName].forEach(collectionItem => {
           const collectionTitle = formatTitle(collectionItem.titleName);
-          const key = createKey(collectionTitle);
-          if (!games[key]) games[key] = {};
-          games[key].playstation = collectionTitle;
-          games[key].playstation_collection = title;
-          games[key].playstation_cover = purchase.cover;
+          const gameConfig = getGameConfig(collectionTitle);
+          if (!games[gameConfig.key]) games[gameConfig.key] = gameConfig;
+          games[gameConfig.key].playstation = collectionTitle;
+          games[gameConfig.key].playstation_collection = title;
+          games[gameConfig.key].playstation_cover = purchase.cover;
           platforms.playstation.count++;
         });
       } else {
-        const key = createKey(title);
-        if (!games[key]) games[key] = {};
-        games[key].playstation = title;
-        games[key].playstation_cover = purchase.cover;
+        const gameConfig = getGameConfig(title);
+        if (!games[gameConfig.key]) games[gameConfig.key] = gameConfig;
+        games[gameConfig.key].playstation = title;
+        games[gameConfig.key].playstation_cover = purchase.cover;
         platforms.playstation.count++;
       }
     });
@@ -250,7 +217,13 @@ const formatTitle = (title) => {
 
   Object.keys(games).sort().forEach(key => {
     gameGrid += `
-    <div id="game_${key}" class="game-row">`;
+    <div id="game_${key}" class="game-row" data-game-title="${games[key].title}"
+      data-open-critic-id="${games[key].openCriticId ? games[key].openCriticId : ""}"
+      data-game-release-date="${games[key].openCriticData && games[key].openCriticData.releaseDate ? games[key].openCriticData.releaseDate : (games[key].releaseDate ? games[key].releaseDate : "")}"
+      data-open-critic-tier="${games[key].openCriticData && games[key].openCriticData.tier ? games[key].openCriticData.tier : ""}"
+      data-open-critic-score="${games[key].openCriticData && games[key].openCriticData.score ? games[key].openCriticData.score : ""}"
+      data-open-critic-critics="${games[key].openCriticData && games[key].openCriticData.critics ? games[key].openCriticData.critics : ""}"
+    >`;
     Object.keys(platforms).forEach(platform => {
       if (games[key][platform]) {
         const title = games[key][platform];
@@ -282,4 +255,5 @@ const formatTitle = (title) => {
   let html = template.toString().replace("{{game-grid}}", gameGrid);
   await fs.promises.writeFile("docs/index.html", html);
 
+  await fs.promises.writeFile("docs/games.json", JSON.stringify(games, null, 2));
 })();

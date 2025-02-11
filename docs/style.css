@@ -6,6 +6,7 @@ body, html {
 body {
   --background: #F9F9F9;
   --text: #212121;
+  --secondary-text: #666;
   --subtle-accent: #ddd;
   --accent: #666;
   --card-background: #F5F5F5;
@@ -15,6 +16,16 @@ body {
   --heading-font: "Bebas Neue", var(--body-font);
 
   --game-grid-gap: .5rem;
+
+  --open-critic-tier-weak-icon: url("https://img.opencritic.com/mighty-man/weak-head.png");
+  --open-critic-tier-weak-color: #80b06a;
+  --open-critic-tier-fair-icon: url("https://img.opencritic.com/mighty-man/fair-head.png");
+  --open-critic-tier-fair-color: #619FCA;
+  --open-critic-tier-strong-icon: url("https://img.opencritic.com/mighty-man/strong-head.png");
+  --open-critic-tier-strong-color: #911CAE;
+  --open-critic-tier-mighty-icon: url("https://img.opencritic.com/mighty-man/mighty-head.png");
+  --opem-critic-tier-mighty-color: #fc430a;
+
 
   font-family: var(--body-font);
   background: var(--background);
@@ -38,6 +49,7 @@ h1, h2, h3, h4, h5, h6 {
   body {
     --background: #121212;
     --text: #E0E0E0;
+    --secondary-text: #666;
     --subtle-accent: #333;
     --accent: #666;
     --card-background: #242424;
@@ -111,6 +123,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .game-row-title {
   display: none;
+  text-decoration: none;
+  color: var(--text);
 }
 
 .game-cell {
@@ -324,6 +338,23 @@ h1, h2, h3, h4, h5, h6 {
     display: none;
   }
 
+  & .game-row-title {
+    display: flex;
+    gap: .5rem;
+    position: absolute;
+    z-index: 3;
+    padding: .25rem .5rem;
+    margin: .25rem;
+    border-radius: .5rem;
+    font-size: 1.1rem;
+
+    background: var(--background);
+
+    & .game-title {
+      display: none;
+    }
+  }
+
   & .game-row {
     display: block;
     padding-bottom: 90%;
@@ -397,7 +428,8 @@ h1, h2, h3, h4, h5, h6 {
 
   & .game-row-title {
     display: flex;
-    width: 30rem;
+    gap: .5rem;
+    width: 40rem;
     padding-left: .5rem;
     border-radius: .5rem;
     align-items: center;
@@ -484,4 +516,54 @@ h1, h2, h3, h4, h5, h6 {
       font-size: 1rem;
     }
   }
+}
+
+.open-critic-tier {
+  width: 20px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  text-indent: -9999px;
+
+  &.tier-fair {
+    background-image: var(--open-critic-tier-fair-icon);
+  }
+  &.tier-strong {
+    background-image: var(--open-critic-tier-strong-icon);
+  }
+  &.tier-weak {
+    background-image: var(--open-critic-tier-weak-icon);
+  }
+  &.tier-mighty {
+    background-image: var(--open-critic-tier-mighty-icon);
+  }
+}
+
+.open-critic-score {
+  width: 1.25rem;
+  text-align: center;
+  font-weight: bold;
+
+  &.tier-fair {
+    color: var(--open-critic-tier-fair-color);
+  }
+  &.tier-strong {
+    color: var(--open-critic-tier-strong-color);
+  }
+  &.tier-weak {
+    color: var(--open-critic-tier-weak-color);
+  }
+  &.tier-mighty {
+    color: var(--opem-critic-tier-mighty-color);
+  }
+}
+
+.open-critic-critics {
+  width: 3rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.game-title .release-date {
+  color: var(--secondary-text);
 }

@@ -18,6 +18,7 @@
   "homepage": "https://github.com/aorcsik/game-library#readme",
   "description": "",
   "dependencies": {
-    "@fortawesome/fontawesome-pro": "^6.7.2"
+    "@fortawesome/fontawesome-pro": "^6.7.2",
+    "jsdom": "^26.0.0"
   }
 }
