@@ -200,7 +200,7 @@ h1, h2, h3, h4, h5, h6 {
   position: sticky;
   top: 0;
   background: var(--background);
-  z-index: 2;
+  z-index: 4;
 }
 
 .controls {
@@ -220,7 +220,6 @@ h1, h2, h3, h4, h5, h6 {
     }
     & .game-count::before {
       content: " ";
-      color: var(--subtle-accent);
     }
   }
 }
@@ -245,7 +244,12 @@ h1, h2, h3, h4, h5, h6 {
     border-left-width: 0;
   }
 
-  & .button:first-child {
+  & input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  & .button:first-of-type {
     border-top-left-radius: .25rem;
     border-bottom-left-radius: .25rem;
     border-left-width: 1px;
@@ -253,6 +257,10 @@ h1, h2, h3, h4, h5, h6 {
   & .button:last-child {
     border-top-right-radius: .25rem;
     border-bottom-right-radius: .25rem;
+  }
+
+  & input:checked + .button {
+    background: var(--card-background);
   }
 }
 
@@ -499,25 +507,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-@media only screen and (max-width: 600px) {
-  .layout-switcher {
-    display: none;
-  }
-
-  #games-toggle:checked ~.main .game-grid {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 1rem;
-
-    & .game-row {
-      padding-bottom: 80%;
-    }
-
-    & .game-title {
-      font-size: 1rem;
-    }
-  }
-}
-
 .open-critic-tier {
   width: 20px;
   height: 24px;
@@ -566,4 +555,49 @@ h1, h2, h3, h4, h5, h6 {
 
 .game-title .release-date {
   color: var(--secondary-text);
+}
+
+@media only screen and (max-width: 600px) {
+  .layout-switcher {
+    display: none;
+  }
+
+  .controls {
+    flex-wrap: wrap;
+    gap: 0;
+  }
+
+  .controls h1 {
+    flex-basis: 55%;
+    margin-right: 0;
+    border: 0;
+    padding: 0;
+  }
+  .controls .search-field {
+    flex-basis: 45%;
+  }
+  .controls .tier-filter {
+    order: 1;
+    flex-basis: 100%;
+    margin: 0;
+    width: 100%;
+    margin-top: .5rem;
+
+    & .button {
+      flex-grow: 1;
+    }
+  }
+
+  #games-toggle:checked ~.main .game-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+
+    & .game-row {
+      padding-bottom: 80%;
+    }
+
+    & .game-title {
+      font-size: 1rem;
+    }
+  }
 }

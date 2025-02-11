@@ -202,7 +202,7 @@ const formatTitle = (title) => {
   });
 
   const gameGridHeader = Object.keys(platforms).map(platform => {
-    return `<h2 class="game-header-cell">
+    return `<h2 class="game-header-cell platform-${platform}" data-game-platform="${platform}">
       <img class="game-platform" alt="${platforms[platform].name}" src="images/${platform}-logo.svg">
       <strong>${platforms[platform].name}</strong>
       <span class="platform-count">${platforms[platform].count}</span>
@@ -220,7 +220,7 @@ const formatTitle = (title) => {
     <div id="game_${key}" class="game-row" data-game-title="${games[key].title}"
       data-open-critic-id="${games[key].openCriticId ? games[key].openCriticId : ""}"
       data-game-release-date="${games[key].openCriticData && games[key].openCriticData.releaseDate ? games[key].openCriticData.releaseDate : (games[key].releaseDate ? games[key].releaseDate : "")}"
-      data-open-critic-tier="${games[key].openCriticData && games[key].openCriticData.tier ? games[key].openCriticData.tier : ""}"
+      data-open-critic-tier="${games[key].openCriticData && games[key].openCriticData.tier ? games[key].openCriticData.tier : "n-a"}"
       data-open-critic-score="${games[key].openCriticData && games[key].openCriticData.score ? games[key].openCriticData.score : ""}"
       data-open-critic-critics="${games[key].openCriticData && games[key].openCriticData.critics ? games[key].openCriticData.critics : ""}"
     >`;

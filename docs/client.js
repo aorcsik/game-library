@@ -69,23 +69,47 @@ document.addEventListener("DOMContentLoaded", async () => {
     form.layout.value = "games";
   }
 
-  const handleSearch = () => {
+  let rowRevealInterval = null;
+  const handleFilter = () => {
+
+    if (rowRevealInterval) window.clearInterval(rowRevealInterval);
     const words = form.q.value.toLowerCase().trim().replaceAll(/\s+/g, " ").split(" ").filter(word => word.length > 0);
+    const tier = form.tier.value;
+    let gameCounter = 0;
+    const platformCounter = {};
+    [...document.querySelectorAll(".game-header-cell")].map(cell => cell.dataset.gamePlatform).filter(platform => platform).forEach(platform => {
+      platformCounter[platform] = 0
+    });
+
     [...document.querySelectorAll(".game-row")].forEach(row => {
-      row.className = row.className.replace(/game-row hidden/, "game-row");
-      if (!words.reduce((match, word) => match && !!row.id.match(new RegExp(word)), true)) {
-        row.className = row.className.replace(/game-row/, "game-row hidden");
+      row.className = "game-row hidden";
+
+      const matchSearchTerm = words.reduce((match, word) => match && !!row.id.match(new RegExp(word)), true);
+      const matchTierFilter = !tier || (row.dataset.openCriticTier ? row.dataset.openCriticTier.toLowerCase().match(new RegExp(tier)) : false);
+      if (matchSearchTerm && matchTierFilter) {
+        row.className = "game-row";
+        
+        gameCounter++;
+        Object.keys(platformCounter).forEach(platform => {
+          if (row.querySelector(`.game-${platform}:not(.game-placeholder)`)) platformCounter[platform]++;
+        });
       }
+    });
+
+    document.querySelector(".game-count").innerHTML = gameCounter;
+    Object.keys(platformCounter).forEach(platform => {
+      console.log(`.platform-${platform} .platform-count`, platformCounter[platform]);
+      document.querySelector(`.platform-${platform} .platform-count`).innerHTML = platformCounter[platform];
     });
   };
 
-  handleSearch();
+  handleFilter();
 
   const handleFormChange = () => {
     url.searchParams.set("q", form.q.value);
     url.searchParams.set("layout", form.layout.value);
     window.history.pushState(null, '', url.toString());
-    handleSearch();
+    handleFilter();
   };
 
   form.addEventListener("change", () => {
