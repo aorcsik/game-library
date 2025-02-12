@@ -582,6 +582,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: 0;
     border: 0;
     padding: 0;
+    letter-spacing: .01rem;
   }
   .controls .search-field {
     flex-basis: 40%;
