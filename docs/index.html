@@ -39,6 +39,20 @@
             <input type="radio" name="tier" value="n-a" id="tier-filter-n-a">
             <label class="button" for="tier-filter-n-a">N/A</label>
           </div>
+          <div class="button-group sort">
+            <input type="radio" name="direction" value="asc" checked id="sort-asc">
+            <label class="button" for="sort-asc"><i class="fa-regular fa-arrow-down-a-z"></i></label>
+            <input type="radio" name="direction" value="desc" id="sort-desc">
+            <label class="button" for="sort-desc"><i class="fa-regular fa-arrow-up-z-a"></i></label>
+            <label class="button form-field">
+              <select name="sort_by">
+                <option value="title" selected>Title</option>
+                <option value="release_date">Release Date</option>
+                <option value="open_critic_score">OpenCritic Score</option>
+                <option value="open_critic_recommendation">OpenCritic Recommendation</option>
+              </select>
+            </label>
+          </div>
           <div class="form-field search-field">
             <div class="search-icon">
               <i class="fa-regular fa-magnifying-glass"></i>
@@ -34241,7 +34255,7 @@
     </div>
     <div id="game_spirits" class="game-row" data-game-title="Spirits"
       data-open-critic-id="skip"
-      data-game-release-date="0201-11-11T00:00:00.000Z"
+      data-game-release-date="2010-11-11T00:00:00.000Z"
       data-open-critic-tier="n-a"
       data-open-critic-score=""
       data-open-critic-critics=""

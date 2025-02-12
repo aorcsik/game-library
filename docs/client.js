@@ -32,6 +32,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     img.replaceWith(svgElement);
   };
 
+  const formFields = ['q', 'layout', 'tier', 'sort_by', 'direction'];
+
   const gamesHeader = document.querySelector(".games-header");
   const gameRowTitle = document.createElement("div");
   gameRowTitle.className = "game-row-title"
@@ -62,8 +64,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const form = document.getElementById("game_form");
   let url = new URL(document.location);
-  form.q.value = url.searchParams.get("q");
-  form.layout.value = url.searchParams.get("layout");
+  formFields.forEach(field => {
+    if (!url.searchParams.has(field)) return;
+    form[field].value = url.searchParams.get(field);
+  });
 
   if (window.innerWidth <= 600) {
     form.layout.value = "games";
@@ -81,7 +85,34 @@ document.addEventListener("DOMContentLoaded", async () => {
       platformCounter[platform] = 0
     });
 
-    [...document.querySelectorAll(".game-row")].forEach(row => {
+    [...document.querySelectorAll(".game-row")]
+      .sort((a, b) => {
+        return a.id.localeCompare(b.id);
+      })
+      .sort((a, b) => {
+        const reverse = form.direction.value === "desc" ? -1 : 1;
+
+        if (form.sort_by.value === "title") {
+          return reverse * a.id.localeCompare(b.id);
+        }
+        if (form.sort_by.value === "release_date") {
+          return reverse * (new Date(a.dataset.gameReleaseDate) - new Date(b.dataset.gameReleaseDate));
+        }
+        if (form.sort_by.value === "open_critic_score") {
+          if (a.dataset.openCriticScore === b.dataset.openCriticScore) {
+            return reverse * (a.dataset.openCriticCritics - b.dataset.openCriticCritics);
+          }
+          return reverse * (a.dataset.openCriticScore - b.dataset.openCriticScore);
+        }
+        if (form.sort_by.value === "open_critic_recommendation") {
+          if (a.dataset.openCriticCritics === b.dataset.openCriticCritics) {
+            return reverse * (a.dataset.openCriticScore - b.dataset.openCriticScore);
+          }
+          return reverse * (a.dataset.openCriticCritics - b.dataset.openCriticCritics);
+        }
+        return 0;
+      })
+      .forEach(row => {
       row.className = "game-row hidden";
 
       const matchSearchTerm = words.reduce((match, word) => match && !!row.id.match(new RegExp(word)), true);
@@ -94,11 +125,12 @@ document.addEventListener("DOMContentLoaded", async () => {
           if (row.querySelector(`.game-${platform}:not(.game-placeholder)`)) platformCounter[platform]++;
         });
       }
+
+      row.parentNode.appendChild(row);
     });
 
     document.querySelector(".game-count").innerHTML = gameCounter;
     Object.keys(platformCounter).forEach(platform => {
-      console.log(`.platform-${platform} .platform-count`, platformCounter[platform]);
       document.querySelector(`.platform-${platform} .platform-count`).innerHTML = platformCounter[platform];
     });
   };
@@ -106,8 +138,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   handleFilter();
 
   const handleFormChange = () => {
-    url.searchParams.set("q", form.q.value);
-    url.searchParams.set("layout", form.layout.value);
+    formFields.forEach(field => {
+      if (!form[field].value) {
+        url.searchParams.delete(field);
+        return;
+      }
+      url.searchParams.set(field, form[field].value);
+    });
     window.history.pushState(null, '', url.toString());
     handleFilter();
   };

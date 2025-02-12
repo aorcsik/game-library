@@ -242,6 +242,10 @@ h1, h2, h3, h4, h5, h6 {
   & .button {
     border-radius: 0;
     border-left-width: 0;
+    
+    &.form-field {
+      padding-left: 0;
+    }
   }
 
   & input {
@@ -271,6 +275,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 2.5rem;
   overflow: hidden;
 
+  & select,
   & input {
     background-color: transparent;
     border: 0;
@@ -578,6 +583,17 @@ h1, h2, h3, h4, h5, h6 {
   }
   .controls .tier-filter {
     order: 1;
+    flex-basis: 100%;
+    margin: 0;
+    width: 100%;
+    margin-top: .5rem;
+
+    & .button {
+      flex-grow: 1;
+    }
+  }
+  .controls .sort {
+    order: 2;
     flex-basis: 100%;
     margin: 0;
     width: 100%;
