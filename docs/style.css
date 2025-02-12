@@ -1,3 +1,8 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body, html {
   padding: 0;
   margin: 0;
@@ -573,13 +578,13 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .controls h1 {
-    flex-basis: 55%;
+    flex-basis: 60%;
     margin-right: 0;
     border: 0;
     padding: 0;
   }
   .controls .search-field {
-    flex-basis: 45%;
+    flex-basis: 40%;
   }
   .controls .tier-filter {
     order: 1;
