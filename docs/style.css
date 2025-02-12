@@ -18,7 +18,7 @@ body {
   --card-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   --card-hover-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   --body-font: "Source Sans 3", Arial, Helvetica, sans-serif;
-  --heading-font: "Bebas Neue", var(--body-font);
+  --heading-font: "League Gothic", var(--body-font);
 
   --game-grid-gap: .5rem;
 
@@ -48,6 +48,7 @@ input, button, textarea {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--heading-font);
   vertical-align: baseline;
+  text-transform: uppercase;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -582,7 +583,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: 0;
     border: 0;
     padding: 0;
-    letter-spacing: .01rem;
   }
   .controls .search-field {
     flex-basis: 40%;
