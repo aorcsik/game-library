@@ -185,27 +185,47 @@ const formatTitle = (title) => {
         playstation_data.collections[purchase.titleName].forEach(collectionItem => {
           const collectionTitle = formatTitle(collectionItem.titleName);
           const gameConfig = getGameConfig(collectionTitle);
-          if (!games[gameConfig.key]) games[gameConfig.key] = gameConfig;
+          if (!games[gameConfig.key]) {
+            games[gameConfig.key] = gameConfig;
+          }
+          if (!games[gameConfig.key].playstation_generation) {
+            games[gameConfig.key].playstation_generation = [];
+          }
           games[gameConfig.key].playstation = collectionTitle;
           games[gameConfig.key].playstation_collection = title;
           games[gameConfig.key].playstation_cover = purchase.cover;
+          games[gameConfig.key].playstation_plus = games[gameConfig.key].playstation_plus === false ? false : purchase.serviceUpsell === "PS PLUS";
+          games[gameConfig.key].playstation_generation.push(purchase.platform);
           platforms.playstation.count++;
         });
       } else {
         const gameConfig = getGameConfig(title);
-        if (!games[gameConfig.key]) games[gameConfig.key] = gameConfig;
+        if (!games[gameConfig.key]) {
+          games[gameConfig.key] = gameConfig;
+        }
+        if (!games[gameConfig.key].playstation_generation) {
+          games[gameConfig.key].playstation_generation = [];
+        }
         games[gameConfig.key].playstation = title;
         games[gameConfig.key].playstation_cover = purchase.cover;
+        games[gameConfig.key].playstation_plus = games[gameConfig.key].playstation_plus === false ? false : purchase.serviceUpsell === "PS PLUS";
+        games[gameConfig.key].playstation_generation.push(purchase.platform);
         platforms.playstation.count++;
       }
     });
   });
 
+  let playstationPlusCount = 0;
+  Object.keys(games).forEach(key => {
+    if (games[key].playstation_plus) playstationPlusCount++;
+  });
+
   const gameGridHeader = Object.keys(platforms).map(platform => {
+    const title = platform === "playstation" ? `${platforms[platform].count} games (${playstationPlusCount} in PS Plus Library)` : `${platforms[platform].count} games`;
     return `<h2 class="game-header-cell platform-${platform}" data-game-platform="${platform}">
       <img class="game-platform" alt="${platforms[platform].name}" src="images/${platform}-logo.svg">
       <strong>${platforms[platform].name}</strong>
-      <span class="platform-count">${platforms[platform].count}</span>
+      <span class="platform-count" title="${title}">${platforms[platform].count}</span>
     </h2>`;
   });
 
@@ -230,12 +250,14 @@ const formatTitle = (title) => {
         const cover = games[key][platform + "_cover"];
         const collection = games[key][platform + "_collection"];
 
+        const platformLogo = platform === "playstation" && games[key].playstation_plus ? "psplus" : platform;
+
         gameGrid += `
         <div class="game-cell game-card game-${platform}">
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('${cover}');"></div></div>
           <div class="game-info">
             <div class="game-title">${title}${collection ? "<div class='game-collection'>(" + collection + ")</div>" : ""}</div>
-            <img class="game-platform" alt="${platforms[platform].name}" src="images/${platform}-logo.svg">
+            <img class="game-platform" alt="${platforms[platform].name}" src="images/${platformLogo}-logo.svg">
           </div>
         </div>`;
       } else {

@@ -23,6 +23,10 @@
 // https://library.playstation.com/recently-purchased
 JSON.stringify([...document.querySelectorAll("a[data-qa='collection-game-list-product#store-link']")].map(el => {
   const data = JSON.parse(el.getAttribute("data-telemetry-meta"));
+  delete(data.conceptId);
+  delete(data.titleId);
+  data.serviceUpsell = el.querySelector(".psw-service-upsell") ? el.querySelector(".psw-service-upsell").innerText : null;
+  data.platform = el.querySelector(".psw-platform-tag").innerText;
   data.cover = el.querySelector("img[data-qa='collection-game-list-product#game-art#image#image']").src;
   return data;
 }));

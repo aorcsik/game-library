@@ -8,18 +8,21 @@
   <link rel="stylesheet" href="fontawesome/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
   
   <form id="game_form">
-    <input class="layout-toggle-checkbox" type="radio" id="games-toggle" name="layout" value="games">
-    <input class="layout-toggle-checkbox" type="radio" id="grid-toggle" name="layout" value="grid" checked>
-    <input class="layout-toggle-checkbox" type="radio" id="list-toggle" name="layout" value="list">
+    <input class="hidden-checkbox" type="radio" id="games-toggle" name="layout" value="games">
+    <input class="hidden-checkbox" type="radio" id="grid-toggle" name="layout" value="grid" checked>
+    <input class="hidden-checkbox" type="radio" id="list-toggle" name="layout" value="list">
+    <input class="hidden-checkbox" type="checkbox" id="toggle-controls">
     <div class="header">
       <div class="container">
         <div class="controls">
-          <h1>Game Library<span class="game-count">0</span></h1>
+          <h1><strong>Game Library</strong><span class="game-count">0</span></h1>
+          <label class="button mobile-menu-open" for="toggle-controls"><i class="fa-regular fa-bars"></i></label>
+          <label class="button mobile-menu-close" for="toggle-controls"><i class="fa-regular fa-xmark"></i></label>
           <div class="button-group layout-switcher">
             <label class="button" for="games-toggle"><i class="fa-regular fa-grid-2"></i></label>
             <label class="button" for="grid-toggle"><i class="fa-regular fa-grid"></i></label>

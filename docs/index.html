@@ -8,18 +8,21 @@
   <link rel="stylesheet" href="fontawesome/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
   
   <form id="game_form">
-    <input class="layout-toggle-checkbox" type="radio" id="games-toggle" name="layout" value="games">
-    <input class="layout-toggle-checkbox" type="radio" id="grid-toggle" name="layout" value="grid" checked>
-    <input class="layout-toggle-checkbox" type="radio" id="list-toggle" name="layout" value="list">
+    <input class="hidden-checkbox" type="radio" id="games-toggle" name="layout" value="games">
+    <input class="hidden-checkbox" type="radio" id="grid-toggle" name="layout" value="grid" checked>
+    <input class="hidden-checkbox" type="radio" id="list-toggle" name="layout" value="list">
+    <input class="hidden-checkbox" type="checkbox" id="toggle-controls">
     <div class="header">
       <div class="container">
         <div class="controls">
-          <h1>Game Library<span class="game-count">0</span></h1>
+          <h1><strong>Game Library</strong><span class="game-count">0</span></h1>
+          <label class="button mobile-menu-open" for="toggle-controls"><i class="fa-regular fa-bars"></i></label>
+          <label class="button mobile-menu-close" for="toggle-controls"><i class="fa-regular fa-xmark"></i></label>
           <div class="button-group layout-switcher">
             <label class="button" for="games-toggle"><i class="fa-regular fa-grid-2"></i></label>
             <label class="button" for="grid-toggle"><i class="fa-regular fa-grid"></i></label>
@@ -74,37 +77,37 @@
     <h2 class="game-header-cell platform-steam" data-game-platform="steam">
       <img class="game-platform" alt="Steam" src="images/steam-logo.svg">
       <strong>Steam</strong>
-      <span class="platform-count">404</span>
+      <span class="platform-count" title="404 games">404</span>
     </h2>
 <h2 class="game-header-cell platform-playstation" data-game-platform="playstation">
       <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
       <strong>PlayStation</strong>
-      <span class="platform-count">384</span>
+      <span class="platform-count" title="389 games (176 in PS Plus Library)">389</span>
     </h2>
 <h2 class="game-header-cell platform-switch" data-game-platform="switch">
       <img class="game-platform" alt="Nintendo Switch" src="images/switch-logo.svg">
       <strong>Nintendo Switch</strong>
-      <span class="platform-count">53</span>
+      <span class="platform-count" title="53 games">53</span>
     </h2>
 <h2 class="game-header-cell platform-epic" data-game-platform="epic">
       <img class="game-platform" alt="Epic Games" src="images/epic-logo.svg">
       <strong>Epic Games</strong>
-      <span class="platform-count">62</span>
+      <span class="platform-count" title="62 games">62</span>
     </h2>
 <h2 class="game-header-cell platform-gog" data-game-platform="gog">
       <img class="game-platform" alt="Good Old Games" src="images/gog-logo.svg">
       <strong>Good Old Games</strong>
-      <span class="platform-count">78</span>
+      <span class="platform-count" title="78 games">78</span>
     </h2>
 <h2 class="game-header-cell platform-amazon" data-game-platform="amazon">
       <img class="game-platform" alt="Prime Gaming" src="images/amazon-logo.svg">
       <strong>Prime Gaming</strong>
-      <span class="platform-count">71</span>
+      <span class="platform-count" title="71 games">71</span>
     </h2>
 <h2 class="game-header-cell platform-appstore" data-game-platform="appstore">
       <img class="game-platform" alt="Apple App Store" src="images/appstore-logo.svg">
       <strong>Apple App Store</strong>
-      <span class="platform-count">71</span>
+      <span class="platform-count" title="71 games">71</span>
     </h2>
   </div>
   
@@ -396,7 +399,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA06391_00/5/i_54654f9e4a03550c2d4e879cd7e96e444f23a7e4bea94ebe6aabfefc878c2eee/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">ABSOLVER</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -578,7 +581,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA09352_00/app/info/49/fi_497d7e03b491ae53e47acb052ccfb236859133dd54f4d0d6358293ff5f4c59db/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">AEW: Fight Forever</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -1298,7 +1301,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA08312_00/app/info/13/fi_6f06a3581a9201c2d9d60eccccf24ae773d67754f176a33dc0f379cfffdad06c/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Aliens: Dark Descent</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -1343,7 +1346,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA27736_00/8/i_34ececea5de1f0820e491783a4f80f67d4a3a2891ad3e6f03f8fd28a1877422f/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Aliens: Fireteam Elite</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -1705,7 +1708,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA03596_00/app/info/45/fi_7af30eef25bda3c29a5fded13f01f238fd6761b5323afe0f41952d27cc155ac3/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Among Us</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -1885,7 +1888,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA00602_00/2/i_49111b23d8a455d60de879b4fb8650d5d82e40270d7bf4a2a64b1cb797aa33f7/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Another World</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -2202,7 +2205,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA29785_00/2/i_62aaf7326f7008353cbda342b24c96486798479bc1be959e79a4184004361607/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Arcadegeddon</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -2382,7 +2385,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA06782_00/4/i_53ade2c41d5aec582b03192e656e5e77858ebe2a243739708a68ba017d3e344e/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">ARK: Survival Evolved</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -2834,7 +2837,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA05173_00/app/info/2/fi_40eb4a08adca42a114f6d84d906db3416dcdf52045073d8cfef6dcf926a44a00/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Axiom Verge 2</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -3421,7 +3424,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA00135_00/7/i_acf6a09833040a87d9381d4dabc97bd07f5515ed644a046269ecaf2c6877b5d7/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">BATMAN™: ARKHAM KNIGHT</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -3556,7 +3559,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA02387_00/4/i_4f0735372ec946403df8905f3f520cfcec79b433a7fe90758500a025c3401d34/i/icon0_01.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Battlefield™ 1</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -4241,7 +4244,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA00513_00/8/i_4ee357126af019978c3bacb00430d154d411cbd2c99bce4e70dd96a85697fbb5/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Beyond: Two Souls™</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -4376,7 +4379,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA09848_00/5/i_ac07eaefb80e2353a015ec1a625817563514c45dde77dd05c38ad99661c89e0a/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Biomutant</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -4744,7 +4747,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA15249_00/4/i_ec8274cc49b0e39b96c443d03f9002fd7fc0a0933a7b7ac756c64269e6f04330/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Black Desert</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -5153,7 +5156,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA00207_00/2/i_a2f15ff7390bb9ccc13a3e945fb8e85396b51d912f46d9f11d6a6d9d23836d98/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Bloodborne™</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -5697,7 +5700,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA03239_00/2/i_d94ef53f31525d517607fb84a79400e23ac748965952c0e3b6fb6ef394e018ca/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">The Bridge</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -6018,7 +6021,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA12443_00/3/i_574d91bf4cf0e6167042e5ffcf3c2b2e3b1f1e770922a54dcdec404095aa7060/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Call of Duty®: Black Ops 4</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -6063,7 +6066,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA02624_00/6/i_c215706b64aaf3a61d26f8496a19ff5e4151fa30f504c8510ff66c7561965ec3/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Call of Duty®: Black Ops III</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -6108,7 +6111,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA07904_00/1/i_0da7aba5e7706bd220b4f36dfc6e361b3d3b00f6b5ea0898c325e3b8795d2c82/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Call of Duty®: Modern Warfare® 2 Campaign Remastered</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -6153,7 +6156,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA05379_00/2/i_4cfad262816af629a9b660a48e85411efdc6eab4d7d90c6c13e7808f87e80ba7/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Call of Duty®: Modern Warfare® Remastered</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -6198,7 +6201,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA08630_00/2/i_35cd932aef94645fe0612672cd98b4a8cdd31918627571069b99491d30ba781c/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Call of Duty®: WWII</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -6785,7 +6788,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA00074_00/10/i_b8a567111c9c4d80343551305dec7294678cd6c83efb08e5da3ed0d105dd747a/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Child of Light</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -6877,7 +6880,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA16982_00/4/i_8c1a74413fc0aba45e2423ba979391ae6821281559250f0a64a47add1be39888/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Chivalry 2</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -6967,7 +6970,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA06407_00/5/i_7368b13641dd5f90acb61a4e8f00bbaf3ffaf0ee7d1f2e9fdbc39e38dd4aae71/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Cities: Skylines</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -7057,7 +7060,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA05466_00/5/i_1a79823ca5cf212f0ba3a36bba5b288efee7560b57e503c928929874af378032/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Claire</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -7417,7 +7420,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA10486_00/8/i_77350c0796f347f0f4555b2437bfea74572a66c6b070ad191d1d212642fc6ca0/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Conan Exiles</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -7462,7 +7465,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA11875_00/1/i_b172e4c72af06ad2eb876eb489da281899736c80cb1b1990911f106855657ae8/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Concrete Genie</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -7779,7 +7782,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA23470_00/1/i_6d2bb4a89db0bddf026e4b591da346b60535f7c3888c5b3c4498a96a40f0ff22/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Crash Bandicoot™ 4: It's About Time</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -8186,7 +8189,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA19401_00/1/i_2d4eb9ef85387c2decf445a073c58dfad2a01bb3aed2c6c6c71703af431651e5/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Curse of the Dead Gods</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -8321,7 +8324,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA14102_00/6/i_9bd8e21ae25897df55a62b9000c95996476a9f064d2eefc73164fe682145ac61/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">The Dark Pictures Anthology: Man of Medan</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -8413,7 +8416,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA02419_00/10/i_362b27c737073ca65111fa8c24cd9946b77e07a3de37dabf880513eb4d02e128/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Darksiders II Deathinitive Edition</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -8458,7 +8461,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA08798_00/4/i_b8579d8b1772b135f04a834efb11bb86bf7704915e88ad9ac604e12bbb5155ab/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Darksiders III</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -8550,7 +8553,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA01959_00/3/i_5412046c8cb19929ad71d376ff22a2bb7c03853b2dddb368aa62b2426476cdcb/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Day of the Tentacle Remastered</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -8597,7 +8600,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA09175_00/2/i_53d18dc2da6a0ee0c56f010428a53c37b91ba301ba57dae4563e5d514dd28b20/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">DAYS GONE</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -8642,7 +8645,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA08032_00/3/i_1ef7033e599774239b53869b64c7362da504cfec72a2a7ff6bba26eb1121da6f/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Dead by Daylight</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -9140,10 +9143,10 @@
           </div>
         </div>
         <div class="game-cell game-card game-playstation">
-          <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA18709_00/app/info/44/fi_fef6c9e39a8d1e34e3775eba64d24ac62cc98959b431ce3fb943de3e84713466/icon0.png?w=180');"></div></div>
+          <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA18709_00/app/info/54/fi_fdbe02dbae15b15aba2966a7176a8e19fd98b9d44656831789c0eaadd698efb2/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">DEATH NOTE Killer Within</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -9460,7 +9463,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA02962_00/app/info/104/fi_c7ae227f52a827558d7b936902922f1babaa327dc7a18675e5352f55f9b4e273/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Deep Rock Galactic</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -9687,7 +9690,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA10465_00/5/i_b7bdab582a978d16c8cf82cc699a2cc710df3ce5de44d52c7e974d215f0a7673/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Descenders</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -9731,7 +9734,7 @@
           </div>
         </div>
         <div class="game-cell game-card game-playstation">
-          <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA02410_00/app/info/279/fi_40e67665297b988c2da65151d421d5ce272989879fe725367e3bbe48229fd0a1/icon0.png?w=180');"></div></div>
+          <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA02410_00/app/info/291/fi_bb7e550b17b457772b810dc47aa5d33e8327219039a564bdeef7dad7cb2224d6/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Destiny 2</div>
             <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
@@ -9914,7 +9917,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA01836_00/4/i_2e31af57d066567e9f399333853c57d865707613d5ef903c9bc93ec7086d7fce/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Deus Ex: Mankind Divided™</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -10233,7 +10236,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA01551_00/app/info/71/fi_3b260eb3b435623e8a816e495693fac11562a83f7bd93fe8090430304b8acc9c/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">DIRT5</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -10278,7 +10281,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA12747_00/6/i_c2d04731e238d52a33a1093eac9a3c04ba1a22d036cd8d1810ce8bada9a63140/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">DiRT Rally 2.0</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -10638,7 +10641,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA03733_00/app/info/12/fi_f354a8aab2192f192d0f1056ee740c14154bdd82d9ad5135f7b53c6516275f68/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Doki Doki Literature Club Plus</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -10859,10 +10862,8 @@
             <img class="game-platform" alt="Steam" src="images/steam-logo.svg">
           </div>
         </div>
-        <div class="game-cell game-card game-playstation">
-          <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA15565_00/1/i_ca462a521b314d91382954611beb577de9484f04bbaa5880a865887ddd1218d0/i/icon0.png?w=180');"></div></div>
+        <div class="game-cell game-placeholder game-playstation">
           <div class="game-info">
-            <div class="game-title">DOOM (1993)</div>
             <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
           </div>
         </div>
@@ -10954,9 +10955,9 @@
           </div>
         </div>
         <div class="game-cell game-card game-playstation">
-          <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA02092_00/3/i_52f9a896616f36be866fe94c2f6976e685215e117b9b0377c5c599ef6b7bcfbe/i/icon0.png?w=180');"></div></div>
+          <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA15565_00/1/i_ca462a521b314d91382954611beb577de9484f04bbaa5880a865887ddd1218d0/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
-            <div class="game-title">DOOM (2016)</div>
+            <div class="game-title">DOOM</div>
             <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
           </div>
         </div>
@@ -11137,7 +11138,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA29241_00/3/i_349a17f5646c74741557be166f7e4e9d56057b974ac7bed49706855e997016e3/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">DRAGON BALL: THE BREAKERS</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -11767,7 +11768,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA40325_00/2/i_f20808236df5d62c87c38d0c5f9351d25b6786e88cb5877b1fdb514933f39cac/i/icon0_01.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">EA SPORTS FC 24</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -11857,7 +11858,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA14209_00/1/i_3dc2dd7dcb5d018484d0fa6eddf5830a1dacf9ab430103f33c2915e6de58a397/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">EA SPORTS™ UFC® 4</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -12444,7 +12445,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA26116_00/5/i_63ebcb62b493054d0260e137759cad60c2c5e15666eec1d7b179cf4a9c212554/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">ENDER LILIES : Quietus of the Knights</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -12716,7 +12717,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA00672_00/1/i_59283bcb03ecb02e5107733d3dea2e3f3cd2bb15505cfaa67f76d5c6374639e4/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Entwined™</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -13123,7 +13124,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA03521_00/app/info/70/fi_d1f7409b63bfba81cba235fc92ebe66cb950ac1b5203cd5981d03aad297e7c42/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Evil Dead: The Game</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -13258,7 +13259,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA36256_00/4/i_435e22072dde0ee606762bfc2d3e2d1e1f76423cd77c41691cb5dfafe9b9dbcf/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">F1® 23</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -13393,7 +13394,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA09868_00/4/i_f4f42b6351f847a4ec36f187dfb3537881b8b2a2142ee60ec70a060275ba42b5/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Fallen Legion: Flames of Rebellion</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -13618,7 +13619,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA12054_00/3/i_3af9d68ee17c4b3124b5fda4ecbf8dd75d8d5f3f539ba47ea089a501d9886ef1/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Fallout 76</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -13888,7 +13889,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA11598_00/3/i_3142db0fe1743583d92158f739e24131ea98dce2b37a76638ba61c1c7cadf2a9/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Farming Simulator 19</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -13933,7 +13934,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA04508_00/2/i_8f0bdc6eacb7754cbe93116038fbe8cae7658f8363797b7e3b613d33150bd01f/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Farpoint</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -14387,7 +14388,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA03177_00/app/info/52/fi_1b666ba236a770514fe609f6829d5493d697937c8ea71886a93697d79c496461/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">FIFA 22</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -14477,7 +14478,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA07187_00/5/i_3a90c0e006f2193b1adc12b9424372f4044439cadd6d91fda06c0a86c9c6acf2/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">FINAL FANTASY VII REMAKE</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -14522,7 +14523,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA01615_00/5/i_d0fdf4ae434e480b9536662f48df7f7180a4c75a96f410c97c76e3bd5f4ef27e/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">FINAL FANTASY XV</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -14612,7 +14613,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA26041_00/3/i_1b03a8fd75cba2abe1748b44678257e84f96896d4d39dbe0ab41ea63c1b3d74c/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">First Class Trouble</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -14702,7 +14703,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA29533_00/2/i_1ad1de4c8c550874026b771512eb912f5bc218fb1359d3a3ad328ee12a27aa3f/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Five Nights at Freddy's: Security Breach</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -15017,7 +15018,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA00424_00/8/i_55a7c7c40ea86b5305368469ad68b51ec29b98c8fcf9a214749833aed5983bb2/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Foul Play</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -15467,7 +15468,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA14212_00/4/i_a1a50fe6fa0a89523762a36c9f335fbe6c4905758626249d38a06f826f1ae4ec/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Generation Zero</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -15509,7 +15510,7 @@
           </div>
         </div>
         <div class="game-cell game-card game-playstation">
-          <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA02584_00/app/info/70/fi_e3c16cf87709b2b7df2acee44e0549a90ad980cc7cc0dc3cac073ec6a8639459/icon0.png?w=180');"></div></div>
+          <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA02584_00/app/info/75/fi_7bf34610ee174c6a4a8bb6bdecf6bde35ce48f7483ee9d736470f5dc93ba70b8/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Genshin Impact</div>
             <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
@@ -15604,7 +15605,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA03685_00/app/info/30/f_24c77c44b16fafb2ec24381aa67bf4f30646e91bdd62a63b0c239964ef993b14/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Ghostrunner</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -15649,7 +15650,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA09912_00/app/info/48/fi_3211afb573663111184ae61d09d363159b785ab6d0cea4c5c5fd260d19d300e1/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Ghostrunner 2</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -15743,7 +15744,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA03397_00/app/info/15/fi_57f4a6f2d082be9dd0bd424bb4201063edecc0bb4348893c7cd985c466935023/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Ghostwire: Tokyo</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -15923,7 +15924,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA02779_00/2/i_c98010b0ff43591611194238a9c5b40b177db79952e654a76f567df458b46288/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Goat Simulator</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -15968,7 +15969,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA31059_00/3/i_3ddd72b85d65233bf1c02116873973283bda684d700951208da93722b38fe9fb/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Godfall: Challenger Edition</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -16058,7 +16059,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA01715_00/3/i_1ae43ebe870e936988965b40fdbc785ae46084ae3610d737ed09e547e0a9f75b/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">God of War® III Remastered</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -16100,7 +16101,7 @@
           </div>
         </div>
         <div class="game-cell game-card game-playstation">
-          <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA08330_00/app/info/133/fi_f25765592c603ab9259a09e1a1c8b3644c1d5e902ea1fe93d8ce8da3912630a8/icon0.png?w=180');"></div></div>
+          <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA08330_00/app/info/144/fi_161f2ad4f05963295b5f1593cdeae9031f1c748cb3801812ca6420104a3ed0e6/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">God of War Ragnarök</div>
             <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
@@ -16193,7 +16194,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA01223_00/1/i_0f5d11086814e32fc141fd2f82f507a4f24d91097bae6eff1861a9a2109c78a7/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Gone Home: Console Edition</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -16328,7 +16329,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA17547_00/3/i_06c357cb65e398ff3a4f5794b6f9ebc5eec68d06e27784428908b8205e85cae8/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Granblue Fantasy: Versus</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -16553,7 +16554,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA14208_00/3/i_14ee38a77fb402947301d073acd13dc2f52f64fb1cbe422ce0ff64189e7518c1/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">GreedFall</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -16598,7 +16599,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA03864_00/app/info/42/fi_a8053a8d5721bc59c59475360adbe7d577a4b3c2ad69574c99f551112fef5b14/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">GRID Legends</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -16643,7 +16644,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA01858_00/2/i_50d13b4f68085f75ffed4a861525a1344d6ed857ecb547755be1f7bdab56ad29/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Grim Fandango Remastered</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -17502,7 +17503,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA05834_00/app/info/17/fi_70e838f0957b6c96a2af805de08f002591f624dab14bc51d47266a49b8c8179c/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Harry Potter: Quidditch Champions</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -17727,7 +17728,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA00231_00/2/i_b039075172b0484e83affdf5c6520f8a084d3d9dd586698d51585eb409e3bc80/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">HELLDIVERS™</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -17769,10 +17770,10 @@
           </div>
         </div>
         <div class="game-cell game-card game-playstation">
-          <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA02421_00/app/info/137/fi_64b45c2ecd9cc48e7ec2687bedb50eedeafd6054d99582f357c1871a5a99e7a4/icon0.png?w=180');"></div></div>
+          <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA02421_00/app/info/139/fi_f7339a72239a89f9934cc60f0e5d807d3bbdcafdae1cc52ca96bf784665dec26/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Hell Let Loose</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -17819,7 +17820,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA33399_00/2/i_50f2153463e20443e7fdd4e585753ade442cbe3eee69fbcc676451f5188a987d/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Hello Neighbor 2</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -17909,7 +17910,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA05344_00/1/i_b400cc69efbff507fac4cd8c3e25b9ee606bb0f059eefbfa50f447197ca1bdc1/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Here They Lie</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -18179,9 +18180,11 @@
             <img class="game-platform" alt="Steam" src="images/steam-logo.svg">
           </div>
         </div>
-        <div class="game-cell game-placeholder game-playstation">
+        <div class="game-cell game-card game-playstation">
+          <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA15389_00/app/info/26/fi_438d04eac6e7833a944fd53c242c3fcf838afe963a5146c178afbd9936810971/icon0.png?w=180');"></div></div>
           <div class="game-info">
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <div class="game-title">High on Life</div>
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -18226,7 +18229,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA12414_00/2/i_b370c5dff005744ec640dab6d344ea80be9284f376fd6f69da658d2bb85fa82a/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">HITMAN™ 2</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -18590,7 +18593,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA02169_00/app/info/37/fi_7a0548f4c2739d1fba293e713f81a4a865e5e41e522d913ed544be5b4e6d75b1/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Hood: Outlaws & Legends</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -18635,7 +18638,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA11452_00/3/i_a42413a289793af2e29ab07cf57e14241c6d9f1b13cbac2153d8da4f43dc0274/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Horizon Chase Turbo</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -18770,7 +18773,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA09285_00/app/info/120/fi_29ae669c4f5e7dd65e81a897447f5a28e10a1df0688af8af6e6ba36a9fe8d211/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">HOT WHEELS UNLEASHED™ 2 - Turbocharged</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -18905,7 +18908,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA02692_00/app/info/105/fi_d0587bf5650e99f25028dfcbf7ca7016bcd006b33d4a5a1e2554a1ba98c4e9df/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Hunter's Arena: Legends</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -19040,7 +19043,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA09325_00/2/i_50a9c310d48f4e0f1e6b2cd917643b43cfa409e2e19d17626a565460b4cad3b1/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Iconoclasts</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -19130,7 +19133,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA08237_00/app/info/24/fi_de4bced29f44157c202a28a9b2bbddb631341a0ffdec2a0265f86b9a349edb24/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Immortals of Aveum</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -19355,7 +19358,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA00004_00/3/i_b9b53d84cca64ba71228c77d86039847cb7382e790a881aab796199778a4bc8a/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">inFAMOUS™ Second Son</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -20349,7 +20352,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA27319_00/4/i_b909c1037d4d89134514b631b42fa80254fc2d947b41b530ac1557d3f1f19c1e/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Jurassic World Evolution 2</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -20756,7 +20759,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA17245_00/3/i_256fcea16bfba2bd99cb5acfc1dec00cde56553e73e0e4d9334bf1905cb00f71/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Kingdoms of Amalur: Re-Reckoning</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -21026,7 +21029,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA19588_00/4/i_2f9307e226db21a48343687722233e51b2d2eba5bd522aa07930421acf8bc1f9/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Knockout City™</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -21071,7 +21074,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA09558_00/1/i_407bc767b780eb5296d11da39bb39ee0e32b25ea2f58334959ac0cd1aa15db1e/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Knowledge is Power™</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -21161,7 +21164,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA02591_00/3/i_3a024d8693bcc4dd73ec6bea98c52efa51aacb4c9d612324a93a82aace5a0d61/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Kung Fu Panda: Showdown of Legendary Legends</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -21431,7 +21434,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA03745_00/1/i_1f6f7ce06f4d47f1b134011af7882499a6884bf156484a0bd26dcb1d044786f5/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">The Last Guardian™</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -21746,7 +21749,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA11550_00/2/i_3e3c7607a4514fda9a0c1afafd7339d0909c0534274f5b63f651bea8e7272cb3/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">LEGO® DC Super-Villains</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -22654,7 +22657,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA00063_00/2/i_d67f5d122b985132a44e333e1b9c91d41608fa932842b3e3274d768c18463c24/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">LittleBigPlanet™3 (EU)</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -23288,7 +23291,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA18100_00/1/i_ba24f03463eb39879d66243bd388b6861d3e544003522012bd8c16e780cdae7b/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Mafia: Definitive Edition</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -23337,7 +23340,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA17761_00/3/i_72982c32c5820eab2e0b95b66eebb358257a83c8f664e8b7b4d752914e47f72a/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Mafia II: Definitive Edition</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -23382,7 +23385,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA03617_00/6/i_f338b47d39a47211a1a6a66164a5dd400f3ac8d2800acb90e84e2795d81e5cac/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Mafia III</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -24014,7 +24017,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA19515_00/3/i_3c0219f2de00c19a8bba2471a7c4622a3509d9135355764385c8bdd5a6cf3e49/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Mass Effect™ Legendary Edition</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -24104,7 +24107,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA05723_00/app/info/61/fi_a8852f725edb837d8a6dd18c7e24ff2c997e88ca4baa8178d99b58b62320b6f0/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Meet Your Maker</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -24601,7 +24604,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA04402_00/4/i_104ac8e1b4e4e700ac38bff7103b9a3625959a28797b01db7d9935cbebc51160/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Middle-earth™: Shadow of War™</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -24691,7 +24694,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA05510_00/app/info/26/fi_d85b85a4f71c81a019a43b805709c26c9520e258064c475bdf2f0000eb5e7769/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Minecraft Legends</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -24963,7 +24966,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA09837_00/3/i_d88599d468f522e8d936653a4bac77b0cbef690fb7a5aca5161baaf64872399d/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Monster Energy Supercross - The Official Videogame</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -25008,7 +25011,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA07708_00/4/i_f67bf14d3e83d266c618db72087c180869334fbbbc1b972936848e2489190681/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Monster Hunter World: Iceborne</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -25417,7 +25420,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA20133_00/4/i_e3bb1107816d30585c772ad535c635312b6b0d0684ce3f6bbdc53bf73ca120f1/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Mortal Shell</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -26047,7 +26050,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA08767_00/4/i_6f08e40b1401bb121ef8fbde6fa36f7de6f319c7d4d54c25693705d5323e63d5/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">NARUTO TO BORUTO: SHINOBI STRIKER</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -26092,7 +26095,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA07170_00/app/info/41/fi_99e05188dfa6ca33cbac416ac074406956e4b16cf7aa27138c57f82ec328fff0/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">NBA 2K23</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -26182,7 +26185,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA15090_00/2/i_22be695c06796838b90c18b9173c91eb902dc368f9482b88156b9fe1182f65ea/i/icon0_01.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Need for Speed™ Heat</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -26227,7 +26230,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA23265_00/2/i_36c32a88c8ef3ab744def2d1709253e3929d92c86e98841cfacb94c4faf54b6e/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Need For Speed™ Hot Pursuit Remastered</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -26272,7 +26275,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA05986_00/2/i_fba56ea350c91aa192a681bf0ed878bb3dac0383c5695e7bbb056c2057d3121d/i/icon0_01.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Need for Speed™ Payback</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -26589,7 +26592,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA11194_00/app/info/44/fi_4374d688ed1d5aa770ae01d92919877f259eb447f590772c50b657df51e73bcc/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">NHL 24</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -26634,7 +26637,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA25400_00/3/i_7333611190a3eddca5a368b3e8cda983f95bb98a0243cebca78480e04bc4cbbc/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Nickelodeon All-Star Brawl</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -26904,7 +26907,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA07123_00/2/i_95681bbccc688126ea17c0a9f1350a9646b2f869ebd1822b3675cc6674bf833a/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Nioh</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -27399,7 +27402,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA25466_00/1/i_9c75265e5dd26c871568359daac73c646346f14f9e83ad3d1caaa84136e3aabd/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">OlliOlli World</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -27489,7 +27492,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA09559_00/7/i_8f2ea7290027555b47b18cf8e469cf91a4dc2dd0445918792172f1fc9e6b7662/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">ONRUSH™</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -28035,7 +28038,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA06633_00/3/i_d608871643e7c4aa9b73ee8114ae527eff3548be4ac24e0053e3ceed1b903ff0/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Outlast 2</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -28387,6 +28390,51 @@
           </div>
         </div>
     </div>
+    <div id="game_pacmanworldrepac" class="game-row" data-game-title="PAC-MAN WORLD Re-PAC"
+      data-open-critic-id=""
+      data-game-release-date=""
+      data-open-critic-tier="n-a"
+      data-open-critic-score=""
+      data-open-critic-critics=""
+    >
+        <div class="game-cell game-placeholder game-steam">
+          <div class="game-info">
+            <img class="game-platform" alt="Steam" src="images/steam-logo.svg">
+          </div>
+        </div>
+        <div class="game-cell game-card game-playstation">
+          <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA06398_00/app/info/8/fi_3c6e8cbef0bb219a5d30b2cd04019ff340be719b555638210ebf121700bee3d5/icon0.png?w=180');"></div></div>
+          <div class="game-info">
+            <div class="game-title">PAC-MAN WORLD Re-PAC</div>
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
+          </div>
+        </div>
+        <div class="game-cell game-placeholder game-switch">
+          <div class="game-info">
+            <img class="game-platform" alt="Nintendo Switch" src="images/switch-logo.svg">
+          </div>
+        </div>
+        <div class="game-cell game-placeholder game-epic">
+          <div class="game-info">
+            <img class="game-platform" alt="Epic Games" src="images/epic-logo.svg">
+          </div>
+        </div>
+        <div class="game-cell game-placeholder game-gog">
+          <div class="game-info">
+            <img class="game-platform" alt="Good Old Games" src="images/gog-logo.svg">
+          </div>
+        </div>
+        <div class="game-cell game-placeholder game-amazon">
+          <div class="game-info">
+            <img class="game-platform" alt="Prime Gaming" src="images/amazon-logo.svg">
+          </div>
+        </div>
+        <div class="game-cell game-placeholder game-appstore">
+          <div class="game-info">
+            <img class="game-platform" alt="Apple App Store" src="images/appstore-logo.svg">
+          </div>
+        </div>
+    </div>
     <div id="game_paperbeast" class="game-row" data-game-title="Paper Beast"
       data-open-critic-id="9201/paper-beast"
       data-game-release-date="2020-03-24T00:00:00.000Z"
@@ -28567,6 +28615,51 @@
           </div>
         </div>
     </div>
+    <div id="game_payday3" class="game-row" data-game-title="PAYDAY 3"
+      data-open-critic-id=""
+      data-game-release-date=""
+      data-open-critic-tier="n-a"
+      data-open-critic-score=""
+      data-open-critic-critics=""
+    >
+        <div class="game-cell game-placeholder game-steam">
+          <div class="game-info">
+            <img class="game-platform" alt="Steam" src="images/steam-logo.svg">
+          </div>
+        </div>
+        <div class="game-cell game-card game-playstation">
+          <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA14411_00/app/info/81/fi_7611bae831bcda0009e1f646410e3ae4bd9dddb7403c78036bad5592a047e28c/icon0.png?w=180');"></div></div>
+          <div class="game-info">
+            <div class="game-title">PAYDAY 3</div>
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
+          </div>
+        </div>
+        <div class="game-cell game-placeholder game-switch">
+          <div class="game-info">
+            <img class="game-platform" alt="Nintendo Switch" src="images/switch-logo.svg">
+          </div>
+        </div>
+        <div class="game-cell game-placeholder game-epic">
+          <div class="game-info">
+            <img class="game-platform" alt="Epic Games" src="images/epic-logo.svg">
+          </div>
+        </div>
+        <div class="game-cell game-placeholder game-gog">
+          <div class="game-info">
+            <img class="game-platform" alt="Good Old Games" src="images/gog-logo.svg">
+          </div>
+        </div>
+        <div class="game-cell game-placeholder game-amazon">
+          <div class="game-info">
+            <img class="game-platform" alt="Prime Gaming" src="images/amazon-logo.svg">
+          </div>
+        </div>
+        <div class="game-cell game-placeholder game-appstore">
+          <div class="game-info">
+            <img class="game-platform" alt="Apple App Store" src="images/appstore-logo.svg">
+          </div>
+        </div>
+    </div>
     <div id="game_pegasusexpeditionthe" class="game-row" data-game-title="The Pegasus Expedition"
       data-open-critic-id="skip"
       data-game-release-date="2022-10-20T00:00:00.000Z"
@@ -28673,7 +28766,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA07814_00/9/i_a4cd04375be75eb6e2d56f3ec80ddee6066637669bd3afc36db2584a75969491/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">The Persistence</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -28763,7 +28856,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA20040_00/1/i_2a28d5e20c985857183a43853dffe4f81c770cc027f1f09293bab3a1fd39ceb3/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Persona 5 Strikers</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -28808,7 +28901,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA19467_00/4/i_4311ef56aac85fb65d95afe3d3772073773fb6871edc99a4db573c3e5e7126da/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">PGA TOUR 2K21</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -29127,7 +29220,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA01735_00/app/info/57/fi_6bb6d34bfb707f5d655c409963819df0cf5a31a8b0c14be3c0c20e06f6e4feb7/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Planet Coaster</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -29219,7 +29312,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA10852_00/2/i_3db67b88c6fcf29012f9d197a89244362f5fd9f15de65edc03d23f0f27eda4e9/i/icon0_01.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Plants vs. Zombies: Battle for Neighborville™</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -29399,7 +29492,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA06287_00/5/i_6322b4596ac6339ad1143b47f349f1d5a10902bb7fb0995c13b3f6e3e8d0eca7/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Portal Knights</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -29489,7 +29582,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA16559_00/3/i_90bc91ac5bfc8ba1fb0a3bbb6935d1e3b3b58060dc545bb6e2c832c08cfafede/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Predator: Hunting Grounds</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -30121,7 +30214,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA02603_00/2/i_fb099a9204ecdd7e3e8889df7fc789ccbff7831e6be70a815ad620edfabe1bb8/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Q.U.B.E: Director's Cut</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -30258,7 +30351,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA01073_00/2/i_0f51da87b08acdd8f6081235343f4671782e51d9fd7d2edf52e67c146d5c60da/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Ratchet & Clank™</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -30303,7 +30396,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA00031_00/1/i_de7f2d4471d56be1911987fdae0711e95cd6f21b0ae43c57c70d0bf785ae4acb/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Rayman Legends</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -30483,7 +30576,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA13830_00/3/i_f5bae0527b60973a1181fe5c6f48dd9c2ed83771b21bb35b7e10af51a18ebc59/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Remnant: From the Ashes</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -30573,7 +30666,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA01067_00/2/i_a05fd01e17259203eb01d4d31c193447f0fd82d3622bd6d35399c40f3c54fd5a/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Resident Evil™</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -30618,7 +30711,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA03842_00/3/i_c4c3cbf8ed69a0374ca868121fe2c006d3692b225d63eaca636da38bc971edef/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">RESIDENT EVIL 7 biohazard</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -30753,7 +30846,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA06360_00/3/i_1023c9e8a8e72680a38063392901f7e0efca24d3645564e0a36816b0d523389b/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">RiME</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -31203,7 +31296,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA18700_00/1/i_d68f914cc5bd5b597c582bf71cd23b37acc93e163c730425c00333b854133d27/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">RocketArena</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -31338,7 +31431,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA26457_00/4/i_99fb77c8131da8b4183c5637e66ed20b495f407e9e93a366cfe834b09f594017/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Saints Row</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -32105,7 +32198,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA08809_00/1/i_7981e1aa3c69c44a3b07ea68fdf6b1163d8444d157277cb24d88854bc416b405/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">SHADOW OF THE COLOSSUS™</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -32780,7 +32873,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA03001_00/app/info/37/fi_9875b8f3a9ea9bdfe31cc97f4a3c04016b3fb1cec2dddfadd9294efed8eb8126/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Sifu</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -33097,7 +33190,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA27430_00/1/i_594069671fd0037529c9b3bf682253431a840340a7737fb529361810503b88df/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Skul</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -33232,7 +33325,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA15338_00/1/i_7b512893718f3d3926d0ff26d457bca4d2d2239198d32ec106fcc513778c86c9/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Slay the Spire</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -33412,7 +33505,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA04099_00/3/i_c0ab7eef40ba7db7e4440093e88e9fd5425a5f2e07d14351b9181b7031e8527f/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Sniper Elite 4</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -33774,7 +33867,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA05674_00/3/i_8fbb26a455da29a687a99f841b72bb48d030c0988093db57d09e2ae14b00e070/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">SONIC FORCES</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -33999,7 +34092,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA00586_00/2/i_46a0181acac2583120901f19f67408c86f8cd7f378c1039891bc3423a1e15734/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Sparkle 2</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -34406,7 +34499,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA14909_00/4/i_c5bb0ce1278e0c7f13895b383a1e694bf0c1d2b3a4c94bec6af059d05a2da865/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">SpongeBob SquarePants: Battle For Bikini Bottom - Rehydrated</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -34451,7 +34544,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA30582_00/2/i_355202beb5779bdc0644d02422b6281316c534691451b9166d493c845ea35989/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">SpongeBob SquarePants: The Cosmic Shake</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -34588,7 +34681,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA31559_00/2/i_e0a0930aa759fee3aa5e69ee7be71b8deb1661e36d5b4b4d97a6334bd4f15b57/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">The Stanley Parable Ultra Deluxe</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -35668,7 +35761,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA05526_00/2/i_c8094d5d5778a7deb586d35a39a606beec8e8faf120802182960a69a51fcd45a/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">STEEP</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -36073,7 +36166,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA16221_00/1/i_5346de103a52708c12687fcc267c4e28855ff7a6e28dc1cfb0a69c9a73721645/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Streets of Rage 4</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -36163,7 +36256,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA01069_00/3/i_e639f49610c446726a939b64084819f6d2f50b526bd8f22ce58a1ee631a801fe/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Styx: Master of Shadows</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -36250,10 +36343,10 @@
           </div>
         </div>
         <div class="game-cell game-card game-playstation">
-          <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA03913_00/app/info/36/fi_9b1645ae50da469cab8ad3063c75fef86e1e1516a98f62cc4396d76b453df787/icon0.png?w=180');"></div></div>
+          <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA03913_00/app/info/41/fi_329f9ce3168fda84efa1f6ce2b354970c92bae37a9a15e4198df814304eb8eef/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Suicide Squad: Kill the Justice League</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -36754,7 +36847,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA04849_00/3/i_4bce5659b79c34f3c1d110314c8a54bcbcd128d23f2576279d3a9cb76d472206/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">The Surge</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -37298,7 +37391,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA01498_00/7/i_1507d4c30ff42cb5c3db741f0575c2bdc1aaad7ab4308e8694e753950dc6a010/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Table Top Racing: World Tour</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -37343,7 +37436,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA28469_00/2/i_bfa501b4fe4812da4762a33e132b6622ce35e4750193046c46641104f0645277/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Tails of Iron</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -37525,7 +37618,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA11115_00/2/i_f0b61619a4f13cb1749a986d662716ef654005c153193e48723c09fb5a2abc37/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Team Sonic Racing</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -37660,7 +37753,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA01801_00/app/info/75/fi_db48723357b27c2436956f92596a4a731adc3052c49bbfcbc17eda47694000c9/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Temtem</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -37705,7 +37798,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA23445_00/2/i_645e0d50f2e7590987cc145f7dd97271044ff7216e2ae8fa23f9d4b9e10a9d8e/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Tennis World Tour 2</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -38110,7 +38203,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA02646_00/2/i_3359099807adbb2194e50c6f0b0cdfeaa62c2974630984dec1cb40e57d7c6c45/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">This War of Mine: The Little Ones</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -38607,7 +38700,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA30036_00/3/i_444fa386251ba61dd0c8962e49ed17a0e0d932d3e66ebe4a9aaad13a6e4f0a89/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Tiny Tina's Assault on Dragon Keep: A Wonderlands One-shot Adventure</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -38652,7 +38745,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA04353_00/app/info/51/fi_3402833a0185ddbe05054c29e2b7d92e29a0c6b6018470e8afe539b0a5829697/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">TOEM</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -38877,7 +38970,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA02177_00/app/info/7/f_774dea14a4e0b54a7a4a782bdca2b3e0cc1dd957e0d76164cc8121d4c7428709/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Tony Hawk's™ Pro Skater™ 1 + 2</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -39372,7 +39465,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA02629_00/app/info/23/fi_a6ead0fac886b4024effd459666295506f990c6b16153bc043d40ecb5c27a805/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Trek To Yomi</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -39417,7 +39510,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA02855_00/app/info/29/fi_18506961a2c0583e30ec8eb6d166e3ce57ae18aa3c9a74252d1e236f7b90abaa/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Tribes of Midgard</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -39597,7 +39690,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA03055_00/app/info/5/fi_133c92b51b13e54bd8769c7baadb313a16add9bfe496899f3a6e3047f443783b/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Tunic</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -39824,7 +39917,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA04529_00/2/i_5f2c0e9f338befd4826f06058cd2bf09c2df55a89b80cc734cb66b2b16c418f1/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Uncharted™ 4: A Thief’s End</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -39869,7 +39962,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA02344_00/1/i_b9b8756a874c45d4dcceddcfaeaf51ad049af372ef6a63bd3d3261db15b0397e/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Uncharted™: The Nathan Drake Collection</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -40049,7 +40142,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA00194_00/2/i_e568ea0e665e205f2e2fc1585eab520e806034621d743bd5d355cef64a9e2ed1/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Until Dawn™</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -40094,7 +40187,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA02350_00/6/i_8739b21fea54c2b15cd27ee46ed504efab9d9546f158a00180e3d490de48951b/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Until Dawn™: Rush of Blood</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -40139,7 +40232,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA23195_00/3/i_71b466ef9f3e21445eb7f5d70dfa70c54457c4cfc343b740d0ac0539667eed8b/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Until You Fall</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -40274,7 +40367,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA03468_00/3/i_b53500af29886a40317286383edd4c0c960ea66a4ceef006051963f97dc7c2d1/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Vampyr</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -40454,7 +40547,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA27066_00/1/i_f64e176453f8552e718f1741f803196159f92b1088cb6d22d07ae7d014a9032f/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Virtua Fighter 5 Ultimate Showdown</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -40634,7 +40727,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA18498_00/1/i_34b47d4d78565a07f844500b30f469760c33cf9565e05faa8084c223f71e2e0c/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">The Walking Dead: Saints & Sinners</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -41084,7 +41177,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA07974_00/2/i_6d88053a890f153b51fc3c805b4ecb0b5332f19dd6b1aa5c062f0f182870eae6/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">What Remains of Edith Finch</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -41176,7 +41269,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA05670_00/4/i_beffa79c56bc9363b7049df6a2006892d8f2507db27f7abc79c452486f2f2c18/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">WIPEOUT™ OMEGA COLLECTION</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -41630,7 +41723,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA00824_00/2/i_2ead5743178ec6f3bb9f0e6a9a030a40eeea47b701568492b2575f2e3c1399ac/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Worms Battlegrounds</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -41720,7 +41813,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA23465_00/4/i_2f780bb81e9c88168714f366319adca805f89475eecd741a6acdf07355136b7a/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Worms Rumble</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -41765,7 +41858,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/sgst/prod/00/PPSA16307_00/app/info/82/fi_4cc07dd84ea936e9dc07ae3e6cf5a82120249ef12d1033a2334b9cccf98b2ccd/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">WWE 2K24</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -41810,7 +41903,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA16911_00/4/i_7c57fbe60a8741c665fa28c8a4c2bf009645d244ed87ad7f5a0ec77595236f30/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">WWE 2K Battlegrounds</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -41855,7 +41948,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA04530_00/7/i_27d717076b039d472179aa5e58824e5821c1ae5f0271bb269f1d1141072a3c6a/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">XCOM 2</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -41990,7 +42083,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA16745_00/1/i_7b2f4e6eb77ae1f364b1c3be21ea7326c6baaa7c12cd5351fddaf756a0029a47/i/icon0_01.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">Yakuza: Like A Dragon</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
@@ -42262,7 +42355,7 @@
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA01910_00/1/i_a80306fac10a79d7df2ffeea2f68e6fc2e1e8b7a2a59365e86d458680e1dc37a/i/icon0.png?w=180');"></div></div>
           <div class="game-info">
             <div class="game-title">ZOMBI</div>
-            <img class="game-platform" alt="PlayStation" src="images/playstation-logo.svg">
+            <img class="game-platform" alt="PlayStation" src="images/psplus-logo.svg">
           </div>
         </div>
         <div class="game-cell game-placeholder game-switch">
