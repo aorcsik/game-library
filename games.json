@@ -9924,5 +9924,29 @@
       "releaseDate": "2019-07-01T00:00:00.000Z",
       "updated": "2025-02-11T03:40:55.531Z"
     }
+  },
+  {
+    "title": "PAC-MAN WORLD Re-PAC",
+    "openCriticId": "13448/pac-man-world-re-pac",
+    "openCriticData": {
+      "tier": "fair",
+      "score": 71,
+      "critics": 46,
+      "cover": "https://img.opencritic.com/game/13448/kvyWHuEH.jpg",
+      "releaseDate": "2022-08-26T00:00:00.000Z",
+      "updated": "2025-02-13T12:54:28.612Z"
+    }
+  },
+  {
+    "title": "PAYDAY 3",
+    "openCriticId": "15193/payday-3",
+    "openCriticData": {
+      "tier": "weak",
+      "score": 63,
+      "critics": 25,
+      "cover": "https://img.opencritic.com/game/15193/s6yM7oHP.jpg",
+      "releaseDate": "2023-09-21T00:00:00.000Z",
+      "updated": "2025-02-13T12:54:43.307Z"
+    }
   }
 ]

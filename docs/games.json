@@ -9736,6 +9736,15 @@
   "payday3": {
     "title": "PAYDAY 3",
     "key": "payday3",
+    "openCriticId": "15193/payday-3",
+    "openCriticData": {
+      "tier": "weak",
+      "score": 63,
+      "critics": 25,
+      "cover": "https://img.opencritic.com/game/15193/s6yM7oHP.jpg",
+      "releaseDate": "2023-09-21T00:00:00.000Z",
+      "updated": "2025-02-13T12:54:43.307Z"
+    },
     "playstation_generation": [
       "PS5"
     ],
@@ -9746,6 +9755,15 @@
   "pacmanworldrepac": {
     "title": "PAC-MAN WORLD Re-PAC",
     "key": "pacmanworldrepac",
+    "openCriticId": "13448/pac-man-world-re-pac",
+    "openCriticData": {
+      "tier": "fair",
+      "score": 71,
+      "critics": 46,
+      "cover": "https://img.opencritic.com/game/13448/kvyWHuEH.jpg",
+      "releaseDate": "2022-08-26T00:00:00.000Z",
+      "updated": "2025-02-13T12:54:28.612Z"
+    },
     "playstation_generation": [
       "PS4",
       "PS5"

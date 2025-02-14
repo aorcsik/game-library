@@ -9,12 +9,13 @@ body, html {
 }
 
 body {
-  --background: #F9F9F9;
-  --text: #212121;
+  --background-color: rgb(249, 249, 249);
+  --background-color-components: 249, 249, 249;
+  --text-color: #212121;
   --secondary-text: #666;
   --subtle-accent: #ddd;
   --accent: #666;
-  --card-background: #F5F5F5;
+  --card-background: #F0F0F0;
   --card-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   --card-hover-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   --body-font: "Figtree", Arial, Helvetica, sans-serif;
@@ -34,8 +35,8 @@ body {
 
 
   font-family: var(--body-font);
-  background: var(--background);
-  color: var(--text);
+  background: var(--background-color);
+  color: var(--text-color);
 
   & * {
     box-sizing: border-box;
@@ -59,8 +60,9 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (prefers-color-scheme: dark) {
   body {
-    --background: #121212;
-    --text: #E0E0E0;
+    --background-color: rgb(18, 18, 18);
+    --background-color-components: 18, 18, 18;
+    --text-color: #E0E0E0;
     --secondary-text: #666;
     --subtle-accent: #333;
     --accent: #666;
@@ -136,8 +138,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .game-row-title {
   display: none;
-  text-decoration: none;
-  color: var(--text);
+  
+  & .open-critic-link {
+    text-decoration: none;
+    color: var(--text-color);
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+  }
 }
 
 .game-cell {
@@ -212,7 +220,8 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 1px solid var(--subtle-accent);
   position: sticky;
   top: 0;
-  background: var(--background);
+  backdrop-filter: blur(10px);
+  background-color: rgba(var(--background-color-components), 0.5);
   z-index: 4;
 }
 
@@ -230,6 +239,7 @@ h1, h2, h3, h4, h5, h6 {
     border-right: 1px solid var(--subtle-accent);
     white-space: nowrap;
     gap: .5rem;
+    text-shadow: 0 0 5px var(--background-color);
 
     & .game-count {
       color: var(--accent);
@@ -246,7 +256,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   padding: .5rem .6125rem;
-  background: var(--background);
+  background: var(--background-color);
   border: 1px solid var(--subtle-accent);
   border-radius: .25rem;
   height: 2.5rem;
@@ -294,11 +304,11 @@ h1, h2, h3, h4, h5, h6 {
 
   & select,
   & input {
-    background-color: transparent;
+    background-color: var(--background-color);
     border: 0;
     outline: 0;
     padding: .5rem;
-    color: var(--text);
+    color: var(--text-color);
     font-size: 1rem;
     width: 100%;
 
@@ -316,7 +326,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     & input::-webkit-search-cancel-button {
-      color: var(--text);
+      color: var(--text-color);
     }
 
     & .search-icon,
@@ -338,7 +348,7 @@ h1, h2, h3, h4, h5, h6 {
       padding: 0;
       margin: 0;
       cursor: pointer;
-      color: var(--text);
+      color: var(--text-color);
     }
 
     & input:valid ~ .cancel-button {
@@ -372,6 +382,8 @@ h1, h2, h3, h4, h5, h6 {
   & .game-row-title {
     display: flex;
     gap: .5rem;
+    align-items: center;
+
     position: absolute;
     z-index: 3;
     padding: .25rem .5rem;
@@ -379,7 +391,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: .5rem;
     font-size: 1.1rem;
 
-    background: var(--background);
+    background: var(--background-color);
 
     & .game-title {
       display: none;
@@ -460,10 +472,11 @@ h1, h2, h3, h4, h5, h6 {
   & .game-row-title {
     display: flex;
     gap: .5rem;
+    align-items: center;
+
     width: 40rem;
     padding-left: .5rem;
     border-radius: .5rem;
-    align-items: center;
 
     & .game-collection {
       display: none;
@@ -506,7 +519,7 @@ h1, h2, h3, h4, h5, h6 {
         display: block;
         position: absolute;
         z-index: 1;
-        background: var(--background);
+        background: var(--background-color);
         border: 1px solid var(--subtle-accent);
         padding: .5rem .5rem;
         left: 5.5rem;

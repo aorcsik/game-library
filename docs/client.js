@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   gamesHeader.insertBefore(gameRowTitle, gamesHeader.firstChild);
 
   document.querySelectorAll(".game-row").forEach(row => {
-    const gameRowTitle = document.createElement("a");
+    const gameRowTitle = document.createElement("div");
     gameRowTitle.className = "game-row-title"
 
     const openCriticTier = row.dataset.openCriticTier ? row.dataset.openCriticTier : "";
@@ -49,12 +49,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     const openCriticCritics = row.dataset.openCriticCritics ? `${row.dataset.openCriticCritics}%` : "";
     const openCriticUrl = row.dataset.openCriticId ? `https://opencritic.com/game/${row.dataset.openCriticId}` : "";
     const releaseDate = row.dataset.gameReleaseDate ? new Date(row.dataset.gameReleaseDate) : null;
-    gameRowTitle.href = openCriticUrl
-    gameRowTitle.target = "_blank";
     gameRowTitle.innerHTML = 
-      `<span class="open-critic-tier ${openCriticTierClass}" title="${openCriticTier}">${openCriticTier}</span>` +
-      `<span class="open-critic-score ${openCriticTierClass}">${openCriticScore}</span>` +
-      `<span class="open-critic-critics ${openCriticTierClass}">${openCriticCritics}</span>` +
+      `<a href="${openCriticUrl}" target="_blank" class="open-critic-link">` +
+        `<span class="open-critic-tier ${openCriticTierClass}" title="${openCriticTier}">${openCriticTier}</span>` +
+        `<span class="open-critic-score ${openCriticTierClass}">${openCriticScore}</span>` +
+        `<span class="open-critic-critics ${openCriticTierClass}">${openCriticCritics}</span>` +
+      `</a>` +
       `<span class="game-title">
         ${row.dataset.gameTitle}
         <span class="release-date">${releaseDate ? `(${releaseDate.getFullYear()})` : ""}</span>
