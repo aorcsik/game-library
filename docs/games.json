@@ -195,6 +195,15 @@
     "steam_cover": "https://steamcdn-a.akamaihd.net/steam/apps/32440/header.jpg",
     "steam_icon": "http://media.steampowered.com/steamcommunity/public/images/apps/32440/096307d4ae0decd6a331e381f8dd464d75e3d9d6.jpg"
   },
+  "fallout3gameoftheyearedition": {
+    "title": "Fallout 3 - Game of the Year Edition",
+    "key": "fallout3gameoftheyearedition",
+    "openCriticId": "skip",
+    "releaseDate": "2008-10-28T00:00:00.000Z",
+    "steam": "Fallout 3 - Game of the Year Edition",
+    "steam_cover": "https://steamcdn-a.akamaihd.net/steam/apps/22370/header.jpg",
+    "steam_icon": "http://media.steampowered.com/steamcommunity/public/images/apps/22370/21d7090bdea8f6685ca730850b7b55acfdb92732.jpg"
+  },
   "masseffect22010edition": {
     "title": "Mass Effect 2 (2010) Edition",
     "key": "masseffect22010edition",
@@ -772,6 +781,15 @@
     "steam": "The Bard's Tale",
     "steam_cover": "https://steamcdn-a.akamaihd.net/steam/apps/41900/header.jpg",
     "steam_icon": "http://media.steampowered.com/steamcommunity/public/images/apps/41900/66d6372dc2749f17284bf384330e74a86831c267.jpg"
+  },
+  "falloutnewvegas": {
+    "title": "Fallout: New Vegas",
+    "key": "falloutnewvegas",
+    "openCriticId": "skip",
+    "releaseDate": "2010-10-19T00:00:00.000Z",
+    "steam": "Fallout: New Vegas",
+    "steam_cover": "https://steamcdn-a.akamaihd.net/steam/apps/22380/header.jpg",
+    "steam_icon": "http://media.steampowered.com/steamcommunity/public/images/apps/22380/1711fd8c46d739feec76bd4a64eaeeca5b87e3a7.jpg"
   },
   "insanelytwistedshadowplanet": {
     "title": "Insanely Twisted Shadow Planet",
@@ -5497,6 +5515,22 @@
     "steam_cover": "https://steamcdn-a.akamaihd.net/steam/apps/1785150/header.jpg",
     "steam_icon": "http://media.steampowered.com/steamcommunity/public/images/apps/1785150/6fc10e1d19f90e59276fa2760e80979381c7f9b2.jpg"
   },
+  "frostpunk": {
+    "title": "Frostpunk",
+    "key": "frostpunk",
+    "openCriticId": "5948/frostpunk",
+    "openCriticData": {
+      "tier": "mighty",
+      "score": 86,
+      "critics": 92,
+      "cover": "https://img.opencritic.com/game/5948/Dt3lD3hP.jpg",
+      "releaseDate": "2018-04-24T00:00:00.000Z",
+      "updated": "2025-02-16T01:08:45.383Z"
+    },
+    "steam": "Frostpunk",
+    "steam_cover": "https://steamcdn-a.akamaihd.net/steam/apps/323190/header.jpg",
+    "steam_icon": "http://media.steampowered.com/steamcommunity/public/images/apps/323190/0561084dfe24c469c905fe0681da82aa31102836.jpg"
+  },
   "moonlighter": {
     "title": "Moonlighter",
     "key": "moonlighter",
@@ -8876,7 +8910,7 @@
       "updated": "2025-02-10T01:20:36.780Z"
     },
     "switch": "Mario + Rabbids Kingdom Battle Gold Edition",
-    "switch_cover": "https://assets.nintendo.com/image/upload/ar_16:9,b_auto:border,c_lpad/b_white/f_auto/q_auto/dpr_1.5/c_scale,w_300/ncom/en_US/dlc/switch-dlc/mario-plus-rabbids-kingdom-battle-dlc/rom-bundle/mario-plus-rabbids-kingdom-battle-gold-edition/image"
+    "switch_cover": "https://www.nintendo.com/eu/media/images/08_content_images/games_6/nintendo_switch_7/nswitch_marioandrabbidskingdombattle_1/CI_NSwitch_MarioAndRabbidsKingdomBattle_GoldEdition_enGB_image950w.jpg"
   },
   "easportsfifa18": {
     "title": "EA SPORTS™ FIFA 18",
@@ -8906,7 +8940,7 @@
       "updated": "2025-02-10T01:13:43.515Z"
     },
     "switch": "Luigi’s Mansion™ 3",
-    "switch_cover": "https://assets.nintendo.com/image/upload/ar_16:9,b_auto:border,c_lpad/b_white/f_auto/q_auto/dpr_1.5/c_scale,w_300/ncom/software/switch/70010000001620/2b166fb3197dacfde1d939acd6a976b9fbe3b1a32c54f9f0d2c8d23efb22412d"
+    "switch_cover": "https://www.nintendo.com/eu/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_LuigisMansion3_image1600w.jpg"
   },
   "ringfitadventure": {
     "title": "Ring Fit Adventure",
@@ -8921,22 +8955,22 @@
       "updated": "2025-02-10T14:01:44.437Z"
     },
     "switch": "Ring Fit Adventure",
-    "switch_cover": "https://assets.nintendo.com/image/upload/ar_16:9,b_auto:border,c_lpad/b_white/f_auto/q_auto/dpr_1.5/c_scale,w_300/ncom/en_US/products/games/switch/ring-fit-adventure/110583-switch-ring-fit-adventure-1200x675"
+    "switch_cover": "https://www.nintendo.com/eu/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_RingFitAdventure_Teasers_image1600w.jpg"
   },
-  "fitnessboxing3yourpersonaltrainer": {
-    "title": "Fitness Boxing 3: Your Personal Trainer",
-    "key": "fitnessboxing3yourpersonaltrainer",
-    "openCriticId": "17736/fitness-boxing-3-your-personal-trainer",
+  "fitnessboxing": {
+    "title": "Fitness Boxing",
+    "key": "fitnessboxing",
+    "openCriticId": "7048/fitness-boxing",
     "openCriticData": {
       "tier": "fair",
-      "score": 69,
-      "critics": 44,
-      "cover": "https://img.opencritic.com/game/17736/3hGrw0yj.jpg",
-      "releaseDate": "2024-12-05T00:00:00.000Z",
-      "updated": "2025-02-09T23:29:14.301Z"
+      "score": 66,
+      "critics": 29,
+      "cover": "https://img.opencritic.com/game/7048/D8b9XVHr.jpg",
+      "releaseDate": "2019-01-04T00:00:00.000Z",
+      "updated": "2025-02-16T01:14:31.258Z"
     },
-    "switch": "Fitness Boxing 3: Your Personal Trainer",
-    "switch_cover": "https://assets.nintendo.com/image/upload/ar_16:9,b_auto:border,c_lpad/b_white/f_auto/q_auto/dpr_1.5/c_scale,w_300/ncom/software/switch/70010000089073/7e0635473cabaa01166b0efeef9ca58d1501aeda3d941d30cc9e6760e6af5a5e"
+    "switch": "Fitness Boxing",
+    "switch_cover": "https://www.nintendo.com/eu/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_FitnessBoxing_image1600w.jpg"
   },
   "80days": {
     "title": "80 Days",

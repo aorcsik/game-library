@@ -47,14 +47,21 @@ document.addEventListener("DOMContentLoaded", async () => {
     const openCriticTierClass = openCriticTier ? "tier-" + openCriticTier.toLowerCase().replace(/\s+/g, "-") : "";
     const openCriticScore = row.dataset.openCriticScore ? row.dataset.openCriticScore : "";
     const openCriticCritics = row.dataset.openCriticCritics ? `${row.dataset.openCriticCritics}%` : "";
-    const openCriticUrl = row.dataset.openCriticId ? `https://opencritic.com/game/${row.dataset.openCriticId}` : "";
+    const openCriticUrl = row.dataset.openCriticId && row.dataset.openCriticId !== "skip" ? `https://opencritic.com/game/${row.dataset.openCriticId}` : "";
     const releaseDate = row.dataset.gameReleaseDate ? new Date(row.dataset.gameReleaseDate) : null;
+    
+    const openCriticLink = row.dataset.openCriticId && row.dataset.openCriticId !== "skip" ? `<a href="${openCriticUrl}" target="_blank" class="open-critic-link">` +
+      `<span class="open-critic-tier ${openCriticTierClass}" title="${openCriticTier}">${openCriticTier}</span>` +
+      `<span class="open-critic-score ${openCriticTierClass}">${openCriticScore}</span>` +
+      `<span class="open-critic-critics ${openCriticTierClass}">${openCriticCritics}</span>` +
+    `</a>` : `<span class="open-critic-link disabled">` +
+      `<span class="open-critic-tier ${openCriticTierClass}" title="${openCriticTier}">${openCriticTier}</span>` +
+      `<span class="open-critic-score ${openCriticTierClass}">${openCriticScore}</span>` +
+      `<span class="open-critic-critics ${openCriticTierClass}">${openCriticCritics}</span>` +
+    `</a>`;
+
     gameRowTitle.innerHTML = 
-      `<a href="${openCriticUrl}" target="_blank" class="open-critic-link">` +
-        `<span class="open-critic-tier ${openCriticTierClass}" title="${openCriticTier}">${openCriticTier}</span>` +
-        `<span class="open-critic-score ${openCriticTierClass}">${openCriticScore}</span>` +
-        `<span class="open-critic-critics ${openCriticTierClass}">${openCriticCritics}</span>` +
-      `</a>` +
+      openCriticLink +
       `<span class="game-title">
         ${row.dataset.gameTitle}
         <span class="release-date">${releaseDate ? `(${releaseDate.getFullYear()})` : ""}</span>
