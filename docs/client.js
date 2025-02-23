@@ -16,8 +16,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     return svgText;
   };
 
-  const replaceSvgImage = async img => {
-    const svgText = await fetchSvgText(img.src);
+  const replaceSvgImage = img => {
+    if (!img.src.match(/(amazon|appstore|epic|gog|playstation|steam|switch)-logo/)) return;
+
+    const svgText = svgTextCache[img.src];
 
     // Parse the SVG text and get the SVG element
     const parser = new DOMParser();
@@ -58,7 +60,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       `<span class="open-critic-tier ${openCriticTierClass}" title="${openCriticTier}">${openCriticTier}</span>` +
       `<span class="open-critic-score ${openCriticTierClass}">${openCriticScore}</span>` +
       `<span class="open-critic-critics ${openCriticTierClass}">${openCriticCritics}</span>` +
-    `</a>`;
+    `</span>`;
 
     gameRowTitle.innerHTML = 
       openCriticLink +
@@ -67,13 +69,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         <span class="release-date">${releaseDate ? `(${releaseDate.getFullYear()})` : ""}</span>
       </span>`;
     row.insertBefore(gameRowTitle, row.firstChild);
-  });
-
-  const form = document.getElementById("game_form");
-  let url = new URL(document.location);
-  formFields.forEach(field => {
-    if (!url.searchParams.has(field)) return;
-    form[field].value = url.searchParams.get(field);
   });
 
   if (window.innerWidth <= 600) {
@@ -142,9 +137,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   };
 
-  handleFilter();
-
   const handleFormChange = () => {
+    let url = new URL(document.location);
     formFields.forEach(field => {
       if (!form[field].value) {
         url.searchParams.delete(field);
@@ -153,6 +147,17 @@ document.addEventListener("DOMContentLoaded", async () => {
       url.searchParams.set(field, form[field].value);
     });
     window.history.pushState(null, '', url.toString());
+    handleFilter();
+  };
+
+  const form = document.getElementById("game_form");
+
+  const handlePageLoad = () => {
+    let url = new URL(document.location);
+    formFields.forEach(field => {
+      if (!url.searchParams.has(field)) return;
+      form[field].value = url.searchParams.get(field);
+    });
     handleFilter();
   };
 
@@ -173,23 +178,29 @@ document.addEventListener("DOMContentLoaded", async () => {
       handleFormChange();
     }, 500);
   });
+
   form.q.addEventListener("invalid", event => {
     event.preventDefault();
   });
+
   form.q.parentNode.querySelector(".cancel-button").addEventListener("click", event => {
     form.q.value = "";
     handleFormChange();
   });
 
+  window.addEventListener("popstate", event => {
+    handlePageLoad();
+  });
+
+  handlePageLoad();
+
   // Select all <img> tags with the "icon" class
   const svgImages = document.querySelectorAll("img.game-platform");
-
-  document.querySelector(".game-count").innerHTML = document.querySelectorAll(".game-row").length;
 
   await Promise.all([...svgImages].reduce((svgs, img) => {
     if (!svgs.includes(img.src)) svgs.push(img.src);
     return svgs;
   }, []).map(src => fetchSvgText(src)));
 
-  await Promise.all([...svgImages].map(img => replaceSvgImage(img)));
+  [...svgImages].forEach(img => replaceSvgImage(img));
 });
