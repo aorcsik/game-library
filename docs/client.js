@@ -71,10 +71,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     row.insertBefore(gameRowTitle, row.firstChild);
   });
 
-  if (window.innerWidth <= 600) {
-    form.layout.value = "games";
-  }
-
   let rowRevealInterval = null;
   const handleFilter = () => {
 
@@ -158,6 +154,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (!url.searchParams.has(field)) return;
       form[field].value = url.searchParams.get(field);
     });
+    if (document.documentElement.clientWidth <= 600) {
+      form.layout.value = "games";
+    }
     handleFilter();
   };
 
