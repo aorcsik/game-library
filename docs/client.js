@@ -115,6 +115,9 @@ document.addEventListener("DOMContentLoaded", async () => {
           }
           return reverse * (a.dataset.openCriticCritics - b.dataset.openCriticCritics);
         }
+        if (form.sort_by.value === "steam_reviews") {
+          return reverse * (a.dataset.steamReviewScore - b.dataset.steamReviewScore);
+        }
         return 0;
       })
       .forEach(row => {
