@@ -35,6 +35,9 @@ body {
   --open-critic-tier-mighty-icon: url("https://img.opencritic.com/mighty-man/mighty-head.png");
   --opem-critic-tier-mighty-color: #fc430a;
 
+  --steam-review-negative: #D4572F;
+  --steam-review-mixed: #D1B67F;
+  --steam-review-positive: #1573B5;
 
   font-family: var(--body-font);
   background: var(--background-color);
@@ -70,6 +73,10 @@ h1, h2, h3, h4, h5, h6 {
     --background-color-components: 18, 18, 18;
     --accent-color-componenrts: 102, 102, 102;
     --subtle-accent-color-components: 51, 51, 51;
+
+    --steam-review-negative: #A34C25;
+    --steam-review-mixed: #B9A074;
+    --steam-review-positive: #66C0F4;
     
     --text-color: #E0E0E0;
     --secondary-text: #666;
@@ -604,6 +611,21 @@ h1, h2, h3, h4, h5, h6 {
 
 .game-title .release-date {
   color: var(--secondary-text);
+}
+
+.game-title .steam-review {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--steam-review-negative);
+  display: block;
+  font-size: .6rem;
+
+  &.mixed {
+    color: var(--steam-review-mixed);
+  }
+  &.positive {
+    color: var(--steam-review-positive);
+  }
 }
 
 .mobile-menu-open,

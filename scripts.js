@@ -1,7 +1,10 @@
 // Steam
 // API Key from https://steamcommunity.com/dev/apikey
-// API Docs: https://developer.valvesoftware.com/wiki/Steam_Web_API#GetOwnedGames_(v0001)
-// https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=7A3F672ACCA3D06733AB8A992CB5CB34&steamid=76561197997887483&include_appinfo=1&format=json
+// API Docs:    https://developer.valvesoftware.com/wiki/Steam_Web_API#GetOwnedGames_(v0001)
+// Owned Games: https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key={STEAM_API_KEY}&steamid={STEAM_ID}&include_appinfo=1&format=json
+// Wishlist:    https://api.steampowered.com/IWishlistService/GetWishlist/v1/?key={STEAM_API_KEY}&steamid={STEAM_ID}&format=json
+// App Reviews: https://store.steampowered.com/appreviews/730?json=1
+// App Details: https://store.steampowered.com/api/appdetails?appids=730
 
 // Epic Game Store
 // ~/Library/Application\ Support/heroic/store_cache/legendary_library.json

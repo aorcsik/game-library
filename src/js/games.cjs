@@ -1,5 +1,5 @@
 const fs = require('fs');
-const config = require('./config.cjs');
+const config = require('../../config.cjs');
 
 // const formatTitle = (title) => {
 //   return title.replace(/[™®]/, "");
@@ -29,7 +29,8 @@ const skipTitle = [
 // Steam
   "Aseprite",
   "Mass Effect 2 (2010)",
-  "Indie Game: The Movie"
+  "Indie Game: The Movie",
+  "Vessel Demo",
 ];
 
 const gameCollections = {
@@ -48,7 +49,7 @@ const formatTitle = (title) => {
   return title;
 }
 
-(async () => {
+const generateGamesData = async () => {
   process.stdout.write("Games\n");
 
   const games = {};
@@ -78,8 +79,16 @@ const formatTitle = (title) => {
       ...gameConfig
     };
   };
+  const updateGameConfig = async (title, gameConfigUpdates) => {
+    const gameConfig = findGameConfig(title);
+    if (gameConfig) {
+      Object.keys(gameConfigUpdates).forEach(key => {
+        gameConfig[key] = gameConfigUpdates[key];
+      });
+    }
+  };
 
-  const steam_api_response = await fetch(config.steam_library);
+  const steam_api_response = await fetch(`https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${config.steam_api_key}&steamid=${config.steam_id}&include_appinfo=1&format=json`);
   const steam_data = await steam_api_response.json();
   steam_data.response.games.forEach(element => {
     if (skipTitle.includes(element.name)) return;
@@ -88,6 +97,7 @@ const formatTitle = (title) => {
     if (gameCollections[element.name]) {
       gameCollections[element.name].forEach(collectionItem => {
         const collectionTitle = formatTitle(collectionItem.title);
+        updateGameConfig(collectionTitle, { steamAppId: element.appid });
         const gameConfig = getGameConfig(collectionTitle);
         if (!games[gameConfig.key]) games[gameConfig.key] = gameConfig;
         games[gameConfig.key].steam = collectionTitle;
@@ -97,6 +107,7 @@ const formatTitle = (title) => {
         platforms.steam.count++;
       });
     } else {
+      updateGameConfig(title, { steamAppId: element.appid });
       const gameConfig = getGameConfig(title);
       if (!games[gameConfig.key]) games[gameConfig.key] = gameConfig;
       games[gameConfig.key].steam = title;
@@ -235,14 +246,33 @@ const formatTitle = (title) => {
   </div>
   `;
 
+  const getReleaseDate = (game) => {
+    if (game.openCriticData && game.openCriticData.releaseDate) {
+      return game.openCriticData.releaseDate;
+    }
+    if (game.steamData && game.steamData.releaseDate) {
+      return game.steamData.releaseDate;
+    }
+    if (game.releaseDate) {
+      return game.releaseDate;
+    }
+    return "";
+  };
+
   Object.keys(games).sort().forEach(key => {
     gameGrid += `
     <div id="game_${key}" class="game-row" data-game-title="${games[key].title}"
       data-open-critic-id="${games[key].openCriticId ? games[key].openCriticId : ""}"
-      data-game-release-date="${games[key].openCriticData && games[key].openCriticData.releaseDate ? games[key].openCriticData.releaseDate : (games[key].releaseDate ? games[key].releaseDate : "")}"
+      data-game-release-date="${getReleaseDate(games[key])}"
       data-open-critic-tier="${games[key].openCriticData && games[key].openCriticData.tier ? games[key].openCriticData.tier : "n-a"}"
       data-open-critic-score="${games[key].openCriticData && games[key].openCriticData.score ? games[key].openCriticData.score : ""}"
       data-open-critic-critics="${games[key].openCriticData && games[key].openCriticData.critics ? games[key].openCriticData.critics : ""}"
+      data-steam-app-id="${games[key].steamAppId ? games[key].steamAppId : ""}"
+      data-steam-genres="${games[key].steamData && games[key].steamData.genres ? games[key].steamData.genres.join(",") : ""}"
+      data-steam-review-score="${games[key].steamData && games[key].steamData.reviewScore ? games[key].steamData.reviewScore : ""}"
+      data-steam-review-score-description="${games[key].steamData && games[key].steamData.reviewScoreDescription ? games[key].steamData.reviewScoreDescription : ""}"
+      data-metacritic-score="${games[key].steamData && games[key].steamData.metacriticScore ? games[key].steamData.metacriticScore : ""}"
+      data-metacritic-url="${games[key].steamData && games[key].steamData.metacriticUrl ? games[key].steamData.metacriticUrl : ""}"
     >`;
     Object.keys(platforms).forEach(platform => {
       if (games[key][platform]) {
@@ -275,7 +305,11 @@ const formatTitle = (title) => {
 
   const template = await fs.promises.readFile("./template.html");
   let html = template.toString().replace("{{game-grid}}", gameGrid);
-  await fs.promises.writeFile("docs/index.html", html);
 
+  await fs.promises.writeFile("./games.json", JSON.stringify(gamesConfig, null, 2));
+  
+  await fs.promises.writeFile("docs/index.html", html);
   await fs.promises.writeFile("docs/games.json", JSON.stringify(games, null, 2));
-})();
+};
+
+module.exports = generateGamesData;

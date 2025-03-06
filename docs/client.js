@@ -50,6 +50,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     const openCriticScore = row.dataset.openCriticScore ? row.dataset.openCriticScore : "";
     const openCriticCritics = row.dataset.openCriticCritics ? `${row.dataset.openCriticCritics}%` : "";
     const openCriticUrl = row.dataset.openCriticId && row.dataset.openCriticId !== "skip" ? `https://opencritic.com/game/${row.dataset.openCriticId}` : "";
+
+    let steamReviewScoreClass = "steam-review";
+    if (row.dataset.steamReviewScore && parseInt(row.dataset.steamReviewScore, 10) === 5) steamReviewScoreClass = "steam-review mixed";
+    if (row.dataset.steamReviewScore && parseInt(row.dataset.steamReviewScore, 10) > 5) steamReviewScoreClass = "steam-review positive";
+    const steamStoreUrl = row.dataset.steamAppId ? `https://store.steampowered.com/app/${row.dataset.steamAppId}/` : "";
+    const steamReviewScoreDescription = row.dataset.steamReviewScoreDescription ? row.dataset.steamReviewScoreDescription : ""
     const releaseDate = row.dataset.gameReleaseDate ? new Date(row.dataset.gameReleaseDate) : null;
     
     const openCriticLink = row.dataset.openCriticId && row.dataset.openCriticId !== "skip" ? `<a href="${openCriticUrl}" target="_blank" class="open-critic-link">` +
@@ -67,6 +73,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       `<span class="game-title">
         ${row.dataset.gameTitle}
         <span class="release-date">${releaseDate ? `(${releaseDate.getFullYear()})` : ""}</span>
+        <a href="${steamStoreUrl}" target="_blank" class="${steamReviewScoreClass}">${steamReviewScoreDescription}</a>
       </span>`;
     row.insertBefore(gameRowTitle, row.firstChild);
   });
