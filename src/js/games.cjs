@@ -170,6 +170,7 @@ const generateGamesData = async () => {
       if (!games[gameConfig.key]) games[gameConfig.key] = gameConfig;
       games[gameConfig.key].switch = title;
       games[gameConfig.key].switch_cover = element.cover;
+      games[gameConfig.key].switch_physical = !!element.physical;
       platforms.switch.count++;
     });
   });
@@ -182,6 +183,7 @@ const generateGamesData = async () => {
       if (!games[gameConfig.key]) games[gameConfig.key] = gameConfig;
       games[gameConfig.key].appstore = title;
       games[gameConfig.key].appstore_cover = element.cover;
+      games[gameConfig.key].appstore_netflix = !!element.netflix;
       platforms.appstore.count++;
     });
   });
@@ -207,6 +209,7 @@ const generateGamesData = async () => {
           games[gameConfig.key].playstation_cover = purchase.cover;
           games[gameConfig.key].playstation_plus = games[gameConfig.key].playstation_plus === false ? false : purchase.serviceUpsell === "PS PLUS";
           games[gameConfig.key].playstation_generation.push(purchase.platform);
+          games[gameConfig.key].playstation_physical = !!purchase.physical;
           platforms.playstation.count++;
         });
       } else {
@@ -221,6 +224,7 @@ const generateGamesData = async () => {
         games[gameConfig.key].playstation_cover = purchase.cover;
         games[gameConfig.key].playstation_plus = games[gameConfig.key].playstation_plus === false ? false : purchase.serviceUpsell === "PS PLUS";
         games[gameConfig.key].playstation_generation.push(purchase.platform);
+        games[gameConfig.key].playstation_physical = !!purchase.physical;
         platforms.playstation.count++;
       }
     });
@@ -279,15 +283,21 @@ const generateGamesData = async () => {
         const title = games[key][platform];
         const cover = games[key][platform + "_cover"];
         const collection = games[key][platform + "_collection"];
+        const physical = !!games[key][platform + "_physical"];
 
-        const platformLogo = platform === "playstation" && games[key].playstation_plus ? "psplus" : platform;
+        let platformLogo = platform;
+        if (platform === "playstation" && games[key].playstation_plus) {
+          platformLogo = "psplus";
+        } else if (platform === "appstore" && games[key].appstore_netflix) {
+          platformLogo = "netflix";
+        }
 
         gameGrid += `
         <div class="game-cell game-card game-${platform}">
           <div class="game-cover"><div class="game-cover-image" style="background-image: url('${cover}');"></div></div>
           <div class="game-info">
             <div class="game-title">${title}${collection ? "<div class='game-collection'>(" + collection + ")</div>" : ""}</div>
-            <img class="game-platform" alt="${platforms[platform].name}" src="images/${platformLogo}-logo.svg">
+            <img class="game-platform${physical ? ' physical' : ''}" alt="${platforms[platform].name}" src="images/${platformLogo}-logo.svg">
           </div>
         </div>`;
       } else {

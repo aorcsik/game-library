@@ -528,12 +528,6 @@
     }
   },
   {
-    "title": "OXENFREE",
-    "sameGame": [
-      "OXENFREE Mobile"
-    ]
-  },
-  {
     "title": "Manticore - Galaxy on Fire",
     "sameGame": [
       "Galaxy on Fire 3"
@@ -16006,7 +16000,10 @@
       "reviewScoreDescription": "Very Positive",
       "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/388880/header.jpg?t=1718924110",
       "updated": "2025-03-06T02:03:56.171Z"
-    }
+    },
+    "sameGame": [
+      "OXENFREE: Netflix Edition"
+    ]
   },
   {
     "title": "PAC-MAN™ CHAMPIONSHIP EDITION 2",
@@ -24780,6 +24777,276 @@
       "reviewScoreDescription": "Very Positive",
       "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/495140/header.jpg?t=1701305352",
       "updated": "2025-03-06T01:54:42.907Z"
+    }
+  },
+  {
+    "title": "Crime Boss: Rockay City",
+    "openCriticId": "14493/crime-boss-rockay-city",
+    "openCriticData": {
+      "tier": "weak",
+      "score": 54,
+      "critics": 18,
+      "cover": "https://img.opencritic.com/game/14493/n25oZwtb.jpg",
+      "releaseDate": "2023-03-28T00:00:00.000Z",
+      "updated": "2025-03-13T06:14:52.399Z"
+    },
+    "steamAppId": 2933080,
+    "steamData": {
+      "title": "Crime Boss: Rockay City",
+      "description": "Welcome to the 90’s Rockay City! Heist, loot and shoot your way to the top of the criminal underworld! Build your criminal empire in the singleplayer rogue-lite campaign or put together a crew with your friends in action-packed co-op multiplayer heists!",
+      "metacriticScore": null,
+      "metacriticUrl": null,
+      "genres": [
+        "Action"
+      ],
+      "releaseDate": "2024-06-18T00:00:00.000Z",
+      "reviewScore": 5,
+      "reviewScoreDescription": "Mixed",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2933080/header.jpg?t=1741710093",
+      "updated": "2025-03-13T06:15:08.934Z"
+    }
+  },
+  {
+    "title": "Felix the Reaper",
+    "openCriticId": "8366/felix-the-reaper",
+    "openCriticData": {
+      "tier": "fair",
+      "score": 70,
+      "critics": 26,
+      "cover": "https://img.opencritic.com/game/8366/gWlD17L0.jpg",
+      "releaseDate": "2019-10-17T00:00:00.000Z",
+      "updated": "2025-03-13T06:15:34.329Z"
+    },
+    "steamAppId": 919410,
+    "steamData": {
+      "title": "Felix The Reaper",
+      "description": "Felix The Reaper is a challenging and strict 3D puzzle game about bringing humans into deadly situations. You are Felix, the ever-dancing bringer of death, who just so happens to be dangerously in love with Life.",
+      "metacriticScore": 71,
+      "metacriticUrl": "https://www.metacritic.com/game/pc/felix-the-reaper?ftag=MCD-06-10aaa1f",
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2019-10-17T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/919410/header.jpg?t=1642454254",
+      "updated": "2025-03-13T06:15:52.292Z"
+    }
+  },
+  {
+    "title": "Night Reverie",
+    "openCriticId": "12256/night-reverie",
+    "openCriticData": {
+      "tier": null,
+      "score": null,
+      "critics": null,
+      "cover": null,
+      "releaseDate": "2021-10-08T00:00:00.000Z",
+      "updated": "2025-03-13T06:16:10.349Z"
+    },
+    "steamAppId": 1254670,
+    "steamData": {
+      "title": "Night Reverie",
+      "description": "Night Reverie is a Puzzle/Adventure game in which a child must solve the mystery behind the distortion of his house. Explore puzzle-filled environments and discover strange creatures living in the house as you reach the truth behind of what looks like a bizarre nightmare.",
+      "metacriticScore": null,
+      "metacriticUrl": null,
+      "genres": [
+        "Adventure",
+        "Casual",
+        "Indie"
+      ],
+      "releaseDate": "2021-10-08T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1254670/header.jpg?t=1726251512",
+      "updated": "2025-03-13T06:16:34.807Z"
+    }
+  },
+  {
+    "title": "Saints Row®: The Third™ Remastered",
+    "openCriticId": "9276/saints-row-the-third-remastered",
+    "openCriticData": {
+      "tier": "fair",
+      "score": 74,
+      "critics": 65,
+      "cover": "https://img.opencritic.com/game/9276/Q4ZZ21GD.jpg",
+      "releaseDate": "2020-05-22T00:00:00.000Z",
+      "updated": "2025-03-13T06:16:51.050Z"
+    },
+    "steamAppId": 978300,
+    "steamData": {
+      "title": "Saints Row®: The Third™ Remastered",
+      "description": "The Full Package, Remastered – With enhanced graphics, improved lighting, reworked environments, and visual effects, Steelport and The Third Street Saints have never looked so good.",
+      "metacriticScore": null,
+      "metacriticUrl": null,
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "releaseDate": "2021-05-21T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/978300/header.jpg?t=1725434774",
+      "updated": "2025-03-13T06:17:04.643Z"
+    }
+  },
+  {
+    "title": "Sine Mora EX",
+    "openCriticId": "4638/sine-mora-ex",
+    "openCriticData": {
+      "tier": "strong",
+      "score": 77,
+      "critics": 74,
+      "cover": "https://img.opencritic.com/game/4638/Xmhttex1.jpg",
+      "releaseDate": "2017-08-08T00:00:00.000Z",
+      "updated": "2025-03-13T06:17:19.486Z"
+    },
+    "steamAppId": 606730,
+    "steamData": {
+      "title": "Sine Mora EX",
+      "description": "Sine Mora EX is a side-scrolling shoot'em up that provides a unique challenge, where time is the ultimate factor. Mixing classic shooter sensibilities with contemporary presentation, Sine Mora EX is a gorgeous shoot'em up offering both a Story Mode that weaves an excessive tale and an Arcade Mode.",
+      "metacriticScore": null,
+      "metacriticUrl": null,
+      "genres": [
+        "Action"
+      ],
+      "releaseDate": "2017-08-08T00:00:00.000Z",
+      "reviewScore": 5,
+      "reviewScoreDescription": "Mixed",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/606730/header.jpg?t=1732704837",
+      "updated": "2025-03-13T06:17:33.279Z"
+    }
+  },
+  {
+    "title": "Stunt Kite Party",
+    "openCriticId": "7316/stunt-kite-party",
+    "openCriticData": {
+      "tier": "fair",
+      "score": 70,
+      "critics": null,
+      "cover": "https://img.opencritic.com/game/7316/dizYPdjv.jpg",
+      "releaseDate": "2019-02-08T00:00:00.000Z",
+      "updated": "2025-03-13T06:17:47.132Z"
+    },
+    "steamAppId": 960240,
+    "steamData": {
+      "title": "Stunt Kite Party",
+      "description": "Stunt Kite Party is a family-friendly single player and couch-coop multiplayer game with an exciting storyline and endless fun in numerous game modes.",
+      "metacriticScore": null,
+      "metacriticUrl": null,
+      "genres": [
+        "Action",
+        "Indie",
+        "Sports"
+      ],
+      "releaseDate": "2019-06-07T00:00:00.000Z",
+      "reviewScoreDescription": "4 user reviews",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/960240/header.jpg?t=1726054712",
+      "updated": "2025-03-13T06:17:58.163Z"
+    }
+  },
+  {
+    "title": "Subsurface Circular",
+    "openCriticId": "4736/subsurface-circular",
+    "openCriticData": {
+      "tier": "strong",
+      "score": 80,
+      "critics": 79,
+      "cover": "https://img.opencritic.com/game/4736/yG3GNwpK.jpg",
+      "releaseDate": "2017-08-17T00:00:00.000Z",
+      "updated": "2025-03-13T06:18:13.557Z"
+    },
+    "steamAppId": 676820,
+    "steamData": {
+      "title": "Subsurface Circular",
+      "description": "When the truth is buried, go underground. Step into this new take on text-based adventure from the award-winning team behind Thomas Was Alone and Volume. A short story that hands you the fate of the world above, as a detective looking for answers on the Subsurface Circular.",
+      "metacriticScore": 83,
+      "metacriticUrl": "https://www.metacritic.com/game/pc/subsurface-circular?ftag=MCD-06-10aaa1f",
+      "genres": [
+        "Adventure",
+        "Casual",
+        "Indie"
+      ],
+      "releaseDate": "2017-08-17T00:00:00.000Z",
+      "reviewScore": 9,
+      "reviewScoreDescription": "Overwhelmingly Positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/676820/header.jpg?t=1561982896",
+      "updated": "2025-03-13T06:18:28.487Z"
+    }
+  },
+  {
+    "title": "The Legend of Zelda: Breath of the Wild",
+    "openCriticId": "1548/the-legend-of-zelda-breath-of-the-wild",
+    "openCriticData": {
+      "tier": "mighty",
+      "score": 96,
+      "critics": 96,
+      "cover": "https://img.opencritic.com/game/1548/Z8bZmWY2.jpg",
+      "releaseDate": "2017-03-03T00:00:00.000Z",
+      "updated": "2025-03-13T06:32:40.597Z"
+    },
+    "steamAppId": -1
+  },
+  {
+    "title": "Super Mario Bros. Wonder",
+    "openCriticId": "15123/super-mario-bros-wonder",
+    "openCriticData": {
+      "tier": "mighty",
+      "score": 91,
+      "critics": 98,
+      "cover": "https://img.opencritic.com/game/undefined/yIos765x.jpg",
+      "releaseDate": "2023-10-20T00:00:00.000Z",
+      "updated": "2025-03-13T06:32:58.835Z"
+    },
+    "steamAppId": -1
+  },
+  {
+    "title": "Super Mario Odyssey",
+    "openCriticId": "4504/super-mario-odyssey",
+    "openCriticData": {
+      "tier": "mighty",
+      "score": 97,
+      "critics": 98,
+      "cover": "https://img.opencritic.com/game/4504/Qb6bq49v.jpg",
+      "releaseDate": "2017-10-27T00:00:00.000Z",
+      "updated": "2025-03-13T06:33:12.516Z"
+    },
+    "steamAppId": -1
+  },
+  {
+    "title": "Cozy Grove: Camp Spirit",
+    "openCriticId": "",
+    "steamAppId": -1,
+    "releaseDate": "2024-06-25T00:00:00.000Z"
+  },
+  {
+    "title": "Dust & Neon",
+    "openCriticId": "14307/dust-neon",
+    "openCriticData": {
+      "tier": "fair",
+      "score": 69,
+      "critics": 38,
+      "cover": "https://img.opencritic.com/game/14307/SfbrQbUj.jpg",
+      "releaseDate": "2023-02-16T00:00:00.000Z",
+      "updated": "2025-03-13T06:47:28.479Z"
+    },
+    "steamAppId": 1296450,
+    "steamData": {
+      "title": "Dust & Neon",
+      "description": "Rain down hell on the robot army in DUST & NEON, an award-winning best-in-class post-apocalyptic shooter where twitchy-finger gunslingers are rewarded with fame and glory.",
+      "metacriticScore": null,
+      "metacriticUrl": null,
+      "genres": [
+        "Action",
+        "Adventure",
+        "RPG"
+      ],
+      "releaseDate": "2023-02-16T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1296450/header.jpg?t=1699463400",
+      "updated": "2025-03-13T06:47:45.845Z"
     }
   }
 ]

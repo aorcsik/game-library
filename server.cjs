@@ -1,7 +1,7 @@
 const express = require('express');
 const generateGamesData = require('./src/js/games.cjs');
 const app = express();
-const port = 3000;
+const port = 3030;
 
 app.get('/', async (req, res) => {
   await generateGamesData();

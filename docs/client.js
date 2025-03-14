@@ -43,21 +43,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   document.querySelectorAll(".game-row").forEach(row => {
     const gameRowTitle = document.createElement("div");
-    gameRowTitle.className = "game-row-title"
+    gameRowTitle.className = "game-row-title"    
 
     const openCriticTier = row.dataset.openCriticTier ? row.dataset.openCriticTier : "";
     const openCriticTierClass = openCriticTier ? "tier-" + openCriticTier.toLowerCase().replace(/\s+/g, "-") : "";
     const openCriticScore = row.dataset.openCriticScore ? row.dataset.openCriticScore : "";
     const openCriticCritics = row.dataset.openCriticCritics ? `${row.dataset.openCriticCritics}%` : "";
     const openCriticUrl = row.dataset.openCriticId && row.dataset.openCriticId !== "skip" ? `https://opencritic.com/game/${row.dataset.openCriticId}` : "";
-
-    let steamReviewScoreClass = "steam-review";
-    if (row.dataset.steamReviewScore && parseInt(row.dataset.steamReviewScore, 10) === 5) steamReviewScoreClass = "steam-review mixed";
-    if (row.dataset.steamReviewScore && parseInt(row.dataset.steamReviewScore, 10) > 5) steamReviewScoreClass = "steam-review positive";
-    const steamStoreUrl = row.dataset.steamAppId ? `https://store.steampowered.com/app/${row.dataset.steamAppId}/` : "";
-    const steamReviewScoreDescription = row.dataset.steamReviewScoreDescription ? row.dataset.steamReviewScoreDescription : ""
-    const releaseDate = row.dataset.gameReleaseDate ? new Date(row.dataset.gameReleaseDate) : null;
-    
     const openCriticLink = row.dataset.openCriticId && row.dataset.openCriticId !== "skip" ? `<a href="${openCriticUrl}" target="_blank" class="open-critic-link">` +
       `<span class="open-critic-tier ${openCriticTierClass}" title="${openCriticTier}">${openCriticTier}</span>` +
       `<span class="open-critic-score ${openCriticTierClass}">${openCriticScore}</span>` +
@@ -68,8 +60,28 @@ document.addEventListener("DOMContentLoaded", async () => {
       `<span class="open-critic-critics ${openCriticTierClass}">${openCriticCritics}</span>` +
     `</span>`;
 
+    let metacriticClass = "";
+    if (row.dataset.metacriticScore && parseInt(row.dataset.metacriticScore, 10) >= 75) metacriticClass = "good";
+    else if (row.dataset.metacriticScore && parseInt(row.dataset.metacriticScore, 10) >= 50) metacriticClass = "mixed";
+    else if (row.dataset.metacriticScore && parseInt(row.dataset.metacriticScore, 10) >= 0) metacriticClass = "bad";
+
+    const metacriticLink = row.dataset.metacriticUrl ? `<a href="${row.dataset.metacriticUrl}" target="_blank" class="metacritic-link">` +
+      `<span class="metacritic-score ${metacriticClass}">${row.dataset.metacriticScore}</span>` +
+    `</a>` : `<span class="metacritic-link disabled">` +
+      `<span class="metacritic-score"></span>` +
+    `</span>`;
+
+    const releaseDate = row.dataset.gameReleaseDate ? new Date(row.dataset.gameReleaseDate) : null;
+
+    let steamReviewScoreClass = "steam-review";
+    if (row.dataset.steamReviewScore && parseInt(row.dataset.steamReviewScore, 10) === 5) steamReviewScoreClass = "steam-review mixed";
+    if (row.dataset.steamReviewScore && parseInt(row.dataset.steamReviewScore, 10) > 5) steamReviewScoreClass = "steam-review positive";
+    const steamStoreUrl = row.dataset.steamAppId ? `https://store.steampowered.com/app/${row.dataset.steamAppId}/` : "";
+    const steamReviewScoreDescription = row.dataset.steamReviewScoreDescription ? row.dataset.steamReviewScoreDescription : ""
+
     gameRowTitle.innerHTML = 
       openCriticLink +
+      metacriticLink +
       `<span class="game-title">
         ${row.dataset.gameTitle}
         <span class="release-date">${releaseDate ? `(${releaseDate.getFullYear()})` : ""}</span>
@@ -117,6 +129,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
         if (form.sort_by.value === "steam_reviews") {
           return reverse * (a.dataset.steamReviewScore - b.dataset.steamReviewScore);
+        }
+        if (form.sort_by.value === "metascore") {
+          return reverse * (a.dataset.metacriticScore - b.dataset.metacriticScore);
         }
         return 0;
       })
