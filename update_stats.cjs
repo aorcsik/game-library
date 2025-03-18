@@ -152,7 +152,7 @@ const fetchSteamStorePage = async (steamAppId) => {
     if (!gameConfig.openCriticId) {
       if (!gameConfig.openCriticId) {
         const openCriticId = await askQuestion("OpenCritic ID (skip): ");
-        gameConfig.openCriticId = openCriticId;
+        gameConfig.openCriticId = openCriticId || "skip";
       }
     }
     if (!gameConfig.openCriticData && gameConfig.openCriticId.match(/\d+\/.*/)) {

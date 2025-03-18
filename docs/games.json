@@ -10948,6 +10948,40 @@
     "steam_cover": "https://steamcdn-a.akamaihd.net/steam/apps/1730590/header.jpg",
     "steam_icon": "http://media.steampowered.com/steamcommunity/public/images/apps/1730590/a6429a93ba42450082999df9ea1fda8a4974e079.jpg"
   },
+  "deflector": {
+    "title": "Deflector",
+    "key": "deflector",
+    "steamAppId": 1736550,
+    "openCriticId": "12670/deflector",
+    "openCriticData": {
+      "tier": null,
+      "score": null,
+      "critics": null,
+      "cover": "https://img.opencritic.com/game/12670/7dRyJ0zc.jpg",
+      "releaseDate": "2022-01-27T00:00:00.000Z",
+      "updated": "2025-03-17T14:55:59.991Z"
+    },
+    "steamData": {
+      "title": "Deflector",
+      "description": "Deflector is a top down action rogue-lite set in a deadly microcosm. Dive deep into hostile worlds teeming with viruses. Strike down increasingly challenging enemies with your weapons and their own deflected projectiles. Live, die, grow stronger and become powerful enough to reach the Source!",
+      "metacriticScore": null,
+      "metacriticUrl": null,
+      "genres": [
+        "Action",
+        "Adventure",
+        "Indie",
+        "RPG"
+      ],
+      "releaseDate": "2023-03-24T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1736550/header.jpg?t=1727716569",
+      "updated": "2025-03-17T14:56:00.629Z"
+    },
+    "steam": "Deflector",
+    "steam_cover": "https://steamcdn-a.akamaihd.net/steam/apps/1736550/header.jpg",
+    "steam_icon": "http://media.steampowered.com/steamcommunity/public/images/apps/1736550/bc5d25ce52b9f9896bcbad6ee436feed298b7f3a.jpg"
+  },
   "haveanicedeath": {
     "title": "Have a Nice Death",
     "key": "haveanicedeath",
@@ -10979,6 +11013,40 @@
     "steam": "Have a Nice Death",
     "steam_cover": "https://steamcdn-a.akamaihd.net/steam/apps/1740720/header.jpg",
     "steam_icon": "http://media.steampowered.com/steamcommunity/public/images/apps/1740720/57f69a232db93d89f1a9cc6f6d6bcfc9f30e7360.jpg"
+  },
+  "encased": {
+    "title": "Encased",
+    "key": "encased",
+    "steamAppId": 921800,
+    "openCriticId": "11921/encased",
+    "openCriticData": {
+      "tier": "fair",
+      "score": 74,
+      "critics": 59,
+      "cover": "https://img.opencritic.com/game/11921/ZXDuXj4s.jpg",
+      "releaseDate": "2021-09-07T00:00:00.000Z",
+      "updated": "2025-03-17T14:56:15.251Z"
+    },
+    "steamData": {
+      "title": "Encased: A Sci-Fi Post-Apocalyptic RPG",
+      "description": "A tactical sci-fi RPG set in an alternative 1970's, where an enormous and inexplicable artifact –the Dome– is discovered in a remote desert. Fight enemies, explore the anomalous wasteland, level up your character, join one of the forces in the ruined world.",
+      "metacriticScore": null,
+      "metacriticUrl": null,
+      "genres": [
+        "Adventure",
+        "Indie",
+        "RPG",
+        "Strategy"
+      ],
+      "releaseDate": "2021-09-07T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/921800/header.jpg?t=1669389314",
+      "updated": "2025-03-17T14:56:15.984Z"
+    },
+    "steam": "Encased",
+    "steam_cover": "https://steamcdn-a.akamaihd.net/steam/apps/921800/header.jpg",
+    "steam_icon": "http://media.steampowered.com/steamcommunity/public/images/apps/921800/4ba8bd5beefc391da5754a335e69294d9bf928b9.jpg"
   },
   "childrenofmorta": {
     "title": "Children of Morta",
@@ -11852,6 +11920,40 @@
     "steam_cover": "https://steamcdn-a.akamaihd.net/steam/apps/482400/header.jpg",
     "steam_icon": "http://media.steampowered.com/steamcommunity/public/images/apps/482400/02f179d02ba16944514e46cee8c614e04d2567b7.jpg"
   },
+  "gungravegore": {
+    "title": "Gungrave G.O.R.E",
+    "key": "gungravegore",
+    "steamAppId": 1630110,
+    "openCriticId": "14025/gungrave-g-o-r-e",
+    "openCriticData": {
+      "tier": "weak",
+      "score": 59,
+      "critics": 18,
+      "cover": "https://img.opencritic.com/game/14025/B4gpV8vR.jpg",
+      "releaseDate": "2022-11-22T00:00:00.000Z",
+      "updated": "2025-03-17T14:56:37.497Z"
+    },
+    "steamData": {
+      "title": "Gungrave G.O.R.E",
+      "description": "Gungrave G.O.R.E is a stylish third-person action shooter by South-Korean Studio IGGYMOB in which you take on the role of Grave, a gunslinger of resurrection and badass anti-hero of your dreams, mowing down tons of enemies in a gory ballet of bullets.",
+      "metacriticScore": null,
+      "metacriticUrl": null,
+      "genres": [
+        "Action",
+        "Adventure",
+        "Simulation",
+        "Strategy"
+      ],
+      "releaseDate": "2022-11-22T00:00:00.000Z",
+      "reviewScore": 5,
+      "reviewScoreDescription": "Mixed",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1630110/header.jpg?t=1728053351",
+      "updated": "2025-03-17T14:56:38.120Z"
+    },
+    "steam": "Gungrave G.O.R.E",
+    "steam_cover": "https://steamcdn-a.akamaihd.net/steam/apps/1630110/header.jpg",
+    "steam_icon": "http://media.steampowered.com/steamcommunity/public/images/apps/1630110/a8cb6599f2546ad33fa7168fe008e02c37b04667.jpg"
+  },
   "gylt": {
     "title": "GYLT",
     "key": "gylt",
@@ -11982,6 +12084,38 @@
     "steam": "STAR WARS™: Dark Forces Remaster",
     "steam_cover": "https://steamcdn-a.akamaihd.net/steam/apps/2292260/header.jpg",
     "steam_icon": "http://media.steampowered.com/steamcommunity/public/images/apps/2292260/8beba8cae6ca1086d042e73589ef2ab5309449c1.jpg"
+  },
+  "threeminutestoeight": {
+    "title": "Three Minutes to Eight",
+    "key": "threeminutestoeight",
+    "steamAppId": 2303320,
+    "openCriticId": "15894/three-minutes-to-eight",
+    "openCriticData": {
+      "tier": null,
+      "score": null,
+      "critics": null,
+      "cover": "https://img.opencritic.com/game/15894/3VNHyr4X.jpg",
+      "releaseDate": "2023-10-23T00:00:00.000Z",
+      "updated": "2025-03-17T14:56:58.707Z"
+    },
+    "steamData": {
+      "title": "Three Minutes To Eight",
+      "description": "Three Minutes To Eight is a mind bending pixel art adventure. A gaming experience threading the edge of consciousness, where everything is possible and yet remains elusive. Players will find themselves in ███ ██ █ ▓ ▒ ░ ¿⊕ξד¶¶¶ Error 0x80070570.",
+      "metacriticScore": null,
+      "metacriticUrl": null,
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2023-10-23T00:00:00.000Z",
+      "reviewScore": 5,
+      "reviewScoreDescription": "Mixed",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2303320/header.jpg?t=1728904318",
+      "updated": "2025-03-17T14:56:59.546Z"
+    },
+    "steam": "Three Minutes to Eight",
+    "steam_cover": "https://steamcdn-a.akamaihd.net/steam/apps/2303320/header.jpg",
+    "steam_icon": "http://media.steampowered.com/steamcommunity/public/images/apps/2303320/89a3aff3f456df488e2159ff79cf0851af065d12.jpg"
   },
   "scarsabove": {
     "title": "Scars Above",
@@ -12277,6 +12411,40 @@
     "steam": "Kingdom Eighties",
     "steam_cover": "https://steamcdn-a.akamaihd.net/steam/apps/1956040/header.jpg",
     "steam_icon": "http://media.steampowered.com/steamcommunity/public/images/apps/1956040/de695ee35439b9d5706ca3ed5f01a95ec1e80d89.jpg"
+  },
+  "ascentthe": {
+    "title": "The Ascent",
+    "key": "ascentthe",
+    "steamAppId": 979690,
+    "openCriticId": "11537/the-ascent",
+    "openCriticData": {
+      "tier": "fair",
+      "score": 73,
+      "critics": 56,
+      "cover": "https://img.opencritic.com/game/11537/8ZqNXTq5.jpg",
+      "releaseDate": "2021-07-29T00:00:00.000Z",
+      "updated": "2025-03-17T14:55:12.508Z"
+    },
+    "steamData": {
+      "title": "The Ascent",
+      "description": "The Ascent is a solo and co-op Action-shooter RPG set in a cyberpunk world. The mega corporation that owns you and everyone, The Ascent Group, has just collapsed. Can you survive without it?",
+      "metacriticScore": null,
+      "metacriticUrl": null,
+      "genres": [
+        "Action",
+        "Adventure",
+        "Indie",
+        "RPG"
+      ],
+      "releaseDate": "2021-07-29T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/979690/header.jpg?t=1728988015",
+      "updated": "2025-03-17T14:55:13.434Z"
+    },
+    "steam": "The Ascent",
+    "steam_cover": "https://steamcdn-a.akamaihd.net/steam/apps/979690/header.jpg",
+    "steam_icon": "http://media.steampowered.com/steamcommunity/public/images/apps/979690/ced822d46392fcb97daaeb303523b7ff5defecd7.jpg"
   },
   "talesandtactics": {
     "title": "Tales And Tactics",
@@ -21407,7 +21575,7 @@
   "cozygrovecampspirit": {
     "title": "Cozy Grove: Camp Spirit",
     "key": "cozygrovecampspirit",
-    "openCriticId": "",
+    "openCriticId": "skip",
     "steamAppId": -1,
     "releaseDate": "2024-06-25T00:00:00.000Z",
     "appstore": "Cozy Grove: Camp Spirit",

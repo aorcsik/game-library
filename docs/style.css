@@ -422,17 +422,22 @@ h1, h2, h3, h4, h5, h6 {
     margin: .25rem;
     border-radius: .5rem;
     font-size: 1.1rem;
+    left: 0;
+    right: 0;
+    overflow: hidden;
 
     background: var(--background-color);
+    flex-wrap: wrap-reverse;
 
     & .game-title {
-      display: none;
+      width: 100%;
+      font-size: 1rem;
     }
   }
 
   & .game-row {
     display: block;
-    padding-bottom: 90%;
+    padding-bottom: 72%;
     position: relative;
 
     &.hidden {
@@ -454,6 +459,10 @@ h1, h2, h3, h4, h5, h6 {
     & .game-info {
       align-items: start;
       position: relative;
+
+      & .game-title {
+        display: none;
+      }
     }
 
     & .game-platform {
@@ -721,11 +730,32 @@ h1, h2, h3, h4, h5, h6 {
     gap: 1rem;
 
     & .game-row {
-      padding-bottom: 80%;
+      padding-bottom: 40%;
     }
 
-    & .game-title {
-      font-size: 1rem;
+    & .game-row-title {
+      right: 0;
+      left: 0;
+      padding: .5rem;
+      font-size: 1.2rem;
+
+      & .game-title {
+        font-size: 1rem;
+      }
+    }
+
+    & .game-cover {
+      position: absolute;
+      filter: blur(10px);
+    }
+    & path {
+      fill: #fff;
+    }
+
+    & .game-placeholder {
+      & path {
+        opacity: .3;
+      }
     }
   }
 

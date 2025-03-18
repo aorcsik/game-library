@@ -1,5 +1,6 @@
 const fs = require('fs');
 const config = require('../../config.cjs');
+const GameRowTitle = require('./GameRowTitle.cjs');
 
 // const formatTitle = (title) => {
 //   return title.replace(/[™®]/, "");
@@ -84,6 +85,11 @@ const generateGamesData = async () => {
     if (gameConfig) {
       Object.keys(gameConfigUpdates).forEach(key => {
         gameConfig[key] = gameConfigUpdates[key];
+      });
+    } else {
+      gamesConfig.push({
+        title: title,
+        ...gameConfigUpdates
       });
     }
   };
@@ -246,6 +252,7 @@ const generateGamesData = async () => {
 
   let gameGrid = `
   <div class="games-header">
+    <div class="game-row-title"></div>
     ${gameGridHeader.join("\n")}
   </div>
   `;
@@ -263,21 +270,32 @@ const generateGamesData = async () => {
     return "";
   };
 
+  const gameRowTitleFactory = new GameRowTitle();
+
   Object.keys(games).sort().forEach(key => {
+    const gameData = {
+      gameTitle: games[key].title,
+      openCriticId: games[key].openCriticId ? games[key].openCriticId : "",
+      gameReleaseDate: getReleaseDate(games[key]),
+      openCriticTier: games[key].openCriticData && games[key].openCriticData.tier ? games[key].openCriticData.tier : "n-a",
+      openCriticScore: games[key].openCriticData && games[key].openCriticData.score ? games[key].openCriticData.score : "",
+      openCriticCritics: games[key].openCriticData && games[key].openCriticData.critics ? games[key].openCriticData.critics : "",
+      steamAppId: games[key].steamAppId ? games[key].steamAppId : "",
+      steamGenres: games[key].steamData && games[key].steamData.genres ? games[key].steamData.genres.join(",") : "",
+      steamReviewScore: games[key].steamData && games[key].steamData.reviewScore ? games[key].steamData.reviewScore : "",
+      steamReviewScoreDescription: games[key].steamData && games[key].steamData.reviewScoreDescription ? games[key].steamData.reviewScoreDescription : "",
+      metacriticScore: games[key].steamData && games[key].steamData.metacriticScore ? games[key].steamData.metacriticScore : "",
+      metacriticUrl: games[key].steamData && games[key].steamData.metacriticUrl ? games[key].steamData.metacriticUrl : "",
+    };
+
+    const gameDataProps = {};
+    Object.keys(gameData).forEach(key => {
+      gameDataProps[`data-${key.replace(/([A-Z])/g, "-$1").toLowerCase()}`] = gameData[key];
+    });
+
     gameGrid += `
-    <div id="game_${key}" class="game-row" data-game-title="${games[key].title}"
-      data-open-critic-id="${games[key].openCriticId ? games[key].openCriticId : ""}"
-      data-game-release-date="${getReleaseDate(games[key])}"
-      data-open-critic-tier="${games[key].openCriticData && games[key].openCriticData.tier ? games[key].openCriticData.tier : "n-a"}"
-      data-open-critic-score="${games[key].openCriticData && games[key].openCriticData.score ? games[key].openCriticData.score : ""}"
-      data-open-critic-critics="${games[key].openCriticData && games[key].openCriticData.critics ? games[key].openCriticData.critics : ""}"
-      data-steam-app-id="${games[key].steamAppId ? games[key].steamAppId : ""}"
-      data-steam-genres="${games[key].steamData && games[key].steamData.genres ? games[key].steamData.genres.join(",") : ""}"
-      data-steam-review-score="${games[key].steamData && games[key].steamData.reviewScore ? games[key].steamData.reviewScore : ""}"
-      data-steam-review-score-description="${games[key].steamData && games[key].steamData.reviewScoreDescription ? games[key].steamData.reviewScoreDescription : ""}"
-      data-metacritic-score="${games[key].steamData && games[key].steamData.metacriticScore ? games[key].steamData.metacriticScore : ""}"
-      data-metacritic-url="${games[key].steamData && games[key].steamData.metacriticUrl ? games[key].steamData.metacriticUrl : ""}"
-    >`;
+    <div id="game_${key}" class="game-row" ${Object.keys(gameDataProps).map(key => `${key}="${gameDataProps[key]}"`).join(" ")}>`;
+    gameGrid += `<div class="game-row-title">` + gameRowTitleFactory.render(gameData) + `</div>`;
     Object.keys(platforms).forEach(platform => {
       if (games[key][platform]) {
         const title = games[key][platform];
