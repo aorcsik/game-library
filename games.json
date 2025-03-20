@@ -11794,9 +11794,6 @@
       "releaseDate": "2016-11-18T00:00:00.000Z",
       "updated": "2025-02-10T00:39:31.227Z"
     },
-    "sameGame": [
-      "KillingFloor2Beta"
-    ],
     "steamAppId": 232090,
     "steamData": {
       "title": "Killing Floor 2",
@@ -25195,6 +25192,66 @@
       "reviewScoreDescription": "Mostly Positive",
       "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/979690/header.jpg?t=1728988015",
       "updated": "2025-03-17T14:55:13.434Z"
+    }
+  },
+  {
+    "title": "Dark Deity: Complete Edition",
+    "openCriticId": "11555/dark-deity",
+    "openCriticData": {
+      "tier": "fair",
+      "score": 74,
+      "critics": 52,
+      "cover": "https://img.opencritic.com/game/11555/MCu32eVb.jpg",
+      "releaseDate": "2021-06-15T00:00:00.000Z",
+      "updated": "2025-03-19T14:29:55.730Z"
+    },
+    "steamAppId": 1374840,
+    "steamData": {
+      "title": "Dark Deity",
+      "description": "Step into the world of Terrazael and lead soon-to-be legendary heroes in a quest to restore a land fractured by broken oaths, reckless wars, and untamed magic. Fight back in turn-based battles, manage character relationships, collect dangerous artifacts, and hopefully restore the world...",
+      "metacriticScore": 80,
+      "metacriticUrl": "https://www.metacritic.com/game/pc/dark-deity?ftag=MCD-06-10aaa1f",
+      "genres": [
+        "Adventure",
+        "Indie",
+        "RPG",
+        "Strategy"
+      ],
+      "releaseDate": "2021-06-15T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1374840/header.jpg?t=1740612409",
+      "updated": "2025-03-19T14:30:33.485Z"
+    }
+  },
+  {
+    "title": "Wall World",
+    "openCriticId": "14526/wall-world",
+    "openCriticData": {
+      "tier": "fair",
+      "score": 73,
+      "critics": 75,
+      "cover": "https://img.opencritic.com/game/14526/BcZDDpv7.jpg",
+      "releaseDate": "2023-04-05T00:00:00.000Z",
+      "updated": "2025-03-19T16:00:23.303Z"
+    },
+    "steamAppId": 2187290,
+    "steamData": {
+      "title": "Wall World",
+      "description": "Explore the mysterious Wall World on your giant robospider: mine for valuable resources, upgrade your equipment to fight off hordes of monsters, and discover exotic biomes in-between attacks. Will you be able to survive and learn the secrets of the Wall World?",
+      "metacriticScore": null,
+      "metacriticUrl": null,
+      "genres": [
+        "Action",
+        "Adventure",
+        "Indie",
+        "Strategy"
+      ],
+      "releaseDate": "2023-04-05T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2187290/f639b22fa2e70dad579a6ca7cfba61ef9ce37f13/header_alt_assets_2.jpg?t=1741837791",
+      "updated": "2025-03-19T16:00:43.485Z"
     }
   }
 ]

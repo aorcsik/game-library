@@ -32,6 +32,9 @@ const skipTitle = [
   "Mass Effect 2 (2010)",
   "Indie Game: The Movie",
   "Vessel Demo",
+// Epic
+  "Mortal Shell Tech Beta",
+  "KillingFloor2Beta"
 ];
 
 const gameCollections = {
@@ -125,10 +128,8 @@ const generateGamesData = async () => {
 
   const epic_data = JSON.parse(await fs.promises.readFile(config.epic_library));
   epic_data.library.forEach(element => {
-    if (element.install.is_dlc) {
-      // console.log("DLC", element.title);
-      return;
-    }
+    if (skipTitle.includes(element.title)) return;
+    if (element.install.is_dlc) return;
 
     const title = formatTitle(element.title);
     const gameConfig = getGameConfig(title);
