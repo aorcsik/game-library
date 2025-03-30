@@ -32,6 +32,8 @@ const skipTitle = [
   "Mass Effect 2 (2010)",
   "Indie Game: The Movie",
   "Vessel Demo",
+  "The Whispered World",
+  "Serious Sam Fusion 2017 (beta)",
 // Epic
   "Mortal Shell Tech Beta",
   "KillingFloor2Beta"
@@ -170,15 +172,32 @@ const generateGamesData = async () => {
   });
 
   const nintendo_data = JSON.parse(await fs.promises.readFile(config.nintendo_library));
-  Object.keys(nintendo_data).forEach(purchase => {
-    nintendo_data[purchase].forEach(element => {
+  Object.keys(nintendo_data.purchases).forEach(purchase => {
+    nintendo_data.purchases[purchase].forEach(element => {
+      if (skipTitle.includes(element.title)) return;
+
       const title = formatTitle(element.title);
-      const gameConfig = getGameConfig(title);
-      if (!games[gameConfig.key]) games[gameConfig.key] = gameConfig;
-      games[gameConfig.key].switch = title;
-      games[gameConfig.key].switch_cover = element.cover;
-      games[gameConfig.key].switch_physical = !!element.physical;
-      platforms.switch.count++;
+      if (nintendo_data.collections[element.title]) {
+        nintendo_data.collections[element.title].forEach(collectionItem => {
+          const collectionTitle = formatTitle(collectionItem.title);
+          const gameConfig = getGameConfig(collectionTitle);
+          if (!games[gameConfig.key]) {
+            games[gameConfig.key] = gameConfig;
+          }
+          games[gameConfig.key].switch = collectionTitle;
+          games[gameConfig.key].switch_collection = title;
+          games[gameConfig.key].switch_cover = element.cover;
+          games[gameConfig.key].switch_physical = !!element.physical;
+          platforms.switch.count++;
+        });
+      } else {
+        const gameConfig = getGameConfig(title);
+        if (!games[gameConfig.key]) games[gameConfig.key] = gameConfig;
+        games[gameConfig.key].switch = title;
+        games[gameConfig.key].switch_cover = element.cover;
+        games[gameConfig.key].switch_physical = !!element.physical;
+        platforms.switch.count++;
+      }
     });
   });
 
@@ -265,6 +284,9 @@ const generateGamesData = async () => {
     if (game.steamData && game.steamData.releaseDate) {
       return game.steamData.releaseDate;
     }
+    if (game.metacriticData && game.metacriticData.releaseDate) {
+      return game.metacriticData.releaseDate;
+    }
     if (game.releaseDate) {
       return game.releaseDate;
     }
@@ -278,15 +300,18 @@ const generateGamesData = async () => {
       gameTitle: games[key].title,
       openCriticId: games[key].openCriticId ? games[key].openCriticId : "",
       gameReleaseDate: getReleaseDate(games[key]),
+
       openCriticTier: games[key].openCriticData && games[key].openCriticData.tier ? games[key].openCriticData.tier : "n-a",
       openCriticScore: games[key].openCriticData && games[key].openCriticData.score ? games[key].openCriticData.score : "",
       openCriticCritics: games[key].openCriticData && games[key].openCriticData.critics ? games[key].openCriticData.critics : "",
+      
       steamAppId: games[key].steamAppId ? games[key].steamAppId : "",
       steamGenres: games[key].steamData && games[key].steamData.genres ? games[key].steamData.genres.join(",") : "",
       steamReviewScore: games[key].steamData && games[key].steamData.reviewScore ? games[key].steamData.reviewScore : "",
       steamReviewScoreDescription: games[key].steamData && games[key].steamData.reviewScoreDescription ? games[key].steamData.reviewScoreDescription : "",
-      metacriticScore: games[key].steamData && games[key].steamData.metacriticScore ? games[key].steamData.metacriticScore : "",
-      metacriticUrl: games[key].steamData && games[key].steamData.metacriticUrl ? games[key].steamData.metacriticUrl : "",
+      
+      metacriticUrl: games[key].metacriticUrl ? games[key].metacriticUrl : "",
+      metacriticScore: games[key].metacriticData && games[key].metacriticData.metacriticScore ? games[key].metacriticData.metacriticScore : "",
     };
 
     const gameDataProps = {};
