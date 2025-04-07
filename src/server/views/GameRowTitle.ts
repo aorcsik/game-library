@@ -1,4 +1,4 @@
-import { Game } from '../GameDatabaseService';
+import GameDatabaseService, { Game } from '../GameDatabaseService';
 
 const getReleaseDate = (game: Game): string => {
   if (game.openCriticData && game.openCriticData.releaseDate) {
@@ -59,7 +59,7 @@ const renderGameRowTitle = (game: Game): string => {
   return openCriticLink +
     metacriticLink +
     `<span class="game-title">
-      ${game.title}
+      ${GameDatabaseService.formatTitle(game.title)}
       <span class="release-date">${releaseDate ? `(${(new Date(releaseDate)).getFullYear()})` : ''}</span>
       <a href="${steamStoreUrl}" target="_blank" class="${steamReviewScoreClass}">${steamReviewScoreDescription}</a>
     </span>`;

@@ -1,38 +1,16 @@
 import fs from 'fs';
+import { MetacriticData, OpenCriricData, SteamData } from './ReviewFetcherService';
 
 type GameDatabaseRecordInJson = {
   title: string;
   key?: string;
   sameGame?: string[];
   openCriticId?: string;
-  openCriticData?: {
-    title: string | null;
-    cover: string | null;
-    tier: string | null;
-    score: number | null;
-    critics: number | null;
-    releaseDate: string | null;
-    updated: string;
-  };
+  openCriticData?: OpenCriricData;
   steamAppId?: number;
-  steamData?: {
-    title: string;
-    description: string | null;
-    genres: string[];
-    releaseDate: string | null;
-    reviewScore: number | null;
-    reviewScoreDescription: string | null;
-    metacriticUrl: string | null;
-    headerImage: string;
-    updated: string;
-  };
+  steamData?: SteamData;
   metacriticUrl?: string;
-  metacriticData?: {
-    title: string;
-    releaseDate: string | null;
-    metacriticScore: number | null;
-    updated: string;
-  };
+  metacriticData?: MetacriticData;
   releaseDate?: string;
 };
 
@@ -48,12 +26,24 @@ class GameDatabaseService {
   }
 
   static createGameSlug = (title: string): string => {
-    return title.replace(/^(A|An|The) (.*)$/, '$2, $1').replace(/[^A-Za-z0-9]/g, '').toLowerCase();
+    return title
+      .replace(/[-–]/g, ' ')
+      .replace(/['’]/g, '\'')
+      .replace(/²/g, '2')
+      .replace(/³/g, '3')
+      .replace(/[^A-Za-z0-9 ]/g, '')
+      .replace(/\s+/g, ' ').trim()
+      .replace(/ /g, '-')
+      .toLowerCase()
+      .replace(/^(a|an|the) (.*)$/, '$2, $1');
   };
 
   static formatTitle(title: string): string {
-    title = title.replace('Ⓡ', '®');
-    return title;
+    return title
+      .replace(/[™Ⓡ®]/g, '')
+      .replace(/['’]/g, '\'')
+      .replace(/[-–]/g, '-')
+      .replace(/\s+/g, ' ').trim();
   };
 
   private database: GameDatabaseRecordInJson[];
@@ -72,12 +62,20 @@ class GameDatabaseService {
   }
 
   findIndexByTitle(title: string): number {
-    return this.findIndex(game => game.title === title || (game.sameGame && game.sameGame.includes(title)));
+    const c = (title: string): string => {
+      return title.toLocaleLowerCase().replace(/[-:!™Ⓡ®–'’]/g, '').replace(/\s+/g, ' ').trim();
+    };
+    return this.findIndex(
+      game => 
+        c(game.title) === c(title) || 
+        game.key === GameDatabaseService.createGameSlug(title) ||
+        (game.sameGame && game.sameGame.filter(sameGame => c(sameGame) === c(title)).length > 0));
   };
 
   getGameByTitle(title: string): Game {
     let index = this.findIndexByTitle(title);
     if (index === -1) {
+      process.stdout.write(`Game with title "${title}" not found in database. Adding new entry.\n`);
       this.database.push({
         title: title,
         key: GameDatabaseService.createGameSlug(title),

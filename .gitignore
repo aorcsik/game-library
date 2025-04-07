@@ -4,6 +4,7 @@ build
 
 config.json
 profile.json
+game-titles.json
 appstore_purchases.json
 nintendo_purchases.json
 playstation_purchases.json

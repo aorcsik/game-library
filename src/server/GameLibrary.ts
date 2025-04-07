@@ -4,10 +4,6 @@ import GameDatabaseService from './GameDatabaseService';
 import PurchaseService, { PlatformList, PlatformPurchse, PurchasedGame } from './PurchaseService';
 import renderGameGrid from './views/GameGrid';
 
-// const formatTitle = (title) => {
-//   return title.replace(/[™®]/, "");
-// };
-
 const skipTitle = [
 // Playstation
   'HBO GO',
@@ -98,6 +94,13 @@ const generateGamesData = async (path: string): Promise<void> => {
   const html = template.toString().replace('{{game-grid}}', renderGameGrid(purchasedGames, platforms));
 
   await fs.promises.writeFile(path, html);
+
+  const gameTitles: Record<string, string> = {};
+  purchasedGames.forEach(game => {
+    gameTitles[game.key] = game.title;
+  });
+
+  await fs.promises.writeFile(`${process.env.SOURCE_DIR}/game-titles.json`, JSON.stringify(gameTitles, null, 2));
 };
 
 export default generateGamesData;

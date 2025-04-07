@@ -1,6 +1,7 @@
 import eslint from '@eslint/js';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
+import css from '@eslint/css';
 
 const globalRules = {
   'no-console': ['warn', { allow: ['info', 'warn', 'error'] }],
@@ -73,5 +74,16 @@ export default tseslint.config(
     rules: {
       ...typeScriptRules
     }
-  }
+  },
+  // CSS files configuration
+  {
+    files: ['**/*.css'],
+    plugins: {
+        css,
+    },
+    language: 'css/css',
+    rules: {
+        'css/no-duplicate-imports': 'error',
+    },
+},
 );

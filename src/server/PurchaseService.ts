@@ -126,6 +126,7 @@ AppStorePurchase |
 PlaystationPurchase;
 
 type PurchasedGame = Game & {
+  key: string;
   purchases: PlatformPurchse[];
 };
 
