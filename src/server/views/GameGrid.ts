@@ -25,8 +25,8 @@ const renderGameGrid = (purchasedGames: PurchasedGame[], platforms: PlatformList
     const gameDataProps: Record<string, string> = {
       'data-game-release-date': getReleaseDate(game),
       'data-open-critic-tier': game.openCriticData?.tier ? game.openCriticData.tier.toString() : 'n-a',
-      'data-open-critic-scrore': game.openCriticData?.score ? game.openCriticData.score.toString() : '',
-      'data-open-croitic-critics': game.openCriticData?.critics ? game.openCriticData.critics.toString() : '',
+      'data-open-critic-score': game.openCriticData?.score ? game.openCriticData.score.toString() : '',
+      'data-open-critic-critics': game.openCriticData?.critics ? game.openCriticData.critics.toString() : '',
       'data-steam-review-score': game.steamData?.reviewScore ? game.steamData.reviewScore.toString() : '',
       'data-metacritic-score': game.metacriticData?.metacriticScore ? game.metacriticData.metacriticScore.toString() : '',
     };
