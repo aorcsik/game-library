@@ -1,10 +1,12 @@
 .DS_Store
 node_modules
+build
 
-config.cjs
+config.json
 profile.json
 appstore_purchases.json
 nintendo_purchases.json
 playstation_purchases.json
 
 docs/fontawesome
+.env

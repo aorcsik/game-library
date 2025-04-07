@@ -95,7 +95,182 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 auto;
 }
 
+.header {
+  border-bottom: 1px solid var(--subtle-accent-color);
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(20px);
+  background-color: rgba(var(--background-color-components), .7);
+  z-index: 4;
+}
 
+/** FORMS **/
+
+.controls {
+  padding: 1rem;
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+
+  & h1 {
+    display: flex;
+    align-items: center;
+    margin: 0 1rem 0 0;
+    padding: 0 1.5rem 0 0;
+    border-right: 1px solid var(--subtle-accent-color);
+    white-space: nowrap;
+    gap: .5rem;
+    text-shadow: 0 0 5px var(--background-color);
+
+    & .game-count {
+      color: var(--accent-color);
+      font-family: var(--number-font);
+    }
+    & .game-count::before {
+      content: " ";
+    }
+  }
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .5rem .6125rem;
+  background: rgba(var(--background-color-components), .5);
+  border: 1px solid rgba(var(--subtle-accent-color-components), .5);
+  border-radius: .25rem;
+  height: 2.5rem;
+  min-width: 2.5rem;
+  text-shadow: 0 0 5px var(--background-color);
+
+  &:hover {
+    background: rgba(var(--subtle-accent-color-components), .25);
+  }
+}
+
+.button-group {
+  display: inline-flex;
+
+  & .button {
+    border-radius: 0;
+    border-left-width: 0;
+    
+    &.form-field {
+      padding-left: 0;
+      padding-bottom: 0;
+      padding-top: 0;
+    }
+  }
+
+  & input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  & .button:first-of-type {
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+    border-left-width: 1px;
+  }
+  & .button:last-child {
+    border-top-right-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+  }
+
+  & input:checked + .button {
+    background: rgba(var(--subtle-accent-color-components), .5);
+  }
+}
+
+.form-field {
+  display: inline-flex;
+  background-color: rgba(var(--background-color-components), .5);
+  border: 1px solid rgba(var(--subtle-accent-color-components), .5);
+  border-radius: .25rem;
+  height: 2.5rem;
+  overflow: hidden;
+
+  &:hover {
+    background-color: rgba(var(--background-color-components), .5);
+  }
+
+  & select,
+  & input {
+    /* background-color: rgba(var(--background-color-components), .5); */
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    padding: .5rem;
+    color: var(--text-color);
+    text-shadow: 0 0 5px var(--background-color);
+    font-size: 1rem;
+    width: 100%;
+    height: 100%;
+
+    &:hover {
+      background-image: linear-gradient(90deg, rgba(var(--subtle-accent-color-components), .25) 0%, transparent 100%);
+    }
+    &:focus {
+      background-image: linear-gradient(90deg, rgba(var(--subtle-accent-color-components), .5) 0%, transparent 100%);
+    }
+  }
+
+  &.search-field {
+    position: relative;
+
+    & input {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+
+    & input::-webkit-search-cancel-button {
+      color: var(--text-color);
+    }
+
+    & .search-icon,
+    & .cancel-button {
+      position: absolute;
+      height: 2.5rem;
+      min-width: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    & .cancel-button {
+      right: 0;
+      display: none;
+      background-color: transparent;
+      border: 0;
+      outline: 0;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      color: var(--text-color);
+    }
+
+    & input:valid ~ .cancel-button {
+      display: flex;
+    }
+  }
+}
+
+.hidden-checkbox {
+  position: fixed;
+  top: 0;
+  display: block;
+  z-index: 0;
+  opacity: 0;
+}
+
+#grid-toggle:checked ~ .header label[for='grid-toggle'],
+#list-toggle:checked ~ .header label[for='list-toggle'],
+#games-toggle:checked ~ .header label[for='games-toggle'] {
+  background-color: rgba(var(--subtle-accent-color-components), .5);
+}
+
+/** GAME PLATFORM ICON **/
 
 .game-platform {
   width: 1.2em;
@@ -116,8 +291,6 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0;
   }
 }
-
-
 
 .game-grid {
   display: flex;
@@ -241,167 +414,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.header {
-  border-bottom: 1px solid var(--subtle-accent-color);
-  position: sticky;
-  top: 0;
-  backdrop-filter: blur(20px);
-  background-color: rgba(var(--background-color-components), .7);
-  z-index: 4;
-}
 
-.controls {
-  padding: 1rem;
-  display: flex;
-  gap: .5rem;
-  align-items: center;
-
-  & h1 {
-    display: flex;
-    align-items: center;
-    margin: 0 1rem 0 0;
-    padding: 0 1.5rem 0 0;
-    border-right: 1px solid var(--subtle-accent-color);
-    white-space: nowrap;
-    gap: .5rem;
-    text-shadow: 0 0 5px var(--background-color);
-
-    & .game-count {
-      color: var(--accent-color);
-      font-family: var(--number-font);
-    }
-    & .game-count::before {
-      content: " ";
-    }
-  }
-}
-
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: .5rem .6125rem;
-  background: rgba(var(--background-color-components), .5);
-  border: 1px solid rgba(var(--subtle-accent-color-components), .5);
-  border-radius: .25rem;
-  height: 2.5rem;
-  min-width: 2.5rem;
-  text-shadow: 0 0 5px var(--background-color);
-}
-
-.button-group {
-  display: inline-flex;
-
-  & .button {
-    border-radius: 0;
-    border-left-width: 0;
-    
-    &.form-field {
-      padding-left: 0;
-      padding-bottom: 0;
-      padding-top: 0;
-    }
-  }
-
-  & input {
-    position: absolute;
-    opacity: 0;
-  }
-
-  & .button:first-of-type {
-    border-top-left-radius: .25rem;
-    border-bottom-left-radius: .25rem;
-    border-left-width: 1px;
-  }
-  & .button:last-child {
-    border-top-right-radius: .25rem;
-    border-bottom-right-radius: .25rem;
-  }
-
-  & input:checked + .button {
-    background: rgba(var(--subtle-accent-color-components), .5);
-  }
-}
-
-.form-field {
-  display: inline-flex;
-  background-color: rgba(var(--background-color-components), .5);
-  border: 1px solid rgba(var(--subtle-accent-color-components), .5);
-  border-radius: .25rem;
-  height: 2.5rem;
-  overflow: hidden;
-
-  & select,
-  & input {
-    /* background-color: rgba(var(--background-color-components), .5); */
-    background-color: transparent;
-    border: 0;
-    outline: 0;
-    padding: .5rem;
-    color: var(--text-color);
-    text-shadow: 0 0 5px var(--background-color);
-    font-size: 1rem;
-    width: 100%;
-    height: 100%;
-
-    &:focus {
-      background-image: linear-gradient(90deg, rgba(var(--subtle-accent-color-components), .5) 0%, transparent 100%);
-    }
-  }
-
-  &.search-field {
-    position: relative;
-
-    & input {
-      padding-left: 2.5rem;
-      padding-right: 2.5rem;
-    }
-
-    & input::-webkit-search-cancel-button {
-      color: var(--text-color);
-    }
-
-    & .search-icon,
-    & .cancel-button {
-      position: absolute;
-      height: 2.5rem;
-      min-width: 2.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    & .cancel-button {
-      right: 0;
-      display: none;
-      background-color: transparent;
-      border: 0;
-      outline: 0;
-      padding: 0;
-      margin: 0;
-      cursor: pointer;
-      color: var(--text-color);
-    }
-
-    & input:valid ~ .cancel-button {
-      display: flex;
-    }
-  }
-}
-
-.hidden-checkbox {
-  position: fixed;
-  top: 0;
-  display: block;
-  z-index: 0;
-  opacity: 0;
-}
-
-#grid-toggle:checked ~ .header label[for='grid-toggle'],
-#list-toggle:checked ~ .header label[for='list-toggle'],
-#games-toggle:checked ~ .header label[for='games-toggle'] {
-  background-color: rgba(var(--subtle-accent-color-components), .5);
-}
 
 #games-toggle:checked ~.main .game-grid {
   display: grid;
@@ -426,8 +439,9 @@ h1, h2, h3, h4, h5, h6 {
     right: 0;
     overflow: hidden;
 
-    background: var(--background-color);
+    background: rgba(var(--background-color-components), .7);
     flex-wrap: wrap-reverse;
+    backdrop-filter: blur(10px);
 
     & .game-title {
       width: 100%;
@@ -664,6 +678,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 1.875rem;
   height: 1.875rem;
   justify-content: center;
+  border-radius: .25rem;
 
   &.good {
     background-color: var(--metacritic-good);
@@ -673,6 +688,12 @@ h1, h2, h3, h4, h5, h6 {
   }
   &.bad {
     background-color: var(--metacritic-bad);
+  }
+  &.tbd {
+    background-color: transparent;
+    border-width: 1px;
+    color: var(--text-color);
+    border-style: solid;
   }
 }
 

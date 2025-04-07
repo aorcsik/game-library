@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "main": "build.cjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build_prod": "./build.sh",
-    "start": "node server.cjs"
+    "build": "./build.sh",
+    "test": "./build.sh --noEmit",
+    "start": "npm run build && node --env-file .env build/index.js",
+    "dev": "./node_modules/nodemon/bin/nodemon.js -e ts --exec \"npm run start\"",
+    "lint": "eslint . --ext .ts,.js"
   },
   "repository": {
     "type": "git",
@@ -22,7 +24,16 @@
     "@fortawesome/fontawesome-pro": "^6.7.2"
   },
   "devDependencies": {
+    "@eslint/js": "^9.24.0",
+    "@types/express": "^5.0.1",
+    "@types/jsdom": "^21.1.7",
+    "@typescript-eslint/eslint-plugin": "^8.29.0",
+    "@typescript-eslint/parser": "^8.29.0",
+    "eslint": "^9.24.0",
     "express": "^4.21.2",
-    "jsdom": "^26.0.0"
+    "jsdom": "^26.0.0",
+    "nodemon": "^3.1.9",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.29.0"
   }
 }
