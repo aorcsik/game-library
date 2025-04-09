@@ -40,9 +40,9 @@ const skipTitle = [
 const generateGamesData = async (path: string): Promise<void> => {
   process.stdout.write('Games\n');
 
-  const config = await getGameLibraryConfig(`${process.env.SOURCE_DIR}/config.json`);
+  const config = getGameLibraryConfig();
 
-  const database = await GameDatabaseService.initDatabase(`${process.env.SOURCE_DIR}/games.json`);
+  const database = await GameDatabaseService.initDatabase(`${process.env.SOURCE_DIR}${GameDatabaseService.GAME_DATABASE_FILE}`);
 
   const purchaseService = new PurchaseService(config, database, skipTitle);
 
@@ -88,7 +88,7 @@ const generateGamesData = async (path: string): Promise<void> => {
   addPurchases(await purchaseService.getSwitchPurchases());
   addPurchases(await purchaseService.getAppStorePurchases());
 
-  await database.save(`${process.env.SOURCE_DIR}/games.json`);
+  await database.save(`${process.env.SOURCE_DIR}${GameDatabaseService.GAME_DATABASE_FILE}`);
 
   const template = await fs.promises.readFile(`${process.env.SOURCE_DIR}/template.html`, 'utf-8');
   const html = template.toString().replace('{{game-grid}}', renderGameGrid(purchasedGames, platforms));
@@ -100,7 +100,7 @@ const generateGamesData = async (path: string): Promise<void> => {
     gameTitles[game.key] = game.title;
   });
 
-  await fs.promises.writeFile(`${process.env.SOURCE_DIR}/game-titles.json`, JSON.stringify(gameTitles, null, 2));
+  await fs.promises.writeFile(`${process.env.SOURCE_DIR}${GameDatabaseService.GAME_TITLES_FILE}`, JSON.stringify(gameTitles, null, 2));
 };
 
 export default generateGamesData;

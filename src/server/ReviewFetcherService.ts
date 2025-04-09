@@ -1,15 +1,6 @@
 import { JSDOM } from 'jsdom';
+import { MetacriticData, OpenCriricData, SteamData } from './schema';
 
-
-type OpenCriricData = {
-  title: string | null;
-  cover: string | null;
-  tier: string | null;
-  score: number | null;
-  critics: number | null;
-  releaseDate: string | null;
-  updated: string;
-};
 
 const fetchOpenCriticData = async (openCriticId: string): Promise<OpenCriricData | null> => {
   const openCriticResponse = await fetch(`https://opencritic.com/game/${openCriticId}`);
@@ -44,18 +35,6 @@ const fetchOpenCriticData = async (openCriticId: string): Promise<OpenCriricData
     releaseDate,
     updated: new Date().toISOString(),
   };
-};
-
-type SteamData = {
-  title: string | null;
-  description: string | null;
-  genres: string[];
-  releaseDate: string | null;
-  reviewScore: number | null;
-  reviewScoreDescription: string | null;
-  metacriticUrl?: string | null;
-  headerImage: string | null;
-  updated: string;
 };
 
 const fetchSteamData = async (steamAppId: number): Promise<SteamData | null> => {
@@ -116,13 +95,6 @@ const fetchSteamData = async (steamAppId: number): Promise<SteamData | null> => 
     headerImage,
     updated: new Date().toISOString(),
   };
-};
-
-type MetacriticData = {
-  title: string | null;
-  releaseDate: string | null;
-  metacriticScore: number | null;
-  updated: string;
 };
 
 const fetchMetacriticData = async (metacriticUrl: string): Promise<MetacriticData | null> => {

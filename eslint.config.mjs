@@ -2,6 +2,9 @@ import eslint from '@eslint/js';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 import css from '@eslint/css';
+// import requireExtensions from 'eslint-plugin-require-extensions';
+import esmImport from 'eslint-plugin-esm-import';
+
 
 const globalRules = {
   'no-console': ['warn', { allow: ['info', 'warn', 'error'] }],
@@ -59,7 +62,11 @@ export default tseslint.config(
   {
     extends: [
       ...tseslint.configs.recommendedTypeChecked,
+      // requireExtensions.configs.recommended,
     ],
+    plugins: {
+      'esm-import': esmImport
+    },
     files: ['src/client/**/*.ts'],
     languageOptions: {
       parserOptions: {
@@ -72,7 +79,8 @@ export default tseslint.config(
       },
     },
     rules: {
-      ...typeScriptRules
+      ...typeScriptRules,
+      ...esmImport.configs.recommended.rules,
     }
   },
   // CSS files configuration

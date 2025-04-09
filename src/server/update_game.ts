@@ -2,6 +2,7 @@ import fs from 'fs';
 import { colorize, LineReader } from './tools';
 import GameDatabaseService from './GameDatabaseService';
 import { fetchMetacriticData, fetchOpenCriticData, fetchSteamData } from './ReviewFetcherService';
+import { calculateTimeDifference } from '../common/tools';
 
 process.env.TZ = 'UTC';
 
@@ -22,20 +23,12 @@ if (process.argv[2] === '-i' && process.argv[3]) {
   refetchAge = -1;
 }
 
-const calculateTimeDifference = (startDate: Date, endDate?: Date): number => {
-  if (!endDate) {
-    endDate = new Date();
-  }
-  const diff = endDate.getTime() - startDate.getTime();
-  return Math.floor(diff / (1000 * 60 * 60 * 24));
-};
-
 const updateLoop = async (): Promise<void> => {
-  const databaseFilePath = `${process.env.SOURCE_DIR}/games.json`;
+  const databaseFilePath = `${process.env.SOURCE_DIR}${GameDatabaseService.GAME_DATABASE_FILE}`;
 
   const database = await GameDatabaseService.initDatabase(databaseFilePath);
 
-  const gameTitlesFile = await fs.promises.readFile(`${process.env.SOURCE_DIR}/game-titles.json`, 'utf-8');
+  const gameTitlesFile = await fs.promises.readFile(`${process.env.SOURCE_DIR}${GameDatabaseService.GAME_TITLES_FILE}`, 'utf-8');
   const gameTitles = JSON.parse(gameTitlesFile.toString()) as Record<string, string>;
   const sortedGameKeys = Object.keys(gameTitles).sort();
 

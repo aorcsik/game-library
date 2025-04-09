@@ -1,28 +1,15 @@
 import fs from 'fs';
-import { MetacriticData, OpenCriricData, SteamData } from './ReviewFetcherService';
-
-type GameDatabaseRecordInJson = {
-  title: string;
-  key?: string;
-  sameGame?: string[];
-  openCriticId?: string;
-  openCriticData?: OpenCriricData;
-  steamAppId?: number;
-  steamData?: SteamData;
-  metacriticUrl?: string;
-  metacriticData?: MetacriticData;
-  releaseDate?: string;
-};
-
-type Game = GameDatabaseRecordInJson & {
-  key: string;
-};
+import { Game } from './schema';
 
 class GameDatabaseService {
 
+  static readonly GAME_DATABASE_FILE = '/data/games.json';
+
+  static readonly GAME_TITLES_FILE = '/data/game-titles.json';
+
   static async initDatabase(path: string): Promise<GameDatabaseService> {
     const gamesFile = await fs.promises.readFile(path, 'utf-8');
-    return new GameDatabaseService(JSON.parse(gamesFile.toString()) as GameDatabaseRecordInJson[]);
+    return new GameDatabaseService(JSON.parse(gamesFile.toString()) as Game[]);
   }
 
   static createGameSlug = (title: string): string => {
@@ -46,13 +33,13 @@ class GameDatabaseService {
       .replace(/\s+/g, ' ').trim();
   };
 
-  private database: GameDatabaseRecordInJson[];
+  private database: Game[];
 
-  constructor(database: GameDatabaseRecordInJson[]) {
+  constructor(database: Game[]) {
     this.database = database;
   }
 
-  findIndex(callback: (gameConfig: GameDatabaseRecordInJson) => boolean | undefined): number {
+  findIndex(callback: (gameConfig: Game) => boolean | undefined): number {
     for (let i = 0; i < this.database.length; i++) {
       if (callback(this.database[i])) {
         return i;
@@ -84,17 +71,17 @@ class GameDatabaseService {
     } else {
       this.database[index].key = GameDatabaseService.createGameSlug(this.database[index].title);
     }
-    return this.database[index] as Game;
+    return this.database[index];
   };
 
-  updateGame(game: Game, gameUpdates: Partial<GameDatabaseRecordInJson>): Game {
+  updateGame(game: Game, gameUpdates: Partial<Game>): Game {
     const index = this.findIndex(g => g.key === game.key);
     if (index !== -1) {
       this.database[index] = {
         ...this.database[index],
         ...gameUpdates
       };
-      return this.database[index] as Game;
+      return this.database[index];
     }
     throw new Error(`Game with key ${game.key} not found in database.`);
   };

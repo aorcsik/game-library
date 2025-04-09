@@ -1,8 +1,9 @@
 import fs from 'fs';
 import { GameLibraryConfig } from './Config';
 import GameDatabaseService, { Game } from './GameDatabaseService';
+import { Platform } from '../common/types';
+import { AppStorePurchaseData, GameCollections, GOGLibraryData, HeroicLibraryData, PlaystationPurchaseData, SteamAPIGetOwnedGamesResponse, SwitchPurchaseData } from './schema';
 
-type Platform = 'steam' | 'epic' | 'gog' | 'amazon' | 'playstation' | 'appstore' | 'switch';
 type PlatformLogo = Platform | 'psplus' | 'netflix';
 
 type PlatformList = Record<Platform, {
@@ -59,64 +60,6 @@ type PlaystationPurchase = Purchase & {
   physical: boolean;
 };
 
-type GameCollections = Record<string, { title: string }[]>;
-
-type SteamAPIGetOwnedGamesResponse = {
-  response: {
-    game_count: number;
-    games: {
-      appid: number;
-      name: string;
-      playtime_forever: number;
-      img_icon_url: string;
-    }[];
-  };
-};
-
-type HeroicGameData = {
-  title: string;
-  install: {
-    is_dlc: boolean;
-  };
-  art_cover: string;
-};
-
-type HeroicLibraryData = {
-  library: HeroicGameData[];
-};
-
-type GOGLibraryData = {
-  games: HeroicGameData[];
-};
-
-type SwitchPurchaseData = {
-  purchases: Record<string,
-    {
-      title: string;
-      cover: string;
-      physical: boolean;
-    }[]>;
-  collections: GameCollections;
-};
-
-type AppStorePurchaseData = Record<string,
-  {
-    title: string;
-    cover: string;
-    netflix: boolean;
-  }[]>;
-
-type PlaystationPurchaseData = {
-  purchases: {
-      titleName: string;
-      cover: string;
-      physical: boolean;
-      serviceUpsell: string;
-      platform: 'PS4' | 'PS5';
-    }[][];
-  collections: GameCollections;
-};
-
 type PlatformPurchse = SteamPurchase |
 EpicPurchase |
 GOGPurchase |
@@ -155,7 +98,8 @@ class PurchaseService {
   async getSteamPurchases(): Promise<Record<string, SteamPurchase>> {
     const purchases: Record<string, SteamPurchase> = {};
     if (this.config.steam_api_key && this.config.steam_id) {
-      const steamApiResponse = await fetch(`https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${this.config.steam_api_key}&steamid=${this.config.steam_id}&include_appinfo=1&format=json`);
+      const url = `https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${this.config.steam_api_key}&steamid=${this.config.steam_id}&include_appinfo=1&format=json`;
+      const steamApiResponse = await fetch(url);
       const steamApiData = await steamApiResponse.json() as SteamAPIGetOwnedGamesResponse;
       steamApiData.response.games.forEach(element => {
         if (this.skipTitle.includes(element.name)) return;
@@ -264,8 +208,8 @@ class PurchaseService {
 
   async getSwitchPurchases(): Promise<Record<string, SwitchPurchase>> {
     const purchases: Record<string, SwitchPurchase> = {};
-    if (this.config.nintendo_library) {
-      const nintendoPurchaseFile = await fs.promises.readFile(this.config.nintendo_library, 'utf-8');
+    if (this.config.switch_library) {
+      const nintendoPurchaseFile = await fs.promises.readFile(this.config.switch_library, 'utf-8');
       const nintendoPurchaseData = JSON.parse(nintendoPurchaseFile.toString()) as SwitchPurchaseData;
       Object.keys(nintendoPurchaseData.purchases).forEach(purchase => {
         nintendoPurchaseData.purchases[purchase].forEach(element => {
@@ -281,7 +225,7 @@ class PurchaseService {
                 title: collectionTitle,
                 cover: element.cover,
                 collection: title,
-                physical: !!element.physical,
+                physical: false,
                 logo: 'switch',
               };
               purchases[game.key].physical = purchases[game.key].physical || !!element.physical;
@@ -318,7 +262,7 @@ class PurchaseService {
             platform: 'appstore',
             title: title,
             cover: element.cover,
-            netflix: false,
+            netflix: true,  // will be overwritten
             physical: false,
             logo: 'appstore',
           };
@@ -350,14 +294,14 @@ class PurchaseService {
                 cover: purchase.cover,
                 collection: title,
                 physical: !!purchase.physical,
-                plus: false,
+                plus: true,  // will be overwritten
                 generation: [],
                 logo: 'playstation',
               };
               purchases[game.key].plus = purchases[game.key].plus === false ? false : purchase.serviceUpsell === 'PS PLUS';
+              if (purchases[game.key].plus) purchases[game.key].logo = 'psplus';
               purchases[game.key].generation.push(purchase.platform);
               purchases[game.key].physical = purchases[game.key].physical || !!purchase.physical;
-              if (purchases[game.key].plus) purchases[game.key].logo = 'psplus';
             });
           } else {
             const game = this.database.getGameByTitle(title);
@@ -366,7 +310,7 @@ class PurchaseService {
               title: title,
               cover: purchase.cover,
               physical: !!purchase.physical,
-              plus: false,
+              plus: true,  // will be overwritten
               generation: [],
               logo: 'playstation',
             };

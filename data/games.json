@@ -33524,5 +33524,114 @@
       "updated": "2025-04-05T12:25:26.309Z"
     },
     "key": "mafia-ii-classic"
+  },
+  {
+    "title": "Teenage Mutant Ninja Turtles: The Cowabunga Collection",
+    "key": "teenage-mutant-ninja-turtles-the-cowabunga-collection",
+    "openCriticId": "13600/teenage-mutant-ninja-turtles-the-cowabunga-collection",
+    "openCriticData": {
+      "title": "Teenage Mutant Ninja Turtles: The Cowabunga Collection",
+      "cover": "https://img.opencritic.com/game/13600/lUlO9Qao.jpg",
+      "tier": "strong",
+      "score": 81,
+      "critics": 87,
+      "releaseDate": "2022-08-30T00:00:00.000Z",
+      "updated": "2025-04-09T03:12:37.722Z"
+    },
+    "steamAppId": 1659600,
+    "steamData": {
+      "title": "Teenage Mutant Ninja Turtles: The Cowabunga Collection",
+      "description": "Teenage Mutant Ninja Turtles: The Cowabunga Collection contains thirteen prior released classic games. This collection is a great place for gamers to experience these popular titles on Steam.",
+      "genres": [
+        "Action"
+      ],
+      "releaseDate": "2022-08-30T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1659600/header.jpg?t=1736296380",
+      "updated": "2025-04-09T03:12:53.426Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/teenage-mutant-ninja-turtles-the-cowabunga/",
+    "metacriticData": {
+      "title": "Teenage Mutant Ninja Turtles: The Cowabunga Collection",
+      "releaseDate": "2022-08-30T00:00:00.000Z",
+      "metacriticScore": 79,
+      "updated": "2025-04-09T03:13:06.703Z"
+    }
+  },
+  {
+    "title": "Sonic Colors: Ultimate",
+    "sameGame": [
+      "Sonic Colours: Ultimate"
+    ],
+    "key": "sonic-colors-ultimate",
+    "openCriticId": "11618/sonic-colors-ultimate",
+    "openCriticData": {
+      "title": "Sonic Colors: Ultimate",
+      "cover": "https://img.opencritic.com/game/11618/A2TAW43i.jpg",
+      "tier": "fair",
+      "score": 74,
+      "critics": 49,
+      "releaseDate": "2021-09-07T00:00:00.000Z",
+      "updated": "2025-04-09T03:11:29.608Z"
+    },
+    "steamAppId": 2055290,
+    "steamData": {
+      "title": "Sonic Colors: Ultimate",
+      "description": "Join Sonic in the high-speed adventure of a lifetime across a colorful interstellar amusement park. Color the Universe in Sonic Colors: Ultimate!",
+      "genres": [
+        "Action",
+        "Casual"
+      ],
+      "releaseDate": "2023-02-06T00:00:00.000Z",
+      "reviewScore": 5,
+      "reviewScoreDescription": "Mixed",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2055290/header.jpg?t=1741795736",
+      "updated": "2025-04-09T03:11:48.395Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/sonic-colors-ultimate/",
+    "metacriticData": {
+      "title": "Sonic Colors: Ultimate",
+      "releaseDate": "2021-09-07T00:00:00.000Z",
+      "metacriticScore": 74,
+      "updated": "2025-04-09T03:12:06.944Z"
+    }
+  },
+  {
+    "title": "Dragon Age: The Veilguard",
+    "key": "dragon-age-the-veilguard",
+    "openCriticId": "17037/dragon-age-the-veilguard",
+    "openCriticData": {
+      "title": "Dragon Age: The Veilguard",
+      "cover": "https://img.opencritic.com/game/17037/MnpS8H9b.jpg",
+      "tier": "strong",
+      "score": 80,
+      "critics": 71,
+      "releaseDate": "2024-10-31T00:00:00.000Z",
+      "updated": "2025-04-09T03:10:00.250Z"
+    },
+    "steamAppId": 1845910,
+    "steamData": {
+      "title": "Dragon Age™: The Veilguard",
+      "description": "Unite the Veilguard and defy the gods in Dragon Age™: The Veilguard, an immersive single-player RPG.",
+      "genres": [
+        "Action",
+        "Adventure",
+        "RPG",
+        "Strategy"
+      ],
+      "releaseDate": "2024-10-31T00:00:00.000Z",
+      "reviewScore": 5,
+      "reviewScoreDescription": "Mixed",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1845910/header.jpg?t=1742492573",
+      "updated": "2025-04-09T03:10:29.264Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/dragon-age-the-veilguard/",
+    "metacriticData": {
+      "title": "Dragon Age: The Veilguard",
+      "releaseDate": "2024-10-31T00:00:00.000Z",
+      "metacriticScore": 82,
+      "updated": "2025-04-09T03:10:52.238Z"
+    }
   }
 ]

@@ -3,13 +3,13 @@
     "target": "es2016",
     "module": "ESNext",
     "lib": ["DOM", "ES6"],
-    "outDir": "./public/build",
-    "rootDir": "./src/client",
+    "outDir": "./docs/build",
+    "rootDir": "./src",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
   },
-  "include": ["./src/client/**/*"],
+  "include": ["./src/client/**/*", "./src/common/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }

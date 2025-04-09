@@ -3,12 +3,12 @@
     "target": "ES6",
     "module": "commonjs",
     "outDir": "./build/",
-    "rootDir": "./src/server",
+    "rootDir": "./src",
     "lib": ["ES6"],
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
   },
-  "include": ["./src/server/**/*"],
+  "include": ["./src/server/**/*", "./src/common/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }

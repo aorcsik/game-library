@@ -1,13 +1,13 @@
 .DS_Store
 node_modules
-build
 
-config.json
-profile.json
-game-titles.json
-appstore_purchases.json
-nintendo_purchases.json
-playstation_purchases.json
-
-docs/fontawesome
 .env
+
+/build
+/docs/build
+/docs/fontawesome
+
+/data/game-titles.json
+/data/purchases/appstore.json
+/data/purchases/switch.json
+/data/purchases/playstation.json

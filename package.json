@@ -5,10 +5,10 @@
   "scripts": {
     "build": "./build.sh",
     "test": "./build.sh --noEmit",
-    "start": "npm run build && node --env-file .env build/index.js",
+    "start": "npm run build && node --env-file .env ./build/server/index.js",
     "dev": "./node_modules/nodemon/bin/nodemon.js -e ts --exec \"npm run start\"",
     "lint": "eslint . --ext .ts,.js",
-    "update_game": "npm run build && node --env-file .env ./build/update_game.js"
+    "update_game": "npm run build && node --env-file .env ./build/server/update_game.js"
   },
   "repository": {
     "type": "git",
@@ -32,6 +32,7 @@
     "@typescript-eslint/eslint-plugin": "^8.29.0",
     "@typescript-eslint/parser": "^8.29.0",
     "eslint": "^9.24.0",
+    "eslint-plugin-esm-import": "^1.0.1",
     "express": "^4.21.2",
     "jsdom": "^26.0.0",
     "nodemon": "^3.1.9",
