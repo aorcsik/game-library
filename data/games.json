@@ -33633,5 +33633,181 @@
       "metacriticScore": 82,
       "updated": "2025-04-09T03:10:52.238Z"
     }
+  },
+  {
+    "title": "Bridge Constructor: The Walking Dead",
+    "key": "bridge-constructor-the-walking-dead",
+    "openCriticId": "10578/bridge-constructor-the-walking-dead",
+    "openCriticData": {
+      "title": "Bridge Constructor: The Walking Dead",
+      "cover": "https://img.opencritic.com/game/10578/5tBr5EAP.jpg",
+      "tier": "strong",
+      "score": 75,
+      "critics": 50,
+      "releaseDate": "2020-11-10T00:00:00.000Z",
+      "updated": "2025-04-12T05:22:02.294Z"
+    },
+    "steamAppId": 1336120,
+    "steamData": {
+      "title": "Bridge Constructor: The Walking Dead",
+      "description": "Bridge Constructor: The Walking Dead combines the legendary and challenging puzzle gameplay of Bridge Constructor™ with the post-apocalyptic zombie universe of AMC’s The Walking Dead.",
+      "genres": [
+        "Simulation"
+      ],
+      "releaseDate": "2020-11-19T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1336120/header.jpg?t=1717675056",
+      "updated": "2025-04-12T05:22:33.921Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/bridge-constructor-the-walking-dead/",
+    "metacriticData": {
+      "title": "Bridge Constructor: The Walking Dead",
+      "releaseDate": "2020-11-19T00:00:00.000Z",
+      "metacriticScore": 72,
+      "updated": "2025-04-12T05:22:49.447Z"
+    }
+  },
+  {
+    "title": "River City Girls",
+    "key": "river-city-girls",
+    "openCriticId": "8213/river-city-girls",
+    "openCriticData": {
+      "title": "River City Girls",
+      "cover": "https://img.opencritic.com/game/8213/sGm7vPDj.jpg",
+      "tier": "strong",
+      "score": 79,
+      "critics": 78,
+      "releaseDate": "2019-09-05T00:00:00.000Z",
+      "updated": "2025-04-12T05:25:47.429Z"
+    },
+    "steamAppId": 1049320,
+    "steamData": {
+      "title": "River City Girls",
+      "description": "There's trouble once again in River City, and this time only the girls can save the day! Using a variety of attacks, weapons, and items, these hot-blooded heroines are ready to teach the city’s lowlifes a lesson - either solo or in 2-player co-op! It’s an old-school rumble for a new generation!",
+      "genres": [
+        "Action"
+      ],
+      "releaseDate": "2019-09-05T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1049320/header.jpg?t=1698777577",
+      "updated": "2025-04-12T05:25:59.422Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/river-city-girls/",
+    "metacriticData": {
+      "title": "River City Girls",
+      "releaseDate": "2019-08-30T00:00:00.000Z",
+      "metacriticScore": 79,
+      "updated": "2025-04-12T05:26:14.286Z"
+    }
+  },
+  {
+    "title": "Clouds & Sheep 2",
+    "key": "clouds-sheep-2",
+    "openCriticId": "3668/clouds-sheep-2",
+    "openCriticData": {
+      "title": "Clouds & Sheep 2",
+      "cover": null,
+      "tier": "weak",
+      "score": 64,
+      "critics": 40,
+      "releaseDate": "2015-08-31T00:00:00.000Z",
+      "updated": "2025-04-12T05:23:07.244Z"
+    },
+    "steamAppId": 439800,
+    "steamData": {
+      "title": "Clouds & Sheep 2",
+      "description": "In this eagerly anticipated sequel of the game “Clouds & Sheep”, the cute sheep are finally on the loose again! Solve countless quests and fulfill your wooly friends’ needs.",
+      "genres": [
+        "Casual",
+        "Simulation"
+      ],
+      "releaseDate": "2016-10-24T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/439800/header.jpg?t=1732705608",
+      "updated": "2025-04-12T05:23:23.825Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/clouds-and-sheep-2/",
+    "metacriticData": {
+      "title": "Clouds & Sheep 2",
+      "releaseDate": "2016-11-18T00:00:00.000Z",
+      "metacriticScore": null,
+      "updated": "2025-04-12T05:23:45.833Z"
+    }
+  },
+  {
+    "title": "Paleo Pines",
+    "key": "paleo-pines",
+    "openCriticId": "15564/paleo-pines",
+    "openCriticData": {
+      "title": "Paleo Pines",
+      "cover": "https://img.opencritic.com/game/15564/cUkfd0Bo.jpg",
+      "tier": "fair",
+      "score": 67,
+      "critics": 35,
+      "releaseDate": "2023-09-25T00:00:00.000Z",
+      "updated": "2025-04-12T05:25:01.315Z"
+    },
+    "steamAppId": 1202200,
+    "steamData": {
+      "title": "Paleo Pines",
+      "description": "Welcome to Paleo Pines, a charming island known for its friendly dinosaurs, quirky townsfolk, and mysterious past. Befriend dinos and enlist their help to fix up your ranch and farm crops to create your cozy dino sanctuary! Then set out with your companion, Lucky, to uncover the island’s secrets.",
+      "genres": [
+        "Adventure",
+        "Casual",
+        "Indie",
+        "RPG",
+        "Simulation"
+      ],
+      "releaseDate": "2023-09-26T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1202200/header.jpg?t=1727904994",
+      "updated": "2025-04-12T05:25:15.560Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/paleo-pines/",
+    "metacriticData": {
+      "title": "Paleo Pines",
+      "releaseDate": "2023-09-26T00:00:00.000Z",
+      "metacriticScore": 65,
+      "updated": "2025-04-12T05:25:28.587Z"
+    }
+  },
+  {
+    "title": "God's Trigger",
+    "key": "gods-trigger",
+    "openCriticId": "7588/gods-trigger",
+    "openCriticData": {
+      "title": "God's Trigger",
+      "cover": "https://img.opencritic.com/game/7588/GhqGXCLi.jpg",
+      "tier": "strong",
+      "score": 80,
+      "critics": 83,
+      "releaseDate": "2019-04-18T00:00:00.000Z",
+      "updated": "2025-04-12T05:24:06.016Z"
+    },
+    "steamAppId": 488730,
+    "steamData": {
+      "title": "God's Trigger",
+      "description": "Slay enemies with speed and precision in an over-the-top show of blood and explosions. Play solo or with others, make split-second decisions, dodge bullets, and use weapons and abilities to inflict violence in the most graphic way possible.",
+      "genres": [
+        "Action",
+        "Indie"
+      ],
+      "releaseDate": "2019-04-18T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/488730/header.jpg?t=1728908991",
+      "updated": "2025-04-12T05:24:29.141Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/gods-trigger",
+    "metacriticData": {
+      "title": "God's Trigger",
+      "releaseDate": "2019-04-18T00:00:00.000Z",
+      "metacriticScore": 71,
+      "updated": "2025-04-12T05:24:35.941Z"
+    }
   }
 ]
