@@ -3,26 +3,52 @@ import { colorize, LineReader } from './tools';
 import GameDatabaseService from './GameDatabaseService';
 import { fetchMetacriticData, fetchOpenCriticData, fetchSteamData } from './ReviewFetcherService';
 import { calculateTimeDifference } from '../common/tools';
+import CommandLineArgs from './CommandLineArgs';
 
 process.env.TZ = 'UTC';
 
 const lineReader = new LineReader();
 
-const fetchDelay = 0; // ms
-let refetchAge = 14; // days
-let startIndex = 0;
-let forceFetchTitle: string | null = null;
-if (process.argv[2] === '-i' && process.argv[3]) {
-  startIndex = parseInt(process.argv[3], 10);
-  if (isNaN(startIndex)) {
-    console.error('Invalid start index');
-    process.exit(1);
+const args = new CommandLineArgs({
+  'startIndex': {
+    shortHand: 'i',
+    description: 'Start index for fetching games',
+    default: 0,
+    parameter: 'index',
+    type: 'number',
+  },
+  'fetchTitle': {
+    shortHand: 't',
+    description: 'Force fetching a specific title',
+    default: '',
+    parameter: 'title',
+    type: 'string',
+  },
+  'refetchAge': {
+    shortHand: 'a',
+    description: 'Refetch if data is older than this many days',
+    default: 14,
+    parameter: 'days',
+    type: 'number',
+  },
+  'help': {
+    shortHand: 'h',
+    description: 'Display help message',
+    default: false,
+    parameter: null,
+    type: null,
   }
-} else if (process.argv[2] === '-t' && process.argv[3]) {
-  forceFetchTitle = process.argv[3];
-  refetchAge = -1;
+});
+
+if (args.get('help')) {
+  args.displayHelp();
+  process.exit(0);
 }
 
+const fetchDelay = 0; // ms
+const refetchAge = args.get('refetchAge') as number;
+const startIndex = args.get('startIndex') as number;
+const forceFetchTitle = args.get('fetchTitle') as string;
 const updateLoop = async (): Promise<void> => {
   const databaseFilePath = `${process.env.SOURCE_DIR}${GameDatabaseService.GAME_DATABASE_FILE}`;
 
@@ -36,8 +62,10 @@ const updateLoop = async (): Promise<void> => {
   for (const gameKey of sortedGameKeys) {
     const title = gameTitles[gameKey];
 
-    if (forceFetchTitle && title !== forceFetchTitle) continue;
-    if (i < startIndex) continue;
+    if ((forceFetchTitle && title !== forceFetchTitle) || i < startIndex) {
+      i++;
+      continue;
+    }
 
     let game = database.getGameByTitle(title);
 
@@ -49,7 +77,7 @@ const updateLoop = async (): Promise<void> => {
     }
     let openCriticWasFetched = false;
     const openCriticDataAge = game.openCriticData ? calculateTimeDifference(new Date(game.openCriticData.updated)) : null;
-    if (game.openCriticId && game.openCriticId.match(/\d+\/.*/) && (!openCriticDataAge || openCriticDataAge > refetchAge)) {
+    if (game.openCriticId && game.openCriticId.match(/\d+\/.*/) && ((!openCriticDataAge && openCriticDataAge !== 0) || openCriticDataAge > refetchAge)) {
       const openCriticData = await fetchOpenCriticData(game.openCriticId);
       if (openCriticData) {
         game = database.updateGame(game, { openCriticData });
@@ -68,7 +96,7 @@ const updateLoop = async (): Promise<void> => {
     let steamDataWasFetched = false;
     let proposedMetacriticUrl: string | null = null;
     const steamDataAge = game.steamData ? calculateTimeDifference(new Date(game.steamData.updated)) : null;
-    if (game.steamAppId && game.steamAppId !== -1 && (!steamDataAge || steamDataAge > refetchAge)) {
+    if (game.steamAppId && game.steamAppId !== -1 && ((!steamDataAge && steamDataAge !== 0) || steamDataAge > refetchAge)) {
       const steamData = await fetchSteamData(game.steamAppId);
       if (steamData) {
         if (steamData.metacriticUrl && !game.metacriticUrl) {
@@ -89,7 +117,7 @@ const updateLoop = async (): Promise<void> => {
     }
     let metacriticDataWasFetched = false;
     const metacriticDataAge = game.metacriticData ? calculateTimeDifference(new Date(game.metacriticData.updated)) : null;
-    if (game.metacriticUrl && game.metacriticUrl !== 'skip' && (!metacriticDataAge || metacriticDataAge > refetchAge)) {
+    if (game.metacriticUrl && game.metacriticUrl !== 'skip' && ((!metacriticDataAge && metacriticDataAge !== 0) || metacriticDataAge > refetchAge)) {
       const metacriticData = await fetchMetacriticData(game.metacriticUrl);
       if (metacriticData) {
         game = database.updateGame(game, { metacriticData });

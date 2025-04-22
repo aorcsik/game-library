@@ -40,13 +40,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     type FormFields = {
       q: HTMLInputElement;
-      layout: RadioNodeList;
       tier: RadioNodeList;
       sort_by: HTMLSelectElement;
       direction: RadioNodeList; 
     };
 
-    const formFields: (keyof FormFields)[] = ['q', 'layout', 'tier', 'sort_by', 'direction'];
+    const formFields: (keyof FormFields)[] = ['q', 'tier', 'sort_by', 'direction'];
 
     type GameLibraryHeaderForm = HTMLFormElement & FormFields;
 
@@ -117,6 +116,16 @@ document.addEventListener('DOMContentLoaded', () => {
           }
           return 0;
         })
+        .sort((a, b) => {
+          const favouriteA = a.querySelector('.game-profile-info i.fa-solid.fa-heart') ? 1 : 0;
+          const favouriteB = b.querySelector('.game-profile-info i.fa-solid.fa-heart') ? 1 : 0;
+          return favouriteB - favouriteA;
+        })
+        .sort((a, b) => {
+          const interestingA = a.querySelector('.game-profile-info i.fa-regular.fa-hand-point-right') ? 1 : 0;
+          const interestingB = b.querySelector('.game-profile-info i.fa-regular.fa-hand-point-right') ? 1 : 0;
+          return interestingB - interestingA;
+        })
         .forEach(row => {
         row.className = 'game-row hidden';
 
@@ -137,6 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const gameCounterElement: HTMLElement | null = document.querySelector('.game-count');
       if (gameCounterElement) {
         gameCounterElement.innerHTML = `${gameCounter}`;
+        document.title = `${gameCounter} | ${document.title.replace(/^\d+\s\|\s/, '')}`;
       }
       Object.keys(platformCounter).forEach(platform => {
         const platformCounterElement: HTMLElement | null = document.querySelector(`.platform-${platform} .platform-count`);
@@ -165,9 +175,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!url.searchParams.has(field)) return;
         form[field].value = url.searchParams.get(field) || '';
       });
-      if (document.documentElement.clientWidth <= 600) {
-        // form.layout.value = "games";
-      }
       handleFilter();
     };
 

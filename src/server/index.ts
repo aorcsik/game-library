@@ -13,5 +13,5 @@ app.get('/', async (req, res) => {
 app.use(express.static('docs'));
 
 app.listen(port, () => {
-  process.stdout.write(`Game Library app listening on port ${port}`);
+  process.stdout.write(`Game Library app listening on port ${port}\n\n`);
 });

@@ -264,12 +264,6 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0;
 }
 
-#grid-toggle:checked ~ .header label[for='grid-toggle'],
-#list-toggle:checked ~ .header label[for='list-toggle'],
-#games-toggle:checked ~ .header label[for='games-toggle'] {
-  background-color: rgba(var(--subtle-accent-color-components), .5);
-}
-
 /** GAME PLATFORM ICON **/
 
 .game-platform {
@@ -414,105 +408,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-
-
-#games-toggle:checked ~.main .game-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-
-  & .games-header {
-    display: none;
-  }
-
-  & .game-row-title {
-    display: flex;
-    gap: .5rem;
-    align-items: center;
-
-    position: absolute;
-    z-index: 3;
-    padding: .25rem .5rem;
-    margin: .25rem;
-    border-radius: .5rem;
-    font-size: 1.1rem;
-    left: 0;
-    right: 0;
-    overflow: hidden;
-
-    background: rgba(var(--background-color-components), .7);
-    flex-wrap: wrap-reverse;
-    backdrop-filter: blur(10px);
-
-    & .game-title {
-      width: 100%;
-      font-size: 1rem;
-    }
-  }
-
-  & .game-row {
-    display: block;
-    padding-bottom: 72%;
-    position: relative;
-
-    &.hidden {
-      display: none;
-    }
-
-    &:hover .game-cover-image {
-      transform: translateX(-50%) scale(1.1);
-    }
-  }
-
-  & .game-cell {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-
-    & .game-info {
-      align-items: start;
-      position: relative;
-
-      & .game-title {
-        display: none;
-      }
-    }
-
-    & .game-platform {
-      position: absolute;
-      z-index: 1;
-      bottom: .5rem;
-    }
-
-    &.game-steam {
-      z-index: 1;
-    }
-    &.game-steam .game-platform{
-      left: calc(.5rem + 0 * (100% / 7));
-    }
-    &.game-playstation .game-platform{
-      left: calc(.5rem + 1 * (100% / 7));
-    }
-    &.game-switch .game-platform{
-      left: calc(.5rem + 2 * (100% / 7));
-    }
-    &.game-epic .game-platform{
-      left: calc(.5rem + 3 * (100% / 7));
-    }
-    &.game-gog .game-platform{
-      left: calc(.5rem + 4 * (100% / 7));
-    }
-    &.game-amazon .game-platform{
-      left: calc(.5rem + 5 * (100% / 7));
-    }
-    &.game-appstore .game-platform{
-      left: calc(.5rem + 6 * (100% / 7));
-    }
-  }
-}
-
-#list-toggle:checked ~ .main .game-grid {
+.game-grid {
   padding-left: .5rem;
 
   & .game-header-cell {
@@ -646,6 +542,10 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--number-font);
 }
 
+.game-title.played {
+  opacity: .3;
+}
+
 .game-title .release-date {
   color: var(--secondary-text);
 }
@@ -703,11 +603,20 @@ h1, h2, h3, h4, h5, h6 {
   display: none;
 }
 
-@media only screen and (max-width: 600px) {
-  .layout-switcher {
-    display: none;
-  }
+.game-profile-info {
+  display: flex;
+  gap: 1rem;
+  padding-right: .5rem;
+  order: 1;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.game-profile-info .fa-regular.fa-heart,
+.game-profile-info .fa-regular.fa-square {
+  opacity: .3;
+}
 
+@media only screen and (max-width: 600px) {
   .controls {
     flex-wrap: wrap;
     gap: 0;
@@ -747,41 +656,6 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 
-  #games-toggle:checked ~.main .game-grid {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 1rem;
-
-    & .game-row {
-      padding-bottom: 40%;
-    }
-
-    & .game-row-title {
-      right: 0;
-      left: 0;
-      padding: .5rem;
-      font-size: 1.2rem;
-
-      & .game-title {
-        font-size: 1rem;
-      }
-    }
-
-    & .game-cover {
-      position: absolute;
-      filter: blur(10px);
-    }
-    & path {
-      fill: #fff;
-    }
-
-    & .game-placeholder {
-      & path {
-        opacity: .3;
-      }
-    }
-  }
-
-  #toggle-controls:checked ~ .header .tier-filter,
   #toggle-controls:checked ~ .header .sort,
   #toggle-controls:checked ~ .header .search-field {
     display: flex;
@@ -797,6 +671,53 @@ h1, h2, h3, h4, h5, h6 {
   #toggle-controls:checked ~ .header .mobile-menu-open {
     display: none;
   }
+
+  .game-grid {
+    padding: 0;
+    overflow: hidden;
+    gap: 0;
+  }
+
+  .game-row {
+    flex-wrap: wrap;
+    gap: 0
+  }
+
+  .game-grid .game-row-title {
+    width: 100%;
+    border-top: 1px solid var(--subtle-accent-color);
+    border-radius: 0;
+    padding: .5rem
+  }
+
+  .game-grid .game-cell {
+    width: calc(100% / 7);
+    border: 0;
+    border-radius: 0;
+    display: none;
+
+    & .game-cover {
+      display: none;
+    }
+
+    & .game-info {
+      & .game-platform {
+        margin: auto;
+      }
+    }
+  }
+
+  .games-header {
+    display: none;
+  }
+
+  .open-critic-score {
+    display: none;
+  }
+  .open-critic-critics {
+    display: none;
+  }
+
 }
 
 .hidden {

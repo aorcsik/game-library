@@ -7,6 +7,7 @@ node_modules
 /docs/build
 /docs/fontawesome
 
+/data/profile.json
 /data/game-titles.json
 /data/purchases/appstore.json
 /data/purchases/switch.json

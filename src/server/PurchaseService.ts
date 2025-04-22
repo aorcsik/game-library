@@ -10,6 +10,7 @@ type PlatformList = Record<Platform, {
   name: string;
   count: number;
   plus?: number;
+  netflix?: number;
 }>;
 
 type Purchase = {
@@ -86,6 +87,14 @@ class PurchaseService {
     'FRAMED Collection': [
       {'title': 'FRAMED'},
       {'title': 'FRAMED 2'}
+    ],
+    'Halo: The Master Chief Collection': [
+      {'title': 'Halo: Combat Evolved Anniversary'},
+      {'title': 'Halo 2: Anniversary'},
+      {'title': 'Halo 3'},
+      {'title': 'Halo 3: ODST'},
+      {'title': 'Halo: Reach'},
+      {'title': 'Halo 4'},
     ]
   };
 
@@ -98,9 +107,19 @@ class PurchaseService {
   async getSteamPurchases(): Promise<Record<string, SteamPurchase>> {
     const purchases: Record<string, SteamPurchase> = {};
     if (this.config.steam_api_key && this.config.steam_id) {
+      process.stdout.write('Fetching Steam purchases...\n');
       const url = `https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${this.config.steam_api_key}&steamid=${this.config.steam_id}&include_appinfo=1&format=json`;
       const steamApiResponse = await fetch(url);
-      const steamApiData = await steamApiResponse.json() as SteamAPIGetOwnedGamesResponse;
+      const steamApiResponseText = await steamApiResponse.text();
+      let steamApiData: SteamAPIGetOwnedGamesResponse;
+      try {
+        steamApiData = JSON.parse(steamApiResponseText) as SteamAPIGetOwnedGamesResponse;
+      } catch (error) {
+        process.stdout.write(`Error parsing Steam API response: ${(error as Error)}\n`);
+        process.stdout.write(`Response: ${steamApiResponseText}\n`);
+        return purchases;
+      }
+      process.stdout.write(`Steam purchases fetched: ${steamApiData.response.game_count}\n`);
       steamApiData.response.games.forEach(element => {
         if (this.skipTitle.includes(element.name)) return;
     

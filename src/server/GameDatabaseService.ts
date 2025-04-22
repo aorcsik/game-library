@@ -5,6 +5,8 @@ class GameDatabaseService {
 
   static readonly GAME_DATABASE_FILE = '/data/games.json';
 
+  static readonly PROFILE_FILE = '/data/profile.json';
+
   static readonly GAME_TITLES_FILE = '/data/game-titles.json';
 
   static async initDatabase(path: string): Promise<GameDatabaseService> {
@@ -14,8 +16,11 @@ class GameDatabaseService {
 
   static createGameSlug = (title: string): string => {
     return title
-      .replace(/[-–]/g, ' ')
-      .replace(/['’]/g, '\'')
+      .replace(/&/g, ' and ')
+      .replace(/[-–+/]/g, ' ')
+      .replace(/['’‘‚‛]/g, '\'')
+      .replace(/["“”„‟]/g, '"')
+      .replace(/[:;,.!?()[\]{}]/g, ' ')
       .replace(/²/g, '2')
       .replace(/³/g, '3')
       .replace(/[^A-Za-z0-9 ]/g, '')
@@ -28,7 +33,8 @@ class GameDatabaseService {
   static formatTitle(title: string): string {
     return title
       .replace(/[™Ⓡ®]/g, '')
-      .replace(/['’]/g, '\'')
+      .replace(/['’‘‚‛]/g, '\'')
+      .replace(/["“”„‟]/g, '"')
       .replace(/[-–]/g, '-')
       .replace(/\s+/g, ' ').trim();
   };

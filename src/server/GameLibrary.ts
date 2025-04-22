@@ -3,6 +3,7 @@ import { getGameLibraryConfig } from './Config';
 import GameDatabaseService from './GameDatabaseService';
 import PurchaseService, { PlatformList, PlatformPurchse, PurchasedGame } from './PurchaseService';
 import renderGameGrid from './views/GameGrid';
+import { GamerProfile } from './schema';
 
 const skipTitle = [
 // Playstation
@@ -38,11 +39,12 @@ const skipTitle = [
 ];
 
 const generateGamesData = async (path: string): Promise<void> => {
-  process.stdout.write('Games\n');
-
   const config = getGameLibraryConfig();
 
   const database = await GameDatabaseService.initDatabase(`${process.env.SOURCE_DIR}${GameDatabaseService.GAME_DATABASE_FILE}`);
+
+  const profileFile = await fs.promises.readFile(`${process.env.SOURCE_DIR}${GameDatabaseService.PROFILE_FILE}`, 'utf-8');
+  const profile = JSON.parse(profileFile.toString()) as GamerProfile;
 
   const purchaseService = new PurchaseService(config, database, skipTitle);
 
@@ -77,6 +79,12 @@ const generateGamesData = async (path: string): Promise<void> => {
         }
         platforms[platform].plus++;
       }
+      if (platform === 'appstore' && purchases[key].netflix) {
+        if (platforms[platform].netflix === undefined) {
+          platforms[platform].netflix = 0;
+        }
+        platforms[platform].netflix++;
+      }
     });
   };
 
@@ -87,6 +95,24 @@ const generateGamesData = async (path: string): Promise<void> => {
   addPurchases(await purchaseService.getGOGPurchases());
   addPurchases(await purchaseService.getSwitchPurchases());
   addPurchases(await purchaseService.getAppStorePurchases());
+
+  purchasedGames.forEach(game => {
+    if (profile.favourite && profile.favourite.find(fav => GameDatabaseService.createGameSlug(fav) === game.key)) {
+      game.favourite = true;
+    }
+    if (profile.played && profile.played.find(played => GameDatabaseService.createGameSlug(played) === game.key)) {
+      game.played = true;
+    }
+    if (profile.playing && profile.playing.find(playing => GameDatabaseService.createGameSlug(playing) === game.key)) {
+      game.playing = true;
+    }
+    if (profile.liked && profile.liked.find(liked => GameDatabaseService.createGameSlug(liked) === game.key)) {
+      game.liked = true;
+    }
+    if (profile.interesting && profile.interesting.find(interesting => GameDatabaseService.createGameSlug(interesting) === game.key)) {
+      game.interesting = true;
+    }
+  });
 
   await database.save(`${process.env.SOURCE_DIR}${GameDatabaseService.GAME_DATABASE_FILE}`);
 

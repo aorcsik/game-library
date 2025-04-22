@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Games</title>
+  <title>Game Library</title>
+  <link rel="manifest" href="manifest.json" />
   <link rel="stylesheet" href="build/client/style.css">
   <link rel="stylesheet" href="fontawesome/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,9 +14,6 @@
 <body>
   
   <form id="game_form">
-    <input class="hidden-checkbox" type="radio" id="games-toggle" name="layout" value="games">
-    <input class="hidden-checkbox" type="radio" id="grid-toggle" name="layout" value="grid">
-    <input class="hidden-checkbox" type="radio" id="list-toggle" name="layout" value="list" checked>
     <input class="hidden-checkbox" type="checkbox" id="toggle-controls">
     <div class="header">
       <div class="container">
@@ -23,11 +21,6 @@
           <h1><strong>Game Library</strong><span class="game-count">0</span></h1>
           <label class="button mobile-menu-open" for="toggle-controls"><i class="fa-regular fa-bars"></i></label>
           <label class="button mobile-menu-close" for="toggle-controls"><i class="fa-regular fa-xmark"></i></label>
-          <div class="button-group layout-switcher">
-            <label class="button" for="games-toggle"><i class="fa-regular fa-grid-2"></i></label>
-            <label class="button" for="grid-toggle"><i class="fa-regular fa-grid"></i></label>
-            <label class="button" for="list-toggle"><i class="fa-regular fa-list"></i></label>
-          </div>
           <div class="button-group tier-filter hidden">
             <input type="radio" name="tier" value="" checked id="tier-filter-all">
             <label class="button" for="tier-filter-all">All</label>

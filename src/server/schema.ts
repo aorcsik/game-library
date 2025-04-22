@@ -96,6 +96,20 @@ type Game = {
   metacriticUrl?: string;
   metacriticData?: MetacriticData;
   releaseDate?: string;
+  played?: boolean;
+  playing?: boolean;
+  favourite?: boolean;
+  liked?: boolean;
+  interesting?: boolean;
+};
+
+export type GamerProfile = {
+  favourite: string[];
+  liked: string[];
+  played: string[];
+  playing: string[];
+  wishlist: string[];
+  interesting: string[];
 };
 
 export type {

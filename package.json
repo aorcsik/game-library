@@ -6,7 +6,7 @@
     "build": "./build.sh",
     "test": "./build.sh --noEmit",
     "start": "npm run build && node --env-file .env ./build/server/index.js",
-    "dev": "./node_modules/nodemon/bin/nodemon.js -e ts --exec \"npm run start\"",
+    "dev": "./node_modules/nodemon/bin/nodemon.js --watch src -e ts,css --exec \"npm run start\"",
     "lint": "eslint . --ext .ts,.js",
     "update_game": "npm run build && node --env-file .env ./build/server/update_game.js"
   },

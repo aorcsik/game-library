@@ -56,9 +56,34 @@ const renderGameRowTitle = (game: Game): string => {
   const steamStoreUrl = game.steamAppId ? `https://store.steampowered.com/app/${game.steamAppId}/` : '';
   const steamReviewScoreDescription = game.steamData?.reviewScoreDescription ? game.steamData?.reviewScoreDescription : '';
 
-  return openCriticLink +
+  let statusCheckbox = '<i class="fa-regular fa-square"></i>';
+  let statusClass = '';
+  if (game.playing) {
+    statusCheckbox = '<i class="fa-regular fa-square-ellipsis"></i>';
+  }
+  if (game.played) {
+    statusCheckbox = '<i class="fa-solid fa-square-check"></i>';
+    statusClass = 'played';
+  }
+  if (game.liked) {
+    statusCheckbox = '<i class="fa-solid fa-square-heart"></i>';
+    statusClass = 'played';
+  }
+  let favouriteCheckbox = '<i class="fa-regular fa-heart"></i>';
+  if (game.favourite) {
+    favouriteCheckbox = '<i class="fa-solid fa-heart"></i>';
+  }
+  if (game.interesting) {
+    favouriteCheckbox = '<i class="fa-regular fa-hand-point-right"></i>';
+  }
+
+  return '<span class="game-profile-info">' + 
+      favouriteCheckbox +
+      statusCheckbox +
+    '</span>' +
+    openCriticLink +
     metacriticLink +
-    `<span class="game-title">
+    `<span class="game-title ${statusClass}" title="${game.title}">
       ${GameDatabaseService.formatTitle(game.title)}
       <span class="release-date">${releaseDate ? `(${(new Date(releaseDate)).getFullYear()})` : ''}</span>
       <a href="${steamStoreUrl}" target="_blank" class="${steamReviewScoreClass}">${steamReviewScoreDescription}</a>
