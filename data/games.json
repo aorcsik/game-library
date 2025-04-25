@@ -33472,7 +33472,7 @@
       "score": 81,
       "critics": 87,
       "releaseDate": "2022-08-30T00:00:00.000Z",
-      "updated": "2025-04-09T03:12:37.722Z"
+      "updated": "2025-04-25T00:13:04.889Z"
     },
     "steamAppId": 1659600,
     "steamData": {
@@ -33485,14 +33485,14 @@
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
       "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1659600/header.jpg?t=1736296380",
-      "updated": "2025-04-09T03:12:53.426Z"
+      "updated": "2025-04-25T00:13:06.641Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/teenage-mutant-ninja-turtles-the-cowabunga/",
     "metacriticData": {
       "title": "Teenage Mutant Ninja Turtles: The Cowabunga Collection",
       "releaseDate": "2022-08-30T00:00:00.000Z",
       "metacriticScore": 79,
-      "updated": "2025-04-09T03:13:06.703Z"
+      "updated": "2025-04-25T00:13:08.126Z"
     }
   },
   {
@@ -33509,7 +33509,7 @@
       "score": 74,
       "critics": 49,
       "releaseDate": "2021-09-07T00:00:00.000Z",
-      "updated": "2025-04-09T03:11:29.608Z"
+      "updated": "2025-04-25T00:13:02.019Z"
     },
     "steamAppId": 2055290,
     "steamData": {
@@ -33523,14 +33523,14 @@
       "reviewScore": 5,
       "reviewScoreDescription": "Mixed",
       "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2055290/header.jpg?t=1741795736",
-      "updated": "2025-04-09T03:11:48.395Z"
+      "updated": "2025-04-25T00:13:02.470Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/sonic-colors-ultimate/",
     "metacriticData": {
       "title": "Sonic Colors: Ultimate",
       "releaseDate": "2021-09-07T00:00:00.000Z",
       "metacriticScore": 74,
-      "updated": "2025-04-09T03:12:06.944Z"
+      "updated": "2025-04-25T00:13:03.165Z"
     }
   },
   {
@@ -33544,7 +33544,7 @@
       "score": 80,
       "critics": 71,
       "releaseDate": "2024-10-31T00:00:00.000Z",
-      "updated": "2025-04-09T03:10:00.250Z"
+      "updated": "2025-04-25T00:11:04.865Z"
     },
     "steamAppId": 1845910,
     "steamData": {
@@ -33560,14 +33560,14 @@
       "reviewScore": 5,
       "reviewScoreDescription": "Mixed",
       "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1845910/header.jpg?t=1742492573",
-      "updated": "2025-04-09T03:10:29.264Z"
+      "updated": "2025-04-25T00:11:05.449Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/dragon-age-the-veilguard/",
     "metacriticData": {
       "title": "Dragon Age: The Veilguard",
       "releaseDate": "2024-10-31T00:00:00.000Z",
       "metacriticScore": 82,
-      "updated": "2025-04-09T03:10:52.238Z"
+      "updated": "2025-04-25T00:11:05.774Z"
     }
   },
   {
@@ -33982,6 +33982,75 @@
       "releaseDate": "2012-11-06T00:00:00.000Z",
       "metacriticScore": 87,
       "updated": "2025-04-22T21:50:36.350Z"
+    }
+  },
+  {
+    "title": "Hidden Through Time",
+    "key": "hidden-through-time",
+    "openCriticId": "9151/hidden-through-time",
+    "openCriticData": {
+      "title": "Hidden Through Time",
+      "cover": "https://img.opencritic.com/game/9151/4o7gaNc1.jpg",
+      "tier": "strong",
+      "score": 77,
+      "critics": 71,
+      "releaseDate": "2020-03-12T00:00:00.000Z",
+      "updated": "2025-04-25T00:11:37.001Z"
+    },
+    "steamAppId": 524910,
+    "steamData": {
+      "title": "Hidden Through Time",
+      "description": "Embark on a colourful hand drawn journey of discovery through the ages! From missing dinosaur eggs in the stone age, to a king's crown in medieval times, can you find them all? Discover, create and share worlds with your own hidden treasures in Hidden Through Time!",
+      "genres": [
+        "Casual"
+      ],
+      "releaseDate": "2020-03-12T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/524910/header.jpg?t=1725609018",
+      "updated": "2025-04-25T00:11:59.225Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/hidden-through-time/",
+    "metacriticData": {
+      "title": "Hidden Through Time",
+      "releaseDate": "2020-03-12T00:00:00.000Z",
+      "metacriticScore": 81,
+      "updated": "2025-04-25T00:12:21.664Z"
+    }
+  },
+  {
+    "title": "If Found...",
+    "key": "if-found",
+    "openCriticId": "9469/if-found-",
+    "openCriticData": {
+      "title": "If Found...",
+      "cover": "https://img.opencritic.com/game/9469/MJ6DWkcM.jpg",
+      "tier": "mighty",
+      "score": 84,
+      "critics": 86,
+      "releaseDate": "2020-05-19T00:00:00.000Z",
+      "updated": "2025-04-25T00:12:38.543Z"
+    },
+    "steamAppId": 1041920,
+    "steamData": {
+      "title": "If Found...",
+      "description": "If Found... is a game about going home, coming out and erasing everything.",
+      "genres": [
+        "Casual",
+        "Indie"
+      ],
+      "releaseDate": "2020-05-19T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1041920/header.jpg?t=1729099681",
+      "updated": "2025-04-25T00:12:54.641Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/if-found",
+    "metacriticData": {
+      "title": "If Found...",
+      "releaseDate": "2020-05-19T00:00:00.000Z",
+      "metacriticScore": 84,
+      "updated": "2025-04-25T00:12:57.699Z"
     }
   }
 ]
