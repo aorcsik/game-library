@@ -104,6 +104,11 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 4;
 }
 
+.logo {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
 /** FORMS **/
 
 .controls {
@@ -370,9 +375,8 @@ h1, h2, h3, h4, h5, h6 {
         height: 100%;
         transform: translateX(-50%);
         left: 50%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
+        object-fit: cover;
+        object-position: center;
         transition: transform .3s;
       }
     }

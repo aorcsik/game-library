@@ -1,5 +1,6 @@
 {
   "name": "Game Library",
+  "short_name": "GameLib",
   "description": "A simple game library to manage your games across platforms.",
   "display": "standalone",
   "id": "https://aorcsik.github.io/game-library/",
@@ -9,15 +10,30 @@
   "background_color": "#ffffff",
   "screenshots": [
     {
-      "src": "screenshots/narrow.png",
+      "src": "screenshots/narrow-light.png",
       "sizes": "828x1792",
       "type": "image/png",
       "form_factor": "narrow",
       "label": "Game Library"
     },
     {
-      "src": "screenshots/wide.png",
-      "sizes": "2540x1702",
+      "src": "screenshots/narrow-dark.png",
+      "sizes": "828x1792",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Game Library"
+    },
+    {
+      "src": "screenshots/wide-light.png",
+      "sizes": "2560x1600",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Game Library"
+    }
+    ,
+    {
+      "src": "screenshots/wide-dark.png",
+      "sizes": "2560x1600",
       "type": "image/png",
       "form_factor": "wide",
       "label": "Game Library"
@@ -25,9 +41,9 @@
   ],
   "icons": [
     {
-      "src": "game-library-icon.png",
-      "sizes": "540x540",
-      "type": "image/png"
+      "src": "game-library-icon-color.webp",
+      "sizes": "1024x1024",
+      "type": "image/webp"
     }
   ]
 }

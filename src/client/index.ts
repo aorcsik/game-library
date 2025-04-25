@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const replaceSvgImage = (img: HTMLImageElement): HTMLElement | null => {
-      if (!img.src.match(/(amazon|appstore|epic|gog|playstation|steam|switch)-logo/)) return img;
+      if (!img.src.match(/(amazon|appstore|epic|gog|playstation|steam|switch)-logo/) && !img.src.match(/game-library-controller/)) return img;
 
       const svgText = svgTextCache[img.src];
 
@@ -214,6 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Select all <img> tags with the "icon" class
     const svgImages: HTMLImageElement[] = Array.from(document.querySelectorAll('img.game-platform'));
+    svgImages.push(document.querySelector('.logo') as HTMLImageElement);
 
     await Promise.all(svgImages.reduce((svgs: string[], img) => {
       if (!svgs.includes(img.src)) svgs.push(img.src);

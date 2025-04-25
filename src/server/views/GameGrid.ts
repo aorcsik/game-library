@@ -47,7 +47,7 @@ const renderGameGrid = (purchasedGames: PurchasedGame[], platforms: PlatformList
 
         gameGrid += `
         <div class="game-cell game-card game-${platform}">
-          <div class="game-cover"><div class="game-cover-image" style="background-image: url('${cover}');"></div></div>
+          <div class="game-cover"><img class="game-cover-image" src="${cover}" loading="lazy"></div>
           <div class="game-info">
             <div class="game-title">${title}${collection ? "<div class='game-collection'>(" + collection + ')</div>' : ''}</div>
             <img class="game-platform${physical ? ' physical' : ''}" alt="${platforms[platform].name}" src="images/${platformLogo}-logo.svg">
