@@ -214,7 +214,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Select all <img> tags with the "icon" class
     const svgImages: HTMLImageElement[] = Array.from(document.querySelectorAll('img.game-platform'));
-    svgImages.push(document.querySelector('.logo') as HTMLImageElement);
+    svgImages.push(document.querySelector('.header .logo') as HTMLImageElement);
+    svgImages.push(document.querySelector('footer .logo') as HTMLImageElement);
 
     await Promise.all(svgImages.reduce((svgs: string[], img) => {
       if (!svgs.includes(img.src)) svgs.push(img.src);

@@ -104,9 +104,36 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 4;
 }
 
-.logo {
+.header .logo {
   height: 2.5rem;
   width: 2.5rem;
+}
+
+footer {
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+  font-size: .8rem;
+  color: var(--secondary-text);
+  background-color: rgba(var(--background-color-components), .5);
+  border-top: 1px solid var(--subtle-accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .25rem;
+
+  & a {
+    color: var(--text-color);
+    text-decoration: none;
+  }
+  & a:hover {
+    text-decoration: underline;
+  }
+
+  & .logo {
+    height: 1.25rem;
+    width: 1.25rem;
+  }
 }
 
 /** FORMS **/
