@@ -26,7 +26,7 @@ type SortByType = 'gameTitle' | 'gameReleaseDate' | 'openCriticScore' | 'openCri
 type SortDirection = 'asc' | 'desc';
 
 export const getStaticProps: GetStaticProps<GameLibraryProps> = async () => {
-  const databaseFilePath = `${process.env.SOURCE_DIR}${GameDatabaseService.GAME_DATABASE_FILE}`;
+  const databaseFilePath = `${process.env.SOURCE_DIR || '.'}${GameDatabaseService.GAME_DATABASE_FILE}`;
   const database = await GameDatabaseService.initDatabase(databaseFilePath);
   const [purchasedGames, platforms] = await getGameLibraryData(database, true);
   return {
