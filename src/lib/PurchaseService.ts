@@ -1,25 +1,25 @@
 import fs from 'fs';
 import { GameLibraryConfig } from './Config';
 import GameDatabaseService, { Game } from './GameDatabaseService';
-import { Platform } from '../common/types';
+import { Platform, PlatformLogos, PlatformList } from './types';
 import { AppStorePurchaseData, GameCollections, GOGLibraryData, HeroicLibraryData, PlaystationPurchaseData, SteamAPIGetOwnedGamesResponse, SwitchPurchaseData } from './schema';
-
-type PlatformLogo = Platform | 'psplus' | 'netflix';
-
-type PlatformList = Record<Platform, {
-  name: string;
-  count: number;
-  plus?: number;
-  netflix?: number;
-}>;
+import { formatTitle } from './tools';
+import { client } from './sanity';
+import { MultipleMutationResult } from '@sanity/client';
 
 type Purchase = {
+  _type: 'purchase';
+  key: string;
   platform: Platform;
   title: string;
   cover: string;
   collection?: string;
+  generation?: string[];
+  plus?: boolean;
+  netflix?: boolean;
+  appId?: number;
   physical: boolean;
-  logo: PlatformLogo;
+  logo: PlatformLogos;
 };
 
 type SteamPurchase = Purchase & {
@@ -61,7 +61,7 @@ type PlaystationPurchase = Purchase & {
   physical: boolean;
 };
 
-type PlatformPurchse = SteamPurchase |
+type PlatformPurchase = SteamPurchase |
 EpicPurchase |
 GOGPurchase |
 AmazonPurchase |
@@ -70,8 +70,28 @@ AppStorePurchase |
 PlaystationPurchase;
 
 type PurchasedGame = Game & {
-  key: string;
-  purchases: PlatformPurchse[];
+  purchases: PlatformPurchase[];
+};
+
+const getPurchasesFromSanity = async <T extends PlatformPurchase>(platform: Platform): Promise<Record<string, T>> => {
+  const query = `*[_type == "purchase" && platform == "${platform}"]`;
+  const purchaseList: Purchase[] = await client.fetch(query);
+  const purchases: Record<string, T> = {};
+  purchaseList.forEach(purchase => {
+    purchases[purchase.key] = purchase as T;
+  });
+  return purchases;
+};
+
+const savePurchasesToSanity = async (platform: Platform, purchases: Record<string, Purchase>): Promise<MultipleMutationResult> => {
+  await client.delete({ query: '*[_type == "purchase" && platform == $platform]', params: { platform: platform } });
+  const sanityTransaction = client.transaction();
+  Object.values(purchases).forEach(purchase => {
+    sanityTransaction.create(purchase);
+  });
+  const result = await sanityTransaction.commit();
+  process.stdout.write(`Purchases for ${platform} saved to Sanity.\n`);
+  return result;
 };
 
 class PurchaseService {
@@ -104,7 +124,10 @@ class PurchaseService {
     this.skipTitle = skipTitle;
   }
 
-  async getSteamPurchases(): Promise<Record<string, SteamPurchase>> {
+  async getSteamPurchases(fromSanity: boolean = false): Promise<Record<string, SteamPurchase>> {
+    if (fromSanity) {
+      return await getPurchasesFromSanity('steam');
+    }
     const purchases: Record<string, SteamPurchase> = {};
     if (this.config.steam_api_key && this.config.steam_id) {
       process.stdout.write('Fetching Steam purchases...\n');
@@ -123,13 +146,15 @@ class PurchaseService {
       steamApiData.response.games.forEach(element => {
         if (this.skipTitle.includes(element.name)) return;
     
-        const title = GameDatabaseService.formatTitle(element.name);
+        const title = formatTitle(element.name);
         if (this.steamCollections[element.name]) {
           this.steamCollections[element.name].forEach(collectionItem => {
-            const collectionTitle = GameDatabaseService.formatTitle(collectionItem.title);
+            const collectionTitle = formatTitle(collectionItem.title);
             const game = this.database.getGameByTitle(collectionTitle);
             this.database.updateGame(game, { steamAppId: element.appid });
             if (!purchases[game.key]) purchases[game.key] = {
+              _type: 'purchase',
+              key: game.key,
               platform: 'steam',
               appId: element.appid,
               title: collectionTitle,
@@ -143,6 +168,8 @@ class PurchaseService {
           const game = this.database.getGameByTitle(title);
           this.database.updateGame(game, { steamAppId: element.appid });
           if (!purchases[game.key]) purchases[game.key] = {
+            _type: 'purchase',
+            key: game.key,
             platform: 'steam',
             appId: element.appid,
             title: title,
@@ -153,10 +180,16 @@ class PurchaseService {
         }
       });
     }
+
+    await savePurchasesToSanity('steam', purchases);
+
     return purchases;
   }
 
-  async getEpicPurchases(): Promise<Record<string, EpicPurchase>> {
+  async getEpicPurchases(fromSanity: boolean = false): Promise<Record<string, EpicPurchase>> {
+    if (fromSanity) {
+      return await getPurchasesFromSanity('epic');
+    }
     const purchases: Record<string, EpicPurchase> = {};
     if (this.config.epic_library) {
       const epicLibraryFile = await fs.promises.readFile(this.config.epic_library, 'utf-8');
@@ -165,9 +198,11 @@ class PurchaseService {
         if (this.skipTitle.includes(element.title)) return;
         if (element.install.is_dlc) return;
 
-        const title = GameDatabaseService.formatTitle(element.title);
+        const title = formatTitle(element.title);
         const game = this.database.getGameByTitle(title);
         if (!purchases[game.key]) purchases[game.key] = {
+          _type: 'purchase',
+          key: game.key,
           platform: 'epic',
           title: title,
           cover: element.art_cover,
@@ -176,10 +211,16 @@ class PurchaseService {
         };
       });
     }
+
+    await savePurchasesToSanity('epic', purchases);
+
     return purchases;
   }
 
-  async getAmazonPurchases(): Promise<Record<string, AmazonPurchase>> {
+  async getAmazonPurchases(fromSanity: boolean = false): Promise<Record<string, AmazonPurchase>> {
+    if (fromSanity) {
+      return await getPurchasesFromSanity('amazon');
+    }
     const purchases: Record<string, AmazonPurchase> = {};
     if (this.config.amazon_library) {
       const amazonLibraryFile = await fs.promises.readFile(this.config.amazon_library, 'utf-8');
@@ -188,9 +229,11 @@ class PurchaseService {
         if (this.skipTitle.includes(element.title)) return;
         if (element.install.is_dlc) return;
 
-        const title = GameDatabaseService.formatTitle(element.title);
+        const title = formatTitle(element.title);
         const game = this.database.getGameByTitle(title);
         if (!purchases[game.key]) purchases[game.key] = {
+          _type: 'purchase',
+          key: game.key,
           platform: 'amazon',
           title: title,
           cover: element.art_cover,
@@ -199,10 +242,16 @@ class PurchaseService {
         };
       });
     }
+
+    await savePurchasesToSanity('amazon', purchases);
+
     return purchases;
   }
 
-  async getGOGPurchases(): Promise<Record<string, GOGPurchase>> {
+  async getGOGPurchases(fromSanity: boolean = false): Promise<Record<string, GOGPurchase>> {
+    if (fromSanity) {
+      return await getPurchasesFromSanity('gog');
+    }
     const purchases: Record<string, GOGPurchase> = {};
     if (this.config.gog_library) {
       const gogLibraryFile = await fs.promises.readFile(this.config.gog_library, 'utf-8');
@@ -211,9 +260,11 @@ class PurchaseService {
         if (this.skipTitle.includes(element.title)) return;
         if (element.install.is_dlc) return;
 
-        const title = GameDatabaseService.formatTitle(element.title);
+        const title = formatTitle(element.title);
         const game = this.database.getGameByTitle(title);
         if (!purchases[game.key]) purchases[game.key] = {
+          _type: 'purchase',
+          key: game.key,
           platform: 'gog',
           title: title,
           cover: element.art_cover,
@@ -222,10 +273,16 @@ class PurchaseService {
         };
       });
     }
+
+    await savePurchasesToSanity('gog', purchases);
+
     return purchases;
   }
 
-  async getSwitchPurchases(): Promise<Record<string, SwitchPurchase>> {
+  async getSwitchPurchases(fromSanity: boolean = false): Promise<Record<string, SwitchPurchase>> {
+    if (fromSanity) {
+      return await getPurchasesFromSanity('switch');
+    }
     const purchases: Record<string, SwitchPurchase> = {};
     if (this.config.switch_library) {
       const nintendoPurchaseFile = await fs.promises.readFile(this.config.switch_library, 'utf-8');
@@ -234,12 +291,14 @@ class PurchaseService {
         nintendoPurchaseData.purchases[purchase].forEach(element => {
           if (this.skipTitle.includes(element.title)) return;
 
-          const title = GameDatabaseService.formatTitle(element.title);
+          const title = formatTitle(element.title);
           if (nintendoPurchaseData.collections[element.title]) {
             nintendoPurchaseData.collections[element.title].forEach(collectionItem => {
-              const collectionTitle = GameDatabaseService.formatTitle(collectionItem.title);
+              const collectionTitle = formatTitle(collectionItem.title);
               const game = this.database.getGameByTitle(collectionTitle);
               if (!purchases[game.key]) purchases[game.key] = {
+                _type: 'purchase',
+                key: game.key,
                 platform: 'switch',
                 title: collectionTitle,
                 cover: element.cover,
@@ -252,6 +311,8 @@ class PurchaseService {
           } else {
             const game = this.database.getGameByTitle(title);
             if (!purchases[game.key]) purchases[game.key] = {
+              _type: 'purchase',
+              key: game.key,
               platform: 'switch',
               title: title,
               cover: element.cover,
@@ -263,10 +324,16 @@ class PurchaseService {
         });
       });
     }
+
+    await savePurchasesToSanity('switch', purchases);
+
     return purchases;
   }
 
-  async getAppStorePurchases(): Promise<Record<string, AppStorePurchase>> {
+  async getAppStorePurchases(fromSanity: boolean = false): Promise<Record<string, AppStorePurchase>> {
+    if (fromSanity) {
+      return await getPurchasesFromSanity('appstore');
+    }
     const purchases: Record<string, AppStorePurchase> = {};
     if (this.config.appstore_library) {
       const appStorePurchaseFile = await fs.promises.readFile(this.config.appstore_library, 'utf-8');
@@ -275,9 +342,11 @@ class PurchaseService {
         appStorePurchaseData[purchase].forEach(element => {
           if (this.skipTitle.includes(element.title)) return;
 
-          const title = GameDatabaseService.formatTitle(element.title);
+          const title = formatTitle(element.title);
           const game = this.database.getGameByTitle(title);
           if (!purchases[game.key]) purchases[game.key] = {
+            _type: 'purchase',
+            key: game.key,
             platform: 'appstore',
             title: title,
             cover: element.cover,
@@ -290,10 +359,16 @@ class PurchaseService {
         });
       });
     }
+
+    await savePurchasesToSanity('appstore', purchases);
+
     return purchases;
   }
 
-  async getPlaystationPurchases(): Promise<Record<string, PlaystationPurchase>> {
+  async getPlaystationPurchases(fromSanity: boolean = false): Promise<Record<string, PlaystationPurchase>> {
+    if (fromSanity) {
+      return await getPurchasesFromSanity('playstation');
+    }
     const purchases: Record<string, PlaystationPurchase> = {};
     if (this.config.playstation_library) {
       const playstationPurchaseFile = await fs.promises.readFile(this.config.playstation_library, 'utf-8');
@@ -302,12 +377,14 @@ class PurchaseService {
         page.forEach(purchase => {
           if (this.skipTitle.includes(purchase.titleName)) return;
     
-          const title = GameDatabaseService.formatTitle(purchase.titleName);
+          const title = formatTitle(purchase.titleName);
           if (playstationPurchaseData.collections[purchase.titleName]) {
             playstationPurchaseData.collections[purchase.titleName].forEach(collectionItem => {
-              const collectionTitle = GameDatabaseService.formatTitle(collectionItem.title);
+              const collectionTitle = formatTitle(collectionItem.title);
               const game = this.database.getGameByTitle(collectionTitle);
-              if (!purchases[game.key]) purchases[game.key] = { 
+              if (!purchases[game.key]) purchases[game.key] = {
+                _type: 'purchase',
+                key: game.key,
                 platform: 'playstation',
                 title: collectionTitle,
                 cover: purchase.cover,
@@ -325,6 +402,8 @@ class PurchaseService {
           } else {
             const game = this.database.getGameByTitle(title);
             if (!purchases[game.key]) purchases[game.key] = {
+              _type: 'purchase',
+              key: game.key,
               platform: 'playstation',
               title: title,
               cover: purchase.cover,
@@ -341,9 +420,12 @@ class PurchaseService {
         });
       });
     }
+
+    await savePurchasesToSanity('playstation', purchases);
+
     return purchases;
   }
 }
 
 export default PurchaseService;
-export type { Platform, PlatformList, PlatformPurchse, PurchasedGame };
+export type { Platform, PlatformList, PlatformPurchase, PurchasedGame };

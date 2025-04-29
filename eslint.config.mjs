@@ -2,9 +2,10 @@ import eslint from '@eslint/js';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 import css from '@eslint/css';
-// import requireExtensions from 'eslint-plugin-require-extensions';
-import esmImport from 'eslint-plugin-esm-import';
-
+import { flatConfig } from '@next/eslint-plugin-next';
+import reactPlugin from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
+import { globalIgnores } from 'eslint/config';
 
 const globalRules = {
   'no-console': ['warn', { allow: ['info', 'warn', 'error'] }],
@@ -22,7 +23,12 @@ const typeScriptRules = {
 };
 
 export default tseslint.config(
-  eslint.configs.recommended,
+  globalIgnores([
+    'node_modules/*',
+    'out/*',
+    'build/*',
+    '.next/*'
+  ]),
   {
     languageOptions: {
       parserOptions: {
@@ -36,51 +42,42 @@ export default tseslint.config(
   },
   // JavaScript files
   {
+    ...eslint.configs.recommended,
     files: ['**/*.js', '**/*.cjs', '**/*.mjs'],
+    
   },
-  // Server files configuration
+  // Next.js
   {
     extends: [
       ...tseslint.configs.recommendedTypeChecked,
+      flatConfig.recommended,
+      reactPlugin.configs.flat.recommended,
+      reactPlugin.configs.flat['jsx-runtime'],
+      reactHooks.configs['recommended-latest']
     ],
-    files: ['src/server/**/*.ts'],
+    files: ['src/**/*.{js,ts,jsx,tsx}'],
     languageOptions: {
       parserOptions: {
-        project: './tsconfig.server.json',
-        tsconfigRootDir: import.meta.dirname,
+        project: './tsconfig.json',
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        ecmaFeatures: {
+          jsx: true,
+        },
         globals: {
+          ...globals.browser,
           ...globals.node,
           ...globals.es6,
         },
       },
     },
-    rules: {
-      ...typeScriptRules
-    }
-  },
-  // Client files configuration
-  {
-    extends: [
-      ...tseslint.configs.recommendedTypeChecked,
-      // requireExtensions.configs.recommended,
-    ],
-    plugins: {
-      'esm-import': esmImport
-    },
-    files: ['src/client/**/*.ts'],
-    languageOptions: {
-      parserOptions: {
-        project: './tsconfig.client.json',
-        tsconfigRootDir: import.meta.dirname,
-        globals: {
-          ...globals.browser,
-          ...globals.es6,
-        },
+    settings: {
+      react: {
+        version: 'detect',
       },
     },
     rules: {
-      ...typeScriptRules,
-      ...esmImport.configs.recommended.rules,
+      ...typeScriptRules
     }
   },
   // CSS files configuration

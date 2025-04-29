@@ -1,14 +1,13 @@
 {
   "name": "game-library",
-  "version": "1.0.0",
-  "main": "build.cjs",
+  "version": "2.0.0",
+  "main": "src/pages/index.tsx",
   "scripts": {
-    "build": "./build.sh",
-    "test": "./build.sh --noEmit",
-    "start": "npm run build && node --env-file .env ./build/server/index.js",
-    "dev": "./node_modules/nodemon/bin/nodemon.js --watch src -e ts,css --exec \"npm run start\"",
-    "lint": "eslint . --ext .ts,.js",
-    "update_game": "npm run build && node --env-file .env ./build/server/update_game.js"
+    "dev": "next dev",
+    "build": "next build",
+    "next:lint": "next lint",
+    "lint": "eslint . --ext .ts,.tsx,.js,.css",
+    "update": "tsc -p tsconfig.cli.json && node --env-file .env ./build/cli/update_game.js"
   },
   "repository": {
     "type": "git",
@@ -22,17 +21,29 @@
   "homepage": "https://github.com/aorcsik/game-library#readme",
   "description": "",
   "dependencies": {
-    "@fortawesome/fontawesome-pro": "^6.7.2"
+    "@fortawesome/fontawesome-pro": "^6.7.2",
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/pro-regular-svg-icons": "^6.7.2",
+    "@fortawesome/pro-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@sanity/client": "^6.29.1",
+    "next": "^15.3.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@eslint/css": "^0.6.0",
     "@eslint/js": "^9.24.0",
+    "@next/eslint-plugin-next": "^15.3.1",
+    "@svgr/webpack": "^8.1.0",
     "@types/express": "^5.0.1",
     "@types/jsdom": "^21.1.7",
+    "@types/react": "19.1.2",
     "@typescript-eslint/eslint-plugin": "^8.29.0",
     "@typescript-eslint/parser": "^8.29.0",
     "eslint": "^9.24.0",
-    "eslint-plugin-esm-import": "^1.0.1",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
     "express": "^4.21.2",
     "jsdom": "^26.0.0",
     "nodemon": "^3.1.9",

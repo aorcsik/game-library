@@ -1,5 +1,6 @@
 import fs from 'fs';
 import { Game } from './schema';
+import { createGameSlug } from '../lib/tools';
 
 class GameDatabaseService {
 
@@ -9,35 +10,12 @@ class GameDatabaseService {
 
   static readonly GAME_TITLES_FILE = '/data/game-titles.json';
 
+  static readonly PURCHASE_FILE = '/data/purchases.json';
+
   static async initDatabase(path: string): Promise<GameDatabaseService> {
     const gamesFile = await fs.promises.readFile(path, 'utf-8');
     return new GameDatabaseService(JSON.parse(gamesFile.toString()) as Game[]);
   }
-
-  static createGameSlug = (title: string): string => {
-    return title
-      .replace(/&/g, ' and ')
-      .replace(/[-–+/]/g, ' ')
-      .replace(/['’‘‚‛]/g, '\'')
-      .replace(/["“”„‟]/g, '"')
-      .replace(/[:;,.!?()[\]{}]/g, ' ')
-      .replace(/²/g, '2')
-      .replace(/³/g, '3')
-      .replace(/[^A-Za-z0-9 ]/g, '')
-      .replace(/\s+/g, ' ').trim()
-      .replace(/ /g, '-')
-      .toLowerCase()
-      .replace(/^(a|an|the) (.*)$/, '$2, $1');
-  };
-
-  static formatTitle(title: string): string {
-    return title
-      .replace(/[™Ⓡ®]/g, '')
-      .replace(/['’‘‚‛]/g, '\'')
-      .replace(/["“”„‟]/g, '"')
-      .replace(/[-–]/g, '-')
-      .replace(/\s+/g, ' ').trim();
-  };
 
   private database: Game[];
 
@@ -61,7 +39,7 @@ class GameDatabaseService {
     return this.findIndex(
       game => 
         c(game.title) === c(title) || 
-        game.key === GameDatabaseService.createGameSlug(title) ||
+        game.key === createGameSlug(title) ||
         (game.sameGame && game.sameGame.filter(sameGame => c(sameGame) === c(title)).length > 0));
   };
 
@@ -71,11 +49,11 @@ class GameDatabaseService {
       process.stdout.write(`Game with title "${title}" not found in database. Adding new entry.\n`);
       this.database.push({
         title: title,
-        key: GameDatabaseService.createGameSlug(title),
+        key: createGameSlug(title),
       });
       index = this.database.length - 1;
     } else {
-      this.database[index].key = GameDatabaseService.createGameSlug(this.database[index].title);
+      this.database[index].key = createGameSlug(this.database[index].title);
     }
     return this.database[index];
   };

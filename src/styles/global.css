@@ -1,6 +1,7 @@
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
 body, html {
@@ -20,9 +21,6 @@ body {
   --subtle-accent-color: rgb(var(--subtle-accent-color-components));
   --card-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   --card-hover-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  --body-font: "Figtree", Arial, Helvetica, sans-serif;
-  --heading-font: var(--body-font);
-  --number-font: "Outfit", var(--body-font);
 
   --game-grid-gap: .5rem;
 
@@ -43,13 +41,17 @@ body {
   --metacritic-mixed: #FFCC33;
   --metacritic-bad: #FF0000;
 
-  font-family: var(--body-font);
   background: var(--background-color);
   color: var(--text-color);
+}
 
-  & * {
-    box-sizing: border-box;
-  }
+main {
+  --body-font: var(--font-figtree), Arial, Helvetica, sans-serif;
+  --heading-font: var(--body-font);
+  --number-font: var(--font-outfit), var(--body-font);
+
+
+  font-family: var(--body-font);
 }
 
 .disabled {
@@ -95,7 +97,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 auto;
 }
 
-.header {
+header {
   border-bottom: 1px solid var(--subtle-accent-color);
   position: sticky;
   top: 0;
@@ -104,7 +106,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 4;
 }
 
-.header .logo {
+header .logo {
   height: 2.5rem;
   width: 2.5rem;
 }
@@ -148,15 +150,17 @@ footer {
     display: flex;
     align-items: center;
     margin: 0 1rem 0 0;
-    padding: 0 1.5rem 0 0;
-    border-right: 1px solid var(--subtle-accent-color);
     white-space: nowrap;
     gap: .5rem;
     text-shadow: 0 0 5px var(--background-color);
+    min-width: 18rem;
+    flex-shrink: 0;
 
     & .game-count {
       color: var(--accent-color);
       font-family: var(--number-font);
+      font-size: 1.5rem;
+      margin-top: -4px;
     }
     & .game-count::before {
       content: " ";
@@ -183,6 +187,7 @@ footer {
 
 .button-group {
   display: inline-flex;
+  flex-shrink: 0;
 
   & .button {
     border-radius: 0;
@@ -250,6 +255,7 @@ footer {
 
   &.search-field {
     position: relative;
+    width: 100%;
 
     & input {
       padding-left: 2.5rem;
@@ -309,7 +315,7 @@ footer {
     border-radius: 3px;
   }
 
-  & path {
+  &:not(svg[data-is-color-logo="true"]) path {
     fill: currentColor;
   }
 
@@ -352,6 +358,9 @@ footer {
   & .platform-count {
     color: var(--accent-color);
     font-family: var(--number-font);
+    width: 5rem;
+    flex-shrink: 0;
+    text-align: center;
   }
 }
 
@@ -415,7 +424,7 @@ footer {
   & .game-info {
     padding: .5rem;
     display: flex;
-    align-items: end;
+    align-items: flex-end;
     flex-grow: 1;
 
     & .game-title {
@@ -456,7 +465,7 @@ footer {
     gap: .5rem;
     align-items: center;
 
-    width: 40rem;
+    width: 100%;
     padding-left: .5rem;
     border-radius: .5rem;
 
@@ -477,6 +486,7 @@ footer {
   & .game-cell {
     width: 5rem;
     height: 2.5rem;
+    flex-shrink: 0;
 
     &.game-card {
       position: relative;
@@ -642,8 +652,8 @@ footer {
   margin-left: auto;
   flex-shrink: 0;
 }
-.game-profile-info .fa-regular.fa-heart,
-.game-profile-info .fa-regular.fa-square {
+.game-profile-info [data-prefix="far"].fa-heart,
+.game-profile-info [data-prefix="far"].fa-square {
   opacity: .3;
 }
 
@@ -687,19 +697,19 @@ footer {
     }
   }
 
-  #toggle-controls:checked ~ .header .sort,
-  #toggle-controls:checked ~ .header .search-field {
+  #toggle-controls:checked ~ header .sort,
+  #toggle-controls:checked ~ header .search-field {
     display: flex;
   }
 
   .mobile-menu-open {
     display: flex;
   }
-  #toggle-controls:checked ~ .header .mobile-menu-close {
+  #toggle-controls:checked ~ header .mobile-menu-close {
     display: flex;
     background-color: var(--card-background);
   }
-  #toggle-controls:checked ~ .header .mobile-menu-open {
+  #toggle-controls:checked ~ header .mobile-menu-open {
     display: none;
   }
 

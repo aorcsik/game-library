@@ -23,6 +23,7 @@ jobs:
 
     env:
       FONTAWESOME_PACKAGE_TOKEN: ${{ secrets.FONTAWESOME_PACKAGE_TOKEN }}
+      SANITY_API_KEY: ${{ secrets.SANITY_API_KEY }}
 
     steps:
       - name: Checkout
@@ -36,7 +37,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Build
-        run: npm run build
+        run: npm run next:build
 
       - name: Setup Pages
         id: pages
@@ -44,7 +45,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './docs/'
+          path: './out/'
 
   deploy:
     needs: build

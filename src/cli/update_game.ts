@@ -1,9 +1,9 @@
-import fs from 'fs';
-import { colorize, LineReader } from './tools';
-import GameDatabaseService from './GameDatabaseService';
+import { colorize, LineReader } from './CommandLineTools';
+import GameDatabaseService from '../lib/GameDatabaseService';
 import { fetchMetacriticData, fetchOpenCriticData, fetchSteamData } from './ReviewFetcherService';
-import { calculateTimeDifference } from '../common/tools';
+import { calculateTimeDifference } from '../lib/tools';
 import CommandLineArgs from './CommandLineArgs';
+import { getGameLibraryData } from '../lib/GameLibrary';
 
 process.env.TZ = 'UTC';
 
@@ -31,6 +31,13 @@ const args = new CommandLineArgs({
     parameter: 'days',
     type: 'number',
   },
+  'updatePurchases': {
+    shortHand: 'p',
+    description: 'Update purchases from Steam, Epic, GOG, etc.',
+    default: false,
+    parameter: null,
+    type: null,
+  },
   'help': {
     shortHand: 'h',
     description: 'Display help message',
@@ -49,13 +56,23 @@ const fetchDelay = 0; // ms
 const refetchAge = args.get('refetchAge') as number;
 const startIndex = args.get('startIndex') as number;
 const forceFetchTitle = args.get('fetchTitle') as string;
+const updatePurchases = args.get('updatePurchases') as boolean;
 const updateLoop = async (): Promise<void> => {
   const databaseFilePath = `${process.env.SOURCE_DIR}${GameDatabaseService.GAME_DATABASE_FILE}`;
-
   const database = await GameDatabaseService.initDatabase(databaseFilePath);
 
-  const gameTitlesFile = await fs.promises.readFile(`${process.env.SOURCE_DIR}${GameDatabaseService.GAME_TITLES_FILE}`, 'utf-8');
-  const gameTitles = JSON.parse(gameTitlesFile.toString()) as Record<string, string>;
+  if (updatePurchases) {
+    process.stdout.write('\nUpdating Game Library... ');
+  } else {
+    process.stdout.write('\nLoading Game Library from Sanity... ');
+  }
+  const [purchasedGames] = await getGameLibraryData(database, !updatePurchases);
+  process.stdout.write(`${colorize('done', 'green')} (${purchasedGames.length} games)\n`);
+
+  const gameTitles: Record<string, string> = {};
+  purchasedGames.forEach(game => {
+    gameTitles[game.key] = game.title;
+  });
   const sortedGameKeys = Object.keys(gameTitles).sort();
 
   let i = 0;

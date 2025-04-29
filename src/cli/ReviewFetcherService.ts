@@ -1,5 +1,5 @@
 import { JSDOM } from 'jsdom';
-import { MetacriticData, OpenCriricData, SteamData } from './schema';
+import { MetacriticData, OpenCriricData, SteamData } from '../lib/schema';
 
 
 const fetchOpenCriticData = async (openCriticId: string): Promise<OpenCriricData | null> => {
