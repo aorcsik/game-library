@@ -3,9 +3,9 @@
   "short_name": "GameLib",
   "description": "A simple game library to manage your games across platforms.",
   "display": "standalone",
-  "id": "https://aorcsik.github.io/game-library/",
-  "scope": "https://aorcsik.github.io/game-library/",
-  "start_url": "https://aorcsik.github.io/game-library/",
+  "id": "https://game-library.aorcsik.com/",
+  "scope": "https://game-library.aorcsik.com/",
+  "start_url": "https://game-library.aorcsik.com/",
   "theme_color": "#000000",
   "background_color": "#ffffff",
   "screenshots": [
