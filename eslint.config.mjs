@@ -31,6 +31,7 @@ export default tseslint.config(
   ]),
   flatConfig.recommended,
   {
+    ...eslint.configs.recommended,
     languageOptions: {
       parserOptions: {
         project: true,
@@ -43,7 +44,6 @@ export default tseslint.config(
   },
   // JavaScript files
   {
-    ...eslint.configs.recommended,
     files: ['**/*.js', '**/*.cjs', '**/*.mjs'],
   },
   // Next.js
