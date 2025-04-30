@@ -60,7 +60,6 @@ const GameGrid: React.FC<GameGridProps> = ({ purchasedGames, platforms }) => {
                     loading="lazy"
                     width={120}
                     height={160}
-                    unoptimized={true}
                   />
                 </div>
                 <div className="game-info">

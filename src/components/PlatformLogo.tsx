@@ -17,10 +17,10 @@ interface PlatformLogoProps {
 
 const PlatformLogo = ({ platform, alt, className }: PlatformLogoProps): JSX.Element => {
   if (platform === 'psplus') {
-    return <Image src="/images/psplus-logo.svg" width={24} height={24} alt={alt || 'PlayStation Plus'} className={className} unoptimized={true} />;
+    return <Image src="/images/psplus-logo.svg" width={24} height={24} alt={alt || 'PlayStation Plus'} className={className} />;
   }
   if (platform === 'netflix') {
-    return <Image src="/images/netflix-logo.svg" width={24} height={24} alt={alt || 'Netflix Gaming'} className={className} unoptimized={true} />;
+    return <Image src="/images/netflix-logo.svg" width={24} height={24} alt={alt || 'Netflix Gaming'} className={className} />;
   }
   if (platform === 'amazon') {
     return <AmazonLogo aria-label={alt || 'Amazon Prime Gaming'} className={className} />;
