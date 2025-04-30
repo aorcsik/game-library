@@ -29,6 +29,7 @@ export default tseslint.config(
     'build/*',
     '.next/*'
   ]),
+  flatConfig.recommended,
   {
     languageOptions: {
       parserOptions: {
@@ -44,13 +45,11 @@ export default tseslint.config(
   {
     ...eslint.configs.recommended,
     files: ['**/*.js', '**/*.cjs', '**/*.mjs'],
-    
   },
   // Next.js
   {
     extends: [
       ...tseslint.configs.recommendedTypeChecked,
-      flatConfig.recommended,
       reactPlugin.configs.flat.recommended,
       reactPlugin.configs.flat['jsx-runtime'],
       reactHooks.configs['recommended-latest']
