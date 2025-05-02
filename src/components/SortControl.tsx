@@ -1,10 +1,6 @@
 import { JSX, memo } from 'react';
-import dynamic from 'next/dynamic';
+import FontAwesomeIcon from '../lib/FontAwesomeIcon';
 
-const FontAwesomeIcon = dynamic(
-  () => import('../components/FontAwesomeIcon').then((mod) => mod.FontAwesomeIcon),
-  { ssr: false }
-);
 
 const SortControl = ({
   sortBy,

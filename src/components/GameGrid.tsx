@@ -1,7 +1,6 @@
 import { Platform, PlatformList, PurchasedGame } from '../lib/PurchaseService';
-import GameRowTitle, { getReleaseDate } from './GameRowTitle';
+import GameRowTitle from './GameRowTitle';
 import Image from 'next/image';
-import PlatformLogo from './PlatformLogo';
 import { memo } from 'react';
 
 
@@ -22,22 +21,11 @@ const GameGrid: React.FC<GameGridProps> = ({ purchasedGames, platforms }) => {
   });
 
   return sortedGames.map(game => {
-    const gameDataProps = {
-      'data-game-title': game.key,
-      'data-game-release-date': getReleaseDate(game),
-      'data-open-critic-tier': game.openCriticData?.tier ? game.openCriticData.tier.toString() : 'n-a',
-      'data-open-critic-score': game.openCriticData?.score ? game.openCriticData.score.toString() : '',
-      'data-open-critic-critics': game.openCriticData?.critics ? game.openCriticData.critics.toString() : '',
-      'data-steam-review-score': game.steamData?.reviewScore ? game.steamData.reviewScore.toString() : '',
-      'data-metacritic-score': game.metacriticData?.metacriticScore ? game.metacriticData.metacriticScore.toString() : '',
-    };
-    
     return (
       <div 
         id={game.key} 
         className="game-row" 
         key={game.key}
-        {...gameDataProps}
       >
         <div className="game-row-title">
           <GameRowTitle game={game} />
@@ -69,7 +57,7 @@ const GameGrid: React.FC<GameGridProps> = ({ purchasedGames, platforms }) => {
                       <div className="game-collection">({collection})</div>
                     )}
                   </div>
-                  <PlatformLogo className={`game-platform${physical ? ' physical' : ''}`} platform={platformLogo} />
+                  <i className={`game-platform ${platformLogo}-logo ${physical ? 'physical' : ''}`} />
                 </div>
               </div>
             );
@@ -77,7 +65,7 @@ const GameGrid: React.FC<GameGridProps> = ({ purchasedGames, platforms }) => {
             return (
               <div className={`game-cell game-placeholder game-${platform}`} key={platform}>
                 <div className="game-info">
-                  <PlatformLogo className="game-platform" platform={platform} />
+                  <i className={`game-platform ${platform}-logo`} />
                 </div>
               </div>
             );

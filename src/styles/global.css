@@ -41,17 +41,14 @@ body {
   --metacritic-mixed: #FFCC33;
   --metacritic-bad: #FF0000;
 
-  background: var(--background-color);
-  color: var(--text-color);
-}
-
-main {
   --body-font: var(--font-figtree), Arial, Helvetica, sans-serif;
   --heading-font: var(--body-font);
   --number-font: var(--font-outfit), var(--body-font);
 
 
   font-family: var(--body-font);
+  background: var(--background-color);
+  color: var(--text-color);
 }
 
 .disabled {
@@ -305,8 +302,12 @@ footer {
 /** GAME PLATFORM ICON **/
 
 .game-platform {
+  display: block;
   width: 1.2em;
   height: 1.2em;
+  mask-size: contain;
+  background-size: contain;
+  background-color: currentColor;
 
   &.physical {
     padding: 2px;
@@ -315,12 +316,34 @@ footer {
     border-radius: 3px;
   }
 
-  &:not(svg[data-is-color-logo="true"]) path {
-    fill: currentColor;
+  &.amazon-logo {
+    mask-image: url("/images/amazon-logo.svg");
   }
-
-  &img.game-platform {
-    opacity: 0;
+  &.gog-logo {
+    mask-image: url("/images/gog-logo.svg");
+  }
+  &.appstore-logo {
+    mask-image: url("/images/appstore-logo.svg");
+  }
+  &.steam-logo {
+    mask-image: url("/images/steam-logo.svg");
+  }
+  &.playstation-logo {
+    mask-image: url("/images/playstation-logo.svg");
+  }
+  &.epic-logo {
+    mask-image: url("/images/epic-logo.svg");
+  }
+  &.switch-logo {
+    mask-image: url("/images/switch-logo.svg");
+  }
+  &.psplus-logo {
+    background-image: url("/images/psplus-logo.svg");
+    background-color: transparent;
+  }
+  &.netflix-logo {
+    background-image: url("/images/netflix-logo.svg");
+    background-color: transparent;
   }
 }
 

@@ -1,21 +1,17 @@
+'use client';
+
 import Head from 'next/head';
-import { GetStaticProps } from 'next';
 import { Platform, PlatformList, PurchasedGame } from '../lib/PurchaseService';
-import GameDatabaseService from '../lib/GameDatabaseService';
 import GameLibraryControllerIcon from '../../public/game-library-controller.svg';
 import { useState, useEffect, useCallback, useRef } from 'react';
 
-import dynamic from 'next/dynamic';
 import GameGrid from '../components/GameGrid';
 import GameGridHeader from '../components/GameGridHeader';
 import SortControl from '../components/SortControl';
 import SearchControl from '../components/SearchControl';
-import { getGameLibraryData } from '../lib/GameLibrary';
+import FontAwesomeIcon from '../lib/FontAwesomeIcon';
+import { getReleaseDate } from './GameRowTitle';
 
-const FontAwesomeIcon = dynamic(
-  () => import('../components/FontAwesomeIcon').then((mod) => mod.FontAwesomeIcon),
-  { ssr: false }
-);
 
 type GameLibraryProps = {
   purchasedGames: PurchasedGame[];
@@ -25,23 +21,11 @@ type GameLibraryProps = {
 type SortByType = 'gameTitle' | 'gameReleaseDate' | 'openCriticScore' | 'openCriticCritics' | 'steamReviewScore' | 'metacriticScore';
 type SortDirection = 'asc' | 'desc';
 
-export const getStaticProps: GetStaticProps<GameLibraryProps> = async () => {
-  const databaseFilePath = `${process.env.SOURCE_DIR || '.'}${GameDatabaseService.GAME_DATABASE_FILE}`;
-  const database = await GameDatabaseService.initDatabase(databaseFilePath);
-  const [purchasedGames, platforms] = await getGameLibraryData(database, true);
-  return {
-    props: {
-      purchasedGames,
-      platforms,
-    }
-  };
-};
-
 const sortByFieldName = 'sort_by';
 const sortDirectionFieldName = 'direction';
 const searchFieldName = 'q';
 
-export default function Home({ purchasedGames, platforms: initialPlatforms }: GameLibraryProps): React.JSX.Element {  
+export default function GameLibrary({ purchasedGames, platforms: initialPlatforms }: GameLibraryProps): React.JSX.Element {  
   const [sortBy, setSortBy] = useState<SortByType>('gameTitle');
   const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
   const [searchQuery, setSearchQuery] = useState('');
@@ -104,6 +88,21 @@ export default function Home({ purchasedGames, platforms: initialPlatforms }: Ga
 
   }, [debouncedSearchQuery, purchasedGames, initialPlatforms]); 
 
+  const getGameDataSetByKey = useCallback((gameKey: string) => {
+    const gameDataSet: Record<string, string> = {};
+    const game = purchasedGames.find(g => g.key === gameKey);
+    if (game) {
+      gameDataSet.gameTitle = game.key;
+      gameDataSet.gameReleaseDate = (new Date(getReleaseDate(game) || '1970-01-01')).getTime().toString();
+      gameDataSet.openCriticTier = game.openCriticData?.tier ? game.openCriticData.tier.toString() : 'n-a';
+      gameDataSet.openCriticScore = game.openCriticData?.score ? game.openCriticData.score.toString() : ''; 
+      gameDataSet.openCriticCritics = game.openCriticData?.critics ? game.openCriticData.critics.toString() : '';
+      gameDataSet.steamReviewScore = game.steamData?.reviewScore ? game.steamData.reviewScore.toString() : '';
+      gameDataSet.metacriticScore = game.metacriticData?.metacriticScore ? game.metacriticData.metacriticScore.toString() : '';
+    }
+    return gameDataSet;
+  }, [purchasedGames]);
+
   useEffect(() => {
     if (!gameGridRef.current) return;
     
@@ -117,27 +116,31 @@ export default function Home({ purchasedGames, platforms: initialPlatforms }: Ga
       const gameItemsArray = Array.from(gameItems);
 
         gameItemsArray.sort((a, b) => {
-          const aValue = (a as HTMLElement).dataset[sortBy] || '';
-          const bValue = (b as HTMLElement).dataset[sortBy] || '';
+          const aValue = getGameDataSetByKey(a.id)[sortBy] || '';
+          const bValue = getGameDataSetByKey(b.id)[sortBy] || '';
 
-          if (sortDirection === 'asc') {
-            return aValue < bValue ? -1 : aValue > bValue ? 1 : 0;
-          } else {
-            return aValue > bValue ? -1 : aValue < bValue ? 1 : 0;
+          if (sortBy === 'gameTitle') {
+            return aValue.localeCompare(bValue, undefined, { numeric: true });
           }
+          const aNum = parseInt(aValue, 10);
+          const bNum = parseInt(bValue, 10);
+          if (isNaN(aNum) || isNaN(bNum)) {
+            return 0;
+          }
+          return sortDirection === 'asc' ? aNum - bNum : bNum - aNum;
         }).forEach(item => {
           item.parentNode.appendChild(item);
         });
       });
-  }, [sortBy, sortDirection]);
+  }, [sortBy, sortDirection, getGameDataSetByKey]);
 
   const updateQueryParams = useCallback((key: string, value: string) => {
     const searchParams = new URLSearchParams(window.location.search);
     if ([sortByFieldName, sortDirectionFieldName, searchFieldName].includes(key)) {
       if (value === '') {
-        searchParams.delete(searchFieldName);
+        searchParams.delete(key);
       } else {
-        searchParams.set(searchFieldName, value);
+        searchParams.set(key, value);
       }
     }
     window.history.replaceState({}, '', `${window.location.pathname}?${searchParams}`);
@@ -183,10 +186,7 @@ export default function Home({ purchasedGames, platforms: initialPlatforms }: Ga
   return (
     <>
       <Head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{`${gameCount} | Game Library`}</title>
-        <meta name="description" content="A game library to manage your games." />
       </Head>
 
       <input className="hidden-checkbox" type="checkbox" id="toggle-controls" />

@@ -1,12 +1,8 @@
 import { formatTitle } from '../lib/tools';
 import { Game } from '../lib/schema';
-import dynamic from 'next/dynamic';
 import { JSX } from 'react';
+import FontAwesomeIcon from '../lib/FontAwesomeIcon';
 
-const FontAwesomeIcon = dynamic(
-  () => import('../components/FontAwesomeIcon').then((mod) => mod.FontAwesomeIcon),
-  { ssr: false }
-);
 
 export const getReleaseDate = (game: Game): string => {
   if (game.openCriticData && game.openCriticData.releaseDate) {
@@ -119,6 +115,7 @@ const GameRowTitle = ({ game }: GameRowTitleProps): JSX.Element => {
       
       <span className={`game-title ${statusClass}`} title={game.title}>
         {formatTitle(game.title)}
+        {' '}
         <span className="release-date">
           {releaseDate ? `(${(new Date(releaseDate)).getFullYear()})` : ''}
         </span>
