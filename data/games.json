@@ -9,7 +9,7 @@
       "score": 72,
       "critics": 39,
       "releaseDate": "2013-10-16T00:00:00.000Z",
-      "updated": "2025-04-16T09:28:19.711Z"
+      "updated": "2025-05-02T02:28:21.856Z"
     },
     "steamAppId": 242820,
     "steamData": {
@@ -23,13 +23,13 @@
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
       "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/242820/header.jpg?t=1632130187",
-      "updated": "2025-04-16T09:28:20.253Z"
+      "updated": "2025-05-02T02:28:24.077Z"
     },
     "metacriticData": {
       "title": "140",
       "releaseDate": "2020-01-09T00:00:00.000Z",
       "metacriticScore": 70,
-      "updated": "2025-04-16T09:28:20.683Z"
+      "updated": "2025-05-02T02:28:26.325Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/140",
     "key": "140"
@@ -44,7 +44,7 @@
       "score": 77,
       "critics": 62,
       "releaseDate": "2017-01-16T00:00:00.000Z",
-      "updated": "2025-04-15T15:50:28.730Z"
+      "updated": "2025-05-02T02:28:29.234Z"
     },
     "steamAppId": 330820,
     "steamData": {
@@ -58,13 +58,13 @@
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
       "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/330820/header.jpg?t=1712088920",
-      "updated": "2025-04-15T15:50:30.331Z"
+      "updated": "2025-05-02T02:28:29.926Z"
     },
     "metacriticData": {
       "title": "2064: Read Only Memories",
       "releaseDate": "2017-01-17T00:00:00.000Z",
       "metacriticScore": 76,
-      "updated": "2025-04-15T15:50:32.602Z"
+      "updated": "2025-05-02T02:28:32.094Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/2064-read-only-memories",
     "key": "2064-read-only-memories"
@@ -79,7 +79,7 @@
       "score": 77,
       "critics": 60,
       "releaseDate": "2022-06-08T00:00:00.000Z",
-      "updated": "2025-04-16T09:28:20.977Z"
+      "updated": "2025-05-02T02:28:27.104Z"
     },
     "steamAppId": 1966900,
     "steamData": {
@@ -93,17 +93,17 @@
         "Strategy"
       ],
       "releaseDate": "2023-06-08T00:00:00.000Z",
-      "reviewScore": 6,
-      "reviewScoreDescription": "Mostly Positive",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
       "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1966900/header.jpg?t=1739904276",
-      "updated": "2025-04-16T09:28:21.414Z"
+      "updated": "2025-05-02T02:28:27.726Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/20-minutes-till-dawn/",
     "metacriticData": {
       "title": "20 Minutes Till Dawn",
       "releaseDate": "2022-06-08T00:00:00.000Z",
       "metacriticScore": null,
-      "updated": "2025-04-16T09:28:21.631Z"
+      "updated": "2025-05-02T02:28:28.911Z"
     },
     "key": "20-minutes-till-dawn"
   },
@@ -34255,6 +34255,520 @@
       "releaseDate": "2024-02-14T00:00:00.000Z",
       "metacriticScore": 75,
       "updated": "2025-04-29T22:53:54.152Z"
+    }
+  },
+  {
+    "title": "CHUCHEL",
+    "key": "chuchel",
+    "openCriticId": "5684/chuchel",
+    "openCriticData": {
+      "title": "CHUCHEL",
+      "cover": "https://img.opencritic.com/game/5684/Jx3flDOk.jpg",
+      "tier": "strong",
+      "score": 80,
+      "critics": 68,
+      "releaseDate": "2018-03-07T00:00:00.000Z",
+      "updated": "2025-05-02T02:38:45.355Z"
+    },
+    "steamAppId": 711660,
+    "steamData": {
+      "title": "CHUCHEL",
+      "description": "CHUCHEL is a comedy adventure game from the creators of Machinarium, Botanicula and Samorost. Join the hairy hero Chuchel and his rival Kekel as they will be facing numerous puzzles and challenges in their quest to retrieve the precious cherry!",
+      "genres": [
+        "Adventure",
+        "Casual",
+        "Indie"
+      ],
+      "releaseDate": "2018-03-07T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/711660/header.jpg?t=1743605682",
+      "updated": "2025-05-02T02:38:59.299Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/chuchel",
+    "metacriticData": {
+      "title": "CHUCHEL",
+      "releaseDate": "2018-03-07T00:00:00.000Z",
+      "metacriticScore": 81,
+      "updated": "2025-05-02T02:39:01.705Z"
+    }
+  },
+  {
+    "title": "Gloomhaven",
+    "key": "gloomhaven",
+    "openCriticId": "12137/gloomhaven",
+    "openCriticData": {
+      "title": "Gloomhaven",
+      "cover": "https://img.opencritic.com/game/12137/cxXN7LVa.jpg",
+      "tier": "strong",
+      "score": 75,
+      "critics": 63,
+      "releaseDate": "2021-10-20T00:00:00.000Z",
+      "updated": "2025-05-02T02:40:34.988Z"
+    },
+    "steamAppId": 780290,
+    "steamData": {
+      "title": "Gloomhaven",
+      "description": "Lead your band of mercenaries in the land of Gloomhaven, work with unsavoury individuals, shape the fate of the region, fight your way through horrific places and get rich or die trying in this ruthless Tactical-RPG.",
+      "genres": [
+        "Adventure",
+        "RPG",
+        "Strategy"
+      ],
+      "releaseDate": "2021-10-20T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/780290/header.jpg?t=1741257524",
+      "updated": "2025-05-02T02:40:45.174Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/gloomhaven",
+    "metacriticData": {
+      "title": "Gloomhaven",
+      "releaseDate": "2019-07-17T00:00:00.000Z",
+      "metacriticScore": 82,
+      "updated": "2025-05-02T02:40:48.224Z"
+    }
+  },
+  {
+    "title": "Fashion Police Squad",
+    "key": "fashion-police-squad",
+    "openCriticId": "13537/fashion-police-squad",
+    "openCriticData": {
+      "title": "Fashion Police Squad",
+      "cover": "https://img.opencritic.com/game/13537/9DzTH9J8.jpg",
+      "tier": "strong",
+      "score": 78,
+      "critics": 80,
+      "releaseDate": "2021-05-19T00:00:00.000Z",
+      "updated": "2025-05-02T02:39:20.448Z"
+    },
+    "steamAppId": 1319460,
+    "steamData": {
+      "title": "Fashion Police Squad",
+      "description": "Even at this moment, our fashionable city is under assault. Baggy pants, dull suits, sightings of socks with sandals. A message needs to be sent, and it needs to be sent in style... Time to serve some good ol' Fashion Justice!",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2022-08-15T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1319460/header.jpg?t=1736424754",
+      "updated": "2025-05-02T02:39:33.227Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/fashion-police-squad",
+    "metacriticData": {
+      "title": "Fashion Police Squad",
+      "releaseDate": "2023-02-02T00:00:00.000Z",
+      "metacriticScore": 80,
+      "updated": "2025-05-02T02:39:35.800Z"
+    }
+  },
+  {
+    "title": "Super Space Club",
+    "key": "super-space-club",
+    "openCriticId": "skip",
+    "steamAppId": 1100290,
+    "steamData": {
+      "title": "Super Space Club",
+      "description": "Super Space Club is a lo-fi arcade space shooter to chill to. Defend a vibrant galaxy as a club of misfit heroes and battle endless waves of spacecrafts to the tune of atmospheric beats. Outlast your enemies and vibe to the rhythm of the stars.",
+      "genres": [
+        "Action",
+        "Casual",
+        "Indie"
+      ],
+      "releaseDate": "2023-08-04T00:00:00.000Z",
+      "reviewScore": 7,
+      "reviewScoreDescription": "Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1100290/header.jpg?t=1726717500",
+      "updated": "2025-05-02T02:42:49.968Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/super-space-club/",
+    "metacriticData": {
+      "title": "Super Space Club",
+      "releaseDate": "2023-08-04T00:00:00.000Z",
+      "metacriticScore": null,
+      "updated": "2025-05-02T02:42:54.739Z"
+    }
+  },
+  {
+    "title": "Troublemaker",
+    "key": "troublemaker",
+    "openCriticId": "14654/troublemaker",
+    "openCriticData": {
+      "title": "Troublemaker",
+      "cover": "https://img.opencritic.com/game/14654/KrKOYOMD.jpg",
+      "tier": "fair",
+      "score": 70,
+      "critics": 43,
+      "releaseDate": "2023-03-31T00:00:00.000Z",
+      "updated": "2025-05-02T02:47:59.199Z"
+    },
+    "steamAppId": 1498740,
+    "steamData": {
+      "title": "Troublemaker",
+      "description": "Grab a backpack, boxing tape, and focus on what high school is all about: Beating the ever loving crap out of one another! Troublemaker blends favorite action-adventure-beat-'em-up elements from the strongest traditions in the genre.",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2023-03-31T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1498740/header.jpg?t=1744656859",
+      "updated": "2025-05-02T02:48:05.718Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/troublemaker-raise-your-gang/",
+    "metacriticData": {
+      "title": "Troublemaker: Raise Your Gang",
+      "releaseDate": "2023-10-13T00:00:00.000Z",
+      "metacriticScore": null,
+      "updated": "2025-05-02T02:48:30.464Z"
+    }
+  },
+  {
+    "title": "The Last Show of Mr. Chardish",
+    "key": "the-last-show-of-mr-chardish",
+    "openCriticId": "10678/the-last-show-of-mr-chardish",
+    "openCriticData": {
+      "title": "The Last Show of Mr. Chardish",
+      "cover": "https://img.opencritic.com/game/10678/epGP6uVV.jpg",
+      "tier": "strong",
+      "score": 80,
+      "critics": null,
+      "releaseDate": "2020-11-05T00:00:00.000Z",
+      "updated": "2025-05-02T02:43:44.799Z"
+    },
+    "steamAppId": 1164060,
+    "steamData": {
+      "title": "The Last Show of Mr. Chardish",
+      "description": "Decades have passed and the Actress, Ella, returns to the abandoned theatre to uncover a preserved collection of extraordinary performances. Explore a variety of magical, hand-painted worlds as you collect the lost pieces of the past.",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Casual",
+        "Indie"
+      ],
+      "releaseDate": "2020-11-05T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1164060/header.jpg?t=1733408718",
+      "updated": "2025-05-02T02:44:01.629Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/the-last-show-of-mr-chardish",
+    "metacriticData": {
+      "title": "The Last Show of Mr. Chardish",
+      "releaseDate": "2020-11-05T00:00:00.000Z",
+      "metacriticScore": 79,
+      "updated": "2025-05-02T02:44:04.794Z"
+    }
+  },
+  {
+    "title": "Loop Hero",
+    "key": "loop-hero",
+    "openCriticId": "11017/loop-hero",
+    "openCriticData": {
+      "title": "Loop Hero",
+      "cover": "https://img.opencritic.com/game/11017/i2P0ygSF.jpg",
+      "tier": "mighty",
+      "score": 84,
+      "critics": 91,
+      "releaseDate": "2021-03-04T00:00:00.000Z",
+      "updated": "2025-05-02T02:41:53.246Z"
+    },
+    "steamAppId": 1282730,
+    "steamData": {
+      "title": "Loop Hero",
+      "description": "The Lich has thrown the world into a timeless loop and plunged its inhabitants into never ending chaos. Wield an expanding deck of mystical cards to place enemies, buildings, and terrain along each unique expedition loop for the brave hero.",
+      "genres": [
+        "Indie",
+        "RPG",
+        "Strategy"
+      ],
+      "releaseDate": "2021-03-04T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1282730/header.jpg?t=1744128655",
+      "updated": "2025-05-02T02:42:10.522Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/loop-hero",
+    "metacriticData": {
+      "title": "Loop Hero",
+      "releaseDate": "2021-03-04T00:00:00.000Z",
+      "metacriticScore": 82,
+      "updated": "2025-05-02T02:42:13.972Z"
+    }
+  },
+  {
+    "title": "Genesis Noir",
+    "key": "genesis-noir",
+    "openCriticId": "11134/genesis-noir",
+    "openCriticData": {
+      "title": "Genesis Noir",
+      "cover": "https://img.opencritic.com/game/11134/P344bGIC.jpg",
+      "tier": "strong",
+      "score": 78,
+      "critics": 59,
+      "releaseDate": "2021-03-26T00:00:00.000Z",
+      "updated": "2025-05-02T02:39:51.287Z"
+    },
+    "steamAppId": 735290,
+    "steamData": {
+      "title": "Genesis Noir",
+      "description": "A noir adventure spanning time and space. When a love triangle between cosmic beings becomes a bitter confrontation, you'll witness a gunshot fired by a jealous god—otherwise known as The Big Bang. Jump into the expanding universe and search for a way to destroy creation and save your love.",
+      "genres": [
+        "Adventure"
+      ],
+      "releaseDate": "2021-03-26T00:00:00.000Z",
+      "reviewScore": 5,
+      "reviewScoreDescription": "Mixed",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/735290/header.jpg?t=1726269785",
+      "updated": "2025-05-02T02:40:08.972Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/genesis-noir",
+    "metacriticData": {
+      "title": "Genesis Noir",
+      "releaseDate": "2021-03-26T00:00:00.000Z",
+      "metacriticScore": 77,
+      "updated": "2025-05-02T02:40:20.095Z"
+    }
+  },
+  {
+    "title": "Kraken Academy!!",
+    "key": "kraken-academy",
+    "openCriticId": "12025/kraken-academy-",
+    "openCriticData": {
+      "title": "Kraken Academy!!",
+      "cover": null,
+      "tier": "fair",
+      "score": 73,
+      "critics": 43,
+      "releaseDate": "2021-09-10T00:00:00.000Z",
+      "updated": "2025-05-02T02:41:02.293Z"
+    },
+    "steamAppId": 1158220,
+    "steamData": {
+      "title": "Kraken Academy!!",
+      "description": "Make friends, free spirits and make sure that the world doesn’t end! Welcome to Kraken Academy, a technicolor fever dream that for legal reasons can only be described as \"technically a school.\" Join forces with a magical kraken to save the world!",
+      "genres": [
+        "Adventure",
+        "Casual",
+        "Indie",
+        "RPG"
+      ],
+      "releaseDate": "2021-09-10T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1158220/header.jpg?t=1726270603",
+      "updated": "2025-05-02T02:41:15.478Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/kraken-academy/",
+    "metacriticData": {
+      "title": "Kraken Academy!!",
+      "releaseDate": "2022-03-22T00:00:00.000Z",
+      "metacriticScore": null,
+      "updated": "2025-05-02T02:41:36.298Z"
+    }
+  },
+  {
+    "title": "The Invisible Hand",
+    "key": "the-invisible-hand",
+    "openCriticId": "11340/the-invisible-hand",
+    "openCriticData": {
+      "title": "The Invisible Hand",
+      "cover": "https://img.opencritic.com/game/11340/f7SgC1cO.jpg",
+      "tier": "fair",
+      "score": 73,
+      "critics": 33,
+      "releaseDate": "2021-05-07T00:00:00.000Z",
+      "updated": "2025-05-02T02:43:13.396Z"
+    },
+    "steamAppId": 628200,
+    "steamData": {
+      "title": "The Invisible Hand",
+      "description": "Want to get rich, quick? Welcome to FERIOS, where you’ll be empowered to pursue wealth and success as a mid-level stockbroker! Your wildest dreams of wealth can come true… at the cost of everything else.",
+      "genres": [
+        "Adventure",
+        "Indie",
+        "Simulation",
+        "Strategy"
+      ],
+      "releaseDate": "2021-05-07T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/628200/header.jpg?t=1731764038",
+      "updated": "2025-05-02T02:43:26.996Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/the-invisible-hand",
+    "metacriticData": {
+      "title": "The Invisible Hand",
+      "releaseDate": "2021-05-07T00:00:00.000Z",
+      "metacriticScore": 69,
+      "updated": "2025-05-02T02:43:29.855Z"
+    }
+  },
+  {
+    "title": "Berserk Boy",
+    "key": "berserk-boy",
+    "openCriticId": "16367/berserk-boy",
+    "openCriticData": {
+      "title": "Berserk Boy",
+      "cover": "https://img.opencritic.com/game/16367/ISLzvQuT.jpg",
+      "tier": "strong",
+      "score": 82,
+      "critics": 88,
+      "releaseDate": "2024-03-06T00:00:00.000Z",
+      "updated": "2025-05-02T02:34:27.364Z"
+    },
+    "steamAppId": 1561340,
+    "steamData": {
+      "title": "Berserk Boy",
+      "description": "BERSERK BOY is a high speed action packed Platformer, with Metroidvania elements. Packed with vibrant and stylish pixel art. Go Berserk! as you change into different forms and use the power of Lightning, Fire, Ice, Air, and Earth to save the planet!",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2024-03-06T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1561340/header.jpg?t=1729262432",
+      "updated": "2025-05-02T02:34:49.815Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/berserk-boy",
+    "metacriticData": {
+      "title": "Berserk Boy",
+      "releaseDate": "2024-03-06T00:00:00.000Z",
+      "metacriticScore": 83,
+      "updated": "2025-05-02T02:34:52.694Z"
+    }
+  },
+  {
+    "title": "The Last Spell",
+    "key": "the-last-spell",
+    "openCriticId": "14413/the-last-spell",
+    "openCriticData": {
+      "title": "The Last Spell",
+      "cover": "https://img.opencritic.com/game/14413/jIR0q5sr.jpg",
+      "tier": "strong",
+      "score": 81,
+      "critics": 76,
+      "releaseDate": "2023-03-09T00:00:00.000Z",
+      "updated": "2025-05-02T02:44:27.202Z"
+    },
+    "steamAppId": 1105670,
+    "steamData": {
+      "title": "The Last Spell",
+      "description": "Defend the last bastion of humanity with your squad of heroes! Exterminate fiendish monsters with magic and brute force by night and re-build your battered city defenses by day in this tactical RPG with rogue-lite mechanics.",
+      "genres": [
+        "Action",
+        "Indie",
+        "RPG",
+        "Strategy"
+      ],
+      "releaseDate": "2023-03-09T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1105670/ce387594e03cc7a8f8a9d3c4319fa12357e9021c/header_alt_assets_4.jpg?t=1745351094",
+      "updated": "2025-05-02T02:44:40.078Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/the-last-spell",
+    "metacriticData": {
+      "title": "The Last Spell",
+      "releaseDate": "2023-03-09T00:00:00.000Z",
+      "metacriticScore": 82,
+      "updated": "2025-05-02T02:44:45.368Z"
+    }
+  },
+  {
+    "title": "Blood Omen: Legacy of Kain",
+    "key": "blood-omen-legacy-of-kain",
+    "openCriticId": "12374/blood-omen-legacy-of-kain",
+    "openCriticData": {
+      "title": "Blood Omen: Legacy of Kain",
+      "cover": null,
+      "tier": null,
+      "score": null,
+      "critics": null,
+      "releaseDate": "1997-08-31T00:00:00.000Z",
+      "updated": "2025-05-02T02:38:21.284Z"
+    },
+    "steamAppId": -1,
+    "metacriticUrl": "https://www.metacritic.com/game/blood-omen-legacy-of-kain/",
+    "metacriticData": {
+      "title": "Blood Omen: Legacy of Kain",
+      "releaseDate": "1997-08-31T00:00:00.000Z",
+      "metacriticScore": null,
+      "updated": "2025-05-02T02:38:30.831Z"
+    }
+  },
+  {
+    "title": "The Settlers 2: Gold Edition",
+    "key": "the-settlers-2-gold-edition",
+    "openCriticId": "skip",
+    "steamAppId": -1,
+    "metacriticUrl": "https://www.metacritic.com/game/the-settlers-ii-gold-edition/",
+    "metacriticData": {
+      "title": "The Settlers II Gold Edition",
+      "releaseDate": "1997-03-31T00:00:00.000Z",
+      "metacriticScore": null,
+      "updated": "2025-05-02T02:45:24.335Z"
+    }
+  },
+  {
+    "title": "Wild Country",
+    "key": "wild-country",
+    "openCriticId": "skip",
+    "steamAppId": 1515000,
+    "steamData": {
+      "title": "Wild Country",
+      "description": "Wild Country is a cozy-competitive card game with city-building elements! Collect cards, construct buildings, explore Big Sky, and challenge friends in this one of a kind strategy game.",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Casual",
+        "Indie",
+        "Strategy"
+      ],
+      "releaseDate": "2024-11-25T00:00:00.000Z",
+      "reviewScoreDescription": "9 user reviews",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1515000/header.jpg?t=1746044853",
+      "updated": "2025-05-02T02:48:49.354Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/wild-country/",
+    "metacriticData": {
+      "title": "Wild Country",
+      "releaseDate": "2024-11-25T00:00:00.000Z",
+      "metacriticScore": null,
+      "updated": "2025-05-02T02:49:05.404Z"
+    }
+  },
+  {
+    "title": "Thief Gold",
+    "key": "thief-gold",
+    "openCriticId": "skip",
+    "steamAppId": 211600,
+    "steamData": {
+      "title": "Thief™ Gold",
+      "description": "Stalk your prey on the quest for stolen goods with your blackjack, sword, and an assortment of unique arrows. Steal for money and uncover the hidden agendas of your allies and enemies as you play through an unravelling story of deception and revenge.",
+      "genres": [
+        "Action",
+        "Simulation"
+      ],
+      "releaseDate": "1998-11-30T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/211600/header.jpg?t=1681398290",
+      "updated": "2025-05-02T02:45:54.522Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/thief-the-dark-project",
+    "metacriticData": {
+      "title": "Thief: The Dark Project",
+      "releaseDate": "1998-11-30T00:00:00.000Z",
+      "metacriticScore": 92,
+      "updated": "2025-05-02T02:47:37.374Z"
     }
   }
 ]
