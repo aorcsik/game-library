@@ -11,13 +11,7 @@ interface GameGridProps {
 
 const GameGrid: React.FC<GameGridProps> = ({ purchasedGames, platforms }) => {
   const sortedGames = [...purchasedGames].sort((a, b) => {
-    if (a.key < b.key) {
-      return -1;
-    }
-    if (a.key > b.key) {
-      return 1;
-    }
-    return 0;
+    return a.key.localeCompare(b.key, undefined, { numeric: true });
   });
 
   return sortedGames.map(game => {
