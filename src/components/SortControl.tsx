@@ -1,5 +1,5 @@
 import { JSX, memo } from 'react';
-import FontAwesomeIcon from '../lib/FontAwesomeIcon';
+import FontAwesomeIcon from './FontAwesomeIcon';
 
 
 const SortControl = ({

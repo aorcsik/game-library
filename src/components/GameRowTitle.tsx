@@ -1,7 +1,7 @@
 import { formatTitle } from '../lib/tools';
 import { Game } from '../lib/schema';
 import { JSX } from 'react';
-import FontAwesomeIcon from '../lib/FontAwesomeIcon';
+import FontAwesomeIcon from './FontAwesomeIcon';
 
 
 export const getReleaseDate = (game: Game): string => {

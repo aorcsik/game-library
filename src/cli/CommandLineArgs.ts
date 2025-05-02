@@ -30,7 +30,9 @@ class CommandLineArgs {
         }
         if (this.argOptions[argKey].parameter) {
           activeArg = argKey;
-          acc[argKey] = this.argOptions[argKey].default || true;
+          acc[argKey] = this.argOptions[argKey].default;
+        } else {
+          acc[argKey] = true;
         }
       } else if (activeArg) {
         if (this.argOptions[activeArg].type === 'number') {

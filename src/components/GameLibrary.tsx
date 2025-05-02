@@ -9,7 +9,7 @@ import GameGrid from '../components/GameGrid';
 import GameGridHeader from '../components/GameGridHeader';
 import SortControl from '../components/SortControl';
 import SearchControl from '../components/SearchControl';
-import FontAwesomeIcon from '../lib/FontAwesomeIcon';
+import FontAwesomeIcon from './FontAwesomeIcon';
 import { getReleaseDate } from './GameRowTitle';
 
 
