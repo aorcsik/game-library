@@ -115,23 +115,27 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
       // Convert NodeList to Array for sorting
       const gameItemsArray = Array.from(gameItems);
 
-        gameItemsArray.sort((a, b) => {
-          const aValue = getGameDataSetByKey(a.id)[sortBy] || '';
-          const bValue = getGameDataSetByKey(b.id)[sortBy] || '';
+      gameItemsArray.sort((a, b) => {
+        let sortValue = 0;
 
-          if (sortBy === 'gameTitle') {
-            return aValue.localeCompare(bValue, undefined, { numeric: true });
+        const aValue = getGameDataSetByKey(a.id)[sortBy] || '';
+        const bValue = getGameDataSetByKey(b.id)[sortBy] || '';
+        if (sortBy === 'gameTitle') {
+          sortValue = aValue.localeCompare(bValue, undefined, { numeric: true });
+          // console.log(sortBy, aValue, bValue, sortValue);
+        } else {
+          const aNum = Number(aValue);
+          const bNum = Number(bValue);
+          if (!isNaN(aNum) && !isNaN(bNum)) {
+            sortValue = aNum - bNum;
           }
-          const aNum = parseInt(aValue, 10);
-          const bNum = parseInt(bValue, 10);
-          if (isNaN(aNum) || isNaN(bNum)) {
-            return 0;
-          }
-          return sortDirection === 'asc' ? aNum - bNum : bNum - aNum;
-        }).forEach(item => {
-          item.parentNode.appendChild(item);
-        });
+        }
+
+        return sortDirection === 'asc' ? sortValue : -1 * sortValue;
+      }).forEach(item => {
+        item.parentNode.appendChild(item);
       });
+    });
   }, [sortBy, sortDirection, getGameDataSetByKey]);
 
   const updateQueryParams = useCallback((key: string, value: string) => {

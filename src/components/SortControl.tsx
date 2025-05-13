@@ -32,7 +32,7 @@ const SortControl = ({
       name={sortDirectionFieldName}
       value="desc" 
       id="sort-desc"
-      checked={sortDirection === 'desc'}
+      defaultChecked={sortDirection === 'desc'}
       onChange={handleDirectionChange}
     />
     <label className="button" htmlFor="sort-desc"><FontAwesomeIcon icon={['far', sortBy === 'gameTitle' ? 'arrow-up-z-a': 'arrow-up-9-1']} /></label>
