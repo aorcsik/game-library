@@ -34770,5 +34770,329 @@
       "metacriticScore": 92,
       "updated": "2025-05-02T02:47:37.374Z"
     }
+  },
+  {
+    "title": "Not For Broadcast",
+    "key": "not-for-broadcast",
+    "steamAppId": 1147550,
+    "openCriticId": "12628/not-for-broadcast",
+    "openCriticData": {
+      "title": "Not For Broadcast",
+      "cover": "https://img.opencritic.com/game/12628/8hOhcAjd.jpg",
+      "tier": "mighty",
+      "score": 87,
+      "critics": 88,
+      "releaseDate": "2019-12-11T00:00:00.000Z",
+      "updated": "2025-05-13T12:51:03.259Z"
+    },
+    "steamData": {
+      "title": "Not For Broadcast",
+      "description": "A new political Party has won a landslide in the General Election, and for some reason the editor at the news station you work at has done a runner. Now it’s up to you, the Janitor, to take over the editing booth in this tumultuous time - will you help the government, or stand in their way?",
+      "genres": [
+        "Adventure",
+        "Indie",
+        "Simulation"
+      ],
+      "releaseDate": "2022-01-25T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1147550/header.jpg?t=1745397135",
+      "updated": "2025-05-13T12:51:03.964Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/not-for-broadcast",
+    "metacriticData": {
+      "title": "Not For Broadcast",
+      "releaseDate": "2022-01-25T00:00:00.000Z",
+      "metacriticScore": 82,
+      "updated": "2025-05-13T12:51:07.322Z"
+    }
+  },
+  {
+    "title": "White Shadows",
+    "key": "white-shadows",
+    "steamAppId": 1158890,
+    "openCriticId": "12456/white-shadows",
+    "openCriticData": {
+      "title": "White Shadows",
+      "cover": "https://img.opencritic.com/game/12456/lwYQL9FZ.jpg",
+      "tier": "fair",
+      "score": 69,
+      "critics": 52,
+      "releaseDate": "2021-12-07T00:00:00.000Z",
+      "updated": "2025-05-13T12:52:23.043Z"
+    },
+    "steamData": {
+      "title": "White Shadows",
+      "description": "The wolves are watching! Venture through a captivating but brutal dystopia where our young adventurer Ravengirl will travel through this huge city’s brightest highs and delve to its darkest depths on her perilous journey of discovery and finding her destiny where hope seems in short supply.",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Casual",
+        "Indie"
+      ],
+      "releaseDate": "2021-12-07T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1158890/header.jpg?t=1746629219",
+      "updated": "2025-05-13T12:52:23.928Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/white-shadows/",
+    "metacriticData": {
+      "title": "White Shadows",
+      "releaseDate": "2021-12-07T00:00:00.000Z",
+      "metacriticScore": 74,
+      "updated": "2025-05-13T12:52:36.134Z"
+    }
+  },
+  {
+    "title": "A Space for the Unbound",
+    "key": "a-space-for-the-unbound",
+    "steamAppId": 1201270,
+    "openCriticId": "14202/a-space-for-the-unbound",
+    "openCriticData": {
+      "title": "A Space for the Unbound",
+      "cover": "https://img.opencritic.com/game/14202/WujlMRQL.jpg",
+      "tier": "mighty",
+      "score": 85,
+      "critics": 95,
+      "releaseDate": "2023-01-19T00:00:00.000Z",
+      "updated": "2025-05-13T12:48:28.765Z"
+    },
+    "steamData": {
+      "title": "A Space for the Unbound",
+      "description": "A magical adventure about two high school sweethearts set at the end of their school days - and the end of the world. Explore a crumbling town and help friends face their inner demons, which could be the key to stopping reality itself disintegrating. And don’t forget to pet the cats.",
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2023-01-19T00:00:00.000Z",
+      "reviewScore": 9,
+      "reviewScoreDescription": "Overwhelmingly Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1201270/header.jpg?t=1737345095",
+      "updated": "2025-05-13T12:48:29.702Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/a-space-for-the-unbound/",
+    "metacriticData": {
+      "title": "A Space For The Unbound",
+      "releaseDate": "2023-01-19T00:00:00.000Z",
+      "metacriticScore": 85,
+      "updated": "2025-05-13T12:48:50.190Z"
+    }
+  },
+  {
+    "title": "The Pale Beyond",
+    "key": "the-pale-beyond",
+    "steamAppId": 1266030,
+    "openCriticId": "14338/the-pale-beyond",
+    "openCriticData": {
+      "title": "The Pale Beyond",
+      "cover": "https://img.opencritic.com/game/14338/3KC2EqDQ.jpg",
+      "tier": "strong",
+      "score": 78,
+      "critics": 93,
+      "releaseDate": "2023-02-24T00:00:00.000Z",
+      "updated": "2025-05-13T12:52:03.686Z"
+    },
+    "steamData": {
+      "title": "The Pale Beyond",
+      "description": "You didn’t ask to lead this expedition, but here you are. Stuck in the ice, Captain missing, miles from civilisation. Someone has to take charge. Manage your meagre resources, balance safety and morale, make the hard calls, and head in the only direction you can - through The Pale Beyond.",
+      "genres": [
+        "Adventure",
+        "Indie",
+        "RPG",
+        "Simulation",
+        "Strategy"
+      ],
+      "releaseDate": "2023-02-24T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1266030/header.jpg?t=1726131031",
+      "updated": "2025-05-13T12:52:04.956Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/the-pale-beyond",
+    "metacriticData": {
+      "title": "The Pale Beyond",
+      "releaseDate": "2023-02-24T00:00:00.000Z",
+      "metacriticScore": 77,
+      "updated": "2025-05-13T12:52:07.605Z"
+    }
+  },
+  {
+    "title": "Beacon Pines",
+    "key": "beacon-pines",
+    "steamAppId": 1269640,
+    "openCriticId": "13710/beacon-pines",
+    "openCriticData": {
+      "title": "Beacon Pines",
+      "cover": "https://img.opencritic.com/game/undefined/n9Od0DKK.jpg",
+      "tier": "strong",
+      "score": 81,
+      "critics": 88,
+      "releaseDate": "2022-09-22T00:00:00.000Z",
+      "updated": "2025-05-13T12:49:04.166Z"
+    },
+    "steamData": {
+      "title": "Beacon Pines",
+      "description": "Beacon Pines is a cute and creepy adventure set within a mysterious book. Sneak out late, make new friends, uncover hidden truths, and collect words that will change the course of fate!",
+      "genres": [
+        "Adventure",
+        "Casual",
+        "Indie"
+      ],
+      "releaseDate": "2022-09-22T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1269640/header.jpg?t=1739443636",
+      "updated": "2025-05-13T12:49:05.192Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/beacon-pines",
+    "metacriticData": {
+      "title": "Beacon Pines",
+      "releaseDate": "2022-09-22T00:00:00.000Z",
+      "metacriticScore": 84,
+      "updated": "2025-05-13T12:49:08.507Z"
+    }
+  },
+  {
+    "title": "NEEDY STREAMER OVERLOAD",
+    "key": "needy-streamer-overload",
+    "steamAppId": 1451940,
+    "openCriticId": "12677/needy-streamer-overload",
+    "openCriticData": {
+      "title": "Needy Streamer Overload",
+      "cover": null,
+      "tier": null,
+      "score": null,
+      "critics": null,
+      "releaseDate": "2022-01-21T00:00:00.000Z",
+      "updated": "2025-05-13T12:50:33.202Z"
+    },
+    "steamData": {
+      "title": "NEEDY STREAMER OVERLOAD",
+      "description": "NEEDY STREAMER OVERLOAD is a “multi-ending ADV” depicting daily life with “OMGkawaiiAngel”, a young girl with a rather extreme need for approval attempting to become the #1 “Internet Angel” (streamer).",
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2022-01-21T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1451940/header.jpg?t=1730165409",
+      "updated": "2025-05-13T12:50:33.987Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/needy-streamer-overload/",
+    "metacriticData": {
+      "title": "Needy Streamer Overload",
+      "releaseDate": "2022-01-21T00:00:00.000Z",
+      "metacriticScore": null,
+      "updated": "2025-05-13T12:50:49.205Z"
+    }
+  },
+  {
+    "title": "Monster Prom 3: Monster Roadtrip",
+    "key": "monster-prom-3-monster-roadtrip",
+    "steamAppId": 1665190,
+    "openCriticId": "14006/monster-prom-3-monster-roadtrip",
+    "openCriticData": {
+      "title": "Monster Prom 3: Monster Roadtrip",
+      "cover": "https://img.opencritic.com/game/14006/qcsso9vd.jpg",
+      "tier": null,
+      "score": null,
+      "critics": null,
+      "releaseDate": "2022-10-21T00:00:00.000Z",
+      "updated": "2025-05-13T12:49:51.592Z"
+    },
+    "steamData": {
+      "title": "Monster Prom 3: Monster Roadtrip",
+      "description": "Embark on a road trip like no other in this co-op narrative survival adventure. Visit fun locations, meet wacky characters, and manage your resources wisely. And yes: you still can date some hot monsters ;)",
+      "genres": [
+        "Casual",
+        "Indie",
+        "Simulation",
+        "Strategy"
+      ],
+      "releaseDate": "2022-10-21T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1665190/header.jpg?t=1746716762",
+      "updated": "2025-05-13T12:49:52.526Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/monster-prom-3-monster-roadtrip/",
+    "metacriticData": {
+      "title": "Monster Prom 3: Monster Roadtrip",
+      "releaseDate": "2022-10-21T00:00:00.000Z",
+      "metacriticScore": null,
+      "updated": "2025-05-13T12:50:07.376Z"
+    }
+  },
+  {
+    "title": "Somerville",
+    "key": "somerville",
+    "steamAppId": 1671410,
+    "openCriticId": "13961/somerville",
+    "openCriticData": {
+      "title": "Somerville",
+      "cover": "https://img.opencritic.com/game/13961/Q8ZrdRXq.jpg",
+      "tier": "fair",
+      "score": 69,
+      "critics": 44,
+      "releaseDate": "2022-11-14T00:00:00.000Z",
+      "updated": "2025-05-13T12:51:20.593Z"
+    },
+    "steamData": {
+      "title": "Somerville",
+      "description": "In the wake of catastrophe find the means to make your family whole again.",
+      "genres": [
+        "Adventure"
+      ],
+      "releaseDate": "2022-11-14T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1671410/header.jpg?t=1696415061",
+      "updated": "2025-05-13T12:51:21.213Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/somerville/",
+    "metacriticData": {
+      "title": "Somerville",
+      "releaseDate": "2022-11-15T00:00:00.000Z",
+      "metacriticScore": 71,
+      "updated": "2025-05-13T12:51:33.161Z"
+    }
+  },
+  {
+    "title": "Citizen Sleeper 2: Starward Vector",
+    "key": "citizen-sleeper-2-starward-vector",
+    "steamAppId": 2442460,
+    "openCriticId": "18052/citizen-sleeper-2-starward-vector",
+    "openCriticData": {
+      "title": "Citizen Sleeper 2: Starward Vector",
+      "cover": "https://img.opencritic.com/game/undefined/2TRzYY9x.jpg",
+      "tier": "mighty",
+      "score": 86,
+      "critics": 98,
+      "releaseDate": "2025-01-31T00:00:00.000Z",
+      "updated": "2025-05-13T12:49:22.286Z"
+    },
+    "steamData": {
+      "title": "Citizen Sleeper 2: Starward Vector",
+      "description": "A dice-driven RPG, in a human and heartfelt sci-fi world. You are an escaped android, with a malfunctioning body, a price on your head and no memory of your past. Get a ship, find a crew, and take on contracts while you navigate across the Starward Belt.",
+      "genres": [
+        "Adventure",
+        "Indie",
+        "RPG"
+      ],
+      "releaseDate": "2025-01-31T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2442460/header.jpg?t=1746749912",
+      "updated": "2025-05-13T12:49:23.137Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/citizen-sleeper-2-starward-vector",
+    "metacriticData": {
+      "title": "Citizen Sleeper 2: Starward Vector",
+      "releaseDate": "2025-01-31T00:00:00.000Z",
+      "metacriticScore": 86,
+      "updated": "2025-05-13T12:49:30.205Z"
+    }
   }
 ]
