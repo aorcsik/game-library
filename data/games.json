@@ -35094,5 +35094,250 @@
       "metacriticScore": 86,
       "updated": "2025-05-13T12:49:30.205Z"
     }
+  },
+  {
+    "title": "The Texas Chain Saw Massacre",
+    "key": "the-texas-chain-saw-massacre",
+    "openCriticId": "15357/the-texas-chain-saw-massacre",
+    "openCriticData": {
+      "title": "The Texas Chain Saw Massacre",
+      "cover": "https://img.opencritic.com/game/15357/apblv8ve.jpg",
+      "tier": "strong",
+      "score": 75,
+      "critics": 57,
+      "releaseDate": "2023-08-18T00:00:00.000Z",
+      "updated": "2025-05-13T14:39:40.658Z"
+    },
+    "steamAppId": 1433140,
+    "steamData": {
+      "title": "The Texas Chain Saw Massacre",
+      "description": "Take on the role of one of the notorious Slaughter family, or their victims, in The Texas Chain Saw Massacre, a third-person asymmetrical horror experience based on the groundbreaking and iconic 1974 horror film. Experience the mad and macabre for yourself in The Texas Chain Saw Massacre.",
+      "genres": [
+        "Action",
+        "Indie"
+      ],
+      "releaseDate": "2023-08-18T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1433140/header.jpg?t=1742471573",
+      "updated": "2025-05-13T14:39:56.208Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/the-texas-chain-saw-massacre/",
+    "metacriticData": {
+      "title": "The Texas Chain Saw Massacre",
+      "releaseDate": "2023-08-18T00:00:00.000Z",
+      "metacriticScore": 72,
+      "updated": "2025-05-13T14:40:11.936Z"
+    }
+  },
+  {
+    "title": "Robocop: Rogue City",
+    "key": "robocop-rogue-city",
+    "openCriticId": "15763/robocop-rogue-city",
+    "openCriticData": {
+      "title": "RoboCop: Rogue City",
+      "cover": "https://img.opencritic.com/game/15763/Z5VEA6UM.jpg",
+      "tier": "fair",
+      "score": 73,
+      "critics": 67,
+      "releaseDate": "2023-11-02T00:00:00.000Z",
+      "updated": "2025-05-13T14:38:59.115Z"
+    },
+    "steamAppId": 1681430,
+    "steamData": {
+      "title": "RoboCop: Rogue City",
+      "description": "Become the legendary part man, part machine, all cop hero and deliver justice in Old Detroit.",
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "releaseDate": "2023-11-02T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1681430/header.jpg?t=1741624420",
+      "updated": "2025-05-13T14:39:15.539Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/robocop-rogue-city",
+    "metacriticData": {
+      "title": "RoboCop: Rogue City",
+      "releaseDate": "2023-11-02T00:00:00.000Z",
+      "metacriticScore": 72,
+      "updated": "2025-05-13T14:39:18.964Z"
+    }
+  },
+  {
+    "title": "Digimon Story: Cyber Sleuth - Hacker's Memory",
+    "key": "digimon-story-cyber-sleuth-hackers-memory",
+    "openCriticId": "5346/digimon-story-cyber-sleuth-hackers-memory",
+    "openCriticData": {
+      "title": "Digimon Story: Cyber Sleuth - Hacker's Memory",
+      "cover": "https://img.opencritic.com/game/5346/hmnc1rp0.jpg",
+      "tier": "fair",
+      "score": 72,
+      "critics": 30,
+      "releaseDate": "2018-01-19T00:00:00.000Z",
+      "updated": "2025-05-13T14:35:13.898Z"
+    },
+    "steamAppId": -1,
+    "metacriticUrl": "https://www.metacritic.com/game/digimon-story-cyber-sleuth-hackers-memory/",
+    "metacriticData": {
+      "title": "Digimon Story Cyber Sleuth: Hacker's Memory",
+      "releaseDate": "2018-01-19T00:00:00.000Z",
+      "metacriticScore": 73,
+      "updated": "2025-05-13T14:35:23.254Z"
+    }
+  },
+  {
+    "title": "MR RACER : Premium",
+    "key": "mr-racer-premium",
+    "openCriticId": "skip",
+    "steamAppId": -1,
+    "metacriticUrl": "https://www.metacritic.com/game/mr-racer-car-racing-game/",
+    "metacriticData": {
+      "title": "MR RACER : Car Racing Game",
+      "releaseDate": "2020-10-28T00:00:00.000Z",
+      "metacriticScore": null,
+      "updated": "2025-05-13T14:38:45.907Z"
+    }
+  },
+  {
+    "title": "Doors - Paradox",
+    "key": "doors-paradox",
+    "openCriticId": "17753/doors-paradox",
+    "openCriticData": {
+      "title": "Doors: Paradox",
+      "cover": "https://img.opencritic.com/game/17753/eW6z0uBd.jpg",
+      "tier": null,
+      "score": null,
+      "critics": null,
+      "releaseDate": "2024-11-14T00:00:00.000Z",
+      "updated": "2025-05-13T14:35:38.034Z"
+    },
+    "steamAppId": 1622770,
+    "steamData": {
+      "title": "Doors: Paradox",
+      "description": "A relaxing puzzle escape game! Make your way through a variety of hand-crafted 3D dioramas, look for useful objects, find hidden clues and solve fun puzzles! Unravel this mysterious adventure about chaos, order and the surreal.",
+      "genres": [
+        "Adventure",
+        "Casual",
+        "Indie"
+      ],
+      "releaseDate": "2022-11-04T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1622770/header.jpg?t=1727868695",
+      "updated": "2025-05-13T14:36:17.907Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/doors-paradox/",
+    "metacriticData": {
+      "title": "Doors: Paradox",
+      "releaseDate": "2024-11-14T00:00:00.000Z",
+      "metacriticScore": null,
+      "updated": "2025-05-13T14:36:33.814Z"
+    }
+  },
+  {
+    "title": "Amnesia: Rebirth",
+    "key": "amnesia-rebirth",
+    "openCriticId": "10381/amnesia-rebirth",
+    "openCriticData": {
+      "title": "Amnesia: Rebirth",
+      "cover": "https://img.opencritic.com/game/10381/uiQAqAhu.jpg",
+      "tier": "strong",
+      "score": 78,
+      "critics": 70,
+      "releaseDate": "2020-10-20T00:00:00.000Z",
+      "updated": "2025-05-13T14:32:28.795Z"
+    },
+    "steamAppId": 999220,
+    "steamData": {
+      "title": "Amnesia: Rebirth",
+      "description": "A first-person horror adventure. Uncover your past and survive the Algerian desert. Fear is your enemy; stay calm to not succumb to an illness threatening you and your loved one. Avoid darkness, hide from monsters and solve puzzles. Adventure Mode available for a less scary experience.",
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2020-10-20T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/999220/header.jpg?t=1727954560",
+      "updated": "2025-05-13T14:32:45.319Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/amnesia-rebirth",
+    "metacriticData": {
+      "title": "Amnesia: Rebirth",
+      "releaseDate": "2020-09-15T00:00:00.000Z",
+      "metacriticScore": 80,
+      "updated": "2025-05-13T14:32:49.303Z"
+    }
+  },
+  {
+    "title": "Touch Type Tale",
+    "key": "touch-type-tale",
+    "openCriticId": "17709/touch-type-tale",
+    "openCriticData": {
+      "title": "Touch Type Tale",
+      "cover": "https://img.opencritic.com/game/17709/1pd881Wz.jpg",
+      "tier": null,
+      "score": null,
+      "critics": null,
+      "releaseDate": "2024-11-04T00:00:00.000Z",
+      "updated": "2025-05-13T14:40:24.150Z"
+    },
+    "steamAppId": 909470,
+    "steamData": {
+      "title": "Touch Type Tale - Strategic Typing",
+      "description": "Touch Type Tale is the strategy game you control by typing! Join a brave new era of strategy — tactical typing. Use a satisfying mesh of mechanics across a range of surprising challenges, with storybook campaigning and online play. You are Paul. (Hi there.) And the keyboard to the kingdom is yours.",
+      "genres": [
+        "Indie",
+        "Strategy"
+      ],
+      "releaseDate": "2024-11-04T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/909470/header.jpg?t=1746118958",
+      "updated": "2025-05-13T14:40:44.130Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/touch-type-tale-strategic-typing/",
+    "metacriticData": {
+      "title": "Touch Type Tale - Strategic Typing",
+      "releaseDate": "2023-03-28T00:00:00.000Z",
+      "metacriticScore": null,
+      "updated": "2025-05-13T14:41:02.431Z"
+    }
+  },
+  {
+    "title": "Hypnospace Outlaw",
+    "key": "hypnospace-outlaw",
+    "openCriticId": "7455/hypnospace-outlaw",
+    "openCriticData": {
+      "title": "Hypnospace Outlaw",
+      "cover": "https://img.opencritic.com/game/7455/tWzLjojx.jpg",
+      "tier": "strong",
+      "score": 83,
+      "critics": 93,
+      "releaseDate": "2019-03-12T00:00:00.000Z",
+      "updated": "2025-05-13T14:36:53.344Z"
+    },
+    "steamAppId": 844590,
+    "steamData": {
+      "title": "Hypnospace Outlaw",
+      "description": "Greetings Enforcer, and thank you for enlisting in the Hypnospace Patrol Department! As the world falls into its slumber, Hypnospace becomes a bustling global village. These virtual streets aren't going to police themselves!",
+      "genres": [
+        "Simulation"
+      ],
+      "releaseDate": "2019-03-12T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/844590/header.jpg?t=1736424814",
+      "updated": "2025-05-13T14:37:12.122Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/hypnospace-outlaw",
+    "metacriticData": {
+      "title": "Hypnospace Outlaw",
+      "releaseDate": "2019-03-12T00:00:00.000Z",
+      "metacriticScore": 83,
+      "updated": "2025-05-13T14:37:26.825Z"
+    }
   }
 ]
