@@ -3,8 +3,8 @@
   "version": "2.0.0",
   "main": "src/pages/index.tsx",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "cp ./public/manifest.dev.json ./public/manifest.json && next dev",
+    "build": "cp ./public/manifest.prod.json ./public/manifest.json && next build",
     "next:lint": "next lint",
     "lint": "eslint . --ext .ts,.tsx,.js,.css",
     "update": "tsc -p tsconfig.cli.json && node --env-file .env ./build/cli/update_game.js"

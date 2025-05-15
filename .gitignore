@@ -8,6 +8,7 @@ node_modules
 /build
 /docs/build
 /docs/fontawesome
+/public/manifest.json
 
 /data/profile.json
 /data/game-titles.json
