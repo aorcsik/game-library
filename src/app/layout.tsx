@@ -26,9 +26,6 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }): React.JSX.Element {
-  const isDev = process.env.NODE_ENV === 'development';
-  const manifestHref = isDev ? '/manifest-dev.json' : '/manifest.json';
-
   return (
     <html lang="en">
       <head>
@@ -43,7 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
         <link rel="apple-touch-icon" sizes="180x180" href="game-library-icon-color2.webp" />
         <link rel="icon" type="image/svg" href="game-library-icon-monochrome.svg" sizes="any" />
         <link rel="icon" type="image/webp" href="game-library-icon-color2.webp" sizes="any" />
-        <link rel="manifest" href={manifestHref} />
+        <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={`${outfit.variable} ${figtree.variable} font-sans`}>
         {children}
