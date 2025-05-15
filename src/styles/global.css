@@ -94,6 +94,12 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 auto;
 }
 
+.logo {
+  mask-image: url("/game-library-controller.svg");
+  mask-size: contain;
+  background-color: currentColor
+}
+
 header {
   border-bottom: 1px solid var(--subtle-accent-color);
   position: sticky;

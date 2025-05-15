@@ -2,7 +2,6 @@
 
 import Head from 'next/head';
 import { Platform, PlatformList, PurchasedGame } from '../lib/PurchaseService';
-import GameLibraryControllerIcon from '../../public/game-library-controller.svg';
 import { useState, useEffect, useCallback, useRef } from 'react';
 
 import GameGrid from '../components/GameGrid';
@@ -198,7 +197,7 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
         <div className="container">
           <div className="controls">
             <h1>
-              <GameLibraryControllerIcon className="logo" />
+              <i className="logo" />
               <strong>Game Library</strong>
               <span className="game-count">{gameCount}</span>
             </h1>
@@ -236,7 +235,7 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
       </div>
 
       <footer>
-        <GameLibraryControllerIcon className="logo" />
+        <i className="logo" />
         <span>
           Game Library is made with <FontAwesomeIcon icon={['fas', 'heart']} /> by 
           <a href="https://aorcsik.com/" target="_blank" rel="noopener noreferrer">Antal Orcsik</a>.
