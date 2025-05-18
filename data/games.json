@@ -1306,7 +1306,7 @@
       "score": 83,
       "critics": 100,
       "releaseDate": "2015-09-28T00:00:00.000Z",
-      "updated": "2025-04-15T15:50:32.862Z"
+      "updated": "2025-05-18T11:12:15.230Z"
     },
     "steamAppId": 381780,
     "steamData": {
@@ -1321,13 +1321,13 @@
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
       "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/381780/header.jpg?t=1736524091",
-      "updated": "2025-04-15T15:50:33.759Z"
+      "updated": "2025-05-18T11:12:15.909Z"
     },
     "metacriticData": {
       "title": "80 Days",
       "releaseDate": "2014-07-31T00:00:00.000Z",
       "metacriticScore": 88,
-      "updated": "2025-04-15T15:50:36.646Z"
+      "updated": "2025-05-18T11:12:21.122Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/80-days-2015",
     "key": "80-days"
@@ -1342,7 +1342,7 @@
       "score": 74,
       "critics": 70,
       "releaseDate": "2023-03-27T00:00:00.000Z",
-      "updated": "2025-04-15T15:50:36.924Z"
+      "updated": "2025-05-18T11:12:21.761Z"
     },
     "steamAppId": 1402120,
     "steamData": {
@@ -1354,17 +1354,17 @@
         "Indie"
       ],
       "releaseDate": "2023-03-27T00:00:00.000Z",
-      "reviewScore": 8,
-      "reviewScoreDescription": "Very Positive",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
       "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1402120/header.jpg?t=1741880446",
-      "updated": "2025-04-15T15:50:37.406Z"
+      "updated": "2025-05-18T11:12:22.704Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/9-years-of-shadows/",
     "metacriticData": {
       "title": "9 Years of Shadows",
       "releaseDate": "2023-03-27T00:00:00.000Z",
       "metacriticScore": 74,
-      "updated": "2025-04-15T15:50:38.930Z"
+      "updated": "2025-05-18T11:12:24.471Z"
     },
     "key": "9-years-of-shadows"
   },
@@ -1379,9 +1379,9 @@
       "cover": "https://img.opencritic.com/game/4462/Neu0lHY6.jpg",
       "tier": "fair",
       "score": 73,
-      "critics": 46,
+      "critics": 45,
       "releaseDate": "2017-08-29T00:00:00.000Z",
-      "updated": "2025-04-16T09:47:31.863Z"
+      "updated": "2025-05-18T12:15:53.761Z"
     },
     "steamAppId": 473690,
     "steamData": {
@@ -1396,13 +1396,13 @@
       "reviewScore": 6,
       "reviewScoreDescription": "Mostly Positive",
       "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/473690/header.jpg?t=1728689155",
-      "updated": "2025-04-16T09:47:32.846Z"
+      "updated": "2025-05-18T12:15:54.430Z"
     },
     "metacriticData": {
       "title": "Absolver",
       "releaseDate": "2017-08-29T00:00:00.000Z",
       "metacriticScore": 75,
-      "updated": "2025-04-16T09:47:33.157Z"
+      "updated": "2025-05-18T12:15:56.690Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/absolver",
     "key": "absolver"
@@ -2381,14 +2381,14 @@
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
       "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/15560/header.jpg?t=1581730007",
-      "updated": "2025-04-16T09:47:31.375Z"
+      "updated": "2025-05-18T12:15:51.888Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/aaaaaaaaaaaaaaaaaaaaaaaaa-for-the-awesome/",
     "metacriticData": {
       "title": "AaaaaAAaaaAAAaaAAAAaAAAAA!!! for the Awesome",
       "releaseDate": "2011-11-23T00:00:00.000Z",
       "metacriticScore": null,
-      "updated": "2025-04-16T09:47:31.587Z"
+      "updated": "2025-05-18T12:15:53.086Z"
     },
     "key": "aaaaaaaaaaaaaaaaaaaaaaaaa-for-the-awesome"
   },
@@ -12160,7 +12160,7 @@
       "score": null,
       "critics": null,
       "releaseDate": "2015-02-25T00:00:00.000Z",
-      "updated": "2025-04-15T15:50:39.200Z"
+      "updated": "2025-05-18T11:12:24.744Z"
     },
     "steamAppId": 316610,
     "steamData": {
@@ -12170,17 +12170,17 @@
         "Indie"
       ],
       "releaseDate": "2015-02-25T00:00:00.000Z",
-      "reviewScore": 9,
-      "reviewScoreDescription": "Overwhelmingly Positive",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
       "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/316610/header.jpg?t=1712246703",
-      "updated": "2025-04-15T15:50:40.461Z"
+      "updated": "2025-05-18T11:12:25.321Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/a-good-snowman-is-hard-to-build/",
     "metacriticData": {
       "title": "A Good Snowman Is Hard To Build",
       "releaseDate": "2015-12-09T00:00:00.000Z",
       "metacriticScore": 93,
-      "updated": "2025-04-15T15:50:42.083Z"
+      "updated": "2025-05-18T11:12:26.604Z"
     },
     "key": "a-good-snowman-is-hard-to-build"
   },
@@ -13458,7 +13458,7 @@
       "score": 80,
       "critics": 74,
       "releaseDate": "2023-12-05T00:00:00.000Z",
-      "updated": "2025-04-15T15:50:42.345Z"
+      "updated": "2025-05-18T11:12:26.879Z"
     },
     "steamAppId": 1240060,
     "steamData": {
@@ -13471,15 +13471,15 @@
       "releaseDate": "2023-12-05T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1240060/header.jpg?t=1736524088",
-      "updated": "2025-04-15T15:50:43.333Z"
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1240060/header.jpg?t=1745516629",
+      "updated": "2025-05-18T11:12:27.541Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/a-highland-song/",
     "metacriticData": {
       "title": "A Highland Song",
       "releaseDate": "2023-12-05T00:00:00.000Z",
       "metacriticScore": 81,
-      "updated": "2025-04-15T15:50:44.615Z"
+      "updated": "2025-05-18T11:12:28.720Z"
     },
     "key": "a-highland-song"
   },
@@ -18354,7 +18354,7 @@
       "score": 81,
       "critics": 100,
       "releaseDate": "2017-10-18T00:00:00.000Z",
-      "updated": "2025-04-15T15:50:44.879Z"
+      "updated": "2025-05-18T11:12:28.977Z"
     },
     "steamAppId": 578720,
     "steamData": {
@@ -18368,14 +18368,14 @@
       "reviewScore": 6,
       "reviewScoreDescription": "Mostly Positive",
       "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/578720/header.jpg?t=1668540508",
-      "updated": "2025-04-15T15:50:45.384Z"
+      "updated": "2025-05-18T11:12:29.651Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/a-morticians-tale",
     "metacriticData": {
       "title": "A Mortician's Tale",
       "releaseDate": "2017-10-18T00:00:00.000Z",
       "metacriticScore": 78,
-      "updated": "2025-04-15T15:50:47.932Z"
+      "updated": "2025-05-18T11:12:31.508Z"
     },
     "key": "a-morticians-tale"
   },
@@ -20795,10 +20795,10 @@
       "title": "A Plague Tale: Innocence",
       "cover": "https://img.opencritic.com/game/7547/J51IlPM2.jpg",
       "tier": "strong",
-      "score": 81,
+      "score": 82,
       "critics": 82,
       "releaseDate": "2019-05-14T00:00:00.000Z",
-      "updated": "2025-04-15T15:50:48.260Z"
+      "updated": "2025-05-18T12:15:42.617Z"
     },
     "steamAppId": 752590,
     "steamData": {
@@ -20812,14 +20812,14 @@
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
       "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/752590/header.jpg?t=1727793332",
-      "updated": "2025-04-15T15:50:48.741Z"
+      "updated": "2025-05-18T12:15:43.255Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/a-plague-tale-innocence",
     "metacriticData": {
       "title": "A Plague Tale: Innocence",
       "releaseDate": "2019-05-14T00:00:00.000Z",
       "metacriticScore": 81,
-      "updated": "2025-04-15T15:50:50.429Z"
+      "updated": "2025-05-18T12:15:45.322Z"
     },
     "key": "a-plague-tale-innocence"
   },
@@ -25696,7 +25696,7 @@
       "score": 79,
       "critics": 63,
       "releaseDate": "2014-05-28T00:00:00.000Z",
-      "updated": "2025-04-15T15:50:50.691Z"
+      "updated": "2025-05-18T12:15:45.645Z"
     },
     "steamAppId": 278360,
     "steamData": {
@@ -25708,17 +25708,17 @@
         "Indie"
       ],
       "releaseDate": "2014-05-28T00:00:00.000Z",
-      "reviewScore": 8,
-      "reviewScoreDescription": "Very Positive",
+      "reviewScore": 5,
+      "reviewScoreDescription": "Mixed",
       "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/278360/header.jpg?t=1589403981",
-      "updated": "2025-04-15T15:50:51.182Z"
+      "updated": "2025-05-18T12:15:46.253Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/a-story-about-my-uncle",
     "metacriticData": {
       "title": "A Story About My Uncle",
       "releaseDate": "2012-07-30T00:00:00.000Z",
       "metacriticScore": 73,
-      "updated": "2025-04-15T15:50:53.121Z"
+      "updated": "2025-05-18T12:15:48.571Z"
     },
     "key": "a-story-about-my-uncle"
   },
@@ -27378,7 +27378,7 @@
       "score": 78,
       "critics": 100,
       "releaseDate": "2023-10-04T00:00:00.000Z",
-      "updated": "2025-04-16T09:47:29.683Z"
+      "updated": "2025-05-18T12:15:48.864Z"
     },
     "steamAppId": 2322180,
     "steamData": {
@@ -27392,14 +27392,14 @@
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
       "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2322180/header.jpg?t=1733937108",
-      "updated": "2025-04-16T09:47:30.491Z"
+      "updated": "2025-05-18T12:15:49.386Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/a-tiny-sticker-tale",
     "metacriticData": {
       "title": "A Tiny Sticker Tale",
       "releaseDate": "2023-10-04T00:00:00.000Z",
       "metacriticScore": 78,
-      "updated": "2025-04-16T09:47:30.917Z"
+      "updated": "2025-05-18T12:15:51.088Z"
     },
     "key": "a-tiny-sticker-tale"
   },
@@ -35338,6 +35338,611 @@
       "releaseDate": "2019-03-12T00:00:00.000Z",
       "metacriticScore": 83,
       "updated": "2025-05-13T14:37:26.825Z"
+    }
+  },
+  {
+    "title": "The Callisto Protocol",
+    "key": "the-callisto-protocol",
+    "openCriticId": "13372/the-callisto-protocol",
+    "openCriticData": {
+      "title": "The Callisto Protocol",
+      "cover": "https://img.opencritic.com/game/13372/LsFxK9H8.jpg",
+      "tier": "fair",
+      "score": 67,
+      "critics": 41,
+      "releaseDate": "2022-12-02T00:00:00.000Z",
+      "updated": "2025-05-18T11:14:59.367Z"
+    },
+    "steamAppId": 1544020,
+    "steamData": {
+      "title": "The Callisto Protocol™",
+      "description": "Survive to escape the horrors of Callisto and uncover the dark secrets of Jupiter’s dead moon.",
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "releaseDate": "2022-12-01T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1544020/header.jpg?t=1726806420",
+      "updated": "2025-05-18T11:15:16.518Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/the-callisto-protocol/",
+    "metacriticData": {
+      "title": "The Callisto Protocol",
+      "releaseDate": "2022-12-02T00:00:00.000Z",
+      "metacriticScore": 69,
+      "updated": "2025-05-18T11:15:31.402Z"
+    }
+  },
+  {
+    "title": "Warhammer 40,000: Boltgun",
+    "key": "warhammer-40-000-boltgun",
+    "openCriticId": "14943/warhammer-40-000-boltgun",
+    "openCriticData": {
+      "title": "Warhammer 40,000: Boltgun",
+      "cover": "https://img.opencritic.com/game/14943/1ZHlJD3C.jpg",
+      "tier": "strong",
+      "score": 76,
+      "critics": 66,
+      "releaseDate": "2023-05-23T00:00:00.000Z",
+      "updated": "2025-05-18T11:16:29.004Z"
+    },
+    "steamAppId": 2005010,
+    "steamData": {
+      "title": "Warhammer 40,000: Boltgun",
+      "description": "Load up your Boltgun and unleash the awesome Space Marine arsenal to blast your way through an explosion of sprites, pixels and blood in a perfect blend of Warhammer 40,000, frenetic gameplay and the stylish visuals of 90’s retro shooters.",
+      "genres": [
+        "Action",
+        "Indie"
+      ],
+      "releaseDate": "2023-05-23T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2005010/header.jpg?t=1746520623",
+      "updated": "2025-05-18T11:16:36.451Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/warhammer-40000-boltgun",
+    "metacriticData": {
+      "title": "Warhammer 40,000: Boltgun",
+      "releaseDate": "2023-05-23T00:00:00.000Z",
+      "metacriticScore": 75,
+      "updated": "2025-05-18T11:16:40.115Z"
+    }
+  },
+  {
+    "title": "Balatro",
+    "key": "balatro",
+    "openCriticId": "16300/balatro",
+    "openCriticData": {
+      "title": "Balatro",
+      "cover": "https://img.opencritic.com/game/16300/rMxmWU5q.jpg",
+      "tier": "mighty",
+      "score": 92,
+      "critics": 100,
+      "releaseDate": "2024-02-20T00:00:00.000Z",
+      "updated": "2025-05-18T11:14:10.430Z"
+    },
+    "steamAppId": 2379780,
+    "steamData": {
+      "title": "Balatro",
+      "description": "The poker roguelike. Balatro is a hypnotically satisfying deckbuilder where you play illegal poker hands, discover game-changing jokers, and trigger adrenaline-pumping, outrageous combos.",
+      "genres": [
+        "Casual",
+        "Indie",
+        "Strategy"
+      ],
+      "releaseDate": "2024-02-20T00:00:00.000Z",
+      "reviewScore": 9,
+      "reviewScoreDescription": "Overwhelmingly Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2379780/header.jpg?t=1745331508",
+      "updated": "2025-05-18T11:14:26.841Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/balatro",
+    "metacriticData": {
+      "title": "Balatro",
+      "releaseDate": "2024-02-20T00:00:00.000Z",
+      "metacriticScore": 90,
+      "updated": "2025-05-18T11:14:30.529Z"
+    }
+  },
+  {
+    "title": "ARK Survival Ascended",
+    "key": "ark-survival-ascended",
+    "openCriticId": "15987/ark-survival-ascended",
+    "openCriticData": {
+      "title": "ARK: Survival Ascended",
+      "cover": "https://img.opencritic.com/game/15987/l2MtfjW6.jpg",
+      "tier": null,
+      "score": null,
+      "critics": null,
+      "releaseDate": "2023-10-25T00:00:00.000Z",
+      "updated": "2025-05-18T11:12:58.918Z"
+    },
+    "steamAppId": 2399830,
+    "steamData": {
+      "title": "ARK: Survival Ascended",
+      "description": "ARK is reimagined from the ground-up into the next-generation of video game technology with Unreal Engine 5! Form a tribe, tame & breed hundreds of unique dinosaurs and primeval creatures, explore, craft, build, and fight your way to the top of the food-chain. Your new world awaits!",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Indie",
+        "Massively%20Multiplayer",
+        "RPG",
+        "Early%20Access"
+      ],
+      "releaseDate": "2023-10-25T00:00:00.000Z",
+      "reviewScore": 5,
+      "reviewScoreDescription": "Mixed",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2399830/header.jpg?t=1744843097",
+      "updated": "2025-05-18T11:13:28.426Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/ark-survival-ascended/",
+    "metacriticData": {
+      "title": "ARK: Survival Ascended",
+      "releaseDate": "2023-11-30T00:00:00.000Z",
+      "metacriticScore": null,
+      "updated": "2025-05-18T11:13:55.252Z"
+    }
+  },
+  {
+    "title": "Quantum Break",
+    "key": "quantum-break",
+    "steamAppId": 474960,
+    "openCriticId": "1519/quantum-break",
+    "openCriticData": {
+      "title": "Quantum Break",
+      "cover": "https://img.opencritic.com/game/1519/KGwac9fi.jpg",
+      "tier": "strong",
+      "score": 78,
+      "critics": 70,
+      "releaseDate": "2016-04-05T00:00:00.000Z",
+      "updated": "2025-05-18T12:17:44.254Z"
+    },
+    "steamData": {
+      "title": "Quantum Break",
+      "description": "From Remedy Entertainment, the masters of cinematic action games, comes Quantum Break, a time-amplified suspenseful blockbuster. The Quantum Break experience is part game, part live action show—where decisions in one dramatically affect the other.",
+      "genres": [
+        "Action"
+      ],
+      "releaseDate": "2016-09-29T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/474960/header.jpg?t=1682524073",
+      "updated": "2025-05-18T12:17:44.815Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/quantum-break",
+    "metacriticData": {
+      "title": "Quantum Break",
+      "releaseDate": "2016-04-05T00:00:00.000Z",
+      "metacriticScore": 77,
+      "updated": "2025-05-18T12:17:48.488Z"
+    }
+  },
+  {
+    "title": "Sunset Overdrive",
+    "key": "sunset-overdrive",
+    "steamAppId": 847370,
+    "openCriticId": "840/sunset-overdrive",
+    "openCriticData": {
+      "title": "Sunset Overdrive",
+      "cover": "https://img.opencritic.com/game/840/o6lWKDPn.jpg",
+      "tier": "strong",
+      "score": 83,
+      "critics": 84,
+      "releaseDate": "2014-10-28T00:00:00.000Z",
+      "updated": "2025-05-18T12:18:01.889Z"
+    },
+    "steamData": {
+      "title": "Sunset Overdrive",
+      "description": "Sunset Overdrive transforms an open-world apocalypse into your tactical playground. Zip, grind and wall-run across Sunset City with an unconventional arsenal. Hyper-agility, unique weapons, and customizable abilities deliver an explosive and irreverent adventure in the end times.",
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "releaseDate": "2018-11-16T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/847370/header.jpg?t=1667851405",
+      "updated": "2025-05-18T12:18:02.594Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/sunset-overdrive",
+    "metacriticData": {
+      "title": "Sunset Overdrive",
+      "releaseDate": "2014-10-28T00:00:00.000Z",
+      "metacriticScore": 81,
+      "updated": "2025-05-18T12:18:05.571Z"
+    }
+  },
+  {
+    "title": "Age of Empires: Definitive Edition",
+    "key": "age-of-empires-definitive-edition",
+    "steamAppId": 1017900,
+    "openCriticId": "5451/age-of-empires-definitive-edition",
+    "openCriticData": {
+      "title": "Age of Empires: Definitive Edition",
+      "cover": "https://img.opencritic.com/game/5451/sBy0I4Ot.jpg",
+      "tier": "fair",
+      "score": 70,
+      "critics": 30,
+      "releaseDate": "2018-02-20T00:00:00.000Z",
+      "updated": "2025-05-18T12:16:21.583Z"
+    },
+    "steamData": {
+      "title": "Age of Empires: Definitive Edition",
+      "description": "Age of Empires, the pivotal real-time strategy game that launched a 20-year legacy returns with modernized gameplay, all-new 4K visuals, 8-person multiplayer battles and a host of other new features. Welcome back to history.",
+      "genres": [
+        "Strategy"
+      ],
+      "releaseDate": "2019-08-19T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1017900/header.jpg?t=1744752314",
+      "updated": "2025-05-18T12:16:22.232Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/age-of-empires-definitive-edition",
+    "metacriticData": {
+      "title": "Age of Empires: Definitive Edition",
+      "releaseDate": "2018-02-20T00:00:00.000Z",
+      "metacriticScore": 69,
+      "updated": "2025-05-18T12:16:25.680Z"
+    }
+  },
+  {
+    "title": "Battletoads",
+    "key": "battletoads",
+    "steamAppId": 1244950,
+    "openCriticId": "10017/battletoads",
+    "openCriticData": {
+      "title": "Battletoads",
+      "cover": "https://img.opencritic.com/game/10017/Vh4zIxMK.jpg",
+      "tier": "fair",
+      "score": 73,
+      "critics": 60,
+      "releaseDate": "2020-08-20T00:00:00.000Z",
+      "updated": "2025-05-18T12:17:09.040Z"
+    },
+    "steamData": {
+      "title": "Battletoads",
+      "description": "• Over-the-top combat with combos and hard-hitting morph attacks • Wild, varied gameplay sequences for all types of gamers • Hand-drawn animation feels like playing a cartoon • Drop-in couch co-op for three players",
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "releaseDate": "2020-08-20T00:00:00.000Z",
+      "reviewScore": 5,
+      "reviewScoreDescription": "Mixed",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1244950/header.jpg?t=1667828611",
+      "updated": "2025-05-18T12:17:09.642Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/battletoads/",
+    "metacriticData": {
+      "title": "Battletoads",
+      "releaseDate": "2020-08-20T00:00:00.000Z",
+      "metacriticScore": 72,
+      "updated": "2025-05-18T12:17:22.960Z"
+    }
+  },
+  {
+    "title": "As Dusk Falls",
+    "key": "as-dusk-falls",
+    "steamAppId": 1341820,
+    "openCriticId": "13424/as-dusk-falls",
+    "openCriticData": {
+      "title": "As Dusk Falls",
+      "cover": "https://img.opencritic.com/game/13424/qyGF3ibY.jpg",
+      "tier": "strong",
+      "score": 79,
+      "critics": 71,
+      "releaseDate": "2022-07-19T00:00:00.000Z",
+      "updated": "2025-05-18T12:16:39.995Z"
+    },
+    "steamData": {
+      "title": "As Dusk Falls",
+      "description": "Explore the entangled lives of two families across thirty years in an original interactive drama from INTERIOR/NIGHT. Starting in 1998 with a robbery-gone-wrong, the character's lives depend on the choices you make.",
+      "genres": [
+        "Adventure"
+      ],
+      "releaseDate": "2022-07-19T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1341820/header.jpg?t=1718812917",
+      "updated": "2025-05-18T12:16:40.600Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/as-dusk-falls/",
+    "metacriticData": {
+      "title": "As Dusk Falls",
+      "releaseDate": "2022-07-19T00:00:00.000Z",
+      "metacriticScore": 77,
+      "updated": "2025-05-18T12:16:52.797Z"
+    }
+  },
+  {
+    "title": "Wasteland 3",
+    "key": "wasteland-3",
+    "steamAppId": 719040,
+    "openCriticId": "9140/wasteland-3",
+    "openCriticData": {
+      "title": "Wasteland 3",
+      "cover": "https://img.opencritic.com/game/9140/ZTFLWUpN.jpg",
+      "tier": "mighty",
+      "score": 86,
+      "critics": 96,
+      "releaseDate": "2020-08-28T00:00:00.000Z",
+      "updated": "2025-05-18T12:18:19.402Z"
+    },
+    "steamData": {
+      "title": "Wasteland 3",
+      "description": "Following the critically acclaimed 2014 Game of the Year winner Wasteland 2, the RPG series that pioneered the post-apocalyptic genre in video games returns with Wasteland 3.",
+      "genres": [
+        "RPG",
+        "Strategy"
+      ],
+      "releaseDate": "2020-08-27T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/719040/header.jpg?t=1684434108",
+      "updated": "2025-05-18T12:18:20.113Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/wasteland-3",
+    "metacriticData": {
+      "title": "Wasteland 3",
+      "releaseDate": "2020-08-28T00:00:00.000Z",
+      "metacriticScore": 85,
+      "updated": "2025-05-18T12:18:23.301Z"
+    }
+  },
+  {
+    "title": "Corpse Keeper",
+    "key": "corpse-keeper",
+    "steamAppId": 1601740,
+    "openCriticId": "14305/corpse-keeper",
+    "openCriticData": {
+      "title": "Corpse Keeper",
+      "cover": "https://img.opencritic.com/game/14305/J3R4RjsA.jpg",
+      "tier": null,
+      "score": null,
+      "critics": null,
+      "releaseDate": "2023-02-15T00:00:00.000Z",
+      "updated": "2025-05-18T12:44:00.255Z"
+    },
+    "steamData": {
+      "title": "Corpse Keeper",
+      "description": "Corpse Keeper is a very challenging action-strategy roguelite. You'll need to lead a squad of three corpses to explore the grim and dark medieval world within limited time, build a powerful army of the living dead, and finally kill the demon lurking in the deep end of the cathedral.",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Indie",
+        "RPG",
+        "Strategy"
+      ],
+      "releaseDate": "2024-05-28T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1601740/header.jpg?t=1726282158",
+      "updated": "2025-05-18T12:44:01.871Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/corpse-keeper/",
+    "metacriticData": {
+      "title": "Corpse Keeper",
+      "releaseDate": "2024-05-28T00:00:00.000Z",
+      "metacriticScore": null,
+      "updated": "2025-05-18T12:44:08.561Z"
+    }
+  },
+  {
+    "title": "Amnesia: The Bunker",
+    "key": "amnesia-the-bunker",
+    "steamAppId": 1944430,
+    "openCriticId": "15036/amnesia-the-bunker",
+    "openCriticData": {
+      "title": "Amnesia: The Bunker",
+      "cover": "https://img.opencritic.com/game/15036/6uL9NG6z.jpg",
+      "tier": "strong",
+      "score": 77,
+      "critics": 71,
+      "releaseDate": "2023-06-06T00:00:00.000Z",
+      "updated": "2025-05-18T12:43:20.260Z"
+    },
+    "steamData": {
+      "title": "Amnesia: The Bunker",
+      "description": "Amnesia: The Bunker is a first-person horror game set in a WW1 bunker. A relentless, AI-driven monster stalks you. Survival depends on finding tools, crafting items, and keeping the lights on.",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2023-06-06T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1944430/header.jpg?t=1734702362",
+      "updated": "2025-05-18T12:43:21.241Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/amnesia-the-bunker/",
+    "metacriticData": {
+      "title": "Amnesia: The Bunker",
+      "releaseDate": "2023-06-06T00:00:00.000Z",
+      "metacriticScore": 77,
+      "updated": "2025-05-18T12:43:35.080Z"
+    }
+  },
+  {
+    "title": "Ultros",
+    "key": "ultros",
+    "steamAppId": 2386310,
+    "openCriticId": "16286/ultros",
+    "openCriticData": {
+      "title": "Ultros",
+      "cover": "https://img.opencritic.com/game/16286/t7QLrJnz.jpg",
+      "tier": "strong",
+      "score": 79,
+      "critics": 77,
+      "releaseDate": "2024-02-13T00:00:00.000Z",
+      "updated": "2025-05-18T12:46:20.004Z"
+    },
+    "steamData": {
+      "title": "Ultros",
+      "description": "ULTROS is a psychedelic metroidvania where you wake up stranded on The Sarcophagus — a cosmic uterus holding an ancient, demonic being. Trapped in the loop of a black hole, you will have to explore The Sarcophagus and meet its inhabitants to understand the part you play...",
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2024-02-13T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2386310/header.jpg?t=1733844176",
+      "updated": "2025-05-18T12:46:20.655Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/ultros",
+    "metacriticData": {
+      "title": "Ultros",
+      "releaseDate": "2024-02-13T00:00:00.000Z",
+      "metacriticScore": 81,
+      "updated": "2025-05-18T12:46:24.047Z"
+    }
+  },
+  {
+    "title": "The Thaumaturge",
+    "key": "the-thaumaturge",
+    "steamAppId": 1684350,
+    "openCriticId": "16393/the-thaumaturge",
+    "openCriticData": {
+      "title": "The Thaumaturge",
+      "cover": "https://img.opencritic.com/game/16393/9OqFzzLE.jpg",
+      "tier": "strong",
+      "score": 76,
+      "critics": 71,
+      "releaseDate": "2024-03-04T00:00:00.000Z",
+      "updated": "2025-05-18T12:45:50.700Z"
+    },
+    "steamData": {
+      "title": "The Thaumaturge",
+      "description": "The Thaumaturge is a character-driven RPG with a rich story, morally ambiguous choices, and turn-based combat. In a city on the brink of change, use your mystical powers to read emotions, uncover motives, and command folklore-inspired demons — while resisting the temptation of your own pride.",
+      "genres": [
+        "Adventure",
+        "RPG"
+      ],
+      "releaseDate": "2024-03-04T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1684350/header.jpg?t=1747302029",
+      "updated": "2025-05-18T12:45:51.345Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/the-thaumaturge/",
+    "metacriticData": {
+      "title": "The Thaumaturge",
+      "releaseDate": "2024-03-04T00:00:00.000Z",
+      "metacriticScore": 74,
+      "updated": "2025-05-18T12:46:01.637Z"
+    }
+  },
+  {
+    "title": "Eiyuden Chronicle: Hundred Heroes",
+    "key": "eiyuden-chronicle-hundred-heroes",
+    "steamAppId": 1658280,
+    "openCriticId": "16605/eiyuden-chronicles-hundred-heroes",
+    "openCriticData": {
+      "title": "Eiyuden Chronicles: Hundred Heroes",
+      "cover": "https://img.opencritic.com/game/16605/rWy2qFpZ.jpg",
+      "tier": "strong",
+      "score": 75,
+      "critics": 67,
+      "releaseDate": "2024-04-23T00:00:00.000Z",
+      "updated": "2025-05-18T12:44:27.032Z"
+    },
+    "steamData": {
+      "title": "Eiyuden Chronicle: Hundred Heroes",
+      "description": "Eiyuden Chronicle: Hundred Heroes is designed to bring players a modern take on a classic JRPG experience. Get ready to lead 100+ playable characters through a war-torn world only you can save.",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Indie",
+        "RPG",
+        "Strategy"
+      ],
+      "releaseDate": "2024-04-23T00:00:00.000Z",
+      "reviewScore": 5,
+      "reviewScoreDescription": "Mixed",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1658280/header.jpg?t=1746702946",
+      "updated": "2025-05-18T12:44:27.579Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/eiyuden-chronicle-hundred-heroes",
+    "metacriticData": {
+      "title": "Eiyuden Chronicle: Hundred Heroes",
+      "releaseDate": "2024-04-23T00:00:00.000Z",
+      "metacriticScore": 79,
+      "updated": "2025-05-18T12:44:31.707Z"
+    }
+  },
+  {
+    "title": "Shadow Gambit: The Cursed Crew",
+    "key": "shadow-gambit-the-cursed-crew",
+    "steamAppId": 1545560,
+    "openCriticId": "15345/shadow-gambit-the-cursed-crew",
+    "openCriticData": {
+      "title": "Shadow Gambit: The Cursed Crew",
+      "cover": "https://img.opencritic.com/game/15345/A5Olq1cV.jpg",
+      "tier": "mighty",
+      "score": 85,
+      "critics": 93,
+      "releaseDate": "2023-08-17T00:00:00.000Z",
+      "updated": "2025-05-18T12:45:22.955Z"
+    },
+    "steamData": {
+      "title": "Shadow Gambit: The Cursed Crew",
+      "description": "Assemble your crew and set sail on an infamous ghost ship to sneak, stab, and spellcast your way through the Inquisition in this non-linear stealth strategy game. Chart a course, develop uncanny abilities, and use unconventional tactics to find a powerful pirate artifact!",
+      "genres": [
+        "RPG",
+        "Strategy"
+      ],
+      "releaseDate": "2023-08-17T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1545560/header.jpg?t=1746003992",
+      "updated": "2025-05-18T12:45:23.811Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/shadow-gambit-the-cursed-crew",
+    "metacriticData": {
+      "title": "Shadow Gambit: The Cursed Crew",
+      "releaseDate": "2023-08-17T00:00:00.000Z",
+      "metacriticScore": 85,
+      "updated": "2025-05-18T12:45:34.754Z"
+    }
+  },
+  {
+    "title": "Evil West",
+    "key": "evil-west",
+    "steamAppId": 1065310,
+    "openCriticId": "13378/evil-west",
+    "openCriticData": {
+      "title": "Evil West",
+      "cover": "https://img.opencritic.com/game/13378/KqIjkep5.jpg",
+      "tier": "fair",
+      "score": 73,
+      "critics": 58,
+      "releaseDate": "2022-11-21T00:00:00.000Z",
+      "updated": "2025-05-18T12:44:44.606Z"
+    },
+    "steamData": {
+      "title": "Evil West",
+      "description": "A dark menace consumes the Old West. In solo or coop, fight with style in visceral, explosive combat against bloodthirsty monstrosities. Eradicate the vampiric hordes with your lightning-fueled gauntlet and become a Wild West Superhero.",
+      "genres": [
+        "Action",
+        "Adventure",
+        "RPG"
+      ],
+      "releaseDate": "2022-11-21T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1065310/header.jpg?t=1723628247",
+      "updated": "2025-05-18T12:44:45.250Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/evil-west/",
+    "metacriticData": {
+      "title": "Evil West",
+      "releaseDate": "2022-11-22T00:00:00.000Z",
+      "metacriticScore": 73,
+      "updated": "2025-05-18T12:45:01.610Z"
     }
   }
 ]
