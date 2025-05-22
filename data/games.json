@@ -35944,5 +35944,383 @@
       "metacriticScore": 73,
       "updated": "2025-05-18T12:45:01.610Z"
     }
+  },
+  {
+    "title": "Golf Club Nostalgia",
+    "key": "golf-club-nostalgia",
+    "steamAppId": 1556870,
+    "openCriticId": "11912/golf-club-wasteland",
+    "openCriticData": {
+      "title": "Golf Club: Wasteland",
+      "cover": "https://img.opencritic.com/game/11912/vHYUYj1v.jpg",
+      "tier": "strong",
+      "score": 77,
+      "critics": 67,
+      "releaseDate": "2018-05-28T00:00:00.000Z",
+      "updated": "2025-05-22T21:06:23.691Z"
+    },
+    "steamData": {
+      "title": "Golf Club Nostalgia",
+      "description": "Human life is wiped out. Earth is now a golf course for the ultra-rich. In this dystopian sports puzzler, play through destroyed brutalist monuments, crumbling shopping malls, and abandoned museums as you piece together the full story of how humanity fell.",
+      "genres": [
+        "Casual",
+        "Indie",
+        "Sports"
+      ],
+      "releaseDate": "2021-09-03T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1556870/header.jpg?t=1741890452",
+      "updated": "2025-05-22T21:06:24.397Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/golf-club-wasteland",
+    "metacriticData": {
+      "title": "Golf Club: Wasteland",
+      "releaseDate": "2021-09-03T00:00:00.000Z",
+      "metacriticScore": 79,
+      "updated": "2025-05-22T21:06:30.760Z"
+    }
+  },
+  {
+    "title": "The Cub",
+    "key": "the-cub",
+    "steamAppId": 1941410,
+    "openCriticId": "16089/the-cub",
+    "openCriticData": {
+      "title": "The Cub",
+      "cover": "https://img.opencritic.com/game/16089/fMrwBuas.jpg",
+      "tier": "strong",
+      "score": 75,
+      "critics": 61,
+      "releaseDate": "2024-01-19T00:00:00.000Z",
+      "updated": "2025-05-22T21:09:01.513Z"
+    },
+    "steamData": {
+      "title": "The Cub",
+      "description": "From the creators of Golf Club Nostalgia and Highwater. Return to their whimsical, neon-lit apocalypse in a Jungle Book meets The Armageddon fusion. Parkour through the remains of humanity as a child being hunted, while catchy end-of-days tunes and curious survivor stories play on the radio.",
+      "genres": [
+        "Adventure",
+        "Casual",
+        "Indie"
+      ],
+      "releaseDate": "2024-01-19T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1941410/header.jpg?t=1745090893",
+      "updated": "2025-05-22T21:09:02.065Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/the-cub/",
+    "metacriticData": {
+      "title": "The Cub",
+      "releaseDate": "2024-01-19T00:00:00.000Z",
+      "metacriticScore": 74,
+      "updated": "2025-05-22T21:09:21.822Z"
+    }
+  },
+  {
+    "title": "Flame Keeper",
+    "key": "flame-keeper",
+    "steamAppId": 1374230,
+    "openCriticId": "14559/flame-keeper",
+    "openCriticData": {
+      "title": "Flame Keeper",
+      "cover": "https://img.opencritic.com/game/14559/0NntW6aG.jpg",
+      "tier": null,
+      "score": null,
+      "critics": null,
+      "releaseDate": "2023-03-17T00:00:00.000Z",
+      "updated": "2025-05-22T21:05:50.475Z"
+    },
+    "steamData": {
+      "title": "Flame Keeper",
+      "description": "Flame Keeper is a dynamic, action rogue-lite that sees you restore the Eternal Flame, stolen by creatures of shadow. Fight through a rogue's gallery of monsters in diverse biomes using fiery combat skills. No sweat for a lump of coal like you.",
+      "genres": [
+        "Action",
+        "Indie"
+      ],
+      "releaseDate": "2024-06-17T00:00:00.000Z",
+      "reviewScore": 5,
+      "reviewScoreDescription": "Mixed",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1374230/header.jpg?t=1745091103",
+      "updated": "2025-05-22T21:05:50.991Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/flame-keeper/",
+    "metacriticData": {
+      "title": "Flame Keeper",
+      "releaseDate": "2023-03-17T00:00:00.000Z",
+      "metacriticScore": 67,
+      "updated": "2025-05-22T21:06:04.275Z"
+    }
+  },
+  {
+    "title": "Chessarama",
+    "key": "chessarama",
+    "openCriticId": "15941/chessarama",
+    "openCriticData": {
+      "title": "Chessarama",
+      "cover": "https://img.opencritic.com/game/15941/wseW4eVr.jpg",
+      "tier": "fair",
+      "score": 72,
+      "critics": 43,
+      "releaseDate": "2023-12-05T00:00:00.000Z",
+      "updated": "2025-05-22T21:01:40.371Z"
+    },
+    "steamAppId": 1831830,
+    "steamData": {
+      "title": "Chessarama",
+      "description": "Chessarama is a collection of chess-inspired puzzle and strategy games that use chess pieces and their established move sets, then reimagines their goals and themes. Solve challenges, unlock collectibles, and compete against each other on the leaderboards. Welcome to Chessarama!",
+      "genres": [
+        "Casual",
+        "Strategy"
+      ],
+      "releaseDate": "2023-12-05T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1831830/header.jpg?t=1745518342",
+      "updated": "2025-05-22T21:01:57.177Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/chessarama/",
+    "metacriticData": {
+      "title": "Chessarama",
+      "releaseDate": "2023-12-05T00:00:00.000Z",
+      "metacriticScore": 73,
+      "updated": "2025-05-22T21:02:10.149Z"
+    }
+  },
+  {
+    "title": "Dead Island 2",
+    "key": "dead-island-2",
+    "openCriticId": "1551/dead-island-2",
+    "openCriticData": {
+      "title": "Dead Island 2",
+      "cover": "https://img.opencritic.com/game/1551/oeJzuE7z.jpg",
+      "tier": "strong",
+      "score": 75,
+      "critics": 57,
+      "releaseDate": "2023-04-21T00:00:00.000Z",
+      "updated": "2025-05-22T21:02:27.886Z"
+    },
+    "steamAppId": 934700,
+    "steamData": {
+      "title": "Dead Island 2",
+      "description": "A deadly virus is spreading across Los Angeles, turning its inhabitants into zombies. Bitten, infected, but more than just immune, uncover the truth behind the outbreak and discover who - or what - you are. Survive, evolve and become the ultimate Zombie Slayer.",
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "releaseDate": "2024-04-22T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/934700/header.jpg?t=1740480586",
+      "updated": "2025-05-22T21:02:44.345Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/dead-island-2/",
+    "metacriticData": {
+      "title": "Dead Island 2",
+      "releaseDate": "2023-04-21T00:00:00.000Z",
+      "metacriticScore": 73,
+      "updated": "2025-05-22T21:02:55.700Z"
+    }
+  },
+  {
+    "title": "Deliver At All Costs",
+    "key": "deliver-at-all-costs",
+    "openCriticId": "18398/deliver-at-all-costs",
+    "openCriticData": {
+      "title": "Deliver At All Costs",
+      "cover": "https://img.opencritic.com/game/18398/nRDxSzSV.jpg",
+      "tier": "fair",
+      "score": 73,
+      "critics": 52,
+      "releaseDate": "2025-05-22T00:00:00.000Z",
+      "updated": "2025-05-22T21:03:12.688Z"
+    },
+    "steamAppId": 1880610,
+    "steamData": {
+      "title": "Deliver At All Costs",
+      "description": "Deliver At All Costs is a thrilling action game where destruction, absurdity and intrigue collide! Step into the shoes of Winston Green — a down-on-his-luck courier with a fiery temper and a mysterious past — as he delivers highly unconventional cargo, leaving a trail of havoc and chaos behind him.",
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "releaseDate": "2025-05-22T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1880610/header.jpg?t=1747926130",
+      "updated": "2025-05-22T21:03:27.613Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/deliver-at-all-costs/",
+    "metacriticData": {
+      "title": "Deliver At All Costs",
+      "releaseDate": "2025-05-22T00:00:00.000Z",
+      "metacriticScore": 68,
+      "updated": "2025-05-22T21:03:39.483Z"
+    }
+  },
+  {
+    "title": "Happy Game",
+    "key": "happy-game",
+    "openCriticId": "12236/happy-game",
+    "openCriticData": {
+      "title": "Happy Game",
+      "cover": "https://img.opencritic.com/game/12236/jajwcmqq.jpg",
+      "tier": "fair",
+      "score": 74,
+      "critics": 57,
+      "releaseDate": "2021-10-28T00:00:00.000Z",
+      "updated": "2025-05-22T21:06:43.014Z"
+    },
+    "steamAppId": 1206060,
+    "steamData": {
+      "title": "Happy Game",
+      "description": "A little boy falls asleep to a horrible nightmare. Can you make him happy again?",
+      "genres": [
+        "Adventure",
+        "Casual",
+        "Indie"
+      ],
+      "releaseDate": "2021-10-28T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1206060/header.jpg?t=1743605763",
+      "updated": "2025-05-22T21:06:58.201Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/happy-game",
+    "metacriticData": {
+      "title": "Happy Game",
+      "releaseDate": "2021-10-28T00:00:00.000Z",
+      "metacriticScore": 81,
+      "updated": "2025-05-22T21:07:01.805Z"
+    }
+  },
+  {
+    "title": "ENDLESS Legend Definitive Edition",
+    "key": "endless-legend-definitive-edition",
+    "openCriticId": "1277/endless-legend",
+    "openCriticData": {
+      "title": "Endless Legend",
+      "cover": "https://img.opencritic.com/game/1277/9aJafUCy.jpg",
+      "tier": "mighty",
+      "score": 84,
+      "critics": 86,
+      "releaseDate": "2014-09-18T00:00:00.000Z",
+      "updated": "2025-05-22T21:03:57.934Z"
+    },
+    "steamAppId": 289130,
+    "steamData": {
+      "title": "ENDLESS™ Legend",
+      "description": "ENDLESS™ Legend is a 4X turn-based fantasy strategy game by the creators of ENDLESS™ Space and Dungeon of the ENDLESS™. Control every aspect of your civilization as you struggle to save your homeworld Auriga. Create your own Legend!",
+      "genres": [
+        "RPG",
+        "Strategy"
+      ],
+      "releaseDate": "2014-09-18T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/289130/header.jpg?t=1728045983",
+      "updated": "2025-05-22T21:04:21.369Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/endless-legend",
+    "metacriticData": {
+      "title": "Endless Legend",
+      "releaseDate": "2014-09-18T00:00:00.000Z",
+      "metacriticScore": 82,
+      "updated": "2025-05-22T21:04:24.785Z"
+    }
+  },
+  {
+    "title": "Everdream Valley",
+    "key": "everdream-valley",
+    "openCriticId": "15075/everdream-valley",
+    "openCriticData": {
+      "title": "Everdream Valley",
+      "cover": "https://img.opencritic.com/game/15075/bsKFHac9.jpg",
+      "tier": "weak",
+      "score": 62,
+      "critics": 36,
+      "releaseDate": "2023-05-26T00:00:00.000Z",
+      "updated": "2025-05-22T21:05:07.668Z"
+    },
+    "steamAppId": 1403650,
+    "steamData": {
+      "title": "Everdream Valley",
+      "description": "A farming adventure with a dash of magic. Play solo or up to a 4-player coop. By day, restore your quaint farm into a summer paradise. Explore, raise crops, care for animals and rebuild your home. At night inhabit various creatures through your dreams and bring enchantment to the valley.",
+      "genres": [
+        "Adventure",
+        "Casual",
+        "Indie"
+      ],
+      "releaseDate": "2023-05-30T00:00:00.000Z",
+      "reviewScore": 5,
+      "reviewScoreDescription": "Mixed",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1403650/header.jpg?t=1745090019",
+      "updated": "2025-05-22T21:05:23.022Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/everdream-valley/",
+    "metacriticData": {
+      "title": "Everdream Valley",
+      "releaseDate": "2023-05-30T00:00:00.000Z",
+      "metacriticScore": 68,
+      "updated": "2025-05-22T21:05:33.561Z"
+    }
+  },
+  {
+    "title": "Saints Row: Gat out of Hell",
+    "key": "saints-row-gat-out-of-hell",
+    "openCriticId": "128/saints-row-gat-out-of-hell",
+    "openCriticData": {
+      "title": "Saints Row: Gat Out of Hell",
+      "cover": "https://img.opencritic.com/game/128/YjGvQliZ.jpg",
+      "tier": "fair",
+      "score": 67,
+      "critics": 20,
+      "releaseDate": "2015-01-20T00:00:00.000Z",
+      "updated": "2025-05-22T21:08:27.212Z"
+    },
+    "steamAppId": 301910,
+    "steamData": {
+      "title": "Saints Row: Gat out of Hell",
+      "description": "Join Johnny Gat & Kinzie Kensington as you tear apart Hell in a quest to save the Boss’ soul. Historical icons, old friends, older enemies, a talking gun, a full length musical number & a whole lot more shenanigans await!",
+      "genres": [
+        "Action"
+      ],
+      "releaseDate": "2015-01-22T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/301910/header.jpg?t=1726482177",
+      "updated": "2025-05-22T21:08:42.021Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/saints-row-gat-out-of-hell",
+    "metacriticData": {
+      "title": "Saints Row: Gat Out of Hell",
+      "releaseDate": "2015-01-20T00:00:00.000Z",
+      "metacriticScore": 64,
+      "updated": "2025-05-22T21:08:45.483Z"
+    }
+  },
+  {
+    "title": "Legacy of Kain: Blood Omen 2",
+    "key": "legacy-of-kain-blood-omen-2",
+    "openCriticId": "skip",
+    "steamAppId": 242960,
+    "steamData": {
+      "title": "Blood Omen 2: Legacy of Kain",
+      "description": "Cast down from power by a mysterious warlord centuries ago, Kain reawakens in a world he barely recognises. His armies slain, his vampire brethren nearly extinct, Kain is one of the last of his kind. With an agenda of vengeance, Kain shall unleash a wicked wrath to uncover the plot that threatens the land he seeks to conquer.",
+      "genres": [
+        "Action"
+      ],
+      "releaseDate": "2002-03-29T00:00:00.000Z",
+      "reviewScore": 5,
+      "reviewScoreDescription": "Mixed",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/242960/header.jpg?t=1727993892",
+      "updated": "2025-05-22T21:07:38.818Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/blood-omen-2/",
+    "metacriticData": {
+      "title": "Blood Omen 2",
+      "releaseDate": "2002-03-21T00:00:00.000Z",
+      "metacriticScore": 76,
+      "updated": "2025-05-22T21:08:08.711Z"
+    }
   }
 ]
