@@ -69,7 +69,7 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
       
       // Apply search filtering first (just hide/show with CSS)
       gameItemsArray.forEach(item => {
-        const gameTitle = item.id.toLowerCase() || '';
+        const gameTitle = (item.id || '').toLowerCase().replace(/^game-/, '');
         if (!debouncedSearchQuery || gameTitle.includes(debouncedSearchQuery.toLowerCase())) {
           item.classList.remove('hidden');
           filteredGameCount++;
@@ -117,8 +117,8 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
       gameItemsArray.sort((a, b) => {
         let sortValue = 0;
 
-        const aValue = getGameDataSetByKey(a.id)[sortBy] || '';
-        const bValue = getGameDataSetByKey(b.id)[sortBy] || '';
+        const aValue = getGameDataSetByKey(a.id.replace(/^game-/, ''))[sortBy] || '';
+        const bValue = getGameDataSetByKey(b.id.replace(/^game-/, ''))[sortBy] || '';
         if (sortBy === 'gameTitle') {
           sortValue = aValue.localeCompare(bValue, undefined, { numeric: true });
           // console.log(sortBy, aValue, bValue, sortValue);
