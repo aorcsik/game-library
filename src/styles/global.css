@@ -628,6 +628,7 @@ footer {
   text-decoration: none;
   text-transform: uppercase;
   color: var(--steam-review-negative);
+  display: block;
   font-size: .6rem;
 
   &.mixed {

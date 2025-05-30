@@ -123,17 +123,14 @@ const GameRowTitle = ({ game }: GameRowTitleProps): JSX.Element => {
           {releaseDate ? `(${(new Date(releaseDate)).getFullYear()})` : ''}
         </span>
         {steamStoreUrl && (
-          <>
-            <br />
-            <a 
-              href={steamStoreUrl} 
-              target="_blank" 
-              rel="noreferrer" 
-              className={steamReviewScoreClass}
-            >
-              {steamReviewScoreDescription}
-            </a>
-          </>
+          <a 
+            href={steamStoreUrl} 
+            target="_blank" 
+            rel="noreferrer" 
+            className={steamReviewScoreClass}
+          >
+            {steamReviewScoreDescription}
+          </a>
         )}
       </span>
     </>
