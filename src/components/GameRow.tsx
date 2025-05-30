@@ -12,7 +12,7 @@ type GameRowProps = {
 const GameRow = ({ game, platforms, onOpenToggle }: GameRowProps): ReactNode => {
   return (
     <div 
-      id={game.key} 
+      id={`game-${game.key}`} 
       className="game-row" 
       key={game.key}
       onClick={() => onOpenToggle(game.key)}

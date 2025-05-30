@@ -61,7 +61,7 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
         }
       });
 
-      const gameItems = gameGridRef.current?.querySelectorAll('.game-row');
+      const gameItems = gameGridRef.current.querySelectorAll('.game-row');
       if (!gameItems || gameItems.length === 0) return;
       
       // Convert NodeList to Array for sorting
@@ -108,7 +108,7 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
     requestAnimationFrame(() => {
       if (!gameGridRef.current) return;
 
-      const gameItems = gameGridRef.current?.querySelectorAll('.game-row');
+      const gameItems = gameGridRef.current.querySelectorAll('.game-row');
       if (!gameItems || gameItems.length === 0) return;
       
       // Convert NodeList to Array for sorting
@@ -234,7 +234,7 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
               platforms={initialPlatforms}
               onOpenToggle={(gameKey: string) => {
                 if (!gameGridRef.current) return;
-                const gameRow = gameGridRef.current.querySelector(`#${gameKey}`);
+                const gameRow = gameGridRef.current.querySelector(`#game-${gameKey}`);
                 if (gameRow) {
                   gameRow.classList.toggle('game-row-open');
                 }
