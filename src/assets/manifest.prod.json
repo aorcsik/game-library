@@ -1,13 +1,10 @@
 {
   "name": "Game Library",
-  "short_name": "GameLib",
   "description": "A simple game library to manage your games across platforms.",
   "display": "standalone",
   "id": "https://game-library.aorcsik.com/",
   "scope": "https://game-library.aorcsik.com/",
   "start_url": "https://game-library.aorcsik.com/",
-  "theme_color": "#000000",
-  "background_color": "#ffffff",
   "screenshots": [
     {
       "src": "screenshots/narrow-light.png",

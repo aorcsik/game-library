@@ -229,7 +229,17 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
         <div className="container">
           <div className="game-grid" ref={gameGridRef}>
             <GameGridHeader platforms={platforms} />
-            <GameGrid purchasedGames={purchasedGames} platforms={initialPlatforms} />
+            <GameGrid 
+              purchasedGames={purchasedGames}
+              platforms={initialPlatforms}
+              onOpenToggle={(gameKey: string) => {
+                if (!gameGridRef.current) return;
+                const gameRow = gameGridRef.current.querySelector(`#${gameKey}`);
+                if (gameRow) {
+                  gameRow.classList.toggle('game-row-open');
+                }
+              }}
+            />
           </div>
         </div>
       </div>

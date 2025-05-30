@@ -54,36 +54,39 @@ const GameRowTitle = ({ game }: GameRowTitleProps): JSX.Element => {
   const steamReviewScoreDescription = game.steamData?.reviewScoreDescription ?? '';
   
   // Game status indicators
-  let statusIcon = <FontAwesomeIcon icon={['far', 'square']} aria-hidden="true" />;
-  let statusClass = '';
-  if (game.playing) {
-    statusIcon = <FontAwesomeIcon icon={['far', 'square-ellipsis']} aria-hidden="true" />;
-  }
-  if (game.played) {
-    statusIcon = <FontAwesomeIcon icon={['fas', 'square-check']} aria-hidden="true" />;
-    statusClass = 'played';
-  }
-  if (game.liked) {
-    statusIcon = <FontAwesomeIcon icon={['fas', 'square-heart']} aria-hidden="true" />;
-    statusClass = 'played';
-  }
+  const statusClass = '';
+  // let statusIcon = <FontAwesomeIcon icon={['far', 'square']} aria-hidden="true" />;
+  // if (game.playing) {
+  //   statusIcon = <FontAwesomeIcon icon={['far', 'square-ellipsis']} aria-hidden="true" />;
+  // }
+  // if (game.played) {
+  //   statusIcon = <FontAwesomeIcon icon={['fas', 'square-check']} aria-hidden="true" />;
+  //   statusClass = 'played';
+  // }
+  // if (game.liked) {
+  //   statusIcon = <FontAwesomeIcon icon={['fas', 'square-heart']} aria-hidden="true" />;
+  //   statusClass = 'played';
+  // }
   
-  let favoriteIcon = <FontAwesomeIcon icon={['far', 'heart']} aria-hidden="true" />;
-  if (game.favourite) {
-    favoriteIcon = <FontAwesomeIcon icon={['fas', 'heart']} aria-hidden="true" />;
-  }
-  if (game.interesting) {
-    favoriteIcon = <FontAwesomeIcon icon={['far', 'hand-point-right']} aria-hidden="true" />;
-  }
+  // let favoriteIcon = <FontAwesomeIcon icon={['far', 'heart']} aria-hidden="true" />;
+  // if (game.favourite) {
+  //   favoriteIcon = <FontAwesomeIcon icon={['fas', 'heart']} aria-hidden="true" />;
+  // }
+  // if (game.interesting) {
+  //   favoriteIcon = <FontAwesomeIcon icon={['far', 'hand-point-right']} aria-hidden="true" />;
+  // }
 
   return (
     <>
       <span className="game-profile-info">
-        <span aria-label={game.favourite ? 'Favorite' : game.interesting ? 'Interesting' : 'Not marked'}>
+        {/* <span aria-label={game.favourite ? 'Favorite' : game.interesting ? 'Interesting' : 'Not marked'}>
           {favoriteIcon}
         </span>
         <span aria-label={game.played ? 'Played' : game.playing ? 'Playing' : game.liked ? 'Liked' : 'Not played'}>
           {statusIcon}
+        </span> */}
+        <span aria-label="Toggle details" className='toggle-details'>
+          <FontAwesomeIcon icon={['fas', 'chevron-down']} aria-hidden="true" />
         </span>
       </span>
       
@@ -120,14 +123,17 @@ const GameRowTitle = ({ game }: GameRowTitleProps): JSX.Element => {
           {releaseDate ? `(${(new Date(releaseDate)).getFullYear()})` : ''}
         </span>
         {steamStoreUrl && (
-          <a 
-            href={steamStoreUrl} 
-            target="_blank" 
-            rel="noreferrer" 
-            className={steamReviewScoreClass}
-          >
-            {steamReviewScoreDescription}
-          </a>
+          <>
+            <br />
+            <a 
+              href={steamStoreUrl} 
+              target="_blank" 
+              rel="noreferrer" 
+              className={steamReviewScoreClass}
+            >
+              {steamReviewScoreDescription}
+            </a>
+          </>
         )}
       </span>
     </>

@@ -1,13 +1,10 @@
 {
   "name": "Game Library [DEV]",
-  "short_name": "GameLibDev",
   "description": "A simple game library to manage your games across platforms.",
   "display": "standalone",
   "id": "http://localhost:3000/",
   "scope": "http://localhost:3000/",
   "start_url": "http://localhost:3000/",
-  "theme_color": "#000000",
-  "background_color": "#ffffff",
   "screenshots": [
     {
       "src": "screenshots/narrow-light.png",

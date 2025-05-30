@@ -41,6 +41,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
         <link rel="icon" type="image/svg" href="game-library-icon-monochrome.svg" sizes="any" />
         <link rel="icon" type="image/webp" href="game-library-icon-color2.webp" sizes="any" />
         <link rel="manifest" href="/manifest.json" />
+        <meta
+          name="theme-color"
+          content="#f9f9f9"
+          media="(prefers-color-scheme: light)" />
+        <meta
+          name="theme-color"
+          content="#121212"
+          media="(prefers-color-scheme: dark)" />
       </head>
       <body className={`${outfit.variable} ${figtree.variable} font-sans`}>
         {children}

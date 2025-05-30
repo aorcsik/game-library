@@ -501,6 +501,10 @@ footer {
     & .game-collection {
       display: none;
     }
+
+    & .toggle-details {
+      display: none;
+    }
   }
 
   & .game-row:hover {
@@ -624,7 +628,6 @@ footer {
   text-decoration: none;
   text-transform: uppercase;
   color: var(--steam-review-negative);
-  display: block;
   font-size: .6rem;
 
   &.mixed {
@@ -687,6 +690,9 @@ footer {
 }
 
 @media only screen and (max-width: 900px) {
+  .controls .sort {
+    flex-basis: 30%;
+  }
   .game-grid {
     & .game-cell {
       width: 2.5rem;
@@ -697,6 +703,7 @@ footer {
         font-size: 1rem;
     }
   }
+  
   .game-cell {
     &.game-card {
       & .game-cover {
@@ -711,6 +718,13 @@ footer {
         margin: 0;
       }
     }
+  }
+
+  .open-critic-score {
+    display: none;
+  }
+  .open-critic-critics {
+    display: none;
   }
 }
 
@@ -730,17 +744,6 @@ footer {
     flex-basis: 100%;
     margin-top: .5rem;
     display: none;
-  }
-  .controls .tier-filter {
-    flex-basis: 100%;
-    margin: 0;
-    width: 100%;
-    margin-top: .5rem;
-    display: none;
-
-    & .button {
-      flex-grow: 1;
-    }
   }
   .controls .sort {
     flex-basis: 100%;
@@ -785,7 +788,24 @@ footer {
     width: 100%;
     border-top: 1px solid var(--subtle-accent-color);
     border-radius: 0;
-    padding: .5rem
+    padding: 1rem;
+  }
+
+  .game-grid .game-row:hover .game-row-title {
+    background: none;
+  }
+
+  .game-grid .game-row .toggle-details {
+    display: block;
+
+    & .fa-chevron-down {
+      transition: all .3s ease-in-out;
+    }
+  }
+  .game-grid .game-row-open .toggle-details {
+    & .fa-chevron-down {
+      transform: rotate(180deg);
+    }
   }
 
   .game-grid .game-row .game-cell {
@@ -797,21 +817,14 @@ footer {
     height: 0;
     transition: height .3s ease-in-out;
   }
+
   .game-grid .game-row-open .game-cell {
-    height: 2.5rem;
+    height: 3.5rem;
   }
 
   .games-header {
     display: none;
   }
-
-  .open-critic-score {
-    display: none;
-  }
-  .open-critic-critics {
-    display: none;
-  }
-
 }
 
 .hidden {

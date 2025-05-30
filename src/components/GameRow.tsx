@@ -1,4 +1,4 @@
-import { ReactNode, useState } from 'react';
+import { ReactNode } from 'react';
 import { Platform, PlatformList, PurchasedGame } from '../lib/PurchaseService';
 import GameRowTitle from './GameRowTitle';
 import Image from 'next/image';
@@ -6,19 +6,16 @@ import Image from 'next/image';
 type GameRowProps = {
   game: PurchasedGame;
   platforms: PlatformList;
+  onOpenToggle: (gameKey: string) => void;
 };
 
-const GameRow = ({ game, platforms }: GameRowProps): ReactNode => {
-  const [open, setOpen] = useState(false);
-
-  const toggleOpen = (): void => setOpen(!open);
-
+const GameRow = ({ game, platforms, onOpenToggle }: GameRowProps): ReactNode => {
   return (
     <div 
       id={game.key} 
-      className={`game-row ${open ? 'game-row-open' : ''}`} 
+      className="game-row" 
       key={game.key}
-      onClick={toggleOpen}
+      onClick={() => onOpenToggle(game.key)}
     >
       <div className="game-row-title">
         <GameRowTitle game={game} />
