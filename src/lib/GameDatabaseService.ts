@@ -8,10 +8,6 @@ class GameDatabaseService {
 
   static readonly PROFILE_FILE = '/data/profile.json';
 
-  static readonly GAME_TITLES_FILE = '/data/game-titles.json';
-
-  static readonly PURCHASE_FILE = '/data/purchases.json';
-
   static async initDatabase(path: string): Promise<GameDatabaseService> {
     const gamesFile = await fs.promises.readFile(path, 'utf-8');
     return new GameDatabaseService(JSON.parse(gamesFile.toString()) as Game[]);
@@ -21,6 +17,10 @@ class GameDatabaseService {
 
   constructor(database: Game[]) {
     this.database = database;
+  }
+
+  getGames(): Game[] { 
+    return this.database;
   }
 
   findIndex(callback: (gameConfig: Game) => boolean | undefined): number {
@@ -33,14 +33,20 @@ class GameDatabaseService {
   }
 
   findIndexByTitle(title: string): number {
-    const c = (title: string): string => {
-      return title.toLocaleLowerCase().replace(/[-:!™Ⓡ®–'’]/g, '').replace(/\s+/g, ' ').trim();
+    const c = (title: string | null | undefined): string => {
+      return title ? title.toLocaleLowerCase().replace(/[-:!™Ⓡ®–'’]/g, '').replace(/\s+/g, ' ').trim() : '';
     };
+    const cTitle = c(title);
     return this.findIndex(
-      game => 
-        c(game.title) === c(title) || 
+      game =>  {
+        return c(game.title) === cTitle || 
         game.key === createGameSlug(title) ||
-        (game.sameGame && game.sameGame.filter(sameGame => c(sameGame) === c(title)).length > 0));
+        c(game.openCriticData?.title) === cTitle ||
+        c(game.steamData?.title) === cTitle ||
+        c(game.metacriticData?.title) === cTitle ||
+        (game.sameGame && game.sameGame.filter(sameGameTitle => c(sameGameTitle) === cTitle).length > 0);
+      }
+    );
   };
 
   getGameByTitle(title: string): Game {

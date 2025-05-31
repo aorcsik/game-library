@@ -17,8 +17,18 @@ type GameLibraryProps = {
   platforms: PlatformList;
 };
 
-type SortByType = 'gameTitle' | 'gameReleaseDate' | 'openCriticScore' | 'openCriticCritics' | 'steamReviewScore' | 'metacriticScore';
+type SortByType = 'gameTitle' | 'gameReleaseDate' | 'openCriticScore' | 'openCriticCritics' | 'steamReviewScore' | 'metacriticScore' | 'progress';
 type SortDirection = 'asc' | 'desc';
+
+const sortByOptions: Record<SortByType, string> = {
+  gameTitle: 'Title',
+  gameReleaseDate: 'Release Date',
+  openCriticScore: 'OpenCritic Score',
+  openCriticCritics: 'OpenCritic Recommendation',
+  steamReviewScore: 'Steam Reviews',
+  metacriticScore: 'Metascore',
+  progress: 'Progress',
+};
 
 const sortByFieldName = 'sort_by';
 const sortDirectionFieldName = 'direction';
@@ -34,15 +44,6 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
 
   // Create a ref for the game grid container for direct DOM manipulation
   const gameGridRef = useRef<HTMLDivElement>(null);
-  
-  // Set up debounced search query
-  useEffect(() => {
-    const timerId = setTimeout(() => {
-      setDebouncedSearchQuery(searchQuery);
-    }, 300); // 300ms is usually a good balance
-
-    return (): void => clearTimeout(timerId);
-  }, [searchQuery]);
 
   // Now use debouncedSearchQuery for the expensive filtering operation
   useEffect(() => {
@@ -70,7 +71,7 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
       // Apply search filtering first (just hide/show with CSS)
       gameItemsArray.forEach(item => {
         const gameTitle = (item.id || '').toLowerCase().replace(/^game-/, '');
-        if (!debouncedSearchQuery || gameTitle.includes(debouncedSearchQuery.toLowerCase())) {
+        if (!debouncedSearchQuery || gameTitle.includes(debouncedSearchQuery.replace(/\s+/g, '-').toLowerCase())) {
           item.classList.remove('hidden');
           filteredGameCount++;
           Object.keys(filteredPlatforms).forEach((platform: Platform) => {
@@ -98,6 +99,7 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
       gameDataSet.openCriticCritics = game.openCriticData?.critics ? game.openCriticData.critics.toString() : '';
       gameDataSet.steamReviewScore = game.steamData?.reviewScore ? game.steamData.reviewScore.toString() : '';
       gameDataSet.metacriticScore = game.metacriticData?.metacriticScore ? game.metacriticData.metacriticScore.toString() : '';
+      gameDataSet.progress = game.progress !== undefined && game.progress >= -1 ? game.progress.toString() : '-1';
     }
     return gameDataSet;
   }, [purchasedGames]);
@@ -149,6 +151,16 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
     window.history.replaceState({}, '', `${window.location.pathname}?${searchParams}`);
   }, []);
 
+  // Set up debounced search query
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      setDebouncedSearchQuery(searchQuery);
+      updateQueryParams(searchFieldName, searchQuery);
+    }, 300); // 300ms is usually a good balance
+
+    return (): void => clearTimeout(timerId);
+  }, [searchQuery, updateQueryParams]);
+
   const handleDirectionChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedValue = e.target.value as SortDirection;
     setSortDirection(selectedValue);
@@ -162,8 +174,7 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
   const handleSearch = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const searchValue = e.target.value;
     setSearchQuery(searchValue);
-    updateQueryParams(searchFieldName, searchValue);
-  }, [updateQueryParams]);
+  }, []);
   const handleClearSearch = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setSearchQuery('');
@@ -175,7 +186,7 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
     const sortByParam = searchParams.get(sortByFieldName) as SortByType;
     const sortDirectionParam = searchParams.get(sortDirectionFieldName) as SortDirection;
     const searchQueryParam = searchParams.get(searchFieldName) || '';
-    if (sortByParam && ['gameTitle', 'gameReleaseDate', 'openCriticScore', 'openCriticCritics', 'steamReviewScore', 'metacriticScore'].includes(sortByParam)) {
+    if (sortByParam && Object.keys(sortByOptions).includes(sortByParam)) {
       setSortBy(sortByParam);
     }
     if (sortDirectionParam && ['asc', 'desc'].includes(sortDirectionParam)) {
@@ -209,6 +220,7 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
             </label>
             <SortControl 
               sortBy={sortBy}
+              sortByOptions={sortByOptions}
               sortDirection={sortDirection}
               handleSortByChange={handleSortByChange}
               handleDirectionChange={handleDirectionChange}

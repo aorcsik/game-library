@@ -67,7 +67,10 @@ const fetchSteamData = async (steamAppId: number): Promise<SteamData | null> => 
   const genres = Array.from(genresElement?.querySelectorAll('a') || []).map(link => link.href.match(/genre\/(.*?)\//)).map(match => match && match[1]).filter(genre => genre !== null);
   const releaseDateMatch = genresElement?.textContent?.match(/Release Date:\s*(\d+ \w+, \d+)/);
   const releaseDate = releaseDateMatch ? new Date(releaseDateMatch[1]).toISOString() : null;
-  const reviewScoreElement = dom.window.document.querySelector('.user_reviews .game_review_summary');
+
+  const aggregateRatingElement = dom.window.document.querySelector('[itemprop=aggregateRating]');
+  const reviewScoreTooltip = aggregateRatingElement?.getAttribute('data-tooltip-html') || '';
+  const reviewScoreElement = aggregateRatingElement?.querySelector('.game_review_summary');
   const reviewScoreDescription = reviewScoreElement?.textContent?.trim() || null;
   const reviewScoreMap: Record<string, number> = {
     'Overwhelmingly Positive': 9,
@@ -92,6 +95,7 @@ const fetchSteamData = async (steamAppId: number): Promise<SteamData | null> => 
     releaseDate,
     reviewScore,
     reviewScoreDescription,
+    reviewScoreTooltip,
     headerImage,
     updated: new Date().toISOString(),
   };

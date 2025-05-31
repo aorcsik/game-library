@@ -4,6 +4,7 @@ import FontAwesomeIcon from './FontAwesomeIcon';
 
 const SortControl = ({
   sortBy,
+  sortByOptions,
   sortDirection,
   handleSortByChange,
   handleDirectionChange,
@@ -11,6 +12,7 @@ const SortControl = ({
   sortDirectionFieldName
 }: {
   sortBy: string;
+  sortByOptions: Record<string, string>;
   sortDirection: string;
   handleSortByChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
   handleDirectionChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -22,7 +24,7 @@ const SortControl = ({
       type="radio" 
       name={sortDirectionFieldName}
       value="asc" 
-      defaultChecked={sortDirection === 'asc'} 
+      checked={sortDirection === 'asc'} 
       id="sort-asc" 
       onChange={handleDirectionChange}
     />
@@ -32,7 +34,7 @@ const SortControl = ({
       name={sortDirectionFieldName}
       value="desc" 
       id="sort-desc"
-      defaultChecked={sortDirection === 'desc'}
+      checked={sortDirection === 'desc'}
       onChange={handleDirectionChange}
     />
     <label className="button" htmlFor="sort-desc"><FontAwesomeIcon icon={['far', sortBy === 'gameTitle' ? 'arrow-up-z-a': 'arrow-up-9-1']} /></label>
@@ -43,12 +45,9 @@ const SortControl = ({
         id={sortByFieldName}
         onChange={handleSortByChange}
       >
-        <option value="gameTitle">Title</option>
-        <option value="gameReleaseDate">Release Date</option>
-        <option value="openCriticScore">OpenCritic Score</option>
-        <option value="openCriticCritics">OpenCritic Recommendation</option>
-        <option value="steamReviewScore">Steam Reviews</option>
-        <option value="metacriticScore">Metascore</option>
+        { Object.entries(sortByOptions).map(([value, label]) => (
+          <option key={value} value={value}>{label}</option>
+        )) }
       </select>
     </label>
   </div>

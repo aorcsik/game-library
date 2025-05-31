@@ -63,6 +63,7 @@ type SteamData = {
   releaseDate: string | null;
   reviewScore: number | null;
   reviewScoreDescription: string | null;
+  reviewScoreTooltip: string | null;
   metacriticUrl?: string | null;
   headerImage: string | null;
   updated: string;
@@ -101,6 +102,7 @@ type Game = {
   favourite?: boolean;
   liked?: boolean;
   interesting?: boolean;
+  progress?: number;
 };
 
 export type GamerProfile = {

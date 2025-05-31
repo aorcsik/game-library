@@ -1,5 +1,7 @@
+import { PlatformProgress } from '../cli/ProgressFetcherService';
 import { getGameLibraryConfig } from './Config';
 import GameDatabaseService from './GameDatabaseService';
+import ProgressService from './ProgressService';
 import PurchaseService, { PlatformList, PlatformPurchase, PurchasedGame } from './PurchaseService';
 
 const skipTitle = [
@@ -37,6 +39,7 @@ const skipTitle = [
 
 export const getGameLibraryData = async (database: GameDatabaseService, fromSanity: boolean): Promise<[PurchasedGame[], PlatformList]> => {
   const config = getGameLibraryConfig();
+  const progressService = new ProgressService(config);
   const purchaseService = new PurchaseService(config, database, skipTitle);
 
   const purchasedGames: PurchasedGame[] = [];
@@ -60,6 +63,7 @@ export const getGameLibraryData = async (database: GameDatabaseService, fromSani
         purchasedGames.push({
           ...database.getGameByTitle(purchases[key].title),
           purchases: [purchases[key]],
+          progress: -1,
         });
       }
       platforms[platform].count++;
@@ -85,6 +89,32 @@ export const getGameLibraryData = async (database: GameDatabaseService, fromSani
   addPurchases(await purchaseService.getGOGPurchases(fromSanity));
   addPurchases(await purchaseService.getSwitchPurchases(fromSanity));
   addPurchases(await purchaseService.getAppStorePurchases(fromSanity));
+
+  const addProgress = <T extends PlatformProgress>(platformProgress: T[] | null): void => {
+    if (platformProgress) platformProgress.forEach(progress => {
+      let progressTitle = progress.title.replace(/(\(EU\)|\(PS4\)|\(PS5\))/g, '').trim();
+      if (progressTitle !== 'God of War (PS3)') {
+        progressTitle = progressTitle.replace(/(\(PS3\))/, '').trim();
+      }
+
+      const game = database.getGameByTitle(progressTitle);
+      const purchasedGame = purchasedGames.find(p => p.key === game.key);
+      if (purchasedGame) {
+        if (purchasedGame.progress === undefined || purchasedGame.progress < progress.progress) {
+          purchasedGame.progress = progress.progress;
+        }
+      } else {
+        purchasedGames.push({
+          ...game,
+          purchases: [],
+          progress: progress.progress,
+        });
+      }
+    });
+  };
+
+  addProgress(await progressService.getSteamProgress(fromSanity));
+  addProgress(await progressService.getPlaystationProgress(fromSanity));
 
   return [purchasedGames, platforms];
 };

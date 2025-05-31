@@ -2,6 +2,7 @@ import { formatTitle } from '../lib/tools';
 import { Game } from '../lib/schema';
 import { JSX } from 'react';
 import FontAwesomeIcon from './FontAwesomeIcon';
+import GameProgressBar from './GameProgressBar';
 
 
 export const getReleaseDate = (game: Game): string => {
@@ -52,6 +53,7 @@ const GameRowTitle = ({ game }: GameRowTitleProps): JSX.Element => {
   }
   const steamStoreUrl = game.steamAppId ? `https://store.steampowered.com/app/${game.steamAppId}/` : '';
   const steamReviewScoreDescription = game.steamData?.reviewScoreDescription ?? '';
+  const steamReviewScoreTooltip = game.steamData?.reviewScoreTooltip ?? '';
   
   // Game status indicators
   const statusClass = '';
@@ -117,16 +119,20 @@ const GameRowTitle = ({ game }: GameRowTitleProps): JSX.Element => {
       )}
       
       <span className={`game-title ${statusClass}`} title={game.title}>
-        {formatTitle(game.title)}
-        {' '}
-        <span className="release-date">
-          {releaseDate ? `(${(new Date(releaseDate)).getFullYear()})` : ''}
+        {game.progress > -1 && <GameProgressBar progress={game.progress} />}
+        <span>
+          {formatTitle(game.title)}
+          {' '}
+          <span className="release-date">
+            {releaseDate ? `(${(new Date(releaseDate)).getFullYear()})` : ''}
+          </span>
         </span>
         {steamStoreUrl && (
           <a 
             href={steamStoreUrl} 
             target="_blank" 
             rel="noreferrer" 
+            title={steamReviewScoreTooltip}
             className={steamReviewScoreClass}
           >
             {steamReviewScoreDescription}

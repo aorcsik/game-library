@@ -31,9 +31,9 @@ const args = new CommandLineArgs({
     parameter: 'days',
     type: 'number',
   },
-  'updatePurchases': {
+  'updatePurchasesAndProgress': {
     shortHand: 'p',
-    description: 'Update purchases from Steam, Epic, GOG, etc.',
+    description: 'Update purchases from Steam, Epic, GOG, etc. and progress from TrueSteamAchievements, TrueTrophies, etc.',
     default: false,
     parameter: null,
     type: null,
@@ -56,17 +56,17 @@ const fetchDelay = 0; // ms
 const refetchAge = args.get('refetchAge') as number;
 const startIndex = args.get('startIndex') as number;
 const forceFetchTitle = args.get('fetchTitle') as string;
-const updatePurchases = args.get('updatePurchases') as boolean;
+const updatePurchasesAndProgress = args.get('updatePurchasesAndProgress') as boolean;
 const updateLoop = async (): Promise<void> => {
   const databaseFilePath = `${process.env.SOURCE_DIR}${GameDatabaseService.GAME_DATABASE_FILE}`;
   const database = await GameDatabaseService.initDatabase(databaseFilePath);
 
-  if (updatePurchases) {
+  if (updatePurchasesAndProgress) {
     process.stdout.write('\nUpdating Game Library... ');
   } else {
     process.stdout.write('\nLoading Game Library from Sanity... ');
   }
-  const [purchasedGames] = await getGameLibraryData(database, !updatePurchases);
+  const [purchasedGames] = await getGameLibraryData(database, !updatePurchasesAndProgress);
   process.stdout.write(`${colorize('done', 'green')} (${purchasedGames.length} games)\n`);
 
   const gameTitles: Record<string, string> = {};

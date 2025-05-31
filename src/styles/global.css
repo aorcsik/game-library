@@ -11,13 +11,14 @@ body, html {
 
 body {
   --background-color-components: 249, 249, 249;
-  --accent-color-componenrts: 102, 102, 102;
+  --accent-color-components: 102, 102, 102;
   --subtle-accent-color-components: 221, 221, 221;
   --text-color: #212121;
+  --text-on-accent-color: #FFFFFF;
   --secondary-text: #666;
   --card-background: #F5F5F5;
   --background-color: rgb(var(--background-color-components));
-  --accent-color: rgb(var(--accent-color-componenrts));
+  --accent-color: rgb(var(--accent-color-components));
   --subtle-accent-color: rgb(var(--subtle-accent-color-components));
   --card-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   --card-hover-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
@@ -74,7 +75,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (prefers-color-scheme: dark) {
   body {
     --background-color-components: 18, 18, 18;
-    --accent-color-componenrts: 102, 102, 102;
+    --accent-color-components: 102, 102, 102;
     --subtle-accent-color-components: 51, 51, 51;
 
     --steam-review-negative: #A34C25;
@@ -408,6 +409,13 @@ footer {
     gap: .5rem;
     align-items: center;
   }
+
+  & .game-title {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
 }
 
 .game-cell {
@@ -495,7 +503,9 @@ footer {
     align-items: center;
 
     width: 100%;
-    padding-left: .5rem;
+    padding-left: .75rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
     border-radius: .5rem;
 
     & .game-collection {
@@ -830,4 +840,41 @@ footer {
 
 .hidden {
   display: none;
+}
+
+.game-progress-container {
+  height: 3px;
+  width: 100%;
+  border-radius: 1.5px;
+  position: absolute;
+  display: block;
+  top: -0.25rem; 
+  background-image: linear-gradient(90deg, rgba(var(--subtle-accent-color-components), 0.3) 0%, transparent 100%);
+
+  & .game-progress-bar {
+    height: 100%;
+    width: 0;
+    /* background-color: var(--accent-color); */
+    background-image: linear-gradient(90deg, rgba(var(--accent-color-components), 0.1) 0%, var(--accent-color) 100%);
+    border-radius: 1.5px;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    & .game-progress-label {
+      background-color: var(--accent-color);
+      color: var(--text-on-accent-color);
+      position: absolute;
+      right: 0;
+      font-weight: bold;
+      border-radius: .5rem;
+      font-size: 0px;
+      transition: all .3s ease-in-out;
+    }
+  }
+}
+
+.game-row:hover .game-progress-bar .game-progress-label {
+  padding: .125rem .5rem;
+  font-size: .6rem;
 }

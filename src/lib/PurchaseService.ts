@@ -108,14 +108,14 @@ class PurchaseService {
       {'title': 'FRAMED'},
       {'title': 'FRAMED 2'}
     ],
-    'Halo: The Master Chief Collection': [
-      {'title': 'Halo: Combat Evolved Anniversary'},
-      {'title': 'Halo 2: Anniversary'},
-      {'title': 'Halo 3'},
-      {'title': 'Halo 3: ODST'},
-      {'title': 'Halo: Reach'},
-      {'title': 'Halo 4'},
-    ]
+    // 'Halo: The Master Chief Collection': [
+    //   {'title': 'Halo: Combat Evolved Anniversary'},
+    //   {'title': 'Halo 2: Anniversary'},
+    //   {'title': 'Halo 3'},
+    //   {'title': 'Halo 3: ODST'},
+    //   {'title': 'Halo: Reach'},
+    //   {'title': 'Halo 4'},
+    // ]
   };
 
   constructor(config: GameLibraryConfig, database: GameDatabaseService, skipTitle: string[]) {
