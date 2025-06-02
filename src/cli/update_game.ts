@@ -31,9 +31,30 @@ const args = new CommandLineArgs({
     parameter: 'days',
     type: 'number',
   },
-  'updatePurchasesAndProgress': {
+  'updatePurchases': {
     shortHand: 'p',
-    description: 'Update purchases from Steam, Epic, GOG, etc. and progress from TrueSteamAchievements, TrueTrophies, etc.',
+    description: 'Update purchases from Steam, Epic, GOG, etc.',
+    default: false,
+    parameter: null,
+    type: null,
+  },
+  'updateProgress': {
+    shortHand: 'P',
+    description: 'Update progress from TrueSteamAchievements, TrueTrophies, etc.',
+    default: false,
+    parameter: null,
+    type: null,
+  },
+  'updateNotes': {
+    shortHand: 'n',
+    description: 'Update notes from local file',
+    default: false,
+    parameter: null,
+    type: null,
+  },
+  'skipGameUpdates': {
+    shortHand: 's',
+    description: 'Skip updating game data (OpenCritic, Steam, Metacritic)',
     default: false,
     parameter: null,
     type: null,
@@ -56,24 +77,33 @@ const fetchDelay = 0; // ms
 const refetchAge = args.get('refetchAge') as number;
 const startIndex = args.get('startIndex') as number;
 const forceFetchTitle = args.get('fetchTitle') as string;
-const updatePurchasesAndProgress = args.get('updatePurchasesAndProgress') as boolean;
+const updatePurchases = args.get('updatePurchases') as boolean;
+const updateProgress = args.get('updateProgress') as boolean;
+const updateNotes = args.get('updateNotes') as boolean;
+const skipGameUpdates = args.get('skipGameUpdates') as boolean;
 const updateLoop = async (): Promise<void> => {
   const databaseFilePath = `${process.env.SOURCE_DIR}${GameDatabaseService.GAME_DATABASE_FILE}`;
   const database = await GameDatabaseService.initDatabase(databaseFilePath);
 
-  if (updatePurchasesAndProgress) {
-    process.stdout.write('\nUpdating Game Library... ');
-  } else {
-    process.stdout.write('\nLoading Game Library from Sanity... ');
+  const [purchasedGames] = await getGameLibraryData(database, {
+    progress: !updateProgress,
+    purchases: !updatePurchases,
+    notes: !updateNotes
+  });
+
+  if (skipGameUpdates) {
+    process.stdout.write(colorize('Skipping game updates.\n', 'cyan'));
+    lineReader.close();
+    process.exit(0);
   }
-  const [purchasedGames] = await getGameLibraryData(database, !updatePurchasesAndProgress);
-  process.stdout.write(`${colorize('done', 'green')} (${purchasedGames.length} games)\n`);
 
   const gameTitles: Record<string, string> = {};
   purchasedGames.forEach(game => {
     gameTitles[game.key] = game.title;
   });
   const sortedGameKeys = Object.keys(gameTitles).sort();
+
+  process.stdout.write('\nUpdating Game Library... ');
 
   let i = 0;
   for (const gameKey of sortedGameKeys) {

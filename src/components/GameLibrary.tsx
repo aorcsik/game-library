@@ -17,7 +17,15 @@ type GameLibraryProps = {
   platforms: PlatformList;
 };
 
-type SortByType = 'gameTitle' | 'gameReleaseDate' | 'openCriticScore' | 'openCriticCritics' | 'steamReviewScore' | 'metacriticScore' | 'progress';
+type SortByType = 
+  'gameTitle' |
+  'gameReleaseDate' |
+  'openCriticScore' |
+  'openCriticCritics' |
+  'steamReviewScore' |
+  'metacriticScore' |
+  'progress' |
+  'rating';
 type SortDirection = 'asc' | 'desc';
 
 const sortByOptions: Record<SortByType, string> = {
@@ -28,6 +36,7 @@ const sortByOptions: Record<SortByType, string> = {
   steamReviewScore: 'Steam Reviews',
   metacriticScore: 'Metascore',
   progress: 'Progress',
+  rating: 'Personal Rating'
 };
 
 const sortByFieldName = 'sort_by';
@@ -39,7 +48,7 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
   const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
   const [searchQuery, setSearchQuery] = useState('');
   const [debouncedSearchQuery, setDebouncedSearchQuery] = useState('');
-  const [gameCount, setGameCount] = useState(purchasedGames.length);
+  const [gameCount, setGameCount] = useState(purchasedGames.filter(game => game.purchases.length > 0).length);
   const [platforms, setPlatforms] = useState(initialPlatforms);
 
   // Create a ref for the game grid container for direct DOM manipulation
@@ -73,7 +82,9 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
         const gameTitle = (item.id || '').toLowerCase().replace(/^game-/, '');
         if (!debouncedSearchQuery || gameTitle.includes(debouncedSearchQuery.replace(/\s+/g, '-').toLowerCase())) {
           item.classList.remove('hidden');
-          filteredGameCount++;
+          if (!Array.from(item.classList).includes('no-purchases')) {
+            filteredGameCount++;
+          }
           Object.keys(filteredPlatforms).forEach((platform: Platform) => {
             if (item.querySelector(`.game-${platform}:not(.game-placeholder)`)) filteredPlatforms[platform].count++;
           });
@@ -92,6 +103,9 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
     const gameDataSet: Record<string, string> = {};
     const game = purchasedGames.find(g => g.key === gameKey);
     if (game) {
+      let gameProgress = game.progress !== undefined && game.progress >= -1 ? game.progress.toString() : '-1';
+      if (game.completed && game.progress === -1) gameProgress = '0';
+
       gameDataSet.gameTitle = game.key;
       gameDataSet.gameReleaseDate = (new Date(getReleaseDate(game) || '1970-01-01')).getTime().toString();
       gameDataSet.openCriticTier = game.openCriticData?.tier ? game.openCriticData.tier.toString() : 'n-a';
@@ -99,7 +113,9 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
       gameDataSet.openCriticCritics = game.openCriticData?.critics ? game.openCriticData.critics.toString() : '';
       gameDataSet.steamReviewScore = game.steamData?.reviewScore ? game.steamData.reviewScore.toString() : '';
       gameDataSet.metacriticScore = game.metacriticData?.metacriticScore ? game.metacriticData.metacriticScore.toString() : '';
-      gameDataSet.progress = game.progress !== undefined && game.progress >= -1 ? game.progress.toString() : '-1';
+      gameDataSet.progress = gameProgress;
+      gameDataSet.completed = game.completed || gameProgress === '100' ? '1' : '0';
+      gameDataSet.rating = game.rating ? game.rating.toString() : '-2';
     }
     return gameDataSet;
   }, [purchasedGames]);
@@ -130,6 +146,17 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
           if (!isNaN(aNum) && !isNaN(bNum)) {
             sortValue = aNum - bNum;
           }
+
+          if (sortBy === 'progress') {
+            const aCompleted = getGameDataSetByKey(a.id.replace(/^game-/, ''))['completed'] || '';
+            const bCompleted = getGameDataSetByKey(b.id.replace(/^game-/, ''))['completed'] || '';
+            if (aCompleted === '1' && bCompleted !== '1') {
+              sortValue = 1; // Completed games come first
+            } else if (bCompleted === '1' && aCompleted !== '1') {
+              sortValue = -1; // Completed games come first
+            }
+          }
+          // console.log(sortBy, aValue, bValue, sortValue);
         }
 
         return sortDirection === 'asc' ? sortValue : -1 * sortValue;

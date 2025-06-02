@@ -1,6 +1,7 @@
 import { PlatformProgress } from '../cli/ProgressFetcherService';
 import { getGameLibraryConfig } from './Config';
 import GameDatabaseService from './GameDatabaseService';
+import NotesService, { GameNotes } from './NotesService';
 import ProgressService from './ProgressService';
 import PurchaseService, { PlatformList, PlatformPurchase, PurchasedGame } from './PurchaseService';
 
@@ -37,8 +38,20 @@ const skipTitle = [
   'KillingFloor2Beta'
 ];
 
-export const getGameLibraryData = async (database: GameDatabaseService, fromSanity: boolean): Promise<[PurchasedGame[], PlatformList]> => {
+export const getGameLibraryData = async (
+  database: GameDatabaseService,
+  fromSanity: { 
+    purchases: boolean; 
+    progress: boolean;
+    notes: boolean;
+  } = {
+    purchases: true,
+    progress: true,
+    notes: true,
+  }
+): Promise<[PurchasedGame[], PlatformList]> => {
   const config = getGameLibraryConfig();
+  const notesService = new NotesService(config);
   const progressService = new ProgressService(config);
   const purchaseService = new PurchaseService(config, database, skipTitle);
 
@@ -51,6 +64,7 @@ export const getGameLibraryData = async (database: GameDatabaseService, fromSani
     gog: { name: 'Good Old Games', count: 0 },
     amazon: { name: 'Prime Gaming', count: 0 },
     appstore: { name: 'Apple App Store', count: 0 },
+    xbox: { name: 'Xbox', count: 0 },
   };
 
   const addPurchases = <T extends Record<string, PlatformPurchase>>(purchases: T): void => {
@@ -82,13 +96,14 @@ export const getGameLibraryData = async (database: GameDatabaseService, fromSani
     });
   };
 
-  addPurchases(await purchaseService.getSteamPurchases(fromSanity));
-  addPurchases(await purchaseService.getPlaystationPurchases(fromSanity));
-  addPurchases(await purchaseService.getEpicPurchases(fromSanity));
-  addPurchases(await purchaseService.getAmazonPurchases(fromSanity));
-  addPurchases(await purchaseService.getGOGPurchases(fromSanity));
-  addPurchases(await purchaseService.getSwitchPurchases(fromSanity));
-  addPurchases(await purchaseService.getAppStorePurchases(fromSanity));
+  addPurchases(await purchaseService.getSteamPurchases(fromSanity.purchases));
+  addPurchases(await purchaseService.getPlaystationPurchases(fromSanity.purchases));
+  addPurchases(await purchaseService.getEpicPurchases(fromSanity.purchases));
+  addPurchases(await purchaseService.getAmazonPurchases(fromSanity.purchases));
+  addPurchases(await purchaseService.getGOGPurchases(fromSanity.purchases));
+  addPurchases(await purchaseService.getSwitchPurchases(fromSanity.purchases));
+  addPurchases(await purchaseService.getAppStorePurchases(fromSanity.purchases));
+  addPurchases(await purchaseService.getXboxPurchases(fromSanity.purchases));
 
   const addProgress = <T extends PlatformProgress>(platformProgress: T[] | null): void => {
     if (platformProgress) platformProgress.forEach(progress => {
@@ -113,8 +128,39 @@ export const getGameLibraryData = async (database: GameDatabaseService, fromSani
     });
   };
 
-  addProgress(await progressService.getSteamProgress(fromSanity));
-  addProgress(await progressService.getPlaystationProgress(fromSanity));
+  addProgress(await progressService.getSteamProgress(fromSanity.progress));
+  addProgress(await progressService.getPlaystationProgress(fromSanity.progress));
+  addProgress(await progressService.getXboxProgress(fromSanity.progress));
+
+  const addNotes = (gameNotes: GameNotes[] | null): void => {
+    if (gameNotes) for (const notes of gameNotes) {
+      const game = database.getGameByTitle(notes.title);
+      const purchasedGame = purchasedGames.find(p => p.key === game.key);
+      if (purchasedGame) {
+        if (notes.progress !== undefined) {
+          if (purchasedGame.progress === undefined || purchasedGame.progress < notes.progress) {
+            purchasedGame.progress = notes.progress;
+          }
+        }
+        if (notes.completed) {
+          purchasedGame.completed = true;
+        }
+        if (notes.rating !== undefined) {
+          purchasedGame.rating = notes.rating;
+        }
+      } else {
+        purchasedGames.push({
+          ...game,
+          purchases: [],
+          progress: notes.progress !== undefined ? notes.progress : -1,
+          completed: notes.completed || false,
+          rating: notes.rating,
+        });
+      }
+    }
+  };
+
+  addNotes(await notesService.getGameNotes(fromSanity.notes));
 
   return [purchasedGames, platforms];
 };

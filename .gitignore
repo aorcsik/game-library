@@ -15,3 +15,6 @@ node_modules
 /data/purchases/appstore.json
 /data/purchases/switch.json
 /data/purchases/playstation.json
+/data/purchases/xbox.json
+
+tsconfig.cli.tsbuildinfo

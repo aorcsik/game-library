@@ -1,4 +1,5 @@
 export type GameLibraryConfig = {
+  source_dir?: string;
   steam_api_key?: string;
   steam_id?: string;
   steam_username?: string;
@@ -9,10 +10,13 @@ export type GameLibraryConfig = {
   appstore_library: string;
   playstation_library: string;
   playstation_username?: string;
+  xbox_library?: string;
+  xbox_username?: string;
 };
 
 export const getGameLibraryConfig = (): GameLibraryConfig => {
   return {
+    source_dir: process.env.SOURCE_DIR,
     steam_api_key: process.env.STEAM_API_KEY,
     steam_id: process.env.STEAM_ID,
     steam_username: process.env.STEAM_USERNAME,
@@ -23,5 +27,7 @@ export const getGameLibraryConfig = (): GameLibraryConfig => {
     appstore_library: `${process.env.SOURCE_DIR}/data/purchases/appstore.json`,
     playstation_library: `${process.env.SOURCE_DIR}/data/purchases/playstation.json`,
     playstation_username: process.env.PLAYSTATION_USERNAME,
+    xbox_library: `${process.env.SOURCE_DIR}/data/purchases/xbox.json`,
+    xbox_username: process.env.XBOX_USERNAME,
   };
 };

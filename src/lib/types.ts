@@ -1,4 +1,4 @@
-type Platform = 'steam' | 'epic' | 'gog' | 'amazon' | 'playstation' | 'appstore' | 'switch';
+type Platform = 'steam' | 'epic' | 'gog' | 'amazon' | 'playstation' | 'appstore' | 'switch' | 'xbox';
 
 type PlatformLogos = Platform | 'psplus' | 'netflix';
 

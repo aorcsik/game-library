@@ -43,6 +43,13 @@ type AppStorePurchaseData = Record<string,
     netflix: boolean;
   }[]>;
 
+type XboxPurchaseData = Record<string,
+  {
+    title: string;
+    cover: string;
+    physical: boolean;
+  }[]>;
+
 type PlaystationPurchaseData = {
   purchases: {
       titleName: string;
@@ -97,12 +104,14 @@ type Game = {
   metacriticUrl?: string;
   metacriticData?: MetacriticData;
   releaseDate?: string;
-  played?: boolean;
-  playing?: boolean;
-  favourite?: boolean;
-  liked?: boolean;
-  interesting?: boolean;
+
   progress?: number;
+  completed?: boolean;
+  rating?: -1 | 0 | 1 | 2; // -1: disliked, 0: neutral, 1: liked, 2: loved
+  notes?: string;
+
+  playing?: boolean;
+  interesting?: boolean;
 };
 
 export type GamerProfile = {
@@ -122,6 +131,7 @@ export type {
   SwitchPurchaseData,
   AppStorePurchaseData,
   PlaystationPurchaseData,
+  XboxPurchaseData,
   GameCollections,
   SteamData,
   MetacriticData,

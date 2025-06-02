@@ -13,7 +13,7 @@ const GameRow = ({ game, platforms, onOpenToggle }: GameRowProps): ReactNode => 
   return (
     <div 
       id={`game-${game.key}`} 
-      className="game-row" 
+      className={`game-row ${game.purchases.length === 0 ? 'no-purchases' : ''}`}
       key={game.key}
       onClick={() => onOpenToggle(game.key)}
     >

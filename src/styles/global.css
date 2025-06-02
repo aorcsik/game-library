@@ -10,6 +10,8 @@ body, html {
 }
 
 body {
+  --platform-count: 8;
+
   --background-color-components: 249, 249, 249;
   --accent-color-components: 102, 102, 102;
   --subtle-accent-color-components: 221, 221, 221;
@@ -344,6 +346,9 @@ footer {
   &.switch-logo {
     mask-image: url("/images/switch-logo.svg");
   }
+  &.xbox-logo {
+    mask-image: url("/images/xbox-logo.svg");
+  }
   &.psplus-logo {
     background-image: url("/images/psplus-logo.svg");
     background-color: transparent;
@@ -368,6 +373,11 @@ footer {
   &.hidden {
     display: none;
   }
+  &.no-purchases {
+    & .game-title {
+      opacity: .3;
+    }
+  }
 }
 
 .games-header {
@@ -377,7 +387,7 @@ footer {
 }
 
 .game-header-cell {
-  width: calc(100% / 7);
+  width: calc(100% / var(--platform-count));
   display: flex;
   gap: .5rem;
   margin: 0;
@@ -419,7 +429,7 @@ footer {
 }
 
 .game-cell {
-  width: calc(100% / 7);
+  width: calc(100% / var(--platform-count));
   border-radius: .5rem;
   display: flex;
 
@@ -694,10 +704,12 @@ footer {
   order: 1;
   margin-left: auto;
   flex-shrink: 0;
+  align-items: center;
 }
-.game-profile-info [data-prefix="far"].fa-heart,
-.game-profile-info [data-prefix="far"].fa-square {
-  opacity: .3;
+.game-profile-info .rating-icon {
+  color: var(--accent-color);
+  width: 1rem;
+  text-align: center;
 }
 
 @media only screen and (max-width: 900px) {
@@ -819,14 +831,22 @@ footer {
     }
   }
 
+  
+
   .game-grid .game-row .game-cell {
     overflow: hidden;
-    width: calc(100% / 7);
+    width: calc(95% / var(--platform-count));
     border: 0;
     background-color: transparent;
     box-shadow: none;
     height: 0;
     transition: height .3s ease-in-out;
+  }
+  .game-grid .game-row .game-row-title + .game-cell {
+    margin-left: 2.5%;
+  }
+  .game-grid .game-row .game-cell:last-child {
+    margin-right: 2.5%;
   }
 
   .game-grid .game-row-open .game-cell {
@@ -842,39 +862,60 @@ footer {
   display: none;
 }
 
-.game-progress-container {
-  height: 3px;
-  width: 100%;
-  border-radius: 1.5px;
-  position: absolute;
-  display: block;
-  top: -0.25rem; 
-  background-image: linear-gradient(90deg, rgba(var(--subtle-accent-color-components), 0.3) 0%, transparent 100%);
+.progress-indicator {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  flex-grow: 0;
 
-  & .game-progress-bar {
-    height: 100%;
-    width: 0;
-    /* background-color: var(--accent-color); */
-    background-image: linear-gradient(90deg, rgba(var(--accent-color-components), 0.1) 0%, var(--accent-color) 100%);
-    border-radius: 1.5px;
-    position: relative;
-    display: flex;
-    align-items: center;
+  & .progress-value {
+    font-size: .7rem;
+    font-weight: bold;
+    color: var(--accent-color);
+  }
 
-    & .game-progress-label {
-      background-color: var(--accent-color);
-      color: var(--text-on-accent-color);
-      position: absolute;
-      right: 0;
-      font-weight: bold;
-      border-radius: .5rem;
-      font-size: 0px;
-      transition: all .3s ease-in-out;
+  & .CircularProgressbar {
+    & .CircularProgressbar-path {
+      stroke: var(--accent-color);
+    }
+    &  .CircularProgressbar-trail {
+      stroke: rgba(var(--accent-color-components), .3);
+    }
+    &  .CircularProgressbar-background {
+      fill: var(--background-color);
     }
   }
-}
 
-.game-row:hover .game-progress-bar .game-progress-label {
-  padding: .125rem .5rem;
-  font-size: .6rem;
+  &.game-completed,
+  &.game-completed-story {
+    & .progress-value {
+      color: var(--background-color);
+    }
+     & .CircularProgressbar {
+      & .CircularProgressbar-path {
+        stroke: var(--background-color);
+      }
+      & .CircularProgressbar-trail {
+        stroke: rgba(var(--background-color-components), .3);
+      }
+      & .CircularProgressbar-background {
+        fill: var(--metacritic-good);
+      }
+    }
+  }
+
+  &.game-completed {
+    & .CircularProgressbar {
+      & .CircularProgressbar-background {
+        fill: var(--accent-color);
+      }
+    }
+  }
+  &.game-completed-story {
+    & .CircularProgressbar {
+      & .CircularProgressbar-background {
+        fill: var(--accent-color);
+      }
+    }
+  }
 }

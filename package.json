@@ -29,6 +29,7 @@
     "@sanity/client": "^6.29.1",
     "next": "^15.3.2",
     "react": "^19.1.0",
+    "react-circular-progressbar": "^2.2.0",
     "react-dom": "^19.1.0"
   },
   "devDependencies": {

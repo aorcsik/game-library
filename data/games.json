@@ -384,7 +384,8 @@
   {
     "title": "Ori and the Blind Forest",
     "sameGame": [
-      "Ori and the Blind Forest: Definitive Edition"
+      "Ori and the Blind Forest: Definitive Edition",
+      "Ori and the Blind Forest: Definitive Edition (Nintendo Switch)"
     ],
     "openCriticId": "829/ori-and-the-blind-forest",
     "openCriticData": {
@@ -3501,6 +3502,9 @@
   },
   {
     "title": "Bayonetta",
+    "sameGame": [
+      "Bayonetta (Xbox 360)"
+    ],
     "openCriticId": "731/bayonetta",
     "openCriticData": {
       "title": "Bayonetta",
@@ -7557,29 +7561,10 @@
     "key": "death-squared"
   },
   {
-    "title": "DEATH STRANDING™",
-    "openCriticId": "7816/death-stranding",
-    "openCriticData": {
-      "title": "Death Stranding",
-      "cover": "https://img.opencritic.com/game/7816/P7QzvK4z.jpg",
-      "tier": "strong",
-      "score": 83,
-      "critics": 79,
-      "releaseDate": "2019-11-08T00:00:00.000Z",
-      "updated": "2025-05-30T04:15:06.558Z"
-    },
-    "steamAppId": -1,
-    "metacriticUrl": "https://www.metacritic.com/game/death-stranding/",
-    "metacriticData": {
-      "title": "Death Stranding",
-      "releaseDate": "2019-11-08T00:00:00.000Z",
-      "metacriticScore": 82,
-      "updated": "2025-05-30T04:15:07.428Z"
-    },
-    "key": "death-stranding"
-  },
-  {
     "title": "DEATH STRANDING DIRECTOR'S CUT",
+    "sameGame": [
+      "DEATH STRANDING"
+    ],
     "openCriticId": "12011/death-stranding-directors-cut",
     "openCriticData": {
       "title": "Death Stranding Director's Cut",
@@ -21595,6 +21580,9 @@
   },
   {
     "title": "Portal",
+    "sameGame": [
+      "Portal: Still Alive"
+    ],
     "openCriticId": "13325/portal-companion-collection",
     "openCriticData": {
       "title": "Portal: Companion Collection",
@@ -21931,6 +21919,9 @@
   },
   {
     "title": "[PROTOTYPE®]",
+    "sameGame": [
+      "Prototype (Xbox 360)"
+    ],
     "openCriticId": "1858/prototype-biohazard-bundle",
     "openCriticData": {
       "title": "Prototype Biohazard Bundle",
@@ -38113,7 +38104,7 @@
     "sameGame": [
       "God of War (PS3)"
     ],
-    "key": "god-of-war-ps3",
+    "key": "god-of-war-2005",
     "openCriticId": "skip",
     "steamAppId": -1,
     "metacriticUrl": "https://www.metacritic.com/game/god-of-war-2005/",
@@ -38122,6 +38113,517 @@
       "releaseDate": "2005-03-22T00:00:00.000Z",
       "metacriticScore": 94,
       "updated": "2025-05-31T02:57:48.351Z"
+    }
+  },
+  {
+    "title": "Microsoft Solitaire Collection",
+    "sameGame": [
+      "Microsoft Solitaire Collection (Windows)",
+      "Microsoft Solitaire Collection (UWP)"
+    ],
+    "key": "microsoft-solitaire-collection",
+    "openCriticId": "skip",
+    "steamAppId": -1,
+    "metacriticUrl": "https://www.metacritic.com/game/microsoft-solitaire-collection/",
+    "metacriticData": {
+      "title": "Microsoft Solitaire Collection",
+      "releaseDate": "2016-11-23T00:00:00.000Z",
+      "metacriticScore": null,
+      "updated": "2025-06-02T02:00:54.793Z"
+    }
+  },
+  {
+    "title": "Guacamelee! 2",
+    "key": "guacamelee-2",
+    "openCriticId": "6512/guacamelee-2",
+    "openCriticData": {
+      "title": "Guacamelee! 2",
+      "cover": "https://img.opencritic.com/game/6512/nInvnLDX.jpg",
+      "tier": "mighty",
+      "score": 86,
+      "critics": 88,
+      "releaseDate": "2018-08-21T00:00:00.000Z",
+      "updated": "2025-06-02T01:57:40.390Z"
+    },
+    "steamAppId": 534550,
+    "steamData": {
+      "title": "Guacamelee! 2",
+      "description": "Head back to the Mexiverse in this long-awaited sequel to the smash hit Guacamelee! Uppercut your way to victory across stunning new hand-crafted levels. Featuring a dense and colorful world, new luchador moves, sassy new bosses, twice the enemies, and 300% more chickens!",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2018-08-21T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "91% of the 2,511 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/534550/header.jpg?t=1730137362",
+      "updated": "2025-06-02T01:57:55.474Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/guacamelee!-2",
+    "metacriticData": {
+      "title": "Guacamelee! 2",
+      "releaseDate": "2018-08-21T00:00:00.000Z",
+      "metacriticScore": 83,
+      "updated": "2025-06-02T01:57:58.418Z"
+    }
+  },
+  {
+    "title": "Mahjong by Microsoft (Mobile)",
+    "key": "mahjong-by-microsoft-mobile",
+    "openCriticId": "skip",
+    "steamAppId": -1,
+    "metacriticUrl": "https://www.metacritic.com/game/mahjong-by-microsoft/",
+    "metacriticData": {
+      "title": "Mahjong by Microsoft",
+      "releaseDate": "2021-01-12T00:00:00.000Z",
+      "metacriticScore": null,
+      "updated": "2025-06-02T02:00:24.989Z"
+    }
+  },
+  {
+    "title": "Alone In The Dark (2008)",
+    "key": "alone-in-the-dark-2008",
+    "openCriticId": "skip",
+    "steamAppId": 259170,
+    "steamData": {
+      "title": "Alone in the Dark (2008)",
+      "description": "The game that started the popular survival horror genre returns better than ever! Players control Edward Carnby, the main character from the original Alone in the Dark, on a thrilling journey through a dark and terrifying re-creation of New York's Central Park where Carnby must discover the truth behind a dark conspiracy.",
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "releaseDate": "2008-11-18T00:00:00.000Z",
+      "reviewScore": 5,
+      "reviewScoreDescription": "Mixed",
+      "reviewScoreTooltip": "42% of the 927 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/259170/header.jpg?t=1727860280",
+      "updated": "2025-06-02T01:44:15.169Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/alone-in-the-dark",
+    "metacriticData": {
+      "title": "Alone in the Dark",
+      "releaseDate": "2024-03-20T00:00:00.000Z",
+      "metacriticScore": 63,
+      "updated": "2025-06-02T01:44:18.411Z"
+    }
+  },
+  {
+    "title": "Alan Wake",
+    "key": "alan-wake",
+    "openCriticId": "10047/alan-wake",
+    "openCriticData": {
+      "title": "Alan Wake",
+      "cover": "https://img.opencritic.com/game/10047/XVvk6nlN.jpg",
+      "tier": "strong",
+      "score": 77,
+      "critics": null,
+      "releaseDate": "2012-02-16T00:00:00.000Z",
+      "updated": "2025-06-02T01:43:25.296Z"
+    },
+    "steamAppId": 108710,
+    "steamData": {
+      "title": "Alan Wake",
+      "description": "A Dark Presence stalks the small town of Bright Falls, pushing Alan Wake to the brink of sanity in his fight to unravel the mystery and save his love.",
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "releaseDate": "2012-02-16T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "90% of the 36,079 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/108710/header.jpg?t=1726554283",
+      "updated": "2025-06-02T01:43:36.173Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/alan-wake",
+    "metacriticData": {
+      "title": "Alan Wake",
+      "releaseDate": "2010-05-18T00:00:00.000Z",
+      "metacriticScore": 83,
+      "updated": "2025-06-02T01:43:44.286Z"
+    }
+  },
+  {
+    "title": "Dante's Inferno",
+    "key": "dantes-inferno",
+    "openCriticId": "skip",
+    "steamAppId": -1,
+    "metacriticUrl": "https://www.metacritic.com/game/dantes-inferno/",
+    "metacriticData": {
+      "title": "Dante's Inferno",
+      "releaseDate": "2010-02-09T00:00:00.000Z",
+      "metacriticScore": 73,
+      "updated": "2025-06-02T01:51:31.616Z"
+    }
+  },
+  {
+    "title": "Dead Space (2008)",
+    "key": "dead-space-2008",
+    "openCriticId": "skip",
+    "steamAppId": 17470,
+    "steamData": {
+      "title": "Dead Space (2008)",
+      "description": "You are Isaac Clarke, an engineer on the spacecraft USG Ishimura. You're not a warrior. You're not a soldier. You are, however, the last line of defense for the remaining living crew.",
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "releaseDate": "2008-10-20T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "92% of the 21,479 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/17470/header.jpg?t=1664889864",
+      "updated": "2025-06-02T01:51:59.267Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/dead-space-2008/",
+    "metacriticData": {
+      "title": "Dead Space (2008)",
+      "releaseDate": "2008-10-13T00:00:00.000Z",
+      "metacriticScore": 89,
+      "updated": "2025-06-02T01:53:09.808Z"
+    }
+  },
+  {
+    "title": "Bulletstorm",
+    "key": "bulletstorm",
+    "openCriticId": "skip",
+    "steamAppId": -1,
+    "metacriticUrl": "https://www.metacritic.com/game/bulletstorm/",
+    "metacriticData": {
+      "title": "Bulletstorm",
+      "releaseDate": "2011-02-22T00:00:00.000Z",
+      "metacriticScore": 84,
+      "updated": "2025-06-02T01:49:50.741Z"
+    }
+  },
+  {
+    "title": "Hexic HD",
+    "key": "hexic-hd",
+    "openCriticId": "skip",
+    "steamAppId": -1,
+    "metacriticUrl": "https://www.metacritic.com/game/hexic-hd/",
+    "metacriticData": {
+      "title": "Hexic HD",
+      "releaseDate": "2005-11-22T00:00:00.000Z",
+      "metacriticScore": 79,
+      "updated": "2025-06-02T01:58:48.872Z"
+    }
+  },
+  {
+    "title": "Burnout Paradise",
+    "key": "burnout-paradise",
+    "openCriticId": "skip",
+    "steamAppId": -1,
+    "metacriticUrl": "https://www.metacritic.com/game/burnout-paradise/",
+    "metacriticData": {
+      "title": "Burnout Paradise",
+      "releaseDate": "2008-01-22T00:00:00.000Z",
+      "metacriticScore": 88,
+      "updated": "2025-06-02T01:50:17.648Z"
+    }
+  },
+  {
+    "title": "Devil May Cry 4",
+    "key": "devil-may-cry-4",
+    "openCriticId": "skip",
+    "steamAppId": -1,
+    "metacriticUrl": "https://www.metacritic.com/game/devil-may-cry-4/",
+    "metacriticData": {
+      "title": "Devil May Cry 4",
+      "releaseDate": "2008-02-05T00:00:00.000Z",
+      "metacriticScore": 84,
+      "updated": "2025-06-02T01:54:10.851Z"
+    }
+  },
+  {
+    "title": "Project Gotham Racing 4",
+    "key": "project-gotham-racing-4",
+    "openCriticId": "skip",
+    "steamAppId": -1,
+    "metacriticUrl": "https://www.metacritic.com/game/project-gotham-racing-4/",
+    "metacriticData": {
+      "title": "Project Gotham Racing 4",
+      "releaseDate": "2007-10-02T00:00:00.000Z",
+      "metacriticScore": 85,
+      "updated": "2025-06-02T02:14:52.780Z"
+    }
+  },
+  {
+    "title": "Gears of War",
+    "key": "gears-of-war",
+    "openCriticId": "skip",
+    "steamAppId": -1,
+    "metacriticUrl": "https://www.metacritic.com/game/gears-of-war/",
+    "metacriticData": {
+      "title": "Gears of War",
+      "releaseDate": "2006-11-07T00:00:00.000Z",
+      "metacriticScore": 94,
+      "updated": "2025-06-02T01:56:32.161Z"
+    }
+  },
+  {
+    "title": "Call of Duty: Modern Warfare 2 (2009)",
+    "key": "call-of-duty-modern-warfare-2-2009",
+    "openCriticId": "skip",
+    "steamAppId": -1,
+    "metacriticUrl": "https://www.metacritic.com/game/call-of-duty-modern-warfare-2/",
+    "metacriticData": {
+      "title": "Call of Duty: Modern Warfare 2",
+      "releaseDate": "2009-11-10T00:00:00.000Z",
+      "metacriticScore": 94,
+      "updated": "2025-06-02T01:51:01.949Z"
+    }
+  },
+  {
+    "title": "Forza Motorsport 2",
+    "key": "forza-motorsport-2",
+    "openCriticId": "skip",
+    "steamAppId": -1,
+    "metacriticUrl": "https://www.metacritic.com/game/forza-motorsport-2/",
+    "metacriticData": {
+      "title": "Forza Motorsport 2",
+      "releaseDate": "2007-05-29T00:00:00.000Z",
+      "metacriticScore": 90,
+      "updated": "2025-06-02T01:55:59.080Z"
+    }
+  },
+  {
+    "title": "Mini Ninjas",
+    "key": "mini-ninjas",
+    "openCriticId": "skip",
+    "steamAppId": 35000,
+    "steamData": {
+      "title": "Mini Ninjas",
+      "description": "Mini Ninjas is a game that combines furious action with stealth and exploration for an experience that appeals to a wide audience across age groups and preferences. It’s an action-adventure with a strong focus on allowing the player freedom to explore the world and has the depth to allow for very varied gameplay and approaches to getting...",
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "releaseDate": "2009-09-14T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "90% of the 3,436 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/35000/header.jpg?t=1592492627",
+      "updated": "2025-06-02T02:06:31.233Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/mini-ninjas",
+    "metacriticData": {
+      "title": "Mini Ninjas",
+      "releaseDate": "2009-09-08T00:00:00.000Z",
+      "metacriticScore": 73,
+      "updated": "2025-06-02T02:06:36.881Z"
+    }
+  },
+  {
+    "title": "Ice Age: Dawn Of The Dinosaurs",
+    "key": "ice-age-dawn-of-the-dinosaurs",
+    "openCriticId": "skip",
+    "steamAppId": -1,
+    "metacriticUrl": "https://www.metacritic.com/game/ice-age-dawn-of-the-dinosaurs/",
+    "metacriticData": {
+      "title": "Ice Age: Dawn Of The Dinosaurs",
+      "releaseDate": "2009-06-30T00:00:00.000Z",
+      "metacriticScore": 68,
+      "updated": "2025-06-02T01:59:32.511Z"
+    }
+  },
+  {
+    "title": "X-Men Origins: Wolverine",
+    "key": "x-men-origins-wolverine",
+    "openCriticId": "skip",
+    "steamAppId": -1,
+    "metacriticUrl": "https://www.metacritic.com/game/x-men-origins-wolverine/",
+    "metacriticData": {
+      "title": "X-MEN ORIGINS: WOLVERINE",
+      "releaseDate": "2009-05-01T00:00:00.000Z",
+      "metacriticScore": 75,
+      "updated": "2025-06-02T02:15:33.924Z"
+    }
+  },
+  {
+    "title": "Halo Wars",
+    "key": "halo-wars",
+    "openCriticId": "skip",
+    "steamAppId": -1,
+    "metacriticUrl": "https://www.metacritic.com/game/halo-wars/",
+    "metacriticData": {
+      "title": "Halo Wars",
+      "releaseDate": "2009-03-03T00:00:00.000Z",
+      "metacriticScore": 82,
+      "updated": "2025-06-02T01:58:28.285Z"
+    }
+  },
+  {
+    "title": "Afro Samurai",
+    "key": "afro-samurai",
+    "openCriticId": "skip",
+    "steamAppId": -1,
+    "metacriticUrl": "https://www.metacritic.com/game/afro-samurai/",
+    "metacriticData": {
+      "title": "Afro Samurai",
+      "releaseDate": "2009-01-27T00:00:00.000Z",
+      "metacriticScore": 65,
+      "updated": "2025-06-02T01:42:34.394Z"
+    }
+  },
+  {
+    "title": "Naruto: The Broken Bond",
+    "key": "naruto-the-broken-bond",
+    "openCriticId": "skip",
+    "steamAppId": -1,
+    "metacriticUrl": "https://www.metacritic.com/game/naruto-the-broken-bond/",
+    "metacriticData": {
+      "title": "Naruto: The Broken Bond",
+      "releaseDate": "2008-11-08T00:00:00.000Z",
+      "metacriticScore": 80,
+      "updated": "2025-06-02T02:08:16.473Z"
+    }
+  },
+  {
+    "title": "Mortal Kombat vs DC Universe",
+    "key": "mortal-kombat-vs-dc-universe",
+    "openCriticId": "skip",
+    "steamAppId": -1,
+    "metacriticUrl": "https://www.metacritic.com/game/mortal-kombat-vs-dc-universe/",
+    "metacriticData": {
+      "title": "Mortal Kombat vs. DC Universe",
+      "releaseDate": "2008-11-16T00:00:00.000Z",
+      "metacriticScore": 72,
+      "updated": "2025-06-02T02:07:04.070Z"
+    }
+  },
+  {
+    "title": "Fable II",
+    "key": "fable-ii",
+    "openCriticId": "skip",
+    "steamAppId": -1,
+    "metacriticUrl": "https://www.metacritic.com/game/fable-ii/",
+    "metacriticData": {
+      "title": "Fable II",
+      "releaseDate": "2008-10-21T00:00:00.000Z",
+      "metacriticScore": 89,
+      "updated": "2025-06-02T01:55:30.083Z"
+    }
+  },
+  {
+    "title": "Dragon Ball Z: Burst Limit",
+    "key": "dragon-ball-z-burst-limit",
+    "openCriticId": "skip",
+    "steamAppId": -1,
+    "metacriticUrl": "https://www.metacritic.com/game/dragon-ball-z-burst-limit/",
+    "metacriticData": {
+      "title": "Dragon Ball Z: Burst Limit",
+      "releaseDate": "2008-06-10T00:00:00.000Z",
+      "metacriticScore": 72,
+      "updated": "2025-06-02T01:54:48.571Z"
+    }
+  },
+  {
+    "title": "Grand Theft Auto IV",
+    "key": "grand-theft-auto-iv",
+    "openCriticId": "16209/grand-theft-auto-iv",
+    "openCriticData": {
+      "title": "Grand Theft Auto IV",
+      "cover": null,
+      "tier": "mighty",
+      "score": 95,
+      "critics": 100,
+      "releaseDate": "2008-12-02T00:00:00.000Z",
+      "updated": "2025-06-02T01:56:48.350Z"
+    },
+    "steamAppId": 12210,
+    "steamData": {
+      "title": "Grand Theft Auto IV: The Complete Edition",
+      "description": "Niko Bellic, Johnny Klebitz and Luis Lopez all have one thing in common - they live in the worst city in America. Liberty City worships money and status, and is heaven for those who have them and a living nightmare for those who don't.",
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "releaseDate": "2020-03-24T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "82% of the 153,387 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/12210/header.jpg?t=1721061564",
+      "updated": "2025-06-02T01:57:00.069Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/grand-theft-auto-iv/",
+    "metacriticData": {
+      "title": "Grand Theft Auto IV",
+      "releaseDate": "2008-04-29T00:00:00.000Z",
+      "metacriticScore": 98,
+      "updated": "2025-06-02T01:57:24.863Z"
+    }
+  },
+  {
+    "title": "Wolfenstein II: Deluxe Edition",
+    "key": "wolfenstein-ii-deluxe-edition",
+    "openCriticId": "4490/wolfenstein-2-the-new-colossus",
+    "openCriticData": {
+      "title": "Wolfenstein 2: The New Colossus",
+      "cover": "https://img.opencritic.com/game/4490/YQu0LdPc.jpg",
+      "tier": "mighty",
+      "score": 87,
+      "critics": 92,
+      "releaseDate": "2017-10-27T00:00:00.000Z",
+      "updated": "2025-06-02T02:27:55.586Z"
+    },
+    "steamAppId": 612880,
+    "steamData": {
+      "title": "Wolfenstein II: The New Colossus",
+      "description": "America, 1961. The assassination of Nazi General Deathshead was a short-lived victory. The Nazis maintain their stranglehold on the world. You are BJ Blazkowicz, aka “Terror-Billy,” member of the Resistance, scourge of the Nazi empire, and humanity’s last hope for liberty.",
+      "genres": [
+        "Action"
+      ],
+      "releaseDate": "2017-10-26T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "80% of the 30,967 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/612880/header.jpg?t=1691683256",
+      "updated": "2025-06-02T02:28:31.003Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/wolfenstein-ii-the-new-colossus",
+    "metacriticData": {
+      "title": "Wolfenstein II: The New Colossus",
+      "releaseDate": "2017-10-27T00:00:00.000Z",
+      "metacriticScore": 87,
+      "updated": "2025-06-02T02:28:33.885Z"
+    }
+  },
+  {
+    "title": "Wolfenstein: The Old Blood",
+    "key": "wolfenstein-the-old-blood",
+    "openCriticId": "26/wolfenstein-the-old-blood",
+    "openCriticData": {
+      "title": "Wolfenstein: The Old Blood",
+      "cover": "https://img.opencritic.com/game/26/KCyHClVU.jpg",
+      "tier": "strong",
+      "score": 78,
+      "critics": 60,
+      "releaseDate": "2015-05-04T00:00:00.000Z",
+      "updated": "2025-06-02T02:28:53.000Z"
+    },
+    "steamAppId": 350080,
+    "steamData": {
+      "title": "Wolfenstein: The Old Blood",
+      "description": "Wolfenstein®: The Old Blood™ is a standalone prequel to the critically acclaimed first-person action-adventure shooter, Wolfenstein®: The New Order. This adventure spans eight chapters and features the hallmarks of MachineGames – thrilling action, immersive story, and intense FPS combat.",
+      "genres": [
+        "Action"
+      ],
+      "releaseDate": "2015-05-04T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "89% of the 15,640 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/350080/header.jpg?t=1699548921",
+      "updated": "2025-06-02T02:29:23.471Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/wolfenstein-the-old-blood",
+    "metacriticData": {
+      "title": "Wolfenstein: The Old Blood",
+      "releaseDate": "2015-05-05T00:00:00.000Z",
+      "metacriticScore": 76,
+      "updated": "2025-06-02T02:29:26.861Z"
     }
   }
 ]

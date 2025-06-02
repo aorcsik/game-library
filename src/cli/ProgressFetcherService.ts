@@ -29,6 +29,16 @@ const fetchTrueTrophiesProgress = async (username: string): Promise<PlatformProg
   return parseGamesPage('playstation', gamePage);
 };
 
+const fetchTrueAchievementsProgress = async (username: string): Promise<PlatformProgress[] | null> => {
+  const trueAchievementsResponse = await fetch(`https://www.trueachievements.com/gamer/${username}/games`);
+  if (!trueAchievementsResponse.ok) {
+    console.error('Error fetching TrueTrophies for username:', username);
+    return null;
+  }
+  const gamePage = await trueAchievementsResponse.text();
+  return parseGamesPage('playstation', gamePage);
+};
+
 const parseGamesPage = (platform: Platform, gamesPage: string): PlatformProgress[] => {
   const achievementProgress: PlatformProgress[] = [];
   const dom = new JSDOM(gamesPage);
@@ -40,9 +50,8 @@ const parseGamesPage = (platform: Platform, gamesPage: string): PlatformProgress
       achievementProgress.push({_type: 'progress', platform, title,  progress});
     }
   });
-
   return achievementProgress;
 };
 
-export { fetchTrueSteamAchievementsProgress, fetchTrueTrophiesProgress };
+export { fetchTrueSteamAchievementsProgress, fetchTrueTrophiesProgress, fetchTrueAchievementsProgress };
 export type { PlatformProgress };

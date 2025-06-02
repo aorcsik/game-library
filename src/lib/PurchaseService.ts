@@ -2,7 +2,7 @@ import fs from 'fs';
 import { GameLibraryConfig } from './Config';
 import GameDatabaseService, { Game } from './GameDatabaseService';
 import { Platform, PlatformLogos, PlatformList } from './types';
-import { AppStorePurchaseData, GameCollections, GOGLibraryData, HeroicLibraryData, PlaystationPurchaseData, SteamAPIGetOwnedGamesResponse, SwitchPurchaseData } from './schema';
+import { AppStorePurchaseData, GameCollections, GOGLibraryData, HeroicLibraryData, PlaystationPurchaseData, SteamAPIGetOwnedGamesResponse, SwitchPurchaseData, XboxPurchaseData } from './schema';
 import { formatTitle } from './tools';
 import { client } from './sanity';
 import { MultipleMutationResult } from '@sanity/client';
@@ -61,13 +61,18 @@ type PlaystationPurchase = Purchase & {
   physical: boolean;
 };
 
+type XboxPurchase = Purchase & {
+  platform: 'xbox';
+};
+
 type PlatformPurchase = SteamPurchase |
 EpicPurchase |
 GOGPurchase |
 AmazonPurchase |
 SwitchPurchase |
 AppStorePurchase |
-PlaystationPurchase;
+PlaystationPurchase |
+XboxPurchase;
 
 type PurchasedGame = Game & {
   purchases: PlatformPurchase[];
@@ -356,6 +361,39 @@ class PurchaseService {
           };
           purchases[game.key].netflix = purchases[game.key].netflix === false ? false : !!element.netflix;
           if (purchases[game.key].netflix) purchases[game.key].logo = 'netflix';
+        });
+      });
+    }
+
+    await savePurchasesToSanity('appstore', purchases);
+
+    return purchases;
+  }
+
+  async getXboxPurchases(fromSanity: boolean = false): Promise<Record<string, XboxPurchase>> {
+    if (fromSanity) {
+      return await getPurchasesFromSanity('xbox');
+    }
+    const purchases: Record<string, XboxPurchase> = {};
+    if (this.config.xbox_library) {
+      const xboxPurchaseFile = await fs.promises.readFile(this.config.xbox_library, 'utf-8');
+      const xboxPurchaseData = JSON.parse(xboxPurchaseFile.toString()) as XboxPurchaseData;
+      Object.keys(xboxPurchaseData).forEach(purchase => {
+        xboxPurchaseData[purchase].forEach(element => {
+          if (this.skipTitle.includes(element.title)) return;
+
+          const title = formatTitle(element.title);
+          const game = this.database.getGameByTitle(title);
+          if (!purchases[game.key]) purchases[game.key] = {
+            _type: 'purchase',
+            key: game.key,
+            platform: 'xbox',
+            title: title,
+            cover: element.cover,
+            physical: false,
+            logo: 'xbox',
+          };
+          purchases[game.key].physical = purchases[game.key].physical || !!element.physical;
         });
       });
     }

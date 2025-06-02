@@ -1,0 +1,994 @@
+{
+  "notes": [
+    { 
+      "title": "Half-Life 2",
+      "completed": true,
+      "rating": 1
+    },
+    {
+      "title": "Sackboy: A Big Adventure",
+      "completed": true,
+      "rating": 1
+    },
+    {
+      "title": "The Vanishing of Ethan Carter",
+      "completed": true,
+      "rating": 1
+    },
+    {
+      "title": "Destiny 2",
+      "completed": true,
+      "rating": 2
+    },
+    {
+      "title": "Diablo III",
+      "completed": true,
+      "rating": 1
+    },
+    {
+      "title": "God of War (2005)",
+      "completed": true,
+      "rating": 1
+    },
+    {
+      "title": "ELDEN RING",
+      "completed": true,
+      "rating": 2
+    },
+    {
+      "title": "Superbrothers: Sword&Sworcery",
+      "completed": true,
+      "rating": 1
+    },
+    {
+      "title": "Overcooked! All You Can Eat",
+      "completed": true,
+      "rating": 2
+    },
+    {
+      "title": "Portal 2",
+      "completed": true,
+      "rating": 2
+    },
+    {
+      "title": "The Curse of Monkey Island",
+      "completed": true,
+      "rating": 2
+    },
+    {
+      "title": "Ori and the Blind Forest",
+      "completed": true,
+      "rating": 2
+    },
+    {
+      "title": "Subsurface Circular",
+      "completed": true,
+      "rating": 1
+    },
+    {
+      "title": "GRIS",
+      "completed": true,
+      "rating": 2
+    },
+    {
+      "title": "Control",
+      "completed": true,
+      "rating": 1
+    },
+    {
+      "title": "Syberia",
+      "completed": true,
+      "rating": 1
+    },
+    {
+      "title": "Blasphemous",
+      "completed": true,
+      "rating": 1
+    },
+    {
+      "title": "Alan Wake Remastered",
+      "completed": true,
+      "rating": 1
+    },
+    {
+      "title": "Halo: Combat Evolved Anniversary",
+      "completed": true,
+      "rating": 2
+    },
+    {
+      "title": "Halo 2: Anniversary",
+      "completed": true,
+      "rating": 1
+    },
+    {
+      "title": "Halo 3",
+      "completed": true,
+      "rating": 1
+    },
+    {
+      "title": "Halo: Reach",
+      "completed": true,
+      "rating": 1
+    },
+    {
+      "title": "Carto",
+      "completed": true,
+      "rating": 2
+    },
+    {
+      "title": "Murdered: Soul Suspect",
+      "completed": true,
+      "rating": 1
+    },
+    {
+      "title": "God of War II",
+      "completed": true,
+      "rating": 1
+    },
+    {
+      "title": "Somerville",
+      "completed": true,
+      "rating": 1
+    },
+    {
+      "title": "Dear Esther: Landmark Edition",
+      "completed": true,
+      "rating": 0
+    },
+    {
+      "title": "Rayman Origins",
+      "rating": 1
+    },
+    {
+      "title": "STAR WARS Jedi: Fallen Order",
+      "completed": true,
+      "rating": 1
+    },
+    {
+      "title": "Firewatch",
+      "rating": 1
+    },
+    {
+      "title": "NieR:Automata",
+      "completed": true,
+      "rating": 2
+    },
+    {
+      "title": "DEATH STRANDING DIRECTOR'S CUT",
+      "rating": 2
+    },
+    {
+      "title": "1000xRESIST",
+      "completed": true,
+      "rating": 2
+    },
+    {
+      "title": "Chants of Sennaar",
+      "completed": true,
+      "rating": 2
+    },
+    {
+      "title": "Citizen Sleeper",
+      "completed": true,
+      "rating": 2
+    },
+    {
+      "title": "Overcooked",
+      "completed": true,
+      "rating": 2
+    },
+    {
+      "title": "FEZ",
+      "rating": 2
+    },
+    {
+      "title": "Rain",
+      "rating": 1
+    },
+    {
+      "title": "Seasons after Fall",
+      "rating": 1
+    },
+    {
+      "title": "Overcooked! 2",
+      "completed": true,
+      "rating": 2
+    },
+    {
+      "title": "Horizon Zero Dawn: Complete Edition",
+      "completed": true,
+      "rating": 2
+    },
+    {
+      "title": "HEAVY RAIN",
+      "completed": true,
+      "rating": 1
+    },
+    {
+      "title": "The Sinking City",
+      "completed": true,
+      "rating": 1
+    },
+    {
+      "title": "Borderlands",
+      "rating": 1
+    },
+    {
+      "title": "Tomb Raider: Definitive Edition",
+      "completed": true,
+      "rating": 1
+    },
+    {
+      "title": "Returnal",
+      "rating": 2
+    },
+    {
+      "title": "God of War",
+      "completed": true,
+      "rating": 1
+    },
+    {
+      "title": "Mass Effect",
+      "completed": true,
+      "rating": 1
+    },
+    {
+      "title": "Don't Starve",
+      "rating": 0
+    },
+    {
+      "title": "Ni no Kuni II: Revenant Kingdom",
+      "rating": 1
+    },
+    {
+      "title": "Portal",
+      "completed": true,
+      "rating": 2
+    },
+    {
+      "title": "Destiny",
+      "completed": true,
+      "rating": 1
+    },
+    {
+      "title": "Unravel Two",
+      "completed": true,
+      "rating": 1
+    },
+    {
+      "title": "Child of Light",
+      "rating": 0
+    },
+    {
+      "title": "SOMA",
+      "rating": 1
+    },
+    {
+      "title": "Journey",
+      "completed": true,
+      "rating": 2
+    },
+    {
+      "title": "Concrete Genie",
+      "rating": 1
+    },
+    {
+      "title": "STAR WARS Battlefront II",
+      "rating": 0
+    },
+    {
+      "title": "Tetris Effect",
+      "rating": 1
+    },
+    {
+      "title": "Rayman Legends",
+      "rating": 1
+    },
+    {
+      "title": "It Takes Two",
+      "completed": true,
+      "rating": 2
+    },
+    {
+      "title": "LEGO Bricktales",
+      "rating": 2
+    },
+    {
+      "title": "LIMBO",
+      "completed": true,
+      "rating": 2
+    },
+    {
+      "title": "Little Nightmares",
+      "rating": 1
+    },
+    {
+      "title": "Beat Saber",
+      "rating": 2
+    },
+    {
+      "title": "Untitled Goose Game",
+      "completed": true,
+      "rating": 1
+    },
+    {
+      "title": "Curse of the Dead Gods",
+      "rating": 0
+    },
+    {
+      "title": "Gravity Rush Remastered",
+      "rating": 1
+    },
+    {
+      "title": "BELOW",
+      "rating": 1
+    },
+    {
+      "title": "Darksiders II Deathinitive Edition",
+      "rating": 0
+    },
+    {
+      "title": "Stray",
+      "rating": 2
+    },
+    {
+      "title": "DOOM (1993)",
+      "rating": 1
+    },
+    {
+      "title": "No Man's Sky",
+      "rating": 0
+    },
+    {
+      "title": "LittleBigPlanet",
+      "rating": 1
+    },
+    {
+      "title": "Cuphead",
+      "rating": 1
+    },
+    {
+      "title": "MAGICKA 2",
+      "rating": 1
+    },
+    {
+      "title": "Mass Effect 2 (2010) Edition",
+      "rating": 1
+    },
+    {
+      "title": "SONIC FORCES",
+      "rating": 0
+    },
+    {
+      "title": "Table Top Racing: World Tour",
+      "rating": 0
+    },
+    {
+      "title": "Diablo IV",
+      "rating": 1
+    },
+    {
+      "title": "A Highland Song",
+      "rating": 1
+    },
+    {
+      "title": "Cult Of The Lamb",
+      "rating": 1
+    },
+    {
+      "title": "Genshin Impact",
+      "rating": 1
+    },
+    {
+      "title": "Hollow Knight",
+      "progress": 57,
+      "rating": 2,
+      "notes": "37 of 64 achievements on Nintendo Switch"
+    },
+    {
+      "title": "Disney Infinity 3.0 Edition",
+      "rating": 0
+    },
+    {
+      "title": "The Talos Principle",
+      "rating": 0
+    },
+    {
+      "title": "Mortal Kombat X",
+      "rating": 0
+    },
+    {
+      "title": "Astro's Playroom",
+      "rating": 1
+    },
+    {
+      "title": "Command & Conquer Remastered Collection",
+      "rating": 1
+    },
+    {
+      "title": "ASTRO BOT Rescue Mission",
+      "rating": 1
+    },
+    {
+      "title": "Bastion",
+      "completed": true,
+      "progress": 38,
+      "rating": 1,
+      "notes": "8 of 21 achievements on iOS"
+    },
+    {
+      "title": "Bayonetta",
+      "progress": 50,
+      "completed": true,
+      "rating": 1,
+      "notes": "25 of 50 achievements on Xbox"
+    },
+    {
+      "title": "Need for Speed Rivals",
+      "rating": 0
+    },
+    {
+      "title": "DEATHLOOP",
+      "rating": 1
+    },
+    {
+      "title": "Defunct",
+      "rating": -1
+    },
+    {
+      "title": "Ghostwire: Tokyo",
+      "rating": 1
+    },
+    {
+      "title": "Borderlands: The Pre-Sequel",
+      "rating": 1
+    },
+    {
+      "title": "Detroit: Become Human",
+      "rating": 1
+    },
+    {
+      "title": "Don't Starve Together",
+      "rating": 1
+    },
+    {
+      "title": "Steelrising",
+      "rating": 1
+    },
+    {
+      "title": "Transistor",
+      "rating": 1
+    },
+    {
+      "title": "Salt and Sanctuary",
+      "rating": 0
+    },
+    {
+      "title": "Super Meat Boy",
+      "rating": 1
+    },
+    {
+      "title": "THE PLAYROOM VR",
+      "rating": 0
+    },
+    {
+      "title": "20 Minutes Till Dawn",
+      "rating": 2
+    },
+    {
+      "title": "NARUTO: Ultimate Ninja STORM",
+      "rating": 0
+    },
+    {
+      "title": "Need for Speed Payback",
+      "rating": 0
+    },
+    {
+      "title": "Halo: The Master Chief Collection",
+      "rating": 1
+    },
+    {
+      "title": "Oddworld: New 'n' Tasty",
+      "rating": 1
+    },
+    {
+      "title": "Quake",
+      "rating": 1
+    },
+    {
+      "title": "Star Wars: Squadrons",
+      "rating": 0
+    },
+    {
+      "title": "Death's Door",
+      "completed": true,
+      "rating": 2
+    },
+    {
+      "title": "Dead Cells",
+      "completed": true,
+      "rating": 1
+    },
+    {
+      "title": "The Legend of Zelda: Breath of the Wild",
+      "progress": 0,
+      "rating": 0
+    },
+    {
+      "title": "Super Mario Odyssey",
+      "completed": true,
+      "rating": 1
+    },
+    {
+      "title": "Ring Fit Adventure",
+      "progress": 0,
+      "rating": 1
+    },
+    {
+      "title": "Celeste",
+      "completed": true,
+      "progress": 30,
+      "rating": 2
+    },
+    {
+      "title": "Celeste",
+      "completed": true,
+      "progress": 30,
+      "rating": 2
+    },
+    {
+      "title": "Mario Kart 8 Deluxe",
+      "progress": 0,
+      "rating": 1
+    },
+    {
+      "title": "Ori and the Will of the Wisps",
+      "progress": 9,
+      "rating": 2
+    },
+    {
+      "title": "Hades",
+      "progress": 0,
+      "rating": 1
+    },
+    {
+      "title": "Hyper Light Drifter - Special Edition",
+      "progress": 0,
+      "rating": 2
+    },
+    {
+      "title": "Mario + Rabbids Kingdom Battle Gold Edition",
+      "progress": 0,
+      "rating": 1
+    },
+    {
+      "title": "Forgotton Anne",
+      "completed": true,
+      "rating": 2
+    },
+    {
+      "title": "Night in the Woods",
+      "progress": 0,
+      "rating": 2
+    },
+    {
+      "title": "Fitness Boxing",
+      "progress": 0,
+      "rating": 1
+    },
+    {
+      "title": "SteamWorld Dig",
+      "progress": 0,
+      "rating": 1
+    },
+    {
+      "title": "Flipping Death",
+      "progress": 0,
+      "rating": 1
+    },
+    {
+      "title": "Detention",
+      "completed": true,
+      "rating": 1
+    },
+    {
+      "title": "Super Mario Bros. Wonder",
+      "progress": 8,
+      "rating": 1
+    },
+    {
+      "title": "Uncanny Valley",
+      "progress": 8,
+      "rating": 0
+    },
+    {
+      "title": "Arise: A simple story",
+      "progress": 0,
+      "rating": 1
+    },
+    {
+      "title": "DRAGON BALL Z : KAKAROT + A NEW POWER AWAKENS SET",
+      "progress": 0,
+      "rating": 1
+    },
+    {
+      "title": "Alto's Adventure",
+      "progress": 0,
+      "rating": 1
+    },
+    {
+      "title": "Alto's Odyssey",
+      "progress": 0,
+      "rating": 1
+    },
+    {
+      "title": "Among Us",
+      "progress": 0,
+      "rating": 1
+    },
+    {
+      "title": "Aperture Desk Job",
+      "completed": 1,
+      "rating": 1
+    },
+    {
+      "title": "Asterix & Obelix: Slap them All!",
+      "progress": 0,
+      "rating": 0
+    },
+    {
+      "title": "Bad North: Jotunn Edition",
+      "progress": 0,
+      "rating": 1
+    },
+    {
+      "title": "Planet of Lana",
+      "completed": 1,
+      "rating": 2
+    },
+    {
+      "title": "Planet of Lana",
+      "completed": 1,
+      "rating": 2
+    },
+    {
+      "title": "BioShock",
+      "completed": 1,
+      "rating": 2
+    },
+    {
+      "title": "Alan Wake",
+      "completed": 1,
+      "rating": 2
+    },
+    {
+      "title": "Mini Ninjas",
+      "completed": 1,
+      "rating": 1
+    },
+    {
+      "title": "Microsoft Solitaire Collection",
+      "rating": 1
+    },
+    {
+      "title": "Dante's Inferno",
+      "completed": 1,
+      "rating": 2
+    },
+    {
+      "title": "Dead Space (2008)",
+      "rating": 1
+    },
+    {
+      "title": "Dead Space 2",
+      "completed": 1,
+      "rating": 1
+    },
+    {
+      "title": "Hexic HD",
+      "rating": 0
+    },
+    {
+      "title": "[PROTOTYPE]",
+      "completed": 1,
+      "rating": 1
+    },
+    {
+      "title": "Bulletstorm",
+      "completed": 1,
+      "rating": 1
+    },
+    {
+      "title": "Fable II",
+      "rating": 1
+    },
+    {
+      "title": "Afro Samurai",
+      "rating": 1
+    },
+    {
+      "title": "Burnout Paradise",
+      "rating": 1
+    },
+    {
+      "title": "Call of Duty: Modern Warfare 2 (2009)",
+      "rating": 0
+    },
+    {
+      "title": "Mahjong by Microsoft (Mobile)",
+      "rating": 1
+    },
+    {
+      "title": "Forza Motorsport 2",
+      "rating": 0
+    },
+    {
+      "title": "Devil May Cry 4",
+      "rating": 1
+    },
+    {
+      "title": "Ice Age: Dawn Of The Dinosaurs",
+      "rating": 0
+    },
+    {
+      "title": "Gears of War",
+      "rating": 1
+    },
+    {
+      "title": "Halo Wars",
+      "rating": 1
+    },
+    {
+      "title": "Guacamelee! 2",
+      "rating": 1
+    }
+  ],
+  "interesting": [
+    "Cookie Cutter",
+    "Narita Boy",
+    "Eastward",
+    "The Entropy Centre",
+    "Scars Above",
+    "Shogun Showdown",
+    "Othercide",
+    "Snufkin: Melody of Moominvalley",
+    "Teslagrad",
+    "Teslagrad 2",
+    "Three Minutes to Eight",
+    "Thymesia",
+    "BioShock Infinite",
+    "God of War Ragnarök",
+    "INSIDE",
+    "METAL GEAR SOLID V: THE PHANTOM PAIN",
+    "Alan Wake 2",
+    "Gravity Circuit",
+    "NORCO",
+    "KILL KNIGHT",
+    "The Binding of Isaac: Rebirth",
+    "Halo 4",
+    "Luigi's Mansion 3",
+    "Life is Strange",
+    "Tunic",
+    "What Lies in the Multiverse",
+    "Citizen Sleeper",
+    "A Highland Song",
+    "SHADOW OF THE COLOSSUS",
+    "Pacific Drive",
+    "Paper Beast",
+    "Dordogne",
+    "Sable",
+    "Paper Trail"
+  ],
+  "favourite": [
+    "20 Minutes Till Dawn",
+    "Hollow Knight",
+    "Journey",
+    "NieR:Automata",
+    "ELDEN RING",
+    "ELDEN RING: Shadow of the Erdtree",
+    "FEZ",
+    "BioShock",
+    "BioShock Remastered",
+    "Half-Life 2",
+    "Portal 2",
+    "Celeste",
+    "LIMBO",
+    "Ori and the Will of the Wisps",
+    "Portal",
+    "Night in the Woods",
+    "Planet of Lana",
+    "Dead Cells",
+    "Dead Space",
+    "Disco Elysium",
+    "The Curse of Monkey Island",
+    "Diablo III",
+    "Diablo III: Reaper of Souls",
+    "It Takes Two",
+    "Ori and the Blind Forest",
+    "Beat Saber",
+    "Chants of Sennaar",
+    "Cuphead",
+    "Day of the Tentacle Remastered",
+    "Superbrothers: Sword&Sworcery",
+    "Death's Door",
+    "Destiny 2",
+    "Halo: Combat Evolved Anniversary",
+    "Halo 2: Anniversary",
+    "Halo 3",
+    "Machinarium",
+    "Broken Sword - Shadow of the Templars",
+    "Broken Sword 2 - the Smoking Mirror: Remastered (2010)",
+    "Hyper Light Drifter - Special Edition",
+    "Overcooked! All You Can Eat",
+    "GRIS",
+    "Command & Conquer Remastered Collection",
+    "Control",
+    "Syberia",
+    "Osmos",
+    "Oxenfree",
+    "Alan Wake Remastered",
+    "Carto",
+    "Sackboy: A Big Adventure",
+    "STAR WARS Jedi: Fallen Order",
+    "Overcooked",
+    "Overcooked! 2",
+    "Ignition",
+    "Jazz Jackrabbit 2: The Christmas Chronicles",
+    "Jazz Jackrabbit 2: The Secret Files",
+    "Jazz Jackrabbit Collection",
+    "Sanitarium",
+    "Worms",
+    "Forgotton Anne",
+    "Horizon Zero Dawn: Complete Edition"
+  ],
+  "liked": [
+    "Journey",
+    "NieR:Automata",
+    "ELDEN RING",
+    "Hollow Knight",
+    "FEZ",
+    "The Sinking City",
+    "[PROTOTYPE®]",
+    "Returnal",
+    "UFO: Aftermath",
+    "Super Mario Odyssey",
+    "BioShock",
+    "BioShock Remastered",
+    "Half-Life",
+    "Half-Life 2",
+    "Portal 2",
+    "God of War",
+    "Quake",
+    "Alto's Adventure",
+    "Alto's Odyssey",
+    "Celeste",
+    "Mario Kart 8 Deluxe",
+    "Rayman Legends",
+    "Super Mario Bros. Wonder",
+    "ASTRO BOT Rescue Mission",
+    "Bayonetta",
+    "LIMBO",
+    "Portal",
+    "Planet of Lana",
+    "Dead Cells",
+    "Monument Valley",
+    "Quake II (Original)",
+    "The Curse of Monkey Island",
+    "Diablo III",
+    "Diablo III: Reaper of Souls",
+    "It Takes Two",
+    "Ori and the Blind Forest",
+    "The Secret of Monkey Island: Special Edition",
+    "HEAVY RAIN",
+    "Bastion",
+    "Beat Saber",
+    "Chants of Sennaar",
+    "Superbrothers: Sword&Sworcery",
+    "Death's Door",
+    "Destiny 2",
+    "Halo 3",
+    "Halo: Reach",
+    "Halo: Combat Evolved Anniversary",
+    "Halo 2: Anniversary",
+    "Machinarium",
+    "Monkey Island 2: Special Edition",
+    "Out There: Ω Edition",
+    "Tomb Raider: Definitive Edition",
+    "Bad North: Jotunn Edition",
+    "Overcooked! All You Can Eat",
+    "Detention",
+    "Don't Starve Together",
+    "GRIS",
+    "Ring Fit Adventure",
+    "Control",
+    "DOOM (1993)",
+    "DOOM 2",
+    "Syberia",
+    "The Vanishing of Ethan Carter",
+    "Firewatch",
+    "Genshin Impact",
+    "Diablo II: Resurrected",
+    "Neuroshima Hex",
+    "Osmos",
+    "Oxenfree",
+    "Alan Wake Remastered",
+    "Carto",
+    "Sackboy: A Big Adventure",
+    "STAR WARS Jedi: Fallen Order",
+    "Don't Starve",
+    "Overcooked",
+    "Overcooked! 2",
+    "Blasphemous",
+    "Canabalt",
+    "Forgotton Anne",
+    "Dear Esther",
+    "Murdered: Soul Suspect",
+    "Aperture Desk Job",
+    "Ignition",
+    "Jazz Jackrabbit 2: The Christmas Chronicles",
+    "Jazz Jackrabbit 2: The Secret Files",
+    "Jazz Jackrabbit Collection",
+    "Sanitarium",
+    "Worms",
+    "Dead Space 2",
+    "Horizon Zero Dawn: Complete Edition",
+    "Subsurface Circular"
+  ],
+  "played": [
+    "Windosill",
+    "Tetris Effect",
+    "Super Hexagon",
+    "Among Us",
+    "Ni no Kuni II: Revenant Kingdom",
+    "Lara Croft GO",
+    "Mortal Kombat X",
+    "Bejeweled 3",
+    "Solitairica",
+    "SteamWorld Dig",
+    "Need for Speed Rivals",
+    "Zen Bound 2",
+    "LittleBigPlanet 3",
+    "The Unfinished Swan",
+    "Worms 2: Armageddon",
+    "Curse of the Dead Gods",
+    "Magicka",
+    "No Man's Sky",
+    "Super Meat Boy"
+  ],
+  "playing": [
+    "Hades",
+    "Night in the Woods",
+    "20 Minutes Till Dawn",
+    "Super Mario Bros. Wonder",
+    "ELDEN RING: Shadow of the Erdtree",
+    "Steelrising",
+    "Super Mario Bros. Wonder",
+    "Ori and the Will of the Wisps",
+    "Hades",
+    "Returnal",
+    "Disco Elysium",
+    "Fallout",
+    "Cuphead",
+    "DEATH STRANDING DIRECTOR'S CUT",
+    "DEATH STRANDING",
+    "Mario + Rabbids Kingdom Battle Gold Edition",
+    "The Talos Principle",
+    "Hyper Light Drifter - Special Edition",
+    "SOMA",
+    "Flipping Death",
+    "Monument Valley 2",
+    "Children of Morta",
+    "Command & Conquer Remastered Collection",
+    "Cult Of The Lamb",
+    "Arise: A simple story",
+    "DREDGE",
+    "Gravity Rush Remastered",
+    "Little Nightmares",
+    "Concrete Genie",
+    "LEGO Bricktales",
+    "Dust & Neon",
+    "Hidden Through Time",
+    "If Found...",
+    "Into the Breach"
+  ]
+}

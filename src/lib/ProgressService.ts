@@ -1,5 +1,5 @@
 import { client } from './sanity';
-import { PlatformProgress, fetchTrueSteamAchievementsProgress, fetchTrueTrophiesProgress } from '../cli/ProgressFetcherService';
+import { PlatformProgress, fetchTrueAchievementsProgress, fetchTrueSteamAchievementsProgress, fetchTrueTrophiesProgress } from '../cli/ProgressFetcherService';
 import { Platform } from './types';
 import { MultipleMutationResult } from '@sanity/client';
 import { colorize } from '../cli/CommandLineTools';
@@ -61,6 +61,25 @@ class ProgressService {
     const platformProgress = await fetchTrueTrophiesProgress(this.config.playstation_username);
     if (platformProgress) {
       await saveProgressToSanity('playstation', platformProgress);
+    }
+
+    return platformProgress;
+  }
+
+  async getXboxProgress(fromSanity: boolean): Promise<PlatformProgress[] | null> {
+    if (fromSanity) {
+      return getProgressFromSanity<PlatformProgress>('xbox');
+    }
+
+    if (!this.config.xbox_username) {
+      console.error('Xbox username is not set in environment variables.');
+      return null;
+    }
+
+    process.stdout.write(colorize('Updating Xbox progress...\n', 'yellow'));
+    const platformProgress = await fetchTrueAchievementsProgress(this.config.xbox_username);
+    if (platformProgress) {
+      await saveProgressToSanity('xbox', platformProgress);
     }
 
     return platformProgress;
