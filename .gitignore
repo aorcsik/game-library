@@ -10,6 +10,7 @@ node_modules
 /docs/fontawesome
 /public/manifest.json
 
+/data/notes.json
 /data/profile.json
 /data/game-titles.json
 /data/purchases/appstore.json
