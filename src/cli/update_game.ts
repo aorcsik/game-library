@@ -74,9 +74,9 @@ if (args.get('help')) {
 }
 
 const fetchDelay = 0; // ms
-const refetchAge = args.get('refetchAge') as number;
 const startIndex = args.get('startIndex') as number;
 const forceFetchTitle = args.get('fetchTitle') as string;
+const refetchAge = forceFetchTitle ? -1 : args.get('refetchAge') as number;
 const updatePurchases = args.get('updatePurchases') as boolean;
 const updateProgress = args.get('updateProgress') as boolean;
 const updateNotes = args.get('updateNotes') as boolean;

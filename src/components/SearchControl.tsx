@@ -39,12 +39,21 @@ const SearchControl = ({
           }
           debounceTimeout.current = setTimeout(() => {
             handleSearch(event);
-          }, 300);
+          }, 500);
         }}
       />
       <button 
         className="cancel-button"
-        onClick={(event) => { handleClearSearch(event); inputRef.current?.focus(); }}
+        onClick={(event) => {
+          if (debounceTimeout.current) {
+            clearTimeout(debounceTimeout.current);
+          }
+          if (inputRef.current) {
+            inputRef.current.value = '';
+            inputRef.current.focus();
+            handleClearSearch(event);
+          }
+        }}
         style={{ visibility: searchQuery ? 'visible' : 'hidden' }}
       >
         <FontAwesomeIcon icon={['far', 'xmark']} />

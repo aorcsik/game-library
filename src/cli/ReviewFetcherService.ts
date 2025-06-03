@@ -115,7 +115,7 @@ const fetchMetacriticData = async (metacriticUrl: string): Promise<MetacriticDat
   const releaseDateElement: HTMLElement | null = dom.window.document.querySelector('.c-ProductHeroGamePlatformInfo + div');
   const releaseDateMatch = releaseDateElement?.textContent?.trim().match(/Released On:\s*(\w+ \d+, \d+)/);
   const releaseDate = releaseDateMatch ? new Date(releaseDateMatch[1]).toISOString() : null;
-  const metacriticMustPlayElement: HTMLElement | null = dom.window.document.querySelector('c-productScoreInfo_must');
+  const metacriticMustPlayElement: HTMLElement | null = dom.window.document.querySelector('.c-productScoreInfo_must');
   const mustPlay = metacriticMustPlayElement !== null;
   const metacriticScoreElement: HTMLElement | null = dom.window.document.querySelector('.c-productScoreInfo_scoreNumber');
   const metacriticScore = metacriticScoreElement?.textContent && parseInt(metacriticScoreElement.textContent, 10) || null;
