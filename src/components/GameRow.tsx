@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, useRef } from 'react';
 import { Platform, PlatformList, PurchasedGame } from '../lib/PurchaseService';
 import GameRowTitle from './GameRowTitle';
 import Image from 'next/image';
@@ -6,16 +6,21 @@ import Image from 'next/image';
 type GameRowProps = {
   game: PurchasedGame;
   platforms: PlatformList;
-  onOpenToggle: (gameKey: string) => void;
 };
 
-const GameRow = ({ game, platforms, onOpenToggle }: GameRowProps): ReactNode => {
+const GameRow = ({ game, platforms }: GameRowProps): ReactNode => {
+  const ref = useRef<HTMLDivElement>(null);
+
   return (
     <div 
+      ref={ref}
       id={`game-${game.key}`} 
       className={`game-row ${game.purchases.length === 0 ? 'no-purchases' : ''}`}
       key={game.key}
-      onClick={() => onOpenToggle(game.key)}
+      onClick={() => {
+        if (!ref.current) return;
+        ref.current.classList.toggle('game-row-open');
+      }}
     >
       <div className="game-row-title">
         <GameRowTitle game={game} />

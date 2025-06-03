@@ -115,7 +115,7 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
       gameDataSet.metacriticScore = game.metacriticData?.metacriticScore ? game.metacriticData.metacriticScore.toString() : '';
       gameDataSet.progress = gameProgress;
       gameDataSet.completed = game.completed || gameProgress === '100' ? '1' : '0';
-      gameDataSet.rating = game.rating ? game.rating.toString() : '-2';
+      gameDataSet.rating = game.rating === undefined ? '-1000' : game.rating.toString();
     }
     return gameDataSet;
   }, [purchasedGames]);
@@ -271,13 +271,6 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
             <GameGrid 
               purchasedGames={purchasedGames}
               platforms={initialPlatforms}
-              onOpenToggle={(gameKey: string) => {
-                if (!gameGridRef.current) return;
-                const gameRow = gameGridRef.current.querySelector(`#game-${gameKey}`);
-                if (gameRow) {
-                  gameRow.classList.toggle('game-row-open');
-                }
-              }}
             />
           </div>
         </div>

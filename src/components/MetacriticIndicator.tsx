@@ -5,13 +5,16 @@ import { Game } from '../lib/schema';
 
 const MetacriticIndicator = ({game} : {game: Game | null}): JSX.Element => {
   // Metacritic data
-  const metacriticUrl = game && game.metacriticUrl ? game.metacriticUrl : null;
-  const metacriticScore = game && game.metacriticData?.metacriticScore ? game.metacriticData.metacriticScore : null;
+  const metacriticUrl = game?.metacriticUrl ? game.metacriticUrl : null;
+  const metacriticScore = game?.metacriticData?.metacriticScore ? game.metacriticData.metacriticScore : null;
   let metacriticClass = 'tbd';
-  if (game && game.metacriticData?.metacriticScore) {
+  if (game?.metacriticData?.metacriticScore) {
     if (game.metacriticData.metacriticScore >= 75) metacriticClass = 'good';
     else if (game.metacriticData.metacriticScore >= 50) metacriticClass = 'mixed';
     else if (game.metacriticData.metacriticScore >= 0) metacriticClass = 'bad';
+  }
+  if (game?.metacriticData?.mustPlay) {
+    metacriticClass += ' must-play';
   }
 
   if (!metacriticScore) {

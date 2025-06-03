@@ -6,7 +6,7 @@ const SearchControl = ({
   searchQuery, 
   handleSearch,
   handleClearSearch,
-  searchFieldName 
+  searchFieldName,
 }: {
   searchQuery: string;
   handleSearch: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -14,6 +14,7 @@ const SearchControl = ({
   searchFieldName: string;
 }): JSX.Element => {
   const inputRef = useRef<HTMLInputElement>(null);
+  const debounceTimeout = useRef<NodeJS.Timeout | null>(null);
   return (  
     <div className="form-field search-field">
       <div className="search-icon">
@@ -31,8 +32,15 @@ const SearchControl = ({
         spellCheck="false"
         aria-label="Search games"
         name={searchFieldName}
-        value={searchQuery}
-        onChange={handleSearch}
+        defaultValue={searchQuery}
+        onChange={(event) => {
+          if (debounceTimeout.current) {
+            clearTimeout(debounceTimeout.current);
+          }
+          debounceTimeout.current = setTimeout(() => {
+            handleSearch(event);
+          }, 300);
+        }}
       />
       <button 
         className="cancel-button"

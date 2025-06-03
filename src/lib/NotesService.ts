@@ -9,7 +9,7 @@ type GameNotes = {
   title: string;
   completed?: boolean;
   progress?: number;
-  rating?: -1 | 0 | 1 | 2; // -1: disliked, 0: neutral, 1: liked, 2: loved
+  rating?: -10 | -1 | 0 | 1 | 2; //-10: watched, -1: disliked, 0: neutral, 1: liked, 2: loved
   wathed?: boolean;
   notes?: string;
 };

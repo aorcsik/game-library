@@ -9,7 +9,7 @@
       "score": 72,
       "critics": 39,
       "releaseDate": "2013-10-16T00:00:00.000Z",
-      "updated": "2025-05-30T04:06:42.843Z"
+      "updated": "2025-06-03T02:22:30.199Z"
     },
     "steamAppId": 242820,
     "steamData": {
@@ -22,15 +22,16 @@
       "releaseDate": "2013-10-16T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "94% of the 1,989 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/242820/header.jpg?t=1632130187",
-      "updated": "2025-05-30T04:06:43.477Z"
+      "reviewScoreTooltip": "94% of the 1,992 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/242820/header.jpg?t=1632130187",
+      "updated": "2025-06-03T02:22:30.702Z"
     },
     "metacriticData": {
       "title": "140",
       "releaseDate": "2020-01-09T00:00:00.000Z",
       "metacriticScore": 70,
-      "updated": "2025-05-30T04:06:44.912Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:22:33.164Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/140",
     "key": "140"
@@ -45,7 +46,7 @@
       "score": 77,
       "critics": 62,
       "releaseDate": "2017-01-16T00:00:00.000Z",
-      "updated": "2025-05-30T04:06:47.403Z"
+      "updated": "2025-06-03T02:22:36.071Z"
     },
     "steamAppId": 330820,
     "steamData": {
@@ -58,15 +59,16 @@
       "releaseDate": "2015-10-06T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "84% of the 673 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/330820/header.jpg?t=1712088920",
-      "updated": "2025-05-30T04:06:48.059Z"
+      "reviewScoreTooltip": "84% of the 677 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/330820/header.jpg?t=1712088920",
+      "updated": "2025-06-03T02:22:36.687Z"
     },
     "metacriticData": {
       "title": "2064: Read Only Memories",
       "releaseDate": "2017-01-17T00:00:00.000Z",
       "metacriticScore": 76,
-      "updated": "2025-05-30T04:06:49.897Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:22:39.261Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/2064-read-only-memories",
     "key": "2064-read-only-memories"
@@ -81,7 +83,7 @@
       "score": 77,
       "critics": 60,
       "releaseDate": "2022-06-08T00:00:00.000Z",
-      "updated": "2025-05-30T04:06:45.164Z"
+      "updated": "2025-06-03T02:22:33.475Z"
     },
     "steamAppId": 1966900,
     "steamData": {
@@ -97,16 +99,17 @@
       "releaseDate": "2023-06-08T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "91% of the 26,505 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1966900/header.jpg?t=1747702146",
-      "updated": "2025-05-30T04:06:45.688Z"
+      "reviewScoreTooltip": "91% of the 26,525 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1966900/header.jpg?t=1747702146",
+      "updated": "2025-06-03T02:22:34.114Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/20-minutes-till-dawn/",
     "metacriticData": {
       "title": "20 Minutes Till Dawn",
       "releaseDate": "2022-06-08T00:00:00.000Z",
       "metacriticScore": null,
-      "updated": "2025-05-30T04:06:47.182Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:22:35.785Z"
     },
     "key": "20-minutes-till-dawn"
   },
@@ -123,7 +126,7 @@
       "score": 80,
       "critics": 73,
       "releaseDate": "2016-08-02T00:00:00.000Z",
-      "updated": "2025-05-30T04:07:00.950Z"
+      "updated": "2025-06-03T02:23:09.193Z"
     },
     "steamAppId": 384190,
     "steamData": {
@@ -138,15 +141,16 @@
       "releaseDate": "2016-08-02T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "93% of the 20,700 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/384190/header.jpg?t=1736954887",
-      "updated": "2025-05-30T04:07:01.491Z"
+      "reviewScoreTooltip": "93% of the 20,703 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/384190/header.jpg?t=1736954887",
+      "updated": "2025-06-03T02:23:09.684Z"
     },
     "metacriticData": {
       "title": "ABZU",
       "releaseDate": "2016-08-02T00:00:00.000Z",
       "metacriticScore": 78,
-      "updated": "2025-05-30T04:07:04.220Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:23:11.435Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/abzu",
     "key": "abz"
@@ -164,7 +168,7 @@
       "score": 66,
       "critics": 50,
       "releaseDate": "2017-11-17T00:00:00.000Z",
-      "updated": "2025-05-30T04:07:04.446Z"
+      "updated": "2025-06-03T02:23:11.726Z"
     },
     "steamAppId": 859350,
     "steamData": {
@@ -177,16 +181,17 @@
       "releaseDate": "2018-07-24T00:00:00.000Z",
       "reviewScore": 6,
       "reviewScoreDescription": "Mostly Positive",
-      "reviewScoreTooltip": "72% of the 84 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/859350/header.jpg?t=1732705426",
-      "updated": "2025-05-30T04:07:05.166Z"
+      "reviewScoreTooltip": "72% of the 85 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/859350/header.jpg?t=1732705426",
+      "updated": "2025-06-03T02:23:12.564Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/aces-of-the-luftwaffe-squadron/",
     "metacriticData": {
       "title": "Aces of the Luftwaffe: Squadron",
       "releaseDate": "2017-11-17T00:00:00.000Z",
       "metacriticScore": 71,
-      "updated": "2025-05-30T04:07:06.296Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:23:13.736Z"
     },
     "key": "aces-of-the-luftwaffe-squadron"
   },
@@ -203,7 +208,7 @@
       "score": 68,
       "critics": 34,
       "releaseDate": "2021-08-24T00:00:00.000Z",
-      "updated": "2025-05-30T04:07:53.863Z"
+      "updated": "2025-06-03T02:24:23.724Z"
     },
     "steamAppId": 1549970,
     "steamData": {
@@ -216,16 +221,17 @@
       "releaseDate": "2021-08-23T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "80% of the 19,664 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1549970/header.jpg?t=1727102951",
-      "updated": "2025-05-30T04:07:54.390Z"
+      "reviewScoreTooltip": "80% of the 19,678 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1549970/header.jpg?t=1727102951",
+      "updated": "2025-06-03T02:24:24.195Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/aliens-fireteam-elite/",
     "metacriticData": {
       "title": "Aliens: Fireteam Elite",
       "releaseDate": "2021-08-24T00:00:00.000Z",
       "metacriticScore": 69,
-      "updated": "2025-05-30T04:07:56.292Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:24:25.276Z"
     },
     "key": "aliens-fireteam-elite"
   },
@@ -1159,7 +1165,7 @@
       "score": 73,
       "critics": 36,
       "releaseDate": "2013-04-04T00:00:00.000Z",
-      "updated": "2025-05-30T04:08:17.777Z"
+      "updated": "2025-06-03T02:25:04.807Z"
     },
     "steamAppId": 233550,
     "steamData": {
@@ -1172,16 +1178,17 @@
       "releaseDate": "2013-04-04T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "84% of the 1,547 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/233550/header.jpg?t=1743411543",
-      "updated": "2025-05-30T04:08:18.231Z"
+      "reviewScoreTooltip": "84% of the 1,549 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/233550/header.jpg?t=1743411543",
+      "updated": "2025-06-03T02:25:05.401Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/another-world-20th-anniversary/",
     "metacriticData": {
       "title": "Another World: 20th Anniversary Edition",
       "releaseDate": "2011-09-22T00:00:00.000Z",
       "metacriticScore": 80,
-      "updated": "2025-05-30T04:08:19.905Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:25:06.962Z"
     },
     "key": "another-world-20th-anniversary-edition"
   },
@@ -1341,7 +1348,7 @@
       "score": 83,
       "critics": 100,
       "releaseDate": "2015-09-28T00:00:00.000Z",
-      "updated": "2025-05-30T04:06:50.123Z"
+      "updated": "2025-06-03T02:22:39.567Z"
     },
     "steamAppId": 381780,
     "steamData": {
@@ -1355,15 +1362,16 @@
       "releaseDate": "2015-09-28T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "91% of the 1,108 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/381780/header.jpg?t=1736524091",
-      "updated": "2025-05-30T04:06:50.505Z"
+      "reviewScoreTooltip": "91% of the 1,109 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/381780/header.jpg?t=1736524091",
+      "updated": "2025-06-03T02:22:40.177Z"
     },
     "metacriticData": {
       "title": "80 Days",
       "releaseDate": "2014-07-31T00:00:00.000Z",
       "metacriticScore": 88,
-      "updated": "2025-05-30T04:06:50.656Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:22:42.436Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/80-days-2015",
     "key": "80-days"
@@ -1378,7 +1386,7 @@
       "score": 74,
       "critics": 70,
       "releaseDate": "2023-03-27T00:00:00.000Z",
-      "updated": "2025-05-30T04:06:50.878Z"
+      "updated": "2025-06-03T02:22:42.717Z"
     },
     "steamAppId": 1402120,
     "steamData": {
@@ -1392,16 +1400,17 @@
       "releaseDate": "2023-03-27T00:00:00.000Z",
       "reviewScore": 6,
       "reviewScoreDescription": "Mostly Positive",
-      "reviewScoreTooltip": "79% of the 1,808 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1402120/header.jpg?t=1741880446",
-      "updated": "2025-05-30T04:06:51.235Z"
+      "reviewScoreTooltip": "79% of the 1,814 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1402120/header.jpg?t=1741880446",
+      "updated": "2025-06-03T02:22:43.192Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/9-years-of-shadows/",
     "metacriticData": {
       "title": "9 Years of Shadows",
       "releaseDate": "2023-03-27T00:00:00.000Z",
       "metacriticScore": 74,
-      "updated": "2025-05-30T04:06:51.338Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:22:44.562Z"
     },
     "key": "9-years-of-shadows"
   },
@@ -1418,7 +1427,7 @@
       "score": 73,
       "critics": 45,
       "releaseDate": "2017-08-29T00:00:00.000Z",
-      "updated": "2025-05-30T04:07:00.021Z"
+      "updated": "2025-06-03T02:23:06.684Z"
     },
     "steamAppId": 473690,
     "steamData": {
@@ -1432,15 +1441,16 @@
       "releaseDate": "2017-08-29T00:00:00.000Z",
       "reviewScore": 6,
       "reviewScoreDescription": "Mostly Positive",
-      "reviewScoreTooltip": "73% of the 11,266 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/473690/header.jpg?t=1728689155",
-      "updated": "2025-05-30T04:07:00.478Z"
+      "reviewScoreTooltip": "73% of the 11,267 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/473690/header.jpg?t=1728689155",
+      "updated": "2025-06-03T02:23:07.341Z"
     },
     "metacriticData": {
       "title": "Absolver",
       "releaseDate": "2017-08-29T00:00:00.000Z",
       "metacriticScore": 75,
-      "updated": "2025-05-30T04:07:00.636Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:23:08.893Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/absolver",
     "key": "absolver"
@@ -1455,7 +1465,7 @@
       "score": 69,
       "critics": 48,
       "releaseDate": "2021-05-19T00:00:00.000Z",
-      "updated": "2025-05-30T04:07:10.329Z"
+      "updated": "2025-06-03T02:23:15.939Z"
     },
     "steamAppId": 1323540,
     "steamData": {
@@ -1471,15 +1481,16 @@
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
       "reviewScoreTooltip": "81% of the 85 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1323540/header.jpg?t=1717687365",
-      "updated": "2025-05-30T04:07:11.041Z"
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1323540/header.jpg?t=1717687365",
+      "updated": "2025-06-03T02:23:16.388Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/aerialknights-never-yield/",
     "metacriticData": {
       "title": "Aerial_Knight's Never Yield",
       "releaseDate": "2021-05-19T00:00:00.000Z",
       "metacriticScore": 65,
-      "updated": "2025-05-30T04:07:12.340Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:23:17.530Z"
     },
     "key": "aerialknights-never-yield"
   },
@@ -1493,7 +1504,7 @@
       "score": 65,
       "critics": 37,
       "releaseDate": "2023-06-29T00:00:00.000Z",
-      "updated": "2025-05-30T04:07:12.564Z"
+      "updated": "2025-06-03T02:23:17.802Z"
     },
     "steamAppId": 1913210,
     "steamData": {
@@ -1507,15 +1518,16 @@
       "reviewScore": 5,
       "reviewScoreDescription": "Mixed",
       "reviewScoreTooltip": "58% of the 1,225 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1913210/header.jpg?t=1720617282",
-      "updated": "2025-05-30T04:07:13.069Z"
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1913210/header.jpg?t=1720617282",
+      "updated": "2025-06-03T02:23:18.280Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/aew-fight-forever/",
     "metacriticData": {
       "title": "AEW: Fight Forever",
       "releaseDate": "2023-06-29T00:00:00.000Z",
       "metacriticScore": 64,
-      "updated": "2025-05-30T04:07:14.348Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:23:19.773Z"
     },
     "key": "aew-fight-forever"
   },
@@ -1529,7 +1541,7 @@
       "score": 92,
       "critics": 92,
       "releaseDate": "2023-12-08T00:00:00.000Z",
-      "updated": "2025-05-30T04:07:14.567Z"
+      "updated": "2025-06-03T02:23:21.670Z"
     },
     "steamAppId": 1336490,
     "steamData": {
@@ -1542,15 +1554,16 @@
       "releaseDate": "2023-12-08T00:00:00.000Z",
       "reviewScore": 9,
       "reviewScoreDescription": "Overwhelmingly Positive",
-      "reviewScoreTooltip": "95% of the 28,326 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1336490/header.jpg?t=1748549233",
-      "updated": "2025-05-30T04:07:15.188Z"
+      "reviewScoreTooltip": "95% of the 28,355 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1336490/header.jpg?t=1748549233",
+      "updated": "2025-06-03T02:23:22.267Z"
     },
     "metacriticData": {
       "title": "Against the Storm",
       "releaseDate": "2023-12-08T00:00:00.000Z",
       "metacriticScore": 91,
-      "updated": "2025-05-30T04:07:16.952Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:23:24.479Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/against-the-storm",
     "key": "against-the-storm"
@@ -1565,7 +1578,7 @@
       "score": 78,
       "critics": 56,
       "releaseDate": "2021-09-27T00:00:00.000Z",
-      "updated": "2025-05-30T04:07:17.180Z"
+      "updated": "2025-06-03T02:23:24.772Z"
     },
     "steamAppId": 1573720,
     "steamData": {
@@ -1577,16 +1590,17 @@
       "releaseDate": "2021-09-27T00:00:00.000Z",
       "reviewScore": 6,
       "reviewScoreDescription": "Mostly Positive",
-      "reviewScoreTooltip": "76% of the 956 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1573720/header.jpg?t=1743171933",
-      "updated": "2025-05-30T04:07:17.603Z"
+      "reviewScoreTooltip": "76% of the 957 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1573720/header.jpg?t=1743171933",
+      "updated": "2025-06-03T02:23:25.229Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/agatha-christie-hercule-poirot-the-first-cases/",
     "metacriticData": {
       "title": "Agatha Christie - Hercule Poirot: The First Cases",
       "releaseDate": "2021-09-28T00:00:00.000Z",
       "metacriticScore": 75,
-      "updated": "2025-05-30T04:07:19.366Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:23:27.335Z"
     },
     "key": "agatha-christie-hercule-poirot-the-first-cases"
   },
@@ -1600,7 +1614,7 @@
       "score": 67,
       "critics": 36,
       "releaseDate": "2023-08-29T00:00:00.000Z",
-      "updated": "2025-05-30T04:07:19.607Z"
+      "updated": "2025-06-03T02:23:27.638Z"
     },
     "steamAppId": 2223740,
     "steamData": {
@@ -1615,15 +1629,16 @@
       "reviewScore": 5,
       "reviewScoreDescription": "Mixed",
       "reviewScoreTooltip": "57% of the 152 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2223740/header.jpg?t=1743171937",
-      "updated": "2025-05-30T04:07:20.348Z"
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2223740/header.jpg?t=1743171937",
+      "updated": "2025-06-03T02:23:28.316Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/agatha-christie-hercule-poirot-the-london-case/",
     "metacriticData": {
       "title": "Agatha Christie - Hercule Poirot: The London Case",
       "releaseDate": "2023-08-29T00:00:00.000Z",
       "metacriticScore": 67,
-      "updated": "2025-05-30T04:07:22.224Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:23:30.327Z"
     },
     "key": "agatha-christie-hercule-poirot-the-london-case"
   },
@@ -1637,7 +1652,7 @@
       "score": 69,
       "critics": 68,
       "releaseDate": "2023-10-19T00:00:00.000Z",
-      "updated": "2025-05-30T04:07:22.451Z"
+      "updated": "2025-06-03T02:23:30.611Z"
     },
     "steamAppId": 1904790,
     "steamData": {
@@ -1651,16 +1666,17 @@
       "releaseDate": "2023-10-19T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "84% of the 704 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1904790/header.jpg?t=1743171940",
-      "updated": "2025-05-30T04:07:22.896Z"
+      "reviewScoreTooltip": "84% of the 707 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1904790/header.jpg?t=1743171940",
+      "updated": "2025-06-03T02:23:31.201Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/agatha-christie-murder-on-the-orient-express/",
     "metacriticData": {
       "title": "Agatha Christie - Murder on the Orient Express",
       "releaseDate": "2023-10-19T00:00:00.000Z",
       "metacriticScore": 64,
-      "updated": "2025-05-30T04:07:24.036Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:23:32.573Z"
     },
     "key": "agatha-christie-murder-on-the-orient-express"
   },
@@ -1674,7 +1690,7 @@
       "score": 67,
       "critics": 39,
       "releaseDate": "2016-02-04T00:00:00.000Z",
-      "updated": "2025-05-30T04:07:24.263Z"
+      "updated": "2025-06-03T02:23:32.836Z"
     },
     "steamAppId": 374900,
     "steamData": {
@@ -1687,15 +1703,16 @@
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
       "reviewScoreTooltip": "80% of the 1,839 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/374900/header.jpg?t=1743171947",
-      "updated": "2025-05-30T04:07:24.901Z"
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/374900/header.jpg?t=1743171947",
+      "updated": "2025-06-03T02:23:33.535Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/agatha-christie-the-abc-murders/",
     "metacriticData": {
       "title": "Agatha Christie: The ABC Murders",
       "releaseDate": "2016-02-23T00:00:00.000Z",
       "metacriticScore": 67,
-      "updated": "2025-05-30T04:07:26.063Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:23:36.778Z"
     },
     "key": "agatha-christie-the-abc-murders"
   },
@@ -1709,7 +1726,7 @@
       "score": 67,
       "critics": 29,
       "releaseDate": "2017-08-15T00:00:00.000Z",
-      "updated": "2025-05-30T04:07:27.327Z"
+      "updated": "2025-06-03T02:23:40.089Z"
     },
     "steamAppId": 304530,
     "steamData": {
@@ -1721,16 +1738,17 @@
       "releaseDate": "2017-08-15T00:00:00.000Z",
       "reviewScore": 5,
       "reviewScoreDescription": "Mixed",
-      "reviewScoreTooltip": "59% of the 3,175 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/304530/header.jpg?t=1620292667",
-      "updated": "2025-05-30T04:07:27.841Z"
+      "reviewScoreTooltip": "59% of the 3,176 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/304530/header.jpg?t=1620292667",
+      "updated": "2025-06-03T02:23:40.581Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/agents-of-mayhem",
     "metacriticData": {
       "title": "Agents of Mayhem",
       "releaseDate": "2017-08-15T00:00:00.000Z",
       "metacriticScore": 62,
-      "updated": "2025-05-30T04:07:29.795Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:23:43.129Z"
     },
     "key": "agents-of-mayhem"
   },
@@ -1744,7 +1762,7 @@
       "score": null,
       "critics": null,
       "releaseDate": "2020-04-18T00:00:00.000Z",
-      "updated": "2025-05-30T04:07:30.001Z"
+      "updated": "2025-06-03T02:23:43.394Z"
     },
     "steamAppId": 876650,
     "steamData": {
@@ -1758,16 +1776,17 @@
       "releaseDate": "2020-04-17T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "94% of the 1,648 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/876650/header.jpg?t=1732740414",
-      "updated": "2025-05-30T04:07:31.210Z"
+      "reviewScoreTooltip": "94% of the 1,650 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/876650/header.jpg?t=1732740414",
+      "updated": "2025-06-03T02:23:43.850Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/aground/",
     "metacriticData": {
       "title": "Aground",
       "releaseDate": "2021-02-11T00:00:00.000Z",
       "metacriticScore": null,
-      "updated": "2025-05-30T04:07:32.231Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:23:44.952Z"
     },
     "key": "aground"
   },
@@ -1781,7 +1800,7 @@
       "score": 77,
       "critics": 78,
       "releaseDate": "2023-02-21T00:00:00.000Z",
-      "updated": "2025-05-30T04:07:40.146Z"
+      "updated": "2025-06-03T02:23:53.538Z"
     },
     "steamAppId": 2005680,
     "steamData": {
@@ -1794,15 +1813,16 @@
       "reviewScore": 7,
       "reviewScoreDescription": "Positive",
       "reviewScoreTooltip": "97% of the 48 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2005680/header.jpg?t=1738355970",
-      "updated": "2025-05-30T04:07:40.693Z"
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2005680/header.jpg?t=1738355970",
+      "updated": "2025-06-03T02:23:54.354Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/akka-arrh",
     "metacriticData": {
       "title": "Akka Arrh",
       "releaseDate": "2024-03-08T00:00:00.000Z",
       "metacriticScore": 73,
-      "updated": "2025-05-30T04:07:42.351Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:23:55.836Z"
     },
     "key": "akka-arrh"
   },
@@ -1816,7 +1836,7 @@
       "score": 89,
       "critics": 93,
       "releaseDate": "2023-10-27T00:00:00.000Z",
-      "updated": "2025-05-30T04:07:42.618Z"
+      "updated": "2025-06-03T02:23:59.066Z"
     },
     "steamAppId": -1,
     "metacriticUrl": "https://www.metacritic.com/game/alan-wake-ii/",
@@ -1824,7 +1844,8 @@
       "title": "Alan Wake II",
       "releaseDate": "2023-10-27T00:00:00.000Z",
       "metacriticScore": 89,
-      "updated": "2025-05-30T04:07:43.529Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:24:00.560Z"
     },
     "key": "alan-wake-2"
   },
@@ -1838,7 +1859,7 @@
       "score": 80,
       "critics": 76,
       "releaseDate": "2021-10-05T00:00:00.000Z",
-      "updated": "2025-05-30T04:07:43.747Z"
+      "updated": "2025-06-03T02:24:00.829Z"
     },
     "steamAppId": -1,
     "metacriticUrl": "https://www.metacritic.com/game/alan-wake-remastered/",
@@ -1846,7 +1867,8 @@
       "title": "Alan Wake Remastered",
       "releaseDate": "2021-10-05T00:00:00.000Z",
       "metacriticScore": 79,
-      "updated": "2025-05-30T04:07:44.681Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:24:02.590Z"
     },
     "key": "alan-wake-remastered"
   },
@@ -1860,7 +1882,7 @@
       "score": 82,
       "critics": 89,
       "releaseDate": "2020-12-11T00:00:00.000Z",
-      "updated": "2025-05-30T04:07:44.892Z"
+      "updated": "2025-06-03T02:24:02.839Z"
     },
     "steamAppId": 1337010,
     "steamData": {
@@ -1873,16 +1895,17 @@
       "releaseDate": "2020-12-11T00:00:00.000Z",
       "reviewScore": 9,
       "reviewScoreDescription": "Overwhelmingly Positive",
-      "reviewScoreTooltip": "97% of the 5,464 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1337010/header.jpg?t=1721835300",
-      "updated": "2025-05-30T04:07:45.385Z"
+      "reviewScoreTooltip": "97% of the 5,473 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1337010/header.jpg?t=1748596568",
+      "updated": "2025-06-03T02:24:03.449Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/alba-a-wildlife-adventure",
     "metacriticData": {
       "title": "Alba: a Wildlife Adventure",
       "releaseDate": "2020-12-11T00:00:00.000Z",
       "metacriticScore": 79,
-      "updated": "2025-05-30T04:07:47.195Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:24:05.807Z"
     },
     "key": "alba-a-wildlife-adventure"
   },
@@ -1896,7 +1919,7 @@
       "score": 61,
       "critics": 31,
       "releaseDate": "2021-12-16T00:00:00.000Z",
-      "updated": "2025-05-30T04:07:47.403Z"
+      "updated": "2025-06-03T02:24:06.109Z"
     },
     "steamAppId": 1449320,
     "steamData": {
@@ -1908,16 +1931,17 @@
       "releaseDate": "2021-12-16T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "83% of the 528 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1449320/header.jpg?t=1736876975",
-      "updated": "2025-05-30T04:07:48.010Z"
+      "reviewScoreTooltip": "83% of the 530 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1449320/header.jpg?t=1736876975",
+      "updated": "2025-06-03T02:24:06.555Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/alfred-hitchcock-vertigo/",
     "metacriticData": {
       "title": "Alfred Hitchcock: Vertigo",
       "releaseDate": "2021-12-16T00:00:00.000Z",
       "metacriticScore": 61,
-      "updated": "2025-05-30T04:07:49.157Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:24:07.940Z"
     },
     "key": "alfred-hitchcock-vertigo"
   },
@@ -1931,7 +1955,7 @@
       "score": 75,
       "critics": 62,
       "releaseDate": "2023-06-20T00:00:00.000Z",
-      "updated": "2025-05-30T04:07:51.993Z"
+      "updated": "2025-06-03T02:24:20.757Z"
     },
     "steamAppId": 1150440,
     "steamData": {
@@ -1944,16 +1968,17 @@
       "releaseDate": "2023-06-19T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "88% of the 13,039 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1150440/header.jpg?t=1723627822",
-      "updated": "2025-05-30T04:07:52.465Z"
+      "reviewScoreTooltip": "88% of the 13,059 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1150440/header.jpg?t=1723627822",
+      "updated": "2025-06-03T02:24:21.275Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/aliens-dark-descent",
     "metacriticData": {
       "title": "Aliens: Dark Descent",
       "releaseDate": "2023-06-20T00:00:00.000Z",
       "metacriticScore": 75,
-      "updated": "2025-05-30T04:07:53.635Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:24:23.439Z"
     },
     "key": "aliens-dark-descent"
   },
@@ -2003,7 +2028,7 @@
       "score": 77,
       "critics": 67,
       "releaseDate": "2016-11-22T00:00:00.000Z",
-      "updated": "2025-05-30T04:08:00.239Z"
+      "updated": "2025-06-03T02:24:42.501Z"
     },
     "steamAppId": 239200,
     "steamData": {
@@ -2017,16 +2042,17 @@
       "releaseDate": "2013-09-10T00:00:00.000Z",
       "reviewScore": 5,
       "reviewScoreDescription": "Mixed",
-      "reviewScoreTooltip": "68% of the 6,687 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/239200/header.jpg?t=1727954562",
-      "updated": "2025-05-30T04:08:00.874Z"
+      "reviewScoreTooltip": "68% of the 6,689 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/239200/header.jpg?t=1727954562",
+      "updated": "2025-06-03T02:24:43.139Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/amnesia-a-machine-for-pigs",
     "metacriticData": {
       "title": "Amnesia: A Machine for Pigs",
       "releaseDate": "2013-09-10T00:00:00.000Z",
       "metacriticScore": 72,
-      "updated": "2025-05-30T04:08:02.888Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:24:45.488Z"
     },
     "key": "amnesia-a-machine-for-pigs"
   },
@@ -2040,7 +2066,7 @@
       "score": 77,
       "critics": 67,
       "releaseDate": "2016-11-22T00:00:00.000Z",
-      "updated": "2025-05-30T04:08:06.237Z"
+      "updated": "2025-06-03T02:24:50.878Z"
     },
     "steamAppId": 57300,
     "steamData": {
@@ -2054,16 +2080,17 @@
       "releaseDate": "2010-09-08T00:00:00.000Z",
       "reviewScore": 9,
       "reviewScoreDescription": "Overwhelmingly Positive",
-      "reviewScoreTooltip": "95% of the 19,111 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/57300/header.jpg?t=1727954563",
-      "updated": "2025-05-30T04:08:06.718Z"
+      "reviewScoreTooltip": "95% of the 19,124 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/57300/header.jpg?t=1727954563",
+      "updated": "2025-06-03T02:24:51.377Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/amnesia-the-dark-descent",
     "metacriticData": {
       "title": "Amnesia: The Dark Descent",
       "releaseDate": "2010-09-08T00:00:00.000Z",
       "metacriticScore": 85,
-      "updated": "2025-05-30T04:08:07.788Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:24:52.896Z"
     },
     "key": "amnesia-the-dark-descent"
   },
@@ -2077,7 +2104,7 @@
       "score": 80,
       "critics": 80,
       "releaseDate": "2018-06-05T00:00:00.000Z",
-      "updated": "2025-05-30T04:08:08.107Z"
+      "updated": "2025-06-03T02:24:53.229Z"
     },
     "steamAppId": 945360,
     "steamData": {
@@ -2089,16 +2116,17 @@
       "releaseDate": "2018-11-16T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "92% of the 615,971 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/945360/header.jpg?t=1746224720",
-      "updated": "2025-05-30T04:08:09.005Z"
+      "reviewScoreTooltip": "92% of the 616,153 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/945360/header.jpg?t=1746224720",
+      "updated": "2025-06-03T02:24:53.688Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/among-us",
     "metacriticData": {
       "title": "Among Us",
       "releaseDate": "2018-11-16T00:00:00.000Z",
       "metacriticScore": 85,
-      "updated": "2025-05-30T04:08:10.300Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:24:55.884Z"
     },
     "key": "among-us"
   },
@@ -2112,7 +2140,7 @@
       "score": 74,
       "critics": 46,
       "releaseDate": "2013-05-15T00:00:00.000Z",
-      "updated": "2025-05-30T04:08:13.667Z"
+      "updated": "2025-06-03T02:24:58.599Z"
     },
     "steamAppId": 236730,
     "steamData": {
@@ -2126,16 +2154,17 @@
       "releaseDate": "2013-05-15T00:00:00.000Z",
       "reviewScore": 6,
       "reviewScoreDescription": "Mostly Positive",
-      "reviewScoreTooltip": "78% of the 412 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/236730/header.jpg?t=1716457749",
-      "updated": "2025-05-30T04:08:14.562Z"
+      "reviewScoreTooltip": "78% of the 413 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/236730/header.jpg?t=1716457749",
+      "updated": "2025-06-03T02:24:59.209Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/anomaly-2",
     "metacriticData": {
       "title": "Anomaly 2",
       "releaseDate": "2013-05-15T00:00:00.000Z",
       "metacriticScore": 77,
-      "updated": "2025-05-30T04:08:15.663Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:25:01.145Z"
     },
     "key": "anomaly-2"
   },
@@ -2149,7 +2178,7 @@
       "score": 61,
       "critics": 13,
       "releaseDate": "2019-02-22T00:00:00.000Z",
-      "updated": "2025-05-30T04:08:20.303Z"
+      "updated": "2025-06-03T02:25:07.281Z"
     },
     "steamAppId": -1,
     "metacriticUrl": "https://www.metacritic.com/game/anthem/",
@@ -2157,7 +2186,8 @@
       "title": "Anthem",
       "releaseDate": "2019-02-15T00:00:00.000Z",
       "metacriticScore": 59,
-      "updated": "2025-05-30T04:08:21.834Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:25:09.414Z"
     },
     "key": "anthem"
   },
@@ -2171,7 +2201,7 @@
       "score": null,
       "critics": null,
       "releaseDate": "2022-03-01T00:00:00.000Z",
-      "updated": "2025-05-30T04:08:23.843Z"
+      "updated": "2025-06-03T02:25:11.886Z"
     },
     "steamAppId": 1902490,
     "steamData": {
@@ -2186,16 +2216,17 @@
       "releaseDate": "2022-03-01T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "94% of the 23,697 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1902490/header.jpg?t=1745368564",
-      "updated": "2025-05-30T04:08:24.252Z"
+      "reviewScoreTooltip": "94% of the 23,716 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1902490/header.jpg?t=1745368564",
+      "updated": "2025-06-03T02:25:12.466Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/aperture-desk-job/",
     "metacriticData": {
       "title": "Aperture Desk Job",
       "releaseDate": "2022-03-01T00:00:00.000Z",
       "metacriticScore": null,
-      "updated": "2025-05-30T04:08:25.346Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:25:13.857Z"
     },
     "key": "aperture-desk-job"
   },
@@ -2209,7 +2240,7 @@
       "score": 83,
       "critics": 67,
       "releaseDate": "2022-05-20T00:00:00.000Z",
-      "updated": "2025-05-30T04:08:27.777Z"
+      "updated": "2025-06-03T02:25:17.232Z"
     },
     "steamAppId": 1390190,
     "steamData": {
@@ -2222,16 +2253,17 @@
       "releaseDate": "2022-05-20T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "92% of the 1,379 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1390190/header.jpg?t=1745864333",
-      "updated": "2025-05-30T04:08:28.504Z"
+      "reviewScoreTooltip": "91% of the 1,383 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1390190/header.jpg?t=1745864333",
+      "updated": "2025-06-03T02:25:17.706Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/apico/",
     "metacriticData": {
       "title": "APICO",
       "releaseDate": "2022-07-07T00:00:00.000Z",
       "metacriticScore": 74,
-      "updated": "2025-05-30T04:08:29.548Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:25:19.457Z"
     },
     "key": "apico"
   },
@@ -2245,7 +2277,7 @@
       "score": 78,
       "critics": 64,
       "releaseDate": "2015-02-03T00:00:00.000Z",
-      "updated": "2025-05-30T04:08:29.823Z"
+      "updated": "2025-06-03T02:25:19.729Z"
     },
     "steamAppId": 208750,
     "steamData": {
@@ -2260,16 +2292,17 @@
       "releaseDate": "2015-02-03T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "90% of the 3,185 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/208750/header.jpg?t=1582817004",
-      "updated": "2025-05-30T04:08:30.900Z"
+      "reviewScoreTooltip": "90% of the 3,184 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/208750/header.jpg?t=1582817004",
+      "updated": "2025-06-03T02:25:20.369Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/apotheon",
     "metacriticData": {
       "title": "Apotheon",
       "releaseDate": "2015-02-03T00:00:00.000Z",
       "metacriticScore": 78,
-      "updated": "2025-05-30T04:08:32.546Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:25:22.418Z"
     },
     "key": "apotheon"
   },
@@ -2283,7 +2316,7 @@
       "score": 75,
       "critics": 57,
       "releaseDate": "2022-07-05T00:00:00.000Z",
-      "updated": "2025-05-30T04:08:34.561Z"
+      "updated": "2025-06-03T02:25:24.570Z"
     },
     "sameGame": [
       "Arcadegeddon"
@@ -2300,16 +2333,17 @@
       "releaseDate": "2023-07-18T00:00:00.000Z",
       "reviewScore": 6,
       "reviewScoreDescription": "Mostly Positive",
-      "reviewScoreTooltip": "74% of the 726 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1515640/7a7c60d170079552ba817de4b42f87caad63cce9/header.jpg?t=1743105012",
-      "updated": "2025-05-30T04:08:34.951Z"
+      "reviewScoreTooltip": "74% of the 730 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1515640/7a7c60d170079552ba817de4b42f87caad63cce9/header.jpg?t=1743105012",
+      "updated": "2025-06-03T02:25:25.029Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/arcadegeddon/",
     "metacriticData": {
       "title": "Arcadegeddon",
       "releaseDate": "2021-11-30T00:00:00.000Z",
       "metacriticScore": 73,
-      "updated": "2025-05-30T04:08:36.417Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:25:26.108Z"
     },
     "key": "arcadegeddon"
   },
@@ -2323,7 +2357,7 @@
       "score": 76,
       "critics": 73,
       "releaseDate": "2022-08-11T00:00:00.000Z",
-      "updated": "2025-05-30T04:08:32.775Z"
+      "updated": "2025-06-03T02:25:22.699Z"
     },
     "steamAppId": 1388870,
     "steamData": {
@@ -2338,15 +2372,16 @@
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
       "reviewScoreTooltip": "88% of the 1,017 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1388870/header.jpg?t=1747925525",
-      "updated": "2025-05-30T04:08:33.213Z"
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1388870/header.jpg?t=1747925525",
+      "updated": "2025-06-03T02:25:23.202Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/arcade-paradise/",
     "metacriticData": {
       "title": "Arcade Paradise",
       "releaseDate": "2022-08-11T00:00:00.000Z",
       "metacriticScore": 73,
-      "updated": "2025-05-30T04:08:34.325Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:25:24.291Z"
     },
     "key": "arcade-paradise"
   },
@@ -2363,7 +2398,7 @@
       "score": 61,
       "critics": 17,
       "releaseDate": "2022-08-23T00:00:00.000Z",
-      "updated": "2025-05-30T04:08:36.639Z"
+      "updated": "2025-06-03T02:25:26.366Z"
     },
     "steamAppId": 1521160,
     "steamData": {
@@ -2375,16 +2410,17 @@
       "releaseDate": "2022-08-23T00:00:00.000Z",
       "reviewScore": 5,
       "reviewScoreDescription": "Mixed",
-      "reviewScoreTooltip": "63% of the 46 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1521160/header.jpg?t=1729172811",
-      "updated": "2025-05-30T04:08:37.333Z"
+      "reviewScoreTooltip": "63% of the 47 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1521160/header.jpg?t=1729172811",
+      "updated": "2025-06-03T02:25:26.829Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/are-you-smarter-than-a-5th-grader/",
     "metacriticData": {
       "title": "Are You Smarter Than A 5th Grader?",
       "releaseDate": "2022-08-23T00:00:00.000Z",
       "metacriticScore": 58,
-      "updated": "2025-05-30T04:08:38.933Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:25:27.835Z"
     },
     "key": "are-you-smarter-than-a-5th-grader"
   },
@@ -2401,7 +2437,7 @@
       "score": 82,
       "critics": 81,
       "releaseDate": "2019-12-03T00:00:00.000Z",
-      "updated": "2025-05-30T04:08:39.164Z"
+      "updated": "2025-06-03T02:25:28.169Z"
     },
     "steamAppId": 866140,
     "steamData": {
@@ -2414,16 +2450,17 @@
       "releaseDate": "2020-12-03T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "91% of the 2,100 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/866140/header.jpg?t=1746855603",
-      "updated": "2025-05-30T04:08:39.724Z"
+      "reviewScoreTooltip": "91% of the 2,109 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/866140/header.jpg?t=1746855603",
+      "updated": "2025-06-03T02:25:28.919Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/arise-a-simple-story",
     "metacriticData": {
       "title": "Arise: A Simple Story",
       "releaseDate": "2019-12-03T00:00:00.000Z",
       "metacriticScore": 80,
-      "updated": "2025-05-30T04:08:41.911Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:25:30.805Z"
     },
     "key": "arise-a-simple-story"
   },
@@ -2443,16 +2480,17 @@
       "releaseDate": "2011-11-23T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "81% of the 533 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/15560/header.jpg?t=1581730007",
-      "updated": "2025-05-30T04:06:59.702Z"
+      "reviewScoreTooltip": "81% of the 534 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/15560/header.jpg?t=1581730007",
+      "updated": "2025-06-03T02:23:04.589Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/aaaaaaaaaaaaaaaaaaaaaaaaa-for-the-awesome/",
     "metacriticData": {
       "title": "AaaaaAAaaaAAAaaAAAAaAAAAA!!! for the Awesome",
       "releaseDate": "2011-11-23T00:00:00.000Z",
       "metacriticScore": null,
-      "updated": "2025-05-30T04:06:59.793Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:23:05.979Z"
     },
     "key": "aaaaaaaaaaaaaaaaaaaaaaaaa-for-the-awesome"
   },
@@ -2472,15 +2510,16 @@
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
       "reviewScoreTooltip": "85% of the 981 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/40400/header.jpg?t=1741478931",
-      "updated": "2025-05-30T04:07:32.740Z"
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/40400/header.jpg?t=1741478931",
+      "updated": "2025-06-03T02:23:45.448Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/ai-war-fleet-command",
     "metacriticData": {
       "title": "AI War: Fleet Command",
       "releaseDate": "2009-05-14T00:00:00.000Z",
       "metacriticScore": 80,
-      "updated": "2025-05-30T04:07:36.107Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:23:47.692Z"
     },
     "key": "ai-war-fleet-command"
   },
@@ -2502,15 +2541,16 @@
       "reviewScore": 4,
       "reviewScoreDescription": "Mostly Negative",
       "reviewScoreTooltip": "35% of the 368 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/230310/header.jpg?t=1655422877",
-      "updated": "2025-05-30T04:07:38.881Z"
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/230310/header.jpg?t=1655422877",
+      "updated": "2025-06-03T02:23:50.836Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/akaneiro-demon-hunters",
     "metacriticData": {
       "title": "Akaneiro: Demon Hunters",
       "releaseDate": "2013-01-24T00:00:00.000Z",
       "metacriticScore": 53,
-      "updated": "2025-05-30T04:07:39.916Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:23:52.859Z"
     },
     "key": "akaneiro-demon-hunters"
   },
@@ -2531,15 +2571,16 @@
       "reviewScore": 5,
       "reviewScoreDescription": "Mixed",
       "reviewScoreTooltip": "51% of the 41 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/207000/header.jpg?t=1627897763",
-      "updated": "2025-05-30T04:07:50.130Z"
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/207000/header.jpg?t=1627897763",
+      "updated": "2025-06-03T02:24:08.641Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/alien-spidy/",
     "metacriticData": {
       "title": "Alien Spidy",
       "releaseDate": "2013-03-20T00:00:00.000Z",
       "metacriticScore": 55,
-      "updated": "2025-05-30T04:07:51.373Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:24:20.047Z"
     },
     "key": "alien-spidy"
   },
@@ -2553,7 +2594,8 @@
       "title": "Alpha Mission II",
       "releaseDate": "2017-04-06T00:00:00.000Z",
       "metacriticScore": 64,
-      "updated": "2025-05-30T04:07:57.842Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:24:28.559Z"
     },
     "key": "alpha-mission-ii"
   },
@@ -2567,7 +2609,8 @@
       "title": "Alto's Adventure",
       "releaseDate": "2015-02-19T00:00:00.000Z",
       "metacriticScore": 92,
-      "updated": "2025-05-30T04:07:58.947Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:24:29.684Z"
     },
     "key": "altos-adventure"
   },
@@ -2581,7 +2624,8 @@
       "title": "Alto's Odyssey",
       "releaseDate": "2018-02-21T00:00:00.000Z",
       "metacriticScore": 88,
-      "updated": "2025-05-30T04:07:59.662Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:24:41.763Z"
     },
     "key": "altos-odyssey"
   },
@@ -2601,15 +2645,16 @@
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
       "reviewScoreTooltip": "81% of the 321 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/18700/208611c758a9144526656c9ece7a0813152edc02/header.jpg?t=1748516696",
-      "updated": "2025-05-30T04:08:10.996Z"
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/18700/208611c758a9144526656c9ece7a0813152edc02/header.jpg?t=1748516696",
+      "updated": "2025-06-03T02:24:56.384Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/and-yet-it-moves",
     "metacriticData": {
       "title": "And Yet It Moves",
       "releaseDate": "2010-08-23T00:00:00.000Z",
       "metacriticScore": 83,
-      "updated": "2025-05-30T04:08:13.075Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:24:57.899Z"
     },
     "key": "and-yet-it-moves"
   },
@@ -2630,15 +2675,16 @@
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
       "reviewScoreTooltip": "85% of the 960 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/91200/header.jpg?t=1634818526",
-      "updated": "2025-05-30T04:08:16.430Z"
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/91200/header.jpg?t=1634818526",
+      "updated": "2025-06-03T02:25:01.821Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/anomaly-warzone-earth",
     "metacriticData": {
       "title": "Anomaly: Warzone Earth",
       "releaseDate": "2011-04-08T00:00:00.000Z",
       "metacriticScore": 80,
-      "updated": "2025-05-30T04:08:17.552Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:25:04.123Z"
     },
     "key": "anomaly-warzone-earth"
   },
@@ -2658,16 +2704,17 @@
       "releaseDate": "2023-11-16T00:00:00.000Z",
       "reviewScore": 6,
       "reviewScoreDescription": "Mostly Positive",
-      "reviewScoreTooltip": "72% of the 1,396 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1587540/header.jpg?t=1745406359",
-      "updated": "2025-05-30T04:08:22.239Z"
+      "reviewScoreTooltip": "72% of the 1,397 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1587540/header.jpg?t=1745406359",
+      "updated": "2025-06-03T02:25:10.022Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/anvil-saga/",
     "metacriticData": {
       "title": "Anvil Saga",
       "releaseDate": "2023-11-16T00:00:00.000Z",
       "metacriticScore": null,
-      "updated": "2025-05-30T04:08:23.624Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:25:11.258Z"
     },
     "key": "anvil-saga"
   },
@@ -2688,16 +2735,17 @@
       "releaseDate": "2014-07-15T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "82% of the 6,242 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/280740/header.jpg?t=1580856158",
-      "updated": "2025-05-30T04:08:25.990Z"
+      "reviewScoreTooltip": "82% of the 6,246 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/280740/header.jpg?t=1580856158",
+      "updated": "2025-06-03T02:25:14.635Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/aperture-tag-the-paint-gun-testing-initiative/",
     "metacriticData": {
       "title": "Aperture Tag: The Paint Gun Testing Initiative",
       "releaseDate": "2014-07-15T00:00:00.000Z",
       "metacriticScore": null,
-      "updated": "2025-05-30T04:08:27.544Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:25:16.504Z"
     },
     "key": "aperture-tag-the-paint-gun-testing-initiative"
   },
@@ -2719,16 +2767,17 @@
       "releaseDate": "2017-08-27T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "84% of the 547,889 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/346110/header.jpg?t=1745970824",
-      "updated": "2025-05-30T04:08:43.158Z"
+      "reviewScoreTooltip": "84% of the 548,222 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/346110/header.jpg?t=1748884377",
+      "updated": "2025-06-03T02:25:33.251Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/ark-survival-evolved",
     "metacriticData": {
       "title": "ARK: Survival Evolved",
       "releaseDate": "2017-08-27T00:00:00.000Z",
       "metacriticScore": 70,
-      "updated": "2025-05-30T04:08:45.530Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:25:34.488Z"
     },
     "key": "ark-survival-evolved"
   },
@@ -2742,7 +2791,7 @@
       "score": null,
       "critics": null,
       "releaseDate": "2018-03-27T00:00:00.000Z",
-      "updated": "2025-05-30T04:08:46.905Z"
+      "updated": "2025-06-03T02:25:37.946Z"
     },
     "steamAppId": -1,
     "metacriticUrl": "https://www.metacritic.com/game/ascendance-2018/",
@@ -2750,7 +2799,8 @@
       "title": "ASCENDANCE (2018)",
       "releaseDate": "2019-05-10T00:00:00.000Z",
       "metacriticScore": null,
-      "updated": "2025-05-30T04:08:48.055Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:25:39.579Z"
     },
     "key": "ascendance"
   },
@@ -2764,7 +2814,7 @@
       "score": 84,
       "critics": 89,
       "releaseDate": "2021-06-03T00:00:00.000Z",
-      "updated": "2025-05-30T04:08:50.444Z"
+      "updated": "2025-06-03T02:25:42.147Z"
     },
     "steamAppId": 1046400,
     "steamData": {
@@ -2777,16 +2827,17 @@
       "releaseDate": "2021-06-03T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "92% of the 838 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1046400/header.jpg?t=1744187233",
-      "updated": "2025-05-30T04:08:50.951Z"
+      "reviewScoreTooltip": "93% of the 838 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1046400/header.jpg?t=1744187233",
+      "updated": "2025-06-03T02:25:42.865Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/astalon-tears-of-the-earth",
     "metacriticData": {
       "title": "Astalon: Tears of the Earth",
       "releaseDate": "2021-06-03T00:00:00.000Z",
       "metacriticScore": 82,
-      "updated": "2025-05-30T04:08:52.825Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:25:44.696Z"
     },
     "key": "astalon-tears-of-the-earth"
   },
@@ -2800,7 +2851,7 @@
       "score": 65,
       "critics": 24,
       "releaseDate": "2021-11-25T00:00:00.000Z",
-      "updated": "2025-05-30T04:08:53.060Z"
+      "updated": "2025-06-03T02:25:44.978Z"
     },
     "steamAppId": 1492310,
     "steamData": {
@@ -2812,16 +2863,17 @@
       "releaseDate": "2021-12-07T00:00:00.000Z",
       "reviewScore": 5,
       "reviewScoreDescription": "Mixed",
-      "reviewScoreTooltip": "64% of the 194 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1492310/header.jpg?t=1743167316",
-      "updated": "2025-05-30T04:08:53.627Z"
+      "reviewScoreTooltip": "65% of the 195 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1492310/header.jpg?t=1743167316",
+      "updated": "2025-06-03T02:25:45.451Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/asterix-and-obelix-slap-them-all/",
     "metacriticData": {
       "title": "Asterix & Obelix: Slap Them All!",
       "releaseDate": "2021-12-02T00:00:00.000Z",
       "metacriticScore": 69,
-      "updated": "2025-05-30T04:08:54.918Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:25:46.919Z"
     },
     "key": "asterix-and-obelix-slap-them-all"
   },
@@ -2835,7 +2887,7 @@
       "score": 68,
       "critics": 27,
       "releaseDate": "2021-12-14T00:00:00.000Z",
-      "updated": "2025-05-30T04:08:55.164Z"
+      "updated": "2025-06-03T02:25:47.192Z"
     },
     "steamAppId": 1700890,
     "steamData": {
@@ -2847,16 +2899,17 @@
       "releaseDate": "2021-12-14T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "82% of the 69 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1700890/header.jpg?t=1679926924",
-      "updated": "2025-05-30T04:08:56.186Z"
+      "reviewScoreTooltip": "82% of the 70 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1700890/header.jpg?t=1679926924",
+      "updated": "2025-06-03T02:25:47.686Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/asteroids-recharged/",
     "metacriticData": {
       "title": "Asteroids: Recharged",
       "releaseDate": "2021-12-14T00:00:00.000Z",
       "metacriticScore": 74,
-      "updated": "2025-05-30T04:08:57.426Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:25:48.928Z"
     },
     "key": "asteroids-recharged"
   },
@@ -2870,7 +2923,7 @@
       "score": 89,
       "critics": 92,
       "releaseDate": "2018-10-02T00:00:00.000Z",
-      "updated": "2025-05-30T04:08:57.682Z"
+      "updated": "2025-06-03T02:25:49.214Z"
     },
     "steamAppId": -1,
     "metacriticUrl": "https://www.metacritic.com/game/astro-bot-rescue-mission/",
@@ -2878,7 +2931,8 @@
       "title": "Astro Bot Rescue Mission",
       "releaseDate": "2018-10-02T00:00:00.000Z",
       "metacriticScore": 90,
-      "updated": "2025-05-30T04:08:58.976Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:25:50.906Z"
     },
     "key": "astro-bot-rescue-mission"
   },
@@ -2892,7 +2946,7 @@
       "score": 66,
       "critics": 29,
       "releaseDate": "2022-10-13T00:00:00.000Z",
-      "updated": "2025-05-30T04:08:59.248Z"
+      "updated": "2025-06-03T02:25:52.846Z"
     },
     "steamAppId": 1911800,
     "steamData": {
@@ -2906,15 +2960,16 @@
       "reviewScore": 5,
       "reviewScoreDescription": "Mixed",
       "reviewScoreTooltip": "63% of the 33 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1911800/header.jpg?t=1709327081",
-      "updated": "2025-05-30T04:08:59.690Z"
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1911800/header.jpg?t=1709327081",
+      "updated": "2025-06-03T02:25:53.442Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/atari-mania/",
     "metacriticData": {
       "title": "Atari Mania",
       "releaseDate": "2022-10-13T00:00:00.000Z",
       "metacriticScore": 66,
-      "updated": "2025-05-30T04:09:00.978Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:25:55.386Z"
     },
     "key": "atari-mania"
   },
@@ -2934,15 +2989,16 @@
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
       "reviewScoreTooltip": "82% of the 430 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/112100/header.jpg?t=1724976738",
-      "updated": "2025-05-30T04:09:03.218Z"
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/112100/header.jpg?t=1724976738",
+      "updated": "2025-06-03T02:25:59.344Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/avadon-the-black-fortress",
     "metacriticData": {
       "title": "Avadon: The Black Fortress",
       "releaseDate": "2011-05-02T00:00:00.000Z",
       "metacriticScore": 75,
-      "updated": "2025-05-30T04:09:04.261Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:26:01.254Z"
     },
     "key": "avadon-the-black-fortress"
   },
@@ -2964,15 +3020,16 @@
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
       "reviewScoreTooltip": "84% of the 26,730 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/204300/header.jpg?t=1715021431",
-      "updated": "2025-05-30T04:09:04.662Z"
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/204300/header.jpg?t=1715021431",
+      "updated": "2025-06-03T02:26:01.690Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/awesomenauts",
     "metacriticData": {
       "title": "Awesomenauts",
       "releaseDate": "2012-05-02T00:00:00.000Z",
       "metacriticScore": 77,
-      "updated": "2025-05-30T04:09:06.334Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:26:03.908Z"
     },
     "key": "awesomenauts"
   },
@@ -2986,7 +3043,7 @@
       "score": 85,
       "critics": 83,
       "releaseDate": "2015-03-30T00:00:00.000Z",
-      "updated": "2025-05-30T04:09:06.930Z"
+      "updated": "2025-06-03T02:26:04.593Z"
     },
     "steamAppId": 332200,
     "steamData": {
@@ -3000,16 +3057,17 @@
       "releaseDate": "2015-05-14T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "90% of the 5,345 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/332200/header.jpg?t=1645563574",
-      "updated": "2025-05-30T04:09:07.408Z"
+      "reviewScoreTooltip": "90% of the 5,344 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/332200/header.jpg?t=1645563574",
+      "updated": "2025-06-03T02:26:05.114Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/axiom-verge",
     "metacriticData": {
       "title": "Axiom Verge",
       "releaseDate": "2015-03-31T00:00:00.000Z",
       "metacriticScore": 84,
-      "updated": "2025-05-30T04:09:08.444Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:26:06.493Z"
     },
     "key": "axiom-verge"
   },
@@ -3023,7 +3081,7 @@
       "score": 78,
       "critics": 76,
       "releaseDate": "2021-08-11T00:00:00.000Z",
-      "updated": "2025-05-30T04:09:08.661Z"
+      "updated": "2025-06-03T02:26:06.777Z"
     },
     "steamAppId": 946030,
     "steamData": {
@@ -3037,16 +3095,17 @@
       "releaseDate": "2022-08-11T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "81% of the 619 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/946030/header.jpg?t=1660219025",
-      "updated": "2025-05-30T04:09:09.175Z"
+      "reviewScoreTooltip": "81% of the 620 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/946030/header.jpg?t=1660219025",
+      "updated": "2025-06-03T02:26:07.224Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/axiom-verge-2/",
     "metacriticData": {
       "title": "Axiom Verge 2",
       "releaseDate": "2021-08-11T00:00:00.000Z",
       "metacriticScore": 76,
-      "updated": "2025-05-30T04:09:10.742Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:26:09.176Z"
     },
     "key": "axiom-verge-2"
   },
@@ -3066,15 +3125,16 @@
       "reviewScore": 4,
       "reviewScoreDescription": "Mostly Negative",
       "reviewScoreTooltip": "33% of the 57 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/231720/header.jpg?t=1447357410",
-      "updated": "2025-05-30T04:09:13.770Z"
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/231720/header.jpg?t=1447357410",
+      "updated": "2025-06-03T02:26:19.402Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/bad-hotel/",
     "metacriticData": {
       "title": "Bad Hotel",
       "releaseDate": "2012-08-14T00:00:00.000Z",
       "metacriticScore": 83,
-      "updated": "2025-05-30T04:09:14.863Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:26:20.596Z"
     },
     "key": "bad-hotel"
   },
@@ -3088,7 +3148,7 @@
       "score": 71,
       "critics": 46,
       "releaseDate": "2018-08-20T00:00:00.000Z",
-      "updated": "2025-05-30T04:09:15.079Z"
+      "updated": "2025-06-03T02:26:21.298Z"
     },
     "steamAppId": 688420,
     "steamData": {
@@ -3102,16 +3162,17 @@
       "releaseDate": "2018-11-16T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "93% of the 10,439 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/688420/header.jpg?t=1729180793",
-      "updated": "2025-05-30T04:09:15.683Z"
+      "reviewScoreTooltip": "93% of the 10,457 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/688420/header.jpg?t=1729180793",
+      "updated": "2025-06-03T02:26:21.802Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/bad-north-jotunn-edition/",
     "metacriticData": {
       "title": "Bad North: Jotunn Edition",
       "releaseDate": "2019-10-15T00:00:00.000Z",
       "metacriticScore": 84,
-      "updated": "2025-05-30T04:09:16.963Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:26:23.632Z"
     },
     "key": "bad-north-jotunn-edition"
   },
@@ -3125,7 +3186,7 @@
       "score": 76,
       "critics": 64,
       "releaseDate": "2013-11-15T00:00:00.000Z",
-      "updated": "2025-05-30T04:09:23.179Z"
+      "updated": "2025-06-03T02:26:34.176Z"
     },
     "steamAppId": 257350,
     "steamData": {
@@ -3138,16 +3199,17 @@
       "releaseDate": "2013-11-15T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "92% of the 8,750 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/257350/header.jpg?t=1746199025",
-      "updated": "2025-05-30T04:09:23.817Z"
+      "reviewScoreTooltip": "92% of the 8,752 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/257350/header.jpg?t=1746199025",
+      "updated": "2025-06-03T02:26:35.101Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/baldurs-gate-ii-enhanced-edition",
     "metacriticData": {
       "title": "Baldur's Gate II: Enhanced Edition",
       "releaseDate": "2013-11-15T00:00:00.000Z",
       "metacriticScore": 78,
-      "updated": "2025-05-30T04:09:24.677Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:26:37.151Z"
     },
     "key": "baldurs-gate-ii-enhanced-edition"
   },
@@ -3166,16 +3228,17 @@
       "releaseDate": "2013-01-16T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "92% of the 14,035 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/228280/header.jpg?t=1746198680",
-      "updated": "2025-05-30T04:09:21.528Z"
+      "reviewScoreTooltip": "92% of the 14,043 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/228280/header.jpg?t=1746198680",
+      "updated": "2025-06-03T02:26:31.505Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/baldurs-gate-enhanced-edition",
     "metacriticData": {
       "title": "Baldur's Gate: Enhanced Edition",
       "releaseDate": "2012-11-28T00:00:00.000Z",
       "metacriticScore": 78,
-      "updated": "2025-05-30T04:09:22.980Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:26:33.513Z"
     },
     "key": "baldurs-gate-enhanced-edition"
   },
@@ -3194,15 +3257,16 @@
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
       "reviewScoreTooltip": "86% of the 339 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/207020/header.jpg?t=1741703578",
-      "updated": "2025-05-30T04:09:25.320Z"
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/207020/header.jpg?t=1741703578",
+      "updated": "2025-06-03T02:26:37.611Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/bang-bang-racing/",
     "metacriticData": {
       "title": "Bang Bang Racing",
       "releaseDate": "2012-06-06T00:00:00.000Z",
       "metacriticScore": 58,
-      "updated": "2025-05-30T04:09:26.159Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:26:39.542Z"
     },
     "key": "bang-bang-racing"
   },
@@ -3274,7 +3338,7 @@
       "score": 88,
       "critics": 88,
       "releaseDate": "2011-08-16T00:00:00.000Z",
-      "updated": "2025-05-30T04:09:26.364Z"
+      "updated": "2025-06-03T02:26:40.213Z"
     },
     "steamAppId": 107100,
     "steamData": {
@@ -3288,16 +3352,17 @@
       "releaseDate": "2011-08-16T00:00:00.000Z",
       "reviewScore": 9,
       "reviewScoreDescription": "Overwhelmingly Positive",
-      "reviewScoreTooltip": "95% of the 27,550 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/107100/header.jpg?t=1729113932",
-      "updated": "2025-05-30T04:09:26.857Z"
+      "reviewScoreTooltip": "95% of the 27,556 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/107100/header.jpg?t=1729113932",
+      "updated": "2025-06-03T02:26:40.772Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/bastion",
     "metacriticData": {
       "title": "Bastion",
       "releaseDate": "2011-07-20T00:00:00.000Z",
       "metacriticScore": 86,
-      "updated": "2025-05-30T04:09:27.922Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:26:42.625Z"
     },
     "key": "bastion"
   },
@@ -3316,16 +3381,17 @@
       "releaseDate": "2010-03-26T00:00:00.000Z",
       "reviewScore": 9,
       "reviewScoreDescription": "Overwhelmingly Positive",
-      "reviewScoreTooltip": "96% of the 52,004 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/35140/header.jpg?t=1745966724",
-      "updated": "2025-05-30T04:09:28.538Z"
+      "reviewScoreTooltip": "96% of the 52,034 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/35140/header.jpg?t=1745966724",
+      "updated": "2025-06-03T02:26:43.108Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/batman-arkham-asylum",
     "metacriticData": {
       "title": "Batman: Arkham Asylum",
       "releaseDate": "2009-08-25T00:00:00.000Z",
       "metacriticScore": 92,
-      "updated": "2025-05-30T04:09:30.783Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:26:44.686Z"
     },
     "key": "batman-arkham-asylum-goty-edition"
   },
@@ -3344,16 +3410,17 @@
       "releaseDate": "2012-09-07T00:00:00.000Z",
       "reviewScore": 9,
       "reviewScoreDescription": "Overwhelmingly Positive",
-      "reviewScoreTooltip": "95% of the 48,904 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/200260/header.jpg?t=1745964057",
-      "updated": "2025-05-30T04:09:31.180Z"
+      "reviewScoreTooltip": "95% of the 48,929 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/200260/header.jpg?t=1745964057",
+      "updated": "2025-06-03T02:26:45.149Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/batman-arkham-city",
     "metacriticData": {
       "title": "Batman: Arkham City",
       "releaseDate": "2011-10-18T00:00:00.000Z",
       "metacriticScore": 94,
-      "updated": "2025-05-30T04:09:32.244Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:26:46.684Z"
     },
     "key": "batman-arkham-city-goty"
   },
@@ -3367,7 +3434,7 @@
       "score": 86,
       "critics": 82,
       "releaseDate": "2015-06-23T00:00:00.000Z",
-      "updated": "2025-05-30T04:09:32.778Z"
+      "updated": "2025-06-03T02:26:47.349Z"
     },
     "steamAppId": 208650,
     "steamData": {
@@ -3380,16 +3447,17 @@
       "releaseDate": "2015-06-23T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "91% of the 95,586 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/208650/header.jpg?t=1745534372",
-      "updated": "2025-05-30T04:09:33.285Z"
+      "reviewScoreTooltip": "91% of the 95,667 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/208650/header.jpg?t=1745534372",
+      "updated": "2025-06-03T02:26:47.815Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/batman-arkham-knight/",
     "metacriticData": {
       "title": "Batman: Arkham Knight",
       "releaseDate": "2015-06-23T00:00:00.000Z",
       "metacriticScore": 87,
-      "updated": "2025-05-30T04:09:34.456Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:26:49.292Z"
     },
     "key": "batman-arkham-knight"
   },
@@ -3403,7 +3471,7 @@
       "score": 70,
       "critics": 30,
       "releaseDate": "2022-10-20T00:00:00.000Z",
-      "updated": "2025-05-30T04:09:34.678Z"
+      "updated": "2025-06-03T02:26:49.580Z"
     },
     "steamAppId": 1506440,
     "steamData": {
@@ -3417,15 +3485,16 @@
       "reviewScore": 6,
       "reviewScoreDescription": "Mostly Positive",
       "reviewScoreTooltip": "75% of the 187 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1506440/header.jpg?t=1729175770",
-      "updated": "2025-05-30T04:09:35.258Z"
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1506440/header.jpg?t=1729175770",
+      "updated": "2025-06-03T02:26:50.340Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/batora-lost-haven/",
     "metacriticData": {
       "title": "Batora: Lost Haven",
       "releaseDate": "2022-10-20T00:00:00.000Z",
       "metacriticScore": 69,
-      "updated": "2025-05-30T04:09:36.396Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:26:51.459Z"
     },
     "key": "batora-lost-haven"
   },
@@ -3439,7 +3508,7 @@
       "score": 62,
       "critics": 13,
       "releaseDate": "2021-10-20T00:00:00.000Z",
-      "updated": "2025-05-30T04:09:36.628Z"
+      "updated": "2025-06-03T02:26:51.734Z"
     },
     "steamAppId": 1642110,
     "steamData": {
@@ -3452,15 +3521,16 @@
       "releaseDate": "2021-10-19T00:00:00.000Z",
       "reviewScoreDescription": "6 user reviews",
       "reviewScoreTooltip": "Need more user reviews to generate a score",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1642110/header.jpg?t=1680642724",
-      "updated": "2025-05-30T04:09:37.231Z"
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1642110/header.jpg?t=1680642724",
+      "updated": "2025-06-03T02:26:52.435Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/bats-bloodsucker-anti-terror-squad/",
     "metacriticData": {
       "title": "BATS: Bloodsucker Anti-Terror Squad",
       "releaseDate": "2021-10-20T00:00:00.000Z",
       "metacriticScore": null,
-      "updated": "2025-05-30T04:09:38.488Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:26:53.905Z"
     },
     "key": "bats-bloodsucker-anti-terror-squad"
   },
@@ -3474,7 +3544,7 @@
       "score": 87,
       "critics": 96,
       "releaseDate": "2016-10-21T00:00:00.000Z",
-      "updated": "2025-05-30T04:09:38.767Z"
+      "updated": "2025-06-03T02:26:54.262Z"
     },
     "steamAppId": 1238840,
     "steamData": {
@@ -3487,16 +3557,17 @@
       "releaseDate": "2016-10-20T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "86% of the 167,956 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1238840/header.jpg?t=1747168268",
-      "updated": "2025-05-30T04:09:39.284Z"
+      "reviewScoreTooltip": "86% of the 168,248 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1238840/header.jpg?t=1747168268",
+      "updated": "2025-06-03T02:26:54.699Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/battlefield-1/",
     "metacriticData": {
       "title": "Battlefield 1",
       "releaseDate": "2016-10-21T00:00:00.000Z",
       "metacriticScore": 88,
-      "updated": "2025-05-30T04:09:40.128Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:26:55.339Z"
     },
     "key": "battlefield-1"
   },
@@ -3513,7 +3584,7 @@
       "score": 85,
       "critics": 92,
       "releaseDate": "2014-10-24T00:00:00.000Z",
-      "updated": "2025-05-30T04:09:41.281Z"
+      "updated": "2025-06-03T02:27:04.605Z"
     },
     "steamAppId": 460790,
     "steamData": {
@@ -3526,16 +3597,17 @@
       "releaseDate": "2017-04-11T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "92% of the 24,452 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/460790/header.jpg?t=1721737243",
-      "updated": "2025-05-30T04:09:41.675Z"
+      "reviewScoreTooltip": "92% of the 24,473 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/460790/header.jpg?t=1721737243",
+      "updated": "2025-06-03T02:27:05.211Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/bayonetta",
     "metacriticData": {
       "title": "Bayonetta",
       "releaseDate": "2010-01-05T00:00:00.000Z",
       "metacriticScore": 90,
-      "updated": "2025-05-30T04:09:43.499Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:27:07.379Z"
     },
     "key": "bayonetta"
   },
@@ -3549,7 +3621,7 @@
       "score": 71,
       "critics": 33,
       "releaseDate": "2017-03-30T00:00:00.000Z",
-      "updated": "2025-05-30T04:09:45.880Z"
+      "updated": "2025-06-03T02:27:10.567Z"
     },
     "steamAppId": 461950,
     "steamData": {
@@ -3564,15 +3636,16 @@
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
       "reviewScoreTooltip": "82% of the 4,343 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/461950/header.jpg?t=1701878616",
-      "updated": "2025-05-30T04:09:46.314Z"
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/461950/header.jpg?t=1701878616",
+      "updated": "2025-06-03T02:27:11.107Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/beat-cop",
     "metacriticData": {
       "title": "Beat Cop",
       "releaseDate": "2017-03-30T00:00:00.000Z",
       "metacriticScore": 71,
-      "updated": "2025-05-30T04:09:48.319Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:27:13.137Z"
     },
     "key": "beat-cop"
   },
@@ -3592,16 +3665,17 @@
       "releaseDate": "2010-04-15T00:00:00.000Z",
       "reviewScore": 9,
       "reviewScoreDescription": "Overwhelmingly Positive",
-      "reviewScoreTooltip": "95% of the 5,009 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/49600/header.jpg?t=1745498136",
-      "updated": "2025-05-30T04:09:48.798Z"
+      "reviewScoreTooltip": "95% of the 5,008 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/49600/header.jpg?t=1745498136",
+      "updated": "2025-06-03T02:27:13.648Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/beat-hazard",
     "metacriticData": {
       "title": "Beat Hazard",
       "releaseDate": "2010-04-15T00:00:00.000Z",
       "metacriticScore": 70,
-      "updated": "2025-05-30T04:09:50.826Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:27:15.287Z"
     },
     "key": "beat-hazard"
   },
@@ -8701,7 +8775,7 @@
       "score": 65,
       "critics": 19,
       "releaseDate": "2012-03-14T00:00:00.000Z",
-      "updated": "2025-05-30T04:09:10.948Z"
+      "updated": "2025-06-03T02:26:09.442Z"
     },
     "sameGame": [
       "Azkend 2: The Puzzle Adventure"
@@ -8719,15 +8793,16 @@
       "reviewScore": 5,
       "reviewScoreDescription": "Mixed",
       "reviewScoreTooltip": "66% of the 12 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/550440/header.jpg?t=1572299290",
-      "updated": "2025-05-30T04:09:11.667Z"
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/550440/header.jpg?t=1572299290",
+      "updated": "2025-06-03T02:26:10.137Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/azkend-2-the-world-beneath/",
     "metacriticData": {
       "title": "Azkend 2: The World Beneath",
       "releaseDate": "2018-01-12T00:00:00.000Z",
       "metacriticScore": 68,
-      "updated": "2025-05-30T04:09:12.971Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:26:18.500Z"
     },
     "key": "azkend-2-the-world-beneath"
   },
@@ -8741,7 +8816,7 @@
       "score": 73,
       "critics": 44,
       "releaseDate": "2015-05-26T00:00:00.000Z",
-      "updated": "2025-05-30T04:09:17.178Z"
+      "updated": "2025-06-03T02:26:23.910Z"
     },
     "sameGame": [
       "BADLAND: Game of the Year Edition"
@@ -8758,16 +8833,17 @@
       "releaseDate": "2015-05-26T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "86% of the 2,594 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/269670/header.jpg?t=1569395419",
-      "updated": "2025-05-30T04:09:17.602Z"
+      "reviewScoreTooltip": "86% of the 2,598 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/269670/header.jpg?t=1569395419",
+      "updated": "2025-06-03T02:26:24.552Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/badland-game-of-the-year-edition",
     "metacriticData": {
       "title": "BADLAND",
       "releaseDate": "2013-04-04T00:00:00.000Z",
       "metacriticScore": 85,
-      "updated": "2025-05-30T04:09:19.742Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:26:27.325Z"
     },
     "key": "badland"
   },
@@ -12489,7 +12565,7 @@
       "score": null,
       "critics": null,
       "releaseDate": "2015-02-25T00:00:00.000Z",
-      "updated": "2025-05-30T04:06:51.542Z"
+      "updated": "2025-06-03T02:22:44.814Z"
     },
     "steamAppId": 316610,
     "steamData": {
@@ -12502,15 +12578,16 @@
       "reviewScore": 9,
       "reviewScoreDescription": "Overwhelmingly Positive",
       "reviewScoreTooltip": "96% of the 602 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/316610/header.jpg?t=1712246703",
-      "updated": "2025-05-30T04:06:52.373Z"
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/316610/header.jpg?t=1712246703",
+      "updated": "2025-06-03T02:22:45.235Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/a-good-snowman-is-hard-to-build/",
     "metacriticData": {
       "title": "A Good Snowman Is Hard To Build",
       "releaseDate": "2015-12-09T00:00:00.000Z",
       "metacriticScore": 93,
-      "updated": "2025-05-30T04:06:52.530Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:22:47.350Z"
     },
     "key": "a-good-snowman-is-hard-to-build"
   },
@@ -13825,7 +13902,7 @@
       "score": 80,
       "critics": 74,
       "releaseDate": "2023-12-05T00:00:00.000Z",
-      "updated": "2025-05-30T04:06:52.752Z"
+      "updated": "2025-06-03T02:22:47.673Z"
     },
     "steamAppId": 1240060,
     "steamData": {
@@ -13838,16 +13915,17 @@
       "releaseDate": "2023-12-05T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "90% of the 409 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1240060/header.jpg?t=1745516629",
-      "updated": "2025-05-30T04:06:53.742Z"
+      "reviewScoreTooltip": "90% of the 411 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1240060/header.jpg?t=1745516629",
+      "updated": "2025-06-03T02:22:48.334Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/a-highland-song/",
     "metacriticData": {
       "title": "A Highland Song",
       "releaseDate": "2023-12-05T00:00:00.000Z",
       "metacriticScore": 81,
-      "updated": "2025-05-30T04:06:53.844Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:22:49.763Z"
     },
     "key": "a-highland-song"
   },
@@ -18860,7 +18938,7 @@
       "score": 81,
       "critics": 100,
       "releaseDate": "2017-10-18T00:00:00.000Z",
-      "updated": "2025-05-30T04:06:54.059Z"
+      "updated": "2025-06-03T02:22:50.063Z"
     },
     "steamAppId": 578720,
     "steamData": {
@@ -18873,16 +18951,17 @@
       "releaseDate": "2017-10-18T00:00:00.000Z",
       "reviewScore": 6,
       "reviewScoreDescription": "Mostly Positive",
-      "reviewScoreTooltip": "74% of the 709 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/578720/header.jpg?t=1668540508",
-      "updated": "2025-05-30T04:06:54.566Z"
+      "reviewScoreTooltip": "74% of the 710 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/578720/header.jpg?t=1668540508",
+      "updated": "2025-06-03T02:22:50.647Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/a-morticians-tale",
     "metacriticData": {
       "title": "A Mortician's Tale",
       "releaseDate": "2017-10-18T00:00:00.000Z",
       "metacriticScore": 78,
-      "updated": "2025-05-30T04:06:54.759Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:22:52.640Z"
     },
     "key": "a-morticians-tale"
   },
@@ -21373,7 +21452,7 @@
       "score": 82,
       "critics": 82,
       "releaseDate": "2019-05-14T00:00:00.000Z",
-      "updated": "2025-05-30T04:06:55.003Z"
+      "updated": "2025-06-03T02:22:52.947Z"
     },
     "steamAppId": 752590,
     "steamData": {
@@ -21386,16 +21465,17 @@
       "releaseDate": "2019-05-14T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "93% of the 54,634 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/752590/header.jpg?t=1727793332",
-      "updated": "2025-05-30T04:06:55.564Z"
+      "reviewScoreTooltip": "93% of the 54,655 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/752590/header.jpg?t=1727793332",
+      "updated": "2025-06-03T02:22:53.540Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/a-plague-tale-innocence",
     "metacriticData": {
       "title": "A Plague Tale: Innocence",
       "releaseDate": "2019-05-14T00:00:00.000Z",
       "metacriticScore": 81,
-      "updated": "2025-05-30T04:06:55.693Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:22:55.711Z"
     },
     "key": "a-plague-tale-innocence"
   },
@@ -26420,7 +26500,7 @@
       "score": 79,
       "critics": 63,
       "releaseDate": "2014-05-28T00:00:00.000Z",
-      "updated": "2025-05-30T04:06:57.557Z"
+      "updated": "2025-06-03T02:22:58.548Z"
     },
     "steamAppId": 278360,
     "steamData": {
@@ -26434,16 +26514,17 @@
       "releaseDate": "2014-05-28T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "92% of the 12,111 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/278360/header.jpg?t=1589403981",
-      "updated": "2025-05-30T04:06:58.087Z"
+      "reviewScoreTooltip": "92% of the 12,114 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/278360/header.jpg?t=1589403981",
+      "updated": "2025-06-03T02:22:59.244Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/a-story-about-my-uncle",
     "metacriticData": {
       "title": "A Story About My Uncle",
       "releaseDate": "2012-07-30T00:00:00.000Z",
       "metacriticScore": 73,
-      "updated": "2025-05-30T04:06:58.219Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:23:01.439Z"
     },
     "key": "a-story-about-my-uncle"
   },
@@ -28152,7 +28233,7 @@
       "score": 78,
       "critics": 100,
       "releaseDate": "2023-10-04T00:00:00.000Z",
-      "updated": "2025-05-30T04:06:58.442Z"
+      "updated": "2025-06-03T02:23:01.725Z"
     },
     "steamAppId": 2322180,
     "steamData": {
@@ -28165,16 +28246,17 @@
       "releaseDate": "2023-10-04T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "97% of the 311 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2322180/header.jpg?t=1748545042",
-      "updated": "2025-05-30T04:06:58.869Z"
+      "reviewScoreTooltip": "97% of the 314 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2322180/header.jpg?t=1748545042",
+      "updated": "2025-06-03T02:23:02.469Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/a-tiny-sticker-tale",
     "metacriticData": {
       "title": "A Tiny Sticker Tale",
       "releaseDate": "2023-10-04T00:00:00.000Z",
       "metacriticScore": 78,
-      "updated": "2025-05-30T04:06:58.983Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:23:04.111Z"
     },
     "key": "a-tiny-sticker-tale"
   },
@@ -31002,7 +31084,7 @@
       "score": 69,
       "critics": 31,
       "releaseDate": "2023-09-14T00:00:00.000Z",
-      "updated": "2025-05-30T04:07:36.703Z"
+      "updated": "2025-06-03T02:23:48.372Z"
     },
     "steamAppId": 1479140,
     "steamData": {
@@ -31015,16 +31097,17 @@
       "releaseDate": "2023-09-14T00:00:00.000Z",
       "reviewScore": 6,
       "reviewScoreDescription": "Mostly Positive",
-      "reviewScoreTooltip": "76% of the 781 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1479140/header.jpg?t=1728042903",
-      "updated": "2025-05-30T04:07:37.237Z"
+      "reviewScoreTooltip": "76% of the 780 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1479140/header.jpg?t=1728042903",
+      "updated": "2025-06-03T02:23:48.947Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/ak-xolotl/",
     "metacriticData": {
       "title": "AK-xolotl",
       "releaseDate": "2023-09-14T00:00:00.000Z",
       "metacriticScore": 75,
-      "updated": "2025-05-30T04:07:38.006Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:23:50.191Z"
     },
     "key": "ak-xolotl-together"
   },
@@ -33184,7 +33267,7 @@
       "score": 67,
       "critics": 39,
       "releaseDate": "2017-10-25T00:00:00.000Z",
-      "updated": "2025-05-30T04:07:06.523Z"
+      "updated": "2025-06-03T02:23:14.009Z"
     },
     "steamData": {
       "title": "AER Memories of Old",
@@ -33196,16 +33279,17 @@
       "releaseDate": "2017-10-25T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "87% of the 4,802 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/331870/header.jpg?t=1709730241",
-      "updated": "2025-05-30T04:07:07.623Z"
+      "reviewScoreTooltip": "87% of the 4,806 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/331870/header.jpg?t=1709730241",
+      "updated": "2025-06-03T02:23:14.525Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/aer-memories-of-old/",
     "metacriticData": {
       "title": "AER: Memories of Old",
       "releaseDate": "2017-10-25T00:00:00.000Z",
       "metacriticScore": 69,
-      "updated": "2025-05-30T04:07:10.089Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:23:15.660Z"
     },
     "key": "aer-memories-of-old"
   },
@@ -33329,7 +33413,7 @@
       "score": 72,
       "critics": 60,
       "releaseDate": "2023-01-27T00:00:00.000Z",
-      "updated": "2025-05-30T04:09:01.206Z"
+      "updated": "2025-06-03T02:25:55.661Z"
     },
     "steamData": {
       "title": "ATONE: Heart of the Elder Tree",
@@ -33344,15 +33428,16 @@
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
       "reviewScoreTooltip": "88% of the 78 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/894620/header.jpg?t=1730139946",
-      "updated": "2025-05-30T04:09:01.807Z"
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/894620/header.jpg?t=1730139946",
+      "updated": "2025-06-03T02:25:56.603Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/atone-heart-of-the-elder-tree",
     "metacriticData": {
       "title": "ATONE: Heart of the Elder Tree",
       "releaseDate": "2023-01-27T00:00:00.000Z",
       "metacriticScore": 76,
-      "updated": "2025-05-30T04:09:02.592Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:25:58.910Z"
     },
     "key": "atone-heart-of-the-elder-tree"
   },
@@ -33480,7 +33565,7 @@
       "score": 78,
       "critics": 57,
       "releaseDate": "2021-12-17T00:00:00.000Z",
-      "updated": "2025-05-30T04:08:48.289Z"
+      "updated": "2025-06-03T02:25:39.870Z"
     },
     "steamData": {
       "title": "Aspire: Ina's Tale",
@@ -33493,16 +33578,17 @@
       "releaseDate": "2021-12-17T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "85% of the 249 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1720090/header.jpg?t=1733224408",
-      "updated": "2025-05-30T04:08:49.367Z"
+      "reviewScoreTooltip": "85% of the 250 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1720090/header.jpg?t=1733224408",
+      "updated": "2025-06-03T02:25:40.537Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/aspire-inas-tale/",
     "metacriticData": {
       "title": "Aspire: Ina's Tale",
       "releaseDate": "2021-12-17T00:00:00.000Z",
       "metacriticScore": 74,
-      "updated": "2025-05-30T04:08:50.216Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:25:41.856Z"
     },
     "key": "aspire-inas-tale"
   },
@@ -35118,7 +35204,7 @@
       "score": 89,
       "critics": 100,
       "releaseDate": "2024-05-09T00:00:00.000Z",
-      "updated": "2025-05-30T04:06:40.103Z"
+      "updated": "2025-06-03T02:22:27.273Z"
     },
     "steamData": {
       "title": "1000xRESIST",
@@ -35130,16 +35216,17 @@
       "releaseDate": "2024-05-09T00:00:00.000Z",
       "reviewScore": 9,
       "reviewScoreDescription": "Overwhelmingly Positive",
-      "reviewScoreTooltip": "97% of the 3,531 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1675830/header.jpg?t=1746677469",
-      "updated": "2025-05-30T04:06:40.740Z"
+      "reviewScoreTooltip": "97% of the 3,547 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1675830/header.jpg?t=1748639923",
+      "updated": "2025-06-03T02:22:28.120Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/1000xresist",
     "metacriticData": {
       "title": "1000xRESIST",
       "releaseDate": "2024-05-09T00:00:00.000Z",
       "metacriticScore": 86,
-      "updated": "2025-05-30T04:06:42.612Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:22:29.884Z"
     }
   },
   {
@@ -35821,7 +35908,7 @@
       "score": 85,
       "critics": 95,
       "releaseDate": "2023-01-19T00:00:00.000Z",
-      "updated": "2025-05-30T04:06:55.909Z"
+      "updated": "2025-06-03T02:22:56.018Z"
     },
     "steamData": {
       "title": "A Space for the Unbound",
@@ -35833,16 +35920,17 @@
       "releaseDate": "2023-01-19T00:00:00.000Z",
       "reviewScore": 9,
       "reviewScoreDescription": "Overwhelmingly Positive",
-      "reviewScoreTooltip": "97% of the 5,735 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1201270/header.jpg?t=1737345095",
-      "updated": "2025-05-30T04:06:56.310Z"
+      "reviewScoreTooltip": "97% of the 5,745 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1201270/header.jpg?t=1737345095",
+      "updated": "2025-06-03T02:22:56.608Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/a-space-for-the-unbound/",
     "metacriticData": {
       "title": "A Space For The Unbound",
       "releaseDate": "2023-01-19T00:00:00.000Z",
       "metacriticScore": 85,
-      "updated": "2025-05-30T04:06:57.341Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:22:58.265Z"
     }
   },
   {
@@ -35896,7 +35984,7 @@
       "score": 81,
       "critics": 88,
       "releaseDate": "2022-09-22T00:00:00.000Z",
-      "updated": "2025-05-30T04:09:43.708Z"
+      "updated": "2025-06-03T02:27:07.660Z"
     },
     "steamData": {
       "title": "Beacon Pines",
@@ -35909,16 +35997,17 @@
       "releaseDate": "2022-09-22T00:00:00.000Z",
       "reviewScore": 9,
       "reviewScoreDescription": "Overwhelmingly Positive",
-      "reviewScoreTooltip": "97% of the 2,320 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1269640/header.jpg?t=1739443636",
-      "updated": "2025-05-30T04:09:44.131Z"
+      "reviewScoreTooltip": "97% of the 2,321 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1269640/header.jpg?t=1739443636",
+      "updated": "2025-06-03T02:27:08.200Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/beacon-pines",
     "metacriticData": {
       "title": "Beacon Pines",
       "releaseDate": "2022-09-22T00:00:00.000Z",
       "metacriticScore": 84,
-      "updated": "2025-05-30T04:09:45.675Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:27:10.301Z"
     }
   },
   {
@@ -36222,7 +36311,7 @@
       "score": 78,
       "critics": 70,
       "releaseDate": "2020-10-20T00:00:00.000Z",
-      "updated": "2025-05-30T04:08:03.119Z"
+      "updated": "2025-06-03T02:24:45.759Z"
     },
     "steamAppId": 999220,
     "steamData": {
@@ -36236,15 +36325,16 @@
       "reviewScore": 6,
       "reviewScoreDescription": "Mostly Positive",
       "reviewScoreTooltip": "77% of the 7,349 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/999220/header.jpg?t=1727954560",
-      "updated": "2025-05-30T04:08:03.527Z"
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/999220/header.jpg?t=1727954560",
+      "updated": "2025-06-03T02:24:46.431Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/amnesia-rebirth",
     "metacriticData": {
       "title": "Amnesia: Rebirth",
       "releaseDate": "2020-09-15T00:00:00.000Z",
       "metacriticScore": 80,
-      "updated": "2025-05-30T04:08:05.254Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:24:48.499Z"
     }
   },
   {
@@ -36401,7 +36491,7 @@
       "score": 92,
       "critics": 100,
       "releaseDate": "2024-02-20T00:00:00.000Z",
-      "updated": "2025-05-30T04:09:20.025Z"
+      "updated": "2025-06-03T02:26:27.699Z"
     },
     "steamAppId": 2379780,
     "steamData": {
@@ -36415,16 +36505,17 @@
       "releaseDate": "2024-02-20T00:00:00.000Z",
       "reviewScore": 9,
       "reviewScoreDescription": "Overwhelmingly Positive",
-      "reviewScoreTooltip": "97% of the 122,314 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2379780/header.jpg?t=1747836178",
-      "updated": "2025-05-30T04:09:20.487Z"
+      "reviewScoreTooltip": "97% of the 122,961 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2379780/header.jpg?t=1748596152",
+      "updated": "2025-06-03T02:26:28.169Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/balatro",
     "metacriticData": {
       "title": "Balatro",
       "releaseDate": "2024-02-20T00:00:00.000Z",
       "metacriticScore": 90,
-      "updated": "2025-05-30T04:09:20.856Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:26:30.956Z"
     }
   },
   {
@@ -36438,7 +36529,7 @@
       "score": null,
       "critics": null,
       "releaseDate": "2023-10-25T00:00:00.000Z",
-      "updated": "2025-05-30T04:08:42.152Z"
+      "updated": "2025-06-03T02:25:31.097Z"
     },
     "steamAppId": 2399830,
     "steamData": {
@@ -36455,16 +36546,17 @@
       "releaseDate": "2023-10-25T00:00:00.000Z",
       "reviewScore": 5,
       "reviewScoreDescription": "Mixed",
-      "reviewScoreTooltip": "59% of the 68,737 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2399830/header.jpg?t=1744843097",
-      "updated": "2025-05-30T04:08:42.576Z"
+      "reviewScoreTooltip": "59% of the 68,922 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2399830/header.jpg?t=1744843097",
+      "updated": "2025-06-03T02:25:31.645Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/ark-survival-ascended/",
     "metacriticData": {
       "title": "ARK: Survival Ascended",
       "releaseDate": "2023-11-30T00:00:00.000Z",
       "metacriticScore": null,
-      "updated": "2025-05-30T04:08:42.710Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:25:32.760Z"
     }
   },
   {
@@ -36550,7 +36642,7 @@
       "score": 70,
       "critics": 30,
       "releaseDate": "2018-02-20T00:00:00.000Z",
-      "updated": "2025-05-30T04:07:26.313Z"
+      "updated": "2025-06-03T02:23:37.073Z"
     },
     "steamData": {
       "title": "Age of Empires: Definitive Edition",
@@ -36561,16 +36653,17 @@
       "releaseDate": "2019-08-19T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "83% of the 12,878 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1017900/header.jpg?t=1744752314",
-      "updated": "2025-05-30T04:07:26.710Z"
+      "reviewScoreTooltip": "83% of the 12,887 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1017900/header.jpg?t=1744752314",
+      "updated": "2025-06-03T02:23:37.548Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/age-of-empires-definitive-edition",
     "metacriticData": {
       "title": "Age of Empires: Definitive Edition",
       "releaseDate": "2018-02-20T00:00:00.000Z",
       "metacriticScore": 69,
-      "updated": "2025-05-30T04:07:27.106Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:23:39.785Z"
     }
   },
   {
@@ -36585,7 +36678,7 @@
       "score": 73,
       "critics": 60,
       "releaseDate": "2020-08-20T00:00:00.000Z",
-      "updated": "2025-05-30T04:09:40.338Z"
+      "updated": "2025-06-03T02:26:55.615Z"
     },
     "steamData": {
       "title": "Battletoads",
@@ -36597,16 +36690,17 @@
       "releaseDate": "2020-08-20T00:00:00.000Z",
       "reviewScore": 5,
       "reviewScoreDescription": "Mixed",
-      "reviewScoreTooltip": "68% of the 1,944 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1244950/header.jpg?t=1667828611",
-      "updated": "2025-05-30T04:09:40.929Z"
+      "reviewScoreTooltip": "68% of the 1,942 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1244950/header.jpg?t=1667828611",
+      "updated": "2025-06-03T02:26:56.090Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/battletoads/",
     "metacriticData": {
       "title": "Battletoads",
       "releaseDate": "2020-08-20T00:00:00.000Z",
       "metacriticScore": 72,
-      "updated": "2025-05-30T04:09:41.068Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:27:03.889Z"
     }
   },
   {
@@ -36621,7 +36715,7 @@
       "score": 79,
       "critics": 71,
       "releaseDate": "2022-07-19T00:00:00.000Z",
-      "updated": "2025-05-30T04:08:45.762Z"
+      "updated": "2025-06-03T02:25:34.759Z"
     },
     "steamData": {
       "title": "As Dusk Falls",
@@ -36632,16 +36726,17 @@
       "releaseDate": "2022-07-19T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "90% of the 3,077 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1341820/header.jpg?t=1718812917",
-      "updated": "2025-05-30T04:08:46.536Z"
+      "reviewScoreTooltip": "91% of the 3,079 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1341820/header.jpg?t=1718812917",
+      "updated": "2025-06-03T02:25:35.436Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/as-dusk-falls/",
     "metacriticData": {
       "title": "As Dusk Falls",
       "releaseDate": "2022-07-19T00:00:00.000Z",
       "metacriticScore": 77,
-      "updated": "2025-05-30T04:08:46.705Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:25:37.709Z"
     }
   },
   {
@@ -36731,7 +36826,7 @@
       "score": 77,
       "critics": 71,
       "releaseDate": "2023-06-06T00:00:00.000Z",
-      "updated": "2025-05-30T04:08:05.478Z"
+      "updated": "2025-06-03T02:24:48.858Z"
     },
     "steamData": {
       "title": "Amnesia: The Bunker",
@@ -36744,16 +36839,17 @@
       "releaseDate": "2023-06-06T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "93% of the 7,770 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1944430/header.jpg?t=1734702362",
-      "updated": "2025-05-30T04:08:05.856Z"
+      "reviewScoreTooltip": "93% of the 7,788 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1944430/header.jpg?t=1734702362",
+      "updated": "2025-06-03T02:24:49.485Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/amnesia-the-bunker/",
     "metacriticData": {
       "title": "Amnesia: The Bunker",
       "releaseDate": "2023-06-06T00:00:00.000Z",
       "metacriticScore": 77,
-      "updated": "2025-05-30T04:08:05.998Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:24:50.572Z"
     }
   },
   {
@@ -37647,7 +37743,7 @@
       "score": 84,
       "critics": 91,
       "releaseDate": "2020-11-12T00:00:00.000Z",
-      "updated": "2025-05-31T02:08:35.305Z"
+      "updated": "2025-06-03T02:25:51.196Z"
     },
     "steamAppId": -1,
     "metacriticUrl": "https://www.metacritic.com/game/astros-playroom/",
@@ -37655,7 +37751,8 @@
       "title": "Astro's Playroom",
       "releaseDate": "2020-11-12T00:00:00.000Z",
       "metacriticScore": 83,
-      "updated": "2025-05-31T02:08:48.957Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:25:52.562Z"
     }
   },
   {
@@ -38197,16 +38294,17 @@
       "releaseDate": "2008-11-18T00:00:00.000Z",
       "reviewScore": 5,
       "reviewScoreDescription": "Mixed",
-      "reviewScoreTooltip": "42% of the 927 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/259170/header.jpg?t=1727860280",
-      "updated": "2025-06-02T01:44:15.169Z"
+      "reviewScoreTooltip": "42% of the 928 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/259170/header.jpg?t=1727860280",
+      "updated": "2025-06-03T02:24:25.775Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/alone-in-the-dark",
     "metacriticData": {
       "title": "Alone in the Dark",
       "releaseDate": "2024-03-20T00:00:00.000Z",
       "metacriticScore": 63,
-      "updated": "2025-06-02T01:44:18.411Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:24:27.371Z"
     }
   },
   {
@@ -38220,7 +38318,7 @@
       "score": 77,
       "critics": null,
       "releaseDate": "2012-02-16T00:00:00.000Z",
-      "updated": "2025-06-02T01:43:25.296Z"
+      "updated": "2025-06-03T02:23:56.151Z"
     },
     "steamAppId": 108710,
     "steamData": {
@@ -38233,16 +38331,17 @@
       "releaseDate": "2012-02-16T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "90% of the 36,079 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/108710/header.jpg?t=1726554283",
-      "updated": "2025-06-02T01:43:36.173Z"
+      "reviewScoreTooltip": "90% of the 36,085 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/108710/header.jpg?t=1726554283",
+      "updated": "2025-06-03T02:23:56.583Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/alan-wake",
     "metacriticData": {
       "title": "Alan Wake",
       "releaseDate": "2010-05-18T00:00:00.000Z",
       "metacriticScore": 83,
-      "updated": "2025-06-02T01:43:44.286Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:23:58.736Z"
     }
   },
   {
@@ -38465,7 +38564,8 @@
       "title": "Afro Samurai",
       "releaseDate": "2009-01-27T00:00:00.000Z",
       "metacriticScore": 65,
-      "updated": "2025-06-02T01:42:34.394Z"
+      "mustPlay": false,
+      "updated": "2025-06-03T02:23:21.391Z"
     }
   },
   {

@@ -35,7 +35,8 @@ const skipTitle = [
   'Serious Sam Fusion 2017 (beta)',
 // Epic
   'Mortal Shell Tech Beta',
-  'KillingFloor2Beta'
+  'KillingFloor2Beta',
+  'Behind the Frame: The Finest Scenery VR'
 ];
 
 export const getGameLibraryData = async (

@@ -398,7 +398,7 @@ class PurchaseService {
       });
     }
 
-    await savePurchasesToSanity('appstore', purchases);
+    await savePurchasesToSanity('xbox', purchases);
 
     return purchases;
   }
