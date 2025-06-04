@@ -8944,6 +8944,7 @@
       "mustPlay": false,
       "updated": "2025-06-03T12:15:12.571Z"
     },
+    "releaseDate": "1993-12-10T00:00:00.000Z",
     "key": "doom-1993"
   },
   {
@@ -39782,6 +39783,320 @@
       "metacriticScore": 76,
       "mustPlay": false,
       "updated": "2025-06-03T12:52:32.928Z"
+    }
+  },
+  {
+    "title": "Devil May Cry 5 Special Edition",
+    "key": "devil-may-cry-5-special-edition",
+    "openCriticId": "10497/devil-may-cry-5-special-edition",
+    "openCriticData": {
+      "title": "Devil May Cry 5: Special Edition",
+      "cover": "https://img.opencritic.com/game/10497/ORqxBCO9.jpg",
+      "tier": "mighty",
+      "score": 88,
+      "critics": 95,
+      "releaseDate": "2020-11-10T00:00:00.000Z",
+      "updated": "2025-06-04T11:24:48.449Z"
+    },
+    "steamAppId": -1,
+    "metacriticUrl": "https://www.metacritic.com/game/devil-may-cry-5-special-edition/",
+    "metacriticData": {
+      "title": "Devil May Cry 5: Special Edition",
+      "releaseDate": "2020-11-12T00:00:00.000Z",
+      "metacriticScore": 89,
+      "mustPlay": false,
+      "updated": "2025-06-04T11:26:17.320Z"
+    }
+  },
+  {
+    "title": "Titan Souls",
+    "key": "titan-souls",
+    "steamAppId": 297130,
+    "openCriticId": "42/titan-souls",
+    "openCriticData": {
+      "title": "Titan Souls",
+      "cover": "https://img.opencritic.com/game/42/Hs1UA7e0.jpg",
+      "tier": "strong",
+      "score": 75,
+      "critics": 52,
+      "releaseDate": "2015-04-13T00:00:00.000Z",
+      "updated": "2025-06-04T12:11:38.467Z"
+    },
+    "steamData": {
+      "title": "Titan Souls",
+      "description": "Between our world and the world beyond lie the Titan Souls, the spiritual source of all living things. Scattered amongst the ruins and guarded by the idle titans charged with their care, a solitary hero armed with a single arrow is assembling shards of the Titan Soul in a quest for truth and power.",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2015-04-14T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "82% of the 7,440 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/297130/header.jpg?t=1682447075",
+      "updated": "2025-06-04T12:11:39.233Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/titan-souls",
+    "metacriticData": {
+      "title": "Titan Souls",
+      "releaseDate": "2015-04-14T00:00:00.000Z",
+      "metacriticScore": 74,
+      "mustPlay": false,
+      "updated": "2025-06-04T12:11:42.046Z"
+    }
+  },
+  {
+    "title": "Hard West",
+    "key": "hard-west",
+    "steamAppId": 307670,
+    "openCriticId": "1654/hard-west",
+    "openCriticData": {
+      "title": "Hard West",
+      "cover": "https://img.opencritic.com/game/1654/knStYx3Q.jpg",
+      "tier": "fair",
+      "score": 71,
+      "critics": 38,
+      "releaseDate": "2015-11-18T00:00:00.000Z",
+      "updated": "2025-06-04T12:08:19.584Z"
+    },
+    "steamData": {
+      "title": "Hard West",
+      "description": "When a tragic turn of events sets one man down a path of supernatural chaos and revenge, he must brutally hunt down all those who wronged him. Fight and survive through 8 unique story-based scenarios, and try your hand at 40 individually designed turn-based combat missions",
+      "genres": [
+        "Adventure",
+        "Indie",
+        "RPG",
+        "Strategy"
+      ],
+      "releaseDate": "2015-11-18T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "reviewScoreTooltip": "75% of the 3,953 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/307670/header.jpg?t=1710326919",
+      "updated": "2025-06-04T12:08:20.417Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/hard-west",
+    "metacriticData": {
+      "title": "Hard West",
+      "releaseDate": "2015-11-18T00:00:00.000Z",
+      "metacriticScore": 73,
+      "mustPlay": false,
+      "updated": "2025-06-04T12:08:24.076Z"
+    }
+  },
+  {
+    "title": "The Pedestrian",
+    "key": "the-pedestrian",
+    "steamAppId": 466630,
+    "openCriticId": "8914/the-pedestrian",
+    "openCriticData": {
+      "title": "The Pedestrian",
+      "cover": "https://img.opencritic.com/game/8914/DhHl67o0.jpg",
+      "tier": "strong",
+      "score": 79,
+      "critics": 90,
+      "releaseDate": "2020-01-29T00:00:00.000Z",
+      "updated": "2025-06-04T12:11:02.896Z"
+    },
+    "steamData": {
+      "title": "The Pedestrian",
+      "description": "I can see the signs in my sleep now, always guiding me closer. Will this really work? Have we almost achieved the impossible?",
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2020-01-29T00:00:00.000Z",
+      "reviewScore": 9,
+      "reviewScoreDescription": "Overwhelmingly Positive",
+      "reviewScoreTooltip": "96% of the 4,535 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/466630/header.jpg?t=1683644396",
+      "updated": "2025-06-04T12:11:03.576Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/the-pedestrian",
+    "metacriticData": {
+      "title": "The Pedestrian",
+      "releaseDate": "2020-01-29T00:00:00.000Z",
+      "metacriticScore": 81,
+      "mustPlay": false,
+      "updated": "2025-06-04T12:11:06.660Z"
+    }
+  },
+  {
+    "title": "Braid, Anniversary Edition",
+    "key": "braid-anniversary-edition",
+    "steamAppId": 499180,
+    "openCriticId": "16708/braid-anniversary-edition",
+    "openCriticData": {
+      "title": "Braid: Anniversary Edition",
+      "cover": "https://img.opencritic.com/game/16708/1XoJkXUl.jpg",
+      "tier": "mighty",
+      "score": 89,
+      "critics": 100,
+      "releaseDate": "2024-05-16T00:00:00.000Z",
+      "updated": "2025-06-04T12:07:21.760Z"
+    },
+    "steamData": {
+      "title": "Braid, Anniversary Edition",
+      "description": "Control the flow of time to solve puzzles in this new version of the indie classic, featuring fully repainted artwork, a new world of puzzles, and seriously in-depth commentary.",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2024-05-14T00:00:00.000Z",
+      "reviewScore": 9,
+      "reviewScoreDescription": "Overwhelmingly Positive",
+      "reviewScoreTooltip": "95% of the 1,298 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/499180/header.jpg?t=1730925816",
+      "updated": "2025-06-04T12:07:22.382Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/braid-anniversary-edition/",
+    "metacriticData": {
+      "title": "Braid Anniversary Edition",
+      "releaseDate": "2024-05-14T00:00:00.000Z",
+      "metacriticScore": 86,
+      "mustPlay": false,
+      "updated": "2025-06-04T12:07:43.075Z"
+    }
+  },
+  {
+    "title": "Timelie",
+    "key": "timelie",
+    "steamAppId": 1150950,
+    "openCriticId": "9506/timelie",
+    "openCriticData": {
+      "title": "Timelie",
+      "cover": "https://img.opencritic.com/game/9506/MGGHU5Zf.jpg",
+      "tier": "strong",
+      "score": 79,
+      "critics": 67,
+      "releaseDate": "2020-05-20T00:00:00.000Z",
+      "updated": "2025-06-04T12:11:20.272Z"
+    },
+    "steamData": {
+      "title": "Timelie",
+      "description": "Timelie is a stealth puzzle adventure, where you control time like a media player. Perceive future events to plan your escape strategy from the past, sneak an enemy, and manipulate time through this companionship journey of a mysterious cat and a little girl with a precognitive power.",
+      "genres": [
+        "Adventure",
+        "Indie",
+        "Strategy"
+      ],
+      "releaseDate": "2020-05-20T00:00:00.000Z",
+      "reviewScore": 9,
+      "reviewScoreDescription": "Overwhelmingly Positive",
+      "reviewScoreTooltip": "95% of the 1,705 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1150950/header.jpg?t=1669958187",
+      "updated": "2025-06-04T12:11:20.878Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/timelie",
+    "metacriticData": {
+      "title": "Timelie",
+      "releaseDate": "2020-05-20T00:00:00.000Z",
+      "metacriticScore": 77,
+      "mustPlay": false,
+      "updated": "2025-06-04T12:11:23.600Z"
+    }
+  },
+  {
+    "title": "Nocturnal",
+    "key": "nocturnal",
+    "steamAppId": 1634080,
+    "openCriticId": "15048/nocturnal",
+    "openCriticData": {
+      "title": "Nocturnal",
+      "cover": "https://img.opencritic.com/game/15048/h4jwu6G6.jpg",
+      "tier": "strong",
+      "score": 76,
+      "critics": 50,
+      "releaseDate": "2023-06-07T00:00:00.000Z",
+      "updated": "2025-06-04T12:08:41.960Z"
+    },
+    "steamData": {
+      "title": "Nocturnal",
+      "description": "Carve your way with fire and steel to find out what secrets lie beyond the Mist in this intense 3-hour-long action-platformer game. Get ready to wield the flames and burn everything!",
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "releaseDate": "2023-06-07T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "90% of the 220 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1634080/header.jpg?t=1744982434",
+      "updated": "2025-06-04T12:08:42.627Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/nocturnal",
+    "metacriticData": {
+      "title": "Nocturnal",
+      "releaseDate": "2023-06-07T00:00:00.000Z",
+      "metacriticScore": 81,
+      "mustPlay": false,
+      "updated": "2025-06-04T12:08:45.285Z"
+    }
+  },
+  {
+    "title": "Ouros",
+    "key": "ouros",
+    "openCriticId": "skip",
+    "steamAppId": 2452920,
+    "steamData": {
+      "title": "Ouros",
+      "description": "Ouros is a calming puzzle game about forming beautiful curves in a serene space. Find your flow as you nudge, bend, and stretch curves into pleasing shapes, and discover the inherent mathematical beauty of Ouros.",
+      "genres": [
+        "Casual",
+        "Indie"
+      ],
+      "releaseDate": "2024-05-22T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "95% of the 194 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2452920/header.jpg?t=1718394528",
+      "updated": "2025-06-04T12:10:07.144Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/ouros/",
+    "metacriticData": {
+      "title": "Ouros",
+      "releaseDate": "2024-08-14T00:00:00.000Z",
+      "metacriticScore": null,
+      "mustPlay": false,
+      "updated": "2025-06-04T12:10:22.435Z"
+    }
+  },
+  {
+    "title": "DOOM Eternal",
+    "key": "doom-eternal",
+    "openCriticId": "7410/doom-eternal",
+    "openCriticData": {
+      "title": "Doom Eternal",
+      "cover": "https://img.opencritic.com/game/7410/PPACYqlW.jpg",
+      "tier": "mighty",
+      "score": 89,
+      "critics": 96,
+      "releaseDate": "2020-03-20T00:00:00.000Z",
+      "updated": "2025-06-04T13:36:17.452Z"
+    },
+    "steamAppId": 782330,
+    "steamData": {
+      "title": "DOOM Eternal",
+      "description": "Hell’s armies have invaded Earth. Become the Slayer in an epic single-player campaign to conquer demons across dimensions and stop the final destruction of humanity. The only thing they fear... is you.",
+      "genres": [
+        "Action"
+      ],
+      "releaseDate": "2020-03-19T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "91% of the 175,317 user reviews for this game are positive.<br><br>This product has experienced one or more periods of off-topic review activity.  Based on your preferences, the reviews within these periods have been excluded from this product's Review Score.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/782330/header.jpg?t=1702308063",
+      "updated": "2025-06-04T13:36:28.583Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/doom-eternal",
+    "metacriticData": {
+      "title": "DOOM Eternal",
+      "releaseDate": "2020-03-20T00:00:00.000Z",
+      "metacriticScore": 88,
+      "mustPlay": false,
+      "updated": "2025-06-04T13:36:31.489Z"
     }
   }
 ]
