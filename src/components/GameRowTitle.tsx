@@ -10,20 +10,25 @@ import SteamReviewIndicator from './SteamReviewIndicator';
 import RatingIndicator from './RatingIndicator';
 
 
-export const getReleaseDate = (game: Game): string => {
-  if (game.openCriticData && game.openCriticData.releaseDate) {
-    return game.openCriticData.releaseDate;
-  }
-  if (game.steamData && game.steamData.releaseDate) {
-    return game.steamData.releaseDate;
-  }
-  if (game.metacriticData && game.metacriticData.releaseDate) {
-    return game.metacriticData.releaseDate;
-  }
-  if (game.releaseDate) {
-    return game.releaseDate;
-  }
-  return '';
+export const getReleaseDate = (game: Game): Date | null => {
+  const dates = [
+    game.releaseDate,
+    game.metacriticData?.releaseDate,
+    game.steamData?.releaseDate,
+    game.openCriticData?.releaseDate,
+  ].filter(Boolean);
+
+  if (dates.length === 0) return null;
+
+  // Convert to timestamps, filter out invalid dates
+  const timestamps = dates
+    .map(date => new Date(date).getTime())
+    .filter(ts => !isNaN(ts));
+
+  if (timestamps.length === 0) return null;
+
+  const earliest = Math.min(...timestamps);
+  return new Date(earliest);
 };
 
 type GameRowTitleProps = {
@@ -43,6 +48,9 @@ const GameRowTitle = ({ game }: GameRowTitleProps): JSX.Element => {
     setClientLoaded(true);
   }, []);
 
+  const releaseYear = releaseDate?.getFullYear() ?? '';
+  const title = formatTitle(game.title).replace(new RegExp(`\\(${releaseYear}\\)$`), '').trim();
+
   return (
     <>
       <span className="game-profile-info">
@@ -57,10 +65,9 @@ const GameRowTitle = ({ game }: GameRowTitleProps): JSX.Element => {
       <MetacriticIndicator game={clientLoaded ? game : null} />
       <span className={'game-title'} title={game.title}>
         <span>
-          {formatTitle(game.title)}
-          {' '}
+          {`${title} `}
           <span className="release-date">
-            {releaseDate ? `(${(new Date(releaseDate)).getFullYear()})` : ''}
+            {`(${releaseYear})`}
           </span>
         </span>
         <SteamReviewIndicator game={clientLoaded ? game : null} />

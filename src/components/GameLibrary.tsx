@@ -59,7 +59,7 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
       if (game.completed && game.progress === -1) gameProgress = '0';
 
       gameDataSet.gameTitle = game.key;
-      gameDataSet.gameReleaseDate = (new Date(getReleaseDate(game) || '1970-01-01')).getTime().toString();
+      gameDataSet.gameReleaseDate = (getReleaseDate(game) ?? new Date('1970-01-01')).getTime().toString();
       gameDataSet.openCriticTier = game.openCriticData?.tier ? game.openCriticData.tier.toString() : 'n-a';
       gameDataSet.openCriticScore = game.openCriticData?.score ? game.openCriticData.score.toString() : ''; 
       gameDataSet.openCriticCritics = game.openCriticData?.critics ? game.openCriticData.critics.toString() : '';

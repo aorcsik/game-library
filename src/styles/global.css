@@ -636,10 +636,6 @@ footer {
   font-family: var(--number-font);
 }
 
-.game-title.played {
-  opacity: .3;
-}
-
 .game-title .release-date {
   color: var(--secondary-text);
 }
