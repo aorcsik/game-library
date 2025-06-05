@@ -59,11 +59,16 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
       if (game.completed && game.progress === -1) gameProgress = '0';
 
       gameDataSet.gameTitle = game.key;
+      gameDataSet.gameReleaseYear = (getReleaseDate(game) ?? new Date('1970-01-01')).getFullYear().toString();
       gameDataSet.gameReleaseDate = (getReleaseDate(game) ?? new Date('1970-01-01')).getTime().toString();
       gameDataSet.openCriticTier = game.openCriticData?.tier ? game.openCriticData.tier.toString() : 'n-a';
       gameDataSet.openCriticScore = game.openCriticData?.score ? game.openCriticData.score.toString() : ''; 
       gameDataSet.openCriticCritics = game.openCriticData?.critics ? game.openCriticData.critics.toString() : '';
-      gameDataSet.steamReviewScore = game.steamData?.reviewScore ? game.steamData.reviewScore.toString() : '';
+      gameDataSet.steamReviewScoreDescription = game.steamData?.reviewScoreDescription || '';
+      gameDataSet.steamReviewScore = game.steamData?.reviewScore ? game.steamData.reviewScore.toString() : '-100';
+      if (gameDataSet.steamReviewScoreDescription.match(/user reviews/)) {
+        gameDataSet.steamReviewScore = '-1';
+      }
       gameDataSet.metacriticScore = game.metacriticData?.metacriticScore ? game.metacriticData.metacriticScore.toString() : '';
       gameDataSet.progress = gameProgress;
       gameDataSet.completed = game.completed || gameProgress === '100' ? '1' : '0';
@@ -102,6 +107,32 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
     return sortDirection === 'asc' ? sortValue : -1 * sortValue;
   }, [getGameDataSetByKey, sortBy, sortDirection]);
 
+  const getGroupBylabelBySortBy = useCallback((gameKey: string): string => {
+    const gameData = getGameDataSetByKey(gameKey);
+    if (sortBy === 'gameReleaseDate') {
+      return gameData.gameReleaseYear > '2000' ? gameData.gameReleaseYear : '2000 and earlier';
+    } else if (sortBy === 'gameTitle') {
+      return gameKey.charAt(0).match(/[a-zA-Z]/) ? gameKey.charAt(0).toUpperCase() : '#';
+    } else if (sortBy === 'openCriticScore') {
+      return gameData.openCriticTier === 'n-a' ? 'No OpenCritic Data' : gameData.openCriticTier;
+    } else if (sortBy === 'openCriticCritics') {
+      return '';
+    } else if (sortBy === 'steamReviewScore') {
+      if (gameData.steamReviewScoreDescription.match(/user reviews/)) {
+        return 'Low user reviews';
+      }
+      return gameData.steamReviewScoreDescription || 'Not on Steam';
+    } else if (sortBy === 'metacriticScore') {
+      return '';
+    } else if (sortBy === 'progress') {
+      if (gameData.progress === '100' || gameData.completed === '1') return 'Completed';
+      if (gameData.progress !== '-1') return 'In Progress';
+      return 'Not Started';
+    } else if (sortBy === 'rating') {
+      return '';
+    }
+  }, [getGameDataSetByKey, sortBy]);
+
   const gameGridRef = useRef<HTMLDivElement | null>(null);
   const detachedGameGridRef = useRef<HTMLDivElement | null>(null);
 
@@ -130,11 +161,33 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
       const filteredFragment = document.createDocumentFragment();
       const detachedFragment = document.createDocumentFragment();
 
+      let groupByLabel = '';
+      let groupByCounter: HTMLElement | null = null;
+      let groubByCount = 0;
+
       // Apply search filtering first (just hide/show with CSS)
       gameItemsArray.sort(compareGames).forEach(item => {
-        const gameTitle = (item.id || '').toLowerCase().replace(/^game-/, '');
-        if (!searchQuery || gameTitle.includes(searchQuery.replace(/\s+/g, '-').toLowerCase())) {
+        const gameKey = (item.id || '').toLowerCase().replace(/^game-/, '');
+        if (!searchQuery || gameKey.includes(searchQuery.replace(/\s+/g, '-').toLowerCase())) {
+
+          const currentGroupByLabel = getGroupBylabelBySortBy(gameKey);
+          if (currentGroupByLabel !== groupByLabel) {
+            groubByCount = 0;
+            groupByLabel = currentGroupByLabel;
+            groupByCounter = document.createElement('span');
+            groupByCounter.className = 'game-group-counter';
+            const groupHeader = document.createElement('h2');
+            groupHeader.className = 'game-group-header';
+            groupHeader.innerHTML = `<strong>${groupByLabel}</strong>`;
+            groupHeader.appendChild(groupByCounter);
+            filteredFragment.appendChild(groupHeader);
+          }
+
           filteredFragment.appendChild(item);
+          groubByCount++;
+          if (groupByCounter) {
+            groupByCounter.textContent = groubByCount.toString();
+          }
 
           if (!Array.from(item.classList).includes('no-purchases')) {
             filteredGameCount++;
@@ -147,6 +200,7 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
         }
       });
 
+      gameGridRef.current.querySelectorAll('.game-group-header').forEach(header => header.remove());
       gameGridRef.current.appendChild(filteredFragment);
       detachedGameGridRef.current.appendChild(detachedFragment);
 
@@ -154,7 +208,7 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
       setPlatforms(filteredPlatforms);
     });
 
-  }, [searchQuery, compareGames, initialPlatforms]); 
+  }, [initialPlatforms, searchQuery, compareGames, getGroupBylabelBySortBy]); 
 
   const updateQueryParams = useCallback((key: string, value: string) => {
     const searchParams = new URLSearchParams(window.location.search);

@@ -955,3 +955,36 @@ footer {
     color: var(--secondary-text);
   }
 }
+
+.game-group-header {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .5rem .75rem;
+  font-size: 1.75rem;
+  margin: 0;
+
+  & .game-group-counter {
+    color: var(--accent-color);
+    font-family: var(--number-font);
+    font-size: 1.2rem;
+
+    /* &::before {
+      content: "(";
+    }
+    &::after {
+      content: ")";
+    } */
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .game-group-header {
+    border-top: 1px solid var(--subtle-accent-color);
+    background: rgba(var(--accent-color-components), .1);
+
+    & .game-group-counter {
+      margin-left: auto;
+    }
+  }
+}
