@@ -9,7 +9,6 @@ import MetacriticIndicator from './MetacriticIndicator';
 import SteamReviewIndicator from './SteamReviewIndicator';
 import RatingIndicator from './RatingIndicator';
 
-
 export const getReleaseDate = (game: Game): Date | null => {
   const dates = [
     game.releaseDate,
@@ -54,6 +53,7 @@ const GameRowTitle = ({ game }: GameRowTitleProps): JSX.Element => {
   return (
     <>
       <span className="game-profile-info">
+
         {clientLoaded && <RatingIndicator game={game} />}
         {clientLoaded && <GameProgressIndicator game={game} />}
         <span aria-label="Toggle details" className='toggle-details'>
@@ -70,7 +70,12 @@ const GameRowTitle = ({ game }: GameRowTitleProps): JSX.Element => {
             {`(${releaseYear})`}
           </span>
         </span>
-        <SteamReviewIndicator game={clientLoaded ? game : null} />
+        <span className="game-metadata">
+          <SteamReviewIndicator game={clientLoaded ? game : null} />
+          {game.metacriticData?.genres?.length > 0 ? <span className="game-genres">
+            {game.metacriticData.genres.join(', ').replace(/%20/g, '\u00A0')}
+          </span> : null}
+        </span>
       </span>
     </>
   );

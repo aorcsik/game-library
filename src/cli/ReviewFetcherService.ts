@@ -112,19 +112,32 @@ const fetchMetacriticData = async (metacriticUrl: string): Promise<MetacriticDat
 
   const titleElement: HTMLElement | null = dom.window.document.querySelector('h1');
   const title = titleElement?.textContent?.trim() || null;
-  const releaseDateElement: HTMLElement | null = dom.window.document.querySelector('.c-ProductHeroGamePlatformInfo + div');
-  const releaseDateMatch = releaseDateElement?.textContent?.trim().match(/Released On:\s*(\w+ \d+, \d+)/);
-  const releaseDate = releaseDateMatch ? new Date(releaseDateMatch[1]).toISOString() : null;
   const metacriticMustPlayElement: HTMLElement | null = dom.window.document.querySelector('.c-productScoreInfo_must');
   const mustPlay = metacriticMustPlayElement !== null;
   const metacriticScoreElement: HTMLElement | null = dom.window.document.querySelector('.c-productScoreInfo_scoreNumber');
   const metacriticScore = metacriticScoreElement?.textContent && parseInt(metacriticScoreElement.textContent, 10) || null;
 
+  const platformElements: HTMLElement[] = Array.from(dom.window.document.querySelectorAll('.c-gameDetails_Platforms .c-gameDetails_listItem'));
+  const platforms = platformElements.map((platformElement) => platformElement?.textContent?.trim() || '').filter(Boolean);
+  const releaseDateElement: HTMLElement | null = dom.window.document.querySelector('.c-gameDetails_ReleaseDate');
+  const releaseDateMatch = releaseDateElement?.textContent?.trim().match(/Initial Release Date:\s*(\w+ \d+, \d+)/);
+  const releaseDate = releaseDateMatch ? new Date(releaseDateMatch[1]).toISOString() : null;
+  const publisherElement: HTMLElement | null = dom.window.document.querySelector('.c-gameDetails_Distributor');
+  const publisher = publisherElement?.textContent?.replace(/Publisher:/, '').trim() || null;
+  const developerElements: HTMLElement[] = Array.from(dom.window.document.querySelectorAll('.c-gameDetails_Developer .c-gameDetails_listItem'));
+  const developers = developerElements.map((devElement) => devElement?.textContent?.trim() || '').filter(Boolean);
+  const genresElements: HTMLElement[] = Array.from(dom.window.document.querySelectorAll('.c-genreList_item'));
+  const genres: string[] = genresElements.map((genreElement) => genreElement?.textContent?.trim() || '').filter(Boolean);
+
   return {
     title,
-    releaseDate,
     metacriticScore,
     mustPlay,
+    platforms,
+    releaseDate,
+    developers,
+    publisher,
+    genres,
     updated: new Date().toISOString(),
   };
 };

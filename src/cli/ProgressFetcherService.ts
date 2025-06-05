@@ -47,7 +47,7 @@ const parseGamesPage = (platform: Platform, gamesPage: string): PlatformProgress
     const title = row.querySelector('.smallgame')?.textContent?.trim() || null;
     if (title) {
       const progress = Number(row.querySelector('.hwrs')?.textContent?.trim().replace('%', '')) || -1;
-      achievementProgress.push({_type: 'progress', platform, title,  progress});
+      achievementProgress.push({_type: 'progress', platform, title, progress});
     }
   });
   return achievementProgress;

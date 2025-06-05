@@ -640,21 +640,6 @@ footer {
   color: var(--secondary-text);
 }
 
-.game-title .steam-review {
-  text-decoration: none;
-  text-transform: uppercase;
-  color: var(--steam-review-negative);
-  display: block;
-  font-size: .6rem;
-
-  &.mixed {
-    color: var(--steam-review-mixed);
-  }
-  &.positive {
-    color: var(--steam-review-positive);
-  }
-}
-
 .metacritic-link {
   text-decoration: none;
 }
@@ -685,6 +670,7 @@ footer {
     border-width: 1px;
     color: var(--text-color);
     border-style: solid;
+    text-shadow: none;
   }
 
   &.must-play {
@@ -936,5 +922,36 @@ footer {
         fill: var(--accent-color);
       }
     }
+  }
+}
+
+
+.game-metadata {
+  display: flex;
+
+  & .steam-review {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--steam-review-negative);
+    display: block;
+    font-size: .6rem;
+
+    &.mixed {
+      color: var(--steam-review-mixed);
+    }
+    &.positive {
+      color: var(--steam-review-positive);
+    }
+  }
+
+  & .game-genres {
+    color: var(--secondary-text);
+    font-size: .6rem;
+  }
+
+  & .steam-review + .game-genres::before {
+    content: "•";
+    margin: 0 .25rem;
+    color: var(--secondary-text);
   }
 }

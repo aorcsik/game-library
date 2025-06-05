@@ -1,7 +1,7 @@
 import { PlatformProgress } from '../cli/ProgressFetcherService';
 import { getGameLibraryConfig } from './Config';
 import GameDatabaseService from './GameDatabaseService';
-import NotesService, { GameNotes } from './NotesService';
+import NotesService, { SanityGameNotes } from './NotesService';
 import ProgressService from './ProgressService';
 import PurchaseService, { PlatformList, PlatformPurchase, PurchasedGame } from './PurchaseService';
 
@@ -133,9 +133,16 @@ export const getGameLibraryData = async (
   addProgress(await progressService.getPlaystationProgress(fromSanity.progress));
   addProgress(await progressService.getXboxProgress(fromSanity.progress));
 
-  const addNotes = (gameNotes: GameNotes[] | null): void => {
+  const addNotes = (gameNotes: SanityGameNotes[] | null): void => {
     if (gameNotes) for (const notes of gameNotes) {
       const game = database.getGameByTitle(notes.title);
+      if (!purchasedGames.find(p => p.key === game.key)) {
+        purchasedGames.push({
+          ...game,
+          purchases: [],
+          progress: -1,
+        });
+      }
       const purchasedGame = purchasedGames.find(p => p.key === game.key);
       if (purchasedGame) {
         if (notes.progress !== undefined) {
@@ -143,20 +150,18 @@ export const getGameLibraryData = async (
             purchasedGame.progress = notes.progress;
           }
         }
-        if (notes.completed) {
-          purchasedGame.completed = true;
+        if (notes.completed !== undefined) {
+          purchasedGame.completed = notes.completed;
         }
         if (notes.rating !== undefined) {
           purchasedGame.rating = notes.rating;
         }
-      } else {
-        purchasedGames.push({
-          ...game,
-          purchases: [],
-          progress: notes.progress !== undefined ? notes.progress : -1,
-          completed: notes.completed || false,
-          rating: notes.rating,
-        });
+        if (notes.soundtrack !== undefined) {
+          purchasedGame.soundtrack = notes.soundtrack;
+        }
+        if (notes.watched !== undefined) {
+          purchasedGame.watched = notes.watched;
+        }
       }
     }
   };

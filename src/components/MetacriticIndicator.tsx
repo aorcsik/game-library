@@ -17,7 +17,7 @@ const MetacriticIndicator = ({game} : {game: Game | null}): JSX.Element => {
     metacriticClass += ' must-play';
   }
 
-  if (!metacriticScore) {
+  if (!metacriticUrl) {
     return <span className="metacritic-link disabled">
       <span className="metacritic-score"></span>
     </span>;

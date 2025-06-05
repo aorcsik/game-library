@@ -3,23 +3,19 @@ import { client } from './sanity';
 import { MultipleMutationResult } from '@sanity/client';
 import { colorize } from '../cli/CommandLineTools';
 import { GameLibraryConfig } from './Config';
+import { GameNotes } from './schema';
 
-type GameNotes = {
+export type SanityGameNotes = GameNotes & {
   _type: 'notes';
   title: string;
-  completed?: boolean;
-  progress?: number;
-  rating?: -10 | -1 | 0 | 1 | 2; //-10: watched, -1: disliked, 0: neutral, 1: liked, 2: loved
-  wathed?: boolean;
-  notes?: string;
 };
 
-const getNotesFromSanity = async (): Promise<GameNotes[]> => {
+const getNotesFromSanity = async (): Promise<SanityGameNotes[]> => {
   const query = '*[_type == "notes" ]';
   return client.fetch(query);
 };
 
-const saveNotesToSanity = async (gameNotes: GameNotes[]): Promise<MultipleMutationResult> => {
+const saveNotesToSanity = async (gameNotes: SanityGameNotes[]): Promise<MultipleMutationResult> => {
   await client.delete({ query: '*[_type == "notes"]' });
   const sanityTransaction = client.transaction();
   gameNotes.forEach(notes => {
@@ -37,14 +33,14 @@ class NotesService {
     this.config = config;
   }
 
-  async getGameNotes(fromSanity: boolean): Promise<GameNotes[] | null> {
+  async getGameNotes(fromSanity: boolean): Promise<SanityGameNotes[] | null> {
     if (fromSanity) {
       return getNotesFromSanity();
     }
 
     process.stdout.write(colorize('Updating notes...\n', 'yellow'));
     const notesFile = await fs.promises.readFile(`${this.config.source_dir}/data/notes.json`, 'utf-8');
-    const notesData = JSON.parse(notesFile) as { notes: GameNotes[] };
+    const notesData = JSON.parse(notesFile) as { notes: SanityGameNotes[] };
 
     if (!notesData || !Array.isArray(notesData.notes)) {
       console.error(colorize('Invalid notes data format.', 'red'));
@@ -62,4 +58,3 @@ class NotesService {
 }
 
 export default NotesService;
-export type { GameNotes };

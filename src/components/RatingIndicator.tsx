@@ -5,9 +5,6 @@ import FontAwesomeIcon from './FontAwesomeIcon';
 const RatingIndicator = ({ game }: { game: Game | null }): JSX.Element => {
   if (game.rating !== undefined) {
     switch (game.rating) {
-      case -10:
-        return <FontAwesomeIcon icon={['fas', 'eye']} className="rating-icon" title="Watched" />;
-        break;
       case -1:
         return <FontAwesomeIcon icon={['fas', 'thumbs-down']} className="rating-icon" title="Disliked" />;
         break;

@@ -81,6 +81,10 @@ type MetacriticData = {
   releaseDate: string | null;
   metacriticScore: number | null;
   mustPlay: boolean;
+  genres: string[];
+  platforms: string[];
+  publisher: string | null;
+  developers: string[];
   updated: string;
 };
 
@@ -94,7 +98,16 @@ type OpenCriricData = {
   updated: string;
 };
 
-type Game = {
+export type GameNotes = {
+  completed?: boolean;
+  progress?: number;
+  rating?: -10 | -1 | 0 | 1 | 2; //-10: watched, -1: disliked, 0: neutral, 1: liked, 2: loved
+  watched?: boolean;
+  notes?: string;
+  soundtrack?: string
+};
+
+export type Game = GameNotes & {
   title: string;
   key: string;
   sameGame?: string[];
@@ -105,23 +118,6 @@ type Game = {
   metacriticUrl?: string;
   metacriticData?: MetacriticData;
   releaseDate?: string;
-
-  progress?: number;
-  completed?: boolean;
-  rating?: -10 | -1 | 0 | 1 | 2; //-10: watched, -1: disliked, 0: neutral, 1: liked, 2: loved
-  notes?: string;
-
-  playing?: boolean;
-  interesting?: boolean;
-};
-
-export type GamerProfile = {
-  favourite: string[];
-  liked: string[];
-  played: string[];
-  playing: string[];
-  wishlist: string[];
-  interesting: string[];
 };
 
 export type {
@@ -136,6 +132,5 @@ export type {
   GameCollections,
   SteamData,
   MetacriticData,
-  OpenCriricData,
-  Game,
+  OpenCriricData
 };

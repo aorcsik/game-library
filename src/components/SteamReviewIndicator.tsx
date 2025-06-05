@@ -11,7 +11,7 @@ const SteamReviewIndicator = ({ game }: { game: Game | null}): JSX.Element => {
     if (game.steamData.reviewScore === 5) steamReviewScoreClass = 'steam-review mixed';
     if (game.steamData.reviewScore > 5) steamReviewScoreClass = 'steam-review positive';
   }
-  const steamStoreUrl = game?.steamAppId ? `https://store.steampowered.com/app/${game.steamAppId}/` : null;
+  const steamStoreUrl = game?.steamAppId && game?.steamAppId !== -1 ? `https://store.steampowered.com/app/${game.steamAppId}/` : null;
   const steamReviewScoreDescription = game?.steamData?.reviewScoreDescription || '';
   const steamReviewScoreTooltip = game?.steamData?.reviewScoreTooltip || '';
 
