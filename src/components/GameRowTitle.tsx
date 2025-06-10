@@ -8,6 +8,7 @@ import OpenCriticIndicator from './OpenCriticIndicator';
 import MetacriticIndicator from './MetacriticIndicator';
 import SteamReviewIndicator from './SteamReviewIndicator';
 import RatingIndicator from './RatingIndicator';
+import WatchedIndicator from './WatchedIndicator';
 
 export const getReleaseDate = (game: Game): Date | null => {
   const dates = [
@@ -53,7 +54,7 @@ const GameRowTitle = ({ game }: GameRowTitleProps): JSX.Element => {
   return (
     <>
       <span className="game-profile-info">
-
+        {clientLoaded && <WatchedIndicator game={game} />}
         {clientLoaded && <RatingIndicator game={game} />}
         {clientLoaded && <GameProgressIndicator game={game} />}
         <span aria-label="Toggle details" className='toggle-details'>

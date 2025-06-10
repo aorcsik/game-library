@@ -33,6 +33,7 @@ const skipTitle = [
   'Vessel Demo',
   'The Whispered World',
   'Serious Sam Fusion 2017 (beta)',
+  'Tilt Brush',
 // Epic
   'Mortal Shell Tech Beta',
   'KillingFloor2Beta',

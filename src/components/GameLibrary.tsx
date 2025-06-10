@@ -25,7 +25,8 @@ type SortByType =
   'steamReviewScore' |
   'metacriticScore' |
   'progress' |
-  'rating';
+  'rating' |
+  'genre';
 type SortDirection = 'asc' | 'desc';
 
 const sortByOptions: Record<SortByType, string> = {
@@ -36,7 +37,8 @@ const sortByOptions: Record<SortByType, string> = {
   steamReviewScore: 'Steam Reviews',
   metacriticScore: 'Metascore',
   progress: 'Progress',
-  rating: 'Personal Rating'
+  rating: 'Personal Rating',
+  genre: 'Genre'
 };
 
 const sortByFieldName = 'sort_by';
@@ -73,6 +75,7 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
       gameDataSet.progress = gameProgress;
       gameDataSet.completed = game.completed || gameProgress === '100' ? '1' : '0';
       gameDataSet.rating = game.rating === undefined ? '-1000' : game.rating.toString();
+      gameDataSet.genre = game.metacriticData?.genres ? game.metacriticData?.genres[0] : '';
     }
     return gameDataSet;
   }, [purchasedGames]);
@@ -82,7 +85,7 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
 
     const aValue = getGameDataSetByKey(a.id.replace(/^game-/, ''))[sortBy] || '';
     const bValue = getGameDataSetByKey(b.id.replace(/^game-/, ''))[sortBy] || '';
-    if (sortBy === 'gameTitle') {
+    if (sortBy === 'gameTitle' || sortBy === 'genre') {
       sortValue = aValue.localeCompare(bValue, undefined, { numeric: true });
       // console.log(sortBy, aValue, bValue, sortValue);
     } else {
@@ -130,6 +133,8 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
       return 'Not Started';
     } else if (sortBy === 'rating') {
       return '';
+    } else if (sortBy === 'genre') {
+      return gameData.genre || 'No Genre';
     }
   }, [getGameDataSetByKey, sortBy]);
 
@@ -231,6 +236,11 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
   const handleSortByChange = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedValue = e.target.value as SortByType;
     setSortBy(selectedValue);
+    if (selectedValue === 'gameTitle' || selectedValue === 'genre') {
+      setSortDirection('asc'); // Reset to ascending for title and genre
+    } else {
+      setSortDirection('desc'); // Default to descending for other sorts
+    }
     updateQueryParams(sortByFieldName, selectedValue);
   }, [updateQueryParams]);
 

@@ -26462,7 +26462,7 @@
       "score": 82,
       "critics": 78,
       "releaseDate": "2018-05-29T00:00:00.000Z",
-      "updated": "2025-06-05T08:21:34.470Z"
+      "updated": "2025-06-10T11:38:27.710Z"
     },
     "steamAppId": 606150,
     "steamData": {
@@ -26476,17 +26476,31 @@
       "releaseDate": "2018-05-29T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "82% of the 15,428 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/606150/7ca65a40021db826ba8430d28853d9c34703413b/header_alt_assets_3.jpg?t=1747921577",
-      "updated": "2025-06-05T08:21:34.999Z"
+      "reviewScoreTooltip": "82% of the 15,449 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/606150/7878c1d73b767c3b542d36a935bd6fbde2f17fa3/header_alt_assets_4.jpg?t=1749470807",
+      "updated": "2025-06-10T11:38:28.382Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/moonlighter/",
     "metacriticData": {
       "title": "Moonlighter",
-      "releaseDate": "2018-05-29T00:00:00.000Z",
       "metacriticScore": 81,
       "mustPlay": false,
-      "updated": "2025-06-03T12:31:03.658Z"
+      "platforms": [
+        "PC",
+        "Nintendo Switch",
+        "Xbox One",
+        "PlayStation 4",
+        "iOS (iPhone/iPad)"
+      ],
+      "releaseDate": "2018-05-29T00:00:00.000Z",
+      "developers": [
+        "Digital Sun"
+      ],
+      "publisher": "11 bit studios",
+      "genres": [
+        "Action RPG"
+      ],
+      "updated": "2025-06-10T11:38:28.676Z"
     },
     "key": "moonlighter"
   },
@@ -26500,7 +26514,7 @@
       "score": 73,
       "critics": 52,
       "releaseDate": "2022-09-27T00:00:00.000Z",
-      "updated": "2025-06-05T08:21:36.564Z"
+      "updated": "2025-06-10T11:38:40.933Z"
     },
     "steamAppId": 1374970,
     "steamData": {
@@ -26513,17 +26527,32 @@
       "releaseDate": "2022-09-27T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "82% of the 953 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1374970/header.jpg?t=1687296135",
-      "updated": "2025-06-05T08:21:37.110Z"
+      "reviewScoreTooltip": "82% of the 954 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1374970/header.jpg?t=1687296135",
+      "updated": "2025-06-10T11:38:41.614Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/moonscars/",
     "metacriticData": {
       "title": "Moonscars",
-      "releaseDate": "2022-09-27T00:00:00.000Z",
       "metacriticScore": 75,
       "mustPlay": false,
-      "updated": "2025-06-03T12:31:06.154Z"
+      "platforms": [
+        "PC",
+        "Nintendo Switch",
+        "PlayStation 5",
+        "PlayStation 4",
+        "Xbox Series X",
+        "Xbox One"
+      ],
+      "releaseDate": "2022-09-27T00:00:00.000Z",
+      "developers": [
+        "Black Mermaid"
+      ],
+      "publisher": "Humble Games",
+      "genres": [
+        "Metroidvania"
+      ],
+      "updated": "2025-06-10T11:38:42.955Z"
     },
     "key": "moonscars"
   },
@@ -49078,21 +49107,6 @@
   {
     "title": "Halo: Combat Evolved Anniversary",
     "key": "halo-combat-evolved-anniversary",
-    "steamAppId": 976730,
-    "openCriticId": "skip",
-    "steamData": {
-      "title": "Halo: The Master Chief Collection",
-      "description": "The Master Chief’s iconic journey includes six games, built for PC and collected in a single integrated experience. Whether you’re a long-time fan or meeting Spartan 117 for the first time, The Master Chief Collection is the definitive Halo gaming experience.",
-      "genres": [
-        "Action"
-      ],
-      "releaseDate": "2019-12-03T00:00:00.000Z",
-      "reviewScore": 8,
-      "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "92% of the 220,470 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/976730/header.jpg?t=1740682623",
-      "updated": "2025-06-05T07:08:00.292Z"
-    },
     "metacriticUrl": "https://www.metacritic.com/game/halo-combat-evolved-anniversary/",
     "metacriticData": {
       "title": "Halo: Combat Evolved Anniversary",
@@ -49111,26 +49125,26 @@
         "FPS"
       ],
       "updated": "2025-06-05T07:08:01.487Z"
+    },
+    "openCriticId": "skip",
+    "steamAppId": 1064221,
+    "steamData": {
+      "title": "Halo: Combat Evolved Anniversary",
+      "description": null,
+      "genres": [
+        "Action"
+      ],
+      "releaseDate": "2020-03-03T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "reviewScoreTooltip": "73% of the 2,780 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1064221/header.jpg?t=1634231276",
+      "updated": "2025-06-10T11:09:06.858Z"
     }
   },
   {
     "title": "Halo 2: Anniversary",
     "key": "halo-2-anniversary",
-    "steamAppId": 976730,
-    "openCriticId": "skip",
-    "steamData": {
-      "title": "Halo: The Master Chief Collection",
-      "description": "The Master Chief’s iconic journey includes six games, built for PC and collected in a single integrated experience. Whether you’re a long-time fan or meeting Spartan 117 for the first time, The Master Chief Collection is the definitive Halo gaming experience.",
-      "genres": [
-        "Action"
-      ],
-      "releaseDate": "2019-12-03T00:00:00.000Z",
-      "reviewScore": 8,
-      "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "92% of the 220,470 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/976730/header.jpg?t=1740682623",
-      "updated": "2025-06-05T07:07:57.010Z"
-    },
     "metacriticUrl": "https://www.metacritic.com/game/halo-2-anniversary/",
     "metacriticData": {
       "title": "Halo 2: Anniversary",
@@ -49148,26 +49162,26 @@
         "FPS"
       ],
       "updated": "2025-06-05T07:07:57.998Z"
+    },
+    "openCriticId": "skip",
+    "steamAppId": 1064270,
+    "steamData": {
+      "title": "Halo 2: Anniversary",
+      "description": null,
+      "genres": [
+        "Action"
+      ],
+      "releaseDate": "2020-05-12T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "80% of the 2,038 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1064270/header.jpg?t=1634231273",
+      "updated": "2025-06-10T11:08:02.684Z"
     }
   },
   {
     "title": "Halo 3",
     "key": "halo-3",
-    "steamAppId": 976730,
-    "openCriticId": "skip",
-    "steamData": {
-      "title": "Halo: The Master Chief Collection",
-      "description": "The Master Chief’s iconic journey includes six games, built for PC and collected in a single integrated experience. Whether you’re a long-time fan or meeting Spartan 117 for the first time, The Master Chief Collection is the definitive Halo gaming experience.",
-      "genres": [
-        "Action"
-      ],
-      "releaseDate": "2019-12-03T00:00:00.000Z",
-      "reviewScore": 8,
-      "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "92% of the 220,470 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/976730/header.jpg?t=1740682623",
-      "updated": "2025-06-05T07:07:58.401Z"
-    },
     "metacriticUrl": "https://www.metacritic.com/game/halo-3/",
     "metacriticData": {
       "title": "Halo 3",
@@ -49186,52 +49200,63 @@
         "FPS"
       ],
       "updated": "2025-06-05T07:07:59.774Z"
+    },
+    "openCriticId": "skip",
+    "steamAppId": 1064271,
+    "steamData": {
+      "title": "Halo 3",
+      "description": null,
+      "genres": [
+        "Action"
+      ],
+      "releaseDate": "2020-07-13T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "90% of the 2,631 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1064271/header.jpg?t=1634231304",
+      "updated": "2025-06-10T09:30:19.446Z"
     }
   },
   {
     "title": "Halo 3: ODST",
     "key": "halo-3-odst",
-    "steamAppId": 976730,
-    "openCriticId": "skip",
-    "steamData": {
-      "title": "Halo: The Master Chief Collection",
-      "description": "The Master Chief’s iconic journey includes six games, built for PC and collected in a single integrated experience. Whether you’re a long-time fan or meeting Spartan 117 for the first time, The Master Chief Collection is the definitive Halo gaming experience.",
-      "genres": [
-        "Action"
-      ],
-      "releaseDate": "2019-12-03T00:00:00.000Z",
-      "reviewScore": 8,
-      "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "92% of the 220,322 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/976730/header.jpg?t=1740682623",
-      "updated": "2025-05-30T04:37:53.511Z"
-    },
     "metacriticUrl": "https://www.metacritic.com/game/halo-3-odst/",
     "metacriticData": {
       "title": "Halo 3: ODST",
-      "releaseDate": "2009-09-22T00:00:00.000Z",
       "metacriticScore": 83,
-      "updated": "2025-05-30T04:37:55.226Z"
+      "mustPlay": false,
+      "platforms": [
+        "Xbox 360"
+      ],
+      "releaseDate": "2009-09-22T00:00:00.000Z",
+      "developers": [
+        "Bungie"
+      ],
+      "publisher": "Microsoft Game Studios",
+      "genres": [
+        "FPS"
+      ],
+      "updated": "2025-06-10T11:37:46.622Z"
+    },
+    "openCriticId": "skip",
+    "steamAppId": 1064272,
+    "steamData": {
+      "title": "Halo 3: ODST",
+      "description": null,
+      "genres": [
+        "Action"
+      ],
+      "releaseDate": "2020-09-21T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "86% of the 1,482 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1064272/header.jpg?t=1634231263",
+      "updated": "2025-06-10T11:37:46.303Z"
     }
   },
   {
     "title": "Halo: Reach",
     "key": "halo-reach",
-    "steamAppId": 976730,
-    "openCriticId": "skip",
-    "steamData": {
-      "title": "Halo: The Master Chief Collection",
-      "description": "The Master Chief’s iconic journey includes six games, built for PC and collected in a single integrated experience. Whether you’re a long-time fan or meeting Spartan 117 for the first time, The Master Chief Collection is the definitive Halo gaming experience.",
-      "genres": [
-        "Action"
-      ],
-      "releaseDate": "2019-12-03T00:00:00.000Z",
-      "reviewScore": 8,
-      "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "92% of the 220,470 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/976730/header.jpg?t=1740682623",
-      "updated": "2025-06-05T07:08:01.866Z"
-    },
     "metacriticUrl": "https://www.metacritic.com/game/halo-reach/",
     "metacriticData": {
       "title": "Halo: Reach",
@@ -49249,32 +49274,59 @@
         "FPS"
       ],
       "updated": "2025-06-05T07:08:03.140Z"
-    }
-  },
-  {
-    "title": "Halo 4",
-    "key": "halo-4",
-    "steamAppId": 976730,
+    },
     "openCriticId": "skip",
+    "steamAppId": 1064220,
     "steamData": {
-      "title": "Halo: The Master Chief Collection",
-      "description": "The Master Chief’s iconic journey includes six games, built for PC and collected in a single integrated experience. Whether you’re a long-time fan or meeting Spartan 117 for the first time, The Master Chief Collection is the definitive Halo gaming experience.",
+      "title": "Halo: Reach",
+      "description": null,
       "genres": [
         "Action"
       ],
       "releaseDate": "2019-12-03T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "92% of the 220,322 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/976730/header.jpg?t=1740682623",
-      "updated": "2025-05-30T04:37:55.859Z"
-    },
+      "reviewScoreTooltip": "82% of the 5,635 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1064220/header.jpg?t=1634231207",
+      "updated": "2025-06-10T09:31:18.841Z"
+    }
+  },
+  {
+    "title": "Halo 4",
+    "key": "halo-4",
     "metacriticUrl": "https://www.metacritic.com/game/halo-4/",
     "metacriticData": {
       "title": "Halo 4",
-      "releaseDate": "2012-11-06T00:00:00.000Z",
       "metacriticScore": 87,
-      "updated": "2025-05-30T04:37:57.156Z"
+      "mustPlay": false,
+      "platforms": [
+        "Xbox 360",
+        "PC"
+      ],
+      "releaseDate": "2012-11-06T00:00:00.000Z",
+      "developers": [
+        "343 Industries"
+      ],
+      "publisher": "Microsoft Game Studios",
+      "genres": [
+        "FPS"
+      ],
+      "updated": "2025-06-10T11:38:05.540Z"
+    },
+    "openCriticId": "skip",
+    "steamAppId": 1064273,
+    "steamData": {
+      "title": "Halo 4",
+      "description": null,
+      "genres": [
+        "Action"
+      ],
+      "releaseDate": "2020-11-16T00:00:00.000Z",
+      "reviewScore": 5,
+      "reviewScoreDescription": "Mixed",
+      "reviewScoreTooltip": "58% of the 2,300 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1064273/header.jpg?t=1634239399",
+      "updated": "2025-06-10T11:38:03.321Z"
     }
   },
   {
@@ -55215,6 +55267,573 @@
         "Adventure"
       ],
       "updated": "2025-06-05T06:56:12.990Z"
+    }
+  },
+  {
+    "title": "Dust: An Elysian Tail",
+    "key": "dust-an-elysian-tail",
+    "steamAppId": 236090,
+    "openCriticId": "9736/dust-an-elysian-tail",
+    "openCriticData": {
+      "title": "Dust: An Elysian Tail",
+      "cover": "https://img.opencritic.com/game/9736/kSl3eIaV.jpg",
+      "tier": null,
+      "score": null,
+      "critics": null,
+      "releaseDate": "2013-05-24T00:00:00.000Z",
+      "updated": "2025-06-10T08:52:17.070Z"
+    },
+    "steamData": {
+      "title": "Dust: An Elysian Tail",
+      "description": "Immerse yourself in a gorgeous hand-painted world on a search for your true identity. As the mysterious warrior, Dust, your action-packed journey will take you from peaceful glades to snowy mountaintops and beyond.",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Indie",
+        "RPG"
+      ],
+      "releaseDate": "2013-05-24T00:00:00.000Z",
+      "reviewScore": 9,
+      "reviewScoreDescription": "Overwhelmingly Positive",
+      "reviewScoreTooltip": "95% of the 13,845 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/236090/header.jpg?t=1667838728",
+      "updated": "2025-06-10T08:52:18.071Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/dust-an-elysian-tail/",
+    "metacriticData": {
+      "title": "Dust: An Elysian Tail",
+      "metacriticScore": 83,
+      "mustPlay": false,
+      "platforms": [
+        "Xbox 360",
+        "PC",
+        "PlayStation 4",
+        "iOS (iPhone/iPad)",
+        "Nintendo Switch"
+      ],
+      "releaseDate": "2012-08-15T00:00:00.000Z",
+      "developers": [
+        "Humble Hearts"
+      ],
+      "publisher": "Microsoft Game Studios",
+      "genres": [
+        "Metroidvania"
+      ],
+      "updated": "2025-06-10T08:52:23.311Z"
+    }
+  },
+  {
+    "title": "Super Mario Galaxy",
+    "key": "super-mario-galaxy",
+    "openCriticId": "skip",
+    "steamAppId": -1,
+    "metacriticUrl": "https://www.metacritic.com/game/super-mario-galaxy/",
+    "metacriticData": {
+      "title": "Super Mario Galaxy",
+      "metacriticScore": 97,
+      "mustPlay": true,
+      "platforms": [
+        "Wii"
+      ],
+      "releaseDate": "2007-11-12T00:00:00.000Z",
+      "developers": [
+        "Nintendo"
+      ],
+      "publisher": "Nintendo",
+      "genres": [
+        "3D Platformer"
+      ],
+      "updated": "2025-06-10T09:22:44.259Z"
+    }
+  },
+  {
+    "title": "Metroid Prime",
+    "key": "metroid-prime"
+  },
+  {
+    "title": "Metroid Prime Remastered",
+    "key": "metroid-prime-remastered",
+    "openCriticId": "14280/metroid-prime-remastered",
+    "openCriticData": {
+      "title": "Metroid Prime Remastered",
+      "cover": "https://img.opencritic.com/game/14280/YqxcQuG3.jpg",
+      "tier": "mighty",
+      "score": 94,
+      "critics": 100,
+      "releaseDate": "2023-02-08T00:00:00.000Z",
+      "updated": "2025-06-10T09:21:58.653Z"
+    },
+    "steamAppId": -1,
+    "metacriticUrl": "https://www.metacritic.com/game/metroid-prime-remastered/",
+    "metacriticData": {
+      "title": "Metroid Prime Remastered",
+      "metacriticScore": 94,
+      "mustPlay": true,
+      "platforms": [
+        "Nintendo Switch"
+      ],
+      "releaseDate": "2023-02-08T00:00:00.000Z",
+      "developers": [
+        "Retro Studios",
+        "Iron Galaxy Studios"
+      ],
+      "publisher": "Nintendo",
+      "genres": [
+        "FPS"
+      ],
+      "updated": "2025-06-10T09:22:15.823Z"
+    }
+  },
+  {
+    "title": "Halo: Combat Evolved",
+    "key": "halo-combat-evolved",
+    "openCriticId": "skip",
+    "steamAppId": -1,
+    "metacriticUrl": "https://www.metacritic.com/game/halo-combat-evolved/",
+    "metacriticData": {
+      "title": "Halo: Combat Evolved",
+      "metacriticScore": 97,
+      "mustPlay": true,
+      "platforms": [
+        "PC",
+        "Xbox"
+      ],
+      "releaseDate": "2001-11-15T00:00:00.000Z",
+      "developers": [
+        "Bungie"
+      ],
+      "publisher": "Microsoft Game Studios",
+      "genres": [
+        "FPS"
+      ],
+      "updated": "2025-06-10T09:30:57.251Z"
+    }
+  },
+  {
+    "title": "Halo 2",
+    "key": "halo-2",
+    "openCriticId": "skip",
+    "steamAppId": -1,
+    "metacriticUrl": "https://www.metacritic.com/game/halo-2/",
+    "metacriticData": {
+      "title": "Halo 2",
+      "metacriticScore": 95,
+      "mustPlay": true,
+      "platforms": [
+        "Xbox",
+        "PC"
+      ],
+      "releaseDate": "2004-11-09T00:00:00.000Z",
+      "developers": [
+        "Bungie"
+      ],
+      "publisher": "Microsoft Game Studios",
+      "genres": [
+        "FPS"
+      ],
+      "updated": "2025-06-10T09:29:50.704Z"
+    }
+  },
+  {
+    "title": "Silent Hill 4: The Room",
+    "key": "silent-hill-4-the-room",
+    "openCriticId": "skip",
+    "steamAppId": -1,
+    "metacriticUrl": "https://www.metacritic.com/game/silent-hill-4-the-room/",
+    "metacriticData": {
+      "title": "Silent Hill 4: The Room",
+      "metacriticScore": 76,
+      "mustPlay": false,
+      "platforms": [
+        "PlayStation 2",
+        "Xbox",
+        "PC"
+      ],
+      "releaseDate": "2004-09-07T00:00:00.000Z",
+      "developers": [
+        "KCET"
+      ],
+      "publisher": "Konami",
+      "genres": [
+        "Survival"
+      ],
+      "updated": "2025-06-10T11:53:20.102Z"
+    }
+  },
+  {
+    "title": "Silent Hill 3",
+    "key": "silent-hill-3",
+    "openCriticId": "skip",
+    "steamAppId": -1,
+    "metacriticUrl": "https://www.metacritic.com/game/silent-hill-3/",
+    "metacriticData": {
+      "title": "Silent Hill 3",
+      "metacriticScore": 85,
+      "mustPlay": false,
+      "platforms": [
+        "PlayStation 2",
+        "PC"
+      ],
+      "releaseDate": "2003-08-05T00:00:00.000Z",
+      "developers": [
+        "KCET"
+      ],
+      "publisher": "Konami",
+      "genres": [
+        "Survival"
+      ],
+      "updated": "2025-06-10T11:54:26.252Z"
+    }
+  },
+  {
+    "title": "Silent Hill 2",
+    "key": "silent-hill-2",
+    "openCriticId": "16791/silent-hill-2",
+    "openCriticData": {
+      "title": "Silent Hill 2",
+      "cover": "https://img.opencritic.com/game/16791/GLiV693Y.jpg",
+      "tier": "mighty",
+      "score": 87,
+      "critics": 95,
+      "releaseDate": "2024-10-08T00:00:00.000Z",
+      "updated": "2025-06-10T11:56:02.135Z"
+    },
+    "steamAppId": 2124490,
+    "steamData": {
+      "title": "SILENT HILL 2",
+      "description": "Investigating a letter from his late wife, James returns to where they made so many memories - Silent Hill. What he finds is a ghost town, prowled by disturbing monsters and cloaked in deep fog. Confront the monsters, solve puzzles, and search for traces of your wife in this remake of SILENT HILL 2.",
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "releaseDate": "2024-10-07T00:00:00.000Z",
+      "reviewScore": 9,
+      "reviewScoreDescription": "Overwhelmingly Positive",
+      "reviewScoreTooltip": "95% of the 28,463 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2124490/header.jpg?t=1744248682",
+      "updated": "2025-06-10T11:56:08.565Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/silent-hill-2/",
+    "metacriticData": {
+      "title": "Silent Hill 2",
+      "metacriticScore": 86,
+      "mustPlay": false,
+      "platforms": [
+        "PlayStation 5",
+        "PC"
+      ],
+      "releaseDate": "2024-10-08T00:00:00.000Z",
+      "developers": [
+        "Bloober Team"
+      ],
+      "publisher": "Konami",
+      "genres": [
+        "Survival"
+      ],
+      "updated": "2025-06-10T11:56:29.577Z"
+    }
+  },
+  {
+    "title": "Samurai Bringer",
+    "key": "samurai-bringer",
+    "openCriticId": "13071/samurai-bringer",
+    "openCriticData": {
+      "title": "Samurai Bringer",
+      "cover": "https://img.opencritic.com/game/13071/1vNu4Yio.jpg",
+      "tier": null,
+      "score": null,
+      "critics": null,
+      "releaseDate": "2022-04-21T00:00:00.000Z",
+      "updated": "2025-06-10T12:06:11.328Z"
+    },
+    "steamAppId": 1851280,
+    "steamData": {
+      "title": "Samurai Bringer",
+      "description": "Samurai Bringer is a roguelite action game with levels which change with every playthrough, where you cut down hordes of Samurai and Demons to collect combat techniques and polish your fighting style in order to defeat Yamata-no-Orochi, the eight-headed dragon of Japanese mythology.",
+      "genres": [
+        "Action",
+        "Indie"
+      ],
+      "releaseDate": "2022-04-21T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "87% of the 938 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1851280/header.jpg?t=1740628512",
+      "updated": "2025-06-10T12:06:23.138Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/samurai-bringer/",
+    "metacriticData": {
+      "title": "Samurai Bringer",
+      "metacriticScore": null,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Nintendo Switch",
+        "PlayStation 4"
+      ],
+      "releaseDate": "2022-04-21T00:00:00.000Z",
+      "developers": [
+        "ALPHAWING Inc."
+      ],
+      "publisher": "Active Gaming Media",
+      "genres": [
+        "Action RPG"
+      ],
+      "updated": "2025-06-10T12:06:48.353Z"
+    }
+  },
+  {
+    "title": "Trinity Fusion",
+    "key": "trinity-fusion",
+    "openCriticId": "15995/trinity-fusion",
+    "openCriticData": {
+      "title": "Trinity Fusion",
+      "cover": "https://img.opencritic.com/game/15995/ekDaNSEn.jpg",
+      "tier": "strong",
+      "score": 77,
+      "critics": 67,
+      "releaseDate": "2023-12-15T00:00:00.000Z",
+      "updated": "2025-06-10T12:07:50.508Z"
+    },
+    "steamAppId": 1911360,
+    "steamData": {
+      "title": "Trinity Fusion",
+      "description": "ANOMALY WARP Update Out Now! Take control of your parallel selves and explore dark, Sci-Fi worlds. Slash, bash and shoot your way through this unique rogue-lite metroidvania where the only way to save the multiverse is to end it.",
+      "genres": [
+        "Action",
+        "Indie",
+        "RPG"
+      ],
+      "releaseDate": "2023-12-15T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "87% of the 586 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1911360/header.jpg?t=1745519909",
+      "updated": "2025-06-10T12:08:20.422Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/trinity-fusion",
+    "metacriticData": {
+      "title": "Trinity Fusion",
+      "metacriticScore": 75,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Xbox Series X",
+        "Xbox One",
+        "PlayStation 5",
+        "PlayStation 4",
+        "Nintendo Switch"
+      ],
+      "releaseDate": "2023-12-15T00:00:00.000Z",
+      "developers": [
+        "Angry Mob Games"
+      ],
+      "publisher": "Angry Mob Games",
+      "genres": [
+        "Metroidvania"
+      ],
+      "updated": "2025-06-10T12:08:23.519Z"
+    }
+  },
+  {
+    "title": "Masterplan Tycoon",
+    "key": "masterplan-tycoon",
+    "openCriticId": "14462/masterplan-tycoon",
+    "openCriticData": {
+      "title": "Masterplan Tycoon",
+      "cover": "https://img.opencritic.com/game/14462/dMh6RvSe.jpg",
+      "tier": null,
+      "score": null,
+      "critics": null,
+      "releaseDate": "2023-03-09T00:00:00.000Z",
+      "updated": "2025-06-10T12:04:57.507Z"
+    },
+    "steamAppId": 1644500,
+    "steamData": {
+      "title": "Masterplan Tycoon",
+      "description": "Welcome to the resource management game where your creativity and logistics skills are put to the test! In this minimalistic simulation you will build interconnected chains of products and open new missions by completing various tasks to create the biggest system you can.",
+      "genres": [
+        "Indie",
+        "Simulation",
+        "Strategy"
+      ],
+      "releaseDate": "2023-03-09T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "reviewScoreTooltip": "74% of the 581 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1644500/header.jpg?t=1724410460",
+      "updated": "2025-06-10T12:05:11.201Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/masterplan-tycoon/",
+    "metacriticData": {
+      "title": "Masterplan Tycoon",
+      "metacriticScore": null,
+      "mustPlay": false,
+      "platforms": [
+        "PC"
+      ],
+      "releaseDate": "2023-03-09T00:00:00.000Z",
+      "developers": [
+        "Bureau Bravin"
+      ],
+      "publisher": "Ravenage Games",
+      "genres": [
+        "Tycoon"
+      ],
+      "updated": "2025-06-10T12:05:25.161Z"
+    }
+  },
+  {
+    "title": "The Abandoned Planet",
+    "key": "the-abandoned-planet",
+    "openCriticId": "18546/the-abandoned-planet",
+    "openCriticData": {
+      "title": "The Abandoned Planet",
+      "cover": "https://img.opencritic.com/game/18546/AgMbEGph.jpg",
+      "tier": null,
+      "score": null,
+      "critics": null,
+      "releaseDate": "2024-08-29T00:00:00.000Z",
+      "updated": "2025-06-10T12:07:01.881Z"
+    },
+    "steamAppId": 2014470,
+    "steamData": {
+      "title": "The Abandoned Planet",
+      "description": "A throw-back, retro-inspired, point and click adventure with chunky and beautiful pixel art",
+      "genres": [
+        "Adventure",
+        "Casual",
+        "Indie"
+      ],
+      "releaseDate": "2024-08-29T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "95% of the 81 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2014470/header.jpg?t=1724944964",
+      "updated": "2025-06-10T12:07:13.668Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/the-abandoned-planet/",
+    "metacriticData": {
+      "title": "The Abandoned Planet",
+      "metacriticScore": null,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Nintendo Switch",
+        "Xbox Series X",
+        "Xbox One",
+        "PlayStation 5",
+        "PlayStation 4"
+      ],
+      "releaseDate": "2024-08-29T00:00:00.000Z",
+      "developers": [
+        "Dexter Team Games"
+      ],
+      "publisher": "Snapbreak Games",
+      "genres": [
+        "Point-and-Click"
+      ],
+      "updated": "2025-06-10T12:07:33.254Z"
+    }
+  },
+  {
+    "title": "Golf With Your Friends",
+    "key": "golf-with-your-friends",
+    "openCriticId": "9467/golf-with-your-friends",
+    "openCriticData": {
+      "title": "Golf With Your Friends",
+      "cover": "https://img.opencritic.com/game/9467/dBcxIAuz.jpg",
+      "tier": "fair",
+      "score": 69,
+      "critics": 38,
+      "releaseDate": "2020-05-19T00:00:00.000Z",
+      "updated": "2025-06-10T12:04:17.081Z"
+    },
+    "steamAppId": 431240,
+    "steamData": {
+      "title": "Golf With Your Friends",
+      "description": "Why have friends if not to play Golf... With Your Friends! Nothing is out of bounds as you take on courses filled with fast paced, exciting, simultaneous mini golf for up to 12 players!",
+      "genres": [
+        "Casual",
+        "Indie",
+        "Sports"
+      ],
+      "releaseDate": "2020-05-19T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "89% of the 44,390 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/431240/header.jpg?t=1748528368",
+      "updated": "2025-06-10T12:04:32.005Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/golf-with-your-friends/",
+    "metacriticData": {
+      "title": "Golf With Your Friends",
+      "metacriticScore": 68,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "PlayStation 4",
+        "Xbox One",
+        "Nintendo Switch"
+      ],
+      "releaseDate": "2020-05-19T00:00:00.000Z",
+      "developers": [
+        "Blacklight Interactive"
+      ],
+      "publisher": "Team17",
+      "genres": [
+        "Golf"
+      ],
+      "updated": "2025-06-10T12:04:44.023Z"
+    }
+  },
+  {
+    "title": "Mordheim: City of the Damned",
+    "key": "mordheim-city-of-the-damned",
+    "openCriticId": "2027/mordheim-city-of-the-damned",
+    "openCriticData": {
+      "title": "Mordheim - City of the Damned",
+      "cover": "https://img.opencritic.com/game/2027/Kpalrtaq.jpg",
+      "tier": "fair",
+      "score": 70,
+      "critics": 39,
+      "releaseDate": "2015-11-19T00:00:00.000Z",
+      "updated": "2025-06-10T12:05:41.315Z"
+    },
+    "steamAppId": 276810,
+    "steamData": {
+      "title": "Mordheim: City of the Damned",
+      "description": "Mordheim: City of the Damned is the first video game adaptation of Games Workshop's cult classic tabletop game Mordheim. Set in the Warhammer World's decimated Empire city, Mordheim: City of the Damned is a turn-based tactical game where you lead warbands into bloody and lethal skirmishes.",
+      "genres": [
+        "RPG",
+        "Strategy"
+      ],
+      "releaseDate": "2015-11-19T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "reviewScoreTooltip": "72% of the 6,732 user reviews for this game are positive.",
+      "headerImage": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/276810/header.jpg?t=1726153222",
+      "updated": "2025-06-10T12:05:53.463Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/mordheim-city-of-the-damned",
+    "metacriticData": {
+      "title": "Mordheim: City of the Damned",
+      "metacriticScore": 74,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Xbox One",
+        "PlayStation 4"
+      ],
+      "releaseDate": "2015-11-19T00:00:00.000Z",
+      "developers": [
+        "Rogue Factor"
+      ],
+      "publisher": "Focus Home Interactive",
+      "genres": [
+        "Turn-Based Tactics"
+      ],
+      "updated": "2025-06-10T12:05:56.685Z"
     }
   }
 ]

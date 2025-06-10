@@ -4,13 +4,8 @@ import { JSX } from 'react';
 import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
 import FontAwesomeIcon from './FontAwesomeIcon';
 import { Game } from '../lib/schema';
-import WatchedIndicator from './WatchedIndicator';
 
 const GameProgressIndicator = ({ game }: { game: Game | null; }): JSX.Element => {
-  if (game.watched) {
-    return <WatchedIndicator game={game} />;
-  }
-
   let progressStatus = '';
   if (game?.progress === 100) {
     progressStatus = 'game-completed';

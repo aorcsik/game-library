@@ -24,6 +24,9 @@ body {
   --subtle-accent-color: rgb(var(--subtle-accent-color-components));
   --card-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   --card-hover-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  --liquid-card-inset-shadow: inset 0px 20px 30px rgba(0, 0, 0, 0.05);
+  --liquid-field-inset-shadow: inset 0px 10px 15px rgba(0, 0, 0, 0.05);
+  --liquid-card-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
 
   --game-grid-gap: .5rem;
 
@@ -89,7 +92,14 @@ h1, h2, h3, h4, h5, h6 {
     --card-background: #242424;
     --card-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
     --card-hover-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4), 0px 0px 8px rgba(255, 255, 255, 0.2);
+    --liquid-card-inset-shadow: inset 0px -20px 30px rgba(255, 255, 255, 0.05);
+    --liquid-field-inset-shadow: inset 0px -10px 15px rgba(255, 255, 255, 0.05);
+    --liquid-card-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
   }
+}
+
+.main {
+  margin-top: 6rem;
 }
 
 .container {
@@ -104,12 +114,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 header {
-  border-bottom: 1px solid var(--subtle-accent-color);
-  position: sticky;
+  position: fixed;
   top: 0;
-  backdrop-filter: blur(20px);
-  background-color: rgba(var(--background-color-components), .7);
+  padding: .5rem;
   z-index: 4;
+  max-width: 1400px;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+
+  & .container {
+    border-radius: 2.25rem;
+    border-bottom: 1px solid var(--subtle-accent-color);
+    backdrop-filter: blur(20px);
+    background-color: rgba(var(--background-color-components), .7);
+    box-shadow: var(--liquid-card-shadow), var(--liquid-card-inset-shadow);
+  }
 }
 
 header .logo {
@@ -152,6 +172,8 @@ footer {
   gap: .5rem;
   align-items: center;
 
+  --control-border-radius: 2rem;
+
   & h1 {
     display: flex;
     align-items: center;
@@ -181,13 +203,14 @@ footer {
   padding: .5rem .6125rem;
   background: rgba(var(--background-color-components), .5);
   border: 1px solid rgba(var(--subtle-accent-color-components), .5);
-  border-radius: .25rem;
+  border-radius: var(--control-border-radius);
   height: 2.5rem;
   min-width: 2.5rem;
   text-shadow: 0 0 5px var(--background-color);
 
   &:hover {
-    background: rgba(var(--subtle-accent-color-components), .25);
+    /* background: rgba(var(--subtle-accent-color-components), .25); */
+    box-shadow: var(--liquid-field-inset-shadow);
   }
 }
 
@@ -212,13 +235,15 @@ footer {
   }
 
   & .button:first-of-type {
-    border-top-left-radius: .25rem;
-    border-bottom-left-radius: .25rem;
+    border-top-left-radius: var(--control-border-radius);
+    border-bottom-left-radius: var(--control-border-radius);
     border-left-width: 1px;
+    padding-left: .75rem;
   }
   & .button:last-child {
-    border-top-right-radius: .25rem;
-    border-bottom-right-radius: .25rem;
+    border-top-right-radius: var(--control-border-radius);
+    border-bottom-right-radius: var(--control-border-radius);
+    padding-right: .75rem;
   }
 
   & input:checked + .button {
@@ -230,12 +255,13 @@ footer {
   display: inline-flex;
   background-color: rgba(var(--background-color-components), .5);
   border: 1px solid rgba(var(--subtle-accent-color-components), .5);
-  border-radius: .25rem;
+  border-radius: var(--control-border-radius);
   height: 2.5rem;
   overflow: hidden;
 
   &:hover {
-    background-color: rgba(var(--background-color-components), .5);
+    /* background-color: rgba(var(--background-color-components), .5); */
+    box-shadow: var(--liquid-field-inset-shadow);
   }
 
   & select,
@@ -244,19 +270,18 @@ footer {
     background-color: transparent;
     border: 0;
     outline: 0;
-    padding: .5rem;
+    padding: 0 0 0 .5rem;
     color: var(--text-color);
     text-shadow: 0 0 5px var(--background-color);
     font-size: 1rem;
     width: 100%;
     height: 100%;
+    border-radius: var(--control-border-radius);
+    border: 2px solid transparent;
+  }
 
-    &:hover {
-      background-image: linear-gradient(90deg, rgba(var(--subtle-accent-color-components), .25) 0%, transparent 100%);
-    }
-    &:focus {
-      background-image: linear-gradient(90deg, rgba(var(--subtle-accent-color-components), .5) 0%, transparent 100%);
-    }
+  & input:focus {
+    border-color: var(--subtle-accent-color);
   }
 
   &.search-field {
@@ -266,6 +291,10 @@ footer {
     & input {
       padding-left: 2.5rem;
       padding-right: 2.5rem;
+
+      /* &:focus {
+        background-color: rgba(var(--subtle-accent-color-components), .25);
+      } */
     }
 
     & input::-webkit-search-cancel-button {
@@ -416,7 +445,7 @@ footer {
     text-decoration: none;
     color: var(--text-color);
     display: flex;
-    gap: .5rem;
+    gap: .25rem;
     align-items: center;
   }
 

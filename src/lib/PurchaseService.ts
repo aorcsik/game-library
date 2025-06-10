@@ -6,6 +6,7 @@ import { AppStorePurchaseData, GameCollections, GOGLibraryData, HeroicLibraryDat
 import { formatTitle } from './tools';
 import { client } from './sanity';
 import { MultipleMutationResult } from '@sanity/client';
+import { colorize } from '../cli/CommandLineTools';
 
 type Purchase = {
   _type: 'purchase';
@@ -113,14 +114,15 @@ class PurchaseService {
       {'title': 'FRAMED'},
       {'title': 'FRAMED 2'}
     ],
-    // 'Halo: The Master Chief Collection': [
-    //   {'title': 'Halo: Combat Evolved Anniversary'},
-    //   {'title': 'Halo 2: Anniversary'},
-    //   {'title': 'Halo 3'},
-    //   {'title': 'Halo 3: ODST'},
-    //   {'title': 'Halo: Reach'},
-    //   {'title': 'Halo 4'},
-    // ]
+    'Halo: The Master Chief Collection': [
+      {title: 'Halo: The Master Chief Collection'},
+      {title: 'Halo: Combat Evolved Anniversary'},
+      {title: 'Halo 2: Anniversary'},
+      {title: 'Halo 3'},
+      {title: 'Halo 3: ODST'},
+      {title: 'Halo: Reach'},
+      {title: 'Halo 4'},
+    ]
   };
 
   constructor(config: GameLibraryConfig, database: GameDatabaseService, skipTitle: string[]) {
@@ -131,23 +133,30 @@ class PurchaseService {
 
   async getSteamPurchases(fromSanity: boolean = false): Promise<Record<string, SteamPurchase>> {
     if (fromSanity) {
-      return await getPurchasesFromSanity('steam');
+      return getPurchasesFromSanity('steam');
     }
     const purchases: Record<string, SteamPurchase> = {};
     if (this.config.steam_api_key && this.config.steam_id) {
-      process.stdout.write('Fetching Steam purchases...\n');
+      process.stdout.write(colorize('Fetching Steam purchases...\n', 'yellow'));
       const url = `https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${this.config.steam_api_key}&steamid=${this.config.steam_id}&include_appinfo=1&format=json`;
-      const steamApiResponse = await fetch(url);
-      const steamApiResponseText = await steamApiResponse.text();
       let steamApiData: SteamAPIGetOwnedGamesResponse;
       try {
+        const steamApiResponse = await fetch(url);
+        if (!steamApiResponse.ok) {
+          throw new Error(`HTTP error: ${steamApiResponse.status}`);
+        }
+        const steamApiResponseText = await steamApiResponse.text();
+        if (!steamApiResponseText.match(/^\s*{.*}\s*$/)) {
+          throw new Error('Invalid JSON response');
+        }
         steamApiData = JSON.parse(steamApiResponseText) as SteamAPIGetOwnedGamesResponse;
       } catch (error) {
-        process.stdout.write(`Error parsing Steam API response: ${(error as Error)}\n`);
-        process.stdout.write(`Response: ${steamApiResponseText}\n`);
-        return purchases;
+        process.stdout.write(colorize(`[Error] ${(error as Error)}\n`, 'red'));
+        // process.stdout.write(`Response: ${steamApiResponseText}\n`);
+        process.stdout.write(colorize('Fetching Steam purchases from Sanity instead.\n', 'yellow'));
+        return getPurchasesFromSanity('steam');
       }
-      process.stdout.write(`Steam purchases fetched: ${steamApiData.response.game_count}\n`);
+      process.stdout.write(colorize(`Steam purchases fetched: ${steamApiData.response.game_count}\n`, 'green'));
       steamApiData.response.games.forEach(element => {
         if (this.skipTitle.includes(element.name)) return;
     
@@ -156,7 +165,7 @@ class PurchaseService {
           this.steamCollections[element.name].forEach(collectionItem => {
             const collectionTitle = formatTitle(collectionItem.title);
             const game = this.database.getGameByTitle(collectionTitle);
-            this.database.updateGame(game, { steamAppId: element.appid });
+            // this.database.updateGame(game, { steamAppId: element.appid });
             if (!purchases[game.key]) purchases[game.key] = {
               _type: 'purchase',
               key: game.key,
@@ -193,7 +202,7 @@ class PurchaseService {
 
   async getEpicPurchases(fromSanity: boolean = false): Promise<Record<string, EpicPurchase>> {
     if (fromSanity) {
-      return await getPurchasesFromSanity('epic');
+      return getPurchasesFromSanity('epic');
     }
     const purchases: Record<string, EpicPurchase> = {};
     if (this.config.epic_library) {
@@ -224,7 +233,7 @@ class PurchaseService {
 
   async getAmazonPurchases(fromSanity: boolean = false): Promise<Record<string, AmazonPurchase>> {
     if (fromSanity) {
-      return await getPurchasesFromSanity('amazon');
+      return getPurchasesFromSanity('amazon');
     }
     const purchases: Record<string, AmazonPurchase> = {};
     if (this.config.amazon_library) {
@@ -255,7 +264,7 @@ class PurchaseService {
 
   async getGOGPurchases(fromSanity: boolean = false): Promise<Record<string, GOGPurchase>> {
     if (fromSanity) {
-      return await getPurchasesFromSanity('gog');
+      return getPurchasesFromSanity('gog');
     }
     const purchases: Record<string, GOGPurchase> = {};
     if (this.config.gog_library) {
@@ -286,7 +295,7 @@ class PurchaseService {
 
   async getSwitchPurchases(fromSanity: boolean = false): Promise<Record<string, SwitchPurchase>> {
     if (fromSanity) {
-      return await getPurchasesFromSanity('switch');
+      return getPurchasesFromSanity('switch');
     }
     const purchases: Record<string, SwitchPurchase> = {};
     if (this.config.switch_library) {
@@ -337,7 +346,7 @@ class PurchaseService {
 
   async getAppStorePurchases(fromSanity: boolean = false): Promise<Record<string, AppStorePurchase>> {
     if (fromSanity) {
-      return await getPurchasesFromSanity('appstore');
+      return getPurchasesFromSanity('appstore');
     }
     const purchases: Record<string, AppStorePurchase> = {};
     if (this.config.appstore_library) {
@@ -372,7 +381,7 @@ class PurchaseService {
 
   async getXboxPurchases(fromSanity: boolean = false): Promise<Record<string, XboxPurchase>> {
     if (fromSanity) {
-      return await getPurchasesFromSanity('xbox');
+      return getPurchasesFromSanity('xbox');
     }
     const purchases: Record<string, XboxPurchase> = {};
     if (this.config.xbox_library) {
@@ -405,7 +414,7 @@ class PurchaseService {
 
   async getPlaystationPurchases(fromSanity: boolean = false): Promise<Record<string, PlaystationPurchase>> {
     if (fromSanity) {
-      return await getPurchasesFromSanity('playstation');
+      return getPurchasesFromSanity('playstation');
     }
     const purchases: Record<string, PlaystationPurchase> = {};
     if (this.config.playstation_library) {
