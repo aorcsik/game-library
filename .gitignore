@@ -19,3 +19,4 @@ node_modules
 /data/purchases/xbox.json
 
 tsconfig.cli.tsbuildinfo
+data/games/death-stranding.json
