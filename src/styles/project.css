@@ -6,27 +6,36 @@
   --tracking-columns: 3;
 }
 
-.project-header h2 {
-  margin: 3rem 0 0.5rem;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+.project-header {
+  margin-top: 3rem;
 
-  & a {
-    color: var(--accent-color);
-    text-decoration: none;
-    font-weight: 400;
+  & h2 {
+    margin: 0 0 0.5rem;
     font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    & a {
+      color: var(--secondary-text);
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 1rem;
+    }
   }
 }
 
 .achievement-icon {
+  --s: 64px; /* Size of the icon */
+  --b: 10px; /* Border radius */
+  --t: 0; /* Background position multiplier */
+
   display: block;
-  width: 64px;
-  height: 64px;
-  background-size: 64px auto;
-  background-position-y: calc(var(--t) * -64px);
+  width: var(--s);
+  height: var(--s);
+  background-size: var(--s) auto;
+  background-position-y: calc(-1 * var(--t) * var(--s));
+  border-radius: var(--b);
 }
 
 .achievement-list {
@@ -59,7 +68,7 @@
       & p {
         margin: 0;
         font-size: 0.875rem;
-        color: var(--accent-color);
+        color: var(--secondary-text);
       }
     }
   }
@@ -88,7 +97,7 @@
     gap: 0.125rem;
 
     &.completed {
-      color: var(--accent-color);
+      color: var(--subtle-accent-color);
       text-decoration: line-through;
     }
 

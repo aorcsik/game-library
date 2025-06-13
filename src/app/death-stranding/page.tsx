@@ -66,7 +66,12 @@ const AchievementList = ({ achievements, getSprite }: { achievements: Achievemen
       {achievements.map(achievement => {
         return (
           <li key={achievement.id}>
-            <span className="achievement-icon" style={{backgroundImage: `url("${getSprite(achievement.id)}")`, '--t': achievement.id} as React.CSSProperties}></span>
+            <span className="achievement-icon" style={{
+              backgroundImage: `url("${getSprite(achievement.id)}")`,
+              '--s': '64px',
+              '--b': '10px',
+              '--t': achievement.id
+            } as React.CSSProperties}></span>
             <div className="achievement-details">
               <h3>{achievement.title}</h3>
               <p>{achievement.description}</p>
@@ -156,9 +161,9 @@ export default async function Home(): Promise<React.JSX.Element> {
   const structureTracking = (<ul className="tracking-list" style={{'--tracking-columns': 6} as React.CSSProperties}>
     {structureProjectNotes.tracking.map((item, index) => (
       <li key={index}>
-        <span className={`tracking-status ${item.upgraded ? 'completed' : item.upgraded ? 'unlocked' : 'locked'}`}>
+        <span className={`tracking-status ${item.upgraded === undefined || item.upgraded ? 'completed' : 'incomplete'}`}>
           <FontAwesomeIcon icon={['far', item.completed ? 'check' : 'lock']} />
-          {item.name} {item.upgraded && '(Upgraded)'}
+          {item.name}
         </span>
       </li>
     ))}
