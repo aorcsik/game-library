@@ -4,6 +4,7 @@ import { getGameLibraryConfig } from '../../lib/Config';
 import NotesService from '../../lib/NotesService';
 
 import '../../styles/project.css';
+import Link from 'next/link';
 
 type Achievement = {
   id: number;
@@ -135,8 +136,8 @@ export default async function Home(): Promise<React.JSX.Element> {
   const memoryChipProjectNotes = notesJSON.projects.find((project: Project) => project.id === 3) as DeathStrandingMemoryChipProject;
   const structureProjectNotes = notesJSON.projects.find((project: Project) => project.id === 4) as DeathStrandingStructureProject;
   const fabricateProjectNotes = notesJSON.projects.find((project: Project) => project.id === 5) as DeathStrandingFabricateProject;
-  const categoryProjectNotes = notesJSON.projects.find((project: Project) => project.id === 9) as DeathStrandingCategoryProject;
-  const simpleProjects = notesJSON.projects.filter((project: Project) => ![0, 1, 2, 3, 4, 5, 9].includes(project.id));
+  const categoryProjectNotes = notesJSON.projects.find((project: Project) => project.id === 6) as DeathStrandingCategoryProject;
+  const simpleProjects = notesJSON.projects.filter((project: Project) => ![0, 1, 2, 3, 4, 5, 6].includes(project.id)).sort((a, b) => a.id - b.id);
 
   const getAchievementSpriteById = (id: number): string => {
     if ([3, 7, 12].includes(id)) {
@@ -303,6 +304,11 @@ export default async function Home(): Promise<React.JSX.Element> {
 
   return (
     <div className='project-container'>
+      <Link className="control-button" href="/" title="Back to Game Library">
+        <FontAwesomeIcon icon={['fas', 'arrow-left']} />
+        Back
+      </Link>
+
       <h1>
         <Image alt="Death Stranding Director's Cut" width="500" height="281" src="images/games/death-stranding-logo.png" />
       </h1>

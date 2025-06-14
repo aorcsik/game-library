@@ -113,6 +113,42 @@ h1, h2, h3, h4, h5, h6 {
   background-color: currentColor
 }
 
+.control-button {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  gap: 1rem;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 2rem;
+  border-bottom: 1px solid var(--subtle-accent-color);
+  backdrop-filter: blur(20px);
+  background-color: rgba(var(--background-color-components), .7);
+  box-shadow: var(--liquid-card-shadow), var(--liquid-field-inset-shadow);
+  text-decoration: none;
+  padding: 0 1.125rem;
+  font-size: 1.25rem;
+  color: var(--text-color);
+  /* text-transform: uppercase; */
+  z-index: 5;
+  font-weight: 500;
+  transition: all .3s ease-in-out;
+
+  & i {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .control-button {
+    &:hover {
+      box-shadow: var(--liquid-card-shadow), var(--liquid-card-inset-shadow);
+      width: 7rem
+    }
+  }
+}
+
 header {
   position: fixed;
   top: 0;
