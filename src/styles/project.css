@@ -1,3 +1,18 @@
+h1 {
+  text-align: center;
+  & img {
+    width: 350px;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  h1 img {
+    filter: invert(1) hue-rotate(180deg);
+  }
+}
+
 .project-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -38,18 +53,48 @@
   border-radius: var(--b);
 }
 
+.achievement-type {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  vertical-align: baseline;
+  margin-right: .125rem;
+
+  &.platinum {
+    background-image: url('../../public/images/games/playstation-platinum-trophy.png');
+  }
+  &.gold {
+    background-image: url('../../public/images/games/playstation-gold-trophy.png');
+  }
+  &.silver {
+    background-image: url('../../public/images/games/playstation-silver-trophy.png');
+  }
+  &.bronze {
+    background-image: url('../../public/images/games/playstation-bronze-trophy.png');
+  }
+}
+
 .achievement-list {
   list-style: none;
   padding: 0;
   margin: 0;  
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
   
 
   & > li {
     display: flex;
     gap: .5rem;
-    width: calc((100% - 2 * 1rem) / 3);
+    width: calc((100% - 1 * 1rem) / 2);
+
+    &.completed {
+      opacity: 0.5;
+      text-decoration: line-through;
+    }
     
     & .achievement-icon {
       flex-shrink: 0;
@@ -59,6 +104,7 @@
       display: flex;
       flex-direction: column;
       gap: 0.25rem;
+      width: 100%;
 
       & h3 {
         margin: 0;
@@ -69,6 +115,24 @@
         margin: 0;
         font-size: 0.875rem;
         color: var(--secondary-text);
+      }
+
+      & .achievement-progress {
+        width: 100%;
+        height: 3px;
+        background-color: var(--subtle-accent-color);
+        border-radius: 1.5px;
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+          content: '';
+          display: block;
+          height: 3px;
+          width: var(--progress, 0%);
+          background-color: var(--accent-color);
+          border-radius: 1.5px;
+        }
       }
     }
   }
@@ -122,4 +186,24 @@
   height: 1.5rem;
   mask-size: cover;
   background-color: currentColor;
+}
+
+@media (max-width: 480px) {
+  .achievement-list > li {
+    width: 100%;
+
+    & .achievement-details h3 {
+      font-size: 1.1rem;
+    }
+  }
+
+  .tracking-list > li {
+    width: 100%;
+  }
+
+  .project-header h2 {
+    font-size: 0.875rem;
+  }
+
+  
 }
