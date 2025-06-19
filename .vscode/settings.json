@@ -1,0 +1,11 @@
+{
+  "eslint.useFlatConfig": true,
+  "eslint.execArgv": null,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "css"
+  ]
+}
