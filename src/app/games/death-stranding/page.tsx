@@ -101,7 +101,7 @@ export default async function Home(): Promise<React.JSX.Element> {
       </Link>
 
       <h1>
-        <Image alt="Death Stranding Director's Cut" width="500" height="281" src="../images/games/death-stranding-logo.png" />
+        <Image alt="Death Stranding Director's Cut" width="500" height="281" src="/images/games/death-stranding-logo.png" />
       </h1>
 
       <ProjectContainer project={platinumProject} getSprite={getAchievementSpriteById} />

@@ -37,9 +37,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
         <meta name="apple-mobile-web-app-title" content="Game Library" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="application-name" content="Game Library" />
-        <link rel="apple-touch-icon" sizes="180x180" href="game-library-icon-color3.webp" />
-        <link rel="icon" type="image/svg" href="game-library-icon-monochrome.svg" sizes="any" />
-        <link rel="icon" type="image/webp" href="game-library-icon-color3.webp" sizes="any" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/game-library-icon-color3.webp" />
+        <link rel="icon" type="image/svg" href="/game-library-icon-monochrome.svg" sizes="any" />
+        <link rel="icon" type="image/webp" href="/game-library-icon-color3.webp" sizes="any" />
         <link rel="manifest" href="/manifest.json" />
         <meta
           name="theme-color"
