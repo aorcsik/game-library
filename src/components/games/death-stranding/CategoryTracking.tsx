@@ -15,7 +15,7 @@ const CategoryTracking = (categoryProjectNotes: DeathStrandingCategoryProject): 
         <span className={`tracking-status ${item.status >= 60 ? 'completed' : 'locked'}`}>
           <FontAwesomeIcon icon={['far', item.status >= 60 ? 'check' : 'lock']} />
           <span className="category-icon" style={{maskImage: `url("/images/games/death-stranding-${item.name.toLocaleLowerCase().replace(/\s+/g, '-')}.webp")` }}></span>
-          <strong>{item.name}{': '}</strong>{item.status}
+          <span className="tracking-text"><strong>{item.name}{': '}</strong>{item.status}</span>
         </span>
       </li>
     ))}

@@ -23,7 +23,7 @@ const FacilityTracking = (facilityProjectNotes: DeathStrandingFacilityProject): 
           <li key={facilityIndex}>
             <span className={`tracking-status ${facility.status === 0 ? 'locked' : facility.status === 1 ? 'unlocked' : 'completed'}`}>
               <FontAwesomeIcon icon={['far', facility.status === 0 ? 'lock' : facility.status === 1 ? 'check' : 'check']} />
-              {facility.name}
+              <span className="tracking-text">{facility.name}</span>
             </span>
           </li>
         ))}

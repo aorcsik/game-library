@@ -163,6 +163,7 @@ h1 {
 
   & > li {
     width: calc((100% - (var(--tracking-columns) - 1) * 1rem) / var(--tracking-columns));
+    order: var(--order, 1);
 
     & strong {
       text-transform: uppercase;
@@ -174,6 +175,8 @@ h1 {
     align-items: center;
     gap: 0.125rem;
     padding: .5rem;
+    
+    
 
     &.completed {
       color: var(--subtle-accent-color);
@@ -182,6 +185,12 @@ h1 {
 
     & i {
       margin-right: 0.25rem;
+    }
+
+    & .tracking-text {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
 
     & a {
@@ -222,6 +231,11 @@ h1 {
 
   .tracking-list > li {
     width: 100%;
+    order: 1;
+
+    &.empty {
+      display: none;
+    }
   }
 
   .project-header h2 {

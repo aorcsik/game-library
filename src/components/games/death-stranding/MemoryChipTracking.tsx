@@ -10,16 +10,36 @@ export type DeathStrandingMemoryChipProject = Project & {
   };
 }
 
+const calculateTransposedIndexes = (max: number, columns: number): number[] => {
+  const chipPerColumn = Math.ceil(max / columns);
+  const transposedIndexes: number[] = [];
+  for (let index = 0; index < chipPerColumn; index++) {
+    for (let i = 0; i < columns; i++) {
+      transposedIndexes.push(index + i * chipPerColumn);
+    }
+  }
+  return transposedIndexes;
+};
+
 const MemoryChipTracking = (memoryChipProjectNotes: DeathStrandingMemoryChipProject): React.JSX.Element => {
-  return <ul className="tracking-list" style={{'--tracking-columns': 4} as React.CSSProperties}>
-    {memoryChipProjectNotes.tracking.chips.map((chip, index) => {
-      const found = memoryChipProjectNotes.tracking.status.includes(index + 1);
-      return (<li key={index}>
-        <ToolTip text={`${chip}`}>
+  const COLUMNS = 5;
+  const chipCount = memoryChipProjectNotes.tracking.chips.length;
+  const transposedIndexes = calculateTransposedIndexes(chipCount, COLUMNS);
+  return <ul className="tracking-list" style={{'--tracking-columns': COLUMNS} as React.CSSProperties}>
+    {transposedIndexes.map((_, index) => {
+      const chipId = index + 1;
+      const orderCss = { '--order': transposedIndexes.indexOf(index) } as React.CSSProperties;
+      if (index >= chipCount) {
+        return <li className="empty" key={`empty-${chipId}`} style={orderCss}></li>;
+      }
+      const chipName = memoryChipProjectNotes.tracking.chips[index];
+      const found = memoryChipProjectNotes.tracking.status.includes(chipId);
+      return (<li key={`chip-${chipId}`} style={orderCss}>
+        <ToolTip text={`${chipName}`}>
           <span className={`tracking-status ${found ? 'completed' : 'locked'}`}>
             <FontAwesomeIcon icon={['far', found ? 'check' : 'lock']} />
-            <Link href={`${memoryChipProjectNotes.help}#Memory_Chip_${index + 1}`} rel="noreferrer" target="_blank">
-              {found ? chip : `Memory Chip #${index + 1}`}
+            <Link href={`${memoryChipProjectNotes.help}#Memory_Chip_${chipId}`} rel="noreferrer" target="_blank" className='tracking-text'>
+              {found ? chipName : `Memory Chip #${chipId}`}
             </Link>
           </span>
         </ToolTip>

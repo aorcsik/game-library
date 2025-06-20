@@ -24,7 +24,7 @@ const FabricateTracking = (fabricateProjectNotes: DeathStrandingFabricateProject
               <li key={itemIndex}>
                 <span className={`tracking-status ${item.status === 2 ? 'completed' : 'incomplete'}`}>
                   <FontAwesomeIcon icon={['far', item.status === 0 ? 'lock' : item.status === 1 ? 'check' : 'check']} />
-                  {item.name}
+                  <span className="tracking-text">{item.name}</span>
                 </span>
               </li>
             ))}

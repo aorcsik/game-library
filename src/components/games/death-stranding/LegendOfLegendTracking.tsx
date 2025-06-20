@@ -15,7 +15,7 @@ const LegendOfLegendTracking = (legendOfLegendProjectNotes: DeathStrandingLegend
         <span className={`tracking-status ${item.status >= 20 ? 'completed' : 'incomplete'}`}>
           <FontAwesomeIcon icon={['far', item.status >= 10 ? 'check' : 'lock']} />
           <span className="category-icon" style={{maskImage: `url("/images/games/death-stranding-${item.name.toLocaleLowerCase().replace(/\s+/g, '-')}.webp")` }}></span>
-          <strong>{item.name}{': '}</strong>{item.status}
+          <span className="tracking-text"><strong>{item.name}{': '}</strong>{item.status}</span>
         </span>
       </li>
     ))}

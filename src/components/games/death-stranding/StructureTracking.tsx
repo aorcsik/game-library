@@ -15,7 +15,7 @@ const StructureTracking = (structureProjectNotes: DeathStrandingStructureProject
       <li key={index}>
         <span className={`tracking-status ${item.upgraded === undefined || item.upgraded ? 'completed' : 'incomplete'}`}>
           <FontAwesomeIcon icon={['far', item.completed ? 'check' : 'lock']} />
-          {item.name}
+          <span className="tracking-text">{item.name}</span>
         </span>
       </li>
     ))}
