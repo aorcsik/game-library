@@ -115,13 +115,19 @@ class PurchaseService {
       {'title': 'FRAMED 2'}
     ],
     'Halo: The Master Chief Collection': [
-      {title: 'Halo: The Master Chief Collection'},
-      {title: 'Halo: Combat Evolved Anniversary'},
-      {title: 'Halo 2: Anniversary'},
-      {title: 'Halo 3'},
-      {title: 'Halo 3: ODST'},
-      {title: 'Halo: Reach'},
-      {title: 'Halo 4'},
+      {'title': 'Halo: The Master Chief Collection'},
+      {'title': 'Halo: Combat Evolved Anniversary'},
+      {'title': 'Halo 2: Anniversary'},
+      {'title': 'Halo 3'},
+      {'title': 'Halo 3: ODST'},
+      {'title': 'Halo: Reach'},
+      {'title': 'Halo 4'},
+    ],
+    'Mass Effect™ Legendary Edition': [
+      {'title': 'Mass Effect Legendary Edition'},
+      {'title': 'Mass Effect'},
+      {'title': 'Mass Effect 2'},
+      {'title': 'Mass Effect 3'}
     ]
   };
 
@@ -166,7 +172,7 @@ class PurchaseService {
             const collectionTitle = formatTitle(collectionItem.title);
             const game = this.database.getGameByTitle(collectionTitle);
             // this.database.updateGame(game, { steamAppId: element.appid });
-            if (!purchases[game.key]) purchases[game.key] = {
+            if (!purchases[game.key] || !purchases[game.key].collection) purchases[game.key] = {
               _type: 'purchase',
               key: game.key,
               platform: 'steam',
