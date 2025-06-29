@@ -56364,5 +56364,305 @@
       ],
       "updated": "2025-06-21T13:09:49.854Z"
     }
+  },
+  {
+    "title": "Sker Ritual",
+    "key": "sker-ritual",
+    "steamAppId": 1492070,
+    "openCriticId": "16694/sker-ritual",
+    "openCriticData": {
+      "title": "Sker Ritual",
+      "cover": "https://img.opencritic.com/game/16694/PSZXPPTj.jpg",
+      "tier": "fair",
+      "score": 72,
+      "critics": 55,
+      "releaseDate": "2024-04-18T00:00:00.000Z",
+      "updated": "2025-06-27T17:35:38.222Z"
+    },
+    "steamData": {
+      "title": "Sker Ritual",
+      "description": "An intense round-based zombie survival FPS, play solo or co-op. Shoot your way through relentless waves of vicious horrors with high-octane objectives, upgrading steampunk weapons, collecting Celtic God powers, and surviving the onslaught of the Quiet Ones.",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2024-04-18T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "83% of the 4,655 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1492070/header.jpg?t=1732097470",
+      "updated": "2025-06-27T17:35:39.118Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/sker-ritual/",
+    "metacriticData": {
+      "title": "Sker Ritual",
+      "metacriticScore": 55,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "PlayStation 5",
+        "Xbox Series X",
+        "PlayStation 4"
+      ],
+      "releaseDate": "2024-04-18T00:00:00.000Z",
+      "developers": [
+        "Wales Interactive"
+      ],
+      "publisher": "Wales Interactive",
+      "genres": [
+        "Survival"
+      ],
+      "updated": "2025-06-27T17:35:51.736Z"
+    }
+  },
+  {
+    "title": "Tchia",
+    "key": "tchia",
+    "steamAppId": 1496590,
+    "openCriticId": "14464/tchia",
+    "openCriticData": {
+      "title": "Tchia",
+      "cover": "https://img.opencritic.com/game/14464/Ni7qh7HL.jpg",
+      "tier": "strong",
+      "score": 78,
+      "critics": 67,
+      "releaseDate": "2023-03-21T00:00:00.000Z",
+      "updated": "2025-06-27T17:36:14.328Z"
+    },
+    "steamData": {
+      "title": "Tchia",
+      "description": "A Tropical Open-World adventure. Climb, glide, swim, and sail your boat around a beautiful archipelago in this physics-driven sandbox. Take control of any animal or object you can find, and Jam on your fully playable Ukulele.",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2024-03-21T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "89% of the 346 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1496590/header.jpg?t=1727258805",
+      "updated": "2025-06-27T17:36:14.914Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/tchia/",
+    "metacriticData": {
+      "title": "Tchia",
+      "metacriticScore": 77,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "PlayStation 5",
+        "PlayStation 4",
+        "Nintendo Switch",
+        "Xbox Series X"
+      ],
+      "releaseDate": "2023-03-21T00:00:00.000Z",
+      "developers": [
+        "Awaceb"
+      ],
+      "publisher": "Kepler Interactive",
+      "genres": [
+        "Open-World Action"
+      ],
+      "updated": "2025-06-27T17:36:20.844Z"
+    }
+  },
+  {
+    "title": "Havendock",
+    "key": "havendock",
+    "steamAppId": 2020710,
+    "openCriticId": "skip",
+    "steamData": {
+      "title": "Havendock",
+      "description": "Breathe easy and thrive in this cozy colony sim. Build a haven for castaways, manage resources, live your best life on the ocean. Lead your humble settlement into a high-tech society.",
+      "genres": [
+        "Casual",
+        "Indie",
+        "Simulation",
+        "Strategy"
+      ],
+      "releaseDate": "2025-04-22T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "84% of the 1,267 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2020710/5d5c152ca7f3c8a0994582822584463a6f0d21f7/header_alt_assets_8.jpg?t=1751032430",
+      "updated": "2025-06-27T17:34:32.076Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/havendock/",
+    "metacriticData": {
+      "title": "Havendock",
+      "metacriticScore": null,
+      "mustPlay": false,
+      "platforms": [
+        "PC"
+      ],
+      "releaseDate": "2025-04-22T00:00:00.000Z",
+      "developers": [
+        "YYZ Studios"
+      ],
+      "publisher": "Pretty Soon",
+      "genres": [
+        "Management"
+      ],
+      "updated": "2025-06-27T17:34:47.371Z"
+    }
+  },
+  {
+    "title": "Biped",
+    "key": "biped",
+    "steamAppId": 1071870,
+    "openCriticId": "9280/biped",
+    "openCriticData": {
+      "title": "Biped",
+      "cover": "https://img.opencritic.com/game/9280/dl7C8jlK.jpg",
+      "tier": "strong",
+      "score": 76,
+      "critics": 81,
+      "releaseDate": "2020-03-26T00:00:00.000Z",
+      "updated": "2025-06-27T17:33:43.257Z"
+    },
+    "steamData": {
+      "title": "Biped",
+      "description": "Biped is a coop action adventure game with a strong focus on moment-to-moment collaboration between 2 players.",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Casual",
+        "Indie",
+        "Simulation",
+        "Sports",
+        "Strategy"
+      ],
+      "releaseDate": "2020-03-26T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "86% of the 7,153 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1071870/header.jpg?t=1750967475",
+      "updated": "2025-06-27T17:33:43.950Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/biped",
+    "metacriticData": {
+      "title": "Biped",
+      "metacriticScore": 70,
+      "mustPlay": false,
+      "platforms": [
+        "PlayStation 4",
+        "Nintendo Switch",
+        "PC",
+        "Xbox One",
+        "PlayStation 5"
+      ],
+      "releaseDate": "2020-04-08T00:00:00.000Z",
+      "developers": [
+        "NExT Studios"
+      ],
+      "publisher": "Postmeta Games",
+      "genres": [
+        "3D Platformer"
+      ],
+      "updated": "2025-06-27T17:33:47.576Z"
+    }
+  },
+  {
+    "title": "Dungeons of Hinterberg",
+    "key": "dungeons-of-hinterberg",
+    "steamAppId": 1983260,
+    "openCriticId": "16996/dungeons-of-hinterberg",
+    "openCriticData": {
+      "title": "Dungeons of Hinterberg",
+      "cover": "https://img.opencritic.com/game/16996/xbCskSOZ.jpg",
+      "tier": "strong",
+      "score": 81,
+      "critics": 89,
+      "releaseDate": "2024-07-18T00:00:00.000Z",
+      "updated": "2025-06-27T17:34:09.809Z"
+    },
+    "steamData": {
+      "title": "Dungeons of Hinterberg",
+      "description": "Discover the magic and lore of the Alps in this acclaimed Action Adventure. Forge relationships with locals to help you solve puzzles, battle monsters and uncover secrets of the legendary Dungeons of Hinterberg!",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Indie",
+        "RPG"
+      ],
+      "releaseDate": "2024-07-18T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "94% of the 1,692 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1983260/header.jpg?t=1747735486",
+      "updated": "2025-06-27T17:34:10.926Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/dungeons-of-hinterberg",
+    "metacriticData": {
+      "title": "Dungeons of Hinterberg",
+      "metacriticScore": 80,
+      "mustPlay": false,
+      "platforms": [
+        "Xbox Series X",
+        "PC",
+        "PlayStation 5",
+        "Xbox One",
+        "PlayStation 4"
+      ],
+      "releaseDate": "2024-07-18T00:00:00.000Z",
+      "developers": [
+        "Microbird Games"
+      ],
+      "publisher": "Curve Games",
+      "genres": [
+        "Open-World Action"
+      ],
+      "updated": "2025-06-27T17:34:13.866Z"
+    }
+  },
+  {
+    "title": "Nobody Wants to Die",
+    "key": "nobody-wants-to-die",
+    "steamAppId": 1939970,
+    "openCriticId": "17004/nobody-wants-to-die",
+    "openCriticData": {
+      "title": "Nobody Wants to Die",
+      "cover": "https://img.opencritic.com/game/17004/o9yU9o7Q.jpg",
+      "tier": "strong",
+      "score": 77,
+      "critics": 67,
+      "releaseDate": "2024-07-17T00:00:00.000Z",
+      "updated": "2025-06-27T17:35:12.679Z"
+    },
+    "steamData": {
+      "title": "Nobody Wants to Die",
+      "description": "Lose yourself in the dystopian world of New York, 2329; immortality comes at a price that someone has to pay. In this interactive noir story, lead the investigation using advanced technology, as Detective James Karra who risks it all in pursuit of a serial killer targeting the city’s elite.",
+      "genres": [
+        "Adventure"
+      ],
+      "releaseDate": "2024-07-17T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "85% of the 3,210 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1939970/header.jpg?t=1749822103",
+      "updated": "2025-06-27T17:35:13.450Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/nobody-wants-to-die/",
+    "metacriticData": {
+      "title": "Nobody Wants to Die",
+      "metacriticScore": 75,
+      "mustPlay": false,
+      "platforms": [
+        "PlayStation 5",
+        "Xbox Series X",
+        "PC"
+      ],
+      "releaseDate": "2024-07-17T00:00:00.000Z",
+      "developers": [
+        "Critical Hit Games"
+      ],
+      "publisher": "PLAION",
+      "genres": [
+        "First-Person Adventure"
+      ],
+      "updated": "2025-06-27T17:35:19.160Z"
+    }
   }
 ]

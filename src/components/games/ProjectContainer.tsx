@@ -12,20 +12,35 @@ type ProjectContainerProps = {
   children?: React.ReactNode;
 }
 
-const ProjectContainer = ({ project, getSprite, children}: ProjectContainerProps): React.JSX.Element => (
-  <>
-    <div className="project-header">
-      {project.id ? (<h2>
-        Project #{project.id}
-        {project.help && <a href={project.help} target="_blank" rel="noreferrer">Help</a>}
-      </h2>) : null}
-      <AchievementList achievements={project.achievements} getSprite={getSprite} />
+const ProjectContainer = ({ project, getSprite, children}: ProjectContainerProps): React.JSX.Element => {
+  let hasIncompleteAchievements = false;
+  project.achievements.forEach(achievement => {
+    if (achievement.progress < 100) {
+      hasIncompleteAchievements = true;
+    }
+  });
+
+  return (
+    <div className="project-container">
+      {children && <input type="checkbox" className="project-toggle" id={`project-${project.id}`} defaultChecked={hasIncompleteAchievements} />}
+      <div className="project-header">
+        <div className="project-header-top">
+          {project.id || project.id === 0 ? (<h2>
+            Project #{project.id}
+            {project.help && <a href={project.help} target="_blank" rel="noreferrer">Help</a>}
+          </h2>) : null}
+          {children && <label htmlFor={`project-${project.id}`} className="project-toggle-label">
+            <i className="fas fa-chevron-down"></i>
+          </label>}
+        </div>
+        <AchievementList achievements={project.achievements} getSprite={getSprite} />
+      </div>
+      {children && <div className="project-content">
+        {children}
+      </div>}
     </div>
-    {children && <div className="project-content">
-      {children}
-    </div>}
-  </>
-);
+  );
+};
 
 const updateAchievementProgress = (project: Project, achievementId: number, progress: number): void => {
   const achievement = project.achievements.find(a => a.id === achievementId);

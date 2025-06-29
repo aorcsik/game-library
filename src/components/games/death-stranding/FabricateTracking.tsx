@@ -16,9 +16,9 @@ const FabricateTracking = (fabricateProjectNotes: DeathStrandingFabricateProject
     <ul className="tracking-list" style={{'--tracking-columns': 4} as React.CSSProperties}>
       {fabricateProjectNotes.tracking.map((category, categoryIndex) => (
         <li key={categoryIndex}>
-          <span className="tracking-category">
+          <div className="tracking-category">
             <strong>{category.category}</strong>
-          </span>
+          </div>
           <ul className="tracking-items">
             {category.items.map((item, itemIndex) => (
               <li key={itemIndex}>

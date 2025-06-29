@@ -94,7 +94,7 @@ export default async function Home(): Promise<React.JSX.Element> {
   updateAchievementProgress(platinumProject, 0, achievemt_0 / 63 * 100);
 
   return (
-    <div className='project-container'>
+    <main>
       <Link className="control-button" href="/" title="Back to Game Library">
         <FontAwesomeIcon icon={['fas', 'arrow-left']} />
         Back
@@ -133,6 +133,6 @@ export default async function Home(): Promise<React.JSX.Element> {
       {simpleProjects.map((project: Project) => (
         <ProjectContainer key={project.id} project={project} getSprite={getAchievementSpriteById} />
       ))}
-    </div>
+    </main>
   );
 }

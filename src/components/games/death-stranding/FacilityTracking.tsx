@@ -15,9 +15,9 @@ const FacilityTracking = (facilityProjectNotes: DeathStrandingFacilityProject): 
   return (<ul className="tracking-list">
     {facilityProjectNotes.tracking.map((region, regionIndex) => (
       <li key={regionIndex}>
-        <span className="tracking-category">
+        <div className="tracking-category">
           <strong>{region.region}</strong>
-        </span>
+        </div>
         <ul className="tracking-items">
         {region.facilities.map((facility, facilityIndex) => (
           <li key={facilityIndex}>

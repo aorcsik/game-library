@@ -25,7 +25,7 @@ h1 {
   }
 }
 
-.project-container {
+main {
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem;
@@ -33,21 +33,57 @@ h1 {
   --tracking-columns: 3;
 }
 
-.project-header {
+.project-container {
   margin-top: 3rem;
 
-  & h2 {
-    margin: 0 0 0.5rem;
-    font-size: 1rem;
+  & .project-header-top {
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
 
-    & a {
-      color: var(--secondary-text);
-      text-decoration: none;
-      font-weight: 400;
+    & .project-toggle-label {
+      margin-left: auto;
+    }
+  }
+  & .project-header {
+    & h2 {
+      margin: 0 0 0.5rem;
       font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      & a {
+        color: var(--secondary-text);
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  & .project-toggle {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+
+    & + .project-header {
+      & + .project-content {
+        display: none;
+      }
+    }
+
+    &:checked {
+      & + .project-header {
+
+        & .project-toggle-label i {
+          transform: rotate(180deg);
+        }
+
+        & + .project-content {
+          display: block;
+        }
+      }
     }
   }
 }
@@ -236,11 +272,13 @@ h1 {
     &.empty {
       display: none;
     }
+
+    & .tracking-category {
+      margin-top: 1rem;
+    }
   }
 
   .project-header h2 {
     font-size: 0.875rem;
   }
-
-  
 }

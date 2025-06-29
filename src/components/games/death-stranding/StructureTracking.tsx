@@ -13,7 +13,7 @@ const StructureTracking = (structureProjectNotes: DeathStrandingStructureProject
   return (<ul className="tracking-list" style={{'--tracking-columns': 6} as React.CSSProperties}>
     {structureProjectNotes.tracking.map((item, index) => (
       <li key={index}>
-        <span className={`tracking-status ${item.upgraded === undefined || item.upgraded ? 'completed' : 'incomplete'}`}>
+        <span className={`tracking-status ${item.completed && (item.upgraded === undefined || item.upgraded) ? 'completed' : 'incomplete'}`}>
           <FontAwesomeIcon icon={['far', item.completed ? 'check' : 'lock']} />
           <span className="tracking-text">{item.name}</span>
         </span>
