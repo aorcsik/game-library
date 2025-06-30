@@ -81,7 +81,7 @@ export default async function Home(): Promise<React.JSX.Element> {
   const achievement_44 = getCategoryAchievementProgress(categoryProjectNotes);
   updateAchievementProgress(categoryProjectNotes, 44, achievement_44);
 
-  let achievemt_0 = 49;
+  let achievemt_0 = 50;
   achievemt_0 += legendOfLegendProjectNotes.achievements.filter(a => a.progress >= 100).length;
   achievemt_0 += facilityProjectNotes.achievements.filter(a => a.progress >= 100).length;
   achievemt_0 += memoryChipProjectNotes.achievements.filter(a => a.progress >= 100).length;
