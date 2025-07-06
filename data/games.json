@@ -38419,11 +38419,6 @@
     "key": "system-shock"
   },
   {
-    "title": "System Shock 2",
-    "openCriticId": "skip",
-    "releaseDate": "1999-08-11T00:00:00.000Z"
-  },
-  {
     "title": "System Shock: Classic",
     "openCriticId": "skip",
     "releaseDate": "1994-09-23T00:00:00.000Z",
@@ -45419,6 +45414,9 @@
   },
   {
     "title": "System Shock® 2 (Classic)",
+    "sameGame": [
+      "System Shock 2 (1999)"
+    ],
     "openCriticId": "skip",
     "releaseDate": "1999-08-11T00:00:00.000Z",
     "steamAppId": 238210,
@@ -56663,6 +56661,567 @@
         "First-Person Adventure"
       ],
       "updated": "2025-06-27T17:35:19.160Z"
+    }
+  },
+  {
+    "title": "Pony Island",
+    "key": "pony-island",
+    "steamAppId": 405640,
+    "openCriticId": "2144/pony-island",
+    "openCriticData": {
+      "title": "Pony Island",
+      "cover": "https://img.opencritic.com/game/2144/wjoyZxYB.jpg",
+      "tier": "mighty",
+      "score": 85,
+      "critics": 81,
+      "releaseDate": "2016-01-04T00:00:00.000Z",
+      "updated": "2025-07-06T13:14:58.177Z"
+    },
+    "steamData": {
+      "title": "Pony Island",
+      "description": "Pony Island is a suspense puzzle game in disguise. You are in limbo, trapped in a malevolent and malfunctioning arcade machine devised by the devil himself. It is not a game about ponies.",
+      "genres": [
+        "Indie"
+      ],
+      "releaseDate": "2016-01-04T00:00:00.000Z",
+      "reviewScore": 9,
+      "reviewScoreDescription": "Overwhelmingly Positive",
+      "reviewScoreTooltip": "95% of the 13,990 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/405640/header.jpg?t=1720913107",
+      "updated": "2025-07-06T13:14:58.817Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/pony-island",
+    "metacriticData": {
+      "title": "Pony Island",
+      "metacriticScore": 86,
+      "mustPlay": false,
+      "platforms": [
+        "PC"
+      ],
+      "releaseDate": "2016-01-04T00:00:00.000Z",
+      "developers": [
+        "Daniel Mullins Games"
+      ],
+      "publisher": "Daniel Mullins Games",
+      "genres": [
+        "Adventure"
+      ],
+      "updated": "2025-07-06T13:15:01.675Z"
+    }
+  },
+  {
+    "title": "Heaven Will Be Mine",
+    "key": "heaven-will-be-mine",
+    "steamAppId": 836450,
+    "openCriticId": "6591/heaven-will-be-mine",
+    "openCriticData": {
+      "title": "Heaven Will Be Mine",
+      "cover": null,
+      "tier": null,
+      "score": null,
+      "critics": null,
+      "releaseDate": "2018-07-25T00:00:00.000Z",
+      "updated": "2025-07-06T13:10:53.011Z"
+    },
+    "steamData": {
+      "title": "Heaven Will Be Mine",
+      "description": "HEAVEN WILL BE MINE is a visual novel about making terrible life decisions in the midst of a hot-blooded battle between giant robots. Select one of three terribly behaved girls to fight and/or make out with each other in their struggle for the fate of space.",
+      "genres": [
+        "Indie"
+      ],
+      "releaseDate": "2018-07-25T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "93% of the 598 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/836450/header.jpg?t=1593110610",
+      "updated": "2025-07-06T13:10:53.744Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/heaven-will-be-mine/",
+    "metacriticData": {
+      "title": "Heaven Will Be Mine",
+      "metacriticScore": null,
+      "mustPlay": false,
+      "platforms": [
+        "PC"
+      ],
+      "releaseDate": "2018-07-25T00:00:00.000Z",
+      "developers": [
+        "Pillow Fight Games"
+      ],
+      "publisher": "Pillow Fight Games",
+      "genres": [
+        "Visual Novel"
+      ],
+      "updated": "2025-07-06T13:11:06.361Z"
+    }
+  },
+  {
+    "title": "Tell Me Why",
+    "key": "tell-me-why",
+    "steamAppId": 1180660,
+    "openCriticId": "10048/tell-me-why",
+    "openCriticData": {
+      "title": "Tell Me Why",
+      "cover": "https://img.opencritic.com/game/10048/6fe7SiXe.jpg",
+      "tier": "strong",
+      "score": 81,
+      "critics": 77,
+      "releaseDate": "2020-08-27T00:00:00.000Z",
+      "updated": "2025-07-06T13:17:09.012Z"
+    },
+    "steamData": {
+      "title": "Tell Me Why",
+      "description": "Tell Me Why is the multi-award winning episodic adventure game from Dontnod Entertainment in which twins use their supernatural bond to discover the truth of their troubled past.",
+      "genres": [
+        "Adventure",
+        "Free%20to%20Play"
+      ],
+      "releaseDate": "2020-08-27T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "82% of the 14,422 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1180660/header.jpg?t=1747155575",
+      "updated": "2025-07-06T13:17:09.619Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/tell-me-why/",
+    "metacriticData": {
+      "title": "Tell Me Why",
+      "metacriticScore": 78,
+      "mustPlay": false,
+      "platforms": [
+        "Xbox One",
+        "PC",
+        "Xbox Series X"
+      ],
+      "releaseDate": "2020-08-27T00:00:00.000Z",
+      "developers": [
+        "DONTNOD Entertainment"
+      ],
+      "publisher": "Xbox Game Studios",
+      "genres": [
+        "Adventure"
+      ],
+      "updated": "2025-07-06T13:17:15.094Z"
+    }
+  },
+  {
+    "title": "Pentiment",
+    "key": "pentiment",
+    "steamAppId": 1205520,
+    "openCriticId": "13960/pentiment",
+    "openCriticData": {
+      "title": "Pentiment",
+      "cover": "https://img.opencritic.com/game/13960/utVDxtQf.jpg",
+      "tier": "mighty",
+      "score": 86,
+      "critics": 87,
+      "releaseDate": "2022-11-15T00:00:00.000Z",
+      "updated": "2025-07-06T13:14:32.304Z"
+    },
+    "steamData": {
+      "title": "Pentiment",
+      "description": "Step into a living illustrated world in a time when Europe is at a crossroads of great religious and political change. Walk in the footsteps of Andreas Maler, a master artist who finds himself in the middle of murders, scandals, and intrigue in the Bavarian Alps.",
+      "genres": [
+        "Adventure",
+        "Casual"
+      ],
+      "releaseDate": "2022-11-14T00:00:00.000Z",
+      "reviewScore": 9,
+      "reviewScoreDescription": "Overwhelmingly Positive",
+      "reviewScoreTooltip": "95% of the 7,541 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1205520/header.jpg?t=1736299566",
+      "updated": "2025-07-06T13:14:33.118Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/pentiment",
+    "metacriticData": {
+      "title": "Pentiment",
+      "metacriticScore": 86,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Xbox Series X",
+        "Xbox One",
+        "Nintendo Switch",
+        "PlayStation 5",
+        "PlayStation 4"
+      ],
+      "releaseDate": "2022-11-15T00:00:00.000Z",
+      "developers": [
+        "Obsidian Entertainment"
+      ],
+      "publisher": "Xbox Game Studios",
+      "genres": [
+        "Adventure"
+      ],
+      "updated": "2025-07-06T13:14:38.318Z"
+    }
+  },
+  {
+    "title": "Neva",
+    "key": "neva",
+    "openCriticId": "17456/neva",
+    "openCriticData": {
+      "title": "Neva",
+      "cover": "https://img.opencritic.com/game/17456/5bHOKzwF.jpg",
+      "tier": "mighty",
+      "score": 87,
+      "critics": 94,
+      "releaseDate": "2024-10-15T00:00:00.000Z",
+      "updated": "2025-07-06T13:12:58.259Z"
+    },
+    "steamAppId": 2420660,
+    "steamData": {
+      "title": "Neva",
+      "description": "Experience the moving tale of a young woman and her lifelong bond with a magnificent wolf as they embark on a thrilling adventure through a rapidly dying world.",
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2024-10-15T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "94% of the 6,453 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2420660/header.jpg?t=1746009836",
+      "updated": "2025-07-06T13:13:04.197Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/neva",
+    "metacriticData": {
+      "title": "Neva",
+      "metacriticScore": 87,
+      "mustPlay": false,
+      "platforms": [
+        "PlayStation 5",
+        "Xbox Series X",
+        "PC",
+        "Nintendo Switch",
+        "PlayStation 4"
+      ],
+      "releaseDate": "2024-10-15T00:00:00.000Z",
+      "developers": [
+        "Nomada Studio"
+      ],
+      "publisher": "Devolver Digital",
+      "genres": [
+        "Action Adventure"
+      ],
+      "updated": "2025-07-06T13:13:07.269Z"
+    }
+  },
+  {
+    "title": "Horizon Zero Dawn Remastered",
+    "key": "horizon-zero-dawn-remastered",
+    "openCriticId": "17569/horizon-zero-dawn-remastered",
+    "openCriticData": {
+      "title": "Horizon Zero Dawn Remastered",
+      "cover": "https://img.opencritic.com/game/17569/1bx7DZkE.jpg",
+      "tier": "mighty",
+      "score": 84,
+      "critics": 89,
+      "releaseDate": "2024-10-31T00:00:00.000Z",
+      "updated": "2025-07-06T13:11:23.468Z"
+    },
+    "steamAppId": 2561580,
+    "steamData": {
+      "title": "Horizon Zero Dawn™ Remastered",
+      "description": "Experience the critically acclaimed Horizon Zero Dawn™ with stunning new visuals and upgraded features. In a far future where colossal machines roam the Earth, pockets of humanity survive in unique tribes among the lush, overgrown ruins of our long-lost civilization.",
+      "genres": [
+        "Action",
+        "Adventure",
+        "RPG"
+      ],
+      "releaseDate": "2024-10-31T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "81% of the 3,442 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2561580/header.jpg?t=1750952943",
+      "updated": "2025-07-06T13:11:39.764Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/horizon-zero-dawn-remastered/",
+    "metacriticData": {
+      "title": "Horizon Zero Dawn Remastered",
+      "metacriticScore": 85,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "PlayStation 5"
+      ],
+      "releaseDate": "2024-10-31T00:00:00.000Z",
+      "developers": [
+        "Guerrilla"
+      ],
+      "publisher": "Sony Interactive Entertainment",
+      "genres": [
+        "Open-World Action"
+      ],
+      "updated": "2025-07-06T13:11:51.723Z"
+    }
+  },
+  {
+    "title": "Paquerette Down the Bunburrows",
+    "key": "paquerette-down-the-bunburrows",
+    "openCriticId": "skip",
+    "steamAppId": 1628610,
+    "steamData": {
+      "title": "Paquerette Down the Bunburrows",
+      "description": "The buns... you HAVE to capture them!! Think outside the bunburrow or get outsmarted by bunnies in this cute pathfinding-based puzzle game!",
+      "genres": [
+        "Adventure",
+        "Casual",
+        "Indie"
+      ],
+      "releaseDate": "2023-08-02T00:00:00.000Z",
+      "reviewScore": 9,
+      "reviewScoreDescription": "Overwhelmingly Positive",
+      "reviewScoreTooltip": "97% of the 943 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1628610/header.jpg?t=1745765898",
+      "updated": "2025-07-06T13:13:44.233Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/paquerette-down-the-bunburrows/",
+    "metacriticData": {
+      "title": "Paquerette Down the Bunburrows",
+      "metacriticScore": null,
+      "mustPlay": false,
+      "platforms": [
+        "PC"
+      ],
+      "releaseDate": "2023-08-02T00:00:00.000Z",
+      "developers": [
+        "Bunstack"
+      ],
+      "publisher": "Abiding Bridge",
+      "genres": [
+        "Action Puzzle"
+      ],
+      "updated": "2025-07-06T13:14:11.622Z"
+    }
+  },
+  {
+    "title": "Backpack Hero",
+    "key": "backpack-hero",
+    "openCriticId": "15870/backpack-hero",
+    "openCriticData": {
+      "title": "Backpack Hero",
+      "cover": "https://img.opencritic.com/game/15870/wclVu4MU.jpg",
+      "tier": "fair",
+      "score": 72,
+      "critics": 64,
+      "releaseDate": "2023-11-14T00:00:00.000Z",
+      "updated": "2025-07-06T13:08:37.837Z"
+    },
+    "steamAppId": 1970580,
+    "steamData": {
+      "title": "Backpack Hero",
+      "description": "The inventory management roguelike! Collect rare items, organize your backpack, and vanquish your foes!",
+      "genres": [
+        "Adventure",
+        "Casual",
+        "Indie",
+        "RPG",
+        "Strategy"
+      ],
+      "releaseDate": "2023-11-14T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "86% of the 6,863 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1970580/header.jpg?t=1750843492",
+      "updated": "2025-07-06T13:08:57.429Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/backpack-hero",
+    "metacriticData": {
+      "title": "Backpack Hero",
+      "metacriticScore": 76,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Nintendo Switch",
+        "PlayStation 5",
+        "PlayStation 4",
+        "Xbox One",
+        "Xbox Series X"
+      ],
+      "releaseDate": "2023-11-14T00:00:00.000Z",
+      "developers": [
+        "Jaspel"
+      ],
+      "publisher": "Different Tales",
+      "genres": [
+        "Roguelike"
+      ],
+      "updated": "2025-07-06T13:09:00.366Z"
+    }
+  },
+  {
+    "title": "Figment",
+    "key": "figment",
+    "openCriticId": "4894/figment",
+    "openCriticData": {
+      "title": "Figment",
+      "cover": "https://img.opencritic.com/game/4894/irbRHhEp.jpg",
+      "tier": "strong",
+      "score": 79,
+      "critics": 69,
+      "releaseDate": "2017-09-22T00:00:00.000Z",
+      "updated": "2025-07-06T13:10:02.266Z"
+    },
+    "steamAppId": 493540,
+    "steamData": {
+      "title": "Figment",
+      "description": "Figment is an action-adventure game that invites you to explore a unique surreal universe filled with music, humor and multi layered narrative. Join Dusty and his ever-optimistic friend, Piper, on an adventure through the different sides of the mind seeking to restore the courage that's been lost.",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Casual",
+        "Indie"
+      ],
+      "releaseDate": "2017-09-22T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "88% of the 1,232 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/493540/header.jpg?t=1729500541",
+      "updated": "2025-07-06T13:10:15.298Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/figment",
+    "metacriticData": {
+      "title": "Figment",
+      "metacriticScore": 75,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Nintendo Switch",
+        "PlayStation 4",
+        "iOS (iPhone/iPad)",
+        "Xbox One",
+        "Xbox Series X"
+      ],
+      "releaseDate": "2018-06-28T00:00:00.000Z",
+      "developers": [
+        "Bedtime Digital Games"
+      ],
+      "publisher": "Bedtime Digital Games",
+      "genres": [
+        "Action Adventure"
+      ],
+      "updated": "2025-07-06T13:10:18.833Z"
+    }
+  },
+  {
+    "title": "Jupiter Hell",
+    "key": "jupiter-hell",
+    "openCriticId": "11783/jupiter-hell",
+    "openCriticData": {
+      "title": "Jupiter Hell",
+      "cover": "https://img.opencritic.com/game/11783/RdLXnyxg.jpg",
+      "tier": "strong",
+      "score": 79,
+      "critics": 73,
+      "releaseDate": "2021-08-01T00:00:00.000Z",
+      "updated": "2025-07-06T13:12:18.601Z"
+    },
+    "steamAppId": 811320,
+    "steamData": {
+      "title": "Jupiter Hell",
+      "description": "True Roguelike. Turn-based shooter. Permadeath. Tribute to the sci-fi classics of the Golden VHS era. Successor to DRL. Just you and your gun against hordes of horrors and monstrosities. Give them hell to the rhythm of heavy metal.",
+      "genres": [
+        "Indie",
+        "RPG",
+        "Strategy"
+      ],
+      "releaseDate": "2021-08-05T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "91% of the 1,661 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/811320/header.jpg?t=1750704463",
+      "updated": "2025-07-06T13:12:24.601Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/jupiter-hell/",
+    "metacriticData": {
+      "title": "Jupiter Hell",
+      "metacriticScore": 78,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Nintendo Switch"
+      ],
+      "releaseDate": "2021-08-05T00:00:00.000Z",
+      "developers": [
+        "ChaosForge"
+      ],
+      "publisher": "Hyperstrange",
+      "genres": [
+        "Turn-Based Tactics"
+      ],
+      "updated": "2025-07-06T13:12:34.927Z"
+    }
+  },
+  {
+    "title": "Thief 3: Deadly Shadows",
+    "key": "thief-3-deadly-shadows",
+    "openCriticId": "skip",
+    "steamAppId": 6980,
+    "steamData": {
+      "title": "Thief: Deadly Shadows",
+      "description": "You are Garrett, the master thief. Rarely seen and never caught, Garrett is the best that ever was. Able to sneak past any guard, pick any lock, and break into the most ingeniously secured residences. Garrett steals from the wealthy and gives to himself, making his living in the dark and foreboding City.",
+      "genres": [
+        "Action"
+      ],
+      "releaseDate": "2004-06-11T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "80% of the 2,207 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/6980/header.jpg?t=1700763742",
+      "updated": "2025-07-06T13:18:02.453Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/thief-deadly-shadows",
+    "metacriticData": {
+      "title": "Thief: Deadly Shadows",
+      "metacriticScore": 82,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Xbox"
+      ],
+      "releaseDate": "2004-05-25T00:00:00.000Z",
+      "developers": [
+        "Ion Storm"
+      ],
+      "publisher": "Eidos Interactive",
+      "genres": [
+        "Action Adventure"
+      ],
+      "updated": "2025-07-06T13:18:06.117Z"
+    }
+  },
+  {
+    "title": "DEATH STRANDING 2: ON THE BEACH",
+    "key": "death-stranding-2-on-the-beach",
+    "openCriticId": "18226/death-stranding-2-on-the-beach",
+    "openCriticData": {
+      "title": "Death Stranding 2: On the Beach",
+      "cover": "https://img.opencritic.com/game/18226/ubQayHMU.jpg",
+      "tier": "mighty",
+      "score": 89,
+      "critics": 96,
+      "releaseDate": "2025-06-26T00:00:00.000Z",
+      "updated": "2025-07-06T13:09:27.833Z"
+    },
+    "steamAppId": -1,
+    "metacriticUrl": "https://www.metacritic.com/game/death-stranding-2-on-the-beach/",
+    "metacriticData": {
+      "title": "Death Stranding 2: On The Beach",
+      "metacriticScore": 90,
+      "mustPlay": true,
+      "platforms": [
+        "PlayStation 5"
+      ],
+      "releaseDate": "2025-06-26T00:00:00.000Z",
+      "developers": [
+        "Kojima Productions"
+      ],
+      "publisher": "Sony Interactive Entertainment",
+      "genres": [
+        "Open-World Action"
+      ],
+      "updated": "2025-07-06T13:09:45.422Z"
     }
   }
 ]
