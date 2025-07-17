@@ -222,11 +222,19 @@ footer {
     & .game-count {
       color: var(--accent-color);
       font-family: var(--number-font);
-      font-size: 1.5rem;
-      margin-top: -4px;
-    }
-    & .game-count::before {
-      content: " ";
+      font-size: .6em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .75rem;
+      position: relative;
+
+      &::before {
+        content: "";
+        height: 1em;
+        display: block;
+        border-left: 1px solid var(--subtle-accent-color);
+      }
     }
   }
 }
@@ -1031,7 +1039,19 @@ footer {
   & .game-group-counter {
     color: var(--accent-color);
     font-family: var(--number-font);
-    font-size: 1.2rem;
+    font-size: .6em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .75rem;
+    position: relative;
+
+    &::before {
+      content: "";
+      height: 1em;
+      display: block;
+      border-left: 1px solid var(--subtle-accent-color);
+    }
 
     /* &::before {
       content: "(";

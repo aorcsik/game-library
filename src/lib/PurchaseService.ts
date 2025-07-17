@@ -1,7 +1,7 @@
 import fs from 'fs';
 import { GameLibraryConfig } from './Config';
 import GameDatabaseService, { Game } from './GameDatabaseService';
-import { Platform, PlatformLogos, PlatformList } from './types';
+import { Platform, PlatformLogos, PlatformList, isValidPlatform } from './types';
 import { AppStorePurchaseData, GameCollections, GOGLibraryData, HeroicLibraryData, PlaystationPurchaseData, SteamAPIGetOwnedGamesResponse, SwitchPurchaseData, XboxPurchaseData } from './schema';
 import { formatTitle } from './tools';
 import { client } from './sanity';
@@ -21,6 +21,7 @@ type Purchase = {
   appId?: number;
   physical: boolean;
   logo: PlatformLogos;
+  purchaseDate?: string; // Optional field for purchase date
 };
 
 type SteamPurchase = Purchase & {
@@ -79,6 +80,59 @@ type PurchasedGame = Game & {
   purchases: PlatformPurchase[];
 };
 
+type SinglePurchase = {
+  title: string;
+  purchaseDate: string;
+  store: string;
+  platform: Platform;
+  price: string;
+}
+
+type BundlePurchase = SinglePurchase & {
+  games: {
+    title: string;
+    platform?: Platform;
+    claimed?: boolean;
+  }[];
+};
+
+type PurchaseDatesResponse = (SinglePurchase | BundlePurchase)[];
+
+const getPurchaseDatesFromSanity = async (): Promise<PurchaseDatesResponse> => {
+  const query = '*[_type == "purchaseDate"]';
+  return await client.fetch(query);
+};
+
+const savePurchaseDatesToSanity = async (purchaseDates: PurchaseDatesResponse): Promise<MultipleMutationResult> => {
+  await client.delete({ query: '*[_type == "purchaseDate"]' });
+  const sanityTransaction = client.transaction();
+  purchaseDates.forEach(record => {
+    if ('games' in record) {
+      sanityTransaction.create({
+        _type: 'purchaseDate',
+        title: record.title,
+        store: record.store,
+        platform: record.platform,
+        purchaseDate: record.purchaseDate,
+        price: record.price,
+        games: record.games,
+      });
+    } else {
+      sanityTransaction.create({
+        _type: 'purchaseDate',
+        title: record.title,
+        store: record.store,
+        platform: record.platform,
+        purchaseDate: record.purchaseDate,
+        price: record.price,
+      });
+    }
+  });
+  const result = await sanityTransaction.commit();
+  process.stdout.write('Purchase dates saved to Sanity.\n');
+  return result;
+};
+
 const getPurchasesFromSanity = async <T extends PlatformPurchase>(platform: Platform): Promise<Record<string, T>> => {
   const query = `*[_type == "purchase" && platform == "${platform}"]`;
   const purchaseList: Purchase[] = await client.fetch(query);
@@ -135,6 +189,63 @@ class PurchaseService {
     this.config = config;
     this.database = database;
     this.skipTitle = skipTitle;
+  }
+
+  async getPurchaseDates(fromSanity: boolean = false): Promise<SinglePurchase[] | null> {
+    const purchaseDates: SinglePurchase[] = [];
+
+    let purchaseDatesData: PurchaseDatesResponse = [];
+    if (fromSanity) {
+      purchaseDatesData = await getPurchaseDatesFromSanity();
+    } else {
+      const transactionFiles = await fs.promises.readdir(this.config.transactions);
+      const jsonFiles = transactionFiles.filter(file => /^\d{6}\.json$/.test(file));
+
+      const readTransactionFile = async (files: string[]): Promise<PurchaseDatesResponse> => {
+        const file = files.shift();
+        if (!file) return [];
+        process.stdout.write(colorize(`Reading purchase dates from ${file}:`, 'yellow'));
+        const filePath = `${this.config.transactions}/${file}`;
+        const fileContent = await fs.promises.readFile(filePath, 'utf-8');
+        const data = JSON.parse(fileContent) as PurchaseDatesResponse;
+        process.stdout.write(colorize(` done (${data.length} records)\n`, 'green'));
+        return [...data, ...await readTransactionFile(files)];
+      };
+
+      purchaseDatesData = await readTransactionFile(jsonFiles);
+      await savePurchaseDatesToSanity(purchaseDatesData);
+    }
+
+    purchaseDatesData
+      .forEach(record => {
+        const parsedPrice = record.price === 'FREE' ? { price: 0, currency: '' } : {
+          price: record.price ? parseFloat(record.price) : 0,
+          currency: record.price.replace(/[\d.,]/g, '').trim() || ''
+        };
+        if ('games' in record) {
+          record.games
+            .filter(game => game.claimed !== false)
+            .filter(game => isValidPlatform(game.platform || record.platform))
+            .forEach(game => {
+              purchaseDates.push({
+                title: game.title,
+                store: `${record.store} - ${record.title}`,
+                platform: game.platform || record.platform,
+                purchaseDate: record.purchaseDate,
+                price: parsedPrice.price === 0 ? 'FREE' : `${(parsedPrice.price / record.games.length).toFixed(2)}${parsedPrice.currency}`,
+              });
+            });
+        } else if (isValidPlatform(record.platform)) {
+          purchaseDates.push({
+            title: record.title,
+            store: record.store,
+            platform: record.platform,
+            purchaseDate: record.purchaseDate,
+            price: parsedPrice.price === 0 ? 'FREE' : `${parsedPrice.price.toFixed(2)}${parsedPrice.currency}`,
+          });
+        }
+      });
+    return purchaseDates;
   }
 
   async getSteamPurchases(fromSanity: boolean = false): Promise<Record<string, SteamPurchase>> {
@@ -481,4 +592,4 @@ class PurchaseService {
 }
 
 export default PurchaseService;
-export type { Platform, PlatformList, PlatformPurchase, PurchasedGame };
+export type { Platform, PlatformList, PlatformPurchase, PurchasedGame, SinglePurchase };

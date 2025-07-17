@@ -12,6 +12,7 @@ export type GameLibraryConfig = {
   playstation_username?: string;
   xbox_library?: string;
   xbox_username?: string;
+  transactions: string;
 };
 
 export const getGameLibraryConfig = (): GameLibraryConfig => {
@@ -29,5 +30,6 @@ export const getGameLibraryConfig = (): GameLibraryConfig => {
     playstation_username: process.env.PLAYSTATION_USERNAME,
     xbox_library: `${process.env.SOURCE_DIR}/data/purchases/xbox.json`,
     xbox_username: process.env.XBOX_USERNAME,
+    transactions: `${process.env.SOURCE_DIR}/data/purchases/transactions/`,
   };
 };

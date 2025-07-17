@@ -1,12 +1,25 @@
-type Platform = 'steam' | 'epic' | 'gog' | 'amazon' | 'playstation' | 'appstore' | 'switch' | 'xbox';
+export type Platform = 'steam' | 'epic' | 'gog' | 'amazon' | 'playstation' | 'appstore' | 'switch' | 'xbox';
 
-type PlatformLogos = Platform | 'psplus' | 'netflix';
+export const platformKeys: Platform[] = [
+  'steam',
+  'epic',
+  'gog',
+  'amazon',
+  'playstation',
+  'appstore',
+  'switch',
+  'xbox'
+];
 
-type PlatformList = Record<Platform, {
+export const isValidPlatform = (platform: string): platform is Platform => {
+  return platformKeys.includes(platform as Platform);
+};
+
+export type PlatformLogos = Platform | 'psplus' | 'netflix';
+
+export type PlatformList = Record<Platform, {
   name: string;
   count: number;
   plus?: number;
   netflix?: number;
 }>;
-
-export type { Platform, PlatformLogos, PlatformList };

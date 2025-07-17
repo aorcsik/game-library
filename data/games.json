@@ -1709,9 +1709,10 @@
     "key": "broken-sword-2-the-smoking-mirror-remastered-2010"
   },
   {
-    "title": "Superbrothers: Sword&Sworcery",
+    "title": "Superbrothers: Sword & Sworcery EP",
     "sameGame": [
-      "Superbrothers: Sword & Sworcery EP"
+      "Sword & Sworcery",
+      "Superbrothers: Sword&Sworcery"
     ],
     "openCriticId": "7030/swordbrothers-sword-sworcery-ep",
     "openCriticData": {
@@ -1758,7 +1759,7 @@
       ],
       "updated": "2025-06-05T10:46:11.133Z"
     },
-    "key": "superbrothers-sword-and-sworcery"
+    "key": "superbrothers-sword-and-sworcery-ep"
   },
   {
     "title": "Middle-earth™: Shadow of Mordor™",
@@ -2861,16 +2862,10 @@
   },
   {
     "title": "Amnesia: The Dark Descent",
-    "openCriticId": "3597/amnesia-the-collection",
-    "openCriticData": {
-      "title": "Amnesia: The Collection",
-      "cover": "https://img.opencritic.com/game/3597/7xmOnJiI.jpg",
-      "tier": "strong",
-      "score": 77,
-      "critics": 67,
-      "releaseDate": "2016-11-22T00:00:00.000Z",
-      "updated": "2025-06-05T06:50:54.329Z"
-    },
+    "sameGame": [
+      "Amnesia"
+    ],
+    "openCriticId": "skip",
     "steamAppId": 57300,
     "steamData": {
       "title": "Amnesia: The Dark Descent",
@@ -4684,6 +4679,9 @@
   },
   {
     "title": "Batman: Arkham Asylum GOTY Edition",
+    "sameGame": [
+      "Batman™: Arkham Asylum GOTY"
+    ],
     "openCriticId": "skip",
     "releaseDate": "2010-03-26T00:00:00.000Z",
     "steamAppId": 35140,
@@ -4727,6 +4725,9 @@
   },
   {
     "title": "Batman: Arkham City GOTY",
+    "sameGame": [
+      "Batman™: Arkham City GOTY Edition"
+    ],
     "openCriticId": "skip",
     "releaseDate": "2012-09-07T00:00:00.000Z",
     "steamAppId": 200260,
@@ -5078,6 +5079,9 @@
   },
   {
     "title": "Beat Hazard",
+    "sameGame": [
+      "Beat Hazard Ultra"
+    ],
     "openCriticId": "skip",
     "releaseDate": "2010-04-15T00:00:00.000Z",
     "steamAppId": 49600,
@@ -6613,6 +6617,9 @@
   },
   {
     "title": "Borderlands 2",
+    "sameGame": [
+      "Borderlands 2: Game of the Year Edition"
+    ],
     "openCriticId": "9755/borderlands-2",
     "openCriticData": {
       "title": "Borderlands 2",
@@ -8136,6 +8143,9 @@
   },
   {
     "title": "Children of Morta",
+    "sameGame": [
+      "Children of Morta: Complete Edition"
+    ],
     "openCriticId": "8217/children-of-morta",
     "openCriticData": {
       "title": "Children of Morta",
@@ -9901,6 +9911,9 @@
   },
   {
     "title": "Day of the Tentacle Remastered",
+    "sameGame": [
+      "Day of the Tentacle"
+    ],
     "openCriticId": "2455/day-of-the-tentacle-remastered",
     "openCriticData": {
       "title": "Day of the Tentacle Remastered",
@@ -10576,6 +10589,9 @@
   },
   {
     "title": "Death's Gambit: Afterlife",
+    "sameGame": [
+      "Death's Gambit"
+    ],
     "openCriticId": "12052/deaths-gambit-afterlife",
     "openCriticData": {
       "title": "Death's Gambit: Afterlife",
@@ -11859,6 +11875,9 @@
   },
   {
     "title": "Divine Knockout",
+    "sameGame": [
+      "DKO: Divine Knockout"
+    ],
     "openCriticId": "14107/divine-knockout",
     "openCriticData": {
       "title": "Divine Knockout",
@@ -12009,6 +12028,9 @@
   },
   {
     "title": "Dome Keeper",
+    "sameGame": [
+      "Dome Keeper Deluxe"
+    ],
     "openCriticId": "13733/dome-keeper",
     "openCriticData": {
       "title": "Dome Keeper",
@@ -21757,6 +21779,9 @@
   },
   {
     "title": "Influent",
+    "sameGame": [
+      "Influent: Definitive Edition"
+    ],
     "openCriticId": "skip",
     "releaseDate": "2014-03-20T00:00:00.000Z",
     "steamAppId": 274980,
@@ -23901,7 +23926,8 @@
     "openCriticId": "skip",
     "releaseDate": "2014-12-15T00:00:00.000Z",
     "sameGame": [
-      "LISA"
+      "LISA",
+      "LISA: Complete Edition"
     ],
     "steamAppId": 335670,
     "steamData": {
@@ -29250,6 +29276,9 @@
   },
   {
     "title": "Outland",
+    "sameGame": [
+      "Outland - Special Edition"
+    ],
     "openCriticId": "skip",
     "releaseDate": "2011-04-27T00:00:00.000Z",
     "steamAppId": 305050,
@@ -31479,6 +31508,9 @@
   },
   {
     "title": "RAGE 2",
+    "sameGame": [
+      "Rage 2: Deluxe Edition"
+    ],
     "openCriticId": "7123/rage-2",
     "openCriticData": {
       "title": "Rage 2",
@@ -33451,6 +33483,9 @@
   },
   {
     "title": "Shadowrun Returns",
+    "sameGame": [
+      "Shadowrun Returns Deluxe"
+    ],
     "openCriticId": "10558/shadowrun-returns",
     "openCriticData": {
       "title": "Shadowrun Returns",
@@ -33506,6 +33541,9 @@
   },
   {
     "title": "Shadow Warrior",
+    "sameGame": [
+      "Shadow Warrior: Special Edition"
+    ],
     "openCriticId": "181/shadow-warrior",
     "openCriticData": {
       "title": "Shadow Warrior",
@@ -34283,6 +34321,9 @@
   },
   {
     "title": "Sir Whoopass™: Immortal Death",
+    "sameGame": [
+      "Sir Whoopass(tm): Immortal Death"
+    ],
     "openCriticId": "skip",
     "releaseDate": "2022-08-18T00:00:00.000Z",
     "steamAppId": 1240590,
@@ -35275,6 +35316,9 @@
   },
   {
     "title": "Space Pirates and Zombies",
+    "sameGame": [
+      "S.P.A.Z."
+    ],
     "openCriticId": "skip",
     "releaseDate": "2011-08-15T00:00:00.000Z",
     "steamAppId": 107200,
@@ -36814,7 +36858,11 @@
     "key": "stasis-bone-totem"
   },
   {
-    "title": "Stealth Inc 2",
+    "title": "Stealth Inc 2: A Game of Clones",
+    "sameGame": [
+      "Stealth Inc 2",
+      "Stealth 2: A Game of Clones"
+    ],
     "openCriticId": "51/stealth-inc-2-a-game-of-clones",
     "openCriticData": {
       "title": "Stealth Inc 2: A Game of Clones",
@@ -36864,7 +36912,7 @@
       ],
       "updated": "2025-06-05T10:44:48.295Z"
     },
-    "key": "stealth-inc-2"
+    "key": "stealth-inc-2-a-game-of-clones"
   },
   {
     "title": "SteamWorld Dig",
@@ -37402,6 +37450,9 @@
   },
   {
     "title": "Stray Gods: The Roleplaying Musical",
+    "sameGame": [
+      "Stray Gods: Orpheus Edition"
+    ],
     "openCriticId": "15327/stray-gods-the-roleplaying-musical",
     "openCriticData": {
       "title": "Stray Gods: The Roleplaying Musical",
@@ -39006,7 +39057,10 @@
     "key": "tennis-world-tour-2"
   },
   {
-    "title": "Terra Alia",
+    "title": "Terra Alia: The Language Learning RPG",
+    "sameGame": [
+      "Terra Alia"
+    ],
     "openCriticId": "skip",
     "releaseDate": "2020-02-04T00:00:00.000Z",
     "steamAppId": 1183580,
@@ -39045,7 +39099,7 @@
       ],
       "updated": "2025-06-05T10:47:19.605Z"
     },
-    "key": "terra-alia"
+    "key": "terra-alia-the-language-learning-rpg"
   },
   {
     "title": "Teslagrad",
@@ -39676,6 +39730,9 @@
   },
   {
     "title": "Tiny and Big: Grandpa's Leftovers",
+    "sameGame": [
+      "Tiny and Big in Grandpa's Leftovers"
+    ],
     "openCriticId": "skip",
     "releaseDate": "2012-06-19T00:00:00.000Z",
     "steamAppId": 205910,
@@ -44036,6 +44093,9 @@
   },
   {
     "title": "HUMANKIND™",
+    "sameGame": [
+      "HUMANKIND™ Standard Edition"
+    ],
     "openCriticId": "10977/humankind",
     "openCriticData": {
       "title": "Humankind",
@@ -45458,6 +45518,9 @@
   },
   {
     "title": "World War Z",
+    "sameGame": [
+      "World War Z Aftermath"
+    ],
     "openCriticId": "7513/world-war-z",
     "openCriticData": {
       "title": "World War Z",
@@ -49582,6 +49645,9 @@
   },
   {
     "title": "1000xRESIST",
+    "sameGame": [
+      "1000x Resist"
+    ],
     "key": "1000xresist",
     "steamAppId": 1675830,
     "openCriticId": "16723/1000xresist",
@@ -49668,6 +49734,9 @@
   },
   {
     "title": "Tomb Raider I-III Remastered Starring Lara Croft",
+    "sameGame": [
+      "Tomb Raider 1-3 Remastered"
+    ],
     "key": "tomb-raider-i-iii-remastered-starring-lara-croft",
     "steamAppId": 2478970,
     "openCriticId": "15618/tomb-raider-i-iii-remastered",
@@ -51279,6 +51348,9 @@
   },
   {
     "title": "The Callisto Protocol",
+    "sameGame": [
+      "The Callisto Protocol™ - Digital Deluxe Edition"
+    ],
     "key": "the-callisto-protocol",
     "openCriticId": "13372/the-callisto-protocol",
     "openCriticData": {
@@ -51330,6 +51402,9 @@
   },
   {
     "title": "Warhammer 40,000: Boltgun",
+    "sameGame": [
+      "Warhammer 40K: Boltgun"
+    ],
     "key": "warhammer-40-000-boltgun",
     "openCriticId": "14943/warhammer-40-000-boltgun",
     "openCriticData": {
@@ -51930,6 +52005,9 @@
   },
   {
     "title": "The Thaumaturge",
+    "sameGame": [
+      "The Thaumaturge: Deluxe Edition"
+    ],
     "key": "the-thaumaturge",
     "steamAppId": 1684350,
     "openCriticId": "16393/the-thaumaturge",
@@ -52034,6 +52112,9 @@
   },
   {
     "title": "Shadow Gambit: The Cursed Crew",
+    "sameGame": [
+      "Shadow Gambit"
+    ],
     "key": "shadow-gambit-the-cursed-crew",
     "steamAppId": 1545560,
     "openCriticId": "15345/shadow-gambit-the-cursed-crew",
@@ -53562,6 +53643,12 @@
   },
   {
     "title": "Borderlands",
+    "sameGame": [
+      "Borderlands GOTY",
+      "Borderlands GOTY Enhanced",
+      "Borderlands Game of the Year",
+      "Borderlands Game of the Year Enhanced"
+    ],
     "key": "borderlands",
     "openCriticId": "7526/borderlands-game-of-the-year-edition",
     "openCriticData": {
@@ -54593,8 +54680,12 @@
     }
   },
   {
-    "title": "Wolfenstein II: Deluxe Edition",
-    "key": "wolfenstein-ii-deluxe-edition",
+    "title": "Wolfenstein II: The New Colossus",
+    "sameGame": [
+      "Wolfenstein II: Deluxe Edition",
+      "Wolfenstein II: The New Colossus Digital Deluxe Edition"
+    ],
+    "key": "wolfenstein-ii-the-new-colossus",
     "openCriticId": "4490/wolfenstein-2-the-new-colossus",
     "openCriticData": {
       "title": "Wolfenstein 2: The New Colossus",
@@ -55898,6 +55989,9 @@
   },
   {
     "title": "NBA 2K25",
+    "sameGame": [
+      "NBA 2K25 Standard Edition"
+    ],
     "key": "nba-2k25",
     "openCriticId": "17119/nba-2k25",
     "openCriticData": {
@@ -57193,6 +57287,9 @@
   },
   {
     "title": "DEATH STRANDING 2: ON THE BEACH",
+    "sameGame": [
+      "DEATH STRANDING 2: ON THE BEACH Digital Deluxe Edition"
+    ],
     "key": "death-stranding-2-on-the-beach",
     "openCriticId": "18226/death-stranding-2-on-the-beach",
     "openCriticData": {
@@ -57223,5 +57320,323 @@
       ],
       "updated": "2025-07-06T13:09:45.422Z"
     }
+  },
+  {
+    "title": "Wolfenstein: Youngblood",
+    "key": "wolfenstein-youngblood",
+    "openCriticId": "7837/wolfenstein-youngblood",
+    "openCriticData": {
+      "title": "Wolfenstein: Youngblood",
+      "cover": "https://img.opencritic.com/game/7837/OJRoVLf6.jpg",
+      "tier": "fair",
+      "score": 67,
+      "critics": 36,
+      "releaseDate": "2019-07-26T00:00:00.000Z",
+      "updated": "2025-07-14T15:01:22.716Z"
+    },
+    "steamAppId": 1056960,
+    "steamData": {
+      "title": "Wolfenstein: Youngblood",
+      "description": "Wolfenstein: Youngblood is the first modern co-op Wolfenstein adventure. Team up with a friend or play solo as one of BJ Blazkowicz’s twin daughters and wield a powerful arsenal of new weapons, gadgets, and abilities to liberate Paris from the Nazis.",
+      "genres": [
+        "Action"
+      ],
+      "releaseDate": "2019-07-25T00:00:00.000Z",
+      "reviewScore": 5,
+      "reviewScoreDescription": "Mixed",
+      "reviewScoreTooltip": "44% of the 11,578 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1056960/header.jpg?t=1750784246",
+      "updated": "2025-07-14T15:01:41.984Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/wolfenstein-youngblood",
+    "metacriticData": {
+      "title": "Wolfenstein: Youngblood",
+      "metacriticScore": 69,
+      "mustPlay": false,
+      "platforms": [
+        "Xbox One",
+        "PlayStation 4",
+        "PC",
+        "Nintendo Switch"
+      ],
+      "releaseDate": "2019-07-26T00:00:00.000Z",
+      "developers": [
+        "MachineGames",
+        "Arkane Studios"
+      ],
+      "publisher": "Bethesda Softworks",
+      "genres": [
+        "FPS"
+      ],
+      "updated": "2025-07-14T15:01:44.579Z"
+    }
+  },
+  {
+    "title": "Wizorb",
+    "key": "wizorb",
+    "steamAppId": 207420,
+    "openCriticId": "13799/wizorb",
+    "openCriticData": {
+      "title": "Wizorb",
+      "cover": "https://img.opencritic.com/game/13799/PieCHQs7.jpg",
+      "tier": null,
+      "score": null,
+      "critics": null,
+      "releaseDate": "2012-03-14T00:00:00.000Z",
+      "updated": "2025-07-16T15:08:50.460Z"
+    },
+    "steamData": {
+      "title": "Wizorb",
+      "description": "The once peaceful Kingdom of Gorudo is threatened by an evil presence. The only hope for salvation is Cyrus!",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2012-03-14T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "reviewScoreTooltip": "75% of the 558 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/207420/header.jpg?t=1727901526",
+      "updated": "2025-07-16T15:08:51.246Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/wizorb",
+    "metacriticData": {
+      "title": "Wizorb",
+      "metacriticScore": 79,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Xbox 360",
+        "PSP",
+        "iOS (iPhone/iPad)",
+        "Nintendo Switch"
+      ],
+      "releaseDate": "2012-07-24T00:00:00.000Z",
+      "developers": [
+        "Beatshapers"
+      ],
+      "publisher": "Beatshapers",
+      "genres": [
+        "Action Puzzle"
+      ],
+      "updated": "2025-07-16T15:08:54.466Z"
+    }
+  },
+  {
+    "title": "Ultimate Chicken Horse",
+    "key": "ultimate-chicken-horse",
+    "steamAppId": 386940,
+    "openCriticId": "2422/ultimate-chicken-horse",
+    "openCriticData": {
+      "title": "Ultimate Chicken Horse",
+      "cover": "https://img.opencritic.com/game/2422/kp9q0tln.jpg",
+      "tier": "strong",
+      "score": 79,
+      "critics": 78,
+      "releaseDate": "2016-03-04T00:00:00.000Z",
+      "updated": "2025-07-16T15:08:32.313Z"
+    },
+    "steamData": {
+      "title": "Ultimate Chicken Horse",
+      "description": "Ultimate Chicken Horse is a party platformer game where you build the level as you play, placing traps and hazards to screw your friends over, but trying not to screw yourself.",
+      "genres": [
+        "Action",
+        "Casual",
+        "Indie"
+      ],
+      "releaseDate": "2016-03-04T00:00:00.000Z",
+      "reviewScore": 9,
+      "reviewScoreDescription": "Overwhelmingly Positive",
+      "reviewScoreTooltip": "96% of the 37,345 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/386940/header.jpg?t=1751470423",
+      "updated": "2025-07-16T15:08:33.039Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/ultimate-chicken-horse/",
+    "metacriticData": {
+      "title": "Ultimate Chicken Horse",
+      "metacriticScore": 80,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Nintendo Switch",
+        "PlayStation 4",
+        "Xbox One"
+      ],
+      "releaseDate": "2018-09-25T00:00:00.000Z",
+      "developers": [
+        "Clever Endeavour Games"
+      ],
+      "publisher": "Clever Endeavour Games",
+      "genres": [
+        "2D Platformer"
+      ],
+      "updated": "2025-07-16T15:08:40.854Z"
+    }
+  },
+  {
+    "title": "Before We Leave",
+    "key": "before-we-leave",
+    "steamAppId": 1073910,
+    "openCriticId": "9408/before-we-leave",
+    "openCriticData": {
+      "title": "Before We Leave",
+      "cover": "https://img.opencritic.com/game/9408/BbCZUHYP.jpg",
+      "tier": "strong",
+      "score": 75,
+      "critics": 68,
+      "releaseDate": "2020-05-08T00:00:00.000Z",
+      "updated": "2025-07-16T15:08:02.493Z"
+    },
+    "steamData": {
+      "title": "Before We Leave",
+      "description": "Before We Leave is a city building game set in a cozy corner of the universe. Nurture your Peeps and their surroundings while rebuilding and rediscovering civilisation. Settle new lands and planets while avoiding hungry Space Whales.",
+      "genres": [
+        "Casual",
+        "Indie",
+        "Simulation",
+        "Strategy"
+      ],
+      "releaseDate": "2021-05-13T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "reviewScoreTooltip": "78% of the 1,226 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1073910/header.jpg?t=1749138596",
+      "updated": "2025-07-16T15:08:03.190Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/before-we-leave",
+    "metacriticData": {
+      "title": "Before We Leave",
+      "metacriticScore": 72,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Xbox One",
+        "Xbox Series X",
+        "PlayStation 5",
+        "PlayStation 4",
+        "Nintendo Switch"
+      ],
+      "releaseDate": "2021-05-13T00:00:00.000Z",
+      "developers": [
+        "Balancing Monkey Games"
+      ],
+      "publisher": "Team17",
+      "genres": [
+        "Management"
+      ],
+      "updated": "2025-07-16T15:08:07.268Z"
+    }
+  },
+  {
+    "title": "Borderlands 2 VR",
+    "key": "borderlands-2-vr",
+    "steamAppId": 991260,
+    "openCriticId": "7028/borderlands-2-vr",
+    "openCriticData": {
+      "title": "Borderlands 2 VR",
+      "cover": "https://img.opencritic.com/game/7028/PhkShMOw.jpg",
+      "tier": "fair",
+      "score": 71,
+      "critics": 38,
+      "releaseDate": "2018-12-14T00:00:00.000Z",
+      "updated": "2025-07-17T08:27:43.575Z"
+    },
+    "steamData": {
+      "title": "Borderlands 2 VR",
+      "description": "Get virtually immersed in the mayhem-filled world of Borderlands as you step into the boots of a treasure-seeking Vault Hunter, grab 87 bazillion guns, and free Pandora from Handsome Jack’s clutches!",
+      "genres": [
+        "Action",
+        "RPG"
+      ],
+      "releaseDate": "2019-10-22T00:00:00.000Z",
+      "reviewScore": 5,
+      "reviewScoreDescription": "Mixed",
+      "reviewScoreTooltip": "60% of the 992 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/991260/header.jpg?t=1728672807",
+      "updated": "2025-07-17T08:27:44.659Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/borderlands-2-vr/",
+    "metacriticData": {
+      "title": "Borderlands 2 VR",
+      "metacriticScore": 72,
+      "mustPlay": false,
+      "platforms": [
+        "PlayStation 4",
+        "PC"
+      ],
+      "releaseDate": "2018-12-14T00:00:00.000Z",
+      "developers": [
+        "Gearbox Software"
+      ],
+      "publisher": "2K Games",
+      "genres": [
+        "FPS"
+      ],
+      "updated": "2025-07-17T08:27:58.158Z"
+    }
+  },
+  {
+    "title": "New Tales from the Borderlands",
+    "key": "new-tales-from-the-borderlands",
+    "steamAppId": 1454970,
+    "openCriticId": "13753/new-tales-from-the-borderlands",
+    "openCriticData": {
+      "title": "New Tales from the Borderlands",
+      "cover": "https://img.opencritic.com/game/13753/cUpiaI6x.jpg",
+      "tier": "fair",
+      "score": 68,
+      "critics": 44,
+      "releaseDate": "2022-10-21T00:00:00.000Z",
+      "updated": "2025-07-17T08:29:55.585Z"
+    },
+    "steamData": {
+      "title": "New Tales from the Borderlands",
+      "description": "Decide the fates of altruistic scientist Anu, her ambitious, \"streetwise\" brother Octavio, and the fierce, frogurt-slinging Fran. Claw and con your way through five thrilling chapters!",
+      "genres": [
+        "Adventure"
+      ],
+      "releaseDate": "2022-10-20T00:00:00.000Z",
+      "reviewScore": 4,
+      "reviewScoreDescription": "Mostly Negative",
+      "reviewScoreTooltip": "31% of the 1,446 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1454970/header.jpg?t=1728609086",
+      "updated": "2025-07-17T08:29:56.288Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/new-tales-from-the-borderlands/",
+    "metacriticData": {
+      "title": "New Tales from the Borderlands",
+      "metacriticScore": 69,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "PlayStation 5",
+        "PlayStation 4",
+        "Xbox Series X",
+        "Xbox One",
+        "Nintendo Switch"
+      ],
+      "releaseDate": "2022-10-21T00:00:00.000Z",
+      "developers": [
+        "Gearbox Software"
+      ],
+      "publisher": "2K Games",
+      "genres": [
+        "Adventure"
+      ],
+      "updated": "2025-07-17T08:30:24.893Z"
+    }
+  },
+  {
+    "title": "Indie Game: The Movie",
+    "key": "indie-game-the-movie"
+  },
+  {
+    "title": "Double Fine Adventure Documentary",
+    "key": "double-fine-adventure-documentary"
+  },
+  {
+    "title": "Cultist Simulator",
+    "key": "cultist-simulator"
   }
 ]

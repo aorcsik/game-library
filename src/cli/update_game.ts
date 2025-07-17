@@ -52,6 +52,13 @@ const args = new CommandLineArgs({
     parameter: null,
     type: null,
   },
+  'updatePurchaseDates': {
+    shortHand: 'd',
+    description: 'Update purchase dates from local file',
+    default: false,
+    parameter: null,
+    type: null,
+  },
   'skipGameUpdates': {
     shortHand: 's',
     description: 'Skip updating game data (OpenCritic, Steam, Metacritic)',
@@ -80,6 +87,7 @@ const refetchAge = forceFetchTitle ? -1 : args.get('refetchAge') as number;
 const updatePurchases = args.get('updatePurchases') as boolean;
 const updateProgress = args.get('updateProgress') as boolean;
 const updateNotes = args.get('updateNotes') as boolean;
+const updatePurchaseDates = args.get('updatePurchaseDates') as boolean;
 const skipGameUpdates = args.get('skipGameUpdates') as boolean;
 const updateLoop = async (): Promise<void> => {
   const databaseFilePath = `${process.env.SOURCE_DIR}${GameDatabaseService.GAME_DATABASE_FILE}`;
@@ -88,6 +96,7 @@ const updateLoop = async (): Promise<void> => {
   const [purchasedGames] = await getGameLibraryData(database, {
     progress: !updateProgress,
     purchases: !updatePurchases,
+    purchaseDates: !updatePurchaseDates,
     notes: !updateNotes
   });
 

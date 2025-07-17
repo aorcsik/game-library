@@ -3,7 +3,7 @@ import { getGameLibraryConfig } from './Config';
 import GameDatabaseService from './GameDatabaseService';
 import NotesService, { SanityGameNotes } from './NotesService';
 import ProgressService from './ProgressService';
-import PurchaseService, { PlatformList, PlatformPurchase, PurchasedGame } from './PurchaseService';
+import PurchaseService, { PlatformList, PlatformPurchase, PurchasedGame, SinglePurchase } from './PurchaseService';
 
 const skipTitle = [
 // Playstation
@@ -47,10 +47,12 @@ export const getGameLibraryData = async (
     purchases: boolean; 
     progress: boolean;
     notes: boolean;
+    purchaseDates: boolean;
   } = {
     purchases: true,
     progress: true,
     notes: true,
+    purchaseDates: true
   }
 ): Promise<[PurchasedGame[], PlatformList]> => {
   const config = getGameLibraryConfig();
@@ -107,6 +109,22 @@ export const getGameLibraryData = async (
   addPurchases(await purchaseService.getSwitchPurchases(fromSanity.purchases));
   addPurchases(await purchaseService.getAppStorePurchases(fromSanity.purchases));
   addPurchases(await purchaseService.getXboxPurchases(fromSanity.purchases));
+
+  const addPurchaseDates = (purchaseDates: SinglePurchase[] | null): void => {
+    if (purchaseDates) {
+      purchaseDates.forEach(purchase => {
+        const game = database.getGameByTitle(purchase.title);
+        const purchasedGame = purchasedGames.find(p => p.key === game.key);
+        purchasedGame?.purchases.forEach(p => {
+          if (p.purchaseDate === undefined || p.purchaseDate > purchase.purchaseDate) {
+            p.purchaseDate = purchase.purchaseDate;
+          }
+        });
+      });
+    }
+  };
+
+  addPurchaseDates(await purchaseService.getPurchaseDates(fromSanity.purchaseDates));
 
   const addProgress = <T extends PlatformProgress>(platformProgress: T[] | null): void => {
     if (platformProgress) platformProgress.forEach(progress => {

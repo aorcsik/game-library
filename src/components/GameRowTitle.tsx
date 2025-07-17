@@ -9,6 +9,7 @@ import MetacriticIndicator from './MetacriticIndicator';
 import SteamReviewIndicator from './SteamReviewIndicator';
 import RatingIndicator from './RatingIndicator';
 import WatchedIndicator from './WatchedIndicator';
+import { PurchasedGame } from '../lib/PurchaseService';
 
 export const getReleaseDate = (game: Game): Date | null => {
   const dates = [
@@ -31,8 +32,20 @@ export const getReleaseDate = (game: Game): Date | null => {
   return new Date(earliest);
 };
 
+export const getPurchaseDate = (game: PurchasedGame): Date | null => {
+  const purchaseDates = game.purchases
+    .filter(p => p.purchaseDate)
+    .map(p => new Date(p.purchaseDate).getTime())
+    .filter(ts => !isNaN(ts));
+
+  if (purchaseDates.length === 0) return null;
+
+  const earliestPurchase = Math.min(...purchaseDates);
+  return new Date(earliestPurchase);
+};
+
 type GameRowTitleProps = {
-  game: Game;
+  game: PurchasedGame;
 }
 
 const GameRowTitle = ({ game }: GameRowTitleProps): JSX.Element => {
@@ -41,8 +54,8 @@ const GameRowTitle = ({ game }: GameRowTitleProps): JSX.Element => {
   // Release date
   const releaseDate = getReleaseDate(game);
   
-  // Game status indicators
-  
+  // Purchae date
+  // const purchaseDate = game.purchases ? getPurchaseDate(game) : null;
 
   useEffect(() => {
     setClientLoaded(true);

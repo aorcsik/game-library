@@ -17,6 +17,7 @@ node_modules
 /data/purchases/switch.json
 /data/purchases/playstation.json
 /data/purchases/xbox.json
+/data/purchases/transactions/
 
 tsconfig.cli.tsbuildinfo
 data/games/death-stranding.json

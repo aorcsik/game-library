@@ -9,7 +9,7 @@ import GameGridHeader from '../components/GameGridHeader';
 import SortControl from '../components/SortControl';
 import SearchControl from '../components/SearchControl';
 import FontAwesomeIcon from './FontAwesomeIcon';
-import { getReleaseDate } from './GameRowTitle';
+import { getPurchaseDate, getReleaseDate } from './GameRowTitle';
 
 
 type GameLibraryProps = {
@@ -20,6 +20,7 @@ type GameLibraryProps = {
 type SortByType = 
   'gameTitle' |
   'gameReleaseDate' |
+  'gamePurchaseDate' |
   'openCriticScore' |
   'openCriticCritics' |
   'steamReviewScore' |
@@ -32,6 +33,7 @@ type SortDirection = 'asc' | 'desc';
 const sortByOptions: Record<SortByType, string> = {
   gameTitle: 'Title',
   gameReleaseDate: 'Release Date',
+  gamePurchaseDate: 'Purchase Date',
   openCriticScore: 'OpenCritic Score',
   openCriticCritics: 'OpenCritic Recommendation',
   steamReviewScore: 'Steam Reviews',
@@ -63,6 +65,7 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
       gameDataSet.gameTitle = game.key;
       gameDataSet.gameReleaseYear = (getReleaseDate(game) ?? new Date('1970-01-01')).getFullYear().toString();
       gameDataSet.gameReleaseDate = (getReleaseDate(game) ?? new Date('1970-01-01')).getTime().toString();
+      gameDataSet.gamePurchaseDate = game.purchases.length === 0 ? '-1' : (getPurchaseDate(game) ?? new Date('1970-01-01')).getTime().toString();
       gameDataSet.openCriticTier = game.openCriticData?.tier ? game.openCriticData.tier.toString() : 'n-a';
       gameDataSet.openCriticScore = game.openCriticData?.score ? game.openCriticData.score.toString() : ''; 
       gameDataSet.openCriticCritics = game.openCriticData?.critics ? game.openCriticData.critics.toString() : '';
@@ -114,6 +117,20 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
     const gameData = getGameDataSetByKey(gameKey);
     if (sortBy === 'gameReleaseDate') {
       return gameData.gameReleaseYear > '2000' ? gameData.gameReleaseYear : '2000 and earlier';
+    } else if (sortBy === 'gamePurchaseDate') {
+      if (gameData.gamePurchaseDate === '-1') {
+        return 'Not owned';
+      }
+      if (gameData.gamePurchaseDate === '0') {
+        return 'No Purchase Date';
+      }
+      const purchaseDate = new Date(Number(gameData.gamePurchaseDate));
+      const year = purchaseDate.getFullYear();
+      if (year < 2000) {
+        return '2000 and earlier';
+      }
+      const month = purchaseDate.toLocaleString('default', { month: 'long' });
+      return `${month} ${year}`;
     } else if (sortBy === 'gameTitle') {
       return gameKey.charAt(0).match(/[a-zA-Z]/) ? gameKey.charAt(0).toUpperCase() : '#';
     } else if (sortBy === 'openCriticScore') {
