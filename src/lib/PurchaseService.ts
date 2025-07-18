@@ -93,6 +93,7 @@ type BundlePurchase = SinglePurchase & {
     title: string;
     platform?: Platform;
     claimed?: boolean;
+    price?: string;
   }[];
 };
 
@@ -218,11 +219,12 @@ class PurchaseService {
 
     purchaseDatesData
       .forEach(record => {
-        const parsedPrice = record.price === 'FREE' ? { price: 0, currency: '' } : {
-          price: record.price ? parseFloat(record.price) : 0,
-          currency: record.price.replace(/[\d.,]/g, '').trim() || ''
-        };
         if ('games' in record) {
+          const parsedPrice = record.price === 'FREE' ? { price: 0, currency: '' } : {
+            price: record.price ? parseFloat(record.price) : 0,
+            currency: record.price.replace(/[\d.,]/g, '').trim() || ''
+          };
+          const bundlePrice = parsedPrice.price === 0 ? 'FREE' : `${(parsedPrice.price / record.games.length).toFixed(2)}${parsedPrice.currency}`;
           record.games
             .filter(game => game.claimed !== false)
             .filter(game => isValidPlatform(game.platform || record.platform))
@@ -232,7 +234,7 @@ class PurchaseService {
                 store: `${record.store} - ${record.title}`,
                 platform: game.platform || record.platform,
                 purchaseDate: record.purchaseDate,
-                price: parsedPrice.price === 0 ? 'FREE' : `${(parsedPrice.price / record.games.length).toFixed(2)}${parsedPrice.currency}`,
+                price: game.price || bundlePrice,
               });
             });
         } else if (isValidPlatform(record.platform)) {
@@ -241,7 +243,7 @@ class PurchaseService {
             store: record.store,
             platform: record.platform,
             purchaseDate: record.purchaseDate,
-            price: parsedPrice.price === 0 ? 'FREE' : `${parsedPrice.price.toFixed(2)}${parsedPrice.currency}`,
+            price: record.price,
           });
         }
       });

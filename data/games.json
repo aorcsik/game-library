@@ -1969,7 +1969,8 @@
     "title": "Absolver",
     "openCriticId": "4462/absolver",
     "sameGame": [
-      "ABSOLVER"
+      "ABSOLVER",
+      "Absolver: Downfall"
     ],
     "openCriticData": {
       "title": "Absolver",
@@ -2537,6 +2538,9 @@
   },
   {
     "title": "Alan Wake 2",
+    "sameGame": [
+      "Alan Wake 2 Deluxe Edition"
+    ],
     "openCriticId": "15022/alan-wake-2",
     "openCriticData": {
       "title": "Alan Wake 2",
@@ -3006,6 +3010,9 @@
   },
   {
     "title": "Anthem™",
+    "sameGame": [
+      "Anthem™: Legion of Dawn Edition"
+    ],
     "openCriticId": "7084/anthem",
     "openCriticData": {
       "title": "Anthem",
@@ -6070,6 +6077,9 @@
   },
   {
     "title": "Black Desert",
+    "sameGame": [
+      "Black Desert: Traveler Edition"
+    ],
     "openCriticId": "2236/black-desert-online",
     "openCriticData": {
       "title": "Black Desert Online",
@@ -7338,6 +7348,9 @@
   },
   {
     "title": "Call of Duty®: Black Ops III",
+    "sameGame": [
+      "Call of Duty®: Black Ops III - Zombies Chronicles Edition"
+    ],
     "openCriticId": "1514/call-of-duty-black-ops-iii",
     "openCriticData": {
       "title": "Call of Duty: Black Ops III",
@@ -9316,6 +9329,9 @@
   },
   {
     "title": "Cult Of The Lamb",
+    "sameGame": [
+      "Cult of the Lamb: Cultist Edition"
+    ],
     "openCriticId": "13509/cult-of-the-lamb",
     "openCriticData": {
       "title": "Cult of the Lamb",
@@ -10697,7 +10713,8 @@
   {
     "title": "DEATH STRANDING DIRECTOR'S CUT",
     "sameGame": [
-      "DEATH STRANDING"
+      "DEATH STRANDING",
+      "DEATH STRANDING DIRECTOR’S CUT Digital Deluxe Edition"
     ],
     "openCriticId": "12011/death-stranding-directors-cut",
     "openCriticData": {
@@ -11055,6 +11072,9 @@
   },
   {
     "title": "Destiny 2",
+    "sameGame": [
+      "Destiny 2: Upgrade Edition"
+    ],
     "openCriticId": "4139/destiny-2",
     "openCriticData": {
       "title": "Destiny 2",
@@ -11157,6 +11177,9 @@
   },
   {
     "title": "Detroit: Become Human™",
+    "sameGame": [
+      "Detroit: Become Human Digital Deluxe Edition"
+    ],
     "openCriticId": "5804/detroit-become-human",
     "openCriticData": {
       "title": "Detroit: Become Human",
@@ -12402,7 +12425,11 @@
     "key": "badland"
   },
   {
-    "title": "DOOM 2",
+    "title": "DOOM II",
+    "sameGame": [
+      "DOOM 2",
+      "DOOM II (Classic)"
+    ],
     "openCriticId": "skip",
     "releaseDate": "1994-10-10T00:00:00.000Z",
     "steamAppId": 2280,
@@ -12444,7 +12471,7 @@
       ],
       "updated": "2025-06-05T07:00:52.353Z"
     },
-    "key": "doom-2"
+    "key": "doom-ii"
   },
   {
     "title": "Doom 3",
@@ -13186,6 +13213,9 @@
   },
   {
     "title": "EA SPORTS FC 24",
+    "sameGame": [
+      "EA SPORTS FC™ 24 Standard Edition"
+    ],
     "openCriticId": "15502/ea-sports-fc-24",
     "openCriticData": {
       "title": "EA Sports FC 24",
@@ -13276,6 +13306,9 @@
   },
   {
     "title": "EA SPORTS™ UFC® 4",
+    "sameGame": [
+      "UFC® 4"
+    ],
     "openCriticId": "9792/ea-sports-ufc-4",
     "openCriticData": {
       "title": "EA Sports UFC 4",
@@ -14996,6 +15029,9 @@
   },
   {
     "title": "Fallout 4",
+    "sameGame": [
+      "Fallout 4: Game of the Year Edition"
+    ],
     "openCriticId": "1508/fallout-4",
     "openCriticData": {
       "title": "Fallout 4",
@@ -15864,6 +15900,9 @@
   },
   {
     "title": "FINAL FANTASY XV",
+    "sameGame": [
+      "FINAL FANTASY XV ROYAL EDITION"
+    ],
     "openCriticId": "1512/final-fantasy-xv",
     "openCriticData": {
       "title": "Final Fantasy XV",
@@ -17374,6 +17413,9 @@
   },
   {
     "title": "God of War",
+    "sameGame": [
+      "God of War™ Digital Deluxe Edition"
+    ],
     "openCriticId": "5434/god-of-war",
     "openCriticData": {
       "title": "God of War",
@@ -19744,6 +19786,9 @@
   },
   {
     "title": "Hogwarts Legacy",
+    "sameGame": [
+      "Hogwarts Legacy: Digital Deluxe Edition"
+    ],
     "openCriticId": "13898/hogwarts-legacy",
     "openCriticData": {
       "title": "Hogwarts Legacy",
@@ -19854,6 +19899,9 @@
   },
   {
     "title": "Home",
+    "sameGame": [
+      "Home - A Unique Horror Adventure"
+    ],
     "openCriticId": "skip",
     "releaseDate": "2012-06-01T00:00:00.000Z",
     "steamAppId": 215670,
@@ -23273,6 +23321,9 @@
   },
   {
     "title": "LEGO® MARVEL's Avengers",
+    "sameGame": [
+      "LEGO® Marvel’s Avengers Deluxe Edition"
+    ],
     "openCriticId": "1606/lego-marvels-avengers",
     "openCriticData": {
       "title": "LEGO Marvel's Avengers",
@@ -23487,6 +23538,9 @@
   },
   {
     "title": "The LEGO® NINJAGO® Movie Video Game",
+    "sameGame": [
+      "LEGO® NINJAGO® Movie Video Game"
+    ],
     "openCriticId": "4758/the-lego-ninjago-movie-video-game",
     "openCriticData": {
       "title": "The LEGO Ninjago Movie Video Game",
@@ -23669,6 +23723,9 @@
   },
   {
     "title": "LEGO® Star Wars™: The Skywalker Saga",
+    "sameGame": [
+      "LEGO® Star Wars™: The Skywalker Saga Galactic Edition"
+    ],
     "openCriticId": "9901/lego-star-wars-the-skywalker-saga",
     "openCriticData": {
       "title": "Lego Star Wars: The Skywalker Saga",
@@ -24055,6 +24112,9 @@
   },
   {
     "title": "Little Nightmares",
+    "sameGame": [
+      "Little Nightmares Complete Edition"
+    ],
     "openCriticId": "4206/little-nightmares",
     "openCriticData": {
       "title": "Little Nightmares",
@@ -24104,6 +24164,9 @@
   },
   {
     "title": "Little Nightmares II",
+    "sameGame": [
+      "Little Nightmares II Deluxe Edition"
+    ],
     "openCriticId": "10644/little-nightmares-ii",
     "openCriticData": {
       "title": "Little Nightmares II",
@@ -24819,6 +24882,9 @@
   },
   {
     "title": "MAGICKA® 2",
+    "sameGame": [
+      "Magicka 2: Special Edition"
+    ],
     "openCriticId": "57/magicka-2",
     "openCriticData": {
       "title": "Magicka 2",
@@ -25177,6 +25243,9 @@
   },
   {
     "title": "Marvel's Spider-Man",
+    "sameGame": [
+      "Marvel’s Spider-Man: Game of the Year Edition"
+    ],
     "openCriticId": "6012/marvels-spider-man",
     "openCriticData": {
       "title": "Marvel's Spider-Man",
@@ -27625,6 +27694,9 @@
   },
   {
     "title": "Need for Speed™ Rivals",
+    "sameGame": [
+      "Need for Speed™ Rivals: Complete Edition"
+    ],
     "openCriticId": "305/need-for-speed-rivals",
     "openCriticData": {
       "title": "Need for Speed: Rivals",
@@ -27965,6 +28037,9 @@
   },
   {
     "title": "NieR:Automata",
+    "sameGame": [
+      "NieR: Automata™ Game of the YoRHa Edition"
+    ],
     "openCriticId": "3540/nier-automata",
     "openCriticData": {
       "title": "Nier: Automata",
@@ -28158,6 +28233,9 @@
   },
   {
     "title": "Ni no Kuni™ II: Revenant Kingdom",
+    "sameGame": [
+      "Ni no Kuni™ II: Revenant Kingdom - The Prince's Edition"
+    ],
     "openCriticId": "5039/ni-no-kuni-2-revenant-kingdom",
     "openCriticData": {
       "title": "Ni no Kuni 2: Revenant Kingdom",
@@ -28550,6 +28628,9 @@
   },
   {
     "title": "Oddworld: New 'n' Tasty",
+    "sameGame": [
+      "Oddworld: New 'n' Tasty: Complete Edition"
+    ],
     "openCriticId": "235/oddworld-abes-oddysee-new-n-tasty",
     "openCriticData": {
       "title": "Oddworld: Abe's Oddysee - New 'n' Tasty",
@@ -29960,6 +30041,9 @@
   },
   {
     "title": "Persona 5",
+    "sameGame": [
+      "Persona 5: Ultimate Edition"
+    ],
     "openCriticId": "1537/persona-5",
     "openCriticData": {
       "title": "Persona 5",
@@ -30007,6 +30091,9 @@
   },
   {
     "title": "Persona 5 Strikers",
+    "sameGame": [
+      "Persona®5 Strikers"
+    ],
     "openCriticId": "10641/persona-5-strikers",
     "openCriticData": {
       "title": "Persona 5 Strikers",
@@ -30402,6 +30489,9 @@
   },
   {
     "title": "Planet Coaster",
+    "sameGame": [
+      "Planet Coaster: Console Edition"
+    ],
     "openCriticId": "1791/planet-coaster",
     "openCriticData": {
       "title": "Planet Coaster",
@@ -34230,6 +34320,10 @@
   },
   {
     "title": "The Sinking City",
+    "sameGame": [
+      "The Sinking City: Necronomicon Edition",
+      "The Sinking City PS5"
+    ],
     "openCriticId": "7122/the-sinking-city",
     "openCriticData": {
       "title": "The Sinking City",
@@ -36100,6 +36194,9 @@
   },
   {
     "title": "STAR WARS™ Battlefront™ II",
+    "sameGame": [
+      "STAR WARS™ Battlefront™ II: Elite Trooper Deluxe Edition"
+    ],
     "openCriticId": "4507/star-wars-battlefront-2",
     "openCriticData": {
       "title": "Star Wars Battlefront 2",
@@ -36329,6 +36426,9 @@
   },
   {
     "title": "STAR WARS Jedi: Fallen Order™",
+    "sameGame": [
+      "STAR WARS Jedi: Fallen Order™ Deluxe Edition"
+    ],
     "openCriticId": "7407/star-wars-jedi-fallen-order",
     "openCriticData": {
       "title": "Star Wars Jedi: Fallen Order",
@@ -40196,6 +40296,9 @@
   },
   {
     "title": "Tony Hawk's Pro Skater 1 + 2",
+    "sameGame": [
+      "Tony Hawk's™ Pro Skater™ 1 + 2 - Cross-Gen Deluxe Bundle"
+    ],
     "openCriticId": "9440/tony-hawks-pro-skater-1-2",
     "openCriticData": {
       "title": "Tony Hawk's Pro Skater 1 + 2",
@@ -41166,6 +41269,9 @@
   },
   {
     "title": "Uncharted™ 4: A Thief’s End",
+    "sameGame": [
+      "UNCHARTED™ 4: A Thief’s End Digital Edition"
+    ],
     "openCriticId": "1538/uncharted-4-a-thiefs-end",
     "openCriticData": {
       "title": "Uncharted 4: A Thief's End",
@@ -41961,6 +42067,9 @@
   },
   {
     "title": "The Walking Dead: Saints & Sinners",
+    "sameGame": [
+      "The Walking Dead: Saints & Sinners - Standard Edition"
+    ],
     "openCriticId": "8778/the-walking-dead-saints-sinners",
     "openCriticData": {
       "title": "The Walking Dead: Saints & Sinners",
@@ -42182,6 +42291,9 @@
   },
   {
     "title": "Warhammer Chaosbane",
+    "sameGame": [
+      "Warhammer: Chaosbane - Magnus Edition"
+    ],
     "openCriticId": "7672/warhammer-chaosbane",
     "openCriticData": {
       "title": "Warhammer: Chaosbane",
@@ -42234,6 +42346,9 @@
   },
   {
     "title": "WATCH_DOGS™",
+    "sameGame": [
+      "WATCH_DOGS™ COMPLETE EDITION"
+    ],
     "openCriticId": "254/watch-dogs",
     "openCriticData": {
       "title": "Watch Dogs",
@@ -43061,6 +43176,9 @@
   },
   {
     "title": "WWE 2K24",
+    "sameGame": [
+      "WWE 2K24 Cross-Gen Digital Edition"
+    ],
     "openCriticId": "16381/wwe-2k24",
     "openCriticData": {
       "title": "WWE 2K24",
@@ -57638,5 +57756,56 @@
   {
     "title": "Cultist Simulator",
     "key": "cultist-simulator"
+  },
+  {
+    "title": "Titanfall 2",
+    "sameGame": [
+      "Titanfall™ 2 Standard Edition"
+    ],
+    "key": "titanfall-2",
+    "openCriticId": "2834/titanfall-2",
+    "openCriticData": {
+      "title": "Titanfall 2",
+      "cover": "https://img.opencritic.com/game/2834/9wHjpbf9.jpg",
+      "tier": "mighty",
+      "score": 87,
+      "critics": 94,
+      "releaseDate": "2016-10-28T00:00:00.000Z",
+      "updated": "2025-07-18T23:06:53.814Z"
+    },
+    "steamAppId": 1237970,
+    "steamData": {
+      "title": "Titanfall® 2",
+      "description": "Respawn Entertainment gives you the most advanced titan technology in its new, single player campaign & multiplayer experience. Combine & conquer with new titans & pilots, deadlier weapons, & customization and progression systems that help you and your titan flow as one unstoppable killing force.",
+      "genres": [
+        "Action"
+      ],
+      "releaseDate": "2016-10-28T00:00:00.000Z",
+      "reviewScore": 9,
+      "reviewScoreDescription": "Overwhelmingly Positive",
+      "reviewScoreTooltip": "95% of the 229,576 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1237970/header.jpg?t=1726160226",
+      "updated": "2025-07-18T23:07:14.409Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/titanfall-2",
+    "metacriticData": {
+      "title": "Titanfall 2",
+      "metacriticScore": 89,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Xbox One",
+        "PlayStation 4"
+      ],
+      "releaseDate": "2016-10-28T00:00:00.000Z",
+      "developers": [
+        "Respawn Entertainment"
+      ],
+      "publisher": "Electronic Arts",
+      "genres": [
+        "FPS"
+      ],
+      "updated": "2025-07-18T23:07:17.800Z"
+    }
   }
 ]
