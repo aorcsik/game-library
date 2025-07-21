@@ -94,6 +94,7 @@ type BundlePurchase = SinglePurchase & {
     platform?: Platform;
     claimed?: boolean;
     price?: string;
+    games?: string[];
   }[];
 };
 
@@ -217,25 +218,44 @@ class PurchaseService {
       await savePurchaseDatesToSanity(purchaseDatesData);
     }
 
+    const getGamePrice = (price: string, divideBy: number): string => {
+      if (price === 'FREE') return 'FREE';
+      const parsedPrice = price ? parseFloat(price) : 0;
+      if (parsedPrice === 0) return 'FREE';
+      const parsedCurrency = price.replace(/[\d.,]/g, '').trim() || '';
+      if (divideBy > 0) {
+        return `${(parsedPrice / divideBy).toFixed(2)}${parsedCurrency}`;
+      }
+      return `${parsedPrice.toFixed(2)}${parsedCurrency}`;
+    };
+
     purchaseDatesData
       .forEach(record => {
-        if ('games' in record) {
-          const parsedPrice = record.price === 'FREE' ? { price: 0, currency: '' } : {
-            price: record.price ? parseFloat(record.price) : 0,
-            currency: record.price.replace(/[\d.,]/g, '').trim() || ''
-          };
-          const bundlePrice = parsedPrice.price === 0 ? 'FREE' : `${(parsedPrice.price / record.games.length).toFixed(2)}${parsedPrice.currency}`;
+        if ('games' in record && Array.isArray(record.games) && record.games.length > 0) {
           record.games
             .filter(game => game.claimed !== false)
             .filter(game => isValidPlatform(game.platform || record.platform))
             .forEach(game => {
-              purchaseDates.push({
-                title: game.title,
-                store: `${record.store} - ${record.title}`,
-                platform: game.platform || record.platform,
-                purchaseDate: record.purchaseDate,
-                price: game.price || bundlePrice,
-              });
+              if ('games' in game && Array.isArray(game.games) && game.games.length > 0) {
+                const gamesList = game.games; // TypeScript now knows this is defined
+                gamesList.forEach(subGame => {
+                  purchaseDates.push({
+                    title: subGame,
+                    store: `${record.store} - ${record.title} - ${game.title}`,
+                    platform: game.platform || record.platform,
+                    purchaseDate: record.purchaseDate,
+                    price: getGamePrice(game.price || getGamePrice(record.price, record.games.length), gamesList.length),
+                  });
+                });
+              } else {
+                purchaseDates.push({
+                  title: game.title,
+                  store: `${record.store} - ${record.title}`,
+                  platform: game.platform || record.platform,
+                  purchaseDate: record.purchaseDate,
+                  price: game.price || getGamePrice(record.price, record.games.length),
+                });
+              }
             });
         } else if (isValidPlatform(record.platform)) {
           purchaseDates.push({
@@ -420,8 +440,8 @@ class PurchaseService {
     if (this.config.switch_library) {
       const nintendoPurchaseFile = await fs.promises.readFile(this.config.switch_library, 'utf-8');
       const nintendoPurchaseData = JSON.parse(nintendoPurchaseFile.toString()) as SwitchPurchaseData;
-      Object.keys(nintendoPurchaseData.purchases).forEach(purchase => {
-        nintendoPurchaseData.purchases[purchase].forEach(element => {
+      nintendoPurchaseData.purchases_new.forEach(page => {
+        page.forEach(element => {
           if (this.skipTitle.includes(element.title)) return;
 
           const title = formatTitle(element.title);

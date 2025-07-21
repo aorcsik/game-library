@@ -1,6 +1,7 @@
+import { colorize } from '../cli/CommandLineTools';
 import { PlatformProgress } from '../cli/ProgressFetcherService';
 import { getGameLibraryConfig } from './Config';
-import GameDatabaseService from './GameDatabaseService';
+import GameDatabaseService, { Game } from './GameDatabaseService';
 import NotesService, { SanityGameNotes } from './NotesService';
 import ProgressService from './ProgressService';
 import PurchaseService, { PlatformList, PlatformPurchase, PurchasedGame, SinglePurchase } from './PurchaseService';
@@ -113,13 +114,20 @@ export const getGameLibraryData = async (
   const addPurchaseDates = (purchaseDates: SinglePurchase[] | null): void => {
     if (purchaseDates) {
       purchaseDates.forEach(purchase => {
-        const game = database.getGameByTitle(purchase.title);
-        const purchasedGame = purchasedGames.find(p => p.key === game.key);
-        purchasedGame?.purchases.forEach(p => {
-          if (p.purchaseDate === undefined || p.purchaseDate > purchase.purchaseDate) {
-            p.purchaseDate = purchase.purchaseDate;
-          }
-        });
+        let game: Game | null = null;
+        try {
+          game = database.getGameByTitle(purchase.title, false);
+        } catch (error) {
+          process.stderr.write(colorize(`${error}\n`, 'red'));
+        }
+        if (game) {
+          const purchasedGame = purchasedGames.find(p => p.key === game.key);
+          purchasedGame?.purchases.forEach(p => {
+            if (p.purchaseDate === undefined || p.purchaseDate > purchase.purchaseDate) {
+              p.purchaseDate = purchase.purchaseDate;
+            }
+          });
+        }
       });
     }
   };

@@ -475,7 +475,8 @@
   {
     "title": "Dead Island",
     "sameGame": [
-      "Dead Island - Definitive Edition"
+      "Dead Island - Definitive Edition",
+      "Dead Island GOTY"
     ],
     "openCriticId": "skip",
     "releaseDate": "2011-09-09T00:00:00.000Z",
@@ -1332,7 +1333,8 @@
   {
     "title": "Republique",
     "sameGame": [
-      "République"
+      "République",
+      "Republique VR"
     ],
     "openCriticId": "1399/republique-remastered",
     "openCriticData": {
@@ -1475,7 +1477,8 @@
   {
     "title": "Broken Sword - Shadow of the Templars",
     "sameGame": [
-      "Broken Sword 1: Director's Cut"
+      "Broken Sword 1: Director's Cut",
+      "Broken Sword: Director's Cut HD"
     ],
     "openCriticId": "skip",
     "releaseDate": "2010-01-24T00:00:00.000Z",
@@ -12661,6 +12664,9 @@
   },
   {
     "title": "DRAGON BALL Z : KAKAROT + A NEW POWER AWAKENS SET",
+    "sameGame": [
+      "DRAGON BALL Z: KAKAROT + A NEW POWER AWAKENS SET Legendary Edition"
+    ],
     "openCriticId": "8821/dragon-ball-z-kakarot",
     "openCriticData": {
       "title": "Dragon Ball Z: Kakarot",
@@ -14331,6 +14337,9 @@
   },
   {
     "title": "Eternal Return",
+    "sameGame": [
+      "Eternal Return: Black Survival"
+    ],
     "openCriticId": "15360/eternal-return",
     "openCriticData": {
       "title": "Eternal Return",
@@ -16443,6 +16452,9 @@
   },
   {
     "title": "Fractal: Make Blooms Not War",
+    "sameGame": [
+      "Fractal"
+    ],
     "openCriticId": "skip",
     "releaseDate": "2010-05-26T00:00:00.000Z",
     "steamAppId": 61310,
@@ -17646,6 +17658,9 @@
   },
   {
     "title": "Goodbye Deponia",
+    "sameGame": [
+      "Goodybe Deponia"
+    ],
     "openCriticId": "8956/goodbye-deponia",
     "openCriticData": {
       "title": "Goodbye Deponia",
@@ -19472,6 +19487,9 @@
   },
   {
     "title": "Heroes of Might & Magic III - HD Edition",
+    "sameGame": [
+      "Heroes of Might and Magic 3 - HD Edition"
+    ],
     "openCriticId": "1264/heroes-of-might-magic-iii-hd-edition",
     "openCriticData": {
       "title": "Heroes of Might & Magic III - HD Edition",
@@ -21970,6 +21988,9 @@
   },
   {
     "title": "KILL la KILL - IF",
+    "sameGame": [
+      "Kill la Kill The Game - IF"
+    ],
     "openCriticId": "7980/kill-la-kill-if",
     "openCriticData": {
       "title": "KILL la KILL - IF",
@@ -23882,6 +23903,9 @@
   },
   {
     "title": "LEGO® The Lord of the Rings™",
+    "sameGame": [
+      "LEGO Lord of the Rings"
+    ],
     "openCriticId": "skip",
     "releaseDate": "2012-10-30T00:00:00.000Z",
     "steamAppId": 214510,
@@ -25823,6 +25847,9 @@
   },
   {
     "title": "Metro Exodus",
+    "sameGame": [
+      "Metro Exodus (Regular Ed. - Post Launch)"
+    ],
     "openCriticId": "6847/metro-exodus",
     "openCriticData": {
       "title": "Metro Exodus",
@@ -26257,6 +26284,9 @@
   },
   {
     "title": "Monkey Island 2: Special Edition",
+    "sameGame": [
+      "Monkey Island 2 Special Edition: LeChuck's Revenge for iPad"
+    ],
     "openCriticId": "skip",
     "releaseDate": "2010-07-07T00:00:00.000Z",
     "steamAppId": 32460,
@@ -26552,6 +26582,9 @@
   },
   {
     "title": "Moonlighter",
+    "sameGame": [
+      "Moonlighter: Complete Edition"
+    ],
     "openCriticId": "6087/moonlighter",
     "openCriticData": {
       "title": "Moonlighter",
@@ -29165,6 +29198,9 @@
   },
   {
     "title": "Osmos",
+    "sameGame": [
+      "Osmos for iPad"
+    ],
     "openCriticId": "skip",
     "releaseDate": "2009-08-17T00:00:00.000Z",
     "steamAppId": 29180,
@@ -29688,7 +29724,7 @@
     "key": "over-top"
   },
   {
-    "title": "Oxenfree",
+    "title": "OXENFREE",
     "openCriticId": "2142/oxenfree",
     "openCriticData": {
       "title": "Oxenfree",
@@ -29715,7 +29751,8 @@
       "updated": "2025-06-05T08:24:58.236Z"
     },
     "sameGame": [
-      "OXENFREE: Netflix Edition"
+      "OXENFREE: Netflix Edition",
+      "OXENFREE Mobile"
     ],
     "metacriticUrl": "https://www.metacritic.com/game/oxenfree",
     "metacriticData": {
@@ -32499,6 +32536,9 @@
   },
   {
     "title": "Röki",
+    "sameGame": [
+      "Röki Deluxe Edition"
+    ],
     "openCriticId": "9848/r-ki",
     "openCriticData": {
       "title": "Röki",
@@ -34089,6 +34129,9 @@
   },
   {
     "title": "Sid Meier's Civilization VI",
+    "sameGame": [
+      "Civilization VI"
+    ],
     "openCriticId": "2719/sid-meiers-civilization-vi",
     "openCriticData": {
       "title": "Sid Meier's Civilization VI",
@@ -36480,6 +36523,9 @@
   },
   {
     "title": "STAR WARS™ Jedi Knight II: Jedi Outcast™",
+    "sameGame": [
+      "Jedi Knight II Jedi Outcast"
+    ],
     "openCriticId": "8321/star-wars-jedi-knight-ii-jedi-outcast",
     "openCriticData": {
       "title": "STAR WARS Jedi Knight II: Jedi Outcast",
@@ -36530,6 +36576,9 @@
   },
   {
     "title": "STAR WARS™ Jedi Knight: Jedi Academy™",
+    "sameGame": [
+      "Jedi Academy"
+    ],
     "openCriticId": "9224/star-wars-jedi-knight-jedi-academy",
     "openCriticData": {
       "title": "STAR WARS Jedi Knight: Jedi Academy",
@@ -36630,6 +36679,9 @@
   },
   {
     "title": "STAR WARS™ Knights of the Old Republic™",
+    "sameGame": [
+      "Knights of the Old Republic"
+    ],
     "openCriticId": "12313/star-wars-knights-of-the-old-republic",
     "openCriticData": {
       "title": "Star Wars: Knights of the Old Republic",
@@ -36858,7 +36910,11 @@
     "key": "star-wars-the-force-unleashed-ii"
   },
   {
-    "title": "STAR WARS™: The Force Unleashed™ Ultimate Sith Edition",
+    "title": "STAR WARS™: The Force Unleashed™",
+    "sameGame": [
+      "Star Wars - The Force Unleashed",
+      "STAR WARS™: The Force Unleashed™ Ultimate Sith Edition"
+    ],
     "openCriticId": "13038/star-wars-the-force-unleashed",
     "openCriticData": {
       "title": "Star Wars: The Force Unleashed",
@@ -36903,7 +36959,7 @@
       ],
       "updated": "2025-06-05T10:44:38.599Z"
     },
-    "key": "star-wars-the-force-unleashed-ultimate-sith-edition"
+    "key": "star-wars-the-force-unleashed"
   },
   {
     "title": "STASIS : BONE TOTEM",
@@ -37450,6 +37506,9 @@
   },
   {
     "title": "Stories: The Path of Destinies",
+    "sameGame": [
+      "Stories: Path of Destinies"
+    ],
     "openCriticId": "1664/stories-the-path-of-destinies",
     "openCriticData": {
       "title": "Stories: The Path of Destinies",
@@ -42691,6 +42750,9 @@
   },
   {
     "title": "The Witcher 3: Wild Hunt",
+    "sameGame": [
+      "The Witcher 3: Wild Hunt - Complete Edition"
+    ],
     "openCriticId": "463/the-witcher-3-wild-hunt",
     "openCriticData": {
       "title": "The Witcher 3: Wild Hunt",
@@ -42948,6 +43010,9 @@
   },
   {
     "title": "World of Goo",
+    "sameGame": [
+      "World of Goo Remastered"
+    ],
     "openCriticId": "4262/world-of-goo",
     "openCriticData": {
       "title": "World of Goo",
@@ -44562,6 +44627,9 @@
   },
   {
     "title": "Fallout: New Vegas",
+    "sameGame": [
+      "Fallout New Vegas Ultimate"
+    ],
     "openCriticId": "skip",
     "releaseDate": "2010-10-19T00:00:00.000Z",
     "steamAppId": 22380,
@@ -44589,6 +44657,9 @@
   },
   {
     "title": "Frostpunk",
+    "sameGame": [
+      "Frostpunk: Game of the Year Edition"
+    ],
     "openCriticId": "5948/frostpunk",
     "openCriticData": {
       "title": "Frostpunk",
@@ -46632,6 +46703,9 @@
   },
   {
     "title": "The Ascent",
+    "sameGame": [
+      "The Ascent: Cyber Edition Bundle"
+    ],
     "steamAppId": 979690,
     "openCriticId": "11537/the-ascent",
     "openCriticData": {
@@ -50907,6 +50981,9 @@
   },
   {
     "title": "NEEDY STREAMER OVERLOAD",
+    "sameGame": [
+      "NEEDY GIRL OVERDOSE"
+    ],
     "key": "needy-streamer-overload",
     "steamAppId": 1451940,
     "openCriticId": "12677/needy-streamer-overload",
@@ -52931,6 +53008,9 @@
   },
   {
     "title": "STASIS",
+    "sameGame": [
+      "STASIS - Deluxe Edition"
+    ],
     "key": "stasis",
     "steamAppId": 380150,
     "openCriticId": "1815/stasis",
@@ -52978,6 +53058,9 @@
   },
   {
     "title": "Encodya",
+    "sameGame": [
+      "ENCODYA | Standard Edition"
+    ],
     "key": "encodya",
     "steamAppId": 1137450,
     "openCriticId": "10858/encodya",
@@ -53537,10 +53620,6 @@
       ],
       "updated": "2025-06-05T08:27:32.212Z"
     }
-  },
-  {
-    "title": "Diablo III: Reaper of Souls - Ultimate Evil Edition",
-    "key": "diablo-iii-reaper-of-souls-ultimate-evil-edition"
   },
   {
     "title": "FIFA 19",
@@ -54984,6 +55063,9 @@
   },
   {
     "title": "Hard West",
+    "sameGame": [
+      "Hard West Collector's Edition"
+    ],
     "key": "hard-west",
     "steamAppId": 307670,
     "openCriticId": "1654/hard-west",
@@ -55561,10 +55643,6 @@
       ],
       "updated": "2025-06-10T09:22:44.259Z"
     }
-  },
-  {
-    "title": "Metroid Prime",
-    "key": "metroid-prime"
   },
   {
     "title": "Metroid Prime Remastered",
@@ -57746,18 +57824,6 @@
     }
   },
   {
-    "title": "Indie Game: The Movie",
-    "key": "indie-game-the-movie"
-  },
-  {
-    "title": "Double Fine Adventure Documentary",
-    "key": "double-fine-adventure-documentary"
-  },
-  {
-    "title": "Cultist Simulator",
-    "key": "cultist-simulator"
-  },
-  {
     "title": "Titanfall 2",
     "sameGame": [
       "Titanfall™ 2 Standard Edition"
@@ -57806,6 +57872,798 @@
         "FPS"
       ],
       "updated": "2025-07-18T23:07:17.800Z"
+    }
+  },
+  {
+    "title": "Marvel's Midnight Suns",
+    "key": "marvels-midnight-suns",
+    "openCriticId": "13373/marvels-midnight-suns",
+    "openCriticData": {
+      "title": "Marvel's Midnight Suns",
+      "cover": "https://img.opencritic.com/game/13373/dbvbwn7I.jpg",
+      "tier": "strong",
+      "score": 82,
+      "critics": 90,
+      "releaseDate": "2022-12-02T00:00:00.000Z",
+      "updated": "2025-07-19T13:47:02.836Z"
+    },
+    "steamAppId": 368260,
+    "steamData": {
+      "title": "Marvel's Midnight Suns",
+      "description": "FIGHT AND STRATEGIZE LIKE A SUPER HERO IN THE DARKER CORNERS OF THE MARVEL UNIVERSE. Play as The Hunter, a legendary demon slayer who must lead a team of Super Heroes and supernatural warriors facing apocalyptic threats.",
+      "genres": [
+        "RPG",
+        "Strategy"
+      ],
+      "releaseDate": "2022-12-01T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "82% of the 15,352 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/368260/header.jpg?t=1732138093",
+      "updated": "2025-07-19T13:47:23.548Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/marvels-midnight-suns/",
+    "metacriticData": {
+      "title": "Marvel's Midnight Suns",
+      "metacriticScore": 83,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Xbox Series X",
+        "Xbox One",
+        "Nintendo Switch",
+        "PlayStation 5",
+        "PlayStation 4"
+      ],
+      "releaseDate": "2022-12-02T00:00:00.000Z",
+      "developers": [
+        "Firaxis Games"
+      ],
+      "publisher": "2K Games",
+      "genres": [
+        "Turn-Based Tactics"
+      ],
+      "updated": "2025-07-19T13:47:40.600Z"
+    }
+  },
+  {
+    "title": "STAR WARS Jedi Knight: Dark Forces II",
+    "sameGame": [
+      "STAR WARS Jedi Knight: Dark Forces II - Mysteries of the Sith"
+    ],
+    "key": "star-wars-jedi-knight-dark-forces-ii",
+    "openCriticId": "skip",
+    "steamAppId": 32380,
+    "steamData": {
+      "title": "STAR WARS™ Jedi Knight: Dark Forces II",
+      "description": "Jedi Knight: Dark Forces II picks up where the award-winning Dark Forces™ game left off...with even more features and firepower in dazzling 3D graphics. As Kyle Katarn, you must acquire a lightsaber and learn the ways of the Force to become a Jedi Knight.",
+      "genres": [
+        "Action"
+      ],
+      "releaseDate": "1997-10-09T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "reviewScoreTooltip": "79% of the 1,728 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/32380/header.jpg?t=1741814501",
+      "updated": "2025-07-19T13:48:26.207Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/star-wars-jedi-knight-dark-forces-ii",
+    "metacriticData": {
+      "title": "Star Wars Jedi Knight: Dark Forces II",
+      "metacriticScore": 91,
+      "mustPlay": false,
+      "platforms": [
+        "PC"
+      ],
+      "releaseDate": "1997-10-09T00:00:00.000Z",
+      "developers": [
+        "LucasArts"
+      ],
+      "publisher": "LucasArts",
+      "genres": [
+        "FPS"
+      ],
+      "updated": "2025-07-19T13:48:29.775Z"
+    }
+  },
+  {
+    "title": "Besiege + The Splintered Sea DLC",
+    "key": "besiege-the-splintered-sea-dlc",
+    "openCriticId": "9061/besiege",
+    "openCriticData": {
+      "title": "Besiege",
+      "cover": null,
+      "tier": "strong",
+      "score": 78,
+      "critics": 75,
+      "releaseDate": "2020-02-18T00:00:00.000Z",
+      "updated": "2025-07-19T13:51:06.295Z"
+    },
+    "steamAppId": 346010,
+    "steamData": {
+      "title": "Besiege",
+      "description": "Besiege is a physics building game about constructing mechanical machines to annihilate armies, obliterate castles and overcome challenging obstacles. Conquer the campaign or skirmish with friends in Multiplayer!",
+      "genres": [
+        "Indie",
+        "Simulation"
+      ],
+      "releaseDate": "2020-02-18T00:00:00.000Z",
+      "reviewScore": 9,
+      "reviewScoreDescription": "Overwhelmingly Positive",
+      "reviewScoreTooltip": "95% of the 45,667 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/346010/header.jpg?t=1752591657",
+      "updated": "2025-07-19T13:51:17.965Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/besiege/",
+    "metacriticData": {
+      "title": "Besiege",
+      "metacriticScore": null,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Xbox Series X",
+        "Xbox One",
+        "Nintendo Switch",
+        "PlayStation 5",
+        "PlayStation 4"
+      ],
+      "releaseDate": "2015-01-28T00:00:00.000Z",
+      "developers": [
+        "Spiderling Studios"
+      ],
+      "publisher": "Spiderling Studios",
+      "genres": [
+        "Real-Time Strategy"
+      ],
+      "updated": "2025-07-19T13:51:34.853Z"
+    }
+  },
+  {
+    "title": "ENDLESS Space 2 - Definitive Edition",
+    "key": "endless-space-2-definitive-edition",
+    "openCriticId": "4204/endless-space-2",
+    "openCriticData": {
+      "title": "Endless Space 2",
+      "cover": "https://img.opencritic.com/game/4204/qqiIS1D2.jpg",
+      "tier": "strong",
+      "score": 82,
+      "critics": 81,
+      "releaseDate": "2017-05-18T00:00:00.000Z",
+      "updated": "2025-07-19T13:51:58.301Z"
+    },
+    "steamAppId": 392110,
+    "steamData": {
+      "title": "ENDLESS™ Space 2",
+      "description": "ENDLESS™ Space 2 is a Strategic Space Opera, featuring the compelling “just one more turn” gameplay, set in the mysterious ENDLESS™ Universe. As the leader of your civilization, will you impose your vision and build the greatest stellar empire?",
+      "genres": [
+        "Strategy"
+      ],
+      "releaseDate": "2017-05-18T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "84% of the 16,615 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/392110/header.jpg?t=1728046125",
+      "updated": "2025-07-19T13:52:12.011Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/endless-space-2",
+    "metacriticData": {
+      "title": "Endless Space 2",
+      "metacriticScore": 80,
+      "mustPlay": false,
+      "platforms": [
+        "PC"
+      ],
+      "releaseDate": "2017-05-18T00:00:00.000Z",
+      "developers": [
+        "Amplitude Studios"
+      ],
+      "publisher": "Sega",
+      "genres": [
+        "4X Strategy"
+      ],
+      "updated": "2025-07-19T13:52:15.258Z"
+    }
+  },
+  {
+    "title": "Jurassic Park: The Game",
+    "key": "jurassic-park-the-game",
+    "steamAppId": 201830,
+    "openCriticId": "15889/jurassic-park-classic-games-collection",
+    "openCriticData": {
+      "title": "Jurassic Park Classic Games Collection",
+      "cover": "https://img.opencritic.com/game/15889/IqZ57BIk.jpg",
+      "tier": "weak",
+      "score": 50,
+      "critics": 11,
+      "releaseDate": "2023-11-21T00:00:00.000Z",
+      "updated": "2025-07-19T15:23:03.834Z"
+    },
+    "steamData": {
+      "title": "Jurassic Park: The Game",
+      "description": "Experience a brand new adventure set during the events of the first Jurassic Park movie and see new areas and dinosaurs in this landmark adventure 65 million years in the making!",
+      "genres": [
+        "Adventure"
+      ],
+      "releaseDate": null,
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "reviewScoreTooltip": "70% of the 1,140 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/201830/header.jpg?t=1542232453",
+      "updated": "2025-07-19T15:23:04.405Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/jurassic-park-the-game",
+    "metacriticData": {
+      "title": "Jurassic Park: The Game",
+      "metacriticScore": 54,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "PlayStation 3",
+        "Xbox 360"
+      ],
+      "releaseDate": "2011-11-15T00:00:00.000Z",
+      "developers": [
+        "Telltale Games"
+      ],
+      "publisher": "Telltale Games",
+      "genres": [
+        "Point-and-Click"
+      ],
+      "updated": "2025-07-19T15:23:08.695Z"
+    }
+  },
+  {
+    "title": "Strong Bad Episode 1: Homestar Ruiner",
+    "key": "strong-bad-episode-1-homestar-ruiner",
+    "steamAppId": 8340,
+    "openCriticId": "skip",
+    "steamData": {
+      "title": "Strong Bad's Cool Game for Attractive People: Season 1",
+      "description": "Enjoy Strong Bad's wacky comedic adventures over 5 full episodes!",
+      "genres": [
+        "Adventure"
+      ],
+      "releaseDate": "2008-12-18T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "92% of the 454 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/8340/header.jpg?t=1685573044",
+      "updated": "2025-07-19T15:25:07.738Z"
+    },
+    "metacriticUrl": "skip",
+    "metacriticData": {
+      "title": "Strong Bad's Cool Game for Attractive People Episode 1: Homestar Ruiner",
+      "metacriticScore": 73,
+      "mustPlay": false,
+      "platforms": [
+        "Wii",
+        "PC",
+        "PlayStation 3"
+      ],
+      "releaseDate": "2008-08-11T00:00:00.000Z",
+      "developers": [
+        "Telltale Games"
+      ],
+      "publisher": "Telltale Games",
+      "genres": [
+        "Compilation"
+      ],
+      "updated": "2025-07-19T15:25:22.904Z"
+    }
+  },
+  {
+    "title": "Strong Bad Episode 2: Strong Badia the Free",
+    "key": "strong-bad-episode-2-strong-badia-the-free",
+    "steamAppId": 8350,
+    "openCriticId": "skip",
+    "steamData": {
+      "title": "Strong Bad's Cool Game for Attractive People: Episode 2",
+      "description": null,
+      "genres": [
+        "Adventure"
+      ],
+      "releaseDate": null,
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "87% of the 57 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/8350/header.jpg?t=1581458921",
+      "updated": "2025-07-19T15:27:14.490Z"
+    },
+    "metacriticUrl": "skip",
+    "metacriticData": {
+      "title": "Strong Bad's Cool Game for Attractive People Episode 2: Strong Badia the Free",
+      "metacriticScore": 81,
+      "mustPlay": false,
+      "platforms": [
+        "Wii",
+        "PC",
+        "PlayStation 3"
+      ],
+      "releaseDate": "2008-08-11T00:00:00.000Z",
+      "developers": [
+        "Telltale Games"
+      ],
+      "publisher": "Telltale Games",
+      "genres": [
+        "Compilation"
+      ],
+      "updated": "2025-07-19T15:25:22.904Z"
+    }
+  },
+  {
+    "title": "Strong Bad Episode 3: Baddest of the Bands",
+    "key": "strong-bad-episode-3-baddest-of-the-bands",
+    "steamAppId": 8360,
+    "openCriticId": "skip",
+    "steamData": {
+      "title": "Strong Bad's Cool Game for Attractive People: Episode 3",
+      "description": null,
+      "genres": [
+        "Adventure"
+      ],
+      "releaseDate": null,
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "reviewScoreTooltip": "78% of the 42 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/8360/header.jpg?t=1581458927",
+      "updated": "2025-07-19T15:29:28.114Z"
+    },
+    "metacriticUrl": "skip",
+    "metacriticData": {
+      "title": "Strong Bad's Cool Game for Attractive People Episode 3: Baddest of the Bands",
+      "metacriticScore": 79,
+      "mustPlay": false,
+      "platforms": [
+        "Wii",
+        "PC",
+        "PlayStation 3"
+      ],
+      "releaseDate": "2008-08-11T00:00:00.000Z",
+      "developers": [
+        "Telltale Games"
+      ],
+      "publisher": "Telltale Games",
+      "genres": [
+        "Compilation"
+      ],
+      "updated": "2025-07-19T15:25:22.904Z"
+    }
+  },
+  {
+    "title": "Strong Bad Episode 4: Dangeresque 3",
+    "key": "strong-bad-episode-4-dangeresque-3",
+    "steamAppId": 8370,
+    "openCriticId": "skip",
+    "steamData": {
+      "title": "Strong Bad's Cool Game for Attractive People: Episode 4",
+      "description": null,
+      "genres": [
+        "Adventure"
+      ],
+      "releaseDate": null,
+      "reviewScore": 7,
+      "reviewScoreDescription": "Positive",
+      "reviewScoreTooltip": "82% of the 45 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/8370/header.jpg?t=1581458937",
+      "updated": "2025-07-19T15:29:29.997Z"
+    },
+    "metacriticUrl": "skip",
+    "metacriticData": {
+      "title": "Strong Bad's Cool Game for Attractive People Episode 4: Dangeresque 3",
+      "metacriticScore": 81,
+      "mustPlay": false,
+      "platforms": [
+        "Wii",
+        "PC",
+        "PlayStation 3"
+      ],
+      "releaseDate": "2008-08-11T00:00:00.000Z",
+      "developers": [
+        "Telltale Games"
+      ],
+      "publisher": "Telltale Games",
+      "genres": [
+        "Compilation"
+      ],
+      "updated": "2025-07-19T15:25:22.904Z"
+    }
+  },
+  {
+    "title": "Strong Bad Episode 5: 8-Bit Is Enough",
+    "key": "strong-bad-episode-5-8-bit-is-enough",
+    "steamAppId": 8380,
+    "openCriticId": "skip",
+    "steamData": {
+      "title": "Strong Bad's Cool Game for Attractive People: Episode 5",
+      "description": null,
+      "genres": [
+        "Adventure"
+      ],
+      "releaseDate": null,
+      "reviewScore": 7,
+      "reviewScoreDescription": "Positive",
+      "reviewScoreTooltip": "84% of the 45 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/8380/header.jpg?t=1581458943",
+      "updated": "2025-07-19T15:29:32.531Z"
+    },
+    "metacriticUrl": "skip",
+    "metacriticData": {
+      "title": "Strong Bad's Cool Game for Attractive People Episode 5: 8-Bit Is Enough",
+      "metacriticScore": 82,
+      "mustPlay": false,
+      "platforms": [
+        "Wii",
+        "PC",
+        "PlayStation 3"
+      ],
+      "releaseDate": "2008-08-11T00:00:00.000Z",
+      "developers": [
+        "Telltale Games"
+      ],
+      "publisher": "Telltale Games",
+      "genres": [
+        "Compilation"
+      ],
+      "updated": "2025-07-19T15:25:22.904Z"
+    }
+  },
+  {
+    "title": "Sam & Max 301: The Penal Zone",
+    "key": "sam-and-max-301-the-penal-zone",
+    "steamAppId": 31220,
+    "openCriticId": "skip",
+    "steamData": {
+      "title": "Sam & Max 301: The Penal Zone",
+      "description": "Wield psychic powers against fearsome foes in this epic comedy saga. In The Devil’s Playhouse, an otherworldly power for controlling matter and space calls to the strongest and strangest who might wield it -- intergalactic warlords and eldritch gods, under-dwellers and scholars of the arcane.",
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "releaseDate": null,
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "92% of the 291 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/31220/header.jpg?t=1719435979",
+      "updated": "2025-07-19T15:23:41.877Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/sam-and-max-the-devils-playhouse-episode-1/",
+    "metacriticData": {
+      "title": "Sam & Max: The Devil's Playhouse - Episode 1: The Penal Zone",
+      "metacriticScore": 81,
+      "mustPlay": false,
+      "platforms": [
+        "iOS (iPhone/iPad)",
+        "PC",
+        "PlayStation 3"
+      ],
+      "releaseDate": "2010-04-15T00:00:00.000Z",
+      "developers": [
+        "Telltale Games"
+      ],
+      "publisher": "Telltale Games",
+      "genres": [
+        "Third-Person Adventure"
+      ],
+      "updated": "2025-07-19T15:23:53.764Z"
+    }
+  },
+  {
+    "title": "Sam & Max 302: The Tomb of Sammun-Mak",
+    "key": "sam-and-max-302-the-tomb-of-sammun-mak",
+    "steamAppId": 31230,
+    "openCriticId": "skip",
+    "steamData": {
+      "title": "Sam & Max 302: The Tomb of Sammun-Mak",
+      "description": "Wield psychic powers against fearsome foes in this epic comedy saga. In The Devil’s Playhouse, an otherworldly power for controlling matter and space calls to the strongest and strangest who might wield it -- intergalactic warlords and eldritch gods, under-dwellers and scholars of the arcane.",
+      "genres": [
+        "Adventure"
+      ],
+      "releaseDate": null,
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "94% of the 50 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/31230/header.jpg?t=1719435959",
+      "updated": "2025-07-19T15:23:56.880Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/sam-and-max-the-devils-playhouse-episode-2/",
+    "metacriticData": {
+      "title": "Sam & Max: The Devil's Playhouse - Episode 2: The Tomb of Sammun-Mak",
+      "metacriticScore": 83,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "PlayStation 3"
+      ],
+      "releaseDate": "2010-05-18T00:00:00.000Z",
+      "developers": [
+        "Telltale Games"
+      ],
+      "publisher": "Telltale Games",
+      "genres": [
+        "Third-Person Adventure"
+      ],
+      "updated": "2025-07-19T15:24:04.557Z"
+    }
+  },
+  {
+    "title": "Sam & Max 303: They Stole Max's Brain!",
+    "key": "sam-and-max-303-they-stole-maxs-brain",
+    "steamAppId": 31240,
+    "openCriticId": "skip",
+    "steamData": {
+      "title": "Sam & Max 303: They Stole Max's Brain!",
+      "description": "Wield psychic powers against fearsome foes in this epic comedy saga. In The Devil’s Playhouse, an otherworldly power for controlling matter and space calls to the strongest and strangest who might wield it -- intergalactic warlords and eldritch gods, under-dwellers and scholars of the arcane.",
+      "genres": [
+        "Adventure"
+      ],
+      "releaseDate": null,
+      "reviewScore": 7,
+      "reviewScoreDescription": "Positive",
+      "reviewScoreTooltip": "95% of the 45 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/31240/header.jpg?t=1719436014",
+      "updated": "2025-07-19T15:24:10.618Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/sam-and-max-the-devils-playhouse-episode-3/",
+    "metacriticData": {
+      "title": "Sam & Max: The Devil's Playhouse - Episode 3: They Stole Max's Brain!",
+      "metacriticScore": 75,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "PlayStation 3"
+      ],
+      "releaseDate": "2010-06-22T00:00:00.000Z",
+      "developers": [
+        "Telltale Games"
+      ],
+      "publisher": "Telltale Games",
+      "genres": [
+        "Third-Person Adventure"
+      ],
+      "updated": "2025-07-19T15:24:14.282Z"
+    }
+  },
+  {
+    "title": "Sam & Max 304: Beyond the Alley of the Dolls",
+    "key": "sam-and-max-304-beyond-the-alley-of-the-dolls",
+    "steamAppId": 31250,
+    "openCriticId": "skip",
+    "steamData": {
+      "title": "Sam & Max 304: Beyond the Alley of the Dolls",
+      "description": "Wield psychic powers against fearsome foes in this epic comedy saga. In The Devil’s Playhouse, an otherworldly power for controlling matter and space calls to the strongest and strangest who might wield it -- intergalactic warlords and eldritch gods, under-dwellers and scholars of the arcane.",
+      "genres": [
+        "Adventure"
+      ],
+      "releaseDate": null,
+      "reviewScore": 7,
+      "reviewScoreDescription": "Positive",
+      "reviewScoreTooltip": "95% of the 40 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/31250/header.jpg?t=1719436039",
+      "updated": "2025-07-19T15:24:21.614Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/sam-and-max-the-devils-playhouse-episode-4/",
+    "metacriticData": {
+      "title": "Sam & Max: The Devil's Playhouse - Episode 4: Beyond the Alley of the Dolls",
+      "metacriticScore": 76,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "PlayStation 3"
+      ],
+      "releaseDate": "2010-07-20T00:00:00.000Z",
+      "developers": [
+        "Telltale Games"
+      ],
+      "publisher": "Telltale Games",
+      "genres": [
+        "Third-Person Adventure"
+      ],
+      "updated": "2025-07-19T15:24:24.783Z"
+    }
+  },
+  {
+    "title": "Sam & Max 305: The City that Dares not Sleep",
+    "key": "sam-and-max-305-the-city-that-dares-not-sleep",
+    "steamAppId": 31260,
+    "openCriticId": "skip",
+    "steamData": {
+      "title": "Sam & Max 305: The City That Dares Not Sleep",
+      "description": "Wield psychic powers against fearsome foes in this epic comedy saga. In The Devil’s Playhouse, an otherworldly power for controlling matter and space calls to the strongest and strangest who might wield it -- intergalactic warlords and eldritch gods, under-dwellers and scholars of the arcane.",
+      "genres": [
+        "Adventure"
+      ],
+      "releaseDate": null,
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "93% of the 58 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/31260/header.jpg?t=1719436063",
+      "updated": "2025-07-19T15:24:30.104Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/sam-and-max-the-devils-playhouse-episode-5/",
+    "metacriticData": {
+      "title": "Sam & Max: The Devil's Playhouse - Episode 5: The City That Dares Not Sleep",
+      "metacriticScore": 81,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "PlayStation 3"
+      ],
+      "releaseDate": "2010-08-30T00:00:00.000Z",
+      "developers": [
+        "Telltale Games"
+      ],
+      "publisher": "Telltale Games",
+      "genres": [
+        "Third-Person Adventure"
+      ],
+      "updated": "2025-07-19T15:24:32.616Z"
+    }
+  },
+  {
+    "title": "TETRIS 99",
+    "key": "tetris-99",
+    "openCriticId": "7306/tetris-99",
+    "openCriticData": {
+      "title": "Tetris 99",
+      "cover": "https://img.opencritic.com/game/7306/Zb6SgvH1.jpg",
+      "tier": "strong",
+      "score": 83,
+      "critics": 92,
+      "releaseDate": "2019-02-14T00:00:00.000Z",
+      "updated": "2025-07-21T08:56:26.565Z"
+    },
+    "steamAppId": -1,
+    "metacriticUrl": "https://www.metacritic.com/game/tetris-99/",
+    "metacriticData": {
+      "title": "Tetris 99",
+      "metacriticScore": 83,
+      "mustPlay": false,
+      "platforms": [
+        "Nintendo Switch"
+      ],
+      "releaseDate": "2019-02-13T00:00:00.000Z",
+      "developers": [
+        "Arika"
+      ],
+      "publisher": "Nintendo",
+      "genres": [
+        "Stacking Puzzle"
+      ],
+      "updated": "2025-07-21T08:56:32.751Z"
+    }
+  },
+  {
+    "title": "Darkest Dungeon: Tablet Edition",
+    "key": "darkest-dungeon-tablet-edition",
+    "openCriticId": "1567/darkest-dungeon",
+    "openCriticData": {
+      "title": "Darkest Dungeon",
+      "cover": "https://img.opencritic.com/game/1567/LdBGZtlA.jpg",
+      "tier": "mighty",
+      "score": 84,
+      "critics": 93,
+      "releaseDate": "2016-01-19T00:00:00.000Z",
+      "updated": "2025-07-21T13:25:52.531Z"
+    },
+    "steamAppId": 262060,
+    "steamData": {
+      "title": "Darkest Dungeon®",
+      "description": "Darkest Dungeon is a challenging gothic roguelike turn-based RPG about the psychological stresses of adventuring. Recruit, train, and lead a team of flawed heroes against unimaginable horrors, stress, disease, and the ever-encroaching dark. Can you keep your heroes together when all hope is lost?",
+      "genres": [
+        "Indie",
+        "RPG",
+        "Strategy"
+      ],
+      "releaseDate": "2016-01-19T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "91% of the 130,880 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/262060/header.jpg?t=1747999109",
+      "updated": "2025-07-21T13:26:16.591Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/darkest-dungeon",
+    "metacriticData": {
+      "title": "Darkest Dungeon",
+      "metacriticScore": 84,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "PlayStation 4",
+        "PlayStation Vita",
+        "Nintendo Switch",
+        "Xbox One",
+        "iOS (iPhone/iPad)"
+      ],
+      "releaseDate": "2015-02-03T00:00:00.000Z",
+      "developers": [
+        "Red Hook Studios"
+      ],
+      "publisher": "Red Hook Studios",
+      "genres": [
+        "RPG"
+      ],
+      "updated": "2025-07-21T13:26:18.883Z"
+    }
+  },
+  {
+    "title": "Microsoft Sudoku",
+    "key": "microsoft-sudoku",
+    "openCriticId": "skip",
+    "steamAppId": -1,
+    "metacriticUrl": "skip",
+    "releaseDate": "2014-03-06T00:00:00.000Z"
+  },
+  {
+    "title": "Diablo Immortal",
+    "key": "diablo-immortal",
+    "openCriticId": "13209/diablo-immortal",
+    "openCriticData": {
+      "title": "Diablo Immortal",
+      "cover": "https://img.opencritic.com/game/13209/0n4EsNhf.jpg",
+      "tier": "fair",
+      "score": 66,
+      "critics": 31,
+      "releaseDate": "2022-06-02T00:00:00.000Z",
+      "updated": "2025-07-21T13:26:34.401Z"
+    },
+    "steamAppId": -1,
+    "metacriticUrl": "https://www.metacritic.com/game/diablo-immortal/",
+    "metacriticData": {
+      "title": "Diablo Immortal",
+      "metacriticScore": 67,
+      "mustPlay": false,
+      "platforms": [
+        "iOS (iPhone/iPad)",
+        "PC"
+      ],
+      "releaseDate": "2022-06-02T00:00:00.000Z",
+      "developers": [
+        "Blizzard Entertainment",
+        "NetEase Games"
+      ],
+      "publisher": "Blizzard Entertainment",
+      "genres": [
+        "MMORPG"
+      ],
+      "updated": "2025-07-21T13:27:04.242Z"
+    }
+  },
+  {
+    "title": "Sim City 4 Deluxe Edition",
+    "key": "sim-city-4-deluxe-edition",
+    "openCriticId": "skip",
+    "steamAppId": 24780,
+    "steamData": {
+      "title": "SimCity™ 4 Deluxe Edition",
+      "description": "SimCity 4 Deluxe Edition includes the bestselling SimCity 4 and the all-new SimCity 4 Rush Hour Expansion Pack. Create the most massive region of cities ever, with a farming town, bedroom community, high-tech commercial center, and industrial backbone.",
+      "genres": [
+        "Simulation",
+        "Strategy"
+      ],
+      "releaseDate": "2003-09-22T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "80% of the 7,909 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/24780/header.jpg?t=1747169299",
+      "updated": "2025-07-21T13:57:49.537Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/simcity-4-deluxe-edition/",
+    "metacriticData": {
+      "title": "SimCity 4: Deluxe Edition",
+      "metacriticScore": null,
+      "mustPlay": false,
+      "platforms": [
+        "PC"
+      ],
+      "releaseDate": "2003-09-22T00:00:00.000Z",
+      "developers": [
+        "Maxis"
+      ],
+      "publisher": "Electronic Arts",
+      "genres": [
+        "Management"
+      ],
+      "updated": "2025-07-21T13:58:07.227Z"
     }
   }
 ]

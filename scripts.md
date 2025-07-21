@@ -37,8 +37,16 @@ https://www.gog.com/en/account
 
 ## Nintendo Switch
 https://www.nintendo.com/us/orders/
+https://accounts.nintendo.com/portal/vgcs
 ```javascript
-[...document.querySelectorAll(".cjjdxs")].map(el => el.innerText);
+console.log(JSON.stringify(Array.from(document.querySelectorAll("#vgcList ul.vgcsVgcList_list li.vgcsVgcList_listItem a")).map((vgc) => {
+  const vgcThumb = vgc.querySelector("img.virtualGameCard_thumb");
+  return {
+      id: vgc.href.match(/vgc_id=(.*)/)[1],
+      title: vgcThumb.alt,
+      cover: vgcThumb.src
+  };
+})).replace('[{', '[\n  {').replace(/\},\{/g, '},\n  {').replace('}]', '}\n]'));
 ```
 
 ## PlayStation

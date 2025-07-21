@@ -49,9 +49,12 @@ class GameDatabaseService {
     );
   };
 
-  getGameByTitle(title: string): Game {
+  getGameByTitle(title: string, createIfNotFound: boolean = true): Game {
     let index = this.findIndexByTitle(title);
     if (index === -1) {
+      if (!createIfNotFound) {
+        throw new Error(`Game with title "${title}" not found in database.`);
+      }
       process.stdout.write(`Game with title "${title}" not found in database. Adding new entry.\n`);
       this.database.push({
         title: title,

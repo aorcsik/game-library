@@ -33,6 +33,12 @@ type SwitchPurchaseData = {
       cover: string;
       physical: boolean;
     }[]>;
+  purchases_new: {
+    id?: string;
+    title: string;
+    cover: string;
+    physical?: boolean;
+  }[][];
   collections: GameCollections;
 };
 
