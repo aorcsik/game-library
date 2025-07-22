@@ -118,7 +118,7 @@ export const getGameLibraryData = async (
         try {
           game = database.getGameByTitle(purchase.title, false);
         } catch (error) {
-          process.stderr.write(colorize(`${error}\n`, 'red'));
+          process.stderr.write(colorize(`${error instanceof Error ? error.message : String(error)}\n`, 'red'));
         }
         if (game) {
           const purchasedGame = purchasedGames.find(p => p.key === game.key);

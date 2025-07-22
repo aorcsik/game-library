@@ -48,7 +48,7 @@ class NotesService {
         note.notesJSON = JSON.stringify(JSON.parse(fileContent), null, 2);
         process.stdout.write(colorize(`Notes for ${note.title} loaded successfully.\n`, 'green'));
       } catch (error) {
-        console.error(colorize(`Error reading notes file for ${note.title}: ${error}`, 'red'));
+        console.error(colorize(`Error reading notes file for ${note.title}: ${error instanceof Error ? error.message : String(error)}`, 'red'));
         note.notesJSON = '';
       }
     } else {
