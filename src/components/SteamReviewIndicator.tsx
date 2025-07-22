@@ -1,9 +1,9 @@
 'use client';
 
-import { JSX } from 'react';
+import { ReactNode } from 'react';
 import { Game } from '../lib/schema';
 
-const SteamReviewIndicator = ({ game }: { game: Game | null}): JSX.Element => {
+const SteamReviewIndicator = ({ game }: { game: Game | null}): ReactNode => {
   // Steam data
   let steamReviewScoreClass = 'steam-review';
   if (game?.steamData?.reviewScore) {

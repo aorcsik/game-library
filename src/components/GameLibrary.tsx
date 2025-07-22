@@ -83,7 +83,7 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
     return gameDataSet;
   }, [purchasedGames]);
 
-  const compareGames = useCallback((a: HTMLElement, b: HTMLElement): number => {
+  const compareGames = useCallback((a: Element, b: Element): number => {
     let sortValue = 0;
 
     const aValue = getGameDataSetByKey(a.id.replace(/^game-/, ''))[sortBy] || '';
@@ -113,7 +113,7 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
     return sortDirection === 'asc' ? sortValue : -1 * sortValue;
   }, [getGameDataSetByKey, sortBy, sortDirection]);
 
-  const getGroupBylabelBySortBy = useCallback((gameKey: string): string => {
+  const getGroupBylabelBySortBy = useCallback((gameKey: string): string | undefined => {
     const gameData = getGameDataSetByKey(gameKey);
     if (sortBy === 'gameReleaseDate') {
       return gameData.gameReleaseYear > '2000' ? gameData.gameReleaseYear : '2000 and earlier';
@@ -193,7 +193,7 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
         if (!searchQuery || gameKey.includes(searchQuery.replace(/\s+/g, '-').toLowerCase())) {
 
           const currentGroupByLabel = getGroupBylabelBySortBy(gameKey);
-          if (currentGroupByLabel !== groupByLabel) {
+          if (currentGroupByLabel && currentGroupByLabel !== groupByLabel) {
             groubByCount = 0;
             groupByLabel = currentGroupByLabel;
             groupByCounter = document.createElement('span');
@@ -214,8 +214,8 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
           if (!Array.from(item.classList).includes('no-purchases')) {
             filteredGameCount++;
           }
-          Object.keys(filteredPlatforms).forEach((platform: Platform) => {
-            if (item.querySelector(`.game-${platform}:not(.game-placeholder)`)) filteredPlatforms[platform].count++;
+          Object.keys(filteredPlatforms).forEach((platform: string) => {
+            if (item.querySelector(`.game-${platform}:not(.game-placeholder)`)) filteredPlatforms[platform as Platform].count++;
           });
         } else {
           detachedFragment.appendChild(item);

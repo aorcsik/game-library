@@ -31,7 +31,7 @@ type DeathStrandingNotesJSON = {
 export default async function Home(): Promise<React.JSX.Element> {
   const config = getGameLibraryConfig();
   const notesService = new NotesService(config);
-  const gameNotes = (await notesService.getGameNotes(true)).filter(note => note.title === "DEATH STRANDING DIRECTOR'S CUT").pop();
+  const gameNotes = (await notesService.getGameNotes(true))?.filter(note => note.title === "DEATH STRANDING DIRECTOR'S CUT").pop();
   const notesJSON = gameNotes?.notesJSON && JSON.parse(gameNotes.notesJSON) as DeathStrandingNotesJSON;
 
   if (!notesJSON) {
@@ -82,14 +82,14 @@ export default async function Home(): Promise<React.JSX.Element> {
   updateAchievementProgress(categoryProjectNotes, 44, achievement_44);
 
   let achievemt_0 = 50;
-  achievemt_0 += legendOfLegendProjectNotes.achievements.filter(a => a.progress >= 100).length;
-  achievemt_0 += facilityProjectNotes.achievements.filter(a => a.progress >= 100).length;
-  achievemt_0 += memoryChipProjectNotes.achievements.filter(a => a.progress >= 100).length;
-  achievemt_0 += structureProjectNotes.achievements.filter(a => a.progress >= 100).length;
-  achievemt_0 += fabricateProjectNotes.achievements.filter(a => a.progress >= 100).length;
-  achievemt_0 += categoryProjectNotes.achievements.filter(a => a.progress >= 100).length;
+  achievemt_0 += legendOfLegendProjectNotes.achievements.filter(a => a.progress && a.progress >= 100).length;
+  achievemt_0 += facilityProjectNotes.achievements.filter(a => a.progress && a.progress >= 100).length;
+  achievemt_0 += memoryChipProjectNotes.achievements.filter(a => a.progress && a.progress >= 100).length;
+  achievemt_0 += structureProjectNotes.achievements.filter(a => a.progress && a.progress >= 100).length;
+  achievemt_0 += fabricateProjectNotes.achievements.filter(a => a.progress && a.progress >= 100).length;
+  achievemt_0 += categoryProjectNotes.achievements.filter(a => a.progress && a.progress >= 100).length;
   simpleProjects.forEach(project => {
-    achievemt_0 += project.achievements.filter(a => a.progress >= 100).length;
+    achievemt_0 += project.achievements.filter(a => a.progress && a.progress >= 100).length;
   });
   updateAchievementProgress(platinumProject, 0, achievemt_0 / 63 * 100);
 

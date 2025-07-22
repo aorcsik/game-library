@@ -15,7 +15,7 @@ type ProjectContainerProps = {
 const ProjectContainer = ({ project, getSprite, children}: ProjectContainerProps): React.JSX.Element => {
   let hasIncompleteAchievements = false;
   project.achievements.forEach(achievement => {
-    if (achievement.progress < 100) {
+    if (achievement.progress === undefined || achievement.progress < 100) {
       hasIncompleteAchievements = true;
     }
   });

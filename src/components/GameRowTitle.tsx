@@ -23,7 +23,7 @@ export const getReleaseDate = (game: Game): Date | null => {
 
   // Convert to timestamps, filter out invalid dates
   const timestamps = dates
-    .map(date => new Date(date).getTime())
+    .map(date => date ? new Date(date).getTime() : 0)
     .filter(ts => !isNaN(ts));
 
   if (timestamps.length === 0) return null;
@@ -35,7 +35,7 @@ export const getReleaseDate = (game: Game): Date | null => {
 export const getPurchaseDate = (game: PurchasedGame): Date | null => {
   const purchaseDates = game.purchases
     .filter(p => p.purchaseDate)
-    .map(p => new Date(p.purchaseDate).getTime())
+    .map(p => p.purchaseDate ? new Date(p.purchaseDate).getTime() : 0)
     .filter(ts => !isNaN(ts));
 
   if (purchaseDates.length === 0) return null;
@@ -86,8 +86,8 @@ const GameRowTitle = ({ game }: GameRowTitleProps): JSX.Element => {
         </span>
         <span className="game-metadata">
           <SteamReviewIndicator game={clientLoaded ? game : null} />
-          {game.metacriticData?.genres?.length > 0 ? <span className="game-genres">
-            {game.metacriticData.genres.join(', ').replace(/%20/g, '\u00A0')}
+          {(game.metacriticData?.genres?.length || 0) > 0 ? <span className="game-genres">
+            {game.metacriticData?.genres.join(', ').replace(/%20/g, '\u00A0')}
           </span> : null}
         </span>
       </span>

@@ -52,7 +52,11 @@ const GameRow = ({ game, platforms }: GameRowProps): ReactNode => {
                     <div className="game-collection">({collection})</div>
                   )}
                 </div>
-                <i className={`game-platform ${platformLogo}-logo ${physical ? 'physical' : ''}`} />
+                {physical ? (
+                  <span className="physical-wrapper"><i className={`game-platform ${platformLogo}-logo ${physical ? 'physical' : ''}`} /></span>
+                ) : (
+                  <i className={`game-platform ${platformLogo}-logo ${physical ? 'physical' : ''}`} />
+                )}
               </div>
             </div>
           );
