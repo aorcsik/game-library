@@ -20,4 +20,4 @@ node_modules
 /data/purchases/transactions/
 
 tsconfig.cli.tsbuildinfo
-data/games/death-stranding.json
+data/games/

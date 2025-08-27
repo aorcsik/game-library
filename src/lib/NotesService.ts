@@ -42,11 +42,13 @@ class NotesService {
     if (note.notesJSON) {
       const dataDir = `${this.config.source_dir}/data/`;
       try {
-        process.stdout.write(colorize(`Loading notes for ${note.title}...\n`, 'yellow'));
-        const filePath = `${dataDir}${note.notesJSON}`;
-        const fileContent = await fs.promises.readFile(filePath, 'utf-8');
-        note.notesJSON = JSON.stringify(JSON.parse(fileContent), null, 2);
-        process.stdout.write(colorize(`Notes for ${note.title} loaded successfully.\n`, 'green'));
+        if (typeof note.notesJSON === 'string' && note.notesJSON.trim().match(/\.json$/)) {
+          process.stdout.write(colorize(`Loading notes for ${note.title}...\n`, 'yellow'));
+          const filePath = `${dataDir}${note.notesJSON}`;
+          const fileContent = await fs.promises.readFile(filePath, 'utf-8');
+          note.notesJSON = JSON.stringify(JSON.parse(fileContent), null, 2);
+          process.stdout.write(colorize(`Notes for ${note.title} loaded successfully.\n`, 'green'));
+        }
       } catch (error) {
         console.error(colorize(`Error reading notes file for ${note.title}: ${error instanceof Error ? error.message : String(error)}`, 'red'));
         note.notesJSON = '';

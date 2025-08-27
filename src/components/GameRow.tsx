@@ -2,6 +2,7 @@ import { ReactNode, useRef } from 'react';
 import { Platform, PlatformList, PurchasedGame } from '../lib/PurchaseService';
 import GameRowTitle from './GameRowTitle';
 import Image from 'next/image';
+import FontAwesomeIcon from './FontAwesomeIcon';
 
 type GameRowProps = {
   game: PurchasedGame;
@@ -31,7 +32,7 @@ const GameRow = ({ game, platforms }: GameRowProps): ReactNode => {
         const platformPurchase = game.purchases.find(p => p.platform === platform);
         
         if (platformPurchase) {
-          const { title, cover, collection, physical, logo: platformLogo } = platformPurchase;
+          const { title, cover, collection, physical, logo: platformLogo, purchaseDate } = platformPurchase;
           
           return (
             <div className={`game-cell game-card game-${platform}`} key={platform}>
@@ -51,7 +52,15 @@ const GameRow = ({ game, platforms }: GameRowProps): ReactNode => {
                   {collection && (
                     <div className="game-collection">({collection})</div>
                   )}
+                  <div className="game-purchase-date">
+                    {purchaseDate ? new Intl.DateTimeFormat('hu-HU').format(new Date(purchaseDate)) : 'No purchase date!'}
+                  </div>
                 </div>
+                {!purchaseDate && (
+                  <span className="game-warning">
+                    <FontAwesomeIcon icon={['fas', 'warning']} />
+                  </span>
+                )}
                 {physical ? (
                   <span className="physical-wrapper"><i className={`game-platform ${platformLogo}-logo ${physical ? 'physical' : ''}`} /></span>
                 ) : (

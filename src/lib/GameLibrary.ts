@@ -123,7 +123,7 @@ export const getGameLibraryData = async (
         if (game) {
           const purchasedGame = purchasedGames.find(p => p.key === game.key);
           purchasedGame?.purchases.forEach(p => {
-            if (p.purchaseDate === undefined || p.purchaseDate > purchase.purchaseDate) {
+            if (p.platform === purchase.platform && (p.purchaseDate === undefined || p.purchaseDate > purchase.purchaseDate)) {
               p.purchaseDate = purchase.purchaseDate;
             }
           });

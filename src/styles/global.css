@@ -76,6 +76,18 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     --background-color-components: 18, 18, 18;
@@ -557,11 +569,23 @@ footer {
     align-items: flex-end;
     flex-grow: 1;
 
+    & .game-warning {
+      position: absolute;
+      left: 10px;
+      color: var(--metacritic-mixed);
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
     & .game-title {
       max-width: calc(100% - 1.2em - .5rem);
       font-size: .8rem;
       word-wrap: break-word;
 
+      & .game-purchase-date {
+        font-size: .6rem;
+        color: var(--secondary-text);
+        margin-top: .25rem;
+      }
       & .game-collection {
         color: var(--accent-color);
       }

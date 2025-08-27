@@ -36,6 +36,7 @@ https://www.gog.com/en/account
 ```
 
 ## Nintendo Switch
+https://ec.nintendo.com/my
 https://www.nintendo.com/us/orders/
 https://accounts.nintendo.com/portal/vgcs
 ```javascript
