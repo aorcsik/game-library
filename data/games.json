@@ -9,7 +9,7 @@
       "score": 72,
       "critics": 39,
       "releaseDate": "2013-10-16T00:00:00.000Z",
-      "updated": "2025-08-12T12:30:14.180Z"
+      "updated": "2025-09-01T11:51:56.110Z"
     },
     "steamAppId": 242820,
     "steamData": {
@@ -20,11 +20,11 @@
         "Indie"
       ],
       "releaseDate": "2013-10-16T00:00:00.000Z",
-      "reviewScore": 8,
-      "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "94% of the 2,011 user reviews for this game are positive.",
-      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/242820/header.jpg?t=1632130187",
-      "updated": "2025-08-12T12:30:14.673Z"
+      "reviewScore": 9,
+      "reviewScoreDescription": "Overwhelmingly Positive",
+      "reviewScoreTooltip": "95% of the 1,270 user reviews in your language are positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/242820/header.jpg?t=1632130187",
+      "updated": "2025-09-01T11:51:56.819Z"
     },
     "metacriticData": {
       "title": "140",
@@ -36,7 +36,8 @@
         "PlayStation 4",
         "Xbox One",
         "Wii U",
-        "Nintendo Switch"
+        "Nintendo Switch",
+        "3DS"
       ],
       "releaseDate": "2020-01-09T00:00:00.000Z",
       "developers": [
@@ -46,7 +47,7 @@
       "genres": [
         "2D Platformer"
       ],
-      "updated": "2025-08-12T12:30:16.062Z"
+      "updated": "2025-09-01T11:51:58.447Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/140",
     "key": "140"
@@ -61,7 +62,7 @@
       "score": 77,
       "critics": 62,
       "releaseDate": "2017-01-16T00:00:00.000Z",
-      "updated": "2025-08-12T12:30:18.554Z"
+      "updated": "2025-09-01T11:52:07.492Z"
     },
     "steamAppId": 330820,
     "steamData": {
@@ -74,9 +75,9 @@
       "releaseDate": "2015-10-06T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "84% of the 683 user reviews for this game are positive.",
-      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/330820/header.jpg?t=1712088920",
-      "updated": "2025-08-12T12:30:19.199Z"
+      "reviewScoreTooltip": "84% of the 682 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/330820/header.jpg?t=1712088920",
+      "updated": "2025-09-01T11:52:08.213Z"
     },
     "metacriticData": {
       "title": "2064: Read Only Memories",
@@ -96,7 +97,7 @@
       "genres": [
         "Point-and-Click"
       ],
-      "updated": "2025-08-12T12:30:21.318Z"
+      "updated": "2025-09-01T11:52:10.477Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/2064-read-only-memories",
     "key": "2064-read-only-memories"
@@ -111,7 +112,7 @@
       "score": 77,
       "critics": 60,
       "releaseDate": "2022-06-08T00:00:00.000Z",
-      "updated": "2025-08-12T12:30:16.338Z"
+      "updated": "2025-09-01T11:51:58.702Z"
     },
     "steamAppId": 1966900,
     "steamData": {
@@ -127,9 +128,9 @@
       "releaseDate": "2023-06-08T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "91% of the 26,733 user reviews for this game are positive.",
-      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1966900/header.jpg?t=1752202778",
-      "updated": "2025-08-12T12:30:16.959Z"
+      "reviewScoreTooltip": "93% of the 12,266 user reviews in your language are positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1966900/header.jpg?t=1755696474",
+      "updated": "2025-09-01T11:51:59.249Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/20-minutes-till-dawn/",
     "metacriticData": {
@@ -149,7 +150,7 @@
       "genres": [
         "Top-Down Shoot-'Em-Up"
       ],
-      "updated": "2025-08-12T12:30:18.288Z"
+      "updated": "2025-09-01T11:52:06.840Z"
     },
     "key": "20-minutes-till-dawn"
   },
@@ -1876,7 +1877,7 @@
       "score": 83,
       "critics": 100,
       "releaseDate": "2015-09-28T00:00:00.000Z",
-      "updated": "2025-08-12T12:30:21.573Z"
+      "updated": "2025-09-01T11:52:10.738Z"
     },
     "steamAppId": 381780,
     "steamData": {
@@ -1890,9 +1891,9 @@
       "releaseDate": "2015-09-28T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "91% of the 1,127 user reviews for this game are positive.",
-      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/381780/header.jpg?t=1736524091",
-      "updated": "2025-08-12T12:30:22.179Z"
+      "reviewScoreTooltip": "91% of the 1,129 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/381780/header.jpg?t=1736524091",
+      "updated": "2025-09-01T11:52:11.341Z"
     },
     "metacriticData": {
       "title": "80 Days",
@@ -1909,7 +1910,7 @@
       "genres": [
         "Visual Novel"
       ],
-      "updated": "2025-08-12T12:30:24.624Z"
+      "updated": "2025-09-01T11:52:13.930Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/80-days-2015",
     "key": "80-days"
@@ -1922,9 +1923,9 @@
       "cover": "https://img.opencritic.com/game/14482/SsrG0IuP.jpg",
       "tier": "fair",
       "score": 74,
-      "critics": 62,
+      "critics": 65,
       "releaseDate": "2023-03-27T00:00:00.000Z",
-      "updated": "2025-08-12T12:30:24.938Z"
+      "updated": "2025-09-01T11:52:14.197Z"
     },
     "steamAppId": 1402120,
     "steamData": {
@@ -1938,9 +1939,9 @@
       "releaseDate": "2023-03-27T00:00:00.000Z",
       "reviewScore": 6,
       "reviewScoreDescription": "Mostly Positive",
-      "reviewScoreTooltip": "79% of the 1,876 user reviews for this game are positive.",
-      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1402120/header.jpg?t=1753748436",
-      "updated": "2025-08-12T12:30:25.451Z"
+      "reviewScoreTooltip": "79% of the 1,899 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1402120/header.jpg?t=1753748436",
+      "updated": "2025-09-01T11:52:14.807Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/9-years-of-shadows/",
     "metacriticData": {
@@ -1964,7 +1965,7 @@
       "genres": [
         "Metroidvania"
       ],
-      "updated": "2025-08-12T12:30:26.134Z"
+      "updated": "2025-09-01T11:52:16.196Z"
     },
     "key": "9-years-of-shadows"
   },
@@ -3432,9 +3433,9 @@
       "releaseDate": "2011-11-23T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "81% of the 533 user reviews for this game are positive.",
-      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/15560/header.jpg?t=1581730007",
-      "updated": "2025-08-12T12:30:44.194Z"
+      "reviewScoreTooltip": "81% of the 535 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/15560/header.jpg?t=1581730007",
+      "updated": "2025-09-02T00:58:45.027Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/aaaaaaaaaaaaaaaaaaaaaaaaa-for-the-awesome/",
     "metacriticData": {
@@ -3452,7 +3453,7 @@
       "genres": [
         "3D Platformer"
       ],
-      "updated": "2025-08-12T12:30:45.546Z"
+      "updated": "2025-09-02T00:58:46.700Z"
     },
     "key": "aaaaaaaaaaaaaaaaaaaaaaaaa-for-the-awesome"
   },
@@ -5445,6 +5446,9 @@
   },
   {
     "title": "Beneath a Steel Sky (1994)",
+    "sameGame": [
+      "Beneath a Steel Sky"
+    ],
     "openCriticId": "skip",
     "releaseDate": "1994-03-04T00:00:00.000Z",
     "steamAppId": 1368340,
@@ -17724,7 +17728,7 @@
       "score": null,
       "critics": null,
       "releaseDate": "2015-02-25T00:00:00.000Z",
-      "updated": "2025-08-12T12:30:26.374Z"
+      "updated": "2025-09-01T11:52:16.468Z"
     },
     "steamAppId": 316610,
     "steamData": {
@@ -17736,9 +17740,9 @@
       "releaseDate": "2015-02-25T00:00:00.000Z",
       "reviewScore": 9,
       "reviewScoreDescription": "Overwhelmingly Positive",
-      "reviewScoreTooltip": "96% of the 609 user reviews for this game are positive.",
-      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/316610/header.jpg?t=1752583016",
-      "updated": "2025-08-12T12:30:27.022Z"
+      "reviewScoreTooltip": "96% of the 610 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/316610/header.jpg?t=1752583016",
+      "updated": "2025-09-01T11:52:17.054Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/a-good-snowman-is-hard-to-build/",
     "metacriticData": {
@@ -17758,7 +17762,7 @@
       "genres": [
         "Action Puzzle"
       ],
-      "updated": "2025-08-12T12:30:28.676Z"
+      "updated": "2025-09-01T11:52:18.079Z"
     },
     "key": "a-good-snowman-is-hard-to-build"
   },
@@ -19601,7 +19605,7 @@
       "score": 80,
       "critics": 74,
       "releaseDate": "2023-12-05T00:00:00.000Z",
-      "updated": "2025-08-12T12:30:28.959Z"
+      "updated": "2025-09-01T11:52:18.364Z"
     },
     "steamAppId": 1240060,
     "steamData": {
@@ -19614,9 +19618,9 @@
       "releaseDate": "2023-12-05T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "89% of the 429 user reviews for this game are positive.",
-      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1240060/header.jpg?t=1745516629",
-      "updated": "2025-08-12T12:30:29.591Z"
+      "reviewScoreTooltip": "89% of the 434 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1240060/header.jpg?t=1745516629",
+      "updated": "2025-09-01T11:52:19.119Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/a-highland-song/",
     "metacriticData": {
@@ -19635,7 +19639,7 @@
       "genres": [
         "Adventure"
       ],
-      "updated": "2025-08-12T12:30:31.110Z"
+      "updated": "2025-09-01T11:52:20.338Z"
     },
     "key": "a-highland-song"
   },
@@ -26892,7 +26896,7 @@
       "score": 81,
       "critics": 100,
       "releaseDate": "2017-10-18T00:00:00.000Z",
-      "updated": "2025-08-12T12:30:31.373Z"
+      "updated": "2025-09-02T00:58:29.306Z"
     },
     "steamAppId": 578720,
     "steamData": {
@@ -26905,9 +26909,9 @@
       "releaseDate": "2017-10-18T00:00:00.000Z",
       "reviewScore": 6,
       "reviewScoreDescription": "Mostly Positive",
-      "reviewScoreTooltip": "74% of the 722 user reviews for this game are positive.",
-      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/578720/header.jpg?t=1668540508",
-      "updated": "2025-08-12T12:30:31.804Z"
+      "reviewScoreTooltip": "74% of the 723 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/578720/header.jpg?t=1668540508",
+      "updated": "2025-09-02T00:58:29.946Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/a-morticians-tale",
     "metacriticData": {
@@ -26926,7 +26930,7 @@
       "genres": [
         "Adventure"
       ],
-      "updated": "2025-08-12T12:30:33.637Z"
+      "updated": "2025-09-02T00:58:32.778Z"
     },
     "key": "a-morticians-tale"
   },
@@ -30445,7 +30449,7 @@
       "score": 82,
       "critics": 82,
       "releaseDate": "2019-05-14T00:00:00.000Z",
-      "updated": "2025-08-12T12:30:33.948Z"
+      "updated": "2025-09-02T00:58:33.046Z"
     },
     "steamAppId": 752590,
     "steamData": {
@@ -30458,9 +30462,9 @@
       "releaseDate": "2019-05-14T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "93% of the 55,481 user reviews for this game are positive.",
-      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/752590/header.jpg?t=1727793332",
-      "updated": "2025-08-12T12:30:34.562Z"
+      "reviewScoreTooltip": "92% of the 20,077 user reviews in your language are positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/752590/header.jpg?t=1727793332",
+      "updated": "2025-09-02T00:58:33.549Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/a-plague-tale-innocence",
     "metacriticData": {
@@ -30483,7 +30487,7 @@
       "genres": [
         "Linear Action Adventure"
       ],
-      "updated": "2025-08-12T12:30:36.249Z"
+      "updated": "2025-09-02T00:58:35.573Z"
     },
     "key": "a-plague-tale-innocence"
   },
@@ -30927,6 +30931,9 @@
   },
   {
     "title": "Predator Hunting Grounds",
+    "sameGame": [
+      "Predator: Hunting Grounds Standard Edition"
+    ],
     "openCriticId": "9363/predator-hunting-grounds",
     "openCriticData": {
       "title": "Predator: Hunting Grounds",
@@ -37578,7 +37585,7 @@
       "score": 79,
       "critics": 63,
       "releaseDate": "2014-05-28T00:00:00.000Z",
-      "updated": "2025-08-12T12:30:39.052Z"
+      "updated": "2025-09-02T00:58:38.792Z"
     },
     "steamAppId": 278360,
     "steamData": {
@@ -37592,9 +37599,9 @@
       "releaseDate": "2014-05-28T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "92% of the 12,116 user reviews for this game are positive.",
-      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/278360/header.jpg?t=1589403981",
-      "updated": "2025-08-12T12:30:39.524Z"
+      "reviewScoreTooltip": "92% of the 7,163 user reviews in your language are positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/278360/header.jpg?t=1589403981",
+      "updated": "2025-09-02T00:58:39.314Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/a-story-about-my-uncle",
     "metacriticData": {
@@ -37613,7 +37620,7 @@
       "genres": [
         "3D Platformer"
       ],
-      "updated": "2025-08-12T12:30:41.004Z"
+      "updated": "2025-09-02T00:58:41.895Z"
     },
     "key": "a-story-about-my-uncle"
   },
@@ -40038,7 +40045,7 @@
       "score": 78,
       "critics": 100,
       "releaseDate": "2023-10-04T00:00:00.000Z",
-      "updated": "2025-08-12T12:30:41.307Z"
+      "updated": "2025-09-02T00:58:42.148Z"
     },
     "steamAppId": 2322180,
     "steamData": {
@@ -40051,9 +40058,9 @@
       "releaseDate": "2023-10-04T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "97% of the 333 user reviews for this game are positive.",
-      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2322180/header.jpg?t=1754937906",
-      "updated": "2025-08-12T12:30:41.868Z"
+      "reviewScoreTooltip": "97% of the 335 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2322180/header.jpg?t=1754937906",
+      "updated": "2025-09-02T00:58:42.846Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/a-tiny-sticker-tale",
     "metacriticData": {
@@ -40073,7 +40080,7 @@
       "genres": [
         "Adventure"
       ],
-      "updated": "2025-08-12T12:30:43.684Z"
+      "updated": "2025-09-02T00:58:44.582Z"
     },
     "key": "a-tiny-sticker-tale"
   },
@@ -49856,7 +49863,7 @@
       "score": 89,
       "critics": 100,
       "releaseDate": "2024-05-09T00:00:00.000Z",
-      "updated": "2025-08-12T12:30:11.209Z"
+      "updated": "2025-09-01T11:51:53.010Z"
     },
     "steamData": {
       "title": "1000xRESIST",
@@ -49868,9 +49875,9 @@
       "releaseDate": "2024-05-09T00:00:00.000Z",
       "reviewScore": 9,
       "reviewScoreDescription": "Overwhelmingly Positive",
-      "reviewScoreTooltip": "96% of the 3,865 user reviews for this game are positive.",
-      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1675830/header.jpg?t=1754082452",
-      "updated": "2025-08-12T12:30:11.841Z"
+      "reviewScoreTooltip": "96% of the 3,563 user reviews in your language are positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1675830/header.jpg?t=1756137221",
+      "updated": "2025-09-01T11:51:53.898Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/1000xresist",
     "metacriticData": {
@@ -49889,7 +49896,7 @@
       "genres": [
         "Adventure"
       ],
-      "updated": "2025-08-12T12:30:13.919Z"
+      "updated": "2025-09-01T11:51:55.842Z"
     }
   },
   {
@@ -50843,7 +50850,7 @@
       "score": 85,
       "critics": 95,
       "releaseDate": "2023-01-19T00:00:00.000Z",
-      "updated": "2025-08-12T12:30:36.527Z"
+      "updated": "2025-09-02T00:58:35.855Z"
     },
     "steamData": {
       "title": "A Space for the Unbound",
@@ -50855,9 +50862,9 @@
       "releaseDate": "2023-01-19T00:00:00.000Z",
       "reviewScore": 9,
       "reviewScoreDescription": "Overwhelmingly Positive",
-      "reviewScoreTooltip": "97% of the 6,041 user reviews for this game are positive.",
-      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1201270/header.jpg?t=1737345095",
-      "updated": "2025-08-12T12:30:37.169Z"
+      "reviewScoreTooltip": "98% of the 3,880 user reviews in your language are positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1201270/header.jpg?t=1737345095",
+      "updated": "2025-09-02T00:58:36.428Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/a-space-for-the-unbound/",
     "metacriticData": {
@@ -50881,7 +50888,7 @@
       "genres": [
         "Adventure"
       ],
-      "updated": "2025-08-12T12:30:38.796Z"
+      "updated": "2025-09-02T00:58:38.541Z"
     }
   },
   {
@@ -59188,55 +59195,6 @@
     }
   },
   {
-    "title": "Predator: Hunting Grounds Standard Edition",
-    "key": "predator-hunting-grounds-standard-edition",
-    "openCriticId": "9363/predator-hunting-grounds",
-    "openCriticData": {
-      "title": "Predator: Hunting Grounds",
-      "cover": "https://img.opencritic.com/game/9363/sf5b2UWC.jpg",
-      "tier": "weak",
-      "score": 58,
-      "critics": 21,
-      "releaseDate": "2020-04-24T00:00:00.000Z",
-      "updated": "2025-08-13T13:24:40.942Z"
-    },
-    "steamAppId": 1556200,
-    "steamData": {
-      "title": "Predator: Hunting Grounds",
-      "description": "Hunt or be hunted in this asymmetrical multiplayer shooter that pits man against Predator. As part of a Fireteam, complete missions before the Predator finds you. Or be the Predator and hunt your prey.",
-      "genres": [
-        "Action"
-      ],
-      "releaseDate": "2021-04-29T00:00:00.000Z",
-      "reviewScore": 6,
-      "reviewScoreDescription": "Mostly Positive",
-      "reviewScoreTooltip": "77% of the 3,798 user reviews for this game are positive.",
-      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1556200/header.jpg?t=1749079873",
-      "updated": "2025-08-13T13:24:56.362Z"
-    },
-    "metacriticUrl": "https://www.metacritic.com/game/predator-hunting-grounds/",
-    "metacriticData": {
-      "title": "Predator: Hunting Grounds",
-      "metacriticScore": 56,
-      "mustPlay": false,
-      "platforms": [
-        "PlayStation 4",
-        "PC",
-        "Xbox Series X",
-        "PlayStation 5"
-      ],
-      "releaseDate": "2020-04-24T00:00:00.000Z",
-      "developers": [
-        "IllFonic"
-      ],
-      "publisher": "Sony Interactive Entertainment",
-      "genres": [
-        "Tactical Third Person Shooter"
-      ],
-      "updated": "2025-08-13T13:25:55.211Z"
-    }
-  },
-  {
     "title": "Pilgrims",
     "key": "pilgrims",
     "openCriticId": "8403/pilgrims",
@@ -59487,6 +59445,660 @@
         "Sandbox"
       ],
       "updated": "2025-08-13T13:26:31.297Z"
+    }
+  },
+  {
+    "title": "Alan Wake's American Nightmare",
+    "key": "alan-wakes-american-nightmare",
+    "steamAppId": 202750,
+    "openCriticId": "skip",
+    "steamData": {
+      "title": "Alan Wake's American Nightmare",
+      "description": "A thrilling new storyline, hordes of creepy enemies, serious firepower and beautiful Arizona locations, combined with a fun and challenging new game mode!",
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "releaseDate": "2012-05-22T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "reviewScoreTooltip": "75% of the 3,111 user reviews in your language are positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/202750/header.jpg?t=1726554251",
+      "updated": "2025-09-01T11:53:45.600Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/alan-wakes-american-nightmare",
+    "metacriticData": {
+      "title": "Alan Wake's American Nightmare",
+      "metacriticScore": 76,
+      "mustPlay": false,
+      "platforms": [
+        "Xbox 360",
+        "PC"
+      ],
+      "releaseDate": "2012-02-22T00:00:00.000Z",
+      "developers": [
+        "Remedy Entertainment"
+      ],
+      "publisher": "Microsoft Game Studios",
+      "genres": [
+        "Linear Action Adventure"
+      ],
+      "updated": "2025-09-01T11:53:49.061Z"
+    }
+  },
+  {
+    "title": "A Short Hike",
+    "key": "a-short-hike",
+    "steamAppId": 1055540,
+    "openCriticId": "8025/a-short-hike",
+    "openCriticData": {
+      "title": "A Short Hike",
+      "cover": "https://img.opencritic.com/game/8025/qFy2VNsm.jpg",
+      "tier": "mighty",
+      "score": 87,
+      "critics": 100,
+      "releaseDate": "2019-04-05T00:00:00.000Z",
+      "updated": "2025-09-01T11:53:14.568Z"
+    },
+    "steamData": {
+      "title": "A Short Hike",
+      "description": "Hike, climb, and soar through the peaceful mountainside landscapes of Hawk Peak Provincial Park as you make your way to the summit.",
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2019-07-30T00:00:00.000Z",
+      "reviewScore": 9,
+      "reviewScoreDescription": "Overwhelmingly Positive",
+      "reviewScoreTooltip": "99% of the 11,290 user reviews in your language are positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1055540/header.jpg?t=1755182478",
+      "updated": "2025-09-01T11:53:15.455Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/a-short-hike",
+    "metacriticData": {
+      "title": "A Short Hike",
+      "metacriticScore": 88,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Nintendo Switch",
+        "PlayStation 4",
+        "Xbox One"
+      ],
+      "releaseDate": "2020-08-18T00:00:00.000Z",
+      "developers": [
+        "adamgryu"
+      ],
+      "publisher": "Whippoorwill Limited",
+      "genres": [
+        "Adventure"
+      ],
+      "updated": "2025-09-01T11:53:18.635Z"
+    }
+  },
+  {
+    "title": "FAR: Changing Tides",
+    "key": "far-changing-tides",
+    "steamAppId": 1570010,
+    "openCriticId": "12785/far-changing-tides",
+    "openCriticData": {
+      "title": "FAR: Changing Tides",
+      "cover": "https://img.opencritic.com/game/12785/6syf9SLJ.jpg",
+      "tier": "strong",
+      "score": 79,
+      "critics": 83,
+      "releaseDate": "2022-03-01T00:00:00.000Z",
+      "updated": "2025-09-01T11:54:22.167Z"
+    },
+    "steamData": {
+      "title": "FAR: Changing Tides",
+      "description": "An atmospheric vehicle adventure that follows the emotional journey of a boy and his ship as he embarks on a voyage to find a new home.",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2022-03-01T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "92% of the 1,799 user reviews in your language are positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1570010/header.jpg?t=1755781645",
+      "updated": "2025-09-01T11:54:22.886Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/far-changing-tides/",
+    "metacriticData": {
+      "title": "FAR: Changing Tides",
+      "metacriticScore": 73,
+      "mustPlay": false,
+      "platforms": [
+        "PlayStation 5",
+        "PlayStation 4",
+        "PC",
+        "Xbox Series X",
+        "Nintendo Switch",
+        "Xbox One"
+      ],
+      "releaseDate": "2022-03-01T00:00:00.000Z",
+      "developers": [
+        "Okomotive"
+      ],
+      "publisher": "Frontier Foundry",
+      "genres": [
+        "Linear Action Adventure"
+      ],
+      "updated": "2025-09-01T11:54:30.471Z"
+    }
+  },
+  {
+    "title": "Moon Mystery",
+    "key": "moon-mystery",
+    "steamAppId": 1933840,
+    "openCriticId": "17628/moon-mystery",
+    "openCriticData": {
+      "title": "Moon Mystery",
+      "cover": "https://img.opencritic.com/game/17628/jrczzpCg.jpg",
+      "tier": null,
+      "score": null,
+      "critics": null,
+      "releaseDate": "2024-10-28T00:00:00.000Z",
+      "updated": "2025-09-01T11:57:45.055Z"
+    },
+    "steamData": {
+      "title": "Moon Mystery",
+      "description": "The Moon's haunted - and when an astronaut loses contact with Earth, the adventure begins in full. Fill up your oxygen, load up the guns, and set out on an interstellar FPS adventure across the stars, filled with puzzles, fights, exploration, and strange secrets of the universe.",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Casual"
+      ],
+      "releaseDate": "2024-10-28T00:00:00.000Z",
+      "reviewScore": 5,
+      "reviewScoreDescription": "Mixed",
+      "reviewScoreTooltip": "68% of the 497 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1933840/header.jpg?t=1755204808",
+      "updated": "2025-09-01T11:57:45.765Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/moon-mystery/",
+    "metacriticData": {
+      "title": "Moon Mystery",
+      "metacriticScore": null,
+      "mustPlay": false,
+      "platforms": [
+        "PC"
+      ],
+      "releaseDate": "2024-10-28T00:00:00.000Z",
+      "developers": [
+        "Cosmoscouts"
+      ],
+      "publisher": "indie.io",
+      "genres": [
+        "FPS"
+      ],
+      "updated": "2025-09-01T11:57:51.728Z"
+    }
+  },
+  {
+    "title": "Under The Waves",
+    "key": "under-the-waves",
+    "steamAppId": 1975440,
+    "openCriticId": "15432/under-the-waves",
+    "openCriticData": {
+      "title": "Under the Waves",
+      "cover": "https://img.opencritic.com/game/15432/5rLnKNNF.jpg",
+      "tier": "fair",
+      "score": 72,
+      "critics": 56,
+      "releaseDate": "2023-08-29T00:00:00.000Z",
+      "updated": "2025-09-01T12:00:03.082Z"
+    },
+    "steamData": {
+      "title": "Under The Waves",
+      "description": "Stan, a professional diver in the North Sea, is struggling to overcome a life-changing loss during an extended mission underwater. Stuck in his self-imposed solitude, he starts to experience strange events and will have to make the most significant choice of his life...",
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2023-08-28T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "reviewScoreTooltip": "77% of the 1,103 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1975440/header.jpg?t=1725963350",
+      "updated": "2025-09-01T12:00:03.720Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/under-the-waves/",
+    "metacriticData": {
+      "title": "Under The Waves",
+      "metacriticScore": 70,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "PlayStation 5",
+        "Xbox Series X",
+        "PlayStation 4",
+        "Xbox One"
+      ],
+      "releaseDate": "2023-08-29T00:00:00.000Z",
+      "developers": [
+        "Parallel Studio"
+      ],
+      "publisher": "Quantic Dream",
+      "genres": [
+        "Adventure"
+      ],
+      "updated": "2025-09-01T12:00:16.646Z"
+    }
+  },
+  {
+    "title": "Strange Horticulture",
+    "key": "strange-horticulture",
+    "openCriticId": "12629/strange-horticulture",
+    "openCriticData": {
+      "title": "Strange Horticulture",
+      "cover": "https://img.opencritic.com/game/12629/HyOCNry1.jpg",
+      "tier": "mighty",
+      "score": 84,
+      "critics": 92,
+      "releaseDate": "2022-01-21T00:00:00.000Z",
+      "updated": "2025-09-01T11:59:22.636Z"
+    },
+    "steamAppId": 1574580,
+    "steamData": {
+      "title": "Strange Horticulture",
+      "description": "Strange Horticulture is an occult puzzle game in which you play as the proprietor of a local plant store. Find and identify new plants, pet your cat, speak to a coven, or join a cult. Use your collection of powerful plants to influence the story and unravel Undermere’s dark mysteries.",
+      "genres": [
+        "Adventure",
+        "Indie",
+        "Simulation"
+      ],
+      "releaseDate": "2022-01-21T00:00:00.000Z",
+      "reviewScore": 9,
+      "reviewScoreDescription": "Overwhelmingly Positive",
+      "reviewScoreTooltip": "95% of the 8,538 user reviews in your language are positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1574580/header.jpg?t=1741961232",
+      "updated": "2025-09-01T11:59:39.511Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/strange-horticulture",
+    "metacriticData": {
+      "title": "Strange Horticulture",
+      "metacriticScore": 83,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Nintendo Switch",
+        "Xbox Series X",
+        "Xbox One",
+        "PlayStation 4",
+        "iOS (iPhone/iPad)"
+      ],
+      "releaseDate": "2022-01-21T00:00:00.000Z",
+      "developers": [
+        "Bad Viking"
+      ],
+      "publisher": "Iceberg Interactive",
+      "genres": [
+        "Adventure"
+      ],
+      "updated": "2025-09-01T11:59:46.225Z"
+    }
+  },
+  {
+    "title": "Filthy Animals | Heist Simulator",
+    "key": "filthy-animals-heist-simulator",
+    "openCriticId": "skip",
+    "steamAppId": 1195420,
+    "steamData": {
+      "title": "Filthy Animals | Heist Simulator",
+      "description": "Filthy Animals is a chaotic single-player/co-op heist game for up to 4 players. Become a mutant animal working for criminal mastermind Tony as you steal, fight, fall over, and eat tacos. Solve puzzles and avoid security before making off with the loot, ya Filthy Animal!",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Casual",
+        "Indie"
+      ],
+      "releaseDate": "2023-04-04T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "reviewScoreTooltip": "72% of the 124 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1195420/header.jpg?t=1726564894",
+      "updated": "2025-09-01T11:56:03.902Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/filthy-animals-heist-simulator/",
+    "metacriticData": {
+      "title": "Filthy Animals: Heist Simulator",
+      "metacriticScore": null,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Xbox Series X",
+        "Xbox One",
+        "PlayStation 4"
+      ],
+      "releaseDate": "2023-05-11T00:00:00.000Z",
+      "developers": [
+        "Pewter Games Studios"
+      ],
+      "publisher": "Green Man Gaming Publishing",
+      "genres": [
+        "Arcade"
+      ],
+      "updated": "2025-09-01T11:56:09.920Z"
+    }
+  },
+  {
+    "title": "Labyrinth City: Pierre the Maze Detective",
+    "key": "labyrinth-city-pierre-the-maze-detective",
+    "openCriticId": "11573/labyrinth-city-pierre-the-maze-detective",
+    "openCriticData": {
+      "title": "Labyrinth City: Pierre the Maze Detective",
+      "cover": "https://img.opencritic.com/game/11573/4ZrqKslk.jpg",
+      "tier": "strong",
+      "score": 76,
+      "critics": 76,
+      "releaseDate": "2021-06-22T00:00:00.000Z",
+      "updated": "2025-09-01T11:57:13.486Z"
+    },
+    "steamAppId": 1421790,
+    "steamData": {
+      "title": "Labyrinth City: Pierre the Maze Detective",
+      "description": "Adapted from the bestselling children’s book series Pierre The Maze Detective, play as Pierre in this adventure/puzzle game and recover the stolen Maze Stone. Journey through breathtakingly hand-drawn illustrations, meet eccentric characters, and solve puzzles to save Opera City!",
+      "genres": [
+        "Adventure",
+        "Casual",
+        "Indie"
+      ],
+      "releaseDate": "2021-06-22T00:00:00.000Z",
+      "reviewScore": 9,
+      "reviewScoreDescription": "Overwhelmingly Positive",
+      "reviewScoreTooltip": "96% of the 1,794 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1421790/header.jpg?t=1629966091",
+      "updated": "2025-09-01T11:57:20.391Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/labyrinth-city-pierre-the-maze-detective",
+    "metacriticData": {
+      "title": "Labyrinth City: Pierre the Maze Detective",
+      "metacriticScore": 75,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Nintendo Switch",
+        "iOS (iPhone/iPad)"
+      ],
+      "releaseDate": "2021-07-15T00:00:00.000Z",
+      "developers": [
+        "Darjeeling"
+      ],
+      "publisher": "Pixmain",
+      "genres": [
+        "Adventure"
+      ],
+      "updated": "2025-09-01T11:57:23.380Z"
+    }
+  },
+  {
+    "title": "Heroes of Loot 2",
+    "key": "heroes-of-loot-2",
+    "openCriticId": "12711/heroes-of-loot-2",
+    "openCriticData": {
+      "title": "Heroes of Loot 2",
+      "cover": "https://img.opencritic.com/game/12711/CaST8qTP.jpg",
+      "tier": null,
+      "score": null,
+      "critics": null,
+      "releaseDate": "2016-06-07T00:00:00.000Z",
+      "updated": "2025-09-01T11:56:21.900Z"
+    },
+    "steamAppId": 439880,
+    "steamData": {
+      "title": "Heroes of Loot 2",
+      "description": "Control multiple heroes at once in this dungeon-crawling action adventure RPG, a mix of classic 80's Gauntlet-action and quests.",
+      "genres": [
+        "Adventure"
+      ],
+      "releaseDate": "2016-06-07T00:00:00.000Z",
+      "reviewScore": 7,
+      "reviewScoreDescription": "Positive",
+      "reviewScoreTooltip": "85% of the 21 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/439880/header.jpg?t=1750784739",
+      "updated": "2025-09-01T11:56:35.208Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/heroes-of-loot-2/",
+    "metacriticData": {
+      "title": "Heroes of Loot 2",
+      "metacriticScore": 83,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "iOS (iPhone/iPad)",
+        "Nintendo Switch"
+      ],
+      "releaseDate": "2016-06-07T00:00:00.000Z",
+      "developers": [
+        "OrangePixel"
+      ],
+      "publisher": "OrangePixel",
+      "genres": [
+        "Action RPG"
+      ],
+      "updated": "2025-09-01T11:56:49.188Z"
+    }
+  },
+  {
+    "title": "FATE: The Traitor Soul",
+    "key": "fate-the-traitor-soul",
+    "openCriticId": "skip",
+    "steamAppId": 303680,
+    "steamData": {
+      "title": "FATE: The Traitor Soul",
+      "description": "IT’S HERE, FATE FANS! FATE - The Traitor Soul has arrived on Steam! This third game has more loot, more spells, more heroes and, most importantly, more pets. Hit “add to cart” already! Or read on for more details on this classic game.",
+      "genres": [
+        "Action",
+        "Adventure",
+        "RPG"
+      ],
+      "releaseDate": "2009-09-09T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "93% of the 512 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/303680/header.jpg?t=1729737379",
+      "updated": "2025-09-01T11:55:00.402Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/fate-the-traitor-soul/",
+    "metacriticData": {
+      "title": "Fate: The Traitor Soul",
+      "metacriticScore": null,
+      "mustPlay": false,
+      "platforms": [
+        "PC"
+      ],
+      "releaseDate": "2009-10-13T00:00:00.000Z",
+      "developers": [
+        "Encore Software"
+      ],
+      "publisher": "Encore Software",
+      "genres": [
+        "Action RPG"
+      ],
+      "updated": "2025-09-01T11:55:11.640Z"
+    }
+  },
+  {
+    "title": "Racine",
+    "key": "racine",
+    "openCriticId": "skip",
+    "steamAppId": 1793170,
+    "steamData": {
+      "title": "Racine",
+      "description": "Racine is an Autobattler Strategy Roguelike. Use your cards to increase your heroes stats or cast powerful spells. Find some artifacts and new cards to develop your own play style.",
+      "genres": [
+        "RPG",
+        "Strategy"
+      ],
+      "releaseDate": "2023-11-06T00:00:00.000Z",
+      "reviewScore": 5,
+      "reviewScoreDescription": "Mixed",
+      "reviewScoreTooltip": "69% of the 208 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1793170/header.jpg?t=1727786294",
+      "updated": "2025-09-01T11:58:59.453Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/racine/",
+    "metacriticData": {
+      "title": "Racine",
+      "metacriticScore": null,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Nintendo Switch"
+      ],
+      "releaseDate": "2023-11-06T00:00:00.000Z",
+      "developers": [
+        "Dark Root Gardeners"
+      ],
+      "publisher": "Goblinz Studio",
+      "genres": [
+        "Card Battle"
+      ],
+      "updated": "2025-09-01T11:59:06.354Z"
+    }
+  },
+  {
+    "title": "Necroking",
+    "key": "necroking",
+    "openCriticId": "skip",
+    "steamAppId": 2852980,
+    "steamData": {
+      "title": "Necroking",
+      "description": "Necroking is a turn-based tactics roguelite with vast deckbuilding. You play as a Master of Necromancy. Build your skulls deck, raise skeletons and other scum to defeat settlements desecrated by life.",
+      "genres": [
+        "Adventure",
+        "Indie",
+        "Strategy"
+      ],
+      "releaseDate": "2024-09-04T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "81% of the 675 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2852980/header.jpg?t=1753698888",
+      "updated": "2025-09-01T11:58:10.693Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/necroking/",
+    "metacriticData": {
+      "title": "Necroking",
+      "metacriticScore": null,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Nintendo Switch"
+      ],
+      "releaseDate": "2024-09-04T00:00:00.000Z",
+      "developers": [
+        "Koro.Games"
+      ],
+      "publisher": "Alawar Entertainment",
+      "genres": [
+        "Turn-Based Tactics"
+      ],
+      "updated": "2025-09-01T11:58:16.571Z"
+    }
+  },
+  {
+    "title": "Arranger: A Role-Puzzling Adventure",
+    "sameGame": [
+      "Arranger NETFLIX"
+    ],
+    "key": "arranger-a-role-puzzling-adventure",
+    "openCriticId": "17019/arranger-a-role-puzzling-adventure",
+    "openCriticData": {
+      "title": "Arranger: A Role-Puzzling Adventure",
+      "cover": "https://img.opencritic.com/game/undefined/he6vijov.jpg",
+      "tier": "strong",
+      "score": 80,
+      "critics": 75,
+      "releaseDate": "2024-07-25T00:00:00.000Z",
+      "updated": "2025-09-02T01:53:01.497Z"
+    },
+    "steamAppId": 2596420,
+    "steamData": {
+      "title": "Arranger: A Role-Puzzling Adventure",
+      "description": "Find your way in a world of breezy, thoughtful puzzles, along a charming journey of self-discovery.",
+      "genres": [
+        "Adventure",
+        "Indie",
+        "RPG"
+      ],
+      "releaseDate": "2024-07-25T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "92% of the 276 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2596420/header.jpg?t=1745972134",
+      "updated": "2025-09-02T01:53:39.034Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/arranger-a-role-puzzling-adventure",
+    "metacriticData": {
+      "title": "Arranger: A Role-Puzzling Adventure",
+      "metacriticScore": 81,
+      "mustPlay": false,
+      "platforms": [
+        "Nintendo Switch",
+        "PC",
+        "PlayStation 5"
+      ],
+      "releaseDate": "2024-07-25T00:00:00.000Z",
+      "developers": [
+        "Furniture & Mattress"
+      ],
+      "publisher": "Furniture & Mattress",
+      "genres": [
+        "Action Puzzle"
+      ],
+      "updated": "2025-09-02T01:53:43.078Z"
+    }
+  },
+  {
+    "title": "LOK Digital",
+    "key": "lok-digital",
+    "openCriticId": "17858/lok-digital",
+    "openCriticData": {
+      "title": "LOK Digital",
+      "cover": "https://img.opencritic.com/game/17858/ZDneyeVd.jpg",
+      "tier": null,
+      "score": null,
+      "critics": null,
+      "releaseDate": "2024-12-11T00:00:00.000Z",
+      "updated": "2025-09-02T01:54:10.915Z"
+    },
+    "steamAppId": 2207440,
+    "steamData": {
+      "title": "LOK Digital",
+      "description": "Learn a cryptic language of world-changing words and master their mind-bending effects. Embark on your charming puzzle-solving journey to help the LOK creatures thrive.",
+      "genres": [
+        "Casual",
+        "Indie"
+      ],
+      "releaseDate": "2024-12-11T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "99% of the 314 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2207440/header.jpg?t=1752571151",
+      "updated": "2025-09-02T01:54:35.529Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/lok-digital/",
+    "metacriticData": {
+      "title": "LOK Digital",
+      "metacriticScore": null,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "iOS (iPhone/iPad)"
+      ],
+      "releaseDate": "2024-12-11T00:00:00.000Z",
+      "developers": [
+        "Letibus Design"
+      ],
+      "publisher": "Draknek",
+      "genres": [
+        "Logic Puzzle"
+      ],
+      "updated": "2025-09-02T01:55:53.053Z"
     }
   }
 ]
