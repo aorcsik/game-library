@@ -13,11 +13,8 @@ node_modules
 /data/notes.json
 /data/profile.json
 /data/game-titles.json
-/data/purchases/appstore.json
-/data/purchases/switch.json
-/data/purchases/playstation.json
-/data/purchases/xbox.json
-/data/purchases/transactions/
+/data/purchases
+/data/progress
 
 tsconfig.cli.tsbuildinfo
-data/games/
+data/games

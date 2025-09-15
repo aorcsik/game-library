@@ -1,3 +1,4 @@
+import fs from 'fs';
 import { JSDOM } from 'jsdom';
 import { Platform } from '../lib/types';
 
@@ -8,35 +9,43 @@ type PlatformProgress = {
   progress: number;
 };
 
-const fetchTrueSteamAchievementsProgress = async (username: string): Promise<PlatformProgress[] | null> => {
-  const trueSteamAchievementsResponse = await fetch(`https://truesteamachievements.com/gamer/${username}/games`);
-  if (!trueSteamAchievementsResponse.ok) {
-    console.error('Error fetching TrueSteamAchievements for username:', username);
-    return null;
-  }
+const getLocalFilePath = (username: string, platform: Platform): string => {
+  return `./data/progress/${username}_${platform}.html`;
+};
 
-  const gamePage = await trueSteamAchievementsResponse.text();
+const getRemotePageUrl = (username: string, platform: Platform): string => {
+  switch (platform) {
+    case 'steam':
+      return `https://truesteamachievements.com/gamer/${username}/games`;
+    case 'playstation':
+      return `https://www.truetrophies.com/gamer/${username}/games`;
+    case 'xbox':
+      return `https://www.trueachievements.com/gamer/${username}/games`;
+    default:
+      throw new Error('Unknown platform');
+  }
+};
+
+const fetchProgress = async (username: string, platform: Platform): Promise<PlatformProgress[] | null> => {
+  const localFilePath = getLocalFilePath(username, platform);
+  const remoteResponse = await fetch(getRemotePageUrl(username, platform));
+  let gamePage = '';
+  if (remoteResponse.ok) {
+    console.info(`Fetching ${platform} progress for username: ${username}`);
+    gamePage = await remoteResponse.text();
+    await fs.promises.writeFile(localFilePath, gamePage, 'utf-8');
+  } else {
+    console.error(`Error fetching ${platform} progress for username: ${username}`);
+    console.error('Response status:', remoteResponse.status);
+    console.info('Trying local file...');
+    try {
+      gamePage = await fs.promises.readFile(localFilePath, 'utf-8');
+    } catch (err) {
+      console.error('Error reading local file:', err);
+      return null;
+    }
+  }
   return parseGamesPage('steam', gamePage);
-};
-
-const fetchTrueTrophiesProgress = async (username: string): Promise<PlatformProgress[] | null> => {
-  const trueTrophiesResponse = await fetch(`https://www.truetrophies.com/gamer/${username}/games`);
-  if (!trueTrophiesResponse.ok) {
-    console.error('Error fetching TrueTrophies for username:', username);
-    return null;
-  }
-  const gamePage = await trueTrophiesResponse.text();
-  return parseGamesPage('playstation', gamePage);
-};
-
-const fetchTrueAchievementsProgress = async (username: string): Promise<PlatformProgress[] | null> => {
-  const trueAchievementsResponse = await fetch(`https://www.trueachievements.com/gamer/${username}/games`);
-  if (!trueAchievementsResponse.ok) {
-    console.error('Error fetching TrueTrophies for username:', username);
-    return null;
-  }
-  const gamePage = await trueAchievementsResponse.text();
-  return parseGamesPage('playstation', gamePage);
 };
 
 const parseGamesPage = (platform: Platform, gamesPage: string): PlatformProgress[] => {
@@ -53,5 +62,5 @@ const parseGamesPage = (platform: Platform, gamesPage: string): PlatformProgress
   return achievementProgress;
 };
 
-export { fetchTrueSteamAchievementsProgress, fetchTrueTrophiesProgress, fetchTrueAchievementsProgress };
+export { fetchProgress };
 export type { PlatformProgress };

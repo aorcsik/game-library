@@ -1,5 +1,5 @@
 import { client } from './sanity';
-import { PlatformProgress, fetchTrueAchievementsProgress, fetchTrueSteamAchievementsProgress, fetchTrueTrophiesProgress } from '../cli/ProgressFetcherService';
+import { PlatformProgress, fetchProgress } from '../cli/ProgressFetcherService';
 import { Platform } from './types';
 import { MultipleMutationResult } from '@sanity/client';
 import { colorize } from '../cli/CommandLineTools';
@@ -39,7 +39,7 @@ class ProgressService {
     }
 
     process.stdout.write(colorize('Updating Steam progress...\n', 'yellow'));
-    const platformProgress = await fetchTrueSteamAchievementsProgress(this.config.steam_username);
+    const platformProgress = await fetchProgress(this.config.steam_username, 'steam');
     if (platformProgress) {
       await saveProgressToSanity('steam', platformProgress);
     }
@@ -58,7 +58,7 @@ class ProgressService {
     }
 
     process.stdout.write(colorize('Updating PlayStation progress...\n', 'yellow'));
-    const platformProgress = await fetchTrueTrophiesProgress(this.config.playstation_username);
+    const platformProgress = await fetchProgress(this.config.playstation_username, 'playstation');
     if (platformProgress) {
       await saveProgressToSanity('playstation', platformProgress);
     }
@@ -77,7 +77,7 @@ class ProgressService {
     }
 
     process.stdout.write(colorize('Updating Xbox progress...\n', 'yellow'));
-    const platformProgress = await fetchTrueAchievementsProgress(this.config.xbox_username);
+    const platformProgress = await fetchProgress(this.config.xbox_username, 'xbox');
     if (platformProgress) {
       await saveProgressToSanity('xbox', platformProgress);
     }
