@@ -60167,11 +60167,11 @@
     "openCriticData": {
       "title": "Hollow Knight: Silksong",
       "cover": "https://img.opencritic.com/game/7425/CMSa0gRs.jpg",
-      "tier": null,
-      "score": null,
-      "critics": null,
+      "tier": "mighty",
+      "score": 92,
+      "critics": 96,
       "releaseDate": "2025-09-04T00:00:00.000Z",
-      "updated": "2025-09-08T07:37:23.866Z"
+      "updated": "2025-09-15T11:33:44.253Z"
     },
     "steamData": {
       "title": "Hollow Knight: Silksong",
@@ -60184,23 +60184,23 @@
       "releaseDate": "2025-09-04T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "91% of the 41,411 user reviews in your language are positive",
+      "reviewScoreTooltip": "91% of the 67,282 user reviews in your language are positive",
       "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1030300/7983574d464e6559ac7e24275727f73a8bcca1f3/header.jpg?t=1756994410",
-      "updated": "2025-09-08T07:37:24.455Z"
+      "updated": "2025-09-15T11:33:44.878Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/hollow-knight-silksong/",
     "metacriticData": {
       "title": "Hollow Knight: Silksong",
-      "metacriticScore": null,
-      "mustPlay": false,
+      "metacriticScore": 92,
+      "mustPlay": true,
       "platforms": [
         "Nintendo Switch",
         "PC",
         "PlayStation 5",
         "Xbox Series X",
-        "Nintendo Switch 2",
         "Xbox One",
-        "PlayStation 4"
+        "PlayStation 4",
+        "Nintendo Switch 2"
       ],
       "releaseDate": "2025-09-04T00:00:00.000Z",
       "developers": [
@@ -60210,7 +60210,7 @@
       "genres": [
         "Metroidvania"
       ],
-      "updated": "2025-09-08T07:37:40.282Z"
+      "updated": "2025-09-15T11:33:45.334Z"
     }
   },
   {
