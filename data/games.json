@@ -60441,5 +60441,488 @@
       ],
       "updated": "2025-09-15T11:27:06.391Z"
     }
+  },
+  {
+    "title": "Team Fortress 2",
+    "key": "team-fortress-2",
+    "steamAppId": 440,
+    "openCriticId": "skip",
+    "steamData": {
+      "title": "Team Fortress 2",
+      "description": "Nine distinct classes provide a broad range of tactical abilities and personalities. Constantly updated with new game modes, maps, equipment and, most importantly, hats!",
+      "genres": [
+        "Action",
+        "Free%20to%20Play"
+      ],
+      "releaseDate": "2007-10-10T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "89% of the 712,449 user reviews in your language are positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/440/header.jpg?t=1757348372",
+      "updated": "2025-09-30T05:22:40.025Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/team-fortress-2",
+    "metacriticData": {
+      "title": "Team Fortress 2",
+      "metacriticScore": 92,
+      "mustPlay": true,
+      "platforms": [
+        "PC"
+      ],
+      "releaseDate": "2007-10-10T00:00:00.000Z",
+      "developers": [
+        "Valve Software"
+      ],
+      "publisher": "Valve Software",
+      "genres": [
+        "Tactical FPS"
+      ],
+      "updated": "2025-09-30T05:22:43.002Z"
+    }
+  },
+  {
+    "title": "Crown Trick",
+    "key": "crown-trick",
+    "steamAppId": 1000010,
+    "openCriticId": "10299/crown-trick",
+    "openCriticData": {
+      "title": "Crown Trick",
+      "cover": "https://img.opencritic.com/game/10299/bA5KIRhh.jpg",
+      "tier": "strong",
+      "score": 81,
+      "critics": 91,
+      "releaseDate": "2020-10-16T00:00:00.000Z",
+      "updated": "2025-09-30T05:18:30.493Z"
+    },
+    "steamData": {
+      "title": "Crown Trick",
+      "description": "Enter a labyrinth that moves as you move, where mastering the elements is key to defeating enemies and uncovering the mysteries of this underground world. With a new experience awaiting every time you enter the dungeon, let the power bestowed by the crown guide you in this challenging adventure!",
+      "genres": [
+        "Adventure",
+        "Indie",
+        "RPG",
+        "Strategy"
+      ],
+      "releaseDate": "2020-10-16T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "86% of the 551 user reviews in your language are positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1000010/header.jpg?t=1741628591",
+      "updated": "2025-09-30T05:18:31.421Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/crown-trick",
+    "metacriticData": {
+      "title": "Crown Trick",
+      "metacriticScore": 83,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "PlayStation 4",
+        "Nintendo Switch",
+        "Xbox One"
+      ],
+      "releaseDate": "2020-10-16T00:00:00.000Z",
+      "developers": [
+        "NExT Studios"
+      ],
+      "publisher": "NExT Studios",
+      "genres": [
+        "Roguelike"
+      ],
+      "updated": "2025-09-30T05:18:34.144Z"
+    }
+  },
+  {
+    "title": "Disney Epic Mickey: Rebrushed",
+    "key": "disney-epic-mickey-rebrushed",
+    "steamAppId": 1522160,
+    "openCriticId": "17335/disney-epic-mickey-rebrushed",
+    "openCriticData": {
+      "title": "Disney Epic Mickey: Rebrushed",
+      "cover": "https://img.opencritic.com/game/undefined/tQ5TFSJM.jpg",
+      "tier": "strong",
+      "score": 77,
+      "critics": 68,
+      "releaseDate": "2024-09-24T00:00:00.000Z",
+      "updated": "2025-09-30T05:18:57.312Z"
+    },
+    "steamData": {
+      "title": "Disney Epic Mickey: Rebrushed",
+      "description": "Embark on a magical journey in Disney Epic Mickey: Rebrushed! Shape your adventure with the stroke of a brush and transform Wasteland as Mickey Mouse in this beautifully recreated 3D platformer.",
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "releaseDate": "2024-09-24T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "92% of the 983 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1522160/header.jpg?t=1732714651",
+      "updated": "2025-09-30T05:18:58.104Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/disney-epic-mickey-rebrushed",
+    "metacriticData": {
+      "title": "Disney Epic Mickey: Rebrushed",
+      "metacriticScore": 76,
+      "mustPlay": false,
+      "platforms": [
+        "Nintendo Switch",
+        "Xbox Series X",
+        "Xbox One",
+        "PC",
+        "PlayStation 5",
+        "PlayStation 4"
+      ],
+      "releaseDate": "2024-09-24T00:00:00.000Z",
+      "developers": [
+        "Purple Lamp Studios"
+      ],
+      "publisher": "THQ Nordic",
+      "genres": [
+        "3D Platformer"
+      ],
+      "updated": "2025-09-30T05:19:01.468Z"
+    }
+  },
+  {
+    "title": "LEGO Horizon Adventures",
+    "key": "lego-horizon-adventures",
+    "steamAppId": 2428810,
+    "openCriticId": "17126/lego-horizon-adventures",
+    "openCriticData": {
+      "title": "Lego Horizon Adventures",
+      "cover": "https://img.opencritic.com/game/17126/m25ALLO1.jpg",
+      "tier": "fair",
+      "score": 71,
+      "critics": 54,
+      "releaseDate": "2024-11-14T00:00:00.000Z",
+      "updated": "2025-09-30T05:20:03.364Z"
+    },
+    "steamData": {
+      "title": "LEGO® Horizon Adventures™",
+      "description": "Join machine hunter Aloy as she leads a colourful crew of heroes on a quest to save the world and learn the secrets of her past. Dive into boundless adventure, customize to your heart’s content, and take on action-packed battles solo or with friends.",
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "releaseDate": "2024-11-14T00:00:00.000Z",
+      "reviewScore": 5,
+      "reviewScoreDescription": "Mixed",
+      "reviewScoreTooltip": "59% of the 297 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2428810/header.jpg?t=1750953443",
+      "updated": "2025-09-30T05:20:04.209Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/lego-horizon-adventures/",
+    "metacriticData": {
+      "title": "LEGO Horizon Adventures",
+      "metacriticScore": 70,
+      "mustPlay": false,
+      "platforms": [
+        "PlayStation 5",
+        "Nintendo Switch",
+        "PC"
+      ],
+      "releaseDate": "2024-11-14T00:00:00.000Z",
+      "developers": [
+        "Studio Gobo",
+        "Guerrilla"
+      ],
+      "publisher": "Sony Interactive Entertainment",
+      "genres": [
+        "Action Adventure"
+      ],
+      "updated": "2025-09-30T05:20:20.899Z"
+    }
+  },
+  {
+    "title": "Observation",
+    "key": "observation",
+    "openCriticId": "7625/observation",
+    "openCriticData": {
+      "title": "Observation",
+      "cover": "https://img.opencritic.com/game/7625/3e9edJSk.jpg",
+      "tier": "strong",
+      "score": 76,
+      "critics": 72,
+      "releaseDate": "2019-05-21T00:00:00.000Z",
+      "updated": "2025-09-30T05:20:44.528Z"
+    },
+    "steamAppId": 906100,
+    "steamData": {
+      "title": "Observation",
+      "description": "Observation is a sci-fi thriller uncovering what happened to Dr. Emma Fisher, and the crew of her mission, through the lens of the station’s artificial intelligence S.A.M.",
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2020-05-21T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "reviewScoreTooltip": "78% of the 2,390 user reviews in your language are positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/906100/header.jpg?t=1710929850",
+      "updated": "2025-09-30T05:20:52.370Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/observation",
+    "metacriticData": {
+      "title": "Observation",
+      "metacriticScore": 75,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "PlayStation 4",
+        "Xbox One"
+      ],
+      "releaseDate": "2019-05-21T00:00:00.000Z",
+      "developers": [
+        "No Code"
+      ],
+      "publisher": "Devolver Digital",
+      "genres": [
+        "Adventure"
+      ],
+      "updated": "2025-09-30T05:20:55.419Z"
+    }
+  },
+  {
+    "title": "Stories Untold",
+    "key": "stories-untold",
+    "openCriticId": "3997/stories-untold",
+    "openCriticData": {
+      "title": "Stories Untold",
+      "cover": "https://img.opencritic.com/game/3997/u5Xy2kux.jpg",
+      "tier": "strong",
+      "score": 79,
+      "critics": 73,
+      "releaseDate": "2017-02-27T00:00:00.000Z",
+      "updated": "2025-09-30T05:22:01.364Z"
+    },
+    "steamAppId": 558420,
+    "steamData": {
+      "title": "Stories Untold",
+      "description": "Stories Untold is a compilation tape of four experimental adventures, including a remaster of the original hit episode “The House Abandon”.",
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2017-02-27T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "86% of the 3,093 user reviews in your language are positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/558420/header.jpg?t=1687975548",
+      "updated": "2025-09-30T05:22:09.164Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/stories-untold",
+    "metacriticData": {
+      "title": "Stories Untold",
+      "metacriticScore": 81,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Nintendo Switch",
+        "Xbox One",
+        "PlayStation 4"
+      ],
+      "releaseDate": "2017-02-27T00:00:00.000Z",
+      "developers": [
+        "No Code"
+      ],
+      "publisher": "Devolver Digital",
+      "genres": [
+        "Text Adventure"
+      ],
+      "updated": "2025-09-30T05:22:12.098Z"
+    }
+  },
+  {
+    "title": "FATE: The Cursed King",
+    "key": "fate-the-cursed-king",
+    "openCriticId": "skip",
+    "steamAppId": 303690,
+    "steamData": {
+      "title": "FATE: The Cursed King",
+      "description": "Are you ready for the FATE-IEST of the FATE games? Welcome to the final chapter in the classic, action RPG series! FATE: The Cursed King has new weapons, spells, armor and AI-controlled allies! Wait, what?! Allies?? That’s right. This FATE game IS A PARTY. Woo! Party system!",
+      "genres": [
+        "Action",
+        "Adventure",
+        "RPG"
+      ],
+      "releaseDate": "2014-11-19T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "93% of the 458 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/303690/header.jpg?t=1729737302",
+      "updated": "2025-09-30T05:19:32.930Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/fate-the-cursed-king/",
+    "metacriticData": {
+      "title": "Fate: The Cursed King",
+      "metacriticScore": null,
+      "mustPlay": false,
+      "platforms": [
+        "PC"
+      ],
+      "releaseDate": "2011-05-10T00:00:00.000Z",
+      "developers": [
+        "WildTangent"
+      ],
+      "publisher": "Enlight Software",
+      "genres": [
+        "RPG"
+      ],
+      "updated": "2025-09-30T05:19:39.829Z"
+    }
+  },
+  {
+    "title": "Tin Hearts",
+    "key": "tin-hearts",
+    "openCriticId": "14824/tin-hearts",
+    "openCriticData": {
+      "title": "Tin Hearts",
+      "cover": "https://img.opencritic.com/game/14824/CWXULxpa.jpg",
+      "tier": "strong",
+      "score": 79,
+      "critics": 78,
+      "releaseDate": "2023-04-20T00:00:00.000Z",
+      "updated": "2025-09-30T05:23:06.600Z"
+    },
+    "steamAppId": 1831700,
+    "steamData": {
+      "title": "Tin Hearts",
+      "description": "Behind every brilliant invention, hides a magical story. Guide a troop of tin soldiers through a magical toy-filled world, in this immersive narrative puzzle adventure game from members of the team that brought you Fable.",
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2023-05-16T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "85% of the 63 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1831700/header.jpg?t=1747925257",
+      "updated": "2025-09-30T05:23:13.874Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/tin-hearts/",
+    "metacriticData": {
+      "title": "Tin Hearts",
+      "metacriticScore": 66,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Nintendo Switch",
+        "Xbox One",
+        "PlayStation 4",
+        "PlayStation 5",
+        "Xbox Series X"
+      ],
+      "releaseDate": "2023-05-16T00:00:00.000Z",
+      "developers": [
+        "Rogue Sun"
+      ],
+      "publisher": "Wired Productions",
+      "genres": [
+        "Action Puzzle"
+      ],
+      "updated": "2025-09-30T05:23:19.217Z"
+    }
+  },
+  {
+    "title": "Residual",
+    "key": "residual",
+    "openCriticId": "11938/residual",
+    "openCriticData": {
+      "title": "Residual",
+      "cover": null,
+      "tier": "fair",
+      "score": 71,
+      "critics": 44,
+      "releaseDate": "2021-09-09T00:00:00.000Z",
+      "updated": "2025-09-30T05:21:20.776Z"
+    },
+    "steamAppId": 1290780,
+    "steamData": {
+      "title": "Residual",
+      "description": "Explore a forgotten galaxy full of different planets, venture deeper into the planet to mine for rare resources, craft items to fix your ship, and discover ancient secrets and life forms. An exploration (survival) game like no other.. Adventure awaits!",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2021-09-09T00:00:00.000Z",
+      "reviewScore": 5,
+      "reviewScoreDescription": "Mixed",
+      "reviewScoreTooltip": "69% of the 23 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1290780/header.jpg?t=1758811896",
+      "updated": "2025-09-30T05:21:27.892Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/residual/",
+    "metacriticData": {
+      "title": "Residual",
+      "metacriticScore": 68,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Nintendo Switch",
+        "PlayStation 5",
+        "Xbox Series X",
+        "PlayStation 4",
+        "Xbox One"
+      ],
+      "releaseDate": "2021-09-09T00:00:00.000Z",
+      "developers": [
+        "OrangePixel"
+      ],
+      "publisher": "Apogee Entertainment",
+      "genres": [
+        "Sandbox"
+      ],
+      "updated": "2025-09-30T05:21:33.199Z"
+    }
+  },
+  {
+    "title": "Jorel's Brother and The Most Important Game of the Galaxy",
+    "key": "jorels-brother-and-the-most-important-game-of-the-galaxy",
+    "openCriticId": "16780/jorels-brother-and-the-most-important-game-of-the-galaxy",
+    "openCriticData": {
+      "title": "Jorel's Brother and The Most Important Game of the Galaxy",
+      "cover": null,
+      "tier": null,
+      "score": null,
+      "critics": null,
+      "releaseDate": "2023-06-14T00:00:00.000Z",
+      "updated": "2025-10-01T08:32:05.968Z"
+    },
+    "steamAppId": 1398910,
+    "steamData": {
+      "title": "Jorel’s Brother and The Most Important Game of the Galaxy - Complete Edition",
+      "description": "“Jorel’s Brother and The Most Important Game of the Galaxy” is a point-and-click adventure about an eight-year-old boy who lives with his eccentric family in the shadow of Jorel, his handsome and popular brother. Based on the award-winning Brazilian animation “Jorel’s Brother”.",
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2023-06-14T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "83% of the 169 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1398910/header.jpg?t=1712758819",
+      "updated": "2025-10-01T08:32:28.125Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/jorels-brother-and-the-most-important-game-of-the/",
+    "metacriticData": {
+      "title": "Jorel's Brother and The Most Important Game of the Galaxy",
+      "metacriticScore": null,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "iOS (iPhone/iPad)"
+      ],
+      "releaseDate": "2023-06-14T00:00:00.000Z",
+      "developers": [
+        "Double Dash Studios"
+      ],
+      "publisher": "Double Dash Studios",
+      "genres": [
+        "Point-and-Click"
+      ],
+      "updated": "2025-10-01T08:33:12.197Z"
+    }
   }
 ]
