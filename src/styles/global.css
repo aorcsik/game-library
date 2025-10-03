@@ -9,6 +9,9 @@ html {
 }
 
 body {
+  --controls-closed-height: 6rem;
+  --controls-open-height: 12rem;
+
   --platform-count: 8;
 
   --background-color-components: 249, 249, 249;
@@ -54,6 +57,8 @@ body {
   font-family: var(--body-font);
   background: var(--background-color);
   color: var(--text-color);
+  margin: 0;
+  background: var(--card-background);
 }
 
 .disabled {
@@ -110,7 +115,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main {
-  margin-top: 6rem;
+  margin-top: 0;
 }
 
 .container {
@@ -385,11 +390,14 @@ footer {
 }
 
 .hidden-checkbox {
-  position: fixed;
-  top: 0;
-  display: block;
-  z-index: 0;
   opacity: 0;
+  height: 0;
+  overflow: hidden;
+  display: block;
+}
+
+#toggle-controls.hidden-checkbox {
+  height: var(--controls-closed-height);
 }
 
 /** GAME PLATFORM ICON **/
@@ -896,6 +904,9 @@ footer {
   #toggle-controls:checked ~ header .search-field {
     display: flex;
   }
+  #toggle-controls.hidden-checkbox:checked {
+    height: var(--controls-open-height);
+  }
 
   .mobile-menu-open {
     display: flex;
@@ -921,7 +932,6 @@ footer {
 
   .game-grid .game-row-title {
     width: 100%;
-    border-top: 1px solid var(--subtle-accent-color);
     border-radius: 0;
     padding: 1rem;
   }
@@ -935,6 +945,7 @@ footer {
 
     & .fa-chevron-down {
       transition: all .3s ease-in-out;
+      color: var(--accent-color);
     }
   }
   .game-grid .game-row-open .toggle-details {
@@ -1146,11 +1157,45 @@ footer {
 
 @media only screen and (max-width: 600px) {
   .game-group-header {
-    border-top: 1px solid var(--subtle-accent-color);
-    background: rgba(var(--accent-color-components), .1);
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 
     & .game-group-counter {
       margin-left: auto;
     }
+  }
+
+  .game-row {
+    background: var(--background-color);
+    margin: 0 .75rem;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0.75rem;
+      right: 0.75rem;
+      top: 0;
+      border-top: 1px solid var(--subtle-accent-color);
+    }
+  }
+
+  .game-group-header + .game-row {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    &::before {
+      display: none;
+    }
+  }
+
+  .game-row:has(+ .game-group-header),
+  .game-row:last-child {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  footer {
+    border-top: 0;
   }
 }
