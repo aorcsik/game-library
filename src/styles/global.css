@@ -166,6 +166,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 header {
+  transform: translate3d(-50%,0,0);
   position: fixed;
   top: 0;
   padding: .5rem;
@@ -173,7 +174,6 @@ header {
   max-width: 1400px;
   left: 50%;
   width: 100%;
-  transform: translateX(-50%);
 
   & .container {
     border-radius: 2.25rem;
@@ -833,6 +833,11 @@ footer {
 }
 
 @media only screen and (max-width: 900px) {
+  header {
+    transform: translate3d(0,0,0);
+    left: 0;
+  }
+
   .controls .sort {
     flex-basis: 30%;
   }
