@@ -9,8 +9,8 @@ html {
 }
 
 body {
-  --controls-closed-height: 6rem;
-  --controls-open-height: 12rem;
+  --controls-closed-height: 0px;
+  --controls-open-height: 0px;
 
   --platform-count: 8;
 
@@ -166,14 +166,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 header {
-  transform: translate3d(-50%,0,0);
-  position: fixed;
+  transform: translate3d(0,0,0);
+  position: sticky;
   top: 0;
   padding: .5rem;
   z-index: 4;
   max-width: 1400px;
-  left: 50%;
+  left: 0;
   width: 100%;
+  margin: 0 auto;
 
   & .container {
     border-radius: 2.25rem;
@@ -393,7 +394,7 @@ footer {
   opacity: 0;
   height: 0;
   overflow: hidden;
-  display: block;
+  display: none;
 }
 
 #toggle-controls.hidden-checkbox {
