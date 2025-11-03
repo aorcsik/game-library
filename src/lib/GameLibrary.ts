@@ -68,7 +68,7 @@ export const getGameLibraryData = async (
     switch: { name: 'Nintendo Switch', count: 0 },
     epic: { name: 'Epic Games', count: 0 },
     gog: { name: 'Good Old Games', count: 0 },
-    amazon: { name: 'Prime Gaming', count: 0 },
+    amazon: { name: 'Amazon Luna', count: 0 },
     appstore: { name: 'Apple App Store', count: 0 },
     xbox: { name: 'Xbox', count: 0 },
   };
@@ -119,6 +119,7 @@ export const getGameLibraryData = async (
           game = database.getGameByTitle(purchase.title, false);
         } catch (error) {
           process.stderr.write(colorize(`${error instanceof Error ? error.message : String(error)}\n`, 'red'));
+          process.stderr.write(colorize(`Failed to match game: "${purchase.title}"\n  Platform: ${purchase.platform}\n  Purchase Date: ${purchase.purchaseDate}\n`, 'red'));
         }
         if (game) {
           const purchasedGame = purchasedGames.find(p => p.key === game.key);

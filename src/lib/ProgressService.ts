@@ -33,13 +33,13 @@ class ProgressService {
       return getProgressFromSanity<PlatformProgress>('steam');
     }
 
-    if (!this.config.steam_username) {
-      console.error('Steam username is not set in environment variables.');
+    if (!this.config.steam_profile_name) {
+      console.error('Steam profile name is not set in environment variables.');
       return null;
     }
 
     process.stdout.write(colorize('Updating Steam progress...\n', 'yellow'));
-    const platformProgress = await fetchProgress(this.config.steam_username, 'steam');
+    const platformProgress = await fetchProgress(this.config.steam_profile_name, 'steam');
     if (platformProgress) {
       await saveProgressToSanity('steam', platformProgress);
     }
@@ -52,13 +52,13 @@ class ProgressService {
       return getProgressFromSanity<PlatformProgress>('playstation');
     }
 
-    if (!this.config.playstation_username) {
+    if (!this.config.playstation_online_id) {
       console.error('PlayStation username is not set in environment variables.');
       return null;
     }
 
     process.stdout.write(colorize('Updating PlayStation progress...\n', 'yellow'));
-    const platformProgress = await fetchProgress(this.config.playstation_username, 'playstation');
+    const platformProgress = await fetchProgress(this.config.playstation_online_id, 'playstation');
     if (platformProgress) {
       await saveProgressToSanity('playstation', platformProgress);
     }
@@ -71,13 +71,13 @@ class ProgressService {
       return getProgressFromSanity<PlatformProgress>('xbox');
     }
 
-    if (!this.config.xbox_username) {
-      console.error('Xbox username is not set in environment variables.');
+    if (!this.config.xbox_gamertag) {
+      console.error('Xbox gamertag is not set in environment variables.');
       return null;
     }
 
     process.stdout.write(colorize('Updating Xbox progress...\n', 'yellow'));
-    const platformProgress = await fetchProgress(this.config.xbox_username, 'xbox');
+    const platformProgress = await fetchProgress(this.config.xbox_gamertag.replace('#', '-'), 'xbox');
     if (platformProgress) {
       await saveProgressToSanity('xbox', platformProgress);
     }

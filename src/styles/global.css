@@ -414,7 +414,7 @@ footer {
   mask-position: center;
 
   &.amazon-logo {
-    mask-image: url("/images/amazon-logo.svg");
+    mask-image: url("/images/amazon-luna-logo.svg");
   }
   &.gog-logo {
     mask-image: url("/images/gog-logo.svg");
