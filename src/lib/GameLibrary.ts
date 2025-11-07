@@ -28,6 +28,7 @@ const skipTitle = [
   'The Art of Little Nightmares II',
   'Horizon Zero Dawn™ Artbook',
   'God of War™ Digital Comic: Issue #0',
+  'Soulstice Artbook & OST',
 // Steam
   'Aseprite',
   'Mass Effect 2 (2010)',
