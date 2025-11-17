@@ -61967,5 +61967,159 @@
       ],
       "updated": "2025-11-07T15:53:06.383Z"
     }
+  },
+  {
+    "title": "Zero Hour",
+    "key": "zero-hour",
+    "openCriticId": "17344/zero-hour",
+    "openCriticData": {
+      "title": "Zero Hour",
+      "cover": "https://img.opencritic.com/game/17344/PbAMu3yB.jpg",
+      "tier": null,
+      "score": null,
+      "critics": null,
+      "releaseDate": "2024-09-09T00:00:00.000Z",
+      "updated": "2025-11-17T10:25:24.381Z"
+    },
+    "steamAppId": 1359090,
+    "steamData": {
+      "title": "Zero Hour",
+      "description": "Zero Hour is a tactical FPS with online team-based game play that takes place in a variety of fictional locations interpreted in Bangladesh with Real-life scale & resource management. It brings a grounded, close quarter combat experience to the game.",
+      "genres": [
+        "Action",
+        "Simulation",
+        "Strategy"
+      ],
+      "releaseDate": "2024-09-09T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "reviewScoreTooltip": "78% of the 16,436 user reviews in your language are positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1359090/header.jpg?t=1759214865",
+      "updated": "2025-11-17T10:25:35.361Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/zero-hour/",
+    "metacriticData": {
+      "title": "Zero Hour",
+      "metacriticScore": null,
+      "mustPlay": false,
+      "platforms": [
+        "PC"
+      ],
+      "releaseDate": "2020-08-12T00:00:00.000Z",
+      "developers": [
+        "M7 Productions"
+      ],
+      "publisher": "AttritoM7 Productions",
+      "genres": [
+        "Tactical FPS"
+      ],
+      "updated": "2025-11-17T10:25:43.559Z"
+    }
+  },
+  {
+    "title": "Scourgebringer",
+    "key": "scourgebringer",
+    "openCriticId": "10105/scourgebringer",
+    "openCriticData": {
+      "title": "ScourgeBringer",
+      "cover": "https://img.opencritic.com/game/10105/HXcrxxtG.jpg",
+      "tier": "strong",
+      "score": 81,
+      "critics": 83,
+      "releaseDate": "2020-02-06T00:00:00.000Z",
+      "updated": "2025-11-17T10:23:34.313Z"
+    },
+    "steamAppId": 1037020,
+    "steamData": {
+      "title": "ScourgeBringer",
+      "description": "ScourgeBringer is a fast-paced free-moving roguelite platformer. Help Kyhra to explore the unknown and slash her way through ancient machines guarding the seal of her past, and maybe the redemption of humanity.",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2020-10-21T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "89% of the 1,178 user reviews in your language are positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1037020/header.jpg?t=1745582111",
+      "updated": "2025-11-17T10:23:43.052Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/scourgebringer",
+    "metacriticData": {
+      "title": "ScourgeBringer",
+      "metacriticScore": 76,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Xbox One",
+        "Nintendo Switch",
+        "PlayStation Vita",
+        "PlayStation 4",
+        "PlayStation 5",
+        "iOS (iPhone/iPad)"
+      ],
+      "releaseDate": "2020-10-21T00:00:00.000Z",
+      "developers": [
+        "Flying Oak Games"
+      ],
+      "publisher": "Dear Villagers",
+      "genres": [
+        "2D Platformer"
+      ],
+      "updated": "2025-11-17T10:23:45.873Z"
+    }
+  },
+  {
+    "title": "Songs of Silence",
+    "key": "songs-of-silence",
+    "openCriticId": "17869/songs-of-silence",
+    "openCriticData": {
+      "title": "Songs of Silence",
+      "cover": "https://img.opencritic.com/game/17869/VkJ2N1du.jpg",
+      "tier": "strong",
+      "score": 78,
+      "critics": 67,
+      "releaseDate": "2024-11-13T00:00:00.000Z",
+      "updated": "2025-11-17T10:24:54.136Z"
+    },
+    "steamAppId": 2195410,
+    "steamData": {
+      "title": "Songs of Silence",
+      "description": "Lead armies, rebuild fallen kingdoms, and rise to greatness! Embark on an epic journey of strategy in an Art Nouveau-inspired fantasy world. Fight intense battles and uncover a captivating story.",
+      "genres": [
+        "Adventure",
+        "Indie",
+        "RPG",
+        "Simulation",
+        "Strategy"
+      ],
+      "releaseDate": "2024-11-13T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "reviewScoreTooltip": "78% of the 1,957 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2195410/edf3855310f99b775a9991cab6c059a0615f978a/header_alt_assets_5.jpg?t=1763033878",
+      "updated": "2025-11-17T10:25:01.576Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/songs-of-silence",
+    "metacriticData": {
+      "title": "Songs Of Silence",
+      "metacriticScore": 81,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "PlayStation 5",
+        "Xbox Series X"
+      ],
+      "releaseDate": "2024-11-13T00:00:00.000Z",
+      "developers": [
+        "Chimera Entertainment"
+      ],
+      "publisher": "Chimera Entertainment",
+      "genres": [
+        "4X Strategy"
+      ],
+      "updated": "2025-11-17T10:25:04.251Z"
+    }
   }
 ]
