@@ -60479,9 +60479,9 @@
       "releaseDate": "2007-10-10T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "89% of the 712,449 user reviews in your language are positive",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/440/header.jpg?t=1757348372",
-      "updated": "2025-09-30T05:22:40.025Z"
+      "reviewScoreTooltip": "89% of the 718,386 user reviews in your language are positive",
+      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/440/header.jpg?t=1757348372",
+      "updated": "2025-11-28T21:50:55.864Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/team-fortress-2",
     "metacriticData": {
@@ -60499,7 +60499,7 @@
       "genres": [
         "Tactical FPS"
       ],
-      "updated": "2025-09-30T05:22:43.002Z"
+      "updated": "2025-11-28T21:50:58.277Z"
     }
   },
   {
@@ -60514,7 +60514,7 @@
       "score": 81,
       "critics": 91,
       "releaseDate": "2020-10-16T00:00:00.000Z",
-      "updated": "2025-09-30T05:18:30.493Z"
+      "updated": "2025-11-28T21:47:43.336Z"
     },
     "steamData": {
       "title": "Crown Trick",
@@ -60528,9 +60528,9 @@
       "releaseDate": "2020-10-16T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "86% of the 551 user reviews in your language are positive",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1000010/header.jpg?t=1741628591",
-      "updated": "2025-09-30T05:18:31.421Z"
+      "reviewScoreTooltip": "86% of the 552 user reviews in your language are positive",
+      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1000010/header.jpg?t=1761833006",
+      "updated": "2025-11-28T21:47:43.964Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/crown-trick",
     "metacriticData": {
@@ -60551,7 +60551,7 @@
       "genres": [
         "Roguelike"
       ],
-      "updated": "2025-09-30T05:18:34.144Z"
+      "updated": "2025-11-28T21:47:45.391Z"
     }
   },
   {
@@ -60566,7 +60566,7 @@
       "score": 77,
       "critics": 68,
       "releaseDate": "2024-09-24T00:00:00.000Z",
-      "updated": "2025-09-30T05:18:57.312Z"
+      "updated": "2025-11-28T21:47:48.200Z"
     },
     "steamData": {
       "title": "Disney Epic Mickey: Rebrushed",
@@ -60578,9 +60578,9 @@
       "releaseDate": "2024-09-24T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "92% of the 983 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1522160/header.jpg?t=1732714651",
-      "updated": "2025-09-30T05:18:58.104Z"
+      "reviewScoreTooltip": "93% of the 1,032 user reviews for this game are positive.",
+      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1522160/header.jpg?t=1732714651",
+      "updated": "2025-11-28T21:47:48.723Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/disney-epic-mickey-rebrushed",
     "metacriticData": {
@@ -60603,7 +60603,7 @@
       "genres": [
         "3D Platformer"
       ],
-      "updated": "2025-09-30T05:19:01.468Z"
+      "updated": "2025-11-28T21:47:51.163Z"
     }
   },
   {
@@ -60618,7 +60618,7 @@
       "score": 71,
       "critics": 54,
       "releaseDate": "2024-11-14T00:00:00.000Z",
-      "updated": "2025-09-30T05:20:03.364Z"
+      "updated": "2025-11-28T21:50:07.072Z"
     },
     "steamData": {
       "title": "LEGO® Horizon Adventures™",
@@ -60630,9 +60630,9 @@
       "releaseDate": "2024-11-14T00:00:00.000Z",
       "reviewScore": 5,
       "reviewScoreDescription": "Mixed",
-      "reviewScoreTooltip": "59% of the 297 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2428810/header.jpg?t=1750953443",
-      "updated": "2025-09-30T05:20:04.209Z"
+      "reviewScoreTooltip": "58% of the 337 user reviews for this game are positive.",
+      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2428810/header.jpg?t=1763579756",
+      "updated": "2025-11-28T21:50:07.606Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/lego-horizon-adventures/",
     "metacriticData": {
@@ -60653,7 +60653,7 @@
       "genres": [
         "Action Adventure"
       ],
-      "updated": "2025-09-30T05:20:20.899Z"
+      "updated": "2025-11-28T21:50:09.058Z"
     }
   },
   {
@@ -60667,7 +60667,7 @@
       "score": 76,
       "critics": 72,
       "releaseDate": "2019-05-21T00:00:00.000Z",
-      "updated": "2025-09-30T05:20:44.528Z"
+      "updated": "2025-11-28T21:50:12.580Z"
     },
     "steamAppId": 906100,
     "steamData": {
@@ -60680,9 +60680,9 @@
       "releaseDate": "2020-05-21T00:00:00.000Z",
       "reviewScore": 6,
       "reviewScoreDescription": "Mostly Positive",
-      "reviewScoreTooltip": "78% of the 2,390 user reviews in your language are positive",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/906100/header.jpg?t=1710929850",
-      "updated": "2025-09-30T05:20:52.370Z"
+      "reviewScoreTooltip": "78% of the 2,414 user reviews in your language are positive",
+      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/906100/header.jpg?t=1710929850",
+      "updated": "2025-11-28T21:50:13.155Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/observation",
     "metacriticData": {
@@ -60702,7 +60702,7 @@
       "genres": [
         "Adventure"
       ],
-      "updated": "2025-09-30T05:20:55.419Z"
+      "updated": "2025-11-28T21:50:16.093Z"
     }
   },
   {
@@ -60716,7 +60716,7 @@
       "score": 79,
       "critics": 73,
       "releaseDate": "2017-02-27T00:00:00.000Z",
-      "updated": "2025-09-30T05:22:01.364Z"
+      "updated": "2025-11-28T21:50:50.036Z"
     },
     "steamAppId": 558420,
     "steamData": {
@@ -60729,9 +60729,9 @@
       "releaseDate": "2017-02-27T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "86% of the 3,093 user reviews in your language are positive",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/558420/header.jpg?t=1687975548",
-      "updated": "2025-09-30T05:22:09.164Z"
+      "reviewScoreTooltip": "86% of the 3,123 user reviews in your language are positive",
+      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/558420/header.jpg?t=1687975548",
+      "updated": "2025-11-28T21:50:50.795Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/stories-untold",
     "metacriticData": {
@@ -60752,7 +60752,7 @@
       "genres": [
         "Text Adventure"
       ],
-      "updated": "2025-09-30T05:22:12.098Z"
+      "updated": "2025-11-28T21:50:54.221Z"
     }
   },
   {
@@ -60771,9 +60771,9 @@
       "releaseDate": "2014-11-19T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "93% of the 458 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/303690/header.jpg?t=1729737302",
-      "updated": "2025-09-30T05:19:32.930Z"
+      "reviewScoreTooltip": "93% of the 469 user reviews for this game are positive.",
+      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/303690/header.jpg?t=1761855665",
+      "updated": "2025-11-28T21:48:48.805Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/fate-the-cursed-king/",
     "metacriticData": {
@@ -60791,7 +60791,7 @@
       "genres": [
         "RPG"
       ],
-      "updated": "2025-09-30T05:19:39.829Z"
+      "updated": "2025-11-28T21:48:50.073Z"
     }
   },
   {
@@ -60802,10 +60802,10 @@
       "title": "Tin Hearts",
       "cover": "https://img.opencritic.com/game/14824/CWXULxpa.jpg",
       "tier": "strong",
-      "score": 79,
-      "critics": 78,
+      "score": 78,
+      "critics": 76,
       "releaseDate": "2023-04-20T00:00:00.000Z",
-      "updated": "2025-09-30T05:23:06.600Z"
+      "updated": "2025-11-28T21:51:00.066Z"
     },
     "steamAppId": 1831700,
     "steamData": {
@@ -60818,9 +60818,9 @@
       "releaseDate": "2023-05-16T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "85% of the 63 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1831700/header.jpg?t=1747925257",
-      "updated": "2025-09-30T05:23:13.874Z"
+      "reviewScoreTooltip": "85% of the 64 user reviews for this game are positive.",
+      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1831700/header.jpg?t=1747925257",
+      "updated": "2025-11-28T21:51:00.761Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/tin-hearts/",
     "metacriticData": {
@@ -60843,7 +60843,7 @@
       "genres": [
         "Action Puzzle"
       ],
-      "updated": "2025-09-30T05:23:19.217Z"
+      "updated": "2025-11-28T21:51:02.232Z"
     }
   },
   {
@@ -60857,7 +60857,7 @@
       "score": 71,
       "critics": 44,
       "releaseDate": "2021-09-09T00:00:00.000Z",
-      "updated": "2025-09-30T05:21:20.776Z"
+      "updated": "2025-11-28T21:50:17.699Z"
     },
     "steamAppId": 1290780,
     "steamData": {
@@ -60872,8 +60872,8 @@
       "reviewScore": 5,
       "reviewScoreDescription": "Mixed",
       "reviewScoreTooltip": "69% of the 23 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1290780/header.jpg?t=1758811896",
-      "updated": "2025-09-30T05:21:27.892Z"
+      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1290780/header.jpg?t=1758811896",
+      "updated": "2025-11-28T21:50:18.340Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/residual/",
     "metacriticData": {
@@ -60896,7 +60896,7 @@
       "genres": [
         "Sandbox"
       ],
-      "updated": "2025-09-30T05:21:33.199Z"
+      "updated": "2025-11-28T21:50:20.498Z"
     }
   },
   {
@@ -60910,7 +60910,7 @@
       "score": null,
       "critics": null,
       "releaseDate": "2023-06-14T00:00:00.000Z",
-      "updated": "2025-10-01T08:32:05.968Z"
+      "updated": "2025-11-28T21:50:03.656Z"
     },
     "steamAppId": 1398910,
     "steamData": {
@@ -60923,9 +60923,9 @@
       "releaseDate": "2023-06-14T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "83% of the 169 user reviews for this game are positive.",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1398910/header.jpg?t=1712758819",
-      "updated": "2025-10-01T08:32:28.125Z"
+      "reviewScoreTooltip": "82% of the 172 user reviews for this game are positive.",
+      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1398910/header.jpg?t=1712758819",
+      "updated": "2025-11-28T21:50:04.578Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/jorels-brother-and-the-most-important-game-of-the/",
     "metacriticData": {
@@ -60944,7 +60944,7 @@
       "genres": [
         "Point-and-Click"
       ],
-      "updated": "2025-10-01T08:33:12.197Z"
+      "updated": "2025-11-28T21:50:06.366Z"
     }
   },
   {
@@ -62120,6 +62120,587 @@
         "4X Strategy"
       ],
       "updated": "2025-11-17T10:25:04.251Z"
+    }
+  },
+  {
+    "title": "Due Process",
+    "key": "due-process",
+    "steamAppId": 753650,
+    "openCriticId": "12612/duel-princess",
+    "openCriticData": {
+      "title": "Duel Princess",
+      "cover": null,
+      "tier": null,
+      "score": null,
+      "critics": null,
+      "releaseDate": "2022-01-13T00:00:00.000Z",
+      "updated": "2025-11-28T21:48:12.029Z"
+    },
+    "steamData": {
+      "title": "Due Process",
+      "description": "A PVP tactical FPS about PLANNING & EXECUTION. Sound strategy and good teamwork are essential for victory because new PROCEDURALLY-GENERATED MAPS are delivered every week. You'll face a new tactical challenge every round.",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Indie",
+        "Simulation",
+        "Strategy",
+        "Early%20Access"
+      ],
+      "releaseDate": "2020-11-03T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "84% of the 5,440 user reviews in your language are positive",
+      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/753650/header.jpg?t=1762035429",
+      "updated": "2025-11-28T21:48:12.759Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/due-process/",
+    "metacriticData": {
+      "title": "Due Process",
+      "metacriticScore": null,
+      "mustPlay": false,
+      "platforms": [
+        "PC"
+      ],
+      "releaseDate": "2020-11-03T00:00:00.000Z",
+      "developers": [
+        "Giant Enemy Crab"
+      ],
+      "publisher": "Annapurna Interactive",
+      "genres": [
+        "Tactical FPS"
+      ],
+      "updated": "2025-11-28T21:48:18.402Z"
+    }
+  },
+  {
+    "title": "Townsmen - A Kingdom Rebuilt",
+    "key": "townsmen-a-kingdom-rebuilt",
+    "steamAppId": 938380,
+    "openCriticId": "7350/townsmen-a-kingdom-rebuilt",
+    "openCriticData": {
+      "title": "Townsmen - A Kingdom Rebuilt",
+      "cover": "https://img.opencritic.com/game/7350/kxiT9wrF.jpg",
+      "tier": "weak",
+      "score": 63,
+      "critics": 9,
+      "releaseDate": "2019-02-26T00:00:00.000Z",
+      "updated": "2025-11-28T21:51:17.684Z"
+    },
+    "steamData": {
+      "title": "Townsmen - A Kingdom Rebuilt",
+      "description": "Townsmen – A Kingdom Rebuilt hands the crown to you: Guide your people from their first steps in a small village to a massive medieval metropolis with thousands of inhabitants.",
+      "genres": [
+        "Casual",
+        "Simulation",
+        "Strategy"
+      ],
+      "releaseDate": "2019-02-26T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "reviewScoreTooltip": "79% of the 777 user reviews for this game are positive.",
+      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/938380/header.jpg?t=1736956423",
+      "updated": "2025-11-28T21:51:18.715Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/townsmen---a-kingdom-rebuilt"
+  },
+  {
+    "title": "Creaks",
+    "key": "creaks",
+    "steamAppId": 956030,
+    "openCriticId": "9827/creaks",
+    "openCriticData": {
+      "title": "Creaks",
+      "cover": "https://img.opencritic.com/game/9827/yuO6GY2X.jpg",
+      "tier": "strong",
+      "score": 80,
+      "critics": 88,
+      "releaseDate": "2020-07-22T00:00:00.000Z",
+      "updated": "2025-11-28T21:47:38.641Z"
+    },
+    "steamData": {
+      "title": "Creaks",
+      "description": "The ground starts shaking, light bulbs are breaking - and something rather unusual is happening right behind the walls of your very room. Equipped with nothing but wit and courage, you slowly descend into a world inhabited by avian folk and seemingly deadly furniture monsters.",
+      "genres": [
+        "Adventure",
+        "Casual",
+        "Indie"
+      ],
+      "releaseDate": "2020-07-22T00:00:00.000Z",
+      "reviewScore": 9,
+      "reviewScoreDescription": "Overwhelmingly Positive",
+      "reviewScoreTooltip": "95% of the 1,789 user reviews in your language are positive",
+      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/956030/header.jpg?t=1757928559",
+      "updated": "2025-11-28T21:47:39.345Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/creaks",
+    "metacriticData": {
+      "title": "Creaks",
+      "metacriticScore": 82,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "PlayStation 4",
+        "Xbox One",
+        "iOS (iPhone/iPad)",
+        "Nintendo Switch"
+      ],
+      "releaseDate": "2020-07-22T00:00:00.000Z",
+      "developers": [
+        "Amanita Design"
+      ],
+      "publisher": "Amanita Design",
+      "genres": [
+        "Adventure"
+      ],
+      "updated": "2025-11-28T21:47:42.657Z"
+    }
+  },
+  {
+    "title": "Eternal Threads",
+    "key": "eternal-threads",
+    "steamAppId": 1046790,
+    "openCriticId": "13156/eternal-threads",
+    "openCriticData": {
+      "title": "Eternal Threads",
+      "cover": "https://img.opencritic.com/game/13156/38ImJ2FW.jpg",
+      "tier": "fair",
+      "score": 74,
+      "critics": 55,
+      "releaseDate": "2022-05-19T00:00:00.000Z",
+      "updated": "2025-11-28T21:48:37.888Z"
+    },
+    "steamData": {
+      "title": "Eternal Threads",
+      "description": "Eternal Threads is a single-player, first-person story-driven puzzle game of time manipulation, choice and consequence.",
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2022-05-19T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "87% of the 456 user reviews for this game are positive.",
+      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1046790/header.jpg?t=1757410022",
+      "updated": "2025-11-28T21:48:38.804Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/eternal-threads/",
+    "metacriticData": {
+      "title": "Eternal Threads",
+      "metacriticScore": 73,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "PlayStation 4",
+        "Xbox One",
+        "Nintendo Switch",
+        "Xbox Series X",
+        "PlayStation 5"
+      ],
+      "releaseDate": "2022-05-19T00:00:00.000Z",
+      "developers": [
+        "Cosmonaut Studios"
+      ],
+      "publisher": "Secret Mode",
+      "genres": [
+        "First-Person Adventure"
+      ],
+      "updated": "2025-11-28T21:48:45.611Z"
+    }
+  },
+  {
+    "title": "SILT",
+    "key": "silt",
+    "steamAppId": 1325890,
+    "openCriticId": "13181/silt",
+    "openCriticData": {
+      "title": "Silt",
+      "cover": "https://img.opencritic.com/game/13181/rlvtjrKS.jpg",
+      "tier": "fair",
+      "score": 73,
+      "critics": 56,
+      "releaseDate": "2022-06-01T00:00:00.000Z",
+      "updated": "2025-11-28T21:50:40.653Z"
+    },
+    "steamData": {
+      "title": "SILT",
+      "description": "Dive into a surreal ocean abyss in an atmospheric puzzle-adventure. Explore dangerous waters, possess sea creatures and solve environmental puzzles to discover what lies deep below the surface…",
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2022-06-01T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "reviewScoreTooltip": "77% of the 632 user reviews for this game are positive.",
+      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1325890/header.jpg?t=1724190031",
+      "updated": "2025-11-28T21:50:41.755Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/silt/",
+    "metacriticData": {
+      "title": "SILT",
+      "metacriticScore": 71,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "PlayStation 5",
+        "Xbox Series X",
+        "Xbox One",
+        "PlayStation 4",
+        "Nintendo Switch"
+      ],
+      "releaseDate": "2022-06-01T00:00:00.000Z",
+      "developers": [
+        "Madorium"
+      ],
+      "publisher": "Fireshine Games",
+      "genres": [
+        "Action Adventure"
+      ],
+      "updated": "2025-11-28T21:50:48.560Z"
+    }
+  },
+  {
+    "title": "Happy's Humble Burger Farm",
+    "key": "happys-humble-burger-farm",
+    "steamAppId": 1433340,
+    "openCriticId": "12432/happys-humble-burger-farm",
+    "openCriticData": {
+      "title": "Happy's Humble Burger Farm",
+      "cover": "https://img.opencritic.com/game/12432/iNnFm0Ir.jpg",
+      "tier": "fair",
+      "score": 69,
+      "critics": 65,
+      "releaseDate": "2021-12-03T00:00:00.000Z",
+      "updated": "2025-11-28T21:49:54.394Z"
+    },
+    "steamData": {
+      "title": "Happy's Humble Burger Farm",
+      "description": "Congrats, you're hired! Serve customers and maintain the Happy's Humble Burger Farm restaurant alone on the overnight. But be careful; things fall apart if you mess up! After work, head home and keep your eyes open for a way to escape the Barnyard Buds and their fast food fever-dream.",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Indie",
+        "Simulation"
+      ],
+      "releaseDate": "2021-12-03T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "93% of the 1,517 user reviews for this game are positive.",
+      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1433340/header.jpg?t=1759513869",
+      "updated": "2025-11-28T21:49:55.237Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/happys-humble-burger-farm/",
+    "metacriticData": {
+      "title": "Happy's Humble Burger Farm",
+      "metacriticScore": null,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Nintendo Switch",
+        "Xbox Series X",
+        "Xbox One",
+        "PlayStation 4"
+      ],
+      "releaseDate": "2021-12-03T00:00:00.000Z",
+      "developers": [
+        "Scythe Dev Team"
+      ],
+      "publisher": "tinyBuild",
+      "genres": [
+        "Virtual Career"
+      ],
+      "updated": "2025-11-28T21:50:02.363Z"
+    }
+  },
+  {
+    "title": "Brewmaster: Beer Brewing Simulator",
+    "key": "brewmaster-beer-brewing-simulator",
+    "steamAppId": 1569200,
+    "openCriticId": "13935/brewmaster-beer-brewing-simulator",
+    "openCriticData": {
+      "title": "Brewmaster: Beer Brewing Simulator",
+      "cover": "https://img.opencritic.com/game/13935/HmgrEqDk.jpg",
+      "tier": null,
+      "score": null,
+      "critics": null,
+      "releaseDate": "2022-09-29T00:00:00.000Z",
+      "updated": "2025-11-28T21:46:30.998Z"
+    },
+    "steamData": {
+      "title": "Brewmaster: Beer Brewing Simulator",
+      "description": "Brew your perfect beer in this relaxing home brewing sim. Use a realistic chemistry simulation to brew hoppy IPAs to creamy stouts. Customise your brewing space, create recipes and label your beer, unlock new equipment and enter competitions. Learn to brew, refine your craft and become a Brewmaster!",
+      "genres": [
+        "Simulation"
+      ],
+      "releaseDate": "2022-09-29T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "reviewScoreTooltip": "77% of the 972 user reviews for this game are positive.",
+      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1569200/header.jpg?t=1764353952",
+      "updated": "2025-11-28T21:46:31.614Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/brewmaster-beer-brewing-simulator/",
+    "metacriticData": {
+      "title": "Brewmaster: Beer Brewing Simulator",
+      "metacriticScore": null,
+      "mustPlay": false,
+      "platforms": [
+        "PlayStation 5",
+        "PlayStation 4",
+        "PC",
+        "Nintendo Switch",
+        "Xbox Series X",
+        "Xbox One"
+      ],
+      "releaseDate": "2022-10-27T00:00:00.000Z",
+      "developers": [
+        "Auroch Digital"
+      ],
+      "publisher": "Fireshine Games",
+      "genres": [
+        "Virtual Career"
+      ],
+      "updated": "2025-11-28T21:46:40.047Z"
+    }
+  },
+  {
+    "title": "Castle Of Alchemists",
+    "key": "castle-of-alchemists",
+    "steamAppId": 1724770,
+    "openCriticId": "skip",
+    "steamData": {
+      "title": "Castle Of Alchemists",
+      "description": "Defend your castle in this fast-paced tower defense/action hybrid game with stunning pixel art graphics! Play as alchemically enhanced warrior Bellator, set traps, build towers, craft powerful weapons, and defend your home! The fate of the castle lies in your hands!",
+      "genres": [
+        "Action",
+        "Indie",
+        "Strategy"
+      ],
+      "releaseDate": "2025-04-10T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "82% of the 580 user reviews for this game are positive.",
+      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1724770/header.jpg?t=1744299472",
+      "updated": "2025-11-28T21:47:08.134Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/castle-of-alchemists/",
+    "metacriticData": {
+      "title": "Castle Of Alchemists",
+      "metacriticScore": null,
+      "mustPlay": false,
+      "platforms": [
+        "PC"
+      ],
+      "releaseDate": "2025-04-10T00:00:00.000Z",
+      "developers": [
+        "Team Machiavelli"
+      ],
+      "publisher": "Team Machiavelli",
+      "genres": [
+        "Defense"
+      ],
+      "updated": "2025-11-28T21:47:13.655Z"
+    }
+  },
+  {
+    "title": "Turbo Kid",
+    "key": "turbo-kid",
+    "steamAppId": 1733250,
+    "openCriticId": "16581/turbo-kid",
+    "openCriticData": {
+      "title": "Turbo Kid",
+      "cover": "https://img.opencritic.com/game/16581/8LC108zc.jpg",
+      "tier": "strong",
+      "score": 81,
+      "critics": 100,
+      "releaseDate": "2024-04-09T00:00:00.000Z",
+      "updated": "2025-11-28T21:51:34.275Z"
+    },
+    "steamData": {
+      "title": "Turbo Kid",
+      "description": "A nostalgic metroidvania adventure with insane weapons, skills, and pixel gore. Ride your BMX and blast your enemies as you discover the secrets of the Wasteland.",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2024-04-09T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "93% of the 365 user reviews for this game are positive.",
+      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1733250/72d5382e8db2431f21bd32085349da8da3856d76/header.jpg?t=1754510951",
+      "updated": "2025-11-28T21:51:35.035Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/turbo-kid/",
+    "metacriticData": {
+      "title": "Turbo Kid",
+      "metacriticScore": 80,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Nintendo Switch"
+      ],
+      "releaseDate": "2024-04-09T00:00:00.000Z",
+      "developers": [
+        "Outerminds"
+      ],
+      "publisher": "Outerminds",
+      "genres": [
+        "Metroidvania"
+      ],
+      "updated": "2025-11-28T21:51:46.429Z"
+    }
+  },
+  {
+    "title": "Forward: Escape the Fold - Ultimate Edition",
+    "key": "forward-escape-the-fold-ultimate-edition",
+    "steamAppId": 1766390,
+    "openCriticId": "12974/forward-escape-the-fold",
+    "openCriticData": {
+      "title": "Forward: Escape the Fold",
+      "cover": "https://img.opencritic.com/game/12974/PQH0fVa6.jpg",
+      "tier": null,
+      "score": null,
+      "critics": null,
+      "releaseDate": "2022-03-29T00:00:00.000Z",
+      "updated": "2025-11-28T21:49:17.511Z"
+    },
+    "steamData": {
+      "title": "FORWARD: Escape the Fold - Ultimate Edition",
+      "description": "FORWARD: Escape the Fold - Ultimate Edition was created to be the perfect bitesized roguelike dungeon crawler. Choose your champion and face a relentless crawl through the card-based dungeons, collect items to power your abilities and defeat the gruesome monsters facing you. But keep going FORWARD!",
+      "genres": [
+        "Casual",
+        "Indie",
+        "Strategy"
+      ],
+      "releaseDate": "2022-03-29T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "85% of the 603 user reviews for this game are positive.",
+      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1766390/header.jpg?t=1727190806",
+      "updated": "2025-11-28T21:49:18.142Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/forward-escape-the-fold/",
+    "metacriticData": {
+      "title": "FORWARD: Escape the Fold",
+      "metacriticScore": null,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "iOS (iPhone/iPad)"
+      ],
+      "releaseDate": "2022-03-29T00:00:00.000Z",
+      "developers": [
+        "Two Tiny Dice"
+      ],
+      "publisher": "Asylum Labs",
+      "genres": [
+        "Card Battle"
+      ],
+      "updated": "2025-11-28T21:49:32.537Z"
+    }
+  },
+  {
+    "title": "Yellow Taxi Goes Vroom",
+    "key": "yellow-taxi-goes-vroom",
+    "steamAppId": 2011780,
+    "openCriticId": "16569/yellow-taxi-goes-vroom",
+    "openCriticData": {
+      "title": "Yellow Taxi Goes Vroom",
+      "cover": "https://img.opencritic.com/game/16569/4zKEfwc8.jpg",
+      "tier": "strong",
+      "score": 80,
+      "critics": 75,
+      "releaseDate": "2024-04-09T00:00:00.000Z",
+      "updated": "2025-11-28T21:52:00.077Z"
+    },
+    "steamData": {
+      "title": "Yellow Taxi Goes Vroom",
+      "description": "Make full use of your advanced move-set to navigate hand-crafted retro worlds without a jump button in this vibrant love letter to the N64 era of collectathons!",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2024-04-09T00:00:00.000Z",
+      "reviewScore": 9,
+      "reviewScoreDescription": "Overwhelmingly Positive",
+      "reviewScoreTooltip": "97% of the 1,327 user reviews for this game are positive.",
+      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2011780/header.jpg?t=1744194362",
+      "updated": "2025-11-28T21:52:00.852Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/yellow-taxi-goes-vroom",
+    "metacriticData": {
+      "title": "Yellow Taxi Goes Vroom",
+      "metacriticScore": 78,
+      "mustPlay": false,
+      "platforms": [
+        "PC"
+      ],
+      "releaseDate": "2024-04-09T00:00:00.000Z",
+      "developers": [
+        "Panik Arcade"
+      ],
+      "publisher": "Those Awesome Guys",
+      "genres": [
+        "3D Platformer"
+      ],
+      "updated": "2025-11-28T21:52:03.968Z"
+    }
+  },
+  {
+    "title": "Universe for Sale",
+    "key": "universe-for-sale",
+    "openCriticId": "15923/universe-for-sale",
+    "openCriticData": {
+      "title": "Universe For Sale",
+      "cover": "https://img.opencritic.com/game/undefined/8X9LDpRp.jpg",
+      "tier": null,
+      "score": null,
+      "critics": null,
+      "releaseDate": "2023-11-16T00:00:00.000Z",
+      "updated": "2025-11-28T23:16:41.836Z"
+    },
+    "steamAppId": 1627840,
+    "steamData": {
+      "title": "Universe For Sale",
+      "description": "A space station nestled in the clouds of Jupiter. A bizarre bazaar where a young, worried woman crafts entire universes in the palm of her hand. A mysterious cultist who's stripped the flesh from his bones in order to reach enlightenment. Here, there's a universe for sale. You buying?",
+      "genres": [
+        "Adventure",
+        "Casual",
+        "Indie"
+      ],
+      "releaseDate": "2023-11-16T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "94% of the 94 user reviews for this game are positive.",
+      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1627840/header.jpg?t=1751348016",
+      "updated": "2025-11-28T23:16:49.811Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/universe-for-sale",
+    "metacriticData": {
+      "title": "Universe For Sale",
+      "metacriticScore": 80,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Xbox Series X",
+        "Xbox One",
+        "PlayStation 5",
+        "PlayStation 4",
+        "iOS (iPhone/iPad)",
+        "Nintendo Switch"
+      ],
+      "releaseDate": "2023-11-16T00:00:00.000Z",
+      "developers": [
+        "Tmesis Studio"
+      ],
+      "publisher": "All in! Games",
+      "genres": [
+        "Adventure"
+      ],
+      "updated": "2025-11-28T23:16:52.437Z"
     }
   }
 ]

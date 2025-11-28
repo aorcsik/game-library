@@ -32,7 +32,7 @@ export const getReleaseDate = (game: Game): Date | null => {
   return new Date(earliest);
 };
 
-export const getPurchaseDate = (game: PurchasedGame): Date | null => {
+export const getPurchaseDate = (game: PurchasedGame, latest: boolean = true): Date | null => {
   const purchaseDates = game.purchases
     .filter(p => p.purchaseDate)
     .map(p => p.purchaseDate ? new Date(p.purchaseDate).getTime() : 0)
@@ -40,8 +40,7 @@ export const getPurchaseDate = (game: PurchasedGame): Date | null => {
 
   if (purchaseDates.length === 0) return null;
 
-  const earliestPurchase = Math.min(...purchaseDates);
-  return new Date(earliestPurchase);
+  return new Date(latest ? Math.max(...purchaseDates) : Math.min(...purchaseDates));
 };
 
 type GameRowTitleProps = {
