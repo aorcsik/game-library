@@ -9,7 +9,7 @@
       "score": 72,
       "critics": 39,
       "releaseDate": "2013-10-16T00:00:00.000Z",
-      "updated": "2025-12-15T08:41:42.779Z"
+      "updated": "2025-12-30T23:59:50.729Z"
     },
     "steamAppId": 242820,
     "steamData": {
@@ -22,9 +22,9 @@
       "releaseDate": "2013-10-16T00:00:00.000Z",
       "reviewScore": 9,
       "reviewScoreDescription": "Overwhelmingly Positive",
-      "reviewScoreTooltip": "95% of the 1,282 user reviews in your language are positive",
+      "reviewScoreTooltip": "95% of the 1,288 user reviews in your language are positive",
       "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/242820/header.jpg?t=1632130187",
-      "updated": "2025-12-15T08:41:43.514Z"
+      "updated": "2025-12-30T23:59:51.460Z"
     },
     "metacriticData": {
       "title": "140",
@@ -47,7 +47,7 @@
       "genres": [
         "2D Platformer"
       ],
-      "updated": "2025-12-15T08:41:47.480Z"
+      "updated": "2025-12-30T23:59:53.680Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/140",
     "key": "140"
@@ -62,7 +62,7 @@
       "score": 77,
       "critics": 62,
       "releaseDate": "2017-01-16T00:00:00.000Z",
-      "updated": "2025-12-15T08:41:52.241Z"
+      "updated": "2025-12-30T23:59:56.115Z"
     },
     "steamAppId": 330820,
     "steamData": {
@@ -75,9 +75,9 @@
       "releaseDate": "2015-10-06T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "84% of the 690 user reviews for this game are positive.",
+      "reviewScoreTooltip": "84% of the 691 user reviews for this game are positive.",
       "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/330820/header.jpg?t=1712088920",
-      "updated": "2025-12-15T08:41:52.886Z"
+      "updated": "2025-12-30T23:59:56.902Z"
     },
     "metacriticData": {
       "title": "2064: Read Only Memories",
@@ -97,7 +97,7 @@
       "genres": [
         "Point-and-Click"
       ],
-      "updated": "2025-12-15T08:41:55.415Z"
+      "updated": "2025-12-30T23:59:58.570Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/2064-read-only-memories",
     "key": "2064-read-only-memories"
@@ -112,7 +112,7 @@
       "score": 77,
       "critics": 60,
       "releaseDate": "2022-06-08T00:00:00.000Z",
-      "updated": "2025-12-15T08:41:48.122Z"
+      "updated": "2025-12-30T23:59:54.002Z"
     },
     "steamAppId": 1966900,
     "steamData": {
@@ -128,9 +128,9 @@
       "releaseDate": "2023-06-08T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "92% of the 12,419 user reviews in your language are positive",
+      "reviewScoreTooltip": "92% of the 12,450 user reviews in your language are positive",
       "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1966900/header.jpg?t=1755696474",
-      "updated": "2025-12-15T08:41:48.905Z"
+      "updated": "2025-12-30T23:59:54.538Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/20-minutes-till-dawn/",
     "metacriticData": {
@@ -150,7 +150,7 @@
       "genres": [
         "Top-Down Shoot-'Em-Up"
       ],
-      "updated": "2025-12-15T08:41:51.961Z"
+      "updated": "2025-12-30T23:59:55.862Z"
     },
     "key": "20-minutes-till-dawn"
   },
@@ -1872,7 +1872,7 @@
       "score": 83,
       "critics": 100,
       "releaseDate": "2015-09-28T00:00:00.000Z",
-      "updated": "2025-12-15T08:41:55.698Z"
+      "updated": "2025-12-30T23:59:58.831Z"
     },
     "steamAppId": 381780,
     "steamData": {
@@ -1886,9 +1886,9 @@
       "releaseDate": "2015-09-28T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "91% of the 1,141 user reviews for this game are positive.",
+      "reviewScoreTooltip": "91% of the 1,145 user reviews for this game are positive.",
       "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/381780/header.jpg?t=1736524091",
-      "updated": "2025-12-15T08:41:56.180Z"
+      "updated": "2025-12-30T23:59:59.458Z"
     },
     "metacriticData": {
       "title": "80 Days",
@@ -1905,7 +1905,7 @@
       "genres": [
         "Visual Novel"
       ],
-      "updated": "2025-12-15T08:41:57.966Z"
+      "updated": "2025-12-31T00:00:02.061Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/80-days-2015",
     "key": "80-days"
@@ -1920,7 +1920,7 @@
       "score": 74,
       "critics": 64,
       "releaseDate": "2023-03-27T00:00:00.000Z",
-      "updated": "2025-12-15T08:41:58.258Z"
+      "updated": "2025-12-31T00:00:02.326Z"
     },
     "steamAppId": 1402120,
     "steamData": {
@@ -1934,9 +1934,9 @@
       "releaseDate": "2023-03-27T00:00:00.000Z",
       "reviewScore": 6,
       "reviewScoreDescription": "Mostly Positive",
-      "reviewScoreTooltip": "76% of the 937 user reviews in your language are positive",
+      "reviewScoreTooltip": "76% of the 939 user reviews in your language are positive",
       "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1402120/header.jpg?t=1753748436",
-      "updated": "2025-12-15T08:41:58.756Z"
+      "updated": "2025-12-31T00:00:02.851Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/9-years-of-shadows/",
     "metacriticData": {
@@ -1960,7 +1960,7 @@
       "genres": [
         "Metroidvania"
       ],
-      "updated": "2025-12-15T08:42:01.419Z"
+      "updated": "2025-12-31T00:00:04.287Z"
     },
     "key": "9-years-of-shadows"
   },
@@ -17733,7 +17733,7 @@
       "score": null,
       "critics": null,
       "releaseDate": "2015-02-25T00:00:00.000Z",
-      "updated": "2025-12-15T08:42:01.710Z"
+      "updated": "2025-12-31T00:00:04.557Z"
     },
     "steamAppId": 316610,
     "steamData": {
@@ -17745,9 +17745,9 @@
       "releaseDate": "2015-02-25T00:00:00.000Z",
       "reviewScore": 9,
       "reviewScoreDescription": "Overwhelmingly Positive",
-      "reviewScoreTooltip": "96% of the 622 user reviews for this game are positive.",
+      "reviewScoreTooltip": "96% of the 629 user reviews for this game are positive.",
       "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/316610/header.jpg?t=1752583016",
-      "updated": "2025-12-15T08:42:02.189Z"
+      "updated": "2025-12-31T00:00:05.083Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/a-good-snowman-is-hard-to-build/",
     "metacriticData": {
@@ -17767,7 +17767,7 @@
       "genres": [
         "Action Puzzle"
       ],
-      "updated": "2025-12-15T08:42:03.895Z"
+      "updated": "2025-12-31T00:00:06.369Z"
     },
     "key": "a-good-snowman-is-hard-to-build"
   },
@@ -19610,7 +19610,7 @@
       "score": 80,
       "critics": 74,
       "releaseDate": "2023-12-05T00:00:00.000Z",
-      "updated": "2025-12-15T08:42:04.167Z"
+      "updated": "2025-12-31T00:00:06.652Z"
     },
     "steamAppId": 1240060,
     "steamData": {
@@ -19623,9 +19623,9 @@
       "releaseDate": "2023-12-05T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "89% of the 461 user reviews for this game are positive.",
+      "reviewScoreTooltip": "89% of the 466 user reviews for this game are positive.",
       "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1240060/header.jpg?t=1745516629",
-      "updated": "2025-12-15T08:42:04.825Z"
+      "updated": "2025-12-31T00:00:07.263Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/a-highland-song/",
     "metacriticData": {
@@ -19644,7 +19644,7 @@
       "genres": [
         "Metroidvania"
       ],
-      "updated": "2025-12-15T08:42:07.076Z"
+      "updated": "2025-12-31T00:00:09.523Z"
     },
     "key": "a-highland-song"
   },
@@ -49898,7 +49898,7 @@
       "score": 90,
       "critics": 100,
       "releaseDate": "2024-05-09T00:00:00.000Z",
-      "updated": "2025-12-15T08:41:38.062Z"
+      "updated": "2025-12-30T23:59:47.151Z"
     },
     "steamData": {
       "title": "1000xRESIST",
@@ -49910,9 +49910,9 @@
       "releaseDate": "2024-05-09T00:00:00.000Z",
       "reviewScore": 9,
       "reviewScoreDescription": "Overwhelmingly Positive",
-      "reviewScoreTooltip": "96% of the 3,858 user reviews in your language are positive",
+      "reviewScoreTooltip": "96% of the 3,931 user reviews in your language are positive",
       "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1675830/header.jpg?t=1765306189",
-      "updated": "2025-12-15T08:41:38.843Z"
+      "updated": "2025-12-30T23:59:48.104Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/1000xresist",
     "metacriticData": {
@@ -49933,7 +49933,7 @@
       "genres": [
         "Adventure"
       ],
-      "updated": "2025-12-15T08:41:42.133Z"
+      "updated": "2025-12-30T23:59:50.465Z"
     }
   },
   {
@@ -59507,9 +59507,9 @@
       "releaseDate": "2012-05-22T00:00:00.000Z",
       "reviewScore": 6,
       "reviewScoreDescription": "Mostly Positive",
-      "reviewScoreTooltip": "75% of the 3,264 user reviews in your language are positive",
+      "reviewScoreTooltip": "75% of the 3,302 user reviews in your language are positive",
       "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/202750/header.jpg?t=1726554251",
-      "updated": "2025-12-15T08:42:18.416Z"
+      "updated": "2025-12-31T00:00:13.470Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/alan-wakes-american-nightmare",
     "metacriticData": {
@@ -59528,7 +59528,7 @@
       "genres": [
         "Linear Action Adventure"
       ],
-      "updated": "2025-12-15T08:42:19.578Z"
+      "updated": "2025-12-31T00:00:16.229Z"
     }
   },
   {
@@ -59543,7 +59543,7 @@
       "score": 87,
       "critics": 100,
       "releaseDate": "2019-04-05T00:00:00.000Z",
-      "updated": "2025-12-15T08:42:07.407Z"
+      "updated": "2025-12-31T00:00:09.810Z"
     },
     "steamData": {
       "title": "A Short Hike",
@@ -59555,9 +59555,9 @@
       "releaseDate": "2019-07-30T00:00:00.000Z",
       "reviewScore": 9,
       "reviewScoreDescription": "Overwhelmingly Positive",
-      "reviewScoreTooltip": "99% of the 11,579 user reviews in your language are positive",
+      "reviewScoreTooltip": "99% of the 11,664 user reviews in your language are positive",
       "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1055540/header.jpg?t=1755182478",
-      "updated": "2025-12-15T08:42:07.904Z"
+      "updated": "2025-12-31T00:00:10.398Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/a-short-hike",
     "metacriticData": {
@@ -59578,7 +59578,7 @@
       "genres": [
         "Adventure"
       ],
-      "updated": "2025-12-15T08:42:17.619Z"
+      "updated": "2025-12-31T00:00:11.982Z"
     }
   },
   {
@@ -59593,7 +59593,7 @@
       "score": 79,
       "critics": 83,
       "releaseDate": "2022-03-01T00:00:00.000Z",
-      "updated": "2025-12-15T08:42:30.417Z"
+      "updated": "2025-12-31T00:01:25.182Z"
     },
     "steamData": {
       "title": "FAR: Changing Tides",
@@ -59606,9 +59606,9 @@
       "releaseDate": "2022-03-01T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "92% of the 1,881 user reviews in your language are positive",
+      "reviewScoreTooltip": "92% of the 1,896 user reviews in your language are positive",
       "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1570010/header.jpg?t=1755781645",
-      "updated": "2025-12-15T08:42:30.863Z"
+      "updated": "2025-12-31T00:01:25.667Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/far-changing-tides/",
     "metacriticData": {
@@ -59631,7 +59631,7 @@
       "genres": [
         "Linear Action Adventure"
       ],
-      "updated": "2025-12-15T08:42:32.139Z"
+      "updated": "2025-12-31T00:01:27.506Z"
     }
   },
   {
@@ -59646,7 +59646,7 @@
       "score": null,
       "critics": null,
       "releaseDate": "2024-10-28T00:00:00.000Z",
-      "updated": "2025-12-15T08:47:43.568Z"
+      "updated": "2025-12-31T00:01:47.347Z"
     },
     "steamData": {
       "title": "Moon Mystery",
@@ -59659,9 +59659,9 @@
       "releaseDate": "2024-10-28T00:00:00.000Z",
       "reviewScore": 5,
       "reviewScoreDescription": "Mixed",
-      "reviewScoreTooltip": "68% of the 515 user reviews for this game are positive.",
+      "reviewScoreTooltip": "67% of the 519 user reviews for this game are positive.",
       "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1933840/header.jpg?t=1755204808",
-      "updated": "2025-12-15T08:47:44.272Z"
+      "updated": "2025-12-31T00:01:47.824Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/moon-mystery/",
     "metacriticData": {
@@ -59681,7 +59681,7 @@
       "genres": [
         "FPS"
       ],
-      "updated": "2025-12-15T08:47:45.483Z"
+      "updated": "2025-12-31T00:01:49.161Z"
     }
   },
   {
@@ -59696,7 +59696,7 @@
       "score": 72,
       "critics": 56,
       "releaseDate": "2023-08-29T00:00:00.000Z",
-      "updated": "2025-12-15T08:49:36.445Z"
+      "updated": "2025-12-31T00:04:31.815Z"
     },
     "steamData": {
       "title": "Under The Waves",
@@ -59708,9 +59708,9 @@
       "releaseDate": "2023-08-28T00:00:00.000Z",
       "reviewScore": 6,
       "reviewScoreDescription": "Mostly Positive",
-      "reviewScoreTooltip": "77% of the 1,205 user reviews for this game are positive.",
+      "reviewScoreTooltip": "77% of the 1,239 user reviews for this game are positive.",
       "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1975440/header.jpg?t=1725963350",
-      "updated": "2025-12-15T08:49:36.956Z"
+      "updated": "2025-12-31T00:04:32.636Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/under-the-waves/",
     "metacriticData": {
@@ -59732,7 +59732,7 @@
       "genres": [
         "Adventure"
       ],
-      "updated": "2025-12-15T08:49:38.908Z"
+      "updated": "2025-12-31T00:04:34.404Z"
     }
   },
   {
@@ -59746,7 +59746,7 @@
       "score": 84,
       "critics": 92,
       "releaseDate": "2022-01-21T00:00:00.000Z",
-      "updated": "2025-12-15T08:48:52.209Z"
+      "updated": "2025-12-31T00:02:06.249Z"
     },
     "steamAppId": 1574580,
     "steamData": {
@@ -59760,9 +59760,9 @@
       "releaseDate": "2022-01-21T00:00:00.000Z",
       "reviewScore": 9,
       "reviewScoreDescription": "Overwhelmingly Positive",
-      "reviewScoreTooltip": "95% of the 8,962 user reviews in your language are positive",
+      "reviewScoreTooltip": "95% of the 9,039 user reviews in your language are positive",
       "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1574580/header.jpg?t=1762953888",
-      "updated": "2025-12-15T08:48:52.817Z"
+      "updated": "2025-12-31T00:02:06.724Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/strange-horticulture",
     "metacriticData": {
@@ -59785,7 +59785,7 @@
       "genres": [
         "Adventure"
       ],
-      "updated": "2025-12-15T08:48:54.483Z"
+      "updated": "2025-12-31T00:02:08.586Z"
     }
   },
   {
@@ -59807,7 +59807,7 @@
       "reviewScoreDescription": "Mostly Positive",
       "reviewScoreTooltip": "72% of the 123 user reviews for this game are positive.",
       "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1195420/header.jpg?t=1726564894",
-      "updated": "2025-12-15T08:42:35.769Z"
+      "updated": "2025-12-31T00:01:30.676Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/filthy-animals-heist-simulator/",
     "metacriticData": {
@@ -59828,7 +59828,7 @@
       "genres": [
         "Arcade"
       ],
-      "updated": "2025-12-15T08:42:36.956Z"
+      "updated": "2025-12-31T00:01:32.293Z"
     }
   },
   {
@@ -59842,7 +59842,7 @@
       "score": 76,
       "critics": 76,
       "releaseDate": "2021-06-22T00:00:00.000Z",
-      "updated": "2025-12-15T08:42:41.498Z"
+      "updated": "2025-12-31T00:01:37.955Z"
     },
     "steamAppId": 1421790,
     "steamData": {
@@ -59856,9 +59856,9 @@
       "releaseDate": "2021-06-22T00:00:00.000Z",
       "reviewScore": 9,
       "reviewScoreDescription": "Overwhelmingly Positive",
-      "reviewScoreTooltip": "95% of the 1,813 user reviews for this game are positive.",
+      "reviewScoreTooltip": "95% of the 1,817 user reviews for this game are positive.",
       "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1421790/header.jpg?t=1629966091",
-      "updated": "2025-12-15T08:42:41.944Z"
+      "updated": "2025-12-31T00:01:38.616Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/labyrinth-city-pierre-the-maze-detective",
     "metacriticData": {
@@ -59878,7 +59878,7 @@
       "genres": [
         "Adventure"
       ],
-      "updated": "2025-12-15T08:42:44.664Z"
+      "updated": "2025-12-31T00:01:41.538Z"
     }
   },
   {
@@ -59892,7 +59892,7 @@
       "score": null,
       "critics": null,
       "releaseDate": "2016-06-07T00:00:00.000Z",
-      "updated": "2025-12-15T08:42:38.705Z"
+      "updated": "2025-12-31T00:01:34.151Z"
     },
     "steamAppId": 439880,
     "steamData": {
@@ -59906,7 +59906,7 @@
       "reviewScoreDescription": "Positive",
       "reviewScoreTooltip": "85% of the 21 user reviews for this game are positive.",
       "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/439880/header.jpg?t=1750784739",
-      "updated": "2025-12-15T08:42:39.254Z"
+      "updated": "2025-12-31T00:01:34.785Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/heroes-of-loot-2/",
     "metacriticData": {
@@ -59926,7 +59926,7 @@
       "genres": [
         "Action RPG"
       ],
-      "updated": "2025-12-15T08:42:40.413Z"
+      "updated": "2025-12-31T00:01:36.662Z"
     }
   },
   {
@@ -59945,9 +59945,9 @@
       "releaseDate": "2009-09-09T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "93% of the 514 user reviews for this game are positive.",
+      "reviewScoreTooltip": "93% of the 515 user reviews for this game are positive.",
       "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/303680/header.jpg?t=1761855525",
-      "updated": "2025-12-15T08:42:32.846Z"
+      "updated": "2025-12-31T00:01:28.846Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/fate-the-traitor-soul/",
     "metacriticData": {
@@ -59965,7 +59965,7 @@
       "genres": [
         "Action RPG"
       ],
-      "updated": "2025-12-15T08:42:35.040Z"
+      "updated": "2025-12-31T00:01:30.095Z"
     }
   },
   {
@@ -59983,9 +59983,9 @@
       "releaseDate": "2023-11-06T00:00:00.000Z",
       "reviewScore": 5,
       "reviewScoreDescription": "Mixed",
-      "reviewScoreTooltip": "69% of the 209 user reviews for this game are positive.",
+      "reviewScoreTooltip": "69% of the 210 user reviews for this game are positive.",
       "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1793170/header.jpg?t=1727786294",
-      "updated": "2025-12-15T08:47:54.229Z"
+      "updated": "2025-12-31T00:01:55.865Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/racine/",
     "metacriticData": {
@@ -60004,7 +60004,7 @@
       "genres": [
         "Card Battle"
       ],
-      "updated": "2025-12-15T08:47:55.420Z"
+      "updated": "2025-12-31T00:01:57.864Z"
     }
   },
   {
@@ -60023,9 +60023,9 @@
       "releaseDate": "2024-09-04T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "81% of the 739 user reviews for this game are positive.",
+      "reviewScoreTooltip": "81% of the 749 user reviews for this game are positive.",
       "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2852980/header.jpg?t=1763118139",
-      "updated": "2025-12-15T08:47:47.965Z"
+      "updated": "2025-12-31T00:01:50.550Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/necroking/",
     "metacriticData": {
@@ -60044,7 +60044,7 @@
       "genres": [
         "Turn-Based Tactics"
       ],
-      "updated": "2025-12-15T08:47:50.411Z"
+      "updated": "2025-12-31T00:01:51.605Z"
     }
   },
   {
@@ -60978,7 +60978,7 @@
       "score": null,
       "critics": null,
       "releaseDate": "2024-09-10T00:00:00.000Z",
-      "updated": "2025-12-15T08:49:39.293Z"
+      "updated": "2025-12-31T00:04:34.784Z"
     },
     "steamAppId": 2658720,
     "steamData": {
@@ -60991,9 +60991,9 @@
       "releaseDate": "2024-09-10T00:00:00.000Z",
       "reviewScore": 5,
       "reviewScoreDescription": "Mixed",
-      "reviewScoreTooltip": "66% of the 279 user reviews for this game are positive.",
+      "reviewScoreTooltip": "66% of the 285 user reviews for this game are positive.",
       "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2658720/header.jpg?t=1733324123",
-      "updated": "2025-12-15T08:49:40.050Z"
+      "updated": "2025-12-31T00:04:35.550Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/vampire-the-masquerade-reckoning-of-new-york/",
     "metacriticData": {
@@ -61014,7 +61014,7 @@
       "genres": [
         "Visual Novel"
       ],
-      "updated": "2025-12-15T08:49:41.502Z"
+      "updated": "2025-12-31T00:04:37.684Z"
     }
   },
   {
@@ -61028,7 +61028,7 @@
       "score": null,
       "critics": null,
       "releaseDate": "2023-11-30T00:00:00.000Z",
-      "updated": "2025-12-15T08:47:51.935Z"
+      "updated": "2025-12-31T00:01:53.161Z"
     },
     "steamAppId": 2409360,
     "steamData": {
@@ -61043,9 +61043,9 @@
       "releaseDate": "2023-11-30T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "91% of the 712 user reviews for this game are positive.",
+      "reviewScoreTooltip": "91% of the 722 user reviews for this game are positive.",
       "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2409360/header.jpg?t=1732964339",
-      "updated": "2025-12-15T08:47:52.467Z"
+      "updated": "2025-12-31T00:01:53.708Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/pixel-cafe/",
     "metacriticData": {
@@ -61068,7 +61068,7 @@
       "genres": [
         "Strategy"
       ],
-      "updated": "2025-12-15T08:47:53.227Z"
+      "updated": "2025-12-31T00:01:55.004Z"
     }
   },
   {
@@ -61082,7 +61082,7 @@
       "score": 74,
       "critics": 58,
       "releaseDate": "2021-08-27T00:00:00.000Z",
-      "updated": "2025-12-15T08:49:28.643Z"
+      "updated": "2025-12-31T00:02:16.109Z"
     },
     "steamAppId": 1367590,
     "steamData": {
@@ -61095,9 +61095,9 @@
       "releaseDate": "2021-08-26T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "89% of the 2,345 user reviews in your language are positive",
+      "reviewScoreTooltip": "89% of the 2,372 user reviews in your language are positive",
       "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1367590/header.jpg?t=1751362774",
-      "updated": "2025-12-15T08:49:29.318Z"
+      "updated": "2025-12-31T00:02:16.772Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/tormented-souls",
     "metacriticData": {
@@ -61120,7 +61120,7 @@
       "genres": [
         "Survival"
       ],
-      "updated": "2025-12-15T08:49:31.320Z"
+      "updated": "2025-12-31T00:02:18.924Z"
     }
   },
   {
@@ -61134,7 +61134,7 @@
       "score": null,
       "critics": null,
       "releaseDate": "2023-10-16T00:00:00.000Z",
-      "updated": "2025-12-15T08:42:25.608Z"
+      "updated": "2025-12-31T00:01:19.900Z"
     },
     "steamAppId": 2243110,
     "steamData": {
@@ -61148,9 +61148,9 @@
       "releaseDate": "2023-10-16T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "89% of the 638 user reviews for this game are positive.",
+      "reviewScoreTooltip": "89% of the 642 user reviews for this game are positive.",
       "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2243110/header.jpg?t=1758027046",
-      "updated": "2025-12-15T08:42:26.141Z"
+      "updated": "2025-12-31T00:01:20.430Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/empty-shell/",
     "metacriticData": {
@@ -61173,7 +61173,7 @@
       "genres": [
         "Top-Down Shoot-'Em-Up"
       ],
-      "updated": "2025-12-15T08:42:27.478Z"
+      "updated": "2025-12-31T00:01:22.428Z"
     }
   },
   {
@@ -61187,7 +61187,7 @@
       "score": null,
       "critics": null,
       "releaseDate": "2016-10-19T00:00:00.000Z",
-      "updated": "2025-12-15T08:49:33.448Z"
+      "updated": "2025-12-31T00:04:27.987Z"
     },
     "steamAppId": 440420,
     "steamData": {
@@ -61200,9 +61200,9 @@
       "releaseDate": "2016-10-19T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "92% of the 1,014 user reviews for this game are positive.",
+      "reviewScoreTooltip": "93% of the 1,021 user reviews for this game are positive.",
       "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/440420/header.jpg?t=1762268398",
-      "updated": "2025-12-15T08:49:34.115Z"
+      "updated": "2025-12-31T00:04:28.646Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/true-fear-forsaken-souls/",
     "metacriticData": {
@@ -61224,7 +61224,7 @@
       "genres": [
         "Hidden Object"
       ],
-      "updated": "2025-12-15T08:49:36.016Z"
+      "updated": "2025-12-31T00:04:31.264Z"
     }
   },
   {
@@ -62735,7 +62735,7 @@
       "score": 79,
       "critics": 54,
       "releaseDate": "2022-05-23T00:00:00.000Z",
-      "updated": "2025-12-15T08:48:22.483Z"
+      "updated": "2025-12-31T00:02:00.340Z"
     },
     "steamData": {
       "title": "Soda Crisis",
@@ -62746,9 +62746,9 @@
       "releaseDate": "2022-05-23T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "93% of the 2,873 user reviews for this game are positive.",
+      "reviewScoreTooltip": "93% of the 2,878 user reviews for this game are positive.",
       "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1592670/header.jpg?t=1695347944",
-      "updated": "2025-12-15T08:48:23.166Z"
+      "updated": "2025-12-31T00:02:00.832Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/soda-crisis/",
     "metacriticData": {
@@ -62766,7 +62766,7 @@
       "genres": [
         "2D Platformer"
       ],
-      "updated": "2025-12-15T08:48:29.719Z"
+      "updated": "2025-12-31T00:02:02.126Z"
     }
   },
   {
@@ -62781,7 +62781,7 @@
       "score": 75,
       "critics": 68,
       "releaseDate": "2020-10-30T00:00:00.000Z",
-      "updated": "2025-12-15T08:48:46.535Z"
+      "updated": "2025-12-31T00:02:02.756Z"
     },
     "steamData": {
       "title": "South of the Circle",
@@ -62792,9 +62792,9 @@
       "releaseDate": "2022-08-03T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "83% of the 1,184 user reviews for this game are positive.",
+      "reviewScoreTooltip": "83% of the 1,199 user reviews for this game are positive.",
       "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1811040/header.jpg?t=1739183556",
-      "updated": "2025-12-15T08:48:47.409Z"
+      "updated": "2025-12-31T00:02:03.260Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/south-of-the-circle",
     "metacriticData": {
@@ -62818,7 +62818,7 @@
       "genres": [
         "Adventure"
       ],
-      "updated": "2025-12-15T08:48:50.969Z"
+      "updated": "2025-12-31T00:02:05.363Z"
     }
   },
   {
@@ -62832,7 +62832,7 @@
       "score": 76,
       "critics": 68,
       "releaseDate": "2017-07-27T00:00:00.000Z",
-      "updated": "2025-12-15T08:49:17.291Z"
+      "updated": "2025-12-31T00:02:10.894Z"
     },
     "steamAppId": 368390,
     "steamData": {
@@ -62846,9 +62846,9 @@
       "releaseDate": "2017-07-27T00:00:00.000Z",
       "reviewScore": 8,
       "reviewScoreDescription": "Very Positive",
-      "reviewScoreTooltip": "94% of the 1,933 user reviews in your language are positive",
+      "reviewScoreTooltip": "94% of the 1,938 user reviews in your language are positive",
       "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/368390/header.jpg?t=1751347179",
-      "updated": "2025-12-15T08:49:23.449Z"
+      "updated": "2025-12-31T00:02:11.654Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/the-darkside-detective",
     "metacriticData": {
@@ -62871,7 +62871,7 @@
       "genres": [
         "Point-and-Click"
       ],
-      "updated": "2025-12-15T08:49:27.022Z"
+      "updated": "2025-12-31T00:02:14.485Z"
     }
   },
   {
@@ -62885,7 +62885,7 @@
       "score": 73,
       "critics": 46,
       "releaseDate": "2023-05-19T00:00:00.000Z",
-      "updated": "2025-12-15T08:47:06.271Z"
+      "updated": "2025-12-31T00:01:41.917Z"
     },
     "steamAppId": 1451810,
     "steamData": {
@@ -62897,9 +62897,9 @@
       "releaseDate": "2023-05-18T00:00:00.000Z",
       "reviewScore": 5,
       "reviewScoreDescription": "Mixed",
-      "reviewScoreTooltip": "66% of the 713 user reviews for this game are positive.",
+      "reviewScoreTooltip": "66% of the 714 user reviews for this game are positive.",
       "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1451810/header.jpg?t=1751037667",
-      "updated": "2025-12-15T08:47:21.921Z"
+      "updated": "2025-12-31T00:01:42.424Z"
     },
     "metacriticUrl": "https://www.metacritic.com/game/lego-2k-drive/",
     "metacriticData": {
@@ -62922,7 +62922,7 @@
       "genres": [
         "Auto Racing"
       ],
-      "updated": "2025-12-15T08:47:40.946Z"
+      "updated": "2025-12-31T00:01:44.731Z"
     }
   },
   {
@@ -63512,6 +63512,210 @@
         "Metroidvania"
       ],
       "updated": "2025-12-25T21:06:39.747Z"
+    }
+  },
+  {
+    "title": "Trine 4: Definitive Edition",
+    "key": "trine-4-definitive-edition",
+    "openCriticId": "7391/trine-4-the-nightmare-prince",
+    "openCriticData": {
+      "title": "Trine 4: The Nightmare Prince",
+      "cover": "https://img.opencritic.com/game/7391/htssPEFF.jpg",
+      "tier": "strong",
+      "score": 80,
+      "critics": 85,
+      "releaseDate": "2019-10-08T00:00:00.000Z",
+      "updated": "2025-12-31T00:03:36.682Z"
+    },
+    "steamAppId": 690640,
+    "steamData": {
+      "title": "Trine 4: The Nightmare Prince",
+      "description": "The best-selling Trine series returns to the magic of 2.5D! Join three iconic heroes as they set off on a quest through fantastical fairytale landscapes to save the world from the Nightmare Prince’s shadows.",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2019-10-08T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "93% of the 2,831 user reviews in your language are positive",
+      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/690640/64169d6388ed69eb94b7c9d77e4e7fb80f597025/header.jpg?t=1764151777",
+      "updated": "2025-12-31T00:03:51.019Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/trine-4-the-nightmare-prince",
+    "metacriticData": {
+      "title": "Trine 4: The Nightmare Prince",
+      "metacriticScore": 80,
+      "mustPlay": false,
+      "platforms": [
+        "Nintendo Switch",
+        "PC",
+        "Xbox One",
+        "PlayStation 4"
+      ],
+      "releaseDate": "2019-10-08T00:00:00.000Z",
+      "developers": [
+        "Frozenbyte, Inc."
+      ],
+      "publisher": "Modus Games",
+      "genres": [
+        "2D Platformer"
+      ],
+      "updated": "2025-12-31T00:03:53.565Z"
+    }
+  },
+  {
+    "title": "Trine 3: The Artifacts of Power",
+    "key": "trine-3-the-artifacts-of-power",
+    "openCriticId": "1846/trine-3-the-artifacts-of-power",
+    "openCriticData": {
+      "title": "Trine 3: The Artifacts of Power",
+      "cover": "https://img.opencritic.com/game/1846/4ETrpYdk.jpg",
+      "tier": "fair",
+      "score": 67,
+      "critics": 19,
+      "releaseDate": "2015-08-20T00:00:00.000Z",
+      "updated": "2025-12-31T00:02:39.590Z"
+    },
+    "steamAppId": 319910,
+    "steamData": {
+      "title": "Trine 3: The Artifacts of Power",
+      "description": "Trine 3: The Artifacts of Power is a platforming game of action, puzzles and adventure, and the sequel to the award winning Trine and Trine 2. Reunite with the three heroes in an all-new adventure, now for the first time in full 3D!",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2015-08-20T00:00:00.000Z",
+      "reviewScore": 5,
+      "reviewScoreDescription": "Mixed",
+      "reviewScoreTooltip": "60% of the 2,389 user reviews in your language are positive",
+      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/319910/header.jpg?t=1725007208",
+      "updated": "2025-12-31T00:03:01.469Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/trine-3-the-artifacts-of-power/",
+    "metacriticData": {
+      "title": "Trine 3: The Artifacts of Power",
+      "metacriticScore": 68,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "PlayStation 4",
+        "Nintendo Switch"
+      ],
+      "releaseDate": "2015-08-20T00:00:00.000Z",
+      "developers": [
+        "Frozenbyte, Inc."
+      ],
+      "publisher": "Frozenbyte, Inc.",
+      "genres": [
+        "2D Platformer"
+      ],
+      "updated": "2025-12-31T00:03:19.803Z"
+    }
+  },
+  {
+    "title": "Trine Enchanted Edition",
+    "key": "trine-enchanted-edition",
+    "openCriticId": "716/trine-enchanted-edition",
+    "openCriticData": {
+      "title": "Trine: Enchanted Edition",
+      "cover": "https://img.opencritic.com/game/716/boU5zUha.jpg",
+      "tier": "strong",
+      "score": 81,
+      "critics": 75,
+      "releaseDate": "2009-07-02T00:00:00.000Z",
+      "updated": "2025-12-31T00:05:37.754Z"
+    },
+    "steamAppId": 35700,
+    "steamData": {
+      "title": "Trine Enchanted Edition",
+      "description": "Three Heroes make their way through dangers untold in a fairytale world of great castles and strange machinery, featuring physics-based puzzles, beautiful sights and online co-op.",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2009-07-02T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "94% of the 4,555 user reviews in your language are positive",
+      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/35700/header.jpg?t=1758741541",
+      "updated": "2025-12-31T00:05:38.400Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/trine-enchanted-edition/",
+    "metacriticData": {
+      "title": "Trine: Enchanted Edition",
+      "metacriticScore": 80,
+      "mustPlay": false,
+      "platforms": [
+        "Wii U",
+        "PlayStation 4",
+        "PC",
+        "Nintendo Switch"
+      ],
+      "releaseDate": "2015-03-12T00:00:00.000Z",
+      "developers": [
+        "Frozenbyte, Inc."
+      ],
+      "publisher": "Frozenbyte, Inc.",
+      "genres": [
+        "2D Platformer"
+      ],
+      "updated": "2025-12-31T00:05:39.190Z"
+    }
+  },
+  {
+    "title": "Dreamscaper",
+    "key": "dreamscaper",
+    "openCriticId": "10004/dreamscaper",
+    "openCriticData": {
+      "title": "Dreamscaper",
+      "cover": "https://img.opencritic.com/game/10004/6AdmNGsr.jpg",
+      "tier": "mighty",
+      "score": 84,
+      "critics": 89,
+      "releaseDate": "2020-08-13T00:00:00.000Z",
+      "updated": "2025-12-31T00:00:42.710Z"
+    },
+    "steamAppId": 1040420,
+    "steamData": {
+      "title": "Dreamscaper",
+      "description": "By night, delve deep into your subconscious and discover powerful artifacts to conquer your nightmares. By day, explore the city of Redhaven and build relationships to unlock the power of your dreams. DREAM. DIE. WAKE. REPEAT.",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Indie",
+        "RPG"
+      ],
+      "releaseDate": "2021-08-05T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "91% of the 1,315 user reviews in your language are positive",
+      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1040420/header.jpg?t=1729047880",
+      "updated": "2025-12-31T00:01:15.147Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/dreamscaper",
+    "metacriticData": {
+      "title": "Dreamscaper",
+      "metacriticScore": 82,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Nintendo Switch",
+        "Xbox One",
+        "Xbox Series X"
+      ],
+      "releaseDate": "2021-08-05T00:00:00.000Z",
+      "developers": [
+        "Afterburner Studios"
+      ],
+      "publisher": "Afterburner Studios",
+      "genres": [
+        "Action RPG"
+      ],
+      "updated": "2025-12-31T00:01:18.291Z"
     }
   }
 ]
