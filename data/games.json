@@ -10410,6 +10410,9 @@
   },
   {
     "title": "DEATHLOOP",
+    "sameGame": [
+      "Deathloop - Deluxe Edition"
+    ],
     "openCriticId": "10993/deathloop",
     "openCriticData": {
       "title": "Deathloop",
@@ -32520,6 +32523,9 @@
   },
   {
     "title": "RIVE",
+    "sameGame": [
+      "RIVE: Wreck, Hack, Die, Retry"
+    ],
     "openCriticId": "3209/rive",
     "openCriticData": {
       "title": "Rive",
@@ -55422,6 +55428,9 @@
   },
   {
     "title": "DOOM Eternal",
+    "sameGame": [
+      "DOOM Eternal Deluxe Edition"
+    ],
     "key": "doom-eternal",
     "openCriticId": "7410/doom-eternal",
     "openCriticData": {
@@ -63377,6 +63386,9 @@
   },
   {
     "title": "Intravenous 2",
+    "sameGame": [
+      "Intravenous II"
+    ],
     "key": "intravenous-2",
     "steamAppId": 2608270,
     "openCriticId": "17226/intravenous-2",
@@ -63716,6 +63728,53 @@
         "Action RPG"
       ],
       "updated": "2025-12-31T00:01:18.291Z"
+    }
+  },
+  {
+    "title": "Total War: THREE KINGDOMS",
+    "key": "total-war-three-kingdoms",
+    "openCriticId": "7088/total-war-three-kingdoms",
+    "openCriticData": {
+      "title": "Total War: THREE KINGDOMS",
+      "cover": "https://img.opencritic.com/game/7088/7Qyo8cl8.jpg",
+      "tier": "mighty",
+      "score": 85,
+      "critics": 93,
+      "releaseDate": "2019-05-23T00:00:00.000Z",
+      "updated": "2026-01-02T01:34:41.167Z"
+    },
+    "steamAppId": 779340,
+    "steamData": {
+      "title": "Total War: THREE KINGDOMS",
+      "description": "Total War: THREE KINGDOMS is the first in the award-winning series to recreate epic conflict across ancient China. Combining a gripping turn-based campaign of empire-building & conquest with stunning real-time battles, THREE KINGDOMS redefines the series in an age of heroes & legends.",
+      "genres": [
+        "Action",
+        "Strategy"
+      ],
+      "releaseDate": "2019-05-23T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "84% of the 16,992 user reviews in your language are positive",
+      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/779340/header.jpg?t=1763646247",
+      "updated": "2026-01-02T01:34:53.545Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/total-war-three-kingdoms",
+    "metacriticData": {
+      "title": "Total War: Three Kingdoms",
+      "metacriticScore": 85,
+      "mustPlay": false,
+      "platforms": [
+        "PC"
+      ],
+      "releaseDate": "2019-05-23T00:00:00.000Z",
+      "developers": [
+        "Creative Assembly"
+      ],
+      "publisher": "Sega",
+      "genres": [
+        "Real-Time Strategy"
+      ],
+      "updated": "2026-01-02T01:34:56.150Z"
     }
   }
 ]
