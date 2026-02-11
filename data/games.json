@@ -65445,6 +65445,41 @@
   },
   {
     "title": "Technotopia",
-    "key": "technotopia"
+    "key": "technotopia",
+    "openCriticId": "skip",
+    "steamAppId": 2825110,
+    "steamData": {
+      "title": "Technotopia",
+      "description": "Welcome to Technotopia, a city-builder card game. Take on the role of an AI designed to build a perfect city. Build districts, meet the needs of diverse communities and maintain the delicate balance between factions vying for control over you!",
+      "genres": [
+        "Casual",
+        "Indie",
+        "Strategy"
+      ],
+      "releaseDate": "2024-10-23T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "86% of the 520 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2825110/header.jpg?t=1769408118",
+      "updated": "2026-02-11T13:28:09.500Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/technotopia/",
+    "metacriticData": {
+      "title": "Technotopia",
+      "metacriticScore": 85,
+      "mustPlay": false,
+      "platforms": [
+        "PC"
+      ],
+      "releaseDate": "2024-10-23T00:00:00.000Z",
+      "developers": [
+        "Yustas Games Studio"
+      ],
+      "publisher": "Alawar Entertainment",
+      "genres": [
+        "Management"
+      ],
+      "updated": "2026-02-11T13:28:23.672Z"
+    }
   }
 ]
