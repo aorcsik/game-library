@@ -5,6 +5,7 @@ import GameDatabaseService, { Game } from './GameDatabaseService';
 import NotesService, { SanityGameNotes } from './NotesService';
 import ProgressService from './ProgressService';
 import PurchaseService, { PlatformList, PlatformPurchase, PurchasedGame, SinglePurchase } from './PurchaseService';
+import { Platform, PlatformLogos } from './types';
 
 const skipTitle = [
 // Playstation
@@ -76,25 +77,26 @@ export const getGameLibraryData = async (
 
   const addPurchases = <T extends Record<string, PlatformPurchase>>(purchases: T): void => {
     Object.keys(purchases).forEach(key => {
-      const platform = purchases[key].platform;
+      const purchase = purchases[key];
+      const platform = purchase.platform;
       const purchasedGame = purchasedGames.find(p => p.key === key);
       if (purchasedGame) {
-        purchasedGame.purchases.push(purchases[key]);
+        purchasedGame.purchases.push(purchase);
       } else {
         purchasedGames.push({
-          ...database.getGameByTitle(purchases[key].title),
-          purchases: [purchases[key]],
+          ...database.getGameByTitle(purchase.title),
+          purchases: [purchase],
           progress: -1,
         });
       }
       platforms[platform].count++;
-      if (platform === 'playstation' && purchases[key].plus) {
+      if (platform === 'playstation' && purchase.plus) {
         if (platforms[platform].plus === undefined) {
           platforms[platform].plus = 0;
         }
         platforms[platform].plus++;
       }
-      if (platform === 'appstore' && purchases[key].netflix) {
+      if (platform === 'appstore' && purchase.netflix) {
         if (platforms[platform].netflix === undefined) {
           platforms[platform].netflix = 0;
         }
@@ -117,18 +119,69 @@ export const getGameLibraryData = async (
       purchaseDates.forEach(purchase => {
         let game: Game | null = null;
         try {
-          game = database.getGameByTitle(purchase.title, false);
+          game = database.getGameByTitle(purchase.title);
         } catch (error) {
           process.stderr.write(colorize(`${error instanceof Error ? error.message : String(error)}\n`, 'red'));
           process.stderr.write(colorize(`Failed to match game: "${purchase.title}"\n  Platform: ${purchase.platform}\n  Purchase Date: ${purchase.purchaseDate}\n`, 'red'));
         }
         if (game) {
+          let purchasePlatform: Platform;
+          let purchaseLogo: PlatformLogos;
+          if (purchase.platform === 'playstation-plus') {
+            purchasePlatform = 'playstation';
+            purchaseLogo = 'psplus';
+          }
+          else if (purchase.platform === 'appstore-netflix') {
+            purchasePlatform = 'appstore';
+            purchaseLogo = 'netflix';
+          }
+          else if (purchase.platform === 'epic-mobile') {
+            purchasePlatform = 'appstore';
+            purchaseLogo = 'epic';
+          }
+          else {
+            purchasePlatform = purchase.platform;
+            purchaseLogo = purchasePlatform;
+          }
+
           const purchasedGame = purchasedGames.find(p => p.key === game.key);
-          purchasedGame?.purchases.forEach(p => {
-            if (p.platform === purchase.platform && (p.purchaseDate === undefined || p.purchaseDate < purchase.purchaseDate)) {
-              p.purchaseDate = purchase.purchaseDate;
-            }
-          });
+          if (purchasedGame) {
+            purchasedGame.purchases.forEach(p => {
+              if (p.platform === purchasePlatform && (p.purchaseDate === undefined || p.purchaseDate < purchase.purchaseDate)) {
+                p.purchaseDate = purchase.purchaseDate;
+
+                // if we have a non-playstatiopn-plus purchase, it should override a playstation-plus purchase for the same game
+                p.platform = purchase.platform === 'playstation' ? 'playstation' : p.platform;
+                p.plus = p.plus && purchase.platform === 'playstation' ? false : p.plus;
+                p.logo = p.logo === 'psplus' && !p.plus ? 'playstation' : p.logo;
+
+                // similarly, if we have a non-netflix purchase, it should override a netflix purchase for the same game
+                p.platform = purchase.platform === 'appstore' ? 'appstore' : p.platform;
+                p.netflix = p.netflix && purchase.platform === 'appstore' ? false : p.netflix;
+                p.logo = p.logo === 'netflix' && !p.netflix ? 'appstore' : p.logo;
+
+                // similarly, if we have a non-epic-mobile purchase, it should override an epic-mobile purchase for the same game
+                p.logo = p.logo === 'epic' && purchase.platform === 'appstore' ? 'appstore' : p.logo;
+              }
+            });
+          } else {
+            purchasedGames.push({
+              ...game,
+              purchases: [{
+                _type: 'purchase',
+                key: `${game.key}-${purchase.platform}`,
+                title: game.title,
+                platform: purchasePlatform,
+                plus: purchase.platform === 'playstation-plus' ? true : undefined,
+                netflix: purchase.platform === 'appstore-netflix' ? true : undefined,
+                physical: false,
+                cover: purchase.cover || '',
+                logo: purchaseLogo,
+                purchaseDate: purchase.purchaseDate,
+              }],
+              progress: -1,
+            });
+          }
         }
       });
     }

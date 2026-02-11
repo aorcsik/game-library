@@ -39,7 +39,7 @@ const GameRow = ({ game, platforms }: GameRowProps): ReactNode => {
               <div className="game-cover">
                 <Image 
                   className="game-cover-image"
-                  src={cover} 
+                  src={(platform === 'steam' && (game.steamData?.headerImage || cover)) || cover || '/images/pixel.gif'} 
                   alt={`${title} cover`}
                   loading="lazy"
                   width={120}

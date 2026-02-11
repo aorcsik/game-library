@@ -130,6 +130,9 @@ const updateLoop = async (): Promise<void> => {
     if (!game.openCriticId) {
       const openCriticId = await lineReader.askQuestion('OpenCritic ID (skip): ');
       game = database.updateGame(game, { openCriticId: openCriticId || 'skip' });
+    } else if (forceFetchTitle) {
+      const openCriticId = await lineReader.askQuestion(`OpenCritic ID (${game.openCriticId}): `);
+      game = database.updateGame(game, { openCriticId: openCriticId || game.openCriticId });
     }
     let openCriticWasFetched = false;
     const openCriticDataAge = game.openCriticData ? calculateTimeDifference(new Date(game.openCriticData.updated)) : null;
@@ -147,6 +150,9 @@ const updateLoop = async (): Promise<void> => {
 
     if (!game.steamAppId) {
       const steamAppId = await lineReader.askQuestion('Steam App ID (skip): ');
+      game = database.updateGame(game, { steamAppId: !steamAppId || steamAppId === 'skip' ? -1 : parseInt(steamAppId, 10) });
+    } else if (forceFetchTitle) {
+      const steamAppId = await lineReader.askQuestion(`Steam App ID (${game.steamAppId === -1 ? 'skip' : game.steamAppId}): `);
       game = database.updateGame(game, { steamAppId: !steamAppId || steamAppId === 'skip' ? -1 : parseInt(steamAppId, 10) });
     }
     let steamDataWasFetched = false;
@@ -170,6 +176,9 @@ const updateLoop = async (): Promise<void> => {
       const defaultMetacriticUrl = proposedMetacriticUrl || 'skip';
       const metacriticUrl = await lineReader.askQuestion(`Metacritic URL (${defaultMetacriticUrl}): `);
       game = database.updateGame(game, { metacriticUrl: metacriticUrl || defaultMetacriticUrl });
+    } else if (forceFetchTitle) {
+      const metacriticUrl = await lineReader.askQuestion(`Metacritic URL (${game.metacriticUrl}): `);
+      game = database.updateGame(game, { metacriticUrl: metacriticUrl || game.metacriticUrl });
     }
     let metacriticDataWasFetched = false;
     const metacriticDataAge = game.metacriticData ? calculateTimeDifference(new Date(game.metacriticData.updated)) : null;

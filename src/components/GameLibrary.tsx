@@ -185,16 +185,16 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
 
       let groupByLabel = '';
       let groupByCounter: HTMLElement | null = null;
-      let groubByCount = 0;
+      let groupByCount = 0;
 
       // Apply search filtering first (just hide/show with CSS)
       gameItemsArray.sort(compareGames).forEach(item => {
         const gameKey = (item.id || '').toLowerCase().replace(/^game-/, '');
-        if (!searchQuery || gameKey.includes(searchQuery.replace(/\s+/g, '-').toLowerCase())) {
+        if (searchQuery.trim() === '' || gameKey.includes(searchQuery.trim().replace(/\s+/g, '-').toLowerCase())) {
 
           const currentGroupByLabel = getGroupBylabelBySortBy(gameKey);
           if (currentGroupByLabel && currentGroupByLabel !== groupByLabel) {
-            groubByCount = 0;
+            groupByCount = 0;
             groupByLabel = currentGroupByLabel;
             groupByCounter = document.createElement('span');
             groupByCounter.className = 'game-group-counter';
@@ -206,9 +206,9 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
           }
 
           filteredFragment.appendChild(item);
-          groubByCount++;
+          groupByCount++;
           if (groupByCounter) {
-            groupByCounter.textContent = groubByCount.toString();
+            groupByCounter.textContent = groupByCount.toString();
           }
 
           if (!Array.from(item.classList).includes('no-purchases')) {

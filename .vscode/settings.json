@@ -7,5 +7,6 @@
     "typescript",
     "typescriptreact",
     "css"
-  ]
+  ],
+  "search.useIgnoreFiles": false
 }

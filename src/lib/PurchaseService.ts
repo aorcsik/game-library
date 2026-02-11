@@ -67,6 +67,10 @@ type XboxPurchase = Purchase & {
   platform: 'xbox';
 };
 
+type UnverifiedPurchase = Purchase & {
+  platform: Platform;
+};
+
 type PlatformPurchase = SteamPurchase |
 EpicPurchase |
 GOGPurchase |
@@ -74,27 +78,34 @@ AmazonPurchase |
 SwitchPurchase |
 AppStorePurchase |
 PlaystationPurchase |
-XboxPurchase;
+XboxPurchase |
+UnverifiedPurchase;
 
 type PurchasedGame = Game & {
   purchases: PlatformPurchase[];
 };
 
+type ValidTransactionPlatform = Platform | 'playstation-plus' | 'appstore-netflix' | 'epic-mobile';
+
 type SinglePurchase = {
   title: string;
   purchaseDate: string;
   store: string;
-  platform: Platform;
+  platform: ValidTransactionPlatform;
   price: string;
+  hidden?: boolean;
+  cover?: string;
 }
 
 type BundlePurchase = SinglePurchase & {
   games: {
     title: string;
-    platform?: Platform;
+    platform?: ValidTransactionPlatform;
     claimed?: boolean;
     price?: string;
     games?: string[];
+    cover?: string;
+    hidden?: boolean;
   }[];
 };
 
@@ -118,6 +129,8 @@ const savePurchaseDatesToSanity = async (purchaseDates: PurchaseDatesResponse): 
         purchaseDate: record.purchaseDate,
         price: record.price,
         games: record.games,
+        hidden: record.hidden || false,
+        cover: record.cover || '',
       });
     } else {
       sanityTransaction.create({
@@ -127,6 +140,8 @@ const savePurchaseDatesToSanity = async (purchaseDates: PurchaseDatesResponse): 
         platform: record.platform,
         purchaseDate: record.purchaseDate,
         price: record.price,
+        hidden: record.hidden || false,
+        cover: record.cover || '',
       });
     }
   });
@@ -229,12 +244,20 @@ class PurchaseService {
       return `${parsedPrice.toFixed(2)}${parsedCurrency}`;
     };
 
+    const isValidTransactionPlatform = (platform: string): platform is ValidTransactionPlatform => {
+      return isValidPlatform(platform) || 
+        platform === 'playstation-plus' || 
+        platform === 'appstore-netflix' || 
+        platform === 'epic-mobile';
+    };
+
     purchaseDatesData
       .forEach(record => {
         if ('games' in record && Array.isArray(record.games) && record.games.length > 0) {
           record.games
             .filter(game => game.claimed !== false)
-            .filter(game => isValidPlatform(game.platform || record.platform))
+            .filter(game => !game.hidden)
+            .filter(game => isValidTransactionPlatform(game.platform || record.platform))
             .forEach(game => {
               if ('games' in game && Array.isArray(game.games) && game.games.length > 0) {
                 const gamesList = game.games; // TypeScript now knows this is defined
@@ -245,6 +268,7 @@ class PurchaseService {
                     platform: game.platform || record.platform,
                     purchaseDate: record.purchaseDate,
                     price: getGamePrice(game.price || getGamePrice(record.price, record.games.length), gamesList.length),
+                    cover: game.cover || ''
                   });
                 });
               } else {
@@ -254,16 +278,18 @@ class PurchaseService {
                   platform: game.platform || record.platform,
                   purchaseDate: record.purchaseDate,
                   price: game.price || getGamePrice(record.price, record.games.length),
+                  cover: game.cover || ''
                 });
               }
             });
-        } else if (isValidPlatform(record.platform)) {
+        } else if (isValidTransactionPlatform(record.platform) && !record.hidden) {
           purchaseDates.push({
             title: record.title,
             store: record.store,
             platform: record.platform,
             purchaseDate: record.purchaseDate,
             price: record.price,
+            cover: record.cover || ''
           });
         }
       });
