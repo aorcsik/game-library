@@ -34,12 +34,16 @@ const GameRow = ({ game, platforms }: GameRowProps): ReactNode => {
         if (platformPurchase) {
           const { title, cover, collection, physical, logo: platformLogo, purchaseDate } = platformPurchase;
           
+          let purchaseCover = cover;
+          if (platform === 'steam' && game.steamData?.headerImage) purchaseCover = game.steamData.headerImage;
+          if ((platform === 'epic' || platform === 'gog' || platform === 'amazon') && !cover && game.steamData?.headerImage) purchaseCover = game.steamData.headerImage;
+
           return (
             <div className={`game-cell game-card game-${platform}`} key={platform}>
               <div className="game-cover">
                 <Image 
                   className="game-cover-image"
-                  src={(platform === 'steam' && (game.steamData?.headerImage || cover)) || cover || '/images/pixel.gif'} 
+                  src={purchaseCover || '/images/pixel.gif'} 
                   alt={`${title} cover`}
                   loading="lazy"
                   width={120}

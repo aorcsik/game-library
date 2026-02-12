@@ -270,6 +270,7 @@ class PurchaseService {
                     price: getGamePrice(game.price || getGamePrice(record.price, record.games.length), gamesList.length),
                     cover: game.cover || ''
                   });
+                  // console.log(purchaseDates[purchaseDates.length - 1].title, purchaseDates[purchaseDates.length - 1].platform);
                 });
               } else {
                 purchaseDates.push({
@@ -280,6 +281,7 @@ class PurchaseService {
                   price: game.price || getGamePrice(record.price, record.games.length),
                   cover: game.cover || ''
                 });
+                // console.log(purchaseDates[purchaseDates.length - 1].title, purchaseDates[purchaseDates.length - 1].platform);
               }
             });
         } else if (isValidTransactionPlatform(record.platform) && !record.hidden) {
@@ -291,6 +293,7 @@ class PurchaseService {
             price: record.price,
             cover: record.cover || ''
           });
+          // console.log(purchaseDates[purchaseDates.length - 1].title, purchaseDates[purchaseDates.length - 1].platform);
         }
       });
     return purchaseDates;
