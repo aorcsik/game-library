@@ -65481,5 +65481,195 @@
       ],
       "updated": "2026-02-11T13:28:23.672Z"
     }
+  },
+  {
+    "title": "The Darkside Detective A Fumble in the Dark",
+    "key": "the-darkside-detective-a-fumble-in-the-dark",
+    "openCriticId": "11221/the-darkside-detective-a-fumble-in-the-dark",
+    "openCriticData": {
+      "title": "The Darkside Detective: A Fumble in the Dark",
+      "cover": "https://img.opencritic.com/game/11221/dSp3RVtK.jpg",
+      "tier": "strong",
+      "score": 81,
+      "critics": 83,
+      "releaseDate": "2021-04-15T00:00:00.000Z",
+      "updated": "2026-02-13T00:13:04.948Z"
+    },
+    "steamAppId": 795420,
+    "steamData": {
+      "title": "The Darkside Detective: A Fumble in the Dark",
+      "description": "Delouse your room with sage and pack up your travel-sized ouija board, it’s time to re-enter Twin Lakes - America’s 34th most haunted city. Join Detective McQueen as he puzzles his way through 9 chilling cases, risking life and pixelated limb to solve the macabre mysteries that plague the poor town.",
+      "genres": [
+        "Adventure",
+        "Casual",
+        "Indie"
+      ],
+      "releaseDate": "2021-04-15T00:00:00.000Z",
+      "reviewScore": 9,
+      "reviewScoreDescription": "Overwhelmingly Positive",
+      "reviewScoreTooltip": "95% of the 1,527 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/795420/3baf01c4fca026d6037d5c6e2749f6246a7b355c/header.jpg?t=1769536320",
+      "updated": "2026-02-13T00:13:21.099Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/the-darkside-detective-a-fumble-in-the-dark",
+    "metacriticData": {
+      "title": "The Darkside Detective: A Fumble in the Dark",
+      "metacriticScore": 84,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Nintendo Switch",
+        "PlayStation 5",
+        "Xbox One",
+        "PlayStation 4",
+        "iOS (iPhone/iPad)"
+      ],
+      "releaseDate": "2021-04-15T00:00:00.000Z",
+      "developers": [
+        "Spooky Doorway"
+      ],
+      "publisher": "Akupara Games",
+      "genres": [
+        "Point-and-Click"
+      ],
+      "updated": "2026-02-13T00:13:24.345Z"
+    }
+  },
+  {
+    "title": "Hexguardian",
+    "key": "hexguardian",
+    "openCriticId": "16653/hexguardian",
+    "openCriticData": {
+      "title": "Hexguardian",
+      "cover": "https://img.opencritic.com/game/undefined/qwiFO5kX.jpg",
+      "tier": null,
+      "score": null,
+      "critics": null,
+      "releaseDate": "2024-05-02T00:00:00.000Z",
+      "updated": "2026-02-13T00:11:08.301Z"
+    },
+    "steamAppId": 2381740,
+    "steamData": {
+      "title": "Hexguardian",
+      "description": "Hexguardian is a roguelite, tower defense game where you build your own maps with hexagonal tiles! Build and upgrade towers, recruit armies, learn spells, construct wonders and place hexagonal tiles to create a path to enhance your defenses. With plenty of game modes and talents to unlock!",
+      "genres": [
+        "Strategy"
+      ],
+      "releaseDate": "2024-05-02T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "reviewScoreTooltip": "78% of the 594 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2381740/header.jpg?t=1728986537",
+      "updated": "2026-02-13T00:11:17.709Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/hexguardian/",
+    "metacriticData": {
+      "title": "Hexguardian",
+      "metacriticScore": null,
+      "mustPlay": false,
+      "platforms": [
+        "PC"
+      ],
+      "releaseDate": "2024-05-02T00:00:00.000Z",
+      "developers": [
+        "Split Second Games"
+      ],
+      "publisher": "Yogscast Games",
+      "genres": [
+        "Defense"
+      ],
+      "updated": "2026-02-13T00:11:30.522Z"
+    }
+  },
+  {
+    "title": "Legacy of Kain: Defiance (2003)",
+    "key": "legacy-of-kain-defiance-2003",
+    "openCriticId": "skip",
+    "steamAppId": 224300,
+    "steamData": {
+      "title": "Legacy of Kain: Defiance",
+      "description": "Take control of two powerful and highly evolved vampires: Kain, an all-powerful demigod, and Raziel, a demonic angel of death. Each equipped with a legendary sword, Kain & Raziel must battle through a world loaded with conflict and intrigue as they attempt to unravel their destinies and defeat the dark forces that seek to condemn...",
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "releaseDate": "2003-12-17T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "84% of the 1,079 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/224300/header.jpg?t=1769789856",
+      "updated": "2026-02-13T00:12:33.163Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/legacy-of-kain-defiance/",
+    "metacriticData": {
+      "title": "Legacy of Kain: Defiance",
+      "metacriticScore": 75,
+      "mustPlay": false,
+      "platforms": [
+        "PlayStation 2",
+        "Xbox",
+        "PC",
+        "PlayStation 5",
+        "PlayStation 4"
+      ],
+      "releaseDate": "2003-11-11T00:00:00.000Z",
+      "developers": [
+        "Crystal Dynamics"
+      ],
+      "publisher": "Eidos Interactive",
+      "genres": [
+        "Survival"
+      ],
+      "updated": "2026-02-13T00:12:41.093Z"
+    }
+  },
+  {
+    "title": "ELDERBORN",
+    "key": "elderborn",
+    "openCriticId": "8954/elderborn",
+    "openCriticData": {
+      "title": "Elderborn",
+      "cover": null,
+      "tier": "fair",
+      "score": 68,
+      "critics": 50,
+      "releaseDate": "2020-01-30T00:00:00.000Z",
+      "updated": "2026-02-13T00:10:35.600Z"
+    },
+    "steamAppId": 727850,
+    "steamData": {
+      "title": "ELDERBORN",
+      "description": "ELDERBORN - a Metal AF* Slasher with brutal FPP melee combat and souls-like/RPG character progression. In the times of legend, barbarian tribes need a new dark messiah. Be that merciless slayer. Uncover ancient secrets in the city of doom. Forge your own destiny! *Action Fantasy.",
+      "genres": [
+        "Action",
+        "Indie"
+      ],
+      "releaseDate": "2020-01-30T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "87% of the 1,406 user reviews in your language are positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/727850/3d7d351f82a8fa4338286e88a36205a2ccdab608/header.jpg?t=1770340204",
+      "updated": "2026-02-13T00:10:43.681Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/elderborn/",
+    "metacriticData": {
+      "title": "ELDERBORN",
+      "metacriticScore": null,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "PlayStation 5",
+        "Xbox Series X"
+      ],
+      "releaseDate": "2020-01-30T00:00:00.000Z",
+      "developers": [
+        "Hyperstrange"
+      ],
+      "publisher": "Hyperstrange",
+      "genres": [
+        "Action Adventure"
+      ],
+      "updated": "2026-02-13T00:10:51.582Z"
+    }
   }
 ]
