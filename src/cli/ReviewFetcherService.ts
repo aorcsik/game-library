@@ -101,33 +101,81 @@ const fetchSteamData = async (steamAppId: number): Promise<SteamData | null> => 
   };
 };
 
-const fetchMetacriticData = async (metacriticUrl: string): Promise<MetacriticData | null> => {
+const fetchMetacriticData = async (metacriticUrl: string): Promise<MetacriticData> => {
   const metacriticResponse = await fetch(metacriticUrl);
   if (!metacriticResponse.ok) {
     console.error('Error fetching Metacritic page', metacriticUrl);
-    return null;
+    throw new Error('Error fetching Metacritic page');
   }
   const metacriticPage = await metacriticResponse.text();
   const dom = new JSDOM(metacriticPage);
 
   const titleElement: HTMLElement | null = dom.window.document.querySelector('h1');
   const title = titleElement?.textContent?.trim() || null;
-  const metacriticMustPlayElement: HTMLElement | null = dom.window.document.querySelector('.c-productScoreInfo_must');
-  const mustPlay = metacriticMustPlayElement !== null;
-  const metacriticScoreElement: HTMLElement | null = dom.window.document.querySelector('.c-productScoreInfo_scoreNumber');
-  const metacriticScore = metacriticScoreElement?.textContent && parseInt(metacriticScoreElement.textContent, 10) || null;
 
-  const platformElements: HTMLElement[] = Array.from(dom.window.document.querySelectorAll('.c-gameDetails_Platforms .c-gameDetails_listItem'));
-  const platforms = platformElements.map((platformElement) => platformElement?.textContent?.trim() || '').filter(Boolean);
-  const releaseDateElement: HTMLElement | null = dom.window.document.querySelector('.c-gameDetails_ReleaseDate');
-  const releaseDateMatch = releaseDateElement?.textContent?.trim().match(/Initial Release Date:\s*(\w+ \d+, \d+)/);
-  const releaseDate = releaseDateMatch ? new Date(releaseDateMatch[1]).toISOString() : null;
-  const publisherElement: HTMLElement | null = dom.window.document.querySelector('.c-gameDetails_Distributor');
-  const publisher = publisherElement?.textContent?.replace(/Publisher:/, '').trim() || null;
-  const developerElements: HTMLElement[] = Array.from(dom.window.document.querySelectorAll('.c-gameDetails_Developer .c-gameDetails_listItem'));
-  const developers = developerElements.map((devElement) => devElement?.textContent?.trim() || '').filter(Boolean);
-  const genresElements: HTMLElement[] = Array.from(dom.window.document.querySelectorAll('.c-genreList_item'));
-  const genres: string[] = genresElements.map((genreElement) => genreElement?.textContent?.trim() || '').filter(Boolean);
+  if (!title) {
+    console.error('Error parsing Metacritic page, title not found', metacriticUrl);
+    throw new Error('Error parsing Metacritic page, title not found');
+  }
+
+  const metacriticMustPlayElement: HTMLImageElement | null = dom.window.document.querySelector('[data-testid="global-score-badge"] img');
+  const mustPlay = !!metacriticMustPlayElement?.src.includes("must-play");
+  const metacriticScoreElement: HTMLElement | null = dom.window.document.querySelector('[data-testid="global-score"]');
+  const metacriticScoreValue = metacriticScoreElement?.textContent?.trim() || null;
+
+  if (metacriticScoreValue === null) {
+    console.error('Error parsing Metacritic page, score not found', metacriticUrl);
+    throw new Error('Error parsing Metacritic page, score not found');
+  }
+
+  const metacriticScore = metacriticScoreValue === 'tbd' ? -1 : parseInt(metacriticScoreValue, 10);
+
+  let releaseDate: string | null = null;
+  const platforms: string[] = [];
+  const publishers: string[] = [];
+  const developers: string[] = [];
+  const genres: string[] = [];
+  Array.from(dom.window.document.querySelectorAll('.c-product-details__section')).map((section) => {
+    const sectionLabel = section.querySelector(".c-product-details__section__label")?.textContent?.trim();
+    if (sectionLabel === "Initial Release Date:") {
+      const releaseDateMatch = section.textContent?.trim().match(/Initial Release Date:\s*(\w+ \d+, \d+)/);
+      if (releaseDateMatch) {
+        releaseDate = new Date(releaseDateMatch[1]).toISOString();
+      }
+    }
+    if (sectionLabel === "Platforms:") {
+      section.querySelectorAll(".c-product-details__section__list-item").forEach((platformElement) => {
+        const platform = platformElement.textContent?.trim();
+        if (platform) {
+          platforms.push(platform);
+        }
+      });
+    }
+    if (sectionLabel === "Publisher:") {
+      section.querySelectorAll(".c-product-details__section__list-item").forEach((publisherElement) => {
+        const publisher = publisherElement.textContent?.trim();
+        if (publisher) {
+          publishers.push(publisher);
+        }
+      });
+    }
+    if (sectionLabel === "Developer:") {
+      section.querySelectorAll(".c-product-details__section__list-item").forEach((devElement) => {
+        const developer = devElement.textContent?.trim();
+        if (developer) {
+          developers.push(developer);
+        }
+      });
+    }
+    if (sectionLabel === "Genres:") {
+      Array.from(section.querySelectorAll('.c-genreList_item')).forEach((genreElement) => {
+        const genre = genreElement.textContent?.trim();
+        if (genre) {
+          genres.push(genre);
+        }
+      });
+    }
+  });
 
   return {
     title,
@@ -136,7 +184,7 @@ const fetchMetacriticData = async (metacriticUrl: string): Promise<MetacriticDat
     platforms,
     releaseDate,
     developers,
-    publisher,
+    publisher: publishers.join(', '),
     genres,
     updated: new Date().toISOString(),
   };

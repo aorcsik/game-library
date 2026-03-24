@@ -1,9 +1,9 @@
 'use client';
 
-import { JSX } from 'react';
+import { ReactNode } from 'react';
 import { Game } from '../lib/schema';
 
-const MetacriticIndicator = ({game} : {game: Game | null}): JSX.Element => {
+const MetacriticIndicator = ({game} : {game: Game | null}): ReactNode => {
   // Metacritic data
   const metacriticUrl = game?.metacriticUrl ? game.metacriticUrl : null;
   const metacriticScore = game?.metacriticData?.metacriticScore ? game.metacriticData.metacriticScore : null;
@@ -23,11 +23,11 @@ const MetacriticIndicator = ({game} : {game: Game | null}): JSX.Element => {
     </span>;
   }
 
-  return <a href={metacriticUrl} target="_blank" rel="noreferrer" className="metacritic-link">
+  return metacriticScore ? <a href={metacriticUrl} target="_blank" rel="noreferrer" className="metacritic-link">
     <span className={`metacritic-score ${metacriticClass}`}>
-      {metacriticScore || 'tbd'}
+      {metacriticScore === -1 ? 'tbd' : metacriticScore}
     </span>
-  </a>;
+  </a> : null;
 };
 
 export default MetacriticIndicator;

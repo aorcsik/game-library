@@ -1,5 +1,5 @@
 import { colorize, LineReader } from './CommandLineTools';
-import GameDatabaseService from '../lib/GameDatabaseService';
+import GameDatabaseService, { Game } from '../lib/GameDatabaseService';
 import { fetchMetacriticData, fetchOpenCriticData, fetchSteamData } from './ReviewFetcherService';
 import { calculateTimeDifference } from '../lib/tools';
 import CommandLineArgs from './CommandLineArgs';
@@ -89,6 +89,84 @@ const updateProgress = args.get('updateProgress') as boolean;
 const updateNotes = args.get('updateNotes') as boolean;
 const updatePurchaseDates = args.get('updatePurchaseDates') as boolean;
 const skipGameUpdates = args.get('skipGameUpdates') as boolean;
+
+const updateOpenCriticData = async (database: GameDatabaseService, game: Game, forceFetchTitle?: string) => {
+  if (!game.openCriticId) {
+    const openCriticId = await lineReader.askQuestion('OpenCritic ID (skip): ');
+    game = database.updateGame(game, { openCriticId: openCriticId || 'skip' });
+  } else if (forceFetchTitle) {
+    const openCriticId = await lineReader.askQuestion(`OpenCritic ID (${game.openCriticId}): `);
+    game = database.updateGame(game, { openCriticId: openCriticId || game.openCriticId });
+  }
+  let openCriticWasFetched = false;
+  const openCriticDataAge = game.openCriticData ? calculateTimeDifference(new Date(game.openCriticData.updated)) : null;
+  if (game.openCriticId && game.openCriticId.match(/\d+\/.*/) && ((!openCriticDataAge && openCriticDataAge !== 0) || openCriticDataAge > refetchAge)) {
+    const openCriticData = await fetchOpenCriticData(game.openCriticId);
+    if (openCriticData) {
+      game = database.updateGame(game, { openCriticData });
+      openCriticWasFetched = true;
+    }
+  }
+  return {game, fetched: openCriticWasFetched};
+};
+
+const updateSteamData = async (database: GameDatabaseService, game: Game, forceFetchTitle?: string) => {
+  if (!game.steamAppId) {
+    const steamAppId = await lineReader.askQuestion('Steam App ID (skip): ');
+    game = database.updateGame(game, { steamAppId: !steamAppId || steamAppId === 'skip' ? -1 : parseInt(steamAppId, 10) });
+  } else if (forceFetchTitle) {
+    const steamAppId = await lineReader.askQuestion(`Steam App ID (${game.steamAppId === -1 ? 'skip' : game.steamAppId}): `);
+    game = database.updateGame(game, { steamAppId: !steamAppId || steamAppId === 'skip' ? -1 : parseInt(steamAppId, 10) });
+  }
+  let steamDataWasFetched = false;
+  let proposedMetacriticUrl: string | null = null;
+  const steamDataAge = game.steamData ? calculateTimeDifference(new Date(game.steamData.updated)) : null;
+  if (game.steamAppId && game.steamAppId !== -1 && ((!steamDataAge && steamDataAge !== 0) || steamDataAge > refetchAge)) {
+    const steamData = await fetchSteamData(game.steamAppId);
+    if (steamData) {
+      if (steamData.metacriticUrl && !game.metacriticUrl) {
+        proposedMetacriticUrl = steamData.metacriticUrl.replace(/\?.*/, '').replace(/\/pc\//, '/');
+      }
+      delete steamData.metacriticUrl;
+      game = database.updateGame(game, { steamData });
+      steamDataWasFetched = true;
+    }
+  }
+  return {game, fetched: steamDataWasFetched, metacriticUrl: proposedMetacriticUrl};
+};
+
+const updateMetacriticData = async (database: GameDatabaseService, game: Game, forceFetchTitle: string | null, proposedMetacriticUrl: string | null) => {
+  let userInputWasReceived = false;
+  if (!game.metacriticUrl) {
+    const defaultMetacriticUrl = proposedMetacriticUrl || 'skip';
+    const metacriticUrl = await lineReader.askQuestion(`Metacritic URL (${defaultMetacriticUrl}): `);
+    game = database.updateGame(game, { metacriticUrl: metacriticUrl || defaultMetacriticUrl });
+    userInputWasReceived = true;
+  } else if (forceFetchTitle) {
+    const metacriticUrl = await lineReader.askQuestion(`Metacritic URL (${game.metacriticUrl}): `);
+    game = database.updateGame(game, { metacriticUrl: metacriticUrl || game.metacriticUrl });
+    userInputWasReceived = true;
+  }
+  let metacriticDataFetchSuccessful = null;
+  const metacriticDataAge = game.metacriticData ? calculateTimeDifference(new Date(game.metacriticData.updated)) : null;
+  const metascore = game.metacriticData?.metacriticScore;
+  if (game.metacriticUrl && game.metacriticUrl !== 'skip' && (metascore === null || (!metacriticDataAge && metacriticDataAge !== 0) || metacriticDataAge > refetchAge)) {
+    try {
+      const metacriticData = await fetchMetacriticData(game.metacriticUrl);
+      game = database.updateGame(game, { metacriticData });
+      metacriticDataFetchSuccessful = true;
+    } catch (error) {
+      if (!userInputWasReceived) {
+        // If fetching failed and we didn't ask the user for input, it's possible that the URL is incorrect.
+        // Restart the update process and force the user to verify or enter the correct URL.
+        return updateMetacriticData(database, game, game.metacriticUrl || null, proposedMetacriticUrl);
+      }
+      metacriticDataFetchSuccessful = false;
+    }
+  }
+  return {game, fetchSuccessful: metacriticDataFetchSuccessful};
+};
+
 const updateLoop = async (): Promise<void> => {
   const databaseFilePath = `${process.env.SOURCE_DIR}${GameDatabaseService.GAME_DATABASE_FILE}`;
   const database = await GameDatabaseService.initDatabase(databaseFilePath);
@@ -127,70 +205,22 @@ const updateLoop = async (): Promise<void> => {
 
     process.stdout.write(`\n(${i}/${sortedGameKeys.length}) ${colorize(game.title, 'green')}\n`);
 
-    if (!game.openCriticId) {
-      const openCriticId = await lineReader.askQuestion('OpenCritic ID (skip): ');
-      game = database.updateGame(game, { openCriticId: openCriticId || 'skip' });
-    } else if (forceFetchTitle) {
-      const openCriticId = await lineReader.askQuestion(`OpenCritic ID (${game.openCriticId}): `);
-      game = database.updateGame(game, { openCriticId: openCriticId || game.openCriticId });
-    }
-    let openCriticWasFetched = false;
-    const openCriticDataAge = game.openCriticData ? calculateTimeDifference(new Date(game.openCriticData.updated)) : null;
-    if (game.openCriticId && game.openCriticId.match(/\d+\/.*/) && ((!openCriticDataAge && openCriticDataAge !== 0) || openCriticDataAge > refetchAge)) {
-      const openCriticData = await fetchOpenCriticData(game.openCriticId);
-      if (openCriticData) {
-        game = database.updateGame(game, { openCriticData });
-        openCriticWasFetched = true;
-      }
-    }
+    const openCriticUpdateResult = await updateOpenCriticData(database, game, forceFetchTitle);
+    game = openCriticUpdateResult.game;
     const colorizedScore = game.openCriticData?.score ? colorize(`${game.openCriticData.score}`, 'yellow') : colorize('N/A', 'red');
     const colorizedCritics = game.openCriticData?.critics ? colorize(`${game.openCriticData.critics}%`, 'yellow') : colorize('N/A', 'red');
-    process.stdout.write(`OpenCritic Score: ${colorizedScore} (${colorizedCritics}) ${openCriticWasFetched ? '(fetched)' : ''}\n`);
+    process.stdout.write(`OpenCritic Score: ${colorizedScore} (${colorizedCritics}) ${openCriticUpdateResult.fetched ? '(fetched)' : ''}\n`);
 
-
-    if (!game.steamAppId) {
-      const steamAppId = await lineReader.askQuestion('Steam App ID (skip): ');
-      game = database.updateGame(game, { steamAppId: !steamAppId || steamAppId === 'skip' ? -1 : parseInt(steamAppId, 10) });
-    } else if (forceFetchTitle) {
-      const steamAppId = await lineReader.askQuestion(`Steam App ID (${game.steamAppId === -1 ? 'skip' : game.steamAppId}): `);
-      game = database.updateGame(game, { steamAppId: !steamAppId || steamAppId === 'skip' ? -1 : parseInt(steamAppId, 10) });
-    }
-    let steamDataWasFetched = false;
-    let proposedMetacriticUrl: string | null = null;
-    const steamDataAge = game.steamData ? calculateTimeDifference(new Date(game.steamData.updated)) : null;
-    if (game.steamAppId && game.steamAppId !== -1 && ((!steamDataAge && steamDataAge !== 0) || steamDataAge > refetchAge)) {
-      const steamData = await fetchSteamData(game.steamAppId);
-      if (steamData) {
-        if (steamData.metacriticUrl && !game.metacriticUrl) {
-          proposedMetacriticUrl = steamData.metacriticUrl.replace(/\?.*/, '').replace(/\/pc\//, '/');
-        }
-        delete steamData.metacriticUrl;
-        game = database.updateGame(game, { steamData });
-        steamDataWasFetched = true;
-      }
-    }
+    const steamUpdateResult = await updateSteamData(database, game, forceFetchTitle);
+    game = steamUpdateResult.game;
     const colorizedReviewDescription = game.steamData?.reviewScoreDescription ? colorize(game.steamData.reviewScoreDescription, 'yellow') : colorize('N/A', 'red');
-    process.stdout.write(`Steam Score: ${colorizedReviewDescription} ${steamDataWasFetched ? '(fetched)' : ''}\n`);
+    process.stdout.write(`Steam Score: ${colorizedReviewDescription} ${steamUpdateResult.fetched ? '(fetched)' : ''}\n`);
 
-    if (!game.metacriticUrl) {
-      const defaultMetacriticUrl = proposedMetacriticUrl || 'skip';
-      const metacriticUrl = await lineReader.askQuestion(`Metacritic URL (${defaultMetacriticUrl}): `);
-      game = database.updateGame(game, { metacriticUrl: metacriticUrl || defaultMetacriticUrl });
-    } else if (forceFetchTitle) {
-      const metacriticUrl = await lineReader.askQuestion(`Metacritic URL (${game.metacriticUrl}): `);
-      game = database.updateGame(game, { metacriticUrl: metacriticUrl || game.metacriticUrl });
-    }
-    let metacriticDataWasFetched = false;
-    const metacriticDataAge = game.metacriticData ? calculateTimeDifference(new Date(game.metacriticData.updated)) : null;
-    if (game.metacriticUrl && game.metacriticUrl !== 'skip' && ((!metacriticDataAge && metacriticDataAge !== 0) || metacriticDataAge > refetchAge)) {
-      const metacriticData = await fetchMetacriticData(game.metacriticUrl);
-      if (metacriticData) {
-        game = database.updateGame(game, { metacriticData });
-        metacriticDataWasFetched = true;
-      }
-    }
-    const colorizedMetacriticScore = game.metacriticData?.metacriticScore ? colorize(`${game.metacriticData.metacriticScore}`, 'yellow') : colorize('N/A', 'red');
-    process.stdout.write(`Metacritic Score: ${colorizedMetacriticScore} ${metacriticDataWasFetched ? '(fetched)' : ''}\n`);
+    const metacriticUpdateResult = await updateMetacriticData(database, game, forceFetchTitle, steamUpdateResult.metacriticUrl);
+    game = metacriticUpdateResult.game;
+    const colorizedMetacriticScore = game.metacriticData?.metacriticScore !== undefined ? colorize(`${game.metacriticData.metacriticScore === -1 ? 'TBD' : game.metacriticData.metacriticScore}`, 'yellow') : colorize('N/A', 'red');
+    const metacriticFetchStatus = metacriticUpdateResult.fetchSuccessful !== null && `(fetched: ${metacriticUpdateResult.fetchSuccessful ? colorize('ok', 'green') : colorize('failed', 'red')})`;
+    process.stdout.write(`Metacritic Score: ${colorizedMetacriticScore} ${metacriticFetchStatus || ''}\n`);
 
     if (!game.openCriticData && !game.steamData && !game.metacriticData && !game.releaseDate) {
       const releaseDate = await lineReader.askQuestion('Release Date: ');
