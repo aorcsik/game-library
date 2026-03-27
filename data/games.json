@@ -67367,5 +67367,149 @@
       ],
       "updated": "2026-03-24T13:54:56.149Z"
     }
+  },
+  {
+    "title": "Hyper Echelon",
+    "key": "hyper-echelon",
+    "openCriticId": "skip",
+    "steamAppId": 953330,
+    "steamData": {
+      "title": "Hyper Echelon",
+      "description": "The Cyan Galaxy is in peril! Your trusty little star fighter and rag tag squad of wingmen are the only hope against the evil EXODON! Level up from a pea shooter to an offensive powerhouse as you engage in frantic combat across many wondrous locales.",
+      "genres": [
+        "Action",
+        "Indie"
+      ],
+      "releaseDate": "2021-11-10T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "88% of the 50 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/953330/header.jpg?t=1765231177",
+      "updated": "2026-03-27T11:36:14.234Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/hyper-echelon/",
+    "metacriticData": {
+      "title": "Hyper Echelon",
+      "metacriticScore": -1,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Nintendo Switch",
+        "PlayStation 4"
+      ],
+      "releaseDate": "2021-11-11T00:00:00.000Z",
+      "developers": [
+        "GangoGames LLC"
+      ],
+      "publisher": "",
+      "genres": [
+        "Vertical Shoot-'Em-Up"
+      ],
+      "updated": "2026-03-27T11:36:20.756Z"
+    }
+  },
+  {
+    "title": "The Wreck",
+    "key": "the-wreck",
+    "openCriticId": "14435/the-wreck",
+    "openCriticData": {
+      "title": "The Wreck",
+      "cover": "https://img.opencritic.com/game/14435/WTQGSzhz.jpg",
+      "tier": "strong",
+      "score": 75,
+      "critics": 82,
+      "releaseDate": "2023-03-14T00:00:00.000Z",
+      "updated": "2026-03-27T11:37:44.804Z"
+    },
+    "steamAppId": 1687960,
+    "steamData": {
+      "title": "The Wreck",
+      "description": "In this 3D visual novel, follow failed screenwriter Junon as she attempts to make it through the most pivotal day in her life. Relive the past, alter the present, and embrace the future, or without your help, Junon’s story might end in a wreck.",
+      "genres": [
+        "Adventure",
+        "Casual",
+        "Indie"
+      ],
+      "releaseDate": "2023-03-14T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "91% of the 202 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1687960/header.jpg?t=1762953793",
+      "updated": "2026-03-27T11:37:53.440Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/the-wreck/",
+    "metacriticData": {
+      "title": "The Wreck",
+      "metacriticScore": -1,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Nintendo Switch",
+        "PlayStation 5",
+        "PlayStation 4",
+        "Xbox Series X",
+        "Xbox One"
+      ],
+      "releaseDate": "2023-03-14T00:00:00.000Z",
+      "developers": [
+        "The Pixel Hunt"
+      ],
+      "publisher": "The Pixel Hunt",
+      "genres": [
+        "Adventure"
+      ],
+      "updated": "2026-03-27T11:38:02.405Z"
+    }
+  },
+  {
+    "title": "Deep Sky Derelicts",
+    "key": "deep-sky-derelicts",
+    "openCriticId": "6704/deep-sky-derelicts",
+    "openCriticData": {
+      "title": "Deep Sky Derelicts",
+      "cover": "https://img.opencritic.com/game/6704/4SSfZ1tQ.jpg",
+      "tier": "fair",
+      "score": 71,
+      "critics": 39,
+      "releaseDate": "2018-09-26T00:00:00.000Z",
+      "updated": "2026-03-27T11:34:57.727Z"
+    },
+    "steamAppId": 698640,
+    "steamData": {
+      "title": "Deep Sky Derelicts",
+      "description": "Deep Sky Derelicts is an original combination of turn-based strategy and RPG, enriched with tactical card combat and popular roguelike elements. Explore derelict alien ships, fight, loot and upgrade your gear, all in distinctive retro-futuristic comic book aesthetic style.",
+      "genres": [
+        "Indie",
+        "RPG",
+        "Strategy"
+      ],
+      "releaseDate": "2018-09-26T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "reviewScoreTooltip": "73% of the 1,964 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/698640/header.jpg?t=1765383822",
+      "updated": "2026-03-27T11:35:19.602Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/deep-sky-derelicts/",
+    "metacriticData": {
+      "title": "Deep Sky Derelicts",
+      "metacriticScore": 70,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "PlayStation 4",
+        "Nintendo Switch",
+        "Xbox One"
+      ],
+      "releaseDate": "2018-09-26T00:00:00.000Z",
+      "developers": [
+        "Snowhound Games"
+      ],
+      "publisher": "1C Entertainment",
+      "genres": [
+        "JRPG"
+      ],
+      "updated": "2026-03-27T11:35:38.742Z"
+    }
   }
 ]
