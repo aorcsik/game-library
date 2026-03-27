@@ -119,7 +119,7 @@ const fetchMetacriticData = async (metacriticUrl: string): Promise<MetacriticDat
   }
 
   const metacriticMustPlayElement: HTMLImageElement | null = dom.window.document.querySelector('[data-testid="global-score-badge"] img');
-  const mustPlay = !!metacriticMustPlayElement?.src.includes("must-play");
+  const mustPlay = !!metacriticMustPlayElement?.src.includes('must-play');
   const metacriticScoreElement: HTMLElement | null = dom.window.document.querySelector('[data-testid="global-score"]');
   const metacriticScoreValue = metacriticScoreElement?.textContent?.trim() || null;
 
@@ -136,38 +136,38 @@ const fetchMetacriticData = async (metacriticUrl: string): Promise<MetacriticDat
   const developers: string[] = [];
   const genres: string[] = [];
   Array.from(dom.window.document.querySelectorAll('.c-product-details__section')).map((section) => {
-    const sectionLabel = section.querySelector(".c-product-details__section__label")?.textContent?.trim();
-    if (sectionLabel === "Initial Release Date:") {
+    const sectionLabel = section.querySelector('.c-product-details__section__label')?.textContent?.trim();
+    if (sectionLabel === 'Initial Release Date:') {
       const releaseDateMatch = section.textContent?.trim().match(/Initial Release Date:\s*(\w+ \d+, \d+)/);
       if (releaseDateMatch) {
         releaseDate = new Date(releaseDateMatch[1]).toISOString();
       }
     }
-    if (sectionLabel === "Platforms:") {
-      section.querySelectorAll(".c-product-details__section__list-item").forEach((platformElement) => {
+    if (sectionLabel === 'Platforms:') {
+      section.querySelectorAll('.c-product-details__section__list-item').forEach((platformElement) => {
         const platform = platformElement.textContent?.trim();
         if (platform) {
           platforms.push(platform);
         }
       });
     }
-    if (sectionLabel === "Publisher:") {
-      section.querySelectorAll(".c-product-details__section__list-item").forEach((publisherElement) => {
+    if (sectionLabel === 'Publisher:') {
+      section.querySelectorAll('.c-product-details__section__list-item').forEach((publisherElement) => {
         const publisher = publisherElement.textContent?.trim();
         if (publisher) {
           publishers.push(publisher);
         }
       });
     }
-    if (sectionLabel === "Developer:") {
-      section.querySelectorAll(".c-product-details__section__list-item").forEach((devElement) => {
+    if (sectionLabel === 'Developer:') {
+      section.querySelectorAll('.c-product-details__section__list-item').forEach((devElement) => {
         const developer = devElement.textContent?.trim();
         if (developer) {
           developers.push(developer);
         }
       });
     }
-    if (sectionLabel === "Genres:") {
+    if (sectionLabel === 'Genres:') {
       Array.from(section.querySelectorAll('.c-genreList_item')).forEach((genreElement) => {
         const genre = genreElement.textContent?.trim();
         if (genre) {

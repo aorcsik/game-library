@@ -90,7 +90,12 @@ const updateNotes = args.get('updateNotes') as boolean;
 const updatePurchaseDates = args.get('updatePurchaseDates') as boolean;
 const skipGameUpdates = args.get('skipGameUpdates') as boolean;
 
-const updateOpenCriticData = async (database: GameDatabaseService, game: Game, forceFetchTitle?: string) => {
+type DataUpdateResult = {
+  game: Game;
+  fetched: boolean;
+};
+
+const updateOpenCriticData = async (database: GameDatabaseService, game: Game, forceFetchTitle?: string): Promise<DataUpdateResult> => {
   if (!game.openCriticId) {
     const openCriticId = await lineReader.askQuestion('OpenCritic ID (skip): ');
     game = database.updateGame(game, { openCriticId: openCriticId || 'skip' });
@@ -110,7 +115,7 @@ const updateOpenCriticData = async (database: GameDatabaseService, game: Game, f
   return {game, fetched: openCriticWasFetched};
 };
 
-const updateSteamData = async (database: GameDatabaseService, game: Game, forceFetchTitle?: string) => {
+const updateSteamData = async (database: GameDatabaseService, game: Game, forceFetchTitle?: string): Promise<DataUpdateResult & { metacriticUrl: string | null }> => {
   if (!game.steamAppId) {
     const steamAppId = await lineReader.askQuestion('Steam App ID (skip): ');
     game = database.updateGame(game, { steamAppId: !steamAppId || steamAppId === 'skip' ? -1 : parseInt(steamAppId, 10) });
@@ -135,7 +140,7 @@ const updateSteamData = async (database: GameDatabaseService, game: Game, forceF
   return {game, fetched: steamDataWasFetched, metacriticUrl: proposedMetacriticUrl};
 };
 
-const updateMetacriticData = async (database: GameDatabaseService, game: Game, forceFetchTitle: string | null, proposedMetacriticUrl: string | null) => {
+const updateMetacriticData = async (database: GameDatabaseService, game: Game, forceFetchTitle: string | null, proposedMetacriticUrl: string | null): Promise<{ game: Game; fetchSuccessful: boolean | null }> => {
   let userInputWasReceived = false;
   if (!game.metacriticUrl) {
     const defaultMetacriticUrl = proposedMetacriticUrl || 'skip';
@@ -155,7 +160,7 @@ const updateMetacriticData = async (database: GameDatabaseService, game: Game, f
       const metacriticData = await fetchMetacriticData(game.metacriticUrl);
       game = database.updateGame(game, { metacriticData });
       metacriticDataFetchSuccessful = true;
-    } catch (error) {
+    } catch {
       if (!userInputWasReceived) {
         // If fetching failed and we didn't ask the user for input, it's possible that the URL is incorrect.
         // Restart the update process and force the user to verify or enter the correct URL.
