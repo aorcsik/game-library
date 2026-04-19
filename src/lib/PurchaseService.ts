@@ -253,6 +253,11 @@ class PurchaseService {
 
     purchaseDatesData
       .forEach(record => {
+        if (record.purchaseDate === undefined) {
+          console.warn(colorize(`Skipping record with missing purchaseDate: ${record.title} (${record.store})`, 'red'));
+          return;
+        }
+
         if ('games' in record && Array.isArray(record.games) && record.games.length > 0) {
           record.games
             .filter(game => game.claimed !== false)
@@ -262,6 +267,7 @@ class PurchaseService {
               if ('games' in game && Array.isArray(game.games) && game.games.length > 0) {
                 const gamesList = game.games; // TypeScript now knows this is defined
                 gamesList.forEach(subGame => {
+                  // console.log(`add ${subGame} purchased on ${record.purchaseDate}`);
                   purchaseDates.push({
                     title: subGame,
                     store: `${record.store} - ${record.title} - ${game.title}`,
@@ -273,6 +279,7 @@ class PurchaseService {
                   // console.log(purchaseDates[purchaseDates.length - 1].title, purchaseDates[purchaseDates.length - 1].platform);
                 });
               } else {
+                // console.log(`add ${game.title} purchased on ${record.purchaseDate}`);
                 purchaseDates.push({
                   title: game.title,
                   store: `${record.store} - ${record.title}`,
@@ -285,6 +292,7 @@ class PurchaseService {
               }
             });
         } else if (isValidTransactionPlatform(record.platform) && !record.hidden) {
+          // console.log(`add ${record.title} purchased on ${record.purchaseDate}`);
           purchaseDates.push({
             title: record.title,
             store: record.store,
