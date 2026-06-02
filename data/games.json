@@ -69502,5 +69502,90 @@
       ],
       "updated": "2026-05-29T08:03:45.390Z"
     }
+  },
+  {
+    "title": "Synergy",
+    "key": "synergy",
+    "steamAppId": 1989070,
+    "openCriticId": "18452/synergy",
+    "openCriticData": {
+      "title": "Synergy",
+      "cover": "https://img.opencritic.com/game/18452/wtWcmFle.jpg",
+      "tier": null,
+      "score": null,
+      "critics": null,
+      "releaseDate": "2025-04-16T00:00:00.000Z",
+      "updated": "2026-06-02T23:10:55.848Z"
+    },
+    "steamData": {
+      "title": "Synergy",
+      "description": "An ecosystem City Builder in a unique world. Build your settlement, manage your workers and optimize your resources. Analyzing your environment, spreading new plants, and harvesting them are key to prosperity.",
+      "genres": [
+        "Indie",
+        "Simulation",
+        "Strategy"
+      ],
+      "releaseDate": "2025-04-16T00:00:00.000Z",
+      "reviewScore": 6,
+      "reviewScoreDescription": "Mostly Positive",
+      "reviewScoreTooltip": "79% of the 658 user reviews for this game are positive.",
+      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1989070/header.jpg?t=1745317904",
+      "updated": "2026-06-02T23:10:56.567Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/synergy/",
+    "metacriticData": {
+      "title": "Synergy",
+      "metacriticScore": 82,
+      "mustPlay": false,
+      "platforms": [
+        "PC"
+      ],
+      "releaseDate": "2025-04-16T00:00:00.000Z",
+      "developers": [
+        "Leikir Studio"
+      ],
+      "publisher": "Goblinz Studio",
+      "genres": [
+        "Management"
+      ],
+      "updated": "2026-06-02T23:11:09.944Z"
+    }
+  },
+  {
+    "title": "Luxman Moonlit Market",
+    "key": "luxman-moonlit-market",
+    "steamAppId": 3642440,
+    "openCriticId": "skip",
+    "steamData": {
+      "title": "Luxman Moonlit Market",
+      "description": "A strategic tile-placement roguelike with Balatro-inspired power-up management. Join the flamboyant Uncle Luxman to build the ultimate traveling carnival, master attraction placement, unleash wild charm synergies, and satisfy dynamic crowd demands.",
+      "genres": [
+        "Strategy"
+      ],
+      "releaseDate": "2026-03-03T00:00:00.000Z",
+      "reviewScore": 7,
+      "reviewScoreDescription": "Positive",
+      "reviewScoreTooltip": "83% of the 18 user reviews for this game are positive.",
+      "headerImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3642440/3e0b1790f4da19cdee16fd0f13c0f77843303260/header.jpg?t=1778505721",
+      "updated": "2026-06-02T23:10:26.318Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/luxman-moonlit-market/",
+    "metacriticData": {
+      "title": "Luxman Moonlit Market",
+      "metacriticScore": -1,
+      "mustPlay": false,
+      "platforms": [
+        "PC"
+      ],
+      "releaseDate": "2026-03-03T00:00:00.000Z",
+      "developers": [
+        "Inner Sight Games"
+      ],
+      "publisher": "Goblinz Studio",
+      "genres": [
+        "Turn-Based Strategy"
+      ],
+      "updated": "2026-06-02T23:10:32.694Z"
+    }
   }
 ]
