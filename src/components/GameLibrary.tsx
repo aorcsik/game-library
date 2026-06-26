@@ -7,6 +7,7 @@ import { useState, useEffect, useCallback, useRef, useLayoutEffect } from 'react
 import GameGrid from '../components/GameGrid';
 import GameGridHeader from '../components/GameGridHeader';
 import SortControl from '../components/SortControl';
+import FilterControl from '../components/FilterControl';
 import SearchControl from '../components/SearchControl';
 import FontAwesomeIcon from './FontAwesomeIcon';
 import { getPurchaseDate, getReleaseDate } from './GameRowTitle';
@@ -46,11 +47,42 @@ const sortByOptions: Record<SortByType, string> = {
 const sortByFieldName = 'sort_by';
 const sortDirectionFieldName = 'direction';
 const searchFieldName = 'q';
+const openCriticTierFieldName = 'opencritic_tier';
+const metacriticScoreFieldName = 'metacritic_score';
+
+type FilterFieldName = typeof openCriticTierFieldName | typeof metacriticScoreFieldName;
+
+const selectableFilterOptions: Record<FilterFieldName, { label: string; options: Record<string, string> }> = {
+  opencritic_tier: {
+    label: 'OpenCritic Tier',
+    options: {
+      mighty: 'Mighty',
+      strong: 'Strong',
+      fair: 'Fair',
+      weak: 'Weak',
+      'n-a': 'N/A'
+    }
+  },
+  metacritic_score: {
+    label: 'Metacritic Score',
+    options: {
+      '90_plus': '90+',
+      '75_89': '75-89',
+      '50_74': '50-74',
+      '50_minus': '50-',
+      tbd: 'tbd'
+    }
+  }
+};
 
 export default function GameLibrary({ purchasedGames, platforms: initialPlatforms }: GameLibraryProps): React.JSX.Element {  
   const [sortBy, setSortBy] = useState<SortByType>('gameTitle');
   const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
   const [searchQuery, setSearchQuery] = useState('');
+  const [selectedFilters, setSelectedFilters] = useState<Record<FilterFieldName, string>>({
+    opencritic_tier: '',
+    metacritic_score: ''
+  });
   const [gameCount, setGameCount] = useState(purchasedGames.filter(game => game.purchases.length > 0).length);
   const [platforms, setPlatforms] = useState(initialPlatforms);
   const [hasMounted, setHasMounted] = useState(false);
@@ -74,7 +106,7 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
       if (gameDataSet.steamReviewScoreDescription.match(/user reviews/)) {
         gameDataSet.steamReviewScore = '-1';
       }
-      gameDataSet.metacriticScore = game.metacriticData?.metacriticScore ? game.metacriticData.metacriticScore.toString() : '';
+      gameDataSet.metacriticScore = game.metacriticData?.metacriticScore === undefined || game.metacriticData.metacriticScore === null ? '' : game.metacriticData.metacriticScore.toString();
       gameDataSet.progress = gameProgress;
       gameDataSet.completed = game.completed || gameProgress === '100' ? '1' : '0';
       gameDataSet.rating = game.rating === undefined ? '-1000' : game.rating.toString();
@@ -82,6 +114,40 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
     }
     return gameDataSet;
   }, [purchasedGames]);
+
+  const getMetacriticScoreBucket = useCallback((scoreValue: string): string => {
+    const score = Number(scoreValue);
+    if (scoreValue === '' || isNaN(score) || score < 0) {
+      return 'tbd';
+    }
+    if (score >= 90) {
+      return '90_plus';
+    }
+    if (score >= 75) {
+      return '75_89';
+    }
+    if (score >= 50) {
+      return '50_74';
+    }
+    return '50_minus';
+  }, []);
+
+  const matchesSelectedFilters = useCallback((gameDataSet: Record<string, string>): boolean => {
+    const selectedOpenCriticTier = selectedFilters[openCriticTierFieldName];
+    if (selectedOpenCriticTier && (gameDataSet.openCriticTier || '').toLowerCase() !== selectedOpenCriticTier) {
+      return false;
+    }
+
+    const selectedMetacriticBucket = selectedFilters[metacriticScoreFieldName];
+    if (selectedMetacriticBucket) {
+      const gameMetacriticBucket = getMetacriticScoreBucket(gameDataSet.metacriticScore || '');
+      if (selectedMetacriticBucket !== gameMetacriticBucket) {
+        return false;
+      }
+    }
+
+    return true;
+  }, [selectedFilters, getMetacriticScoreBucket]);
 
   const compareGames = useCallback((a: Element, b: Element): number => {
     let sortValue = 0;
@@ -190,7 +256,9 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
       // Apply search filtering first (just hide/show with CSS)
       gameItemsArray.sort(compareGames).forEach(item => {
         const gameKey = (item.id || '').toLowerCase().replace(/^game-/, '');
-        if (searchQuery.trim() === '' || gameKey.includes(searchQuery.trim().replace(/\s+/g, '-').toLowerCase())) {
+        const gameDataSet = getGameDataSetByKey(gameKey);
+        const matchesSearchQuery = searchQuery.trim() === '' || gameKey.includes(searchQuery.trim().replace(/\s+/g, '-').toLowerCase());
+        if (matchesSearchQuery && matchesSelectedFilters(gameDataSet)) {
 
           const currentGroupByLabel = getGroupBylabelBySortBy(gameKey);
           if (currentGroupByLabel && currentGroupByLabel !== groupByLabel) {
@@ -230,11 +298,11 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
       setPlatforms(filteredPlatforms);
     });
 
-  }, [initialPlatforms, searchQuery, compareGames, getGroupBylabelBySortBy]); 
+  }, [initialPlatforms, searchQuery, compareGames, getGroupBylabelBySortBy, getGameDataSetByKey, matchesSelectedFilters]); 
 
   const updateQueryParams = useCallback((key: string, value: string) => {
     const searchParams = new URLSearchParams(window.location.search);
-    if ([sortByFieldName, sortDirectionFieldName, searchFieldName].includes(key)) {
+    if ([sortByFieldName, sortDirectionFieldName, searchFieldName, openCriticTierFieldName, metacriticScoreFieldName].includes(key)) {
       if (value === '') {
         searchParams.delete(key);
       } else {
@@ -273,6 +341,16 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
     updateQueryParams(searchFieldName, '');
   }, [updateQueryParams]);
 
+  const handleFilterChange = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
+    const filterName = e.target.name as FilterFieldName;
+    const filterValue = e.target.value;
+    setSelectedFilters(previousFilters => ({
+      ...previousFilters,
+      [filterName]: filterValue
+    }));
+    updateQueryParams(filterName, filterValue);
+  }, [updateQueryParams]);
+
   useEffect(() => {
     
     const searchParams = new URLSearchParams(window.location.search);
@@ -289,6 +367,13 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
     if (searchQueryParam) {
       setSearchQuery(searchQueryParam);
     }
+
+    const openCriticTierParam = searchParams.get(openCriticTierFieldName) || '';
+    const metacriticScoreParam = searchParams.get(metacriticScoreFieldName) || '';
+    setSelectedFilters({
+      opencritic_tier: openCriticTierParam,
+      metacritic_score: metacriticScoreParam
+    });
 
     detachedGameGridRef.current = document.createElement('div');
 
@@ -329,6 +414,20 @@ export default function GameLibrary({ purchasedGames, platforms: initialPlatform
               sortByFieldName={sortByFieldName}
               sortDirectionFieldName={sortDirectionFieldName}
             />
+            <FilterControl
+              name="filter"
+              selectableOptions={selectableFilterOptions}
+              handleFilterChange={handleFilterChange}
+            >
+              <FilterControl.FilterOption
+                name={openCriticTierFieldName}
+                value={selectedFilters[openCriticTierFieldName]}
+              />
+              <FilterControl.FilterOption
+                name={metacriticScoreFieldName}
+                value={selectedFilters[metacriticScoreFieldName]}
+              />
+            </FilterControl>
             <SearchControl
               searchQuery={searchQuery}
               handleSearch={handleSearch}

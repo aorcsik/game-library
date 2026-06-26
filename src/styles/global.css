@@ -842,6 +842,10 @@ footer {
   .controls .sort {
     flex-basis: 30%;
   }
+
+  .controls .filter {
+    flex-basis: 40%;
+  }
   .game-grid {
     & .game-cell {
       width: 2.5rem;
@@ -906,8 +910,22 @@ footer {
     }
   }
 
+  .controls .filter {
+    flex-basis: 100%;
+    margin: 0;
+    width: 100%;
+    margin-top: .5rem;
+    display: none;
+
+    & .button {
+      flex-grow: 1;
+      min-width: 0;
+    }
+  }
+
   #toggle-controls:checked ~ header .sort,
-  #toggle-controls:checked ~ header .search-field {
+  #toggle-controls:checked ~ header .search-field,
+  #toggle-controls:checked ~ header .filter {
     display: flex;
   }
   #toggle-controls.hidden-checkbox:checked {
