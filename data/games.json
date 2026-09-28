@@ -69736,5 +69736,484 @@
       ],
       "updated": "2026-09-19T13:20:49.702Z"
     }
+  },
+  {
+    "title": "Tick Tock: A Tale for Two",
+    "key": "tick-tock-a-tale-for-two",
+    "steamAppId": 790740,
+    "openCriticId": "7443/tick-tock-a-tale-for-two",
+    "openCriticData": {
+      "title": "Tick Tock: A Tale for Two",
+      "cover": null,
+      "tier": null,
+      "score": null,
+      "critics": null,
+      "releaseDate": "2019-03-07T00:00:00.000Z",
+      "updated": "2026-09-28T08:09:55.251Z"
+    },
+    "steamData": {
+      "title": "Tick Tock: A Tale for Two",
+      "description": "You and your friend are trapped in a mystical world. As time ebbs away you must solve increasingly complex puzzles to escape. Cooperation is key as neither of you have the full picture! Play on two devices, local or remotely, all you need is a voice connection.",
+      "genres": [
+        "Adventure",
+        "Casual",
+        "Indie"
+      ],
+      "releaseDate": "2019-03-07T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "90% of the 3,650 user reviews in your language are positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/790740/header.jpg?t=1790146243",
+      "updated": "2026-09-28T08:09:55.831Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/tick-tock-a-tale-for-two/",
+    "metacriticData": {
+      "title": "Tick Tock: A Tale for Two",
+      "metacriticScore": -1,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Nintendo Switch",
+        "iOS (iPhone/iPad)"
+      ],
+      "releaseDate": "2019-12-05T00:00:00.000Z",
+      "developers": [],
+      "publisher": "",
+      "genres": [
+        "Adventure"
+      ],
+      "updated": "2026-09-28T08:10:23.726Z"
+    }
+  },
+  {
+    "title": "Lacuna",
+    "key": "lacuna",
+    "steamAppId": -1,
+    "openCriticId": "14691/lacuna",
+    "openCriticData": {
+      "title": "Lacuna",
+      "cover": "https://img.opencritic.com/game/14691/mCC429cu.jpg",
+      "tier": null,
+      "score": null,
+      "critics": null,
+      "releaseDate": "2021-05-20T00:00:00.000Z",
+      "updated": "2026-09-28T08:13:03.427Z"
+    },
+    "steamData": {
+      "title": "Lacuna – A Sci-Fi Noir Adventure",
+      "description": "A murder. A hack. A bombing. All it takes to plunge the solar system into war – unless you do something about it. Help CDI agent Neil Conrad make a string of increasingly difficult decisions in this modern dialog-driven adventure set in a gorgeous 2D sci-fi noir universe.",
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2021-05-20T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "92% of the 728 user reviews in your language are positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1364100/bec4c314c42aab918b88a5e7530d7d74d23235eb/header.jpg?t=1779296611",
+      "updated": "2026-09-28T08:06:03.872Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/lacuna-a-sci-fi-noir-adventure/",
+    "metacriticData": {
+      "title": "Lacuna - A Sci-Fi Noir Adventure",
+      "metacriticScore": 86,
+      "mustPlay": false,
+      "platforms": [
+        "Nintendo Switch",
+        "PlayStation 4",
+        "PC",
+        "Xbox Series X",
+        "Xbox One",
+        "iOS (iPhone/iPad)"
+      ],
+      "releaseDate": "2021-05-20T00:00:00.000Z",
+      "developers": [],
+      "publisher": "Assemble Entertainment",
+      "genres": [
+        "Adventure"
+      ],
+      "updated": "2026-09-28T08:13:19.215Z"
+    }
+  },
+  {
+    "title": "Miniatures",
+    "key": "miniatures",
+    "steamAppId": 2428840,
+    "openCriticId": "17663/miniatures",
+    "openCriticData": {
+      "title": "Miniatures",
+      "cover": null,
+      "tier": "fair",
+      "score": 74,
+      "critics": 67,
+      "releaseDate": "2024-11-13T00:00:00.000Z",
+      "updated": "2026-09-28T08:07:30.865Z"
+    },
+    "steamData": {
+      "title": "Miniatures",
+      "description": "A collection of surreal tales, each connected to a stored-away object from childhood. Pick one to follow the moon, feed a hungry lizard or build a peculiar cabinet.",
+      "genres": [
+        "Adventure",
+        "Casual",
+        "Indie"
+      ],
+      "releaseDate": "2024-11-14T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "95% of the 349 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2428840/c7460afa1391e32c9c6f57167208bb592e7ccb12/header.jpg?t=1790146345",
+      "updated": "2026-09-28T08:07:31.528Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/miniatures/",
+    "metacriticData": {
+      "title": "Miniatures",
+      "metacriticScore": 67,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Nintendo Switch",
+        "iOS (iPhone/iPad)"
+      ],
+      "releaseDate": "2024-11-14T00:00:00.000Z",
+      "developers": [],
+      "publisher": "",
+      "genres": [
+        "Adventure"
+      ],
+      "updated": "2026-09-28T08:07:43.338Z"
+    }
+  },
+  {
+    "title": "Archons",
+    "key": "archons",
+    "steamAppId": 2779570,
+    "openCriticId": "skip",
+    "steamData": {
+      "title": "Archons",
+      "description": "Archons is a Roguelite/Survivor game where you control two characters, the Archons- simultaneously! Customize your build and abilities to fit your own unique playstyle and blast your way through enemy parasites and bosses!",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Indie",
+        "RPG"
+      ],
+      "releaseDate": "2024-12-06T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "92% of the 406 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2779570/2af2f6faed0ec52601f2f3c11717d6a5e7a6503a/header.jpg?t=1787825311",
+      "updated": "2026-09-28T08:04:26.747Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/archons/",
+    "metacriticData": {
+      "title": "Archons",
+      "metacriticScore": -1,
+      "mustPlay": false,
+      "platforms": [
+        "PC"
+      ],
+      "releaseDate": "2024-12-06T00:00:00.000Z",
+      "developers": [],
+      "publisher": "",
+      "genres": [
+        "Top-Down Shoot-'Em-Up"
+      ],
+      "updated": "2026-09-28T08:04:33.483Z"
+    }
+  },
+  {
+    "title": "Mindcop",
+    "key": "mindcop",
+    "openCriticId": "17658/mindcop",
+    "openCriticData": {
+      "title": "Mindcop",
+      "cover": "https://img.opencritic.com/game/17658/ubF3RaS4.jpg",
+      "tier": "strong",
+      "score": 81,
+      "critics": 82,
+      "releaseDate": "2024-11-14T00:00:00.000Z",
+      "updated": "2026-09-28T08:07:02.338Z"
+    },
+    "steamAppId": 1517180,
+    "steamData": {
+      "title": "Mindcop",
+      "description": "Mindcop is a non-linear „whodunnit“ detective game. It mixes a story driven adventure with real-time puzzle gaming. As the infamous Mindcop, you can dive into the minds of your suspects to uncover their secrets and unravel their lies.",
+      "genres": [
+        "Adventure",
+        "Casual",
+        "Indie"
+      ],
+      "releaseDate": "2024-11-14T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "94% of the 416 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1517180/header.jpg?t=1744981735",
+      "updated": "2026-09-28T08:07:14.685Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/mindcop",
+    "metacriticData": {
+      "title": "Mindcop",
+      "metacriticScore": 87,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Nintendo Switch",
+        "PlayStation 5"
+      ],
+      "releaseDate": "2024-11-14T00:00:00.000Z",
+      "developers": [],
+      "publisher": "Dear Villagers",
+      "genres": [
+        "Adventure"
+      ],
+      "updated": "2026-09-28T08:07:17.186Z"
+    }
+  },
+  {
+    "title": "RiMS Racing",
+    "key": "rims-racing",
+    "openCriticId": "11838/rims-racing",
+    "openCriticData": {
+      "title": "RiMS Racing",
+      "cover": "https://img.opencritic.com/game/11838/xQdWayLx.jpg",
+      "tier": "fair",
+      "score": 68,
+      "critics": 36,
+      "releaseDate": "2021-08-19T00:00:00.000Z",
+      "updated": "2026-09-28T08:09:05.893Z"
+    },
+    "steamAppId": 1346010,
+    "steamData": {
+      "title": "RiMS Racing",
+      "description": "The first motorbike simulation that combines a realistic racing challenge with engineering and mechanics! Ride the world's most powerful motorbikes and optimise their performance by swapping out parts and analysing data in real time.",
+      "genres": [
+        "Racing"
+      ],
+      "releaseDate": "2021-08-19T00:00:00.000Z",
+      "reviewScore": 5,
+      "reviewScoreDescription": "Mixed",
+      "reviewScoreTooltip": "65% of the 411 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1346010/header.jpg?t=1759396011",
+      "updated": "2026-09-28T08:09:22.116Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/rims-racing/",
+    "metacriticData": {
+      "title": "RiMS Racing",
+      "metacriticScore": 71,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Nintendo Switch",
+        "PlayStation 5",
+        "Xbox Series X",
+        "PlayStation 4",
+        "Xbox One"
+      ],
+      "releaseDate": "2021-08-24T00:00:00.000Z",
+      "developers": [],
+      "publisher": "Nacon",
+      "genres": [
+        "Auto Racing"
+      ],
+      "updated": "2026-09-28T08:09:35.883Z"
+    }
+  },
+  {
+    "title": "Hue",
+    "key": "hue",
+    "openCriticId": "1655/hue",
+    "openCriticData": {
+      "title": "Hue",
+      "cover": "https://img.opencritic.com/game/1655/n6XDA0TN.jpg",
+      "tier": "strong",
+      "score": 79,
+      "critics": 79,
+      "releaseDate": "2016-08-30T00:00:00.000Z",
+      "updated": "2026-09-28T08:05:36.239Z"
+    },
+    "steamAppId": 383270,
+    "steamData": {
+      "title": "Hue",
+      "description": "Hue is a vibrant, award-winning puzzle-adventure, where you alter the world by changing its background colour.",
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "releaseDate": "2016-08-30T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "92% of the 1,685 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/383270/header.jpg?t=1749640466",
+      "updated": "2026-09-28T08:05:48.153Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/hue",
+    "metacriticData": {
+      "title": "Hue",
+      "metacriticScore": 77,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "PlayStation 4",
+        "Xbox One",
+        "PlayStation Vita",
+        "Nintendo Switch",
+        "iOS (iPhone/iPad)"
+      ],
+      "releaseDate": "2016-08-30T00:00:00.000Z",
+      "developers": [],
+      "publisher": "Curve Digital",
+      "genres": [
+        "Action Puzzle"
+      ],
+      "updated": "2026-09-28T08:05:50.409Z"
+    }
+  },
+  {
+    "title": "Mechabellum",
+    "key": "mechabellum",
+    "openCriticId": "18462/mechabellum",
+    "openCriticData": {
+      "title": "Mechabellum",
+      "cover": "https://img.opencritic.com/game/undefined/fVwPyHN4.jpg",
+      "tier": null,
+      "score": null,
+      "critics": null,
+      "releaseDate": "2024-09-24T00:00:00.000Z",
+      "updated": "2026-09-28T08:06:20.843Z"
+    },
+    "steamAppId": 669330,
+    "steamData": {
+      "title": "Mechabellum",
+      "description": "Command massive armies in this epic mech auto-battler. Draft your troops, customize your units, master your formations, and crush enemies in spectacular 3D battles. All strategy, no clickfest. Outsmart opponents in 1v1, 2v2, free-for-all, or Survival Mode.",
+      "genres": [
+        "Action",
+        "Indie",
+        "Massively%20Multiplayer",
+        "Simulation",
+        "Strategy"
+      ],
+      "releaseDate": "2024-09-26T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "84% of the 9,911 user reviews in your language are positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/669330/845165412668d8b6765b3fa19639ea7c5b1d892c/header_alt_assets_2.jpg?t=1790094413",
+      "updated": "2026-09-28T08:06:33.019Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/mechabellum/",
+    "metacriticData": {
+      "title": "Mechabellum",
+      "metacriticScore": -1,
+      "mustPlay": false,
+      "platforms": [
+        "PC"
+      ],
+      "releaseDate": "2024-09-26T00:00:00.000Z",
+      "developers": [],
+      "publisher": "",
+      "genres": [
+        "Strategy"
+      ],
+      "updated": "2026-09-28T08:06:45.666Z"
+    }
+  },
+  {
+    "title": "Astrea Six Sided Oracles",
+    "key": "astrea-six-sided-oracles",
+    "openCriticId": "15523/astrea-six-sided-oracles",
+    "openCriticData": {
+      "title": "Astrea: Six-Sided Oracles",
+      "cover": "https://img.opencritic.com/game/15523/MxznXwd7.jpg",
+      "tier": "mighty",
+      "score": 87,
+      "critics": 100,
+      "releaseDate": "2023-09-21T00:00:00.000Z",
+      "updated": "2026-09-28T08:04:49.498Z"
+    },
+    "steamAppId": 1755830,
+    "steamData": {
+      "title": "Astrea: Six-Sided Oracles",
+      "description": "Astrea is a DICE-deck-building roguelike that flips the script on deckbuilders by using dice instead of cards and a unique dual “damage” system: Purification vs Corruption. Build a dice pool strong enough to purify Astrea's out-of-control corruption and save the Star System.",
+      "genres": [
+        "Casual",
+        "Indie",
+        "Strategy"
+      ],
+      "releaseDate": "2023-09-21T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "94% of the 1,054 user reviews in your language are positive",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1755830/0a034d750802c570aabef6af262c154ae46fedfa/header.jpg?t=1788710368",
+      "updated": "2026-09-28T08:05:08.862Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/astrea-six-sided-oracles",
+    "metacriticData": {
+      "title": "Astrea: Six-Sided Oracles",
+      "metacriticScore": 85,
+      "mustPlay": false,
+      "platforms": [
+        "PC",
+        "Nintendo Switch",
+        "PlayStation 5",
+        "Xbox Series X",
+        "Xbox One",
+        "PlayStation 4"
+      ],
+      "releaseDate": "2023-09-21T00:00:00.000Z",
+      "developers": [],
+      "publisher": "Akupara Games",
+      "genres": [
+        "Card Battle"
+      ],
+      "updated": "2026-09-28T08:05:11.533Z"
+    }
+  },
+  {
+    "title": "My Friend Peppa Pig - Complete Edition",
+    "key": "my-friend-peppa-pig-complete-edition",
+    "openCriticId": "12229/my-friend-peppa-pig",
+    "openCriticData": {
+      "title": "My Friend Peppa Pig",
+      "cover": "https://img.opencritic.com/game/12229/KxPxGrtL.jpg",
+      "tier": "strong",
+      "score": 78,
+      "critics": 45,
+      "releaseDate": "2021-10-22T00:00:00.000Z",
+      "updated": "2026-09-28T08:07:59.517Z"
+    },
+    "steamAppId": 1635590,
+    "steamData": {
+      "title": "My Friend Peppa Pig",
+      "description": "Start a fun-filled adventure with Peppa Pig. Create your style, meet favorite characters, and play in Peppa’s world. It’s just like being in the TV show!",
+      "genres": [
+        "Adventure"
+      ],
+      "releaseDate": "2021-10-22T00:00:00.000Z",
+      "reviewScore": 8,
+      "reviewScoreDescription": "Very Positive",
+      "reviewScoreTooltip": "89% of the 775 user reviews for this game are positive.",
+      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1635590/header.jpg?t=1727090021",
+      "updated": "2026-09-28T08:08:11.892Z"
+    },
+    "metacriticUrl": "https://www.metacritic.com/game/my-friend-peppa-pig/",
+    "metacriticData": {
+      "title": "My Friend Peppa Pig",
+      "metacriticScore": -1,
+      "mustPlay": false,
+      "platforms": [
+        "PlayStation 4",
+        "Nintendo Switch",
+        "PC",
+        "Xbox One",
+        "PlayStation 5",
+        "Xbox Series X"
+      ],
+      "releaseDate": "2021-10-22T00:00:00.000Z",
+      "developers": [],
+      "publisher": "Outright Games",
+      "genres": [
+        "Adventure"
+      ],
+      "updated": "2026-09-28T08:08:49.205Z"
+    }
   }
 ]
