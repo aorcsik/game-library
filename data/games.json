@@ -13338,7 +13338,7 @@
     "key": "emperor-rise-of-the-middle-kingdom"
   },
   {
-    "title": "ENDER LILIES : Quietus of the Knights",
+    "title": "ENDER LILIES: Quietus of the Knights",
     "openCriticId": "10886/ender-lilies-quietus-of-the-knights",
     "openCriticData": {
       "title": "ENDER LILIES: Quietus of the Knights",
@@ -42488,42 +42488,6 @@
       "updated": "2026-09-19T13:25:57.041Z"
     },
     "key": "dungeon-of-the-endless"
-  },
-  {
-    "title": "ENDER LILIES: Quietus of the Knights",
-    "openCriticId": "10886/ender-lilies-quietus-of-the-knights",
-    "openCriticData": {
-      "title": "ENDER LILIES: Quietus of the Knights",
-      "cover": "https://img.opencritic.com/game/10886/ZHkYO9Wa.jpg",
-      "tier": "mighty",
-      "score": 85,
-      "critics": 89,
-      "releaseDate": "2021-01-21T00:00:00.000Z",
-      "updated": "2025-03-29T23:52:42.247Z"
-    },
-    "steamAppId": 1369630,
-    "steamData": {
-      "title": "ENDER LILIES: Quietus of the Knights",
-      "description": "ENDER LILIES is a dark fantasy 2D action RPG about unraveling the mysteries of a destroyed kingdom. On this sorrowful journey, encounter horrific enemies against whom a moment of inattention could be fatal. Overcome these hardships and seek the truth with the help of fallen knights.",
-      "genres": [
-        "Action",
-        "Indie",
-        "RPG"
-      ],
-      "releaseDate": "2021-06-21T00:00:00.000Z",
-      "reviewScore": 8,
-      "reviewScoreDescription": "Very Positive",
-      "headerImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1369630/header.jpg?t=1713433509",
-      "updated": "2025-03-29T23:52:42.771Z"
-    },
-    "metacriticUrl": "https://www.metacritic.com/game/ender-lilies-quietus-of-the-knights",
-    "metacriticData": {
-      "title": "ENDER LILIES: Quietus of the Knights",
-      "releaseDate": "2021-06-22T00:00:00.000Z",
-      "metacriticScore": 86,
-      "updated": "2025-03-29T23:52:44.475Z"
-    },
-    "key": "enderliliesquietusoftheknights"
   },
   {
     "title": "HUMANKIND™",

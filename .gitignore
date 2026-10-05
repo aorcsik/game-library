@@ -1,20 +1,23 @@
 .DS_Store
 node_modules
-
+.wrangler
 .env
-.next
+.dev.vars
+.migration
+.backups
 
-/out
-/build
-/docs/build
-/docs/fontawesome
-/public/manifest.json
+tsconfig.cli.tsbuildinfo
 
 /data/notes.json
 /data/profile.json
 /data/game-titles.json
 /data/purchases
 /data/progress
+/data/games
+/data/games.json
 
-tsconfig.cli.tsbuildinfo
-data/games
+/public/assets/*.js
+/public/assets/*.js.map
+
+# Legacy files
+/legacy

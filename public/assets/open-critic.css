@@ -1,0 +1,76 @@
+:root {
+  --open-critic-tier-weak-icon: url("https://img.opencritic.com/mighty-man/weak-head.png");
+  --open-critic-tier-weak-color: #80b06a;
+  --open-critic-tier-fair-icon: url("https://img.opencritic.com/mighty-man/fair-head.png");
+  --open-critic-tier-fair-color: #619FCA;
+  --open-critic-tier-strong-icon: url("https://img.opencritic.com/mighty-man/strong-head.png");
+  --open-critic-tier-strong-color: #911CAE;
+  --open-critic-tier-mighty-icon: url("https://img.opencritic.com/mighty-man/mighty-head.png");
+  --open-critic-tier-mighty-color: #fc430a;
+}
+
+.open-critic-logo {
+  background-image: url("/assets/platforms/open-critic-logo.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  overflow: hidden;
+  padding-left: 20px;
+}
+
+.open-critic-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.open-critic-tier {
+  width: 20px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-left: 20px;
+  overflow: hidden;
+}
+
+.open-critic-score {
+  width: 1.25rem;
+  text-align: center;
+  font-weight: bold;
+  font-family: var(--number-font);
+}
+
+.tier-fair {
+  .open-critic-tier {
+    background-image: var(--open-critic-tier-fair-icon);
+  }
+  .open-critic-score {
+    color: var(--open-critic-tier-fair-color);
+  }
+}
+.tier-strong {
+  .open-critic-tier {
+    background-image: var(--open-critic-tier-strong-icon);
+  }
+  .open-critic-score {
+    color: var(--open-critic-tier-strong-color);
+  }
+}
+.tier-weak {
+  .open-critic-tier {
+    background-image: var(--open-critic-tier-weak-icon);
+  }
+  .open-critic-score {
+    color: var(--open-critic-tier-weak-color);
+  }
+}
+.tier-mighty {
+  .open-critic-tier {
+    background-image: var(--open-critic-tier-mighty-icon);
+  }
+  .open-critic-score {
+    color: var(--open-critic-tier-mighty-color);
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "game-library",
+  "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": { "version": "24" },
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  // Same path as on the host, so absolute paths in .env (SOURCE_DIR) keep working.
+  "workspaceMount": "source=${localWorkspaceFolder},target=${localWorkspaceFolder},type=bind",
+  "workspaceFolder": "${localWorkspaceFolder}",
+  // Provides FONTAWESOME_PACKAGE_TOKEN for npm and CLOUDFLARE_API_TOKEN / CLOUDFLARE_ACCOUNT_ID for wrangler.
+  "runArgs": ["--env-file", "${localWorkspaceFolder}/.env"],
+  // Linux node_modules in volumes so they don't clash with the macOS ones on the host.
+  "mounts": [
+    "source=game-library-node_modules,target=${localWorkspaceFolder}/node_modules,type=volume"
+  ],
+  "postCreateCommand": "sudo chown vscode:vscode node_modules && npm ci",
+  "forwardPorts": [8790, 3000],
+  "portsAttributes": {
+    "8790": { "label": "Worker (wrangler dev)" }
+  },
+  "containerEnv": {
+    "WRANGLER_SEND_METRICS": "false"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "cloudflare.cloudflare-workers-bindings-extension"
+      ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "game-library",
+  "main": "src/index.tsx",
+  "compatibility_date": "2026-09-27",
+  "assets": { "directory": "./public" },
+  // watch_dir also drives worker reloads when a custom build is set, so it must cover all of src.
+  "build": { "command": "npm run build:client", "watch_dir": "src" },
+  // 8787 is used by another worker project.
+  "dev": { "port": 8790 },
+  // `wrangler dev` uses a local KV simulation (.wrangler/state).
+  "kv_namespaces": [
+    { "binding": "GAMES", "id": "de192eb9b00e42e4bc29d7553255b407" },
+    // Fetched game data, rebuilt independently of the manually recorded transactions.
+    { "binding": "GAMEDB", "id": "0a814d47cfda446fa1c590da6cf773b5" },
+    // Personal state history is isolated from transactions and fetched metadata.
+    { "binding": "GAMESTATE", "id": "5f34df9118ac4e64b3b03483d5f65819" }
+  ],
+  "env": {
+    // `npm run dev:remote`: worker runs locally, but reads/writes the real (production) KV namespace.
+    "remote": {
+      "kv_namespaces": [
+        { "binding": "GAMES", "id": "de192eb9b00e42e4bc29d7553255b407", "remote": true },
+        { "binding": "GAMEDB", "id": "0a814d47cfda446fa1c590da6cf773b5", "remote": true },
+        { "binding": "GAMESTATE", "id": "5f34df9118ac4e64b3b03483d5f65819", "remote": true }
+      ]
+    }
+  }
+}

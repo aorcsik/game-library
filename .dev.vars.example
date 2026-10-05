@@ -1,0 +1,4 @@
+ADMIN_USER=admin
+ADMIN_PASSWORD=change-me
+# Local-only metadata fetcher (scraping endpoints + /refresh page). Never set in production.
+FETCHER=on

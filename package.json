@@ -1,51 +1,35 @@
 {
-  "name": "game-library",
-  "version": "2.0.0",
-  "main": "src/pages/index.tsx",
+  "name": "game-library-worker",
+  "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "cp ./src/assets/manifest.dev.json ./public/manifest.json && next dev",
-    "build": "cp ./src/assets/manifest.prod.json ./public/manifest.json && next build",
-    "next:lint": "next lint",
-    "lint": "eslint . --ext .ts,.tsx,.js,.css",
-    "update": "tsc -p tsconfig.cli.json && node --env-file .env ./build/cli/update_game.js"
+    "build:client": "esbuild src/client/admin.ts --bundle --format=esm --target=es2022 --sourcemap --outfile=public/assets/admin.js",
+    "predev": "node scripts/backup-kv.ts",
+    "dev": "wrangler dev",
+    "dev:remote": "wrangler dev -e remote",
+    "kv:push": "node scripts/sync-kv.ts push",
+    "kv:pull": "node scripts/sync-kv.ts pull",
+    "kv:restore": "node scripts/restore-kv.ts",
+    "publish:games": "node scripts/publish-games.ts",
+    "refresh:game-meta": "node scripts/refresh-game-meta.ts",
+    "typecheck": "tsc -p tsconfig.json && tsc -p src/client/tsconfig.json && tsc -p scripts/tsconfig.json",
+    "deploy": "wrangler deploy"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/aorcsik/game-library.git"
-  },
-  "author": "aorcsik@gmail.com",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/aorcsik/game-library/issues"
-  },
-  "homepage": "https://github.com/aorcsik/game-library#readme",
-  "description": "",
   "dependencies": {
-    "@fortawesome/fontawesome-pro": "^7.0.0",
-    "@fortawesome/fontawesome-svg-core": "^7.0.0",
-    "@fortawesome/pro-regular-svg-icons": "^7.0.0",
-    "@fortawesome/pro-solid-svg-icons": "^7.0.0",
-    "@fortawesome/react-fontawesome": "^0.2.3",
-    "@sanity/client": "^7.22.1",
-    "next": "^16.2.6",
-    "react": "^19.2.6",
-    "react-circular-progressbar": "^2.2.0",
-    "react-dom": "^19.2.6"
+    "devalue": "^6.0.2",
+    "hono": "^4.13.10",
+    "linkedom": "^0.18.13"
   },
   "devDependencies": {
-    "@eslint/css": "^0.10.0",
-    "@eslint/js": "^9.24.0",
-    "@next/eslint-plugin-next": "^16.2.6",
-    "@types/jsdom": "^28.0.3",
-    "@types/react": "^19.2.15",
-    "eslint": "^9.39.4",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^7.1.1",
-    "jsdom": "^29.1.1",
-    "typescript": "^6.0.3",
-    "typescript-eslint": "^8.60.0"
+    "@cloudflare/workers-types": "^5.20260928.1",
+    "@types/node": "^24.19.0",
+    "esbuild": "^0.28.2",
+    "typescript": "^7.0.2",
+    "wrangler": "^4.142.0"
   },
-  "overrides": {
-    "postcss": "^8.5.15"
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "esbuild@0.28.1": true,
+    "workerd@1.20260926.1": true
   }
 }

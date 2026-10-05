@@ -1,0 +1,22 @@
+:root {
+  --steam-review-negative: #D4572F;
+  --steam-review-mixed: #D1B67F;
+  --steam-review-positive: #1573B5;
+}
+
+.steam-review {
+  text-decoration: none;
+  text-transform: uppercase;
+  display: block;
+  font-size: .6rem;
+
+  &.mixed {
+    color: var(--steam-review-mixed);
+  }
+  &.positive {
+    color: var(--steam-review-positive);
+  }
+  &.negative {
+    color: var(--steam-review-negative);
+  }
+}
