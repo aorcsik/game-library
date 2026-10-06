@@ -18,6 +18,7 @@ tsconfig.cli.tsbuildinfo
 
 /public/assets/*.js
 /public/assets/*.js.map
+/public/assets/fontawesome/
 
 # Legacy files
 /legacy

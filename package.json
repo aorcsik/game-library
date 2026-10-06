@@ -3,7 +3,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build:client": "esbuild src/client/admin.ts --bundle --format=esm --target=es2022 --sourcemap --outfile=public/assets/admin.js",
+    "build:client": "node scripts/build-fontawesome.mjs && esbuild src/client/admin.ts --bundle --format=esm --target=es2022 --sourcemap --outfile=public/assets/admin.js",
+    "postinstall": "node scripts/build-fontawesome.mjs",
+    "update:rates": "node --experimental-strip-types scripts/update-exchange-rates.ts",
+    "migrate:transaction-references": "node --experimental-strip-types scripts/migrate-transaction-references.ts",
     "predev": "node scripts/backup-kv.ts",
     "dev": "wrangler dev",
     "dev:remote": "wrangler dev -e remote",
@@ -16,6 +19,10 @@
     "deploy": "wrangler deploy"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-pro": "^7.3.1",
+    "@fortawesome/fontawesome-svg-core": "^7.3.1",
+    "@fortawesome/pro-regular-svg-icons": "^7.3.1",
+    "@fortawesome/pro-solid-svg-icons": "^7.3.1",
     "devalue": "^6.0.2",
     "hono": "^4.13.10",
     "linkedom": "^0.18.13"

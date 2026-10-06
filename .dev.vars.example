@@ -1,4 +1,6 @@
 ADMIN_USER=admin
 ADMIN_PASSWORD=change-me
+# Keep this local-only marker in .dev.vars to disable authentication locally.
+LOCAL_DEV=on
 # Local-only metadata fetcher (scraping endpoints + /refresh page). Never set in production.
 FETCHER=on

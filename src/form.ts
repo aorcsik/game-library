@@ -18,11 +18,13 @@ export type ItemDraft = {
   game: string;
   aliases: string;
   contents: string;
+  notes: string;
 };
 
 export type TransactionDraft = {
   date: string;
   title: string;
+  referenceId: string;
   store: string;
   price: string;
   notes: string;
@@ -32,13 +34,14 @@ export type TransactionDraft = {
 
 export const emptyItem = (values: Partial<ItemDraft> = {}): ItemDraft => ({
   title: '', platform: '', kind: '', service: '', systems: [], price: '', cover: '',
-  physical: false, unclaimed: false, hidden: false, game: '', aliases: '', contents: '',
+  physical: false, unclaimed: false, hidden: false, game: '', aliases: '', contents: '', notes: '',
   ...values,
 });
 
 export const toDraft = (tx: Transaction): TransactionDraft => ({
   date: tx.date,
   title: tx.title,
+  referenceId: tx.referenceId ?? '',
   store: tx.store,
   price: formatPrice(tx.price),
   notes: tx.notes ?? '',
@@ -57,6 +60,7 @@ export const toDraft = (tx: Transaction): TransactionDraft => ({
     game: item.game ?? '',
     aliases: (item.aliases ?? []).join('\n'),
     contents: (item.contents ?? []).join('\n'),
+    notes: item.notes ?? '',
   })),
 });
 
@@ -74,6 +78,7 @@ export const readDraft = (form: FormData): TransactionDraft => {
   return {
     date: text('date'),
     title: text('title'),
+    referenceId: text('referenceId'),
     store: text('store'),
     price: text('price'),
     notes: text('notes'),
@@ -94,6 +99,7 @@ export const readDraft = (form: FormData): TransactionDraft => {
         game: field('game'),
         aliases: field('aliases'),
         contents: field('contents'),
+        notes: field('notes'),
       };
     }),
   };
@@ -120,7 +126,9 @@ export const validateDraft = (
 ): { tx?: Transaction; errors: string[] } => {
   const errors: string[] = [];
   if (!isValidDate(draft.date)) errors.push('Date must be a valid YYYY-MM-DD date.');
-  if (!draft.title || draft.title.length > 300) errors.push('Title is required (max 300 characters).');
+  if (!draft.title && !draft.referenceId) errors.push('Title or invoice / order ID is required.');
+  if (draft.title.length > 300) errors.push('Title is too long (max 300 characters).');
+  if (draft.referenceId.length > 100) errors.push('Invoice / order ID is too long (max 100 characters).');
   if (!draft.store || draft.store.length > 100) errors.push('Store is required (max 100 characters).');
   if (draft.notes.length > 5000) errors.push('Notes are too long.');
   const price = draft.price ? parsePrice(draft.price) : undefined;
@@ -136,6 +144,7 @@ export const validateDraft = (
     if (d.systems.some(s => !isOneOf(SYSTEMS, s))) errors.push(`${label}: unknown system.`);
     if (d.cover && !isHttpUrl(d.cover)) errors.push(`${label}: cover must be an http(s) URL.`);
     if (d.game && !/^[a-z0-9-]{1,120}$/.test(d.game)) errors.push(`${label}: game key must be a lowercase slug.`);
+    if (d.notes.length > 5000) errors.push(`${label}: notes are too long.`);
     const itemPrice = d.price ? parsePrice(d.price) : undefined;
     if (itemPrice === null) errors.push(`${label}: price is invalid, ${PRICE_HINT}.`);
     const lines = (value: string): string[] => value.split('\n').map(s => s.trim()).filter(Boolean);
@@ -154,6 +163,7 @@ export const validateDraft = (
     if (aliases.length) item.aliases = aliases;
     if (d.game) item.game = d.game;
     if (contents.length) item.contents = contents;
+    if (d.notes) item.notes = d.notes;
     return item;
   });
 
@@ -166,6 +176,7 @@ export const validateDraft = (
     items,
     updatedAt: new Date().toISOString(),
   };
+  if (draft.referenceId) tx.referenceId = draft.referenceId;
   if (price) tx.price = price;
   if (draft.notes) tx.notes = draft.notes;
   if (draft.hidden) tx.hidden = true;

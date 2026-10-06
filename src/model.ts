@@ -2,7 +2,7 @@
 
 export const PLATFORMS = [
   'steam', 'epic', 'gog', 'amazon', 'origin', 'ea', 'playstation', 'xbox', 'switch', 'appstore',
-  'windows', 'pearlabyss', 'legacy', 'drm-free', 'other',
+  'windows', 'macos', 'linux', 'android', 'pearlabyss', 'legacy', 'drm-free', 'other',
 ] as const;
 export type Platform = typeof PLATFORMS[number];
 
@@ -41,6 +41,7 @@ export type Item = {
   game?: string;
   /** Collections / packs: the individual games this item unlocks. */
   contents?: string[];
+  notes?: string;
 };
 
 /** A single purchase has one item; bundles, subscriptions and giveaways have many. */
@@ -48,6 +49,7 @@ export type Transaction = {
   id: string;
   date: string;
   title: string;
+  referenceId?: string;
   store: string;
   /** Missing when unknown. */
   price?: Price;
@@ -65,6 +67,7 @@ export type Transaction = {
 /** Stored as KV key metadata so the list view needs no value reads (must stay < 1024 bytes). */
 export type TransactionMeta = {
   title: string;
+  referenceId?: string;
   store: string;
   /** Platform label (see platformLabel); missing when items span multiple labels. */
   platform?: string;
@@ -126,7 +129,8 @@ export const commonPlatform = (items: Item[]): Platform | undefined => {
 
 /** Display label: the platform, refined by how it was obtained (e.g. epic-mobile, playstation-plus, netflix). */
 export const platformLabel = (item: Pick<Item, 'platform' | 'service' | 'systems'>): string => {
-  if (item.service === 'netflix' || item.service === 'apple-arcade') return item.service;
+  if (item.service === 'netflix') return item.service;
+  if (item.platform === 'appstore' && item.service === 'apple-arcade') return 'apple-arcade';
   // PS3 titles only run on a PS3, so they stay apart from PS4/PS5 (even when claimed via PS Plus).
   if (item.platform === 'playstation' && item.systems?.includes('PS3')) return item.service === 'ps-plus' ? 'playstation-plus-ps3' : 'playstation-ps3';
   if (item.platform === 'playstation' && item.service === 'ps-plus') return 'playstation-plus';
@@ -135,11 +139,11 @@ export const platformLabel = (item: Pick<Item, 'platform' | 'service' | 'systems
 };
 
 export const PLATFORM_GROUPS: Record<string, string[]> = {
-  PC: ['steam', 'gog', 'epic', 'amazon', 'windows', 'ea', 'origin', 'drm-free', 'legacy', 'pearlabyss'],
+  PC: ['steam', 'gog', 'epic', 'amazon', 'windows', 'macos', 'linux', 'ea', 'origin', 'drm-free', 'legacy', 'pearlabyss'],
   PlayStation: ['playstation', 'playstation-plus', 'playstation-ps3', 'playstation-plus-ps3'],
   Nintendo: ['switch'],
   Xbox: ['xbox'],
-  Mobile: ['appstore', 'apple-arcade', 'netflix', 'epic-mobile'],
+  Mobile: ['appstore', 'android', 'apple-arcade', 'netflix', 'epic-mobile'],
   Other: ['other'],
 };
 
@@ -159,15 +163,21 @@ const commonLabel = (items: Item[]): string | undefined => {
   return labels.size === 1 ? [...labels][0] : undefined;
 };
 
+export const itemsForPlatforms = (tx: Transaction, selected: string[]): Item[] => {
+  if (!selected.length || (selected.includes('mixed') && !commonLabel(tx.items))) return tx.items;
+  return tx.items.filter(item => selected.includes(platformLabel(item)));
+};
+
 /** `platform:normalized title` keys for everything a transaction covers. */
 export const ownedKeys = (tx: Transaction): string[] => [
-  ...(tx.items.length > 1 && commonPlatform(tx.items) ? [`${commonPlatform(tx.items)}:${normalizeTitle(tx.title)}`] : []),
+  ...(tx.title && tx.items.length > 1 && commonPlatform(tx.items) ? [`${commonPlatform(tx.items)}:${normalizeTitle(tx.title)}`] : []),
   ...tx.items.flatMap(item =>
     [item.title, ...(item.aliases ?? []), ...(item.contents ?? [])].map(title => `${item.platform}:${normalizeTitle(title)}`)),
 ];
 
 export const toMeta = (tx: Transaction): TransactionMeta => ({
-  title: tx.title.slice(0, 300),
+  title: (tx.title || tx.referenceId || '').slice(0, 300),
+  ...(tx.referenceId ? { referenceId: tx.referenceId } : {}),
   store: tx.store.slice(0, 100),
   platform: commonLabel(tx.items),
   price: formatPrice(tx.price),

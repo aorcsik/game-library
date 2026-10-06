@@ -3,11 +3,12 @@ import {
   type PersonalEntry, type PersonalSummary, type ProgressMark,
 } from '../personal';
 import type { PersonalDraft } from '../personalStore';
+import { Select } from './Layout';
 import { PlatformIcon } from './PlatformIcon';
 
 const stateInfo = (key: string) => PROGRESS_STATES.find(state => state.key === key);
 const ratingInfo = (value: number) => PERSONAL_RATINGS.find(rating => rating.value === value);
-const StateIcon = ({ icon }: { icon: string }) => <i class={`personal-state-icon icon-${icon}`} aria-hidden="true"></i>;
+const StateIcon = ({ icon }: { icon: string }) => <i class={`fa-solid fa-${icon} personal-state-icon`} aria-hidden="true"></i>;
 
 export const ProgressBadge = ({ mark, kind }: { mark: ProgressMark; kind: 'latest' | 'peak' }) => {
   const info = stateInfo(mark.state)!;
@@ -23,7 +24,7 @@ export const RatingBadge = ({ rating, date, platform }: { rating: number; date?:
   const info = ratingInfo(rating)!;
   return (
     <span class={`personal-badge ${info.tone}`} title={`Most recent rating: ${info.label}${date ? ` · ${date}` : ''}${platform ? ` · ${platform}` : ''}`}>
-      <i class={`personal-rating-icon icon-${info.icon}`} aria-hidden="true"></i>
+      <i class={`fa-solid fa-${info.icon} personal-rating-icon`} aria-hidden="true"></i>
       <span>{info.label}</span>
     </span>
   );
@@ -70,18 +71,18 @@ export const PersonalHistory = ({ gameKey, entries, errors = [], saved, draft, t
         </div>
         <div class="row">
           <label>Date<input type="date" name="date" data-personal-field="date" value={draft.date || today} required /></label>
-          <label>Platform<select name="platform" data-personal-field="platform" required>
+          <label>Platform<Select name="platform" data-personal-field="platform" required>
             <option value="">Choose platform</option>
             {PERSONAL_PLATFORMS.map(platform => <option value={platform} selected={draft.platform === platform}>{platform}</option>)}
-          </select></label>
-          <label>Progress state<select name="state" data-personal-field="state">
+          </Select></label>
+          <label>Progress state<Select name="state" data-personal-field="state">
             <option value="">No progress update</option>
             {PROGRESS_STATES.map(state => <option value={state.key} selected={draft.state === state.key}>{state.label}</option>)}
-          </select></label>
-          <label>Rating<select name="rating" data-personal-field="rating">
+          </Select></label>
+          <label>Rating<Select name="rating" data-personal-field="rating">
             <option value="">No rating update</option>
             {PERSONAL_RATINGS.map(rating => <option value={rating.value} selected={draft.rating === String(rating.value)}>{rating.label}</option>)}
-          </select></label>
+          </Select></label>
         </div>
         <label>Note<textarea name="note" data-personal-field="note" rows={3} maxlength={4000}>{draft.note}</textarea></label>
         <div class="actions">

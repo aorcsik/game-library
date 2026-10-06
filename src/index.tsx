@@ -7,14 +7,13 @@ import { applyGameForm } from './gameForm';
 import { fetcher } from './fetcher/api';
 import { getGame, getGames, getTitleIndex, listGames, saveGame } from './gamedb';
 import { itemLinks, joinOwnership, releaseDate, resolveTitle, slugify, type Game } from './games';
-import { PLATFORMS, isOneOf, normalizeTitle, ownedKeys } from './model';
+import { PLATFORMS, isOneOf, itemsForPlatforms, normalizeTitle, ownedKeys } from './model';
 import { getAllPersonalEntries, getPersonalEntries, listPersonalSummaries, savePersonalEntries, deletePersonalEntry, validatePersonalDraft } from './personalStore';
 import type { PersonalEntry } from './personal';
 import {
-  deleteTransaction, getAllLibraries, getAllTransactions, getLibrary, getTransaction, listTransactions, saveTransaction,
+  deleteTransaction, getAllLibraries, getAllTransactions, getTransaction, listTransactions, saveTransaction,
 } from './store';
 import { GameList, GamePage } from './views/Games';
-import { LibraryIndex, LibraryPage } from './views/Library';
 import { PersonalHistory } from './views/PersonalHistory';
 import { RefreshPage } from './views/Refresh';
 import { TransactionForm } from './views/TransactionForm';
@@ -26,6 +25,7 @@ type Env = {
   GAMESTATE: KVNamespace;
   ADMIN_USER?: string;
   ADMIN_PASSWORD?: string;
+  LOCAL_DEV?: string;
   /** "on" enables the local metadata fetcher (scraping endpoints). Set only in .dev.vars. */
   FETCHER?: string;
 };
@@ -44,6 +44,7 @@ app.use(secureHeaders({
 }));
 
 app.use(async (c, next) => {
+  if (c.env.LOCAL_DEV === 'on') return next();
   if (!c.env.ADMIN_USER || !c.env.ADMIN_PASSWORD) {
     return c.text('ADMIN_USER / ADMIN_PASSWORD are not configured.', 503);
   }
@@ -75,14 +76,17 @@ app.get('/transactions', async c => {
   const [all, transactions, index, games] = await Promise.all([
     listTransactions(c.env.GAMES), getAllTransactions(c.env.GAMES), getTitleIndex(c.env.GAMEDB), listGames(c.env.GAMEDB),
   ]);
-  const { year, platform, store } = c.req.query();
-  const refs = all.filter(r =>
-    (!year || r.date.startsWith(year)) &&
-    (!platform || (r.meta.platform ?? 'mixed') === platform) &&
-    (!store || r.meta.store === store));
+  const { year, store } = c.req.query();
+  const platforms = c.req.queries('platform') ?? [];
   const details = new Map(transactions.map(tx => [`${tx.date}/${tx.id}`, tx]));
+  const refs = all.filter(r => {
+    const tx = details.get(`${r.date}/${r.id}`);
+    return (!year || r.date.startsWith(year)) &&
+      (!platforms.length || (tx ? itemsForPlatforms(tx, platforms).length > 0 : platforms.includes(r.meta.platform ?? 'mixed'))) &&
+      (!store || r.meta.store === store);
+  });
   const gameMeta = new Map(games.map(g => [g.key, g.meta]));
-  return c.html(<TransactionList refs={refs} all={all} filters={{ year, platform, store }} details={details} index={index} games={gameMeta} />);
+  return c.html(<TransactionList refs={refs} all={all} filters={{ year, platforms, store }} details={details} index={index} games={gameMeta} />);
 });
 
 app.get('/transactions/new', async c => {
@@ -90,6 +94,7 @@ app.get('/transactions/new', async c => {
   const draft: TransactionDraft = {
     date: new Date().toISOString().slice(0, 10),
     title: q.title ?? '',
+    referenceId: '',
     store: q.store ?? '',
     price: '',
     notes: '',
@@ -153,17 +158,6 @@ app.post(`/transactions/${DATE}/${ID}/delete`, async c => {
   const { date, id } = c.req.param();
   await deleteTransaction(c.env.GAMES, date, id);
   return c.redirect('/transactions', 303);
-});
-
-app.get('/library', async c => c.html(<LibraryIndex libraries={await getAllLibraries(c.env.GAMES)} />));
-
-app.get('/library/:platform', async c => {
-  const platform = c.req.param('platform');
-  if (!isOneOf(PLATFORMS, platform)) return c.notFound();
-  const library = await getLibrary(c.env.GAMES, platform);
-  if (!library) return c.notFound();
-  const owned = new Set((await getAllTransactions(c.env.GAMES)).flatMap(ownedKeys));
-  return c.html(<LibraryPage library={library} owned={title => owned.has(`${platform}:${normalizeTitle(title)}`)} />);
 });
 
 app.get('/games', async c => {

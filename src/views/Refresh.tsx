@@ -1,4 +1,4 @@
-import { Layout } from './Layout';
+import { Layout, Select } from './Layout';
 
 const SOURCE_FIELDS = [
   { name: 'steam', label: 'Steam app id or store URL', placeholder: '242820' },
@@ -12,10 +12,10 @@ export const RefreshPage = () => (
     <div data-refresh-orchestrator>
       <form class="filters" data-refresh-options>
         <label>Refetch older than <input type="number" name="maxAge" value="14" min="0" max="3650" /> days</label>
-        <select name="scope">
+        <Select name="scope">
           <option value="owned" selected>Owned games</option>
           <option value="all">All games</option>
-        </select>
+        </Select>
         <label>Delay <input type="number" name="delay" value="500" min="0" max="10000" step="100" /> ms</label>
         <button type="button" class="primary" data-action="start">Load queue &amp; start</button>
         <button type="button" data-action="pause" disabled>Pause</button>

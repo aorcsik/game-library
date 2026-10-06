@@ -1,4 +1,4 @@
-import { initGameList, initPersonalStateMode } from './games';
+import { initGameList, initPersonalStateMode, syncGroupToggles, syncSelectAllToggles } from './games';
 import { initPopovers } from './popover';
 import { initPersonalDialog } from './personal';
 import { initGameRefreshButton, initRefreshOrchestrator } from './refresh';
@@ -55,6 +55,27 @@ on('click', '[data-action="expand-all"]', el => {
   document.querySelector(el.dataset.target ?? '')?.querySelectorAll('[data-expandable]').forEach(block => setExpanded(block, expand));
 });
 
+on('click', '[data-heatmap-tab]', el => {
+  el.closest('[role="tablist"]')?.querySelectorAll<HTMLButtonElement>('[data-heatmap-tab]').forEach(tab => {
+    const selected = tab === el;
+    tab.setAttribute('aria-selected', String(selected));
+    tab.tabIndex = selected ? 0 : -1;
+    const panel = document.getElementById(tab.getAttribute('aria-controls') ?? '');
+    if (panel) panel.hidden = !selected;
+  });
+});
+
+on('keydown', '[data-heatmap-tab]', (el, event) => {
+  if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+  const tabs = [...(el.closest('[role="tablist"]')?.querySelectorAll<HTMLButtonElement>('[data-heatmap-tab]') ?? [])];
+  const current = tabs.indexOf(el as HTMLButtonElement);
+  const next = event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1
+    : (current + (event.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
+  event.preventDefault();
+  tabs[next]?.focus();
+  tabs[next]?.click();
+});
+
 on('input', '[data-cover-input]', el => {
   const input = el as HTMLInputElement;
   const img = input.closest('[data-item]')?.querySelector<HTMLImageElement>('[data-cover-preview]');
@@ -67,6 +88,25 @@ on('input', '[data-cover-input]', el => {
 on('change', '[data-autosubmit]', el => {
   (el as HTMLSelectElement).form?.requestSubmit();
 });
+
+const transactionFilters = document.querySelector<HTMLFormElement>('[data-transaction-filters]');
+if (transactionFilters) {
+  transactionFilters.addEventListener('change', event => {
+    const input = event.target as HTMLInputElement;
+    if (input.dataset.groupToggle) {
+      transactionFilters.querySelectorAll<HTMLInputElement>(`input[data-group="${input.dataset.groupToggle}"]`).forEach(child => {
+        child.checked = input.checked;
+      });
+    }
+    syncSelectAllToggles(transactionFilters, input);
+    syncGroupToggles(transactionFilters);
+    const selected = transactionFilters.querySelectorAll('input[name="platform"]:checked').length;
+    const count = transactionFilters.querySelector<HTMLElement>('.platform-filter [data-filter-count]');
+    if (count) count.textContent = selected ? `${selected} selected` : 'All';
+  });
+  syncGroupToggles(transactionFilters);
+  syncSelectAllToggles(transactionFilters);
+}
 
 on('submit', 'form[data-confirm]', (el, event) => {
   if (!confirm(el.dataset.confirm)) event.preventDefault();

@@ -4,7 +4,7 @@ const NUMERIC: SortKey[] = ['oc', 'mc', 'steam'];
 const MULTI = { platform: 'labels', access: 'access', status: 'status', rating: 'rating', tier: 'tier', mcb: 'mcb', steam: 'steamReview', genre: 'genres' } as const;
 
 /** Group checkbox mirrors its platforms: checked if all, indeterminate if some. */
-const syncGroupToggles = (form: HTMLFormElement): void => {
+export const syncGroupToggles = (form: HTMLFormElement): void => {
   form.querySelectorAll<HTMLInputElement>('[data-group-toggle]').forEach(toggle => {
     const children = [...form.querySelectorAll<HTMLInputElement>(`input[data-group="${toggle.dataset.groupToggle}"]`)];
     const checked = children.filter(c => c.checked).length;
@@ -13,19 +13,36 @@ const syncGroupToggles = (form: HTMLFormElement): void => {
   });
 };
 
-/** Client-side sort/filter of the games table; state lives in the URL query. */
+export const syncSelectAllToggles = (form: HTMLFormElement, changed?: HTMLInputElement): void => {
+  if (changed?.hasAttribute('data-select-all')) {
+    changed.closest('[data-filter-dropdown]')?.querySelectorAll<HTMLInputElement>('input[type="checkbox"][name]').forEach(option => {
+      option.checked = changed.checked;
+    });
+  }
+  form.querySelectorAll<HTMLInputElement>('[data-select-all]').forEach(toggle => {
+    const options = [...(toggle.closest('[data-filter-dropdown]')?.querySelectorAll<HTMLInputElement>('input[type="checkbox"][name]') ?? [])];
+    const checked = options.filter(option => option.checked).length;
+    toggle.checked = options.length > 0 && checked === options.length;
+    toggle.indeterminate = checked > 0 && checked < options.length;
+  });
+};
+
+/** Client-side sort/filter of both games views; state lives in the URL query. */
 export const initGameList = (form: HTMLFormElement): void => {
   const tbody = document.querySelector<HTMLTableSectionElement>('#games tbody');
+  const table = document.querySelector<HTMLTableElement>('#games');
+  const cards = document.querySelector<HTMLElement>('#game-cards');
   const count = form.querySelector<HTMLElement>('[data-game-count]');
-  if (!tbody) return;
+  if (!tbody || !table || !cards) return;
   const columnCount = tbody.closest('table')?.querySelectorAll('thead th').length ?? 1;
   const rows = [...tbody.querySelectorAll<HTMLTableRowElement>('tr[data-game]')];
+  const cardByKey = new Map([...cards.querySelectorAll<HTMLElement>('[data-game-card]')].map(card => [card.dataset.key, card]));
 
   const params = new URLSearchParams(location.search);
   if (params.size) {
     for (const el of form.elements) {
       if (!(el instanceof HTMLInputElement || el instanceof HTMLSelectElement) || !el.name) continue;
-      if (el instanceof HTMLInputElement && el.type === 'checkbox' && params.has(el.name)) el.checked = params.getAll(el.name).includes(el.value);
+      if (el instanceof HTMLInputElement && (el.type === 'checkbox' || el.type === 'radio') && params.has(el.name)) el.checked = params.getAll(el.name).includes(el.value);
       else if (params.has(el.name)) el.value = params.get(el.name)!;
     }
   }
@@ -69,6 +86,8 @@ export const initGameList = (form: HTMLFormElement): void => {
           return selected[name].some(v => values.includes(v));
         });
       row.hidden = !show;
+      const card = cardByKey.get(d.key);
+      if (card) card.hidden = !show;
       if (show) visible++;
     }
 
@@ -124,6 +143,10 @@ export const initGameList = (form: HTMLFormElement): void => {
     } else {
       tbody.append(...sorted);
     }
+    cards.append(...sorted.map(row => cardByKey.get(row.dataset.key)).filter((card): card is HTMLElement => !!card));
+    const cardView = data.get('view') === 'cards';
+    table.hidden = cardView;
+    cards.hidden = !cardView;
     if (count) count.textContent = `${visible} shown`;
     updateDropdowns();
 
@@ -139,11 +162,13 @@ export const initGameList = (form: HTMLFormElement): void => {
     if (target.dataset.groupToggle) {
       form.querySelectorAll<HTMLInputElement>(`input[data-group="${target.dataset.groupToggle}"]`).forEach(c => { c.checked = target.checked; });
     }
+    syncSelectAllToggles(form, target);
     syncGroupToggles(form);
     apply();
   });
   form.addEventListener('submit', event => event.preventDefault());
   syncGroupToggles(form);
+  syncSelectAllToggles(form);
   updateDropdowns();
   apply();
 };
@@ -153,7 +178,7 @@ export const initPersonalStateMode = (toggle: HTMLInputElement): void => {
   if (!table) return;
   const update = (): void => {
     const mode = toggle.checked ? 'peak' : 'latest';
-    table.querySelectorAll<HTMLElement>('.personal-state-cell').forEach(cell => {
+    document.querySelectorAll<HTMLElement>('.personal-state-cell, .game-card-state').forEach(cell => {
       cell.dataset.stateMode = mode;
     });
     table.querySelectorAll<HTMLTableRowElement>('tr[data-game]').forEach(row => {

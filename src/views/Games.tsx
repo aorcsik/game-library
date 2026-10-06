@@ -7,8 +7,9 @@ import {
 import { LEGACY_SYSTEM_LABELS, PLATFORM_GROUPS, SUBSCRIPTION_SERVICES, platformGroup, platformLabel } from '../model';
 import type { PersonalDraft } from '../personalStore';
 import { PERSONAL_RATINGS, PROGRESS_STATES, type PersonalEntry, type PersonalSummary } from '../personal';
-import { Layout } from './Layout';
+import { Layout, Select } from './Layout';
 import { PlatformIcon } from './PlatformIcon';
+import { PlatformFilter } from './PlatformFilter';
 import { PersonalHistory, PersonalSummaryView } from './PersonalHistory';
 
 export type GameRow = { key: string; meta: GameMeta; purchases: Ownership[]; personal?: PersonalSummary };
@@ -33,7 +34,8 @@ type PlatformEntry = { label: string; physical: boolean; tooltip: string };
 
 /** One tooltip line per purchase behind an icon: date, item (and the transaction it came in) and store. */
 const purchaseLine = (p: Ownership): string => {
-  const via = p.tx.title !== p.item.title ? ` (in ${p.tx.title})` : '';
+  const label = p.tx.title || p.tx.referenceId || '';
+  const via = label && label !== p.item.title ? ` (in ${label})` : '';
   const content = p.title !== p.item.title ? `${p.title} ← ` : '';
   const notes = [
     p.item.systems?.includes('PS3') && 'PS3 only, not playable on PS4/PS5',
@@ -75,6 +77,7 @@ const platformGroups = (purchases: Ownership[]): [string, PlatformEntry[]][] => 
 const Checkboxes = ({ name, label, values, checkedValues = [] }: { name: string; label: string; values: readonly string[]; checkedValues?: readonly string[] }) => (
   <details class={`filter-dropdown ${name}-filter`} data-filter-dropdown>
     <summary><span>{label}</span><small data-filter-count>All</small></summary>
+    <label class="filter-select-all"><input type="checkbox" data-select-all /> Select all</label>
     <div class="filter-options">
       {values.map(v => <label data-filter-option={(v === 'not-owned' ? 'not owned' : v).toLowerCase()}><input type="checkbox" name={name} value={v} checked={checkedValues.includes(v)} /> {v === 'not-owned' ? 'Not owned' : v}</label>)}
     </div>
@@ -86,6 +89,7 @@ type Choice = { value: string; label: string };
 const ChoiceCheckboxes = ({ name, label, choices }: { name: string; label: string; choices: Choice[] }) => (
   <details class={`filter-dropdown ${name}-filter`} data-filter-dropdown>
     <summary><span>{label}</span><small data-filter-count>All</small></summary>
+    <label class="filter-select-all"><input type="checkbox" data-select-all /> Select all</label>
     <div class="filter-options">
       {choices.map(choice => <label data-filter-option={choice.label.toLowerCase()}><input type="checkbox" name={name} value={choice.value} /> {choice.label}</label>)}
     </div>
@@ -95,34 +99,13 @@ const ChoiceCheckboxes = ({ name, label, choices }: { name: string; label: strin
 const GenreFilter = ({ genres }: { genres: string[] }) => (
   <details class="filter-dropdown genre-filter" data-filter-dropdown>
     <summary><span>Genre</span><small data-filter-count>All</small></summary>
+    <label class="filter-select-all"><input type="checkbox" data-select-all /> Select all</label>
     <input type="search" data-filter-search placeholder="Search genres…" aria-label="Search genres" />
     <div class="filter-options">
       {genres.map(genre => (
         <label data-filter-option={genre.toLowerCase()}>
           <input type="checkbox" name="genre" value={genre} /> {genre}
         </label>
-      ))}
-    </div>
-  </details>
-);
-
-/** Group toggles have no name: their (tri-)state is derived from the platform checkboxes by the client. */
-const PlatformFilter = ({ labels }: { labels: string[] }) => (
-  <details class="filter-dropdown platform-filter" data-filter-dropdown>
-    <summary><span>Platform</span><small data-filter-count>All</small></summary>
-    <div class="filter-options platform-options">
-    {Object.keys(PLATFORM_GROUPS)
-      .map(group => [group, labels.filter(l => platformGroup(l) === group)] as const)
-      .filter(([, list]) => list.length > 0)
-      .map(([group, list]) => (
-        <div class="platform-filter-group" data-filter-group={group.toLowerCase()}>
-          <label><input type="checkbox" data-group-toggle={group} /> {group}</label>
-          <div class="platform-filter-labels">
-            {list.map(label => (
-              <label data-filter-option={label.toLowerCase()}><input type="checkbox" name="platform" value={label} data-group={group} /> <PlatformIcon label={label} withLabel /></label>
-            ))}
-          </div>
-        </div>
       ))}
     </div>
   </details>
@@ -184,11 +167,15 @@ export const GameList = ({ rows, unresolved }: { rows: GameRow[]; unresolved: (O
         <div class="filters">
           <input type="search" name="q" placeholder="Filter by title…" autofocus />
           <label for="sort">Sort by</label>
-          <select name="sort" id="sort">{SORTS.map(([value, label]) => <option value={value}>{label}</option>)}</select>
-          <select name="dir">
+          <Select name="sort" id="sort">{SORTS.map(([value, label]) => <option value={value}>{label}</option>)}</Select>
+          <Select name="dir">
             <option value="asc">ascending</option>
             <option value="desc">descending</option>
-          </select>
+          </Select>
+          <fieldset class="game-view-toggle" aria-label="Game view">
+            <label><input type="radio" name="view" value="list" checked /> List</label>
+            <label><input type="radio" name="view" value="cards" /> Cards</label>
+          </fieldset>
           <ChoiceCheckboxes name="status" label="Status" choices={[{ value: 'none', label: 'No status' }, ...PROGRESS_STATES.map(s => ({ value: s.key, label: s.label }))]} />
           <ChoiceCheckboxes name="rating" label="Personal rating" choices={[{ value: 'none', label: 'No rating' }, ...PERSONAL_RATINGS.map(r => ({ value: String(r.value), label: r.label }))]} />
         </div>
@@ -231,6 +218,7 @@ export const GameList = ({ rows, unresolved }: { rows: GameRow[]; unresolved: (O
             return (
               <tr
                 data-game
+                data-key={key}
                 data-title={meta.title.toLowerCase()}
                 data-search={meta.title.toLowerCase()}
                 data-owned={purchases.length ? '1' : ''}
@@ -285,6 +273,29 @@ export const GameList = ({ rows, unresolved }: { rows: GameRow[]; unresolved: (O
           })}
         </tbody>
       </table>
+      <div id="game-cards" class="cards game-cards" hidden>
+        {rows.map(({ key, meta, purchases, personal }) => {
+          const cover = meta.cover ?? purchases.find(p => p.item.cover)?.item.cover;
+          const platforms = platformGroups(purchases).flatMap(([, labels]) => labels);
+          const scores = [meta.oc && `OC ${meta.oc}`, meta.mc && `MC ${meta.mc}`, meta.steam && `Steam ${steamReview(meta)}`].filter(Boolean).join(' · ');
+          return (
+            <article class="card game-card" data-game-card data-key={key}>
+              <a class="game-card-cover" href={`/games/${key}`} aria-label={meta.title}>
+                {cover ? <img src={cover} alt="" loading="lazy" /> : <span class="game-card-no-cover" aria-hidden="true"></span>}
+              </a>
+              <div class="card-body">
+                <strong><a href={`/games/${key}`}>{meta.title}</a></strong>
+                <span class="tags">{meta.release?.slice(0, 4) ?? 'Release unknown'}{purchases.length ? '' : ' · Not owned'}</span>
+                <span class="game-card-state" data-state-mode="peak"><PersonalSummaryView summary={personal} /></span>
+                <span class="game-card-platforms">
+                  {platforms.map(platform => <PlatformIcon label={platform.label} physical={platform.physical} tooltip={platform.tooltip} />)}
+                </span>
+                {scores && <span class="tags game-card-scores">{scores}</span>}
+              </div>
+            </article>
+          );
+        })}
+      </div>
     </Layout>
   );
 };
@@ -394,7 +405,7 @@ export const GamePage = ({ game, purchases, release, errors = [], saved, fetcher
             {purchases.map(p => (
               <tr>
                 <td class="date">{p.tx.date}</td>
-                <td><a href={`/transactions/${p.tx.date}/${p.tx.id}`}>{p.tx.title}</a>{p.item.title !== p.tx.title ? ` › ${p.item.title}` : ''}{p.title !== p.item.title ? ` › ${p.title}` : ''}</td>
+                <td><a href={`/transactions/${p.tx.date}/${p.tx.id}`}>{p.tx.title || p.tx.referenceId}</a>{p.item.title !== (p.tx.title || p.tx.referenceId) ? ` › ${p.item.title}` : ''}{p.title !== p.item.title ? ` › ${p.title}` : ''}</td>
                 <td>{p.tx.store}</td>
                 <td><PlatformIcon label={platformLabel(p.item)} physical={p.item.physical} withLabel /></td>
               </tr>
