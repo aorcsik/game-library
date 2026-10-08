@@ -75,18 +75,21 @@ button.danger { color: var(--danger); border-color: var(--danger); }
 .group h2 { margin: 1.5rem 0 0.5rem; }
 table.list { width: 100%; border-collapse: collapse; }
 #transactions { overflow-x: auto; }
-table.transaction-list { table-layout: fixed; min-width: 64rem; }
+table.transaction-list { table-layout: fixed; min-width: 52rem; }
 table.transaction-list col:nth-child(1) { width: 2.25rem; }
 table.transaction-list col:nth-child(2) { width: 7rem; }
-table.transaction-list col:nth-child(4) { width: 13rem; }
-table.transaction-list col:nth-child(5) { width: 10rem; }
-table.transaction-list col:nth-child(6) { width: 6rem; }
-table.transaction-list col:nth-child(7) { width: 8rem; }
-table.transaction-list > tbody > tr:first-child > td:nth-child(3), table.transaction-list > tbody > tr:first-child > td:nth-child(4) { overflow-wrap: anywhere; }
+table.transaction-list col:nth-child(4) { width: 10rem; }
+table.transaction-list col:nth-child(5) { width: 8rem; }
+table.transaction-list > tbody > tr:first-child > td:nth-child(3) { overflow-wrap: anywhere; }
+.transaction-heading { display: flex; align-items: center; }
+.transaction-heading .store-logo { flex: none; }
+.transaction-item-count { margin-left: 0.3rem; white-space: nowrap; }
 .store-logo { width: 1.2rem; height: 1.2rem; object-fit: contain; vertical-align: middle; margin-right: 0.4rem; }
 .store-logo-mask { display: inline-block; background: currentColor; mask-size: contain; mask-repeat: no-repeat; mask-position: center; }
 .store-logo-mask.icon-amazon-luna, .store-logo-mask.icon-amazon-prime { color: #8D43F6; }
 .store-icon { color: var(--muted); text-align: center; }
+.transaction-detail-title .store-logo { width: 1em; height: 1em; font-size: 0.8em; margin-right: 0.35em; }
+.transaction-detail-title span:last-child { min-width: 0; overflow-wrap: anywhere; }
 table.list td { padding: 0.3rem 0.5rem; border-top: 1px solid var(--line); }
 table.list td.date { color: var(--muted); white-space: nowrap; width: 7rem; }
 table.list td.num { text-align: right; white-space: nowrap; color: var(--muted); }
@@ -102,7 +105,7 @@ table.items td.thumb img { width: 40px; height: 40px; object-fit: cover; border-
 table.items td.num { text-align: right; color: var(--muted); white-space: nowrap; }
 table.items .badge { margin-right: 0.25rem; }
 .game-summary { color: var(--muted); font-size: 0.85em; margin-left: 0.4rem; }
-.transaction-reference { color: var(--muted); margin-left: 0.5rem; overflow-wrap: anywhere; }
+.transaction-reference { display: block; color: var(--muted); margin-left: .5rem; overflow-wrap: anywhere; }
 .transaction-detail-reference { color: var(--muted); margin: -0.8rem 0 1rem; overflow-wrap: anywhere; }
 ul.contents { margin: 0.2rem 0 0; padding-left: 0; list-style: none; }
 ul.contents li { font-size: 0.95em; display: flex; align-items: center; gap: 0.4rem; margin: 0.15rem 0; }
@@ -145,10 +148,11 @@ img.mini-cover { width: 24px; height: 24px; object-fit: cover; border-radius: 3p
 .card-body { display: flex; flex-direction: column; gap: 0.25rem; padding: 0.5rem; }
 .card .tags { color: var(--muted); font-size: 0.85em; }
 .game-view-toggle { display: inline-flex; padding: 0; margin: 0; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
-.game-view-toggle label { padding: 0.35rem 0.65rem; cursor: pointer; }
+.game-view-toggle label { display: grid; place-items: center; position: relative; width: 2.25rem; height: 2.25rem; cursor: pointer; }
 .game-view-toggle label + label { border-left: 1px solid var(--line); }
 .game-view-toggle label:has(input:checked) { background: var(--accent); color: var(--bg); }
-.game-view-toggle input { accent-color: var(--accent); }
+.game-view-toggle label:has(input:focus-visible) { outline: 2px solid currentColor; outline-offset: -3px; }
+.game-view-toggle input { position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; }
 .game-cards { grid-template-columns: repeat(auto-fill, minmax(min(100%, 180px), 1fr)); }
 .game-card { min-width: 0; }
 .game-card-cover { display: block; aspect-ratio: 1; background: var(--line); }
@@ -238,6 +242,7 @@ td.platforms { white-space: nowrap; }
 .icon-epic-mobile { mask-image: url("/assets/platforms/epic-mobile.svg"); }
 .icon-amazon-prime { mask-image: url("/assets/platforms/amazon-prime.svg"); }
 .icon-electronic-arts { mask-image: url("/assets/platforms/electronic-arts.svg"); }
+.icon-origin { mask-image: url("/assets/platforms/origin.svg"); }
 .icon-legacy-games { mask-image: url("/assets/platforms/legacy-games.png"); }
 .icon-windows { mask-image: url("/assets/platforms/windows.svg"); }
 .icon-macos { mask-image: url("/assets/platforms/macos.svg"); }

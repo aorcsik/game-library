@@ -8,7 +8,7 @@ const ICONS: Record<string, { icon: string; suffix?: string }> = {
   'epic-mobile': { icon: 'epic-mobile' },
   'amazon': { icon: 'amazon-luna' },
   'ea': { icon: 'electronic-arts' },
-  'origin': { icon: 'electronic-arts' },
+  'origin': { icon: 'origin' },
   'legacy': { icon: 'legacy-games' },
   'windows': { icon: 'windows' },
   'macos': { icon: 'macos' },
@@ -44,4 +44,33 @@ export const PlatformIcon = ({ label, physical, withLabel, tooltip }: { label: s
       {withLabel && <span class="platform-label">{label}</span>}
     </span>
   );
+};
+
+const STORE_LOGOS: Record<string, string> = {
+  'Epic Games Store': 'epic',
+  'Amazon Luna': 'amazon-luna',
+  'Prime Gaming': 'amazon-prime',
+  'Steam Store': 'steam-color',
+  Kickstarter: 'kickstarter',
+  GoG: 'gog',
+  'GOG Store': 'gog',
+  'Apple App Store': 'appstore-color',
+  'Green Man Gaming': 'green-man-gaming',
+  'Nintendo eShop': 'nintendo-eshop',
+  'Playstation Store': 'playstation-store',
+  'PlayStation Store': 'playstation-store',
+  'Xbox Store': 'xbox',
+  Fanatical: 'fanatical',
+  'Humble Store': 'humble-store',
+};
+
+const MASKED_STORE_LOGOS = new Set(['amazon-luna', 'amazon-prime', 'epic', 'gog']);
+
+export const StoreLogo = ({ store }: { store: string }) => {
+  const logo = STORE_LOGOS[store];
+  return logo
+    ? MASKED_STORE_LOGOS.has(logo)
+      ? <span class={`store-logo store-logo-mask icon-${logo}`} aria-hidden="true"></span>
+      : <img class="store-logo" src={`/assets/platforms/${logo}.svg`} alt="" />
+    : <i class="fa-solid fa-cart-shopping store-logo store-icon" aria-hidden="true"></i>;
 };

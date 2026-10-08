@@ -24,19 +24,24 @@
     "@fortawesome/pro-regular-svg-icons": "^7.3.1",
     "@fortawesome/pro-solid-svg-icons": "^7.3.1",
     "devalue": "^6.0.2",
-    "hono": "^4.13.10",
+    "hono": "^4.13.13",
     "linkedom": "^0.18.13"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^5.20260928.1",
-    "@types/node": "^24.19.0",
+    "@cloudflare/workers-types": "^5.20261007.1",
+    "@types/node": "^24.19.1",
     "esbuild": "^0.28.2",
+    "json5": "^2.2.3",
+    "miniflare": "5.20261006.0-alpha",
     "typescript": "^7.0.2",
-    "wrangler": "^4.142.0"
+    "wrangler": "^4.148.0"
+  },
+  "overrides": {
+    "sharp": "^0.35.5"
   },
   "allowScripts": {
     "esbuild@0.28.2": true,
     "esbuild@0.28.1": true,
-    "workerd@1.20260926.1": true
+    "workerd@1.20261006.1": true
   }
 }

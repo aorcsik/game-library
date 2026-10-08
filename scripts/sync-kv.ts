@@ -1,9 +1,12 @@
 // Copies one KV namespace between the local Wrangler store and production.
 // Usage: npm run kv:push -- --binding GAMES [--yes] (or kv:pull)
 import { execFileSync } from 'node:child_process';
+import { readFileSync } from 'node:fs';
 import { mkdtemp, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
+import JSON5 from 'json5';
+import { Miniflare, convertV4MiniflareOptions } from 'miniflare';
 
 type Binding = 'GAMES' | 'GAMEDB' | 'GAMESTATE';
 type Key = { name: string; metadata?: unknown; expiration?: number };
@@ -32,16 +35,35 @@ const run = (command: string[], output = true): string =>
     maxBuffer: 64 * 1024 * 1024,
     stdio: output ? ['ignore', 'pipe', 'inherit'] : 'inherit',
   }) ?? '';
-const readValue = (key: string): string =>
-  execFileSync(wrangler, ['kv', 'key', 'get', key, source, '--binding', binding, '--config', resolve(root, 'wrangler.jsonc')], {
-    cwd: root,
-    maxBuffer: 64 * 1024 * 1024,
-    stdio: ['ignore', 'pipe', 'inherit'],
-  }).toString('utf8');
 
-const list = (location: string): Key[] => JSON.parse(run(['key', 'list', location])) as Key[];
-const sourceKeys = list(source).filter(key => key.name !== 'sync:dirty');
-const destinationKeys = new Set(list(destination).map(key => key.name));
+const listLocal = async (): Promise<Key[]> => {
+  const configPath = resolve(root, 'wrangler.jsonc');
+  const config = JSON5.parse(readFileSync(configPath, 'utf8')) as { kv_namespaces: { binding: string; id: string }[] };
+  const namespaceId = config.kv_namespaces.find(namespace => namespace.binding === binding)?.id;
+  if (!namespaceId) throw new Error(`Missing namespace ID for ${binding}`);
+  const miniflare = new Miniflare(convertV4MiniflareOptions({
+    script: 'addEventListener("fetch", (event) => event.respondWith(new Response(null, { status: 404 })))',
+    resourcePersistencePath: resolve(root, '.wrangler/state/v3'),
+    kvNamespaces: { NAMESPACE: namespaceId },
+  }));
+  try {
+    const namespace = await miniflare.getKVNamespace('NAMESPACE');
+    const keys: Key[] = [];
+    let cursor: string | undefined;
+    do {
+      const page = await namespace.list({ cursor });
+      keys.push(...page.keys);
+      cursor = page.list_complete ? undefined : page.cursor;
+    } while (cursor);
+    return keys;
+  } finally {
+    await miniflare.dispose();
+  }
+};
+const list = (location: string): Promise<Key[]> =>
+  location === '--local' ? listLocal() : Promise.resolve(JSON.parse(run(['key', 'list', location])) as Key[]);
+const sourceKeys = (await list(source)).filter(key => key.name !== 'sync:dirty');
+const destinationKeys = new Set((await list(destination)).map(key => key.name));
 const additions = sourceKeys.filter(key => !destinationKeys.has(key.name)).length;
 const existing = sourceKeys.length - additions;
 
@@ -57,7 +79,7 @@ if (!confirmed) {
     let copied = 0;
     const upload = async (): Promise<void> => {
       if (!batch.length) return;
-      const file = join(directory, 'batch.json');
+      const file = join(directory, 'upload.json');
       await writeFile(file, JSON.stringify(batch), { mode: 0o600 });
       run(['bulk', 'put', file, destination], false);
       copied += batch.length;
@@ -66,15 +88,22 @@ if (!confirmed) {
       bytes = 2;
     };
 
-    for (const key of sourceKeys) {
-      const value = readValue(key.name);
-      const entry: Entry = { key: key.name, value };
-      if (key.metadata !== undefined) entry.metadata = key.metadata;
-      if (key.expiration !== undefined) entry.expiration = key.expiration;
-      const size = Buffer.byteLength(JSON.stringify(entry)) + 1;
-      if (batch.length && (batch.length >= 1000 || bytes + size > 40 * 1024 * 1024)) await upload();
-      batch.push(entry);
-      bytes += size;
+    for (let offset = 0; offset < sourceKeys.length; offset += 100) {
+      const keys = sourceKeys.slice(offset, offset + 100);
+      const file = join(directory, 'keys.json');
+      await writeFile(file, JSON.stringify(keys.map(key => key.name)), { mode: 0o600 });
+      const values = JSON.parse(run(['bulk', 'get', file, source])) as Record<string, { value: string | null }>;
+      for (const key of keys) {
+        const value = values[key.name]?.value;
+        if (value === undefined || value === null) throw new Error(`Missing source value for ${key.name}`);
+        const entry: Entry = { key: key.name, value };
+        if (key.metadata !== undefined) entry.metadata = key.metadata;
+        if (key.expiration !== undefined) entry.expiration = key.expiration;
+        const size = Buffer.byteLength(JSON.stringify(entry)) + 1;
+        if (batch.length && (batch.length >= 1000 || bytes + size > 40 * 1024 * 1024)) await upload();
+        batch.push(entry);
+        bytes += size;
+      }
     }
     await upload();
   } finally {

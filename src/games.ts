@@ -223,13 +223,16 @@ export const itemLinks = (index: TitleIndex, item: Item): ItemLink[] => {
 };
 
 /** Items that count as owning a game: games only, redeemed and not hidden. */
+const isGamePurchase = (tx: Transaction, item: Item): boolean =>
+  (item.kind ?? 'game') === 'game' && !item.hidden && !tx.hidden;
+
 export const isOwnedGame = (tx: Transaction, item: Item): boolean =>
-  (item.kind ?? 'game') === 'game' && !item.unclaimed && !item.hidden && !tx.hidden;
+  isGamePurchase(tx, item) && !item.unclaimed;
 
 export type Ownership = { tx: Transaction; item: Item; title: string };
 
 /** Joins transactions with the game database: owned games by key, plus titles that need a game or a link. */
-export const joinOwnership = (index: TitleIndex, transactions: Transaction[]): {
+export const joinOwnership = (index: TitleIndex, transactions: Transaction[], includeUnclaimed = false): {
   owned: Map<string, Ownership[]>;
   unresolved: (Ownership & { ambiguous?: string[] })[];
 } => {
@@ -237,7 +240,7 @@ export const joinOwnership = (index: TitleIndex, transactions: Transaction[]): {
   const unresolved: (Ownership & { ambiguous?: string[] })[] = [];
   for (const tx of transactions) {
     for (const item of tx.items) {
-      if (!isOwnedGame(tx, item)) continue;
+      if (!(includeUnclaimed ? isGamePurchase(tx, item) : isOwnedGame(tx, item))) continue;
       for (const { title, resolution } of itemLinks(index, item)) {
         if (resolution && 'key' in resolution) {
           const list = owned.get(resolution.key) ?? [];

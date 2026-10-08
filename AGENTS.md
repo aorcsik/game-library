@@ -323,7 +323,6 @@ type PurchasedGame = Game & {
 
 Required in `.env`:
 ```bash
-SOURCE_DIR=.
 STEAM_API_KEY=xxx
 STEAM_ID=xxx
 STEAM_PROFILE_NAME=xxx

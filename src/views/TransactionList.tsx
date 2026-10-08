@@ -1,9 +1,9 @@
 import { isOwnedGame, itemLinks, steamReview, type GameMeta, type TitleIndex } from '../games';
-import { formatPrice, itemsForPlatforms, PLATFORM_GROUPS, platformLabel, type Item, type Transaction } from '../model';
+import { formatPrice, itemsForPlatforms, PLATFORM_GROUPS, platformLabel, transactionDisplayTitle, type Item, type Transaction } from '../model';
 import type { TransactionRef } from '../store';
 import exchangeRates from '../exchange-rates.json';
 import { Layout, Options, Select } from './Layout';
-import { PlatformIcon } from './PlatformIcon';
+import { PlatformIcon, StoreLogo } from './PlatformIcon';
 import { PlatformFilter } from './PlatformFilter';
 
 type Filters = { year?: string; platforms: string[]; store?: string };
@@ -69,7 +69,7 @@ const HeatmapPanel = ({ id, title, counts, breakdowns, ranges, spending = false,
                       ? `${key}: ${amount.toLocaleString(key === 'HUF' ? 'hu-HU' : 'en-US', { minimumFractionDigits: key === 'HUF' ? 0 : 2, maximumFractionDigits: 2 })}`
                       : `${key}: ${amount}`),
                 ];
-                return <span class={`heatmap-month level-${level}`} role="img" data-popover={lines.join('\n')} aria-label={lines.join(', ')} tabindex="0" />;
+                return <span class={`heatmap-month level-${level}`} role="img" data-popover={lines.join('\n')} aria-label={lines.join(', ')} tabindex={0} />;
               })}
             </div>
           </div>
@@ -121,8 +121,8 @@ const AcquisitionHeatmap = ({ all, details, index, selectedPlatforms }: {
   return (
     <section class="heatmap-section" aria-label="Transaction history heatmap">
       <div class="heatmap-tabs" role="tablist" aria-label="Heatmap view">
-        <button type="button" role="tab" id="games-heatmap-tab" aria-controls="games-heatmap" aria-selected="true" tabindex="0" data-heatmap-tab>Games{platformLabel}</button>
-        <button type="button" role="tab" id="spending-heatmap-tab" aria-controls="spending-heatmap" aria-selected="false" tabindex="-1" data-heatmap-tab>Money spent{platformLabel}</button>
+        <button type="button" role="tab" id="games-heatmap-tab" aria-controls="games-heatmap" aria-selected="true" tabindex={0} data-heatmap-tab>Games{platformLabel}</button>
+        <button type="button" role="tab" id="spending-heatmap-tab" aria-controls="spending-heatmap" aria-selected="false" tabindex={-1} data-heatmap-tab>Money spent{platformLabel}</button>
       </div>
       <HeatmapPanel id="games-heatmap" title="Games acquired by month" counts={counts} breakdowns={platforms} ranges={INTENSITY_RANGES} firstYear={firstYear} lastYear={lastYear} lastMonth={lastMonth} />
       <HeatmapPanel id="spending-heatmap" title="Transaction spending by month" counts={spending} breakdowns={currencies} ranges={SPENDING_RANGES} spending hidden firstYear={firstYear} lastYear={lastYear} lastMonth={lastMonth} />
@@ -205,26 +205,6 @@ const Items = ({ tx, lookup }: { tx: Transaction; lookup: GameLookup }) => (
   </table>
 );
 
-const STORE_LOGOS: Record<string, string> = {
-  'Epic Games Store': 'epic',
-  'Amazon Luna': 'amazon-luna',
-  'Prime Gaming': 'amazon-prime',
-  'Steam Store': 'steam-color',
-  Kickstarter: 'kickstarter',
-  GoG: 'gog',
-  'GOG Store': 'gog',
-  'Apple App Store': 'appstore-color',
-  'Green Man Gaming': 'green-man-gaming',
-  'Nintendo eShop': 'nintendo-eshop',
-  'Playstation Store': 'playstation-store',
-  'PlayStation Store': 'playstation-store',
-  'Xbox Store': 'xbox',
-  Fanatical: 'fanatical',
-  'Humble Store': 'humble-store',
-};
-
-const MASKED_STORE_LOGOS = new Set(['amazon-luna', 'amazon-prime', 'epic', 'gog']);
-
 export const TransactionList = ({ refs, all, filters, details, index, games }: {
   refs: TransactionRef[]; all: TransactionRef[]; filters: Filters; details: Map<string, Transaction>;
   index: TitleIndex; games: Map<string, GameMeta>;
@@ -255,11 +235,13 @@ export const TransactionList = ({ refs, all, filters, details, index, games }: {
             <h2>{year} <small>{list.length}</small></h2>
             <table class="list transaction-list">
               <colgroup>
-                <col /><col /><col /><col /><col /><col /><col />
+                <col /><col /><col /><col /><col />
               </colgroup>
               {list.map(ref => {
                 const tx = details.get(`${ref.date}/${ref.id}`);
                 const labels = tx ? [...new Set(tx.items.map(platformLabel))] : ref.meta.platform ? [ref.meta.platform] : [];
+                const referenceId = ref.meta.referenceId ?? tx?.referenceId;
+                const title = tx ? transactionDisplayTitle(tx) : ref.meta.title && ref.meta.title !== referenceId ? ref.meta.title : ref.meta.store;
                 return (
                   // One tbody per transaction, so filtering hides the summary and its items together.
                   <tbody data-search={searchText(ref, tx)} data-expandable>
@@ -269,29 +251,24 @@ export const TransactionList = ({ refs, all, filters, details, index, games }: {
                       </td>
                       <td class="date">{ref.date}</td>
                       <td>
-                        <a href={`/transactions/${ref.date}/${ref.id}`}>{tx?.title || ref.meta.title}</a>
-                        {tx?.title && ref.meta.referenceId && <small class="transaction-reference">{ref.meta.referenceId}</small>}
-                      </td>
-                      <td>
-                        {STORE_LOGOS[ref.meta.store]
-                          ? MASKED_STORE_LOGOS.has(STORE_LOGOS[ref.meta.store])
-                            ? <span class={`store-logo store-logo-mask icon-${STORE_LOGOS[ref.meta.store]}`} aria-hidden="true"></span>
-                            : <img class="store-logo" src={`/assets/platforms/${STORE_LOGOS[ref.meta.store]}.svg`} alt="" />
-                          : <i class="fa-solid fa-cart-shopping store-logo store-icon" aria-hidden="true"></i>}
-                        {ref.meta.store}
+                        <span class="transaction-heading">
+                          <StoreLogo store={ref.meta.store} />
+                          <a href={`/transactions/${ref.date}/${ref.id}`}>{title}</a>
+                          {ref.meta.items > 1 && <small class="transaction-item-count">({ref.meta.items})</small>}
+                          {referenceId && <small class="transaction-reference">{referenceId}</small>}
+                        </span>
                       </td>
                       <td class="platforms">
                         <span class="platform-group">
                           {labels.length ? labels.map(label => <PlatformIcon label={label} />) : <span class="meta">mixed</span>}
                         </span>
                       </td>
-                      <td class="num">{ref.meta.items === 1 ? '1 item' : ref.meta.items > 1 ? `${ref.meta.items} items` : ''}</td>
                       <td class="num">{ref.meta.price}</td>
                     </tr>
                     {tx && (
                       <tr class="items-row" data-items hidden>
                         <td></td>
-                        <td colspan={6}><Items tx={tx} lookup={lookup} /></td>
+                        <td colspan={4}><Items tx={tx} lookup={lookup} /></td>
                       </tr>
                     )}
                   </tbody>

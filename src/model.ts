@@ -64,6 +64,9 @@ export type Transaction = {
   updatedAt: string;
 };
 
+export const transactionDisplayTitle = (tx: Pick<Transaction, 'title' | 'referenceId' | 'store'> & { items: readonly Pick<Item, 'title'>[] }): string =>
+  tx.title && tx.title !== tx.referenceId ? tx.title : tx.items.length === 1 && tx.items[0].title ? tx.items[0].title : tx.store;
+
 /** Stored as KV key metadata so the list view needs no value reads (must stay < 1024 bytes). */
 export type TransactionMeta = {
   title: string;

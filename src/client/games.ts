@@ -1,4 +1,4 @@
-const SORT_KEYS = ['title', 'purchased', 'release', 'oc', 'mc', 'steam'] as const;
+const SORT_KEYS = ['title', 'purchased', 'firstPurchased', 'release', 'oc', 'mc', 'steam'] as const;
 type SortKey = typeof SORT_KEYS[number];
 const NUMERIC: SortKey[] = ['oc', 'mc', 'steam'];
 const MULTI = { platform: 'labels', access: 'access', status: 'status', rating: 'rating', tier: 'tier', mcb: 'mcb', steam: 'steamReview', genre: 'genres' } as const;
@@ -105,7 +105,7 @@ export const initGameList = (form: HTMLFormElement): void => {
       return (desc ? -cmp : cmp) || (a.dataset.title ?? '').localeCompare(b.dataset.title ?? '');
     });
     tbody.querySelectorAll('[data-game-month]').forEach(heading => heading.remove());
-    if (sort === 'release' || sort === 'purchased') {
+    if (sort === 'release' || sort === 'purchased' || sort === 'firstPurchased') {
       const monthFor = (row: HTMLTableRowElement): string => {
         const raw = row.dataset[sort] ?? '';
         if (!/^\d{4}-\d{2}/.test(raw)) return sort === 'release' ? 'No release date' : 'No purchase date';

@@ -1,7 +1,8 @@
 import { emptyItem, type ItemDraft, type TransactionDraft } from '../form';
 import type { ItemLink } from '../games';
-import { KINDS, PLATFORMS, SERVICES, SYSTEMS, type Transaction } from '../model';
+import { KINDS, PLATFORMS, SERVICES, SYSTEMS, transactionDisplayTitle, type Transaction } from '../model';
 import { Layout, Options, Select } from './Layout';
+import { StoreLogo } from './PlatformIcon';
 
 const GameLinks = ({ links }: { links: ItemLink[] }) => (
   <p class="game-links">
@@ -77,7 +78,8 @@ const humbleDownloadUrl = (store: string, notes: string): string | undefined => 
   for (const [candidate] of notes.matchAll(/https?:\/\/[^\s<>"']+/g)) {
     try {
       const url = new URL(candidate.replace(/[.,;!?)]*$/, ''));
-      if (['humblebundle.com', 'www.humblebundle.com'].includes(url.hostname) && url.pathname === '/downloads') return url.href;
+      if (['humblebundle.com', 'www.humblebundle.com'].includes(url.hostname)
+        && (url.pathname === '/downloads' || (url.pathname === '/' && !!url.searchParams.get('key')))) return url.href;
     } catch {
       continue;
     }
@@ -86,8 +88,10 @@ const humbleDownloadUrl = (store: string, notes: string): string | undefined => 
 };
 
 export const TransactionForm = ({ draft, action, stores, errors = [], saved, existing, links }: Props) => (
-  <Layout title={draft.title || draft.referenceId || 'New transaction'}>
-    <h1>{existing ? draft.title || draft.store : 'New transaction'}</h1>
+  <Layout title={existing ? transactionDisplayTitle(draft) : draft.title || draft.referenceId || 'New transaction'}>
+    <h1 class={existing ? 'transaction-heading transaction-detail-title' : ''}>
+      {existing ? <><StoreLogo store={draft.store} /><span>{transactionDisplayTitle(draft)}</span></> : 'New transaction'}
+    </h1>
     {existing && draft.referenceId && (
       <p class="transaction-detail-reference">
         Invoice / order ID: {orderUrl(draft.store, draft.referenceId, draft.notes)

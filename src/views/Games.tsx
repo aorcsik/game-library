@@ -4,11 +4,11 @@ import {
   opencriticUrl, steamReviewColor, steamUrl,
   type Game, type GameMeta, type MetacriticData, type OpenCriticData, type Ownership, type SteamData,
 } from '../games';
-import { LEGACY_SYSTEM_LABELS, PLATFORM_GROUPS, SUBSCRIPTION_SERVICES, platformGroup, platformLabel } from '../model';
+import { LEGACY_SYSTEM_LABELS, PLATFORM_GROUPS, SUBSCRIPTION_SERVICES, platformGroup, platformLabel, transactionDisplayTitle } from '../model';
 import type { PersonalDraft } from '../personalStore';
 import { PERSONAL_RATINGS, PROGRESS_STATES, type PersonalEntry, type PersonalSummary } from '../personal';
 import { Layout, Select } from './Layout';
-import { PlatformIcon } from './PlatformIcon';
+import { PlatformIcon, StoreLogo } from './PlatformIcon';
 import { PlatformFilter } from './PlatformFilter';
 import { PersonalHistory, PersonalSummaryView } from './PersonalHistory';
 
@@ -114,6 +114,7 @@ const GenreFilter = ({ genres }: { genres: string[] }) => (
 const SORTS = [
   ['title', 'Title'],
   ['purchased', 'Last purchase'],
+  ['firstPurchased', 'First purchase'],
   ['release', 'Release date'],
   ['oc', 'OpenCritic'],
   ['mc', 'Metacritic'],
@@ -173,8 +174,8 @@ export const GameList = ({ rows, unresolved }: { rows: GameRow[]; unresolved: (O
             <option value="desc">descending</option>
           </Select>
           <fieldset class="game-view-toggle" aria-label="Game view">
-            <label><input type="radio" name="view" value="list" checked /> List</label>
-            <label><input type="radio" name="view" value="cards" /> Cards</label>
+            <label title="List view"><input type="radio" name="view" value="list" aria-label="List view" checked /><i class="fa-solid fa-list" aria-hidden="true"></i></label>
+            <label title="Cards view"><input type="radio" name="view" value="cards" aria-label="Cards view" /><i class="fa-solid fa-grid-2" aria-hidden="true"></i></label>
           </fieldset>
           <ChoiceCheckboxes name="status" label="Status" choices={[{ value: 'none', label: 'No status' }, ...PROGRESS_STATES.map(s => ({ value: s.key, label: s.label }))]} />
           <ChoiceCheckboxes name="rating" label="Personal rating" choices={[{ value: 'none', label: 'No rating' }, ...PERSONAL_RATINGS.map(r => ({ value: String(r.value), label: r.label }))]} />
@@ -196,6 +197,7 @@ export const GameList = ({ rows, unresolved }: { rows: GameRow[]; unresolved: (O
             <th width="60"><span class="open-critic-logo">OpenCritic</span></th>
             <th width="30"><span class="metacritic-logo">Metacritic</span></th>
             <th>Title</th>
+            {COLUMNS.map(c => <th class="platform-head" title={c.title} style={`--platform-head-size: ${c.size}`}><i class={`platform-icon icon-${c.icon}`} role="img" aria-label={c.title}></i></th>)}
             <th>
               <div class="state-heading">
                 <span>State</span>
@@ -206,15 +208,14 @@ export const GameList = ({ rows, unresolved }: { rows: GameRow[]; unresolved: (O
                 </label>
               </div>
             </th>
-            {COLUMNS.map(c => <th class="platform-head" title={c.title} style={`--platform-head-size: ${c.size}`}><i class={`platform-icon icon-${c.icon}`} role="img" aria-label={c.title}></i></th>)}
-            <th>Purchase</th>
-            <th>Release</th>
           </tr>
         </thead>
         <tbody>
           {rows.map(({ key, meta, purchases, personal }) => {
             const groups = platformGroups(purchases);
-            const purchased = purchases.map(p => p.tx.date).sort().at(-1) ?? '';
+            const purchaseDates = purchases.map(p => p.tx.date).sort();
+            const purchased = purchaseDates.at(-1) ?? '';
+            const firstPurchased = purchaseDates[0] ?? '';
             return (
               <tr
                 data-game
@@ -230,6 +231,7 @@ export const GameList = ({ rows, unresolved }: { rows: GameRow[]; unresolved: (O
                 data-status={personal?.peak?.state ?? 'none'}
                 data-rating={personal?.rating ? String(personal.rating.rating) : 'none'}
                 data-purchased={purchased}
+                data-first-purchased={firstPurchased}
                 data-release={meta.release ?? ''}
                 data-oc={meta.oc ?? ''}
                 data-mc={meta.mc ?? ''}
@@ -252,11 +254,10 @@ export const GameList = ({ rows, unresolved }: { rows: GameRow[]; unresolved: (O
                 </td>
                 <td class="game-title">
                   <a href={`/games/${key}`}>{meta.title}</a>
-                  {meta.release && <span class="release-year">{meta.release.slice(0, 4)}</span>}
+                  {meta.release && <span class="release-year" data-popover={meta.release} tabindex={0}>{meta.release.slice(0, 4)}</span>}
                   <br />
                   {meta.steamId && <ExternalLink href={steamUrl(meta.steamId)}><span class={`steam-review ${steamReviewColor(meta)}`}>{steamReview(meta)}</span></ExternalLink>}
                 </td>
-                <td class="personal-state-cell" data-state-mode="peak"><PersonalSummaryView summary={personal} /></td>
                 {COLUMNS.map(column => (
                   <td class="platforms">
                     <span class="platform-group">
@@ -266,8 +267,7 @@ export const GameList = ({ rows, unresolved }: { rows: GameRow[]; unresolved: (O
                     </span>
                   </td>
                 ))}
-                <td class="date">{purchased}</td>
-                <td class="date">{meta.release ?? ''}</td>
+                <td class="personal-state-cell" data-state-mode="peak"><PersonalSummaryView summary={personal} /></td>
               </tr>
             );
           })}
@@ -285,7 +285,7 @@ export const GameList = ({ rows, unresolved }: { rows: GameRow[]; unresolved: (O
               </a>
               <div class="card-body">
                 <strong><a href={`/games/${key}`}>{meta.title}</a></strong>
-                <span class="tags">{meta.release?.slice(0, 4) ?? 'Release unknown'}{purchases.length ? '' : ' · Not owned'}</span>
+                <span class="tags">{meta.release ? <span data-popover={meta.release} tabindex={0}>{meta.release.slice(0, 4)}</span> : 'Release unknown'}{purchases.length ? '' : ' · Not owned'}</span>
                 <span class="game-card-state" data-state-mode="peak"><PersonalSummaryView summary={personal} /></span>
                 <span class="game-card-platforms">
                   {platforms.map(platform => <PlatformIcon label={platform.label} physical={platform.physical} tooltip={platform.tooltip} />)}
@@ -402,14 +402,21 @@ export const GamePage = ({ game, purchases, release, errors = [], saved, fetcher
       {purchases.length === 0 ? <p class="meta">Not owned (kept for statistics).</p> : (
         <table class="list">
           <tbody>
-            {purchases.map(p => (
-              <tr>
-                <td class="date">{p.tx.date}</td>
-                <td><a href={`/transactions/${p.tx.date}/${p.tx.id}`}>{p.tx.title || p.tx.referenceId}</a>{p.item.title !== (p.tx.title || p.tx.referenceId) ? ` › ${p.item.title}` : ''}{p.title !== p.item.title ? ` › ${p.title}` : ''}</td>
-                <td>{p.tx.store}</td>
-                <td><PlatformIcon label={platformLabel(p.item)} physical={p.item.physical} withLabel /></td>
-              </tr>
-            ))}
+            {purchases.map(p => {
+              const title = transactionDisplayTitle(p.tx);
+              return (
+                <tr class={p.item.unclaimed ? 'is-hidden' : ''}>
+                  <td class="date">{p.tx.date}</td>
+                  <td>
+                    <span class="transaction-heading">
+                      <StoreLogo store={p.tx.store} />
+                      <span><a href={`/transactions/${p.tx.date}/${p.tx.id}`}>{title}</a>{p.item.title !== title ? ` › ${p.item.title}` : ''}{p.title !== p.item.title ? ` › ${p.title}` : ''}{p.item.unclaimed && <> <span class="badge">unclaimed</span></>}</span>
+                    </span>
+                  </td>
+                  <td><PlatformIcon label={platformLabel(p.item)} physical={p.item.physical} withLabel /></td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       )}

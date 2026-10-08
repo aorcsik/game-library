@@ -187,7 +187,7 @@ app.post('/games', async c => {
 
 const gamePurchases = async (env: Env, key: string) => {
   const [index, transactions] = await Promise.all([getTitleIndex(env.GAMEDB), getAllTransactions(env.GAMES)]);
-  return joinOwnership(index, transactions).owned.get(key) ?? [];
+  return joinOwnership(index, transactions, true).owned.get(key) ?? [];
 };
 
 const gamePersonal = (env: Env, key: string): Promise<PersonalEntry[]> => getPersonalEntries(env.GAMESTATE, key);
