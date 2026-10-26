@@ -1,7 +1,7 @@
 // Refreshes derived GAMEDB key metadata from stored game records without changing the records.
 // Usage: node scripts/refresh-game-meta.ts
 import { resolve } from 'node:path';
-import { getPlatformProxy } from 'wrangler';
+import { getLocalKvProxy } from './local-kv-proxy.ts';
 import { toGameMeta, type Game } from '../src/games.ts';
 
 type KV = {
@@ -11,7 +11,7 @@ type KV = {
 };
 
 const root = resolve(import.meta.dirname, '..');
-const proxy = await getPlatformProxy<{ GAMEDB: KV }>({ configPath: resolve(root, 'wrangler.jsonc') });
+const { proxy, dispose } = await getLocalKvProxy<{ GAMEDB: KV }>();
 try {
   const kv = proxy.env.GAMEDB;
   const names: string[] = [];
@@ -35,5 +35,5 @@ try {
   }
   console.info(`Refreshed list metadata for ${updated} GAMEDB records; game records were not changed.`);
 } finally {
-  await proxy.dispose();
+  await dispose();
 }

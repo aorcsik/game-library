@@ -1,6 +1,6 @@
 import { execFileSync } from 'node:child_process';
 import { resolve } from 'node:path';
-import { getPlatformProxy } from 'wrangler';
+import { getLocalKvProxy } from './local-kv-proxy.ts';
 import { toMeta, type Transaction } from '../src/model.ts';
 
 const root = resolve(import.meta.dirname, '..');
@@ -26,7 +26,7 @@ type KV = {
   put(key: string, value: string, options: { metadata: ReturnType<typeof toMeta> }): Promise<void>;
 };
 
-const proxy = await getPlatformProxy<{ GAMES: KV }>({ configPath: resolve(root, 'wrangler.jsonc') });
+const { proxy, dispose } = await getLocalKvProxy<{ GAMES: KV }>();
 try {
   const kv = proxy.env.GAMES;
   const keys: string[] = [];
@@ -64,5 +64,5 @@ try {
     console.info(`Migrated ${matches.length} local transactions.`);
   }
 } finally {
-  await proxy.dispose();
+  await dispose();
 }

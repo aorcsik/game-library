@@ -14,15 +14,25 @@
     // Fetched game data, rebuilt independently of the manually recorded transactions.
     { "binding": "GAMEDB", "id": "0a814d47cfda446fa1c590da6cf773b5" },
     // Personal state history is isolated from transactions and fetched metadata.
-    { "binding": "GAMESTATE", "id": "5f34df9118ac4e64b3b03483d5f65819" }
+    { "binding": "GAMESTATE", "id": "5f34df9118ac4e64b3b03483d5f65819" },
+    // Creator identities (formerly developers); keep the existing namespace and records.
+    { "binding": "CREATORS", "id": "57e75bee07a54a5f948ecc4fe02bbe85" }
   ],
+  "durable_objects": {
+    "bindings": [{ "name": "REFRESH_QUEUE", "class_name": "GameRefreshQueue" }]
+  },
+  "migrations": [{ "tag": "refresh-queue-v1", "new_sqlite_classes": ["GameRefreshQueue"] }],
   "env": {
     // `npm run dev:remote`: worker runs locally, but reads/writes the real (production) KV namespace.
     "remote": {
+      "durable_objects": {
+        "bindings": [{ "name": "REFRESH_QUEUE", "class_name": "GameRefreshQueue" }]
+      },
       "kv_namespaces": [
         { "binding": "GAMES", "id": "de192eb9b00e42e4bc29d7553255b407", "remote": true },
         { "binding": "GAMEDB", "id": "0a814d47cfda446fa1c590da6cf773b5", "remote": true },
-        { "binding": "GAMESTATE", "id": "5f34df9118ac4e64b3b03483d5f65819", "remote": true }
+        { "binding": "GAMESTATE", "id": "5f34df9118ac4e64b3b03483d5f65819", "remote": true },
+        { "binding": "CREATORS", "id": "57e75bee07a54a5f948ecc4fe02bbe85", "remote": true }
       ]
     }
   }

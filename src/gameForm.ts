@@ -1,4 +1,5 @@
-import type { Game, SourceRef } from './games';
+import { gameGenres, toGameMeta, type Game, type SourceRef } from './games.ts';
+import { splitCreatorNames } from './creatorRules.ts';
 
 const text = (form: FormData, name: string): string => {
   const value = form.get(name);
@@ -36,13 +37,39 @@ export const applyGameForm = (form: FormData, game: Game): { game?: Game; errors
 
   const aliases = [...new Set(text(form, 'aliases').split('\n').map(a => a.trim()).filter(Boolean))];
   if (aliases.length > 100 || aliases.some(a => a.length > 300)) errors.push('Too many or too long aliases.');
+  const coverSource = form.has('coverSource') ? text(form, 'coverSource') : game.coverSource ?? '';
+  if (coverSource && !['opencritic', 'steam', 'steamPortrait', 'metacritic', 'metacriticMain'].includes(coverSource)) errors.push('Choose a valid cover source.');
+
+  const manualNames = (field: 'manualDevelopers' | 'manualPublishers', label: string): string[] => {
+    if (!form.has(field)) return game[field] ?? [];
+    const names = [...new Set(splitCreatorNames(text(form, field), false).filter(Boolean))];
+    if (names.length > 100 || names.some(name => name.length > 300)) errors.push(`${label} must have at most 100 comma-separated names of up to 300 characters each.`);
+    return names;
+  };
+  const manualDevelopers = manualNames('manualDevelopers', 'Manual developers');
+  const manualPublishers = manualNames('manualPublishers', 'Manual publishers');
+  const manualGenres = form.has('manualGenres')
+    ? [...new Set(text(form, 'manualGenres').split(',').map(genre => genre.trim()).filter(Boolean))]
+    : game.manualGenres ?? [];
+  if (manualGenres.length > 100 || manualGenres.some(genre => genre.length > 300)) {
+    errors.push('Manual genres must have at most 100 comma-separated names of up to 300 characters each.');
+  }
 
   if (errors.length || opencritic === 'invalid' || steam === 'invalid' || metacritic === 'invalid') return { errors };
   const updated: Game = { key: game.key, title, updatedAt: new Date().toISOString() };
+  if (game.refreshLock) updated.refreshLock = game.refreshLock;
   if (aliases.length) updated.aliases = aliases;
+  if (manualDevelopers.length) updated.manualDevelopers = manualDevelopers;
+  if (manualPublishers.length) updated.manualPublishers = manualPublishers;
+  if (manualGenres.length) updated.manualGenres = manualGenres;
+  if (coverSource === 'opencritic' || coverSource === 'steam' || coverSource === 'steamPortrait' || coverSource === 'metacritic' || coverSource === 'metacriticMain') updated.coverSource = coverSource;
   if (releaseDate) updated.releaseDate = releaseDate;
   if (opencritic) updated.opencritic = opencritic;
   if (steam) updated.steam = steam;
   if (metacritic) updated.metacritic = metacritic;
+  const listGenres = new Set(toGameMeta(updated).genres ?? []);
+  if (manualGenres.length && gameGenres(updated).some(genre => !listGenres.has(genre))) {
+    return { errors: ['Too many genres to fit in game list metadata. Remove some manual genres.'] };
+  }
   return { game: updated, errors };
 };

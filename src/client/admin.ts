@@ -1,6 +1,7 @@
 import { initGameList, initPersonalStateMode, syncGroupToggles, syncSelectAllToggles } from './games';
 import { initPopovers } from './popover';
 import { initPersonalDialog } from './personal';
+import { initRefreshQueue } from './queueStatus';
 import { initGameRefreshButton, initRefreshOrchestrator } from './refresh';
 
 const on = <K extends keyof DocumentEventMap>(type: K, selector: string, handler: (el: HTMLElement, event: DocumentEventMap[K]) => void): void => {
@@ -40,7 +41,7 @@ const setExpanded = (block: Element, expanded: boolean): void => {
   items.hidden = !expanded;
   button.textContent = expanded ? '−' : '+';
   button.setAttribute('aria-expanded', String(expanded));
-  button.setAttribute('aria-label', expanded ? 'Hide items' : 'Show items');
+  button.setAttribute('aria-label', `${expanded ? 'Hide' : 'Show'} ${button.dataset.itemLabel ?? 'items'}`);
 };
 
 on('click', '[data-action="toggle-items"]', el => {
@@ -53,6 +54,32 @@ on('click', '[data-action="expand-all"]', el => {
   el.dataset.expanded = String(expand);
   el.textContent = expand ? 'Collapse all' : 'Expand all';
   document.querySelector(el.dataset.target ?? '')?.querySelectorAll('[data-expandable]').forEach(block => setExpanded(block, expand));
+});
+
+on('click', '.creator-list [data-creator-sort]', el => {
+  const table = el.closest<HTMLTableElement>('table.creator-list');
+  if (!table) return;
+  const sort = el.dataset.creatorSort;
+  const byGames = sort === 'games';
+  const direction = table.dataset.sort === sort && table.dataset.direction === 'asc' ? 'desc'
+    : table.dataset.sort === sort ? 'asc' : byGames ? 'desc' : 'asc';
+  table.dataset.sort = sort;
+  table.dataset.direction = direction;
+  const rows = [...table.querySelectorAll<HTMLTableSectionElement>('tbody[data-expandable]')];
+  rows.sort((a, b) => {
+    const names = (a.dataset.creatorName ?? '').localeCompare(b.dataset.creatorName ?? '');
+    if (!byGames) return direction === 'asc' ? names : -names;
+    const counts = Number(a.dataset.gameCount) - Number(b.dataset.gameCount);
+    return (direction === 'asc' ? counts : -counts) || names;
+  });
+  table.append(...rows);
+  table.querySelectorAll<HTMLButtonElement>('[data-creator-sort]').forEach(button => {
+    const header = button.closest('th');
+    if (button === el) header?.setAttribute('aria-sort', direction === 'asc' ? 'ascending' : 'descending');
+    else header?.removeAttribute('aria-sort');
+    const indicator = button.querySelector<HTMLElement>('[data-sort-indicator]');
+    if (indicator) indicator.textContent = button === el ? direction === 'asc' ? '↑' : '↓' : '';
+  });
 });
 
 on('click', '[data-heatmap-tab]', el => {
@@ -83,6 +110,20 @@ on('input', '[data-cover-input]', el => {
   const valid = /^https?:\/\//.test(input.value);
   img.hidden = !valid;
   if (valid) img.src = input.value;
+});
+
+document.querySelectorAll<HTMLImageElement>('[data-game-cover], .cover-choice [data-cover-preview]').forEach(img => {
+  const unavailable = (): void => {
+    img.hidden = true;
+    const placeholder = img.nextElementSibling;
+    if (placeholder instanceof HTMLElement && placeholder.matches('.game-card-no-cover, .cover-choice-empty')) placeholder.hidden = false;
+    const option = img.closest('.cover-choice')?.querySelector<HTMLInputElement>('input[name="coverSource"]');
+    if (option && !option.checked) option.disabled = true;
+    const notice = img.closest('.game-head')?.querySelector<HTMLElement>('[data-missing-cover]');
+    if (notice) notice.hidden = false;
+  };
+  img.addEventListener('error', unavailable);
+  if (img.complete && !img.naturalWidth) unavailable();
 });
 
 on('change', '[data-autosubmit]', el => {
@@ -130,7 +171,108 @@ on('input', '[data-filter]', el => {
   });
 });
 
+on('change', '[data-parent-option]', el => {
+  const dropdown = el.closest<HTMLDetailsElement>('[data-parent-dropdown]');
+  if (!dropdown) return;
+  const label = dropdown.querySelector<HTMLElement>('[data-parent-selection]');
+  if (label) label.textContent = el.dataset.parentName ?? 'No parent';
+  dropdown.open = false;
+  const search = dropdown.querySelector<HTMLInputElement>('input[type="search"]');
+  if (search && search.value) {
+    search.value = '';
+    search.dispatchEvent(new Event('input', { bubbles: true }));
+  }
+});
+
+const editCreditNote = (form: HTMLFormElement, editing: boolean): void => {
+  const display = form.querySelector<HTMLElement>('[data-credit-note-display]');
+  const editor = form.querySelector<HTMLElement>('[data-credit-note-editor]');
+  const notes = form.querySelector<HTMLInputElement>('input[name="notes"]');
+  if (!display || !editor || !notes) return;
+  display.hidden = editing;
+  editor.hidden = !editing;
+  notes.disabled = !editing;
+  if (editing) notes.focus();
+};
+
+on('click', '[data-action="edit-credit-note"]', el => {
+  const form = el.closest<HTMLFormElement>('form[data-creator-credit]');
+  if (form) editCreditNote(form, true);
+});
+
+on('click', '[data-action="cancel-credit-note"]', el => {
+  const form = el.closest<HTMLFormElement>('form[data-creator-credit]');
+  if (!form) return;
+  const notes = form.querySelector<HTMLInputElement>('input[name="notes"]');
+  if (notes) notes.value = notes.defaultValue;
+  editCreditNote(form, false);
+  form.querySelector<HTMLElement>('[data-creator-credit-status]')!.textContent = '';
+});
+
+on('click', '[data-action="save-credit-note"]', el => {
+  const form = el.closest<HTMLFormElement>('form[data-creator-credit]');
+  if (!form) return;
+  form.dataset.saveNotes = 'true';
+  form.requestSubmit();
+});
+
+on('change', 'form[data-creator-credit] input[name="credited"]', el => {
+  const form = (el as HTMLInputElement).form;
+  if (!form) return;
+  form.dataset.saveNotes = 'false';
+  form.requestSubmit();
+});
+
+on('submit', 'form[data-creator-credit]', (el, event) => {
+  event.preventDefault();
+  const form = el as HTMLFormElement;
+  if (form.dataset.saving) return;
+  const editor = form.querySelector<HTMLElement>('[data-credit-note-editor]');
+  const savingNote = form.dataset.saveNotes === 'true' || form.dataset.saveNotes === undefined && editor?.hidden === false;
+  delete form.dataset.saveNotes;
+  form.dataset.saving = '1';
+  const checkbox = form.querySelector<HTMLInputElement>('input[name="credited"]')!;
+  const notes = form.querySelector<HTMLInputElement>('input[name="notes"]');
+  const buttons = form.querySelectorAll<HTMLButtonElement>('[data-action="save-credit-note"], [data-action="cancel-credit-note"]');
+  const status = form.querySelector<HTMLElement>('[data-creator-credit-status]')!;
+  const body = new FormData(form);
+  if (!savingNote) body.delete('notes');
+  checkbox.disabled = true;
+  if (notes) notes.disabled = true;
+  buttons.forEach(button => { button.disabled = true; });
+  status.textContent = savingNote ? 'Saving note…' : 'Saving credit…';
+  void fetch(form.action, { method: 'POST', headers: { Accept: 'application/json' }, body })
+    .then(async response => {
+      const data = await response.json() as { ok?: boolean; error?: string; link?: { notes?: string } };
+      if (!response.ok || data.ok !== true) throw new Error(data.error ?? `Could not save attribution (HTTP ${response.status})`);
+      checkbox.defaultChecked = checkbox.checked;
+      if (savingNote && notes) {
+        if (!data.link || data.link.notes !== undefined && typeof data.link.notes !== 'string') {
+          throw new Error('Invalid attribution note response.');
+        }
+        notes.value = data.link.notes ?? '';
+        notes.defaultValue = notes.value;
+        form.querySelector<HTMLElement>('[data-credit-note-text]')!.textContent = notes.value || 'No note';
+        editCreditNote(form, false);
+      }
+      form.closest('li')?.classList.toggle('creator-game-miscredited', !checkbox.checked);
+      status.textContent = savingNote ? 'Note saved.' : 'Credit saved.';
+    })
+    .catch(error => {
+      if (!savingNote) checkbox.checked = checkbox.defaultChecked;
+      console.error('Could not save creator attribution:', error);
+      status.textContent = `Could not save: ${error instanceof Error ? error.message : String(error)}`;
+    })
+    .finally(() => {
+      checkbox.disabled = false;
+      if (notes) notes.disabled = editor?.hasAttribute('hidden') ?? true;
+      buttons.forEach(button => { button.disabled = false; });
+      delete form.dataset.saving;
+    });
+});
+
 document.querySelectorAll<HTMLElement>('[data-refresh-orchestrator]').forEach(initRefreshOrchestrator);
+document.querySelectorAll<HTMLDetailsElement>('[data-refresh-queue]').forEach(initRefreshQueue);
 document.querySelectorAll<HTMLButtonElement>('[data-refresh-game]').forEach(initGameRefreshButton);
 document.querySelectorAll<HTMLFormElement>('[data-game-controls]').forEach(initGameList);
 document.querySelectorAll<HTMLInputElement>('[data-personal-state-mode]').forEach(initPersonalStateMode);

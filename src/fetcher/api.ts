@@ -4,9 +4,9 @@ import { applyGameForm } from '../gameForm';
 import { getGame, getTitleIndex, listGames, saveGame } from '../gamedb';
 import { SOURCES, joinOwnership, type Game } from '../games';
 import { getAllTransactions } from '../store';
-import { refreshGame } from './refresh';
+import { refreshQueue, type GameRefreshQueue } from './queue';
 
-type Env = { GAMES: KVNamespace; GAMEDB: KVNamespace };
+type Env = { GAMES: KVNamespace; GAMEDB: KVNamespace; REFRESH_QUEUE: DurableObjectNamespace<GameRefreshQueue> };
 
 export type QueueEntry = { key: string; title: string; reason: string };
 
@@ -45,13 +45,20 @@ fetcher.get('/queue', async c => {
 });
 
 fetcher.post(`/games/${GAME}/refresh`, async c => {
-  const game = await getGame(c.env.GAMEDB, c.req.param('key'));
+  const key = c.req.param('key');
+  const game = await getGame(c.env.GAMEDB, key);
   if (!game) return c.json({ error: 'Game not found' }, 404);
-  const result = await refreshGame(game, { maxAgeDays: maxAge(c.req.query('maxAge')), force: c.req.query('force') === '1' });
-  // Always saved so fetch times persist locally; only real data changes need publishing.
-  await saveGame(c.env.GAMEDB, result.game, { dirty: result.changed });
-  const { game: saved, ...summary } = result;
-  return c.json({ ...summary, key: saved.key, title: saved.title, sourceIds: Object.fromEntries(SOURCES.map(s => [s, saved[s]?.id])) });
+  const job = await refreshQueue(c.env).enqueue(key, { maxAgeDays: maxAge(c.req.query('maxAge')), force: c.req.query('force') === '1' }, false, game.title);
+  if (job.state === 'running' && c.req.query('force') === '1' && !job.options.force) {
+    return c.json({ error: 'Refresh already in progress; try again when it finishes.' }, 409);
+  }
+  return c.json({ id: job.id, state: job.state }, 202);
+});
+
+fetcher.get(`/games/${GAME}/refresh/:id{[a-f0-9-]{36}}`, async c => {
+  const job = await refreshQueue(c.env).status(c.req.param('key'), c.req.param('id'));
+  if (!job) return c.json({ error: 'Refresh job not found' }, 404);
+  return c.json({ state: job.state, result: job.result, error: job.error });
 });
 
 /** Sets source ids / manual release date; unspecified fields keep their current value. */

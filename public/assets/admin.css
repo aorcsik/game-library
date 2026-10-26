@@ -26,7 +26,16 @@ h1 small, h2 small { color: var(--muted); font-weight: normal; font-size: 0.6em;
 [hidden] { display: none !important; }
 
 .topbar { display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 1.5rem; background: var(--panel); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 1; }
+.topbar-actions { display: flex; align-items: center; gap: 1rem; }
 .topbar-links { display: flex; gap: 1.25rem; }
+.refresh-queue { position: relative; }
+.refresh-queue summary { white-space: nowrap; color: var(--accent); cursor: pointer; }
+.refresh-queue summary span { display: inline-block; min-width: 1.5em; text-align: center; padding: 0 0.25em; border-radius: 1em; background: var(--line); color: var(--text); }
+.refresh-queue-panel { position: absolute; top: calc(100% + 0.75rem); right: 0; width: min(22rem, calc(100vw - 2rem)); max-height: min(25rem, 70vh); overflow-y: auto; padding: 0.75rem; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; box-shadow: 0 10px 24px #0008; }
+.refresh-queue-panel p { margin: 0.25rem 0 0.75rem; }
+.refresh-queue-panel p:last-child { margin-bottom: 0; }
+.refresh-queue-panel ol { margin: 0.4rem 0 0; padding-left: 1.5rem; }
+.refresh-queue-panel li { padding: 0.2rem 0; overflow-wrap: anywhere; }
 .topbar-menu { display: none; position: relative; }
 .topbar-menu summary { display: grid; place-items: center; width: 2.25rem; height: 2.25rem; border: 1px solid var(--line); border-radius: 6px; cursor: pointer; list-style: none; font-size: 1.3rem; line-height: 1; }
 .topbar-menu summary::-webkit-details-marker { display: none; }
@@ -163,10 +172,12 @@ img.mini-cover { width: 24px; height: 24px; object-fit: cover; border-radius: 3p
 .game-card-state .personal-summary { min-width: 0; }
 .game-card-platforms { display: flex; flex-wrap: wrap; gap: 0.35rem; min-height: 1.4em; }
 .game-card-scores { overflow-wrap: anywhere; }
-@media (max-width: 700px) {
-  .topbar { padding: 0.5rem 1rem; }
+@media (max-width: 960px) {
   .topbar-links { display: none; }
   .topbar-menu { display: block; }
+}
+@media (max-width: 700px) {
+  .topbar { padding: 0.5rem 1rem; }
   main { padding: 1rem 1rem 3rem; }
   details.group { max-width: 100%; overflow-x: auto; }
 }
@@ -220,7 +231,9 @@ td.platforms { white-space: nowrap; }
 .platform small { color: var(--muted); font-size: 0.7em; }
 .platform-label { color: var(--muted); font-size: 0.9em; }
 .platform-text { color: var(--muted); font-size: 0.85em; }
-.platform.physical .platform-icon { outline: 1px solid var(--muted); outline-offset: 2px; border-radius: 2px; }
+.platform.physical { background-color: var(--muted); border-radius: 4px; }
+.platform.physical .platform-icon { outline: 1px solid var(--muted); outline-offset: 2px; mask-size: 75%; background-color: var(--bg); }
+.platform.physical .platform-label { color: var(--bg); margin-right: 0.2rem; }
 .platform.subscription .platform-label { color: #c9a0ff; }
 
 /* Single-colour icons are masks (take the text colour); PS Plus and Netflix keep their brand colours. */
@@ -268,6 +281,45 @@ th.platform-head { color: var(--muted); width: calc(var(--platform-head-size) * 
     font-weight: 500;
   }
 }
+.game-creators { color: var(--muted); font-size: 0.85em; overflow-wrap: anywhere; }
+.game-creators .creator-info { border: 0; padding: 0 0.2em; color: var(--muted); background: none; }
+.game-creators .creator-info:hover { color: var(--accent); }
+.cover-options { margin: 0.75rem 0; padding: 0; border: 0; }
+.cover-options legend { margin-bottom: 0.35rem; color: var(--muted); }
+.cover-choices { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.cover-choice { display: flex; flex-direction: column; align-items: center; gap: 0.3rem; width: 8rem; padding: 0.5rem; border: 1px solid var(--line); border-radius: 6px; text-align: center; cursor: pointer; }
+.cover-choice:has(input:checked) { border-color: var(--accent); }
+.cover-choice img, .cover-choice-empty { width: 6rem; height: 6rem; object-fit: contain; }
+.cover-choice-empty { display: grid; place-items: center; color: var(--muted); background: var(--panel); }
+.creator-verification { margin: 0.75rem 0; }
+.creator-verification label { display: block; margin-bottom: 0.25rem; color: var(--muted); }
+.creator-verification progress { width: 100%; height: 0.65rem; accent-color: var(--ok); }
+#games .game-creator-column { width: 20rem; max-width: 20rem; overflow-wrap: anywhere; }
+.creator-missing { color: var(--danger); }
+.creator-miscredited, .creator-miscredited:hover { text-decoration: line-through; }
+.creator-list td { overflow-wrap: anywhere; }
+.creator-list td:last-child { max-width: 20rem; }
+.creator-list .creator-sort { border: 0; background: transparent; padding: 0; color: inherit; }
+.creator-list .creator-sort:hover, .creator-list .creator-sort:focus-visible { color: var(--accent); }
+.creator-aliases { display: block; color: var(--muted); max-width: 40rem; }
+.creator-games, .creator-children { margin: 0.25rem 0; padding-left: 1.5rem; }
+.creator-games { list-style: none; padding-left: 0; }
+.creator-games li { padding: 0.2rem 0; }
+.creator-games form { display: flex; align-items: center; flex-wrap: wrap; gap: 0.3rem; }
+.creator-games input[type="checkbox"] { margin: 0 0.3rem 0 0; }
+.creator-note-display, .creator-note-editor { display: inline-flex; align-items: center; gap: 0.3rem; min-width: 0; }
+.creator-note-editor { flex-wrap: wrap; }
+.creator-note-editor input[name="notes"] { width: min(16rem, 60vw); }
+.creator-note-action { border: 0; background: none; color: var(--muted); padding: 0.1rem 0.25rem; }
+.creator-note-action:hover, .creator-note-action:focus-visible { color: var(--accent); }
+.creator-note-display .creator-game-note { overflow-wrap: anywhere; }
+.creator-game-miscredited a { text-decoration: line-through; }
+.creator-game-note, .creator-credit-status { color: var(--muted); font-size: 0.85em; }
+.creator-game-as, .creator-game-role { color: var(--muted); margin-left: 0.4em; }
+.parent-field { margin: 0.5rem 0; }
+.parent-field > span { display: block; color: var(--muted); font-size: 0.85em; margin-bottom: 0.2rem; }
+details.parent-dropdown { width: min(24rem, 100%); }
+.tx-form .parent-dropdown .filter-options > label { flex-direction: row; color: var(--text); font-size: 1rem; cursor: pointer; }
 .release-year { color: var(--muted); font-weight: normal; font-size: 0.9em; margin-left: 0.4em; }
 .metacritic-container { display: inline-flex; align-items: center; justify-content: flex-end; gap: 0.2rem; }
 .must-play-mark { display: inline-flex; color: #ffd76e; filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.65)); }
@@ -279,7 +331,7 @@ a.external:hover { text-decoration: none; filter: brightness(1.15); }
 .popover {
   position: absolute;
   z-index: 20;
-  max-width: 34rem;
+  max-width: min(34rem, calc(100vw - 16px));
   padding: 0.5rem 0.75rem;
   background: var(--panel);
   border: 1px solid var(--line);
@@ -289,7 +341,7 @@ a.external:hover { text-decoration: none; filter: brightness(1.15); }
   pointer-events: none;
 }
 .popover ul { margin: 0.3rem 0 0; padding: 0; list-style: none; }
-.popover li { color: var(--muted); padding: 0.1rem 0; }
+.popover li { color: var(--muted); padding: 0.1rem 0; overflow-wrap: anywhere; }
 .popover-arrow {
   position: absolute;
   bottom: -6px;

@@ -3,25 +3,25 @@ import { createHash } from 'node:crypto';
 import { existsSync } from 'node:fs';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
-import { getPlatformProxy } from 'wrangler';
+import { getLocalKvProxy } from './local-kv-proxy.ts';
 
 type Key = { name: string; metadata?: unknown; expiration?: number };
 type KV = {
   list(options?: { cursor?: string }): Promise<{ keys: Key[]; list_complete: boolean; cursor?: string }>;
   get(keys: string[], type: 'text'): Promise<Map<string, string | null>>;
 };
-type Binding = 'GAMES' | 'GAMEDB' | 'GAMESTATE';
+type Binding = 'GAMES' | 'GAMEDB' | 'GAMESTATE' | 'CREATORS';
 type Entry = { key: string; value: string; metadata?: unknown; expiration?: number };
 
 const root = resolve(import.meta.dirname, '..');
 const state = resolve(root, '.wrangler/state/v3/kv');
 const backupDir = resolve(root, '.backups');
-const bindings: Binding[] = ['GAMES', 'GAMEDB', 'GAMESTATE'];
+const bindings: Binding[] = ['GAMES', 'GAMEDB', 'GAMESTATE', 'CREATORS'];
 
 if (!existsSync(state)) {
   console.info('No local KV state yet; skipping backup.');
 } else {
-  const proxy = await getPlatformProxy<Record<Binding, KV>>({ configPath: resolve(root, 'wrangler.jsonc') });
+  const { proxy, dispose } = await getLocalKvProxy<Record<Binding, KV>>();
   try {
     const snapshot: Record<string, Entry[]> = {};
     for (const binding of bindings) {
@@ -69,6 +69,6 @@ if (!existsSync(state)) {
       console.info(`Backed up local KV to ${file}`);
     }
   } finally {
-    await proxy.dispose();
+    await dispose();
   }
 }

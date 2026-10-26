@@ -1,4 +1,4 @@
-import { TITLE_INDEX_KEY, gameKey, toGameMeta, updateIndex, type Game, type GameMeta, type TitleIndex } from './games';
+import { TITLE_INDEX_KEY, gameKey, toGameMeta, updateIndex, type Game, type GameMeta, type TitleIndex } from './games.ts';
 
 export type GameRef = { key: string; meta: GameMeta };
 
@@ -40,6 +40,20 @@ export const saveGame = async (kv: KVNamespace, game: Game, options: { dirty?: b
   await kv.put(gameKey(game.key), JSON.stringify(game), { metadata: toGameMeta(game) });
   await kv.put(TITLE_INDEX_KEY, JSON.stringify(index));
   if (options.dirty) await markDirty(kv, game.key);
+};
+
+/** Rating refreshes never change a game's title or aliases, so leave the shared title index alone. */
+export const saveRefreshedGame = async (kv: KVNamespace, game: Game, changed: boolean): Promise<void> => {
+  await kv.put(gameKey(game.key), JSON.stringify(game), { metadata: toGameMeta(game) });
+  if (changed) await markDirty(kv, game.key);
+};
+
+export const deleteGame = async (kv: KVNamespace, key: string): Promise<void> => {
+  const index = await getTitleIndex(kv);
+  updateIndex(index, key, null);
+  await kv.put(TITLE_INDEX_KEY, JSON.stringify(index));
+  await kv.delete(gameKey(key));
+  await markDirty(kv, key);
 };
 
 export const DIRTY_KEY = 'sync:dirty';

@@ -225,7 +225,7 @@ export const TransactionList = ({ refs, all, filters, details, index, games }: {
         <Select name="year" data-autosubmit><Options values={years} selected={filters.year} empty="All years" /></Select>
         <PlatformFilter labels={Object.values(PLATFORM_GROUPS).flat()} selected={filters.platforms} includeMixed apply />
         <Select name="store" data-autosubmit><Options values={stores} selected={filters.store} empty="All stores" /></Select>
-        <input type="search" placeholder="Filter by text, including items…" data-filter="#transactions" autofocus />
+        <input type="search" placeholder="Filter by text, including items…" data-filter="#transactions" />
         <button type="button" data-action="expand-all" data-target="#transactions">Expand all</button>
       </form>
       <AcquisitionHeatmap all={all} details={details} index={index} selectedPlatforms={filters.platforms} />

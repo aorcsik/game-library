@@ -1,7 +1,7 @@
 // Page parsers for OpenCritic, Steam and Metacritic (ported from the legacy CLI, linkedom instead of JSDOM).
 import { parseHTML } from 'linkedom';
 import { parse as parseDevalue } from 'devalue';
-import type { MetacriticData, OpenCriticData, SteamData } from '../games';
+import type { MetacriticData, OpenCriticData, SteamData } from '../games.ts';
 
 export type ParseResult<T> = { ok: true; data: T; proposedMetacriticUrl?: string } | { ok: false; error: string };
 
@@ -203,6 +203,14 @@ const structuredNames = (value: unknown): string[] | undefined => {
 
 const parseModernMetacritic = (document: El) => {
   const game = metacriticGameData(document);
+  const images = Array.isArray(game?.images) ? game.images : [];
+  const usable = images.filter((candidate): candidate is DataRecord & { bucketPath: string } =>
+    isRecord(candidate) && candidate.bucketType === 'catalog' && typeof candidate.bucketPath === 'string'
+    && /^\/provider\/[\w./-]+\.(?:jpg|jpeg|png|webp)$/i.test(candidate.bucketPath) && !candidate.bucketPath.includes('..'));
+  const mainPath = usable.find(image => image.typeName === 'mainImage')?.bucketPath;
+  const coverPath = usable.find(image => image.typeName === 'cardImage')?.bucketPath ?? mainPath;
+  const cover = coverPath ? `https://www.metacritic.com/a/img/catalog${coverPath}` : null;
+  const mainImage = mainPath ? `https://www.metacritic.com/a/img/catalog${mainPath}` : null;
   const criticScore = isRecord(game?.criticScoreSummary) ? game.criticScoreSummary.score : undefined;
   const companies = isRecord(game?.production) && Array.isArray(game.production.companies) ? game.production.companies : undefined;
   const developers = companies?.filter(company => isRecord(company) && company.typeName === 'Developer')
@@ -213,6 +221,8 @@ const parseModernMetacritic = (document: El) => {
     .filter(Boolean);
   return {
     title: typeof game?.title === 'string' ? game.title : undefined,
+    cover,
+    mainImage,
     scoreText: criticScore == null ? undefined : String(criticScore),
     mustPlay: typeof game?.mustPlay === 'boolean' ? game.mustPlay : undefined,
     releaseDate: typeof game?.releaseDate === 'string' ? game.releaseDate : undefined,
@@ -262,18 +272,22 @@ export const fetchMetacritic = async (url: string): Promise<ParseResult<Metacrit
   if (!title) return { ok: false, error: 'Metacritic page has no title (layout changed?)' };
   const scoreText = modern.scoreText ?? legacy.scoreText;
   if (scoreText === null) return { ok: false, error: 'Metacritic page has no score element' };
+  const publishers = modern.publishers?.length ? modern.publishers : legacy.publishers;
 
   return {
     ok: true,
     data: {
       title,
+      cover: modern.cover,
+      mainImage: modern.mainImage,
       summary: modern.summary,
       metacriticScore: /^\d+$/.test(scoreText) ? parseInt(scoreText, 10) : null,
       mustPlay: modern.mustPlay ?? legacy.mustPlay,
       platforms: modern.platforms ?? legacy.platforms,
       releaseDate: modern.releaseDate || legacy.releaseDate,
       developers: modern.developers ?? legacy.developers,
-      publisher: modern.publishers?.join(', ') || legacy.publishers.join(', ') || null,
+      publishers,
+      publisher: publishers.join(', ') || null,
       genres: modern.genres ?? legacy.genres,
     },
   };

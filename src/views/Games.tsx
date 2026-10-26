@@ -1,18 +1,56 @@
 import config from '../config.json';
+import { creatorLinks, creatorLinksForRole, creatorNames, creatorSearchNames, gameCreatorCredits, normalizeCreator, type CreatorCredit, type CreatorGameLink, type CreatorGameLinks, type CreatorIndex, type GameCreatorCredits } from '../creators';
 import {
   METACRITIC_BUCKETS, OPENCRITIC_TIERS, STEAM_REVIEWS, metacriticBucket, metacriticBucketColor, opencriticTier, steamReview,
-  opencriticUrl, steamReviewColor, steamUrl,
-  type Game, type GameMeta, type MetacriticData, type OpenCriticData, type Ownership, type SteamData,
+  automaticGameCover, gameCover, gameGenres, gameMetaCover, opencriticUrl, steamPortraitUrl, steamReviewColor, steamUrl,
+  rawCreatorCredits, type Game, type GameMeta, type MetacriticData, type OpenCriticData, type Ownership, type SteamData,
 } from '../games';
 import { LEGACY_SYSTEM_LABELS, PLATFORM_GROUPS, SUBSCRIPTION_SERVICES, platformGroup, platformLabel, transactionDisplayTitle } from '../model';
 import type { PersonalDraft } from '../personalStore';
 import { PERSONAL_RATINGS, PROGRESS_STATES, type PersonalEntry, type PersonalSummary } from '../personal';
+import type { RefreshJob } from '../fetcher/queue';
 import { Layout, Select } from './Layout';
 import { PlatformIcon, StoreLogo } from './PlatformIcon';
 import { PlatformFilter } from './PlatformFilter';
 import { PersonalHistory, PersonalSummaryView } from './PersonalHistory';
+import { CreatorLinks } from './Creators';
 
 export type GameRow = { key: string; meta: GameMeta; purchases: Ownership[]; personal?: PersonalSummary };
+
+const CreatorCredits = ({ credits, source, links }: {
+  credits: GameCreatorCredits; source: { key: string } | { game: Game }; links?: ReadonlyMap<string, CreatorGameLink>;
+}) => (
+  <>
+    {credits.developers.length > 0 && <>Developers: <CreatorLinks credits={credits.developers} links={links} /></>}
+    {credits.publishers.length > 0 && <>{credits.developers.length > 0 && <br />}Publishers: <CreatorLinks credits={credits.publishers} links={links} /></>}
+    {credits.creators.length > 0 && <>{(credits.developers.length > 0 || credits.publishers.length > 0) && <br />}Creators: <CreatorLinks credits={credits.creators} links={links} /></>}
+    {(credits.developers.length > 0 || credits.publishers.length > 0 || credits.creators.length > 0) && (
+      <>
+        {' '}
+        <button type="button" class="creator-info" aria-label="Show raw creator credits"
+          data-popover={'game' in source ? rawCreatorCredits(source.game) : 'Raw creator credits\nLoading…'}
+          data-popover-url={'key' in source ? `/games/${source.key}/creator-sources` : undefined}
+        ><i class="fa-solid fa-circle-info" aria-hidden="true"></i></button>
+      </>
+    )}
+  </>
+);
+
+const listCredits = (meta: GameMeta, index: CreatorIndex, links?: ReadonlyMap<string, CreatorGameLink>): GameCreatorCredits => ({
+  developers: creatorLinksForRole(meta.developers ?? [], 'developer', index).filter(credit => !credit.key || !links?.get(credit.key)?.miscredit),
+  publishers: creatorLinksForRole(meta.publishers ?? [], 'publisher', index).filter(credit => !credit.key || !links?.get(credit.key)?.miscredit),
+  creators: [],
+});
+
+const listCreatorSearch = (meta: GameMeta, credits: GameCreatorCredits, index: CreatorIndex, links?: ReadonlyMap<string, CreatorGameLink>): string => [
+  ...([['developer', meta.developers ?? []], ['publisher', meta.publishers ?? []]] as const).flatMap(([role, names]) =>
+    names.flatMap(name => creatorLinksForRole([name], role, index).some(credit => credit.key && links?.get(credit.key)?.miscredit)
+      ? [] : creatorSearchNames([name], index, role))),
+  ...[...credits.developers, ...credits.publishers].flatMap(({ name }) => {
+    const match = index.get(normalizeCreator(name));
+    return match ? creatorNames(match.creator) : [name];
+  }),
+].join(' ');
 
 /** Wraps children in an external link when there is a URL, otherwise renders them as they are. */
 const ExternalLink = ({ href, children }: { href?: string | false | 0; children?: unknown }) =>
@@ -131,7 +169,10 @@ const COLUMNS = [
 
 const columnOf = (group: string): string => (COLUMNS.some(c => c.title === group) ? group : 'PC');
 
-export const GameList = ({ rows, unresolved }: { rows: GameRow[]; unresolved: (Ownership & { ambiguous?: string[] })[] }) => {
+export const GameList = ({ rows, unresolved, creatorIndex, creatorGameLinks }: {
+  rows: GameRow[]; unresolved: (Ownership & { ambiguous?: string[] })[]; creatorIndex: CreatorIndex;
+  creatorGameLinks?: CreatorGameLinks;
+}) => {
   const owned = rows.filter(r => r.purchases.length);
   const labels = [...new Set(rows.flatMap(r => r.purchases.map(visibleLabel)))].filter((l): l is string => !!l).sort();
   const genres = [...new Set(rows.flatMap(r => r.meta.genres ?? []))].sort((a, b) => a.localeCompare(b));
@@ -166,7 +207,7 @@ export const GameList = ({ rows, unresolved }: { rows: GameRow[]; unresolved: (O
 
       <form class="game-controls" data-game-controls>
         <div class="filters">
-          <input type="search" name="q" placeholder="Filter by title…" autofocus />
+          <input type="search" name="q" placeholder="Filter by title or creator…" aria-label="Filter by title or creator" />
           <label for="sort">Sort by</label>
           <Select name="sort" id="sort">{SORTS.map(([value, label]) => <option value={value}>{label}</option>)}</Select>
           <Select name="dir">
@@ -197,6 +238,7 @@ export const GameList = ({ rows, unresolved }: { rows: GameRow[]; unresolved: (O
             <th width="60"><span class="open-critic-logo">OpenCritic</span></th>
             <th width="30"><span class="metacritic-logo">Metacritic</span></th>
             <th>Title</th>
+            <th class="game-creator-column">Creators</th>
             {COLUMNS.map(c => <th class="platform-head" title={c.title} style={`--platform-head-size: ${c.size}`}><i class={`platform-icon icon-${c.icon}`} role="img" aria-label={c.title}></i></th>)}
             <th>
               <div class="state-heading">
@@ -212,6 +254,7 @@ export const GameList = ({ rows, unresolved }: { rows: GameRow[]; unresolved: (O
         </thead>
         <tbody>
           {rows.map(({ key, meta, purchases, personal }) => {
+            const credits = listCredits(meta, creatorIndex, creatorGameLinks?.get(key));
             const groups = platformGroups(purchases);
             const purchaseDates = purchases.map(p => p.tx.date).sort();
             const purchased = purchaseDates.at(-1) ?? '';
@@ -221,7 +264,7 @@ export const GameList = ({ rows, unresolved }: { rows: GameRow[]; unresolved: (O
                 data-game
                 data-key={key}
                 data-title={meta.title.toLowerCase()}
-                data-search={meta.title.toLowerCase()}
+                data-search={`${meta.title} ${listCreatorSearch(meta, credits, creatorIndex, creatorGameLinks?.get(key))}`.toLowerCase()}
                 data-owned={purchases.length ? '1' : ''}
                 data-groups={groups.map(([g]) => g).join(',')}
                 data-labels={groups.flatMap(([, l]) => l.map(x => x.label)).join(',')}
@@ -258,6 +301,7 @@ export const GameList = ({ rows, unresolved }: { rows: GameRow[]; unresolved: (O
                   <br />
                   {meta.steamId && <ExternalLink href={steamUrl(meta.steamId)}><span class={`steam-review ${steamReviewColor(meta)}`}>{steamReview(meta)}</span></ExternalLink>}
                 </td>
+                <td class="game-creator-column game-creators"><CreatorCredits credits={credits} source={{ key }} /></td>
                 {COLUMNS.map(column => (
                   <td class="platforms">
                     <span class="platform-group">
@@ -275,16 +319,17 @@ export const GameList = ({ rows, unresolved }: { rows: GameRow[]; unresolved: (O
       </table>
       <div id="game-cards" class="cards game-cards" hidden>
         {rows.map(({ key, meta, purchases, personal }) => {
-          const cover = meta.cover ?? purchases.find(p => p.item.cover)?.item.cover;
+          const cover = gameMetaCover(meta);
           const platforms = platformGroups(purchases).flatMap(([, labels]) => labels);
           const scores = [meta.oc && `OC ${meta.oc}`, meta.mc && `MC ${meta.mc}`, meta.steam && `Steam ${steamReview(meta)}`].filter(Boolean).join(' · ');
           return (
             <article class="card game-card" data-game-card data-key={key}>
               <a class="game-card-cover" href={`/games/${key}`} aria-label={meta.title}>
-                {cover ? <img src={cover} alt="" loading="lazy" /> : <span class="game-card-no-cover" aria-hidden="true"></span>}
+                {cover ? <><img src={cover} alt="" loading="lazy" data-game-cover /><span class="game-card-no-cover" aria-hidden="true" hidden></span></> : <span class="game-card-no-cover" aria-hidden="true"></span>}
               </a>
               <div class="card-body">
                 <strong><a href={`/games/${key}`}>{meta.title}</a></strong>
+                {(meta.developers?.length || meta.publishers?.length) ? <span class="game-creators"><CreatorCredits credits={listCredits(meta, creatorIndex, creatorGameLinks?.get(key))} source={{ key }} /></span> : null}
                 <span class="tags">{meta.release ? <span data-popover={meta.release} tabindex={0}>{meta.release.slice(0, 4)}</span> : 'Release unknown'}{purchases.length ? '' : ' · Not owned'}</span>
                 <span class="game-card-state" data-state-mode="peak"><PersonalSummaryView summary={personal} /></span>
                 <span class="game-card-platforms">
@@ -302,18 +347,21 @@ export const GameList = ({ rows, unresolved }: { rows: GameRow[]; unresolved: (O
 
 const sourceId = (ref?: { id: unknown }): string => (ref === undefined ? '' : ref.id === null ? 'none' : String(ref.id));
 
-const SourceMetadata = ({ data, fetchedAt }: { data?: OpenCriticData | SteamData | MetacriticData; fetchedAt?: string }) => (
+const SourceMetadata = ({ data, fetchedAt, creatorIndex, links }: {
+  data?: OpenCriticData | SteamData | MetacriticData; fetchedAt?: string; creatorIndex: CreatorIndex;
+  links?: ReadonlyMap<string, CreatorGameLink>;
+}) => (
   <details class="source-metadata">
     <summary>
       <span>{data?.title ?? 'No source title'}</span>
-      <time>{data?.releaseDate ?? 'No release date'}</time>
+      <time>{data?.releaseDate?.replace(/T.*/, '') ?? 'No release date'}</time>
     </summary>
     {data ? (
       <dl>
-        {Object.entries(data).filter(([key]) => key !== 'title' && key !== 'releaseDate').map(([key, value]) => (
+        {Object.entries(data).filter(([key]) => key !== 'title' && key !== 'releaseDate' && !(key === 'publisher' && 'publishers' in data && data.publishers?.length)).map(([key, value]) => (
           <>
             <dt>{key.replace(/([a-z])([A-Z])/g, '$1 $2').replace(/^./, first => first.toUpperCase())}</dt>
-            <dd>{value == null ? 'Not available' : Array.isArray(value) ? value.join(', ') || 'None' : typeof value === 'boolean' ? value ? 'Yes' : 'No' : typeof value === 'string' && /^https?:\/\//.test(value) ? <ExternalLink href={value}>{value}</ExternalLink> : String(value)}</dd>
+            <dd>{value == null ? 'Not available' : ['developers', 'publishers', 'creators'].includes(key) && Array.isArray(value) ? value.length ? <CreatorLinks credits={key === 'creators' ? creatorLinks(value, creatorIndex) : creatorLinksForRole(value, key === 'developers' ? 'developer' : 'publisher', creatorIndex)} links={links} /> : 'None' : key === 'publisher' && typeof value === 'string' ? <CreatorLinks credits={creatorLinksForRole([value], 'publisher', creatorIndex)} links={links} /> : Array.isArray(value) ? value.join(', ') || 'None' : typeof value === 'boolean' ? value ? 'Yes' : 'No' : typeof value === 'string' && /^https?:\/\//.test(value) ? <ExternalLink href={value}>{value}</ExternalLink> : String(value)}</dd>
           </>
         ))}
         <dt>Fetched at</dt>
@@ -323,8 +371,11 @@ const SourceMetadata = ({ data, fetchedAt }: { data?: OpenCriticData | SteamData
   </details>
 );
 
-export const GamePage = ({ game, purchases, release, errors = [], saved, fetcher, personalEntries = [], personalErrors = [], personalDraft, personalSaved, editingEntry }: {
+export const GamePage = ({ game, purchases, creatorIndex, creatorGameLinks, release, errors = [], saved, fetcher, autoRefresh, autoRefreshError, personalEntries = [], personalErrors = [], personalDraft, personalSaved, editingEntry }: {
   game: Game; purchases: Ownership[]; release?: string; errors?: string[]; saved?: boolean; fetcher?: boolean;
+  autoRefresh?: Pick<RefreshJob, 'id' | 'state'>; autoRefreshError?: string;
+  creatorIndex: CreatorIndex;
+  creatorGameLinks?: ReadonlyMap<string, CreatorGameLink>;
   personalEntries?: PersonalEntry[]; personalErrors?: string[]; personalDraft?: PersonalDraft;
   personalSaved?: boolean;
   editingEntry?: PersonalEntry;
@@ -332,7 +383,17 @@ export const GamePage = ({ game, purchases, release, errors = [], saved, fetcher
   const oc = game.opencritic?.data;
   const steam = game.steam?.data;
   const mc = game.metacritic?.data;
-  const cover = oc?.cover ?? steam?.headerImage;
+  const credits = gameCreatorCredits(game, creatorIndex);
+  const cover = gameCover(game);
+  const coverOptions = [
+    { value: '', label: 'Automatic (Steam portrait, OpenCritic, Metacritic)', image: automaticGameCover(game) },
+    { value: 'opencritic', label: 'OpenCritic', image: oc?.cover },
+    { value: 'steam', label: 'Steam header', image: steam?.headerImage },
+    { value: 'steamPortrait', label: 'Steam portrait', image: game.steam?.id ? steamPortraitUrl(game.steam.id) : undefined },
+    { value: 'metacritic', label: 'Metacritic card', image: mc?.cover },
+    ...(mc?.mainImage && mc.mainImage !== mc.cover || game.coverSource === 'metacriticMain'
+      ? [{ value: 'metacriticMain', label: 'Metacritic main', image: mc?.mainImage }] : []),
+  ];
   const steamMeta: GameMeta = {
     title: game.title,
     ...(game.steam?.id ? { steamId: game.steam.id } : {}),
@@ -353,13 +414,20 @@ export const GamePage = ({ game, purchases, release, errors = [], saved, fetcher
       {fetcher && (
         <p class="actions">
           <button type="button" data-refresh-game={game.key}>Refresh ratings now</button>
-          <span class="meta" data-refresh-status></span>
+          <span class="meta" data-refresh-status data-auto-refresh-id={autoRefresh?.id} data-auto-refresh-state={autoRefresh?.state}>
+            {autoRefreshError ? `Automatic refresh could not be queued: ${autoRefreshError}`
+              : autoRefresh?.state === 'pending' ? 'Ratings refresh queued…'
+              : autoRefresh?.state === 'running' ? 'Refreshing ratings in the background…'
+              : autoRefresh ? 'Checking last refresh result…'
+              : game.refreshLock && 'Refreshing ratings in the background…'}
+          </span>
         </p>
       )}
       {errors.length > 0 && <ul class="errors">{errors.map(e => <li>{e}</li>)}</ul>}
       <div class="game-head">
-        {cover && <img src={cover} alt="" />}
+        {cover && <img src={cover} alt="" data-game-cover />}
         <div class="game-head-info">
+          {game.coverSource && <p class="meta" data-missing-cover hidden>Selected cover image unavailable. Choose another source.</p>}
           <h1 class="game-detail-title"><span data-popover={game.key}>{game.title}</span> {release && <span class="release-year">{release.slice(0, 4)}</span>}</h1>
           <div class="game-rating-row">
             {oc?.score && <ExternalLink href={game.opencritic?.id ? opencriticUrl(game.opencritic.id) : undefined}>
@@ -384,7 +452,9 @@ export const GamePage = ({ game, purchases, release, errors = [], saved, fetcher
               </span>
             </ExternalLink>}
           </div>
-          <small class="game-release-genres">{release ?? 'unknown'} &bull; {[...new Set([...(steam?.genres ?? []), ...(mc?.genres ?? [])])].join(', ')}</small>
+          <small class="game-release-genres">{release ?? 'unknown'} &bull; {gameGenres(game).join(', ')}</small>
+          {(credits.developers.length > 0 || credits.publishers.length > 0 || credits.creators.length > 0) && <p class="game-creators"><CreatorCredits credits={credits} source={{ game }} links={creatorGameLinks} /></p>}
+          {game.coverSource && !cover && <p class="meta">Selected cover unavailable. Add its source ID, refresh its metadata, or choose another source.</p>}
           {steam?.description && <p>{steam.description}</p>}
         </div>
       </div>
@@ -430,20 +500,41 @@ export const GamePage = ({ game, purchases, release, errors = [], saved, fetcher
         <div class="source-fields">
           <div>
             <label>OpenCritic id<input name="opencritic" value={sourceId(game.opencritic)} placeholder="e.g. 3245/140, or none" /></label>
-            <SourceMetadata data={oc && { ...oc, platforms: oc.platforms ?? [], creators: oc.creators ?? [], description: oc.description ?? null }} fetchedAt={game.opencritic?.fetchedAt} />
+            <SourceMetadata data={oc && { ...oc, platforms: oc.platforms ?? [], creators: oc.creators ?? [], description: oc.description ?? null }} fetchedAt={game.opencritic?.fetchedAt} creatorIndex={creatorIndex} links={creatorGameLinks} />
           </div>
           <div>
             <label>Steam app id<input name="steam" value={sourceId(game.steam)} placeholder="e.g. 242820, or none" /></label>
-            <SourceMetadata data={steam && { ...steam, developers: steam.developers ?? [], publishers: steam.publishers ?? [] }} fetchedAt={game.steam?.fetchedAt} />
+            <SourceMetadata data={steam && { ...steam, developers: steam.developers ?? [], publishers: steam.publishers ?? [] }} fetchedAt={game.steam?.fetchedAt} creatorIndex={creatorIndex} links={creatorGameLinks} />
           </div>
           <div>
             <label>Metacritic URL<input name="metacritic" value={sourceId(game.metacritic)} placeholder="https://www.metacritic.com/game/…, or none" /></label>
-            <SourceMetadata data={mc && { ...mc, summary: mc.summary ?? null }} fetchedAt={game.metacritic?.fetchedAt} />
+            <SourceMetadata data={mc && { ...mc, summary: mc.summary ?? null }} fetchedAt={game.metacritic?.fetchedAt} creatorIndex={creatorIndex} links={creatorGameLinks} />
           </div>
         </div>
         <p class="meta">Empty: not checked yet. "none": not available on that source. Changing an id drops its fetched data.</p>
+        <fieldset class="cover-options">
+          <legend>Cover source</legend>
+          <div class="cover-choices">
+            {coverOptions.map(option => (
+              <label class="cover-choice">
+                <input type="radio" name="coverSource" value={option.value} checked={(game.coverSource ?? '') === option.value} />
+                {option.image ? <><img src={option.image} alt="" loading="lazy" data-cover-preview /><span class="cover-choice-empty" hidden>No image</span></> : <span class="cover-choice-empty">No image</span>}
+                <span>{option.label}</span>
+              </label>
+            ))}
+          </div>
+          <p class="meta">Steam portrait artwork is checked when previewed; refresh Metacritic metadata to load its card and main images. An unavailable selected source will not use another image.</p>
+        </fieldset>
         <label>Aliases (other titles used by transactions or stores, one per line)<textarea name="aliases" rows={4}>{(game.aliases ?? []).join('\n')}</textarea></label>
+        <label>Manual developers (comma-separated)<textarea name="manualDevelopers" rows={2}>{(game.manualDevelopers ?? []).join(', ')}</textarea></label>
+        <label>Manual publishers (comma-separated)<textarea name="manualPublishers" rows={2}>{(game.manualPublishers ?? []).join(', ')}</textarea></label>
+        <label>Manual genres (comma-separated)<textarea name="manualGenres" rows={2}>{(game.manualGenres ?? []).join(', ')}</textarea></label>
         <div class="actions"><button type="submit" class="primary">Save</button><a href="/games">Back to games</a></div>
+      </form>
+      <form method="post" action={`/games/${game.key}/delete`}
+        data-confirm={`Delete ${game.title} (${game.key})? This permanently removes its fetched source data and aliases. Purchases matching another game may move to that game.`}
+        class="actions">
+        <button type="submit" class="danger">Delete game</button>
       </form>
       <p class="meta">updated {game.updatedAt}</p>
     </Layout>

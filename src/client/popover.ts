@@ -12,6 +12,7 @@ export const initPopovers = (): void => {
   document.body.append(popover);
 
   let current: HTMLElement | null = null;
+  const loading = new WeakSet<HTMLElement>();
   const GAP = 10;
   const MARGIN = 8;
 
@@ -20,8 +21,8 @@ export const initPopovers = (): void => {
     current = null;
   };
 
-  const show = (el: HTMLElement): void => {
-    if (current === el) return;
+  const show = (el: HTMLElement, refresh = false): void => {
+    if (current === el && !refresh) return;
     current = el;
     const [title = '', ...lines] = (el.dataset.popover ?? '').split('\n');
     heading.textContent = title;
@@ -43,6 +44,21 @@ export const initPopovers = (): void => {
     popover.style.left = `${left + scrollX}px`;
     popover.style.top = `${top + scrollY}px`;
     arrow.style.left = `${Math.min(Math.max(center - left, 12), width - 12)}px`;
+
+    if (!refresh && el.dataset.popoverUrl && !loading.has(el)) {
+      loading.add(el);
+      void fetch(el.dataset.popoverUrl).then(async response => {
+        if (!response.ok) throw new Error(`Source credits request failed (${response.status})`);
+        el.dataset.popover = await response.text();
+        delete el.dataset.popoverUrl;
+      }).catch(error => {
+        console.error('Could not load raw creator credits:', error);
+        el.dataset.popover = 'Raw creator credits\nCould not load source credits.';
+      }).finally(() => {
+        loading.delete(el);
+        if (current === el) show(el, true);
+      });
+    }
   };
 
   const target = (event: Event): HTMLElement | null =>

@@ -6,6 +6,7 @@ const NavLinks = () => (
     <a href="/transactions">Transactions</a>
     <a href="/transactions/new">New transaction</a>
     <a href="/games">Games</a>
+    <a href="/creators">Creators</a>
     <a href="/refresh">Refresh ratings</a>
     <a href="/export.json">Export JSON</a>
   </>
@@ -26,11 +27,19 @@ export const Layout = ({ title, children }: { title: string; children?: Child })
       <body>
         <header class="topbar">
           <strong>Game Library</strong>
-          <nav class="topbar-links" aria-label="Main navigation"><NavLinks /></nav>
-          <details class="topbar-menu">
-            <summary aria-label="Menu" title="Menu"><span aria-hidden="true">☰</span></summary>
-            <nav aria-label="Mobile navigation"><NavLinks /></nav>
-          </details>
+          <div class="topbar-actions">
+            <nav class="topbar-links" aria-label="Main navigation"><NavLinks /></nav>
+            <details class="refresh-queue" data-refresh-queue hidden>
+              <summary>Refresh queue <span data-refresh-queue-count>0</span></summary>
+              <div class="refresh-queue-panel" data-refresh-queue-panel>
+                <p>Loading queue…</p>
+              </div>
+            </details>
+            <details class="topbar-menu">
+              <summary aria-label="Menu" title="Menu"><span aria-hidden="true">☰</span></summary>
+              <nav aria-label="Mobile navigation"><NavLinks /></nav>
+            </details>
+          </div>
         </header>
         <main>{children}</main>
       </body>

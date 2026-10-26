@@ -1,5 +1,5 @@
-import { SOURCES, releaseDate, type Game, type SourceName, type SourceRef } from '../games';
-import { fetchMetacritic, fetchOpenCritic, fetchSteam, type ParseResult } from './parsers';
+import { SOURCES, releaseDate, type Game, type SourceName, type SourceRef } from '../games.ts';
+import { fetchMetacritic, fetchOpenCritic, fetchSteam, type ParseResult } from './parsers.ts';
 
 export type SourceStatus = 'fetched' | 'fresh' | 'unavailable' | 'missing' | 'error';
 
@@ -24,7 +24,15 @@ const significant = (name: SourceName, data: unknown): string =>
   JSON.stringify(data, (key, value) => (VOLATILE[name]?.includes(key) ? undefined : value));
 
 const isStale = (ref: SourceRef<unknown, unknown>, maxAgeDays: number, now: number): boolean =>
-  !ref.fetchedAt || now - Date.parse(ref.fetchedAt) > maxAgeDays * DAY;
+  !ref.fetchedAt || !Number.isFinite(Date.parse(ref.fetchedAt)) || now - Date.parse(ref.fetchedAt) > maxAgeDays * DAY;
+
+export const needsGameRefresh = (game: Game, now = Date.now()): boolean =>
+  SOURCES.some(name => {
+    const ref = game[name];
+    return ref?.id != null && isStale(ref, 1, now);
+  });
+
+export const significantSourceData = significant;
 
 type Fetcher = (id: never) => Promise<ParseResult<unknown>>;
 const FETCHERS: Record<SourceName, Fetcher> = {

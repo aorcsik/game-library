@@ -4,9 +4,9 @@ import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { readFile, readdir } from 'node:fs/promises';
 import { resolve } from 'node:path';
-import { getPlatformProxy } from 'wrangler';
+import { getLocalKvProxy } from './local-kv-proxy.ts';
 
-type Binding = 'GAMES' | 'GAMEDB' | 'GAMESTATE';
+type Binding = 'GAMES' | 'GAMEDB' | 'GAMESTATE' | 'CREATORS';
 type Entry = { key: string; value: string; metadata?: unknown; expiration?: number };
 type KV = {
   list(options?: { cursor?: string }): Promise<{ keys: { name: string }[]; list_complete: boolean; cursor?: string }>;
@@ -16,7 +16,7 @@ type KV = {
 
 const root = resolve(import.meta.dirname, '..');
 const backupDir = resolve(root, '.backups');
-const bindings: Binding[] = ['GAMES', 'GAMEDB', 'GAMESTATE'];
+const bindings: Binding[] = ['GAMES', 'GAMEDB', 'GAMESTATE', 'CREATORS'];
 const [filename, ...flags] = process.argv.slice(2);
 
 if (!filename) {
@@ -36,14 +36,18 @@ const hash = createHash('sha256').update(content).digest('hex');
 if (filename !== `kv-${hash}.json`) throw new Error(`Backup checksum does not match: ${filename}`);
 
 const parsed: unknown = JSON.parse(content.toString('utf8'));
-if (parsed === null || typeof parsed !== 'object' || Array.isArray(parsed) ||
-    Object.keys(parsed).sort().join(',') !== [...bindings].sort().join(',')) {
-  throw new Error('Backup must contain exactly GAMES, GAMEDB, and GAMESTATE.');
+if (parsed === null || typeof parsed !== 'object' || Array.isArray(parsed)) {
+  throw new Error('Backup must contain GAMES, GAMEDB, GAMESTATE, and optionally CREATORS.');
 }
-const snapshot = parsed as Record<Binding, unknown>;
+const snapshot = parsed as Record<string, unknown>;
+const snapshotBindings = bindings.filter(binding => binding in snapshot || binding === 'CREATORS' && 'DEVELOPERS' in snapshot);
+if (!['GAMES', 'GAMEDB', 'GAMESTATE'].every(binding => binding in parsed) ||
+    Object.keys(snapshot).length !== snapshotBindings.length || 'DEVELOPERS' in snapshot && 'CREATORS' in snapshot) {
+  throw new Error('Backup must contain GAMES, GAMEDB, GAMESTATE, and optionally CREATORS (legacy DEVELOPERS is supported).');
+}
 const entries = {} as Record<Binding, Entry[]>;
-for (const binding of bindings) {
-  const records = snapshot[binding];
+for (const binding of snapshotBindings) {
+  const records = snapshot[binding === 'CREATORS' && !('CREATORS' in snapshot) ? 'DEVELOPERS' : binding];
   if (!Array.isArray(records)) throw new Error(`Invalid ${binding} entries in backup.`);
   const seen = new Set<string>();
   entries[binding] = records.map((record: unknown) => {
@@ -69,10 +73,10 @@ if (flags.includes('--yes')) {
   execFileSync(process.execPath, [resolve(root, 'scripts/backup-kv.ts')], { cwd: root, stdio: 'inherit' });
 }
 
-const proxy = await getPlatformProxy<Record<Binding, KV>>({ configPath: resolve(root, 'wrangler.jsonc') });
+const { proxy, dispose } = await getLocalKvProxy<Record<Binding, KV>>();
 try {
   const plans: { binding: Binding; existing: Set<string>; desired: Set<string> }[] = [];
-  for (const binding of bindings) {
+  for (const binding of snapshotBindings) {
     const existing = new Set<string>();
     let cursor: string | undefined;
     do {
@@ -102,5 +106,5 @@ try {
     }
   }
 } finally {
-  await proxy.dispose();
+  await dispose();
 }

@@ -1,5 +1,6 @@
 // Game database (GAMEDB namespace): fetched review/store data per game, joined with transactions by title.
 import { normalizeTitle, type Item, type Transaction } from './model.ts';
+import { transformCreatorNames } from './creatorRules.ts';
 
 export type OpenCriticData = {
   title: string | null;
@@ -28,6 +29,8 @@ export type SteamData = {
 
 export type MetacriticData = {
   title: string | null;
+  cover?: string | null;
+  mainImage?: string | null;
   releaseDate: string | null;
   summary?: string | null;
   /** null: no score yet (legacy -1 "tbd"). */
@@ -36,18 +39,29 @@ export type MetacriticData = {
   genres: string[];
   platforms: string[];
   publisher: string | null;
+  publishers?: string[];
   developers: string[];
 };
 
 /** `id: null` means checked and not available on that source; a missing source means not checked yet. */
 export type SourceRef<Id, Data> = { id: Id | null; data?: Data; fetchedAt?: string };
+export type CoverSource = SourceName | 'steamPortrait' | 'metacriticMain';
 
 export type Game = {
   key: string;
   title: string;
+  /** Temporary metadata refresh lock; expired locks may be replaced after interrupted work. */
+  refreshLock?: { token: string; startedAt: string };
   /** Other titles transactions or stores use for this game. */
   aliases?: string[];
-  /** Manual release date, used when no source provides one. */
+  /** Manually credited creators, kept separate from fetched source data. */
+  manualDevelopers?: string[];
+  manualPublishers?: string[];
+  /** Genres added by the user without changing fetched source data. */
+  manualGenres?: string[];
+  /** Omit to select Steam portrait, then OpenCritic, then Metacritic automatically. */
+  coverSource?: CoverSource;
+  /** Manual release date, preferred over all fetched dates. */
   releaseDate?: string;
   opencritic?: SourceRef<string, OpenCriticData>;
   steam?: SourceRef<number, SteamData>;
@@ -58,6 +72,7 @@ export type Game = {
 /** KV key metadata for the list view (must stay < 1024 bytes). */
 export type GameMeta = {
   title: string;
+  coverSource?: CoverSource;
   release?: string;
   oc?: number;
   tier?: string;
@@ -65,6 +80,8 @@ export type GameMeta = {
   mustPlay?: boolean;
   steam?: number;
   genres?: string[];
+  developers?: string[];
+  publishers?: string[];
   cover?: string;
   /** Source ids, for linking to the external pages. */
   ocId?: string;
@@ -83,6 +100,8 @@ export const gameKey = (key: string): string => `game:${key}`;
 
 export const opencriticUrl = (id: string): string => `https://opencritic.com/game/${id}`;
 export const steamUrl = (appId: number): string => `https://store.steampowered.com/app/${appId}`;
+export const steamPortraitUrl = (appId: number): string =>
+  `https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/${appId}/library_600x900.jpg`;
 export const TITLE_INDEX_KEY = 'index:titles';
 
 export const OPENCRITIC_TIERS = ['mighty', 'strong', 'fair', 'weak', 'n/a'] as const;
@@ -93,7 +112,7 @@ export const STEAM_REVIEWS = [
   'Mostly Negative', 'Negative', 'Very Negative', 'Overwhelmingly Negative', 'n/a',
 ] as const;
 
-export const opencriticTier = (meta: GameMeta): string => meta.tier ?? 'n/a';
+export const opencriticTier = (meta: GameMeta): string => meta.tier?.toLowerCase() ?? 'n/a';
 
 export const metacriticBucket = (meta: GameMeta): string =>
   !meta.mcUrl ? 'n/a' : meta.mc === undefined ? 'tbd' : meta.mc >= 90 ? '90+' : meta.mc >= 75 ? '75-89' : meta.mc >= 50 ? '50-74' : '<50';
@@ -126,11 +145,33 @@ export const slugify = (title: string): string =>
   title.replace(/[™®©]/g, ' ').replace(/&/g, ' and ').normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
     .toLowerCase().replace(/['’]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 
-/** Prefer the manual release date, then the first valid source date. */
+/** Prefer manual, Metacritic, OpenCritic, then Steam release dates. */
 export const releaseDate = (game: Game): string | undefined => {
-  const date = [game.releaseDate, game.opencritic?.data?.releaseDate, game.steam?.data?.releaseDate, game.metacritic?.data?.releaseDate]
+  const date = [game.releaseDate, game.metacritic?.data?.releaseDate, game.opencritic?.data?.releaseDate, game.steam?.data?.releaseDate]
     .find((value): value is string => !!value && !isNaN(Date.parse(value)));
   return date ? new Date(date).toISOString().slice(0, 10) : undefined;
+};
+
+export const automaticGameCover = (game: Game): string | null | undefined =>
+  game.steam?.id ? steamPortraitUrl(game.steam.id) : game.opencritic?.data?.cover || game.metacritic?.data?.cover;
+
+export const gameCover = (game: Game): string | null | undefined => {
+  switch (game.coverSource) {
+    case 'opencritic': return game.opencritic?.data?.cover;
+    case 'steam': return game.steam?.data?.headerImage;
+    case 'steamPortrait': return game.steam?.id ? steamPortraitUrl(game.steam.id) : undefined;
+    case 'metacritic': return game.metacritic?.data?.cover;
+    case 'metacriticMain': return game.metacritic?.data?.mainImage;
+    default: return automaticGameCover(game);
+  }
+};
+
+export const gameMetaCover = (meta: GameMeta): string | undefined => {
+  if (!meta.coverSource || meta.coverSource === 'steamPortrait') {
+    if (meta.steamId) return steamPortraitUrl(meta.steamId);
+    if (meta.coverSource === 'steamPortrait') return undefined;
+  }
+  return meta.cover;
 };
 
 const displayGenre = (genre: string): string => {
@@ -141,8 +182,41 @@ const displayGenre = (genre: string): string => {
   }
 };
 
+export const gameGenres = (game: Game): string[] =>
+  [...new Set([
+    ...(game.steam?.data?.genres ?? []),
+    ...(game.metacritic?.data?.genres ?? []),
+    ...(game.manualGenres ?? []),
+  ].map(genre => displayGenre(genre).trim()).filter(Boolean))].sort();
+
+export const gameDevelopers = (game: Game): string[] =>
+  [...new Set(transformCreatorNames([
+    ...(game.steam?.data?.developers ?? []),
+    ...(game.metacritic?.data?.developers ?? []),
+    ...(game.manualDevelopers ?? []),
+  ].map(name => name.trim()).filter(Boolean), 'developer'))];
+
+export const gamePublishers = (game: Game): string[] =>
+  [...new Set(transformCreatorNames([
+    ...(game.steam?.data?.publishers ?? []),
+    ...(game.metacritic?.data?.publishers ?? (game.metacritic?.data?.publisher ? [game.metacritic.data.publisher] : [])),
+    ...(game.manualPublishers ?? []),
+  ].map(name => name.trim()).filter(Boolean), 'publisher'))];
+
+export const rawCreatorCredits = (game: Game): string => [
+  'Raw creator credits',
+  `Metacritic developers: ${game.metacritic?.data?.developers?.join('; ') || '(none)'}`,
+  `Metacritic publishers: ${game.metacritic?.data?.publishers?.join('; ') || game.metacritic?.data?.publisher || '(none)'}`,
+  `Steam developers: ${game.steam?.data?.developers?.join('; ') || '(none)'}`,
+  `Steam publishers: ${game.steam?.data?.publishers?.join('; ') || '(none)'}`,
+  `OpenCritic creators: ${game.opencritic?.data?.creators?.join('; ') || '(none)'}`,
+  `Manual developers: ${game.manualDevelopers?.join('; ') || '(none)'}`,
+  `Manual publishers: ${game.manualPublishers?.join('; ') || '(none)'}`,
+].join('\n');
+
 export const toGameMeta = (game: Game): GameMeta => {
   const meta: GameMeta = { title: game.title.slice(0, 300) };
+  if (game.coverSource) meta.coverSource = game.coverSource;
   const release = releaseDate(game);
   if (release) meta.release = release;
   const oc = game.opencritic?.data;
@@ -151,9 +225,11 @@ export const toGameMeta = (game: Game): GameMeta => {
   if (game.metacritic?.data?.metacriticScore != null) meta.mc = game.metacritic.data.metacriticScore;
   if (game.metacritic?.data?.mustPlay) meta.mustPlay = true;
   if (game.steam?.data?.reviewScore != null) meta.steam = game.steam.data.reviewScore;
-  const genres = [...new Set([...(game.steam?.data?.genres ?? []), ...(game.metacritic?.data?.genres ?? [])].map(displayGenre))].filter(Boolean).sort();
-  if (genres.length) meta.genres = genres;
-  const cover = game.opencritic?.data?.cover ?? game.steam?.data?.headerImage;
+  for (const genre of gameGenres(game)) {
+    const next = { ...meta, genres: [...(meta.genres ?? []), genre] };
+    if (new TextEncoder().encode(JSON.stringify(next)).length <= 1024) meta.genres = next.genres;
+  }
+  const cover = (game.coverSource === 'steamPortrait' || (!game.coverSource && game.steam?.id)) ? undefined : gameCover(game);
   if (cover && cover.length <= 400) meta.cover = cover;
   if (game.opencritic?.id) meta.ocId = game.opencritic.id;
   if (game.metacritic?.id) meta.mcUrl = game.metacritic.id;
@@ -162,6 +238,14 @@ export const toGameMeta = (game: Game): GameMeta => {
   if (withId.length) meta.fetched = withId.some(ref => !ref?.fetchedAt) ? '' : withId.map(ref => ref!.fetchedAt!).sort()[0];
   const todo = SOURCES.filter(s => !game[s]);
   if (todo.length) meta.todo = todo;
+  for (const developer of gameDevelopers(game)) {
+    const next = { ...meta, developers: [...(meta.developers ?? []), developer] };
+    if (new TextEncoder().encode(JSON.stringify(next)).length <= 1024) meta.developers = next.developers;
+  }
+  for (const publisher of gamePublishers(game)) {
+    const next = { ...meta, publishers: [...(meta.publishers ?? []), publisher] };
+    if (new TextEncoder().encode(JSON.stringify(next)).length <= 1024) meta.publishers = next.publishers;
+  }
   return meta;
 };
 

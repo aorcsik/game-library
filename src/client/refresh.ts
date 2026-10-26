@@ -11,6 +11,11 @@ type RefreshResponse = {
   needsReleaseDate: boolean;
   proposed: { metacritic?: string };
 };
+type RefreshStatus = {
+  state: 'pending' | 'running' | 'done' | 'failed';
+  result?: RefreshResponse;
+  error?: string;
+};
 
 const API = '/api/fetcher';
 
@@ -42,6 +47,33 @@ const cell = (text: string, className = ''): HTMLTableCellElement => {
 };
 
 const sleep = (ms: number): Promise<void> => new Promise(resolve => setTimeout(resolve, ms));
+
+const refreshMessage = (data: RefreshResponse): string => {
+  const summary = SOURCES.map(s => `${s}: ${data.sources[s].status}${data.sources[s].error ? ` (${data.sources[s].error})` : ''}`).join(', ');
+  const hasErrors = SOURCES.some(s => data.sources[s].status === 'error');
+  return `${hasErrors ? 'Refresh finished with errors' : data.changed ? 'Updated' : 'Refresh complete (no changes)'}. ${summary}${data.proposed.metacritic ? `. Steam suggests ${data.proposed.metacritic}` : ''}`;
+};
+
+const pollRefresh = async (key: string, id: string, onProgress?: (state: 'pending' | 'running') => void): Promise<RefreshResponse | undefined> => {
+  while (true) {
+    const response = await fetch(`${API}/games/${key}/refresh/${id}`, { cache: 'no-store' });
+    if (!response.ok) throw new Error(`Refresh status failed (HTTP ${response.status})`);
+    const job = await response.json() as RefreshStatus;
+    if (job.state === 'failed') throw new Error(job.error ?? 'Refresh failed');
+    if (job.state === 'done') return job.result;
+    if (job.state !== 'pending' && job.state !== 'running') throw new Error('Unknown refresh job state');
+    onProgress?.(job.state);
+    await sleep(1000);
+  }
+};
+
+const requestRefresh = async (key: string, query: string): Promise<RefreshResponse> => {
+  const { status, data } = await post<{ id?: string; error?: string }>(`${API}/games/${key}/refresh?${query}`);
+  if (status !== 202 || !data.id) throw new Error(data.error ?? `Refresh request failed (HTTP ${status})`);
+  const result = await pollRefresh(key, data.id);
+  if (!result) throw new Error('Refresh completed without a result');
+  return result;
+};
 
 export const initRefreshOrchestrator = (root: HTMLElement): void => {
   const options = root.querySelector<HTMLFormElement>('[data-refresh-options]')!;
@@ -154,9 +186,11 @@ export const initRefreshOrchestrator = (root: HTMLElement): void => {
       if (stopped) break;
       const entry = queue[i];
       progress.textContent = `${i + 1} / ${queue.length} (of ${total} games): ${entry.title} (${entry.reason}), ${changed} changed`;
-      const { status, data } = await post<RefreshResponse>(`${API}/games/${entry.key}/refresh?${params}`);
-      if (status !== 200) {
-        logResult(entry, null, `failed (HTTP ${status})`);
+      let data: RefreshResponse;
+      try {
+        data = await requestRefresh(entry.key, params.toString());
+      } catch (error) {
+        logResult(entry, null, `failed: ${error instanceof Error ? error.message : String(error)}`);
         continue;
       }
       if (data.changed) changed++;
@@ -182,24 +216,45 @@ export const initRefreshOrchestrator = (root: HTMLElement): void => {
 };
 
 export const initGameRefreshButton = (button: HTMLButtonElement): void => {
+  const status = document.querySelector<HTMLElement>('[data-refresh-status]');
   button.addEventListener('click', async () => {
-    const status = document.querySelector<HTMLElement>('[data-refresh-status]');
     button.disabled = true;
-    if (status) status.textContent = 'Fetching…';
-    const { status: code, data } = await post<RefreshResponse>(`${API}/games/${button.dataset.refreshGame}/refresh?force=1`);
-    if (code !== 200) {
-      if (status) status.textContent = `Failed (HTTP ${code})`;
+    if (status) status.textContent = 'Queued for refresh…';
+    let data: RefreshResponse;
+    try {
+      data = await requestRefresh(button.dataset.refreshGame!, 'force=1');
+    } catch (error) {
+      if (status) status.textContent = `Failed: ${error instanceof Error ? error.message : String(error)}`;
       button.disabled = false;
       return;
     }
-    const summary = SOURCES.map(s => `${s}: ${data.sources[s].status}${data.sources[s].error ? ` (${data.sources[s].error})` : ''}`).join(', ');
-    sessionStorage.setItem('refresh-status', `${data.changed ? 'Updated' : 'No changes'}. ${summary}${data.proposed.metacritic ? `. Steam suggests ${data.proposed.metacritic}` : ''}`);
+    sessionStorage.setItem('refresh-status', refreshMessage(data));
     location.reload();
   });
   const previous = sessionStorage.getItem('refresh-status');
-  const status = document.querySelector<HTMLElement>('[data-refresh-status]');
   if (previous && status) {
     status.textContent = previous;
     sessionStorage.removeItem('refresh-status');
   }
+
+  const id = status?.dataset.autoRefreshId;
+  if (!id || !status) return;
+  const active = status.dataset.autoRefreshState === 'pending' || status.dataset.autoRefreshState === 'running';
+  if (!active && previous) return;
+  if (active) button.disabled = true;
+  void pollRefresh(button.dataset.refreshGame!, id, state => {
+    status.textContent = state === 'pending' ? 'Ratings refresh queued…' : 'Refreshing ratings in the background…';
+  }).then(result => {
+    const message = result ? refreshMessage(result) : 'Refresh no longer needed; ratings are up to date.';
+    if (active && (!result || SOURCES.some(source => result.sources[source].status === 'fetched'))) {
+      sessionStorage.setItem('refresh-status', message);
+      location.reload();
+    } else {
+      status.textContent = message;
+      button.disabled = false;
+    }
+  }).catch(error => {
+    status.textContent = `Automatic refresh failed: ${error instanceof Error ? error.message : String(error)}`;
+    button.disabled = false;
+  });
 };
