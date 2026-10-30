@@ -7,6 +7,8 @@ const NavLinks = () => (
     <a href="/transactions/new">New transaction</a>
     <a href="/games">Games</a>
     <a href="/creators">Creators</a>
+    <a href="/posts">Posts</a>
+    <a href="/media">Media</a>
     <a href="/refresh">Refresh ratings</a>
     <a href="/export.json">Export JSON</a>
   </>

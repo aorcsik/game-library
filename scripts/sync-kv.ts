@@ -8,7 +8,7 @@ import { join, resolve } from 'node:path';
 import JSON5 from 'json5';
 import { Miniflare, convertV4MiniflareOptions } from 'miniflare';
 
-type Binding = 'GAMES' | 'GAMEDB' | 'GAMESTATE' | 'CREATORS';
+type Binding = 'GAMES' | 'GAMEDB' | 'GAMESTATE' | 'CREATORS' | 'POSTS';
 type Key = { name: string; metadata?: unknown; expiration?: number };
 type Entry = { key: string; value: string; metadata?: unknown; expiration?: number };
 
@@ -18,12 +18,12 @@ const [direction, ...args] = process.argv.slice(2);
 const bindingIndex = args.indexOf('--binding');
 const binding = args[bindingIndex + 1];
 const confirmed = args.includes('--yes');
-const supported: Binding[] = ['GAMES', 'GAMEDB', 'GAMESTATE', 'CREATORS'];
+const supported: Binding[] = ['GAMES', 'GAMEDB', 'GAMESTATE', 'CREATORS', 'POSTS'];
 
 if ((direction !== 'push' && direction !== 'pull') || !supported.includes(binding as Binding) ||
     args.some((arg, index) => arg !== '--yes' && arg !== '--binding' && index !== bindingIndex + 1) ||
     args.filter(arg => arg === '--binding').length !== 1 || args.filter(arg => arg === '--yes').length > 1) {
-  throw new Error('Usage: npm run kv:push|kv:pull -- --binding GAMES|GAMEDB|GAMESTATE|CREATORS [--yes]');
+  throw new Error('Usage: npm run kv:push|kv:pull -- --binding GAMES|GAMEDB|GAMESTATE|CREATORS|POSTS [--yes]');
 }
 
 const source = direction === 'push' ? '--local' : '--remote';

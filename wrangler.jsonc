@@ -16,8 +16,17 @@
     // Personal state history is isolated from transactions and fetched metadata.
     { "binding": "GAMESTATE", "id": "5f34df9118ac4e64b3b03483d5f65819" },
     // Creator identities (formerly developers); keep the existing namespace and records.
-    { "binding": "CREATORS", "id": "57e75bee07a54a5f948ecc4fe02bbe85" }
+    { "binding": "CREATORS", "id": "57e75bee07a54a5f948ecc4fe02bbe85" },
+    // Public blog posts (drafts and published), managed from the admin area.
+    { "binding": "POSTS", "id": "5e7963d4d5f14c0ab834069ee8004adb" }
   ],
+  // Blog images always use the real gl-assets bucket, including `wrangler dev` (`remote: true`); there is no local simulation.
+  "r2_buckets": [{ "binding": "MEDIA", "bucket_name": "gl-assets", "remote": true }],
+  // Public domain of the bucket, used to render uploaded images in dev and production.
+  "vars": {
+    "ADMIN_USER": "admin",
+    "MEDIA_BASE_URL": "https://assets.aorcsik.com"
+  },
   "durable_objects": {
     "bindings": [{ "name": "REFRESH_QUEUE", "class_name": "GameRefreshQueue" }]
   },
@@ -25,6 +34,8 @@
   "env": {
     // `npm run dev:remote`: worker runs locally, but reads/writes the real (production) KV namespace.
     "remote": {
+      "r2_buckets": [{ "binding": "MEDIA", "bucket_name": "gl-assets", "remote": true }],
+      "vars": { "MEDIA_BASE_URL": "https://assets.aorcsik.com" },
       "durable_objects": {
         "bindings": [{ "name": "REFRESH_QUEUE", "class_name": "GameRefreshQueue" }]
       },
@@ -32,7 +43,8 @@
         { "binding": "GAMES", "id": "de192eb9b00e42e4bc29d7553255b407", "remote": true },
         { "binding": "GAMEDB", "id": "0a814d47cfda446fa1c590da6cf773b5", "remote": true },
         { "binding": "GAMESTATE", "id": "5f34df9118ac4e64b3b03483d5f65819", "remote": true },
-        { "binding": "CREATORS", "id": "57e75bee07a54a5f948ecc4fe02bbe85", "remote": true }
+        { "binding": "CREATORS", "id": "57e75bee07a54a5f948ecc4fe02bbe85", "remote": true },
+        { "binding": "POSTS", "id": "5e7963d4d5f14c0ab834069ee8004adb", "remote": true }
       ]
     }
   }

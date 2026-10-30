@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build:client": "node scripts/build-fontawesome.mjs && esbuild src/client/admin.ts --bundle --format=esm --target=es2022 --sourcemap --outfile=public/assets/admin.js",
+    "build:client": "node scripts/build-fontawesome.mjs && esbuild src/client/admin.ts --bundle --format=esm --target=es2022 --sourcemap --outfile=public/assets/admin.js && esbuild src/client/blog.ts --bundle --format=esm --target=es2022 --sourcemap --outfile=public/assets/blog.js",
     "postinstall": "node scripts/build-fontawesome.mjs",
     "update:rates": "node --experimental-strip-types scripts/update-exchange-rates.ts",
     "migrate:transaction-references": "node --experimental-strip-types scripts/migrate-transaction-references.ts",

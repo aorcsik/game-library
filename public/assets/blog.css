@@ -1,0 +1,109 @@
+/* Public blog styles. Intentionally independent from admin.css (the game library theme); only the shared review widgets are reused. */
+@import url("/assets/metacritic.css");
+@import url("/assets/open-critic.css");
+@import url("/assets/steam.css");
+
+:root {
+  --paper: #faf6ef;
+  --ink: #2a2622;
+  --muted: #7d746b;
+  --rule: #e3dacb;
+  --dawn: #d9683f;
+  color-scheme: light;
+  font: 18px/1.7 Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); display: flex; flex-direction: column; min-height: 100vh; }
+main { width: 100%; max-width: 40rem; margin: 0 auto; padding: 2rem 1.25rem 4rem; flex: 1; }
+a { color: var(--dawn); text-underline-offset: 0.18em; }
+a:hover { color: var(--ink); }
+
+.site-header { border-top: 6px solid transparent; border-image: linear-gradient(90deg, #f4b183, var(--dawn), #7a5a9a) 1; padding: 2.5rem 1.25rem 0; text-align: center; }
+.site-title { font-size: 2rem; font-style: italic; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; }
+.site-title:hover { color: var(--dawn); }
+.site-footer { padding: 2rem 1.25rem; text-align: center; color: var(--muted); font-size: 0.8rem; border-top: 1px solid var(--rule); }
+
+.post-list { list-style: none; margin: 0; padding: 0; }
+.post-list li { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 0.9rem 0; border-bottom: 1px solid var(--rule); }
+.post-list a { font-size: 1.2rem; text-decoration: none; color: var(--ink); }
+.post-list a:hover { color: var(--dawn); }
+.post-list time, .post-date { color: var(--muted); font-size: 0.85rem; white-space: nowrap; }
+.preview { background: #f6e3d8; color: var(--dawn); text-align: center; padding: 0.4rem; margin: 0 0 1.5rem; font-size: 0.85rem; border-radius: 4px; }
+.empty { color: var(--muted); text-align: center; font-style: italic; }
+
+.post h1 { font-size: 2.2rem; line-height: 1.2; margin: 0.5rem 0 0; }
+.post-date { margin: 0.25rem 0 2rem; }
+.post-body h2, .post-body h3, .post-body h4 { line-height: 1.3; margin: 2rem 0 0.5rem; }
+.post-body p, .post-body ul, .post-body ol, .post-body pre, .post-body blockquote { margin: 0 0 1.2rem; }
+.post-body img { max-width: 100%; height: auto; }
+.post-body blockquote { border-left: 3px solid var(--dawn); padding-left: 1rem; color: var(--muted); }
+.post-body blockquote > :last-child { margin-bottom: 0; }
+.post-body code { font: 0.85em ui-monospace, SFMono-Regular, Menlo, monospace; background: #efe7d9; padding: 0.1em 0.3em; border-radius: 3px; }
+.post-body pre { background: #efe7d9; padding: 0.9rem 1rem; overflow-x: auto; border-radius: 4px; }
+.post-body pre code { background: none; padding: 0; }
+.post-body hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
+.back { margin-top: 3rem; font-size: 0.9rem; }
+
+/* Game card: a dark island that reuses the game details markup and the shared review styles. */
+.game-card {
+  --bg: #15171c;
+  --panel: #1e2129;
+  --line: #2d313c;
+  --text: #e4e6eb;
+  --muted: #8a90a0;
+  --accent: #6ea8fe;
+  color-scheme: dark;
+  font: 14px/1.4 system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  margin: 2rem 0;
+  padding: 1rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+.post-body .game-card img { height: 180px; width: auto; max-width: 40%; border-radius: 6px; }
+.game-card-info { flex: 1; min-width: 0; }
+.post-body .game-card p { margin: 0 0 0.5rem; }
+.game-card-title { font-size: 1.5rem; font-weight: bold; line-height: 1.2; }
+.game-card .release-year { color: var(--muted); font-weight: normal; font-size: 0.6em; margin-left: 0.5em; }
+.game-card a { color: var(--accent); text-decoration: none; }
+.game-card a.external { color: inherit; }
+.game-card a.external:hover { filter: brightness(1.15); }
+.game-rating-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; margin: 0.35rem 0 0.6rem; }
+.game-rating-row > a { display: inline-flex; align-items: center; }
+.game-rating-row .open-critic-container { gap: 0.35rem; }
+.game-rating-row .open-critic-logo { flex: none; }
+.game-rating-row .metacritic-container { display: flex; align-items: center; gap: 0.35rem; }
+.game-rating-row .metacritic-logo { flex: none; }
+.game-rating-row .steam-review { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.7rem; }
+.game-rating-row .icon-steam { flex: none; width: 1.35rem; height: 1.35rem; }
+.game-release-genres { display: block; color: var(--muted); }
+.post-body .game-card .game-card-description {
+  margin: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+.post-body .game-card .game-card-description.expanded { display: block; -webkit-line-clamp: unset; line-clamp: unset; overflow: visible; }
+/* Added by blog.js only when the description is actually cut off. */
+.game-card-more { display: block; margin: 0.25rem 0 0; padding: 0; border: 0; background: none; font: inherit; color: var(--accent); cursor: pointer; }
+.game-card-more[hidden] { display: none; }
+.game-card-more:hover { text-decoration: underline; }
+.game-card-credits { margin-top: 0.6rem; }
+.game-card .platform-icon {
+  display: inline-block; width: 1.4em; height: 1.4em; background-color: currentColor;
+  mask-size: contain; mask-repeat: no-repeat; mask-position: center;
+}
+.game-card .icon-steam { mask-image: url("/assets/platforms/steam.svg"); }
+
+@media (max-width: 480px) {
+  :root { font-size: 17px; }
+  .post-list li { flex-direction: column; gap: 0; }
+  .game-card { flex-direction: column; gap: 1rem; }
+}

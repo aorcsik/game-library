@@ -32,6 +32,7 @@ const makeWorker = () => new Miniflare({
         GAMES: { type: 'kv', id: 'credit-transactions' },
         GAMESTATE: { type: 'kv', id: 'credit-state' },
         CREATORS: { type: 'kv', id: 'credit-creators' },
+        POSTS: { type: 'kv', id: 'credit-posts' },
         LOCAL_DEV: { type: 'text', value: 'on' },
       },
     },

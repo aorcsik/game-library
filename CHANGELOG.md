@@ -1,5 +1,24 @@
 # Changelog
 
+## 4.0.0 - 2026-10-30
+
+### Added
+
+- Public blog "aōrora ludens" at `/` (post pages at `/post/yyyy-mm-dd-slug`), with its own stylesheet (`public/assets/blog.css`) and no links to the game library. Only `/`, `/post/*`, `/media/blog/*` (images), and static assets are reachable without authentication; every other route, including `/posts`, still requires admin auth.
+- Manage posts from the library admin at `/posts`: Markdown editor (headings, lists, quotes, code, links, images), draft/published state, publication date, draft preview, and deletion. Raw HTML is escaped and only http(s), mailto, and site-relative links are rendered.
+- Store posts in a new `POSTS` KV namespace, included in KV backup/restore (`npm run kv:push|kv:pull -- --binding POSTS`) and in `/export.json`.
+
+- Upload images (PNG, JPEG, GIF, WebP, AVIF; up to 10 MB) from the post editor into the `gl-assets` R2 bucket (`MEDIA` binding) and insert them into the Markdown. Uploads are admin-only and validated by file contents; SVG is rejected. Posts store `/media/blog/<id>.<ext>` paths, which are rewritten to `MEDIA_BASE_URL` (`https://assets.aorcsik.com`) when rendered. `npm run dev` also uses the real bucket (`remote: true`), so dev uploads are live immediately; KV data stays local.
+
+- Posts have a stable ID, with the date and slug both editable; the same slug may repeat on different days. Saving a published post is refused, with an explanation, when another published post already has the same date and slug, since they would share one URL. Changing the date or slug of a published post changes its URL.
+- Embed a game summary card anywhere in a post with `![game:<key>]` on its own line. The card is a dark panel styled like the game details header, showing the cover, title, release year and date, genres, and the OpenCritic, Metacritic, and Steam review scores linking to those sites, the developers and publishers (linked to the creator's website when they have one; miscredited creators are left out), and the game description clamped to two lines with a Show more link when it is cut off (a small `blog.js`, built by `npm run build:client`); it exposes no ownership or personal data and never links into the library. The editor has a game search with autocomplete and an Insert button; the draft preview flags unknown game keys.
+- Posts keep a list of attached images in their metadata. Uploads attach to the post even when the text does not use them, so spare images stay available; images referenced in the Markdown are attached automatically. The editor shows the gallery with Insert and Remove (detach only) buttons.
+- Add a Media page (`/media`) listing the bucket's images with the posts that use each one, the posts it is only attached to, and unreferenced files. Uploads record the original file name.
+
+### Changed
+
+- `/` no longer redirects to `/transactions`; open the library at `/transactions`.
+
 ## 3.2.0 - 2026-10-26
 
 ### Added

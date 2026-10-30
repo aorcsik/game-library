@@ -34,6 +34,115 @@ on('click', '[data-action="remove-item"]', el => {
   el.closest('[data-item]')?.remove();
 });
 
+const insertMarkdown = (body: HTMLTextAreaElement, markdown: string): void => {
+  const { selectionStart, selectionEnd, value } = body;
+  const before = value.slice(0, selectionStart);
+  const prefix = before && !before.endsWith('\n\n') ? (before.endsWith('\n') ? '\n' : '\n\n') : '';
+  body.setRangeText(`${prefix}${markdown}\n\n`, selectionStart, selectionEnd, 'end');
+  body.focus();
+};
+
+const imageMarkdown = (item: HTMLElement): string =>
+  `![${(item.dataset.alt ?? '').replace(/[[\]()]/g, ' ').trim()}](/media/${item.dataset.key})`;
+
+const addImage = (gallery: HTMLElement, key: string, alt: string): HTMLElement | null => {
+  const list = gallery.querySelector<HTMLElement>('[data-image-list]');
+  const template = document.querySelector<HTMLTemplateElement>('#image-template');
+  if (!list || !template) return null;
+  const existing = Array.from(list.querySelectorAll<HTMLElement>('[data-image]')).find(item => item.dataset.key === key);
+  if (existing) return existing;
+  const item = (template.content.cloneNode(true) as DocumentFragment).querySelector<HTMLElement>('[data-image]')!;
+  item.dataset.key = key;
+  item.dataset.alt = alt;
+  item.querySelector('img')!.src = `${gallery.dataset.mediaBase}/${key}`;
+  item.querySelector('code')!.textContent = `${key.slice(5, 13)}…${key.slice(-4)}`;
+  const input = document.createElement('input');
+  Object.assign(input, { type: 'hidden', name: 'images', value: key });
+  item.querySelector('code')!.after(input);
+  list.append(item);
+  return item;
+};
+
+on('change', 'input[data-image-upload]', async el => {
+  const input = el as HTMLInputElement;
+  const gallery = input.closest<HTMLElement>('[data-image-gallery]');
+  const body = document.querySelector<HTMLTextAreaElement>('textarea[data-post-body]');
+  const status = gallery?.querySelector<HTMLElement>('[data-image-status]');
+  const files = Array.from(input.files ?? []);
+  if (!files.length || !gallery || !body || !status) return;
+  const failures: string[] = [];
+  for (const file of files) {
+    status.textContent = `Uploading ${file.name}…`;
+    try {
+      const form = new FormData();
+      form.set('file', file);
+      const response = await fetch('/media', { method: 'POST', body: form });
+      const result = await response.json().catch(() => ({})) as { key?: string; error?: string };
+      if (!response.ok || !result.key) throw new Error(result.error ?? `Upload failed (${response.status}).`);
+      addImage(gallery, result.key, file.name.replace(/\.[^.]+$/, ''));
+    } catch (error) {
+      failures.push(`${file.name}: ${error instanceof Error ? error.message : 'Upload failed.'}`);
+    }
+  }
+  input.value = '';
+  status.textContent = failures.length ? failures.join(' ') : 'Uploaded. Use Insert to add an image to the text, then save the post.';
+});
+
+// Latest search results, keyed by the label shown in the datalist.
+let gameChoices = new Map<string, string>();
+let gameSearchTimer: ReturnType<typeof setTimeout> | undefined;
+let gameSearchId = 0;
+
+on('input', 'input[data-game-search]', el => {
+  const input = el as HTMLInputElement;
+  const options = input.closest('[data-game-embed]')?.querySelector<HTMLDataListElement>('[data-game-options]');
+  if (!options) return;
+  clearTimeout(gameSearchTimer);
+  const query = input.value.trim();
+  if (gameChoices.has(input.value) || !query) return;
+  gameSearchTimer = setTimeout(async () => {
+    const id = ++gameSearchId;
+    try {
+      const response = await fetch(`/posts/games?q=${encodeURIComponent(query)}`);
+      if (!response.ok || id !== gameSearchId) return;
+      const results = await response.json() as { key: string; title: string; year?: string }[];
+      const labels = results.map(game => game.year ? `${game.title} (${game.year})` : game.title);
+      gameChoices = new Map(results.map((game, index) => [
+        labels.filter(label => label === labels[index]).length > 1 ? `${labels[index]} [${game.key}]` : labels[index], game.key,
+      ]));
+      options.replaceChildren(...[...gameChoices.keys()].map(label => Object.assign(document.createElement('option'), { value: label })));
+    } catch {
+      // Autocomplete is a convenience; typing keeps working.
+    }
+  }, 150);
+});
+
+on('click', '[data-action="insert-game"]', el => {
+  const box = el.closest<HTMLElement>('[data-game-embed]');
+  const input = box?.querySelector<HTMLInputElement>('[data-game-search]');
+  const status = box?.querySelector<HTMLElement>('[data-game-status]');
+  const body = document.querySelector<HTMLTextAreaElement>('textarea[data-post-body]');
+  if (!input || !status || !body) return;
+  const key = gameChoices.get(input.value);
+  if (!key) {
+    status.textContent = 'Pick a game from the suggestions first.';
+    return;
+  }
+  insertMarkdown(body, `![game:${key}]`);
+  status.textContent = `Inserted ![game:${key}].`;
+  input.value = '';
+});
+
+on('click', '[data-action="insert-image"]', el => {
+  const item = el.closest<HTMLElement>('[data-image]');
+  const body = document.querySelector<HTMLTextAreaElement>('textarea[data-post-body]');
+  if (item && body) insertMarkdown(body, imageMarkdown(item));
+});
+
+on('click', '[data-action="remove-image"]', el => {
+  el.closest('[data-image]')?.remove();
+});
+
 const setExpanded = (block: Element, expanded: boolean): void => {
   const button = block.querySelector<HTMLButtonElement>('[data-action="toggle-items"]');
   const items = block.querySelector<HTMLElement>('[data-items]');

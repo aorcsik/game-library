@@ -3,7 +3,11 @@ import { basicAuth } from 'hono/basic-auth';
 import { csrf } from 'hono/csrf';
 import { secureHeaders } from 'hono/secure-headers';
 import { emptyItem, readDraft, toDraft, validateDraft, type TransactionDraft } from './form';
+import { blog } from './blogRoutes';
+import { deletePost, emptyPostDraft, getPost, listPosts, newPostId, postUrl, readPostDraft, savePost, toPostDraft, validatePost, type Post } from './blog';
 import { applyGameForm } from './gameForm';
+import { postGameCards, searchGames } from './gameCard';
+import { MEDIA_MAX_BYTES, MEDIA_PATH, mapMedia, mediaBaseUrl, newMediaKey, sniffImage, type MediaObject } from './media';
 import { fetcher } from './fetcher/api';
 import { GameRefreshQueue, refreshQueue, type RefreshJob } from './fetcher/queue';
 import { needsGameRefresh } from './fetcher/refresh';
@@ -18,7 +22,10 @@ import {
 } from './store';
 import { GameList, GamePage } from './views/Games';
 import { CreatorList, CreatorPage, type CreatorGame } from './views/Creators';
+import { BlogPostPage } from './views/Blog';
 import { PersonalHistory } from './views/PersonalHistory';
+import { MediaPage } from './views/Media';
+import { PostEditor, PostList } from './views/Posts';
 import { RefreshPage } from './views/Refresh';
 import { TransactionForm } from './views/TransactionForm';
 import { TransactionList } from './views/TransactionList';
@@ -28,6 +35,11 @@ type Env = {
   GAMEDB: KVNamespace;
   CREATORS: KVNamespace;
   GAMESTATE: KVNamespace;
+  POSTS: KVNamespace;
+  /** R2 bucket for blog images. */
+  MEDIA: R2Bucket;
+  /** Public base URL of the bucket (e.g. https://assets.example.com); `/media/…` image URLs are rewritten onto it. */
+  MEDIA_BASE_URL?: string;
   REFRESH_QUEUE: DurableObjectNamespace<GameRefreshQueue>;
   ADMIN_USER?: string;
   ADMIN_PASSWORD?: string;
@@ -48,6 +60,9 @@ app.use(secureHeaders({
     frameAncestors: ["'none'"],
   },
 }));
+
+// The public blog is mounted before the auth middleware; everything registered after it requires admin auth.
+app.route('/', blog);
 
 app.use(async (c, next) => {
   if (c.env.LOCAL_DEV === 'on') return next();
@@ -80,8 +95,6 @@ const GAME = ':key{[a-z0-9-]{1,120}}';
 
 const knownStores = async (kv: KVNamespace): Promise<string[]> =>
   [...new Set((await listTransactions(kv)).map(r => r.meta.store))].sort();
-
-app.get('/', c => c.redirect('/transactions'));
 
 app.get('/transactions', async c => {
   const [all, transactions, index, games] = await Promise.all([
@@ -460,15 +473,91 @@ app.post(`/creators/${CREATOR}/delete`, async c => {
   return c.redirect('/creators', 303);
 });
 
+app.post('/media', async c => {
+  const file = (await c.req.formData().catch(() => null))?.get('file');
+  if (!(file instanceof File) || !file.size) return c.json({ error: 'Choose an image file.' }, 400);
+  if (file.size > MEDIA_MAX_BYTES) return c.json({ error: `Images may be at most ${MEDIA_MAX_BYTES / 1024 / 1024} MB.` }, 413);
+  const bytes = new Uint8Array(await file.arrayBuffer());
+  const type = sniffImage(bytes);
+  if (!type) return c.json({ error: 'Only PNG, JPEG, GIF, WebP, and AVIF images are supported.' }, 415);
+  const key = newMediaKey(type.ext);
+  await c.env.MEDIA.put(key, bytes, { httpMetadata: { contentType: type.contentType }, customMetadata: { filename: file.name.slice(0, 200) } });
+  return c.json({ key, url: `${MEDIA_PATH}/${key}` }, 201);
+});
+
+app.get('/media', async c => {
+  const objects: MediaObject[] = [];
+  let cursor: string | undefined;
+  do {
+    const page = await c.env.MEDIA.list({ prefix: 'blog/', cursor, include: ['customMetadata'] });
+    for (const { key, size, uploaded, customMetadata } of page.objects) {
+      objects.push({ key, size, uploaded: uploaded.toISOString(), filename: customMetadata?.filename });
+    }
+    cursor = page.truncated ? page.cursor : undefined;
+  } while (cursor);
+  const posts = (await Promise.all((await listPosts(c.env.POSTS)).map(ref => getPost(c.env.POSTS, ref.id)))).filter(post => post !== null);
+  return c.html(<MediaPage items={mapMedia(objects, posts)} mediaBase={mediaBaseUrl(c.env)} />);
+});
+
+const POST = ':id{[0-9a-f]{10}}';
+const postContext = () => ({ today: new Date().toISOString().slice(0, 10), now: new Date().toISOString() });
+const publicPostUrl = (post: Post): string | undefined => post.published && post.date ? postUrl(post) : undefined;
+
+app.get('/posts', async c => c.html(<PostList refs={await listPosts(c.env.POSTS)} />));
+
+app.get('/posts/games', async c => {
+  c.header('Cache-Control', 'no-store');
+  return c.json(searchGames(await listGames(c.env.GAMEDB), c.req.query('q') ?? ''));
+});
+
+app.get('/posts/new', c => c.html(<PostEditor draft={emptyPostDraft()} mediaBase={mediaBaseUrl(c.env)} />));
+
+app.post('/posts', async c => {
+  const draft = readPostDraft(await c.req.formData());
+  const { post, errors } = validatePost(draft, { id: newPostId(), others: await listPosts(c.env.POSTS), ...postContext() });
+  if (!post) return c.html(<PostEditor draft={draft} mediaBase={mediaBaseUrl(c.env)} errors={errors} />, 422);
+  await savePost(c.env.POSTS, post);
+  return c.redirect(`/posts/${post.id}?saved=1`, 303);
+});
+
+app.get(`/posts/${POST}`, async c => {
+  const post = await getPost(c.env.POSTS, c.req.param('id'));
+  return post
+    ? c.html(<PostEditor draft={toPostDraft(post)} id={post.id} publicUrl={publicPostUrl(post)} mediaBase={mediaBaseUrl(c.env)} saved={c.req.query('saved') === '1'} />)
+    : c.notFound();
+});
+
+app.get(`/posts/${POST}/preview`, async c => {
+  const post = await getPost(c.env.POSTS, c.req.param('id'));
+  return post ? c.html(<BlogPostPage post={post} preview mediaBase={mediaBaseUrl(c.env)} games={await postGameCards(c.env, post.body)} />) : c.notFound();
+});
+
+app.post(`/posts/${POST}`, async c => {
+  const id = c.req.param('id');
+  const existing = await getPost(c.env.POSTS, id);
+  if (!existing) return c.notFound();
+  const draft = readPostDraft(await c.req.formData());
+  const { post, errors } = validatePost(draft, { id, others: await listPosts(c.env.POSTS), ...postContext() });
+  if (!post) return c.html(<PostEditor draft={draft} id={id} publicUrl={publicPostUrl(existing)} mediaBase={mediaBaseUrl(c.env)} errors={errors} />, 422);
+  await savePost(c.env.POSTS, post);
+  return c.redirect(`/posts/${id}?saved=1`, 303);
+});
+
+app.post(`/posts/${POST}/delete`, async c => {
+  await deletePost(c.env.POSTS, c.req.param('id'));
+  return c.redirect('/posts', 303);
+});
+
 app.get('/export.json', async c => {
   const [transactions, libraries, gameRefs, personalStates, creators, links] = await Promise.all([
     getAllTransactions(c.env.GAMES), getAllLibraries(c.env.GAMES), listGames(c.env.GAMEDB), getAllPersonalEntries(c.env.GAMESTATE), listCreators(c.env.CREATORS), listCreatorGameLinks(c.env.CREATORS),
   ]);
   const games = [...(await getGames(c.env.GAMEDB, gameRefs.map(r => r.key))).values()];
+  const posts = (await Promise.all((await listPosts(c.env.POSTS)).map(ref => getPost(c.env.POSTS, ref.id)))).filter(post => post !== null);
   c.header('Content-Disposition', `attachment; filename="game-library-${new Date().toISOString().slice(0, 10)}.json"`);
   const creatorGameLinks = [...links].flatMap(([game, byCreator]) =>
     [...byCreator].map(([creator, link]) => ({ game, creator, ...link })));
-  return c.json({ exportedAt: new Date().toISOString(), transactions, libraries, games, personalStates, creators, creatorGameLinks });
+  return c.json({ exportedAt: new Date().toISOString(), transactions, libraries, games, personalStates, creators, creatorGameLinks, posts });
 });
 
 export default app;

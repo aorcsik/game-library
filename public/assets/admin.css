@@ -424,3 +424,15 @@ a.external:hover { text-decoration: none; filter: brightness(1.15); }
 .personal-history > .personal-form { margin: 0.75rem 0; }
 .personal-entry-list .entry-actions { white-space: nowrap; }
 .personal-entry-list .entry-actions form { display: inline-block; margin-left: 0.5rem; }
+
+.image-gallery { border: 1px solid var(--line); border-radius: 6px; padding: 0.5rem 0.75rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.image-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.image-item { display: flex; flex-direction: column; gap: 0.25rem; width: 9rem; padding: 0.4rem; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; }
+.image-item img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 4px; }
+.image-item code { color: var(--muted); font-size: var(--font-sm); }
+table.media-list td.thumb { width: 72px; }
+table.media-list td.thumb img { width: 64px; height: 48px; object-fit: cover; border-radius: 4px; display: block; }
+.game-embed { border: 1px solid var(--line); border-radius: 6px; padding: 0.5rem 0.75rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.game-embed input[type="search"] { width: 100%; }
+.game-embed .actions { margin-top: 0; }
+.game-embed .hint { margin: 0; color: var(--muted); font-size: 0.85em; }

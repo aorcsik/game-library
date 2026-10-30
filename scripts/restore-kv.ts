@@ -6,7 +6,7 @@ import { readFile, readdir } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { getLocalKvProxy } from './local-kv-proxy.ts';
 
-type Binding = 'GAMES' | 'GAMEDB' | 'GAMESTATE' | 'CREATORS';
+type Binding = 'GAMES' | 'GAMEDB' | 'GAMESTATE' | 'CREATORS' | 'POSTS';
 type Entry = { key: string; value: string; metadata?: unknown; expiration?: number };
 type KV = {
   list(options?: { cursor?: string }): Promise<{ keys: { name: string }[]; list_complete: boolean; cursor?: string }>;
@@ -16,7 +16,7 @@ type KV = {
 
 const root = resolve(import.meta.dirname, '..');
 const backupDir = resolve(root, '.backups');
-const bindings: Binding[] = ['GAMES', 'GAMEDB', 'GAMESTATE', 'CREATORS'];
+const bindings: Binding[] = ['GAMES', 'GAMEDB', 'GAMESTATE', 'CREATORS', 'POSTS'];
 const [filename, ...flags] = process.argv.slice(2);
 
 if (!filename) {
@@ -37,13 +37,13 @@ if (filename !== `kv-${hash}.json`) throw new Error(`Backup checksum does not ma
 
 const parsed: unknown = JSON.parse(content.toString('utf8'));
 if (parsed === null || typeof parsed !== 'object' || Array.isArray(parsed)) {
-  throw new Error('Backup must contain GAMES, GAMEDB, GAMESTATE, and optionally CREATORS.');
+  throw new Error('Backup must contain GAMES, GAMEDB, GAMESTATE, and optionally CREATORS and POSTS.');
 }
 const snapshot = parsed as Record<string, unknown>;
 const snapshotBindings = bindings.filter(binding => binding in snapshot || binding === 'CREATORS' && 'DEVELOPERS' in snapshot);
 if (!['GAMES', 'GAMEDB', 'GAMESTATE'].every(binding => binding in parsed) ||
     Object.keys(snapshot).length !== snapshotBindings.length || 'DEVELOPERS' in snapshot && 'CREATORS' in snapshot) {
-  throw new Error('Backup must contain GAMES, GAMEDB, GAMESTATE, and optionally CREATORS (legacy DEVELOPERS is supported).');
+  throw new Error('Backup must contain GAMES, GAMEDB, GAMESTATE, and optionally CREATORS and POSTS (legacy DEVELOPERS is supported).');
 }
 const entries = {} as Record<Binding, Entry[]>;
 for (const binding of snapshotBindings) {

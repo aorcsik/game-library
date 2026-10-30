@@ -20,10 +20,10 @@
   align-items: center;
   font-family: Arial;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: .875rem;
   color: #fff;
-  width: 1.875rem;
-  height: 1.875rem;
+  width: 1.5rem;
+  height: 1.5rem;
   justify-content: center;
   border-radius: .25rem;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
