@@ -6,10 +6,11 @@ import { mapImages, parseMarkdown, type Block, type Inline } from '../markdown';
 import { MEDIA_PATH } from '../media';
 
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const MONTHS_SHORT = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 export const formatDate = (date: string): string => {
   const [year, month, day] = date.split('-').map(Number);
-  return `${day} ${MONTHS[month - 1]} ${year}`;
+  return `${day}∙${MONTHS_SHORT[month - 1].toLocaleLowerCase()}∙${year}`;
 };
 
 // The blog is public and must never link to the (authenticated) game library.
@@ -154,7 +155,7 @@ export const PostArticle = ({ post, mediaBase, games, showMissing }: { post: Pos
   <article class="post">
     <header>
       <h1>{post.title}</h1>
-      {post.date && <p class="post-date"><time datetime={post.date}>{formatDate(post.date)}</time></p>}
+      {post.date && <p class="post-date"><time datetime={post.date}>/{formatDate(post.date)}/</time></p>}
     </header>
     <div class="post-body"><Markdown source={post.body} mediaBase={mediaBase} games={games} showMissing={showMissing} /></div>
   </article>
@@ -167,10 +168,11 @@ export const BlogIndex = ({ posts }: { posts: PostRef[] }) => (
       : (
         <ol class="post-list">
           {posts.map(({ meta }) => (
-            <li>
-              <a href={postUrl(meta)}>{meta.title}</a>
-              <time datetime={meta.date}>{formatDate(meta.date!)}</time>
-            </li>
+            <li><a href={postUrl(meta)}>
+              <strong>{meta.title.replace(/--/g, '∙')}</strong>
+              <time datetime={meta.date}>/{formatDate(meta.date!)}/</time>
+              <span class="excerpt">{meta.excerpt}</span>
+            </a></li>
           ))}
         </ol>
       )}

@@ -16,7 +16,7 @@
     "publish:games": "node scripts/publish-games.ts",
     "refresh:game-meta": "node scripts/refresh-game-meta.ts",
     "typecheck": "tsc -p tsconfig.json && tsc -p src/client/tsconfig.json && tsc -p scripts/tsconfig.json",
-    "deploy": "wrangler deploy"
+    "deploy": "wrangler deploy --env=\"remote\""
   },
   "dependencies": {
     "@fortawesome/fontawesome-pro": "^7.3.1",

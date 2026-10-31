@@ -16,7 +16,7 @@ export type Post = {
   updatedAt: string;
 };
 /** Stored as KV metadata so lists never need to load post bodies (KV metadata is limited to 1 KB). */
-export type PostMeta = Pick<Post, 'slug' | 'title' | 'published' | 'date' | 'updatedAt'>;
+export type PostMeta = Pick<Post, 'slug' | 'title' | 'published' | 'date' | 'updatedAt'> & { excerpt?: string };
 export type PostRef = { id: string; meta: PostMeta };
 export type PostDraft = { slug: string; title: string; body: string; images: string[]; published: boolean; date: string };
 
@@ -31,7 +31,17 @@ const POST_PREFIX = 'post:';
 export const postKey = (id: string): string => `${POST_PREFIX}${id}`;
 export const newPostId = (): string => crypto.randomUUID().replaceAll('-', '').slice(0, 10);
 
-export const toPostMeta = ({ slug, title, published, date, updatedAt }: Post): PostMeta => ({ slug, title, published, date, updatedAt });
+const bodyToExcerpt = (body?: string, maxLength = 200, ellipsis = '…'): string | undefined => {
+  const excerpt = body?.replace(/(\*+|!\[.*?\](\(.*?\))?)/g, '').replace(/\s+/g, ' ').slice(0, maxLength + 1);
+  if (!excerpt) return undefined;
+  if (excerpt.length <= maxLength) return excerpt;
+  if (excerpt[maxLength] === ' ') return excerpt.slice(0, maxLength) + ellipsis;
+  return excerpt.slice(0, excerpt.lastIndexOf(' ', maxLength)) + ellipsis;
+};
+
+export const toPostMeta = ({ slug, title, published, date, updatedAt, body }: Post): PostMeta => ({ 
+  slug, title, published, date, updatedAt, excerpt: bodyToExcerpt(body)
+});
 
 /** The last segment of a public post URL: `/post/<date>-<slug>`. */
 export const postPath = (date: string, slug: string): string => `${date}-${slug}`;
@@ -127,7 +137,10 @@ export const listPosts = async (kv: KVNamespace): Promise<PostRef[]> => {
   let cursor: string | undefined;
   do {
     const page = await kv.list<PostMeta>({ prefix: POST_PREFIX, cursor });
-    for (const key of page.keys) if (key.metadata) refs.push({ id: key.name.slice(POST_PREFIX.length), meta: key.metadata });
+    for (const key of page.keys) if (key.metadata) {
+      console.log(key.metadata);
+      refs.push({ id: key.name.slice(POST_PREFIX.length), meta: key.metadata });
+    }
     cursor = page.list_complete ? undefined : page.cursor;
   } while (cursor);
   return refs;

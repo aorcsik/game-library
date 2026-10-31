@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.1.0 - 2026-10-31
+
+### Changed
+
+- improved blog design with new fonts and updated list layout that resembles a dictionary page
+
 ## 4.0.0 - 2026-10-30
 
 ### Added

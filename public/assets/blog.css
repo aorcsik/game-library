@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Outfit:wght@100..900&display=swap');
 /* Public blog styles. Intentionally independent from admin.css (the game library theme); only the shared review widgets are reused. */
 @import url("/assets/metacritic.css");
 @import url("/assets/open-critic.css");
@@ -9,8 +10,12 @@
   --muted: #7d746b;
   --rule: #e3dacb;
   --dawn: #d9683f;
+
+  --font-sans: 'Outfit', system-ui, sans-serif;
+  --font-serif: 'Lora', serif;
+
   color-scheme: light;
-  font: 18px/1.7 Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+  font: 18px/1.4 var(--font-serif);
 }
 
 * { box-sizing: border-box; }
@@ -20,19 +25,38 @@ a { color: var(--dawn); text-underline-offset: 0.18em; }
 a:hover { color: var(--ink); }
 
 .site-header { border-top: 6px solid transparent; border-image: linear-gradient(90deg, #f4b183, var(--dawn), #7a5a9a) 1; padding: 2.5rem 1.25rem 0; text-align: center; }
-.site-title { font-size: 2rem; font-style: italic; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; }
+.site-title { 
+  font-size: 2rem; 
+  color: var(--ink);
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-weight: 600;
+}
 .site-title:hover { color: var(--dawn); }
 .site-footer { padding: 2rem 1.25rem; text-align: center; color: var(--muted); font-size: 0.8rem; border-top: 1px solid var(--rule); }
 
 .post-list { list-style: none; margin: 0; padding: 0; }
-.post-list li { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 0.9rem 0; border-bottom: 1px solid var(--rule); }
-.post-list a { font-size: 1.2rem; text-decoration: none; color: var(--ink); }
-.post-list a:hover { color: var(--dawn); }
+.post-list li { 
+  padding: 0.9rem 0 0.9rem 1rem; border-bottom: 1px solid var(--rule);
+}
+.post-list a { text-decoration: none; color: inherit; }
+.post-list a strong{ 
+  font-size: 1.2rem; text-decoration: none; color: var(--ink);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  margin-left: -1rem;
+}
+.post-list a strong + time { margin-left: .5rem; margin-right: .5rem; }
+.post-list a:hover strong { color: var(--dawn); }
 .post-list time, .post-date { color: var(--muted); font-size: 0.85rem; white-space: nowrap; }
 .preview { background: #f6e3d8; color: var(--dawn); text-align: center; padding: 0.4rem; margin: 0 0 1.5rem; font-size: 0.85rem; border-radius: 4px; }
 .empty { color: var(--muted); text-align: center; font-style: italic; }
 
-.post h1 { font-size: 2.2rem; line-height: 1.2; margin: 0.5rem 0 0; }
+.post h1 { 
+  font-size: 2.2rem; line-height: 1.2; margin: 0.5rem 0 0;
+  font-family: var(--font-sans);
+  font-weight: 600;
+}
 .post-date { margin: 0.25rem 0 2rem; }
 .post-body h2, .post-body h3, .post-body h4 { line-height: 1.3; margin: 2rem 0 0.5rem; }
 .post-body p, .post-body ul, .post-body ol, .post-body pre, .post-body blockquote { margin: 0 0 1.2rem; }
