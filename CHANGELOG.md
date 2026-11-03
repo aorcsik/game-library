@@ -1,5 +1,21 @@
 # Changelog
 
+## 4.2.0 - 2026-11-03
+
+### Added
+
+- Support `![youtube:<id or URL>]` Markdown blocks. Only trusted YouTube hosts are accepted; invalid values remain plain text. Valid embeds render as lazy-loaded `youtube-nocookie` iframes, with a CSP `frame-src` entry and responsive styling.
+- Add canonical, Open Graph, and Twitter card metadata to blog pages. Social images use the first post image or a YouTube thumbnail; previews and 404 pages are `noindex`.
+- Add ESLint with a flat config and `typescript-eslint`, plus a `lint` script.
+- Add test coverage for excerpts, YouTube parsing, and blog metadata.
+
+### Changed
+
+- Generate excerpts from parsed Markdown instead of stripping Markdown with regex, and truncate them at a word boundary.
+- Replace whitespace with `∙` in post headings and list entries.
+- Restyle blockquotes as pull quotes.
+- Make TypeScript 6 the default for ESLint compatibility, and use `typescript-7` for the `typecheck` script.
+
 ## 4.1.0 - 2026-10-31
 
 ### Changed
