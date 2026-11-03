@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { mapImages, parseInline, parseMarkdown, safeUrl } from '../src/markdown.ts';
+import { mapImages, parseInline, parseMarkdown, parseYoutubeVideoId, safeUrl } from '../src/markdown.ts';
 import { mapMedia, mediaBaseUrl, mediaUrl, referencedMediaKeys, sniffImage } from '../src/media.ts';
 
 test('only allows http(s), mailto, relative and anchor URLs', () => {
@@ -48,6 +48,24 @@ test('parses blocks and shifts headings below the page title', () => {
   assert.deepEqual(blocks[1].children, [{ type: 'text', value: 'para line' }]);
   assert.equal(blocks[3].ordered, true);
   assert.equal(blocks[5].value, 'code **raw**');
+});
+
+test('parses YouTube IDs and common video URLs as safe embed blocks', () => {
+  const id = 'dQw4w9WgXcQ';
+  assert.deepEqual(parseMarkdown(`![youtube:${id}]\n\n![youtube:https://www.youtube.com/watch?v=${id}&list=playlist]\n\n![youtube:https://youtu.be/${id}]\n\n![youtube:https://m.youtube.com/shorts/${id}]`), [
+    { type: 'youtube', videoId: id },
+    { type: 'youtube', videoId: id },
+    { type: 'youtube', videoId: id },
+    { type: 'youtube', videoId: id },
+  ]);
+  assert.equal(parseYoutubeVideoId(`www.youtube.com/embed/${id}`), id);
+});
+
+test('rejects invalid IDs and URLs from untrusted hosts as YouTube embeds', () => {
+  for (const value of ['not-a-video-id', 'javascript:alert(1)', 'https://youtube.com.evil.example/watch?v=dQw4w9WgXcQ', 'https://example.com/embed/dQw4w9WgXcQ']) {
+    assert.equal(parseYoutubeVideoId(value), null, value);
+    assert.deepEqual(parseMarkdown(`![youtube:${value}]`), [{ type: 'paragraph', children: [{ type: 'text', value: `![youtube:${value}]` }] }]);
+  }
 });
 
 test('rewrites image URLs anywhere in the tree', () => {

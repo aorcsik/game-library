@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "build:client": "node scripts/build-fontawesome.mjs && esbuild src/client/admin.ts --bundle --format=esm --target=es2022 --sourcemap --outfile=public/assets/admin.js && esbuild src/client/blog.ts --bundle --format=esm --target=es2022 --sourcemap --outfile=public/assets/blog.js",
+    "lint": "eslint .",
     "postinstall": "node scripts/build-fontawesome.mjs",
     "update:rates": "node --experimental-strip-types scripts/update-exchange-rates.ts",
     "migrate:transaction-references": "node --experimental-strip-types scripts/migrate-transaction-references.ts",
@@ -15,7 +16,7 @@
     "kv:restore": "node scripts/restore-kv.ts",
     "publish:games": "node scripts/publish-games.ts",
     "refresh:game-meta": "node scripts/refresh-game-meta.ts",
-    "typecheck": "tsc -p tsconfig.json && tsc -p src/client/tsconfig.json && tsc -p scripts/tsconfig.json",
+    "typecheck": "node ./node_modules/typescript-7/bin/tsc -p tsconfig.json && node ./node_modules/typescript-7/bin/tsc -p src/client/tsconfig.json && node ./node_modules/typescript-7/bin/tsc -p scripts/tsconfig.json",
     "deploy": "wrangler deploy --env=\"remote\""
   },
   "dependencies": {
@@ -29,11 +30,16 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^5.20261007.1",
+    "@eslint/js": "^10.0.1",
     "@types/node": "^24.19.1",
     "esbuild": "^0.28.2",
+    "eslint": "^10.14.0",
+    "globals": "^16.5.0",
     "json5": "^2.2.3",
     "miniflare": "5.20261006.0-alpha",
-    "typescript": "^7.0.2",
+    "typescript": "^6.0.3",
+    "typescript-7": "npm:typescript@^7.0.2",
+    "typescript-eslint": "^8.63.0",
     "wrangler": "^4.148.0"
   },
   "overrides": {

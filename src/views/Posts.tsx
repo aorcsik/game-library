@@ -46,7 +46,7 @@ export const PostEditor = ({ draft, id, publicUrl, mediaBase = '', saved = false
       <label>Slug (optional, defaults to the title). The public URL is /post/&lt;date&gt;-&lt;slug&gt;, so changing the slug or date of a published post changes its URL.
         <input name="slug" value={draft.slug} maxlength={120} pattern="[a-z0-9\-]+" />
       </label>
-      <label>Body (Markdown: headings, lists, quotes, code, links, images)<textarea name="body" rows={24} required maxlength={100000} data-post-body>{draft.body}</textarea></label>
+      <label>Body (Markdown: headings, lists, quotes, code, links, images; embed videos on their own line with ![youtube:VIDEO_ID_OR_URL])<textarea name="body" rows={24} required maxlength={100000} data-post-body>{draft.body}</textarea></label>
       <fieldset class="game-embed" data-game-embed>
         <legend>Game card</legend>
         <p class="hint">Insert adds ![game:slug] at the cursor; the game's card appears at that spot on the post.</p>

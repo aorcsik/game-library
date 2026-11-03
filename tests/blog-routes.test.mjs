@@ -75,7 +75,7 @@ test('publishes posts to the public blog without drafts or library links', async
   });
   try {
     const today = new Date().toISOString().slice(0, 10);
-    const created = await post('/posts', { title: 'Hello World', body: '## Hi <b>x</b> [bad](javascript:alert) [ok](https://example.com)', published: 'on' });
+    const created = await post('/posts', { title: 'Hello World', body: '## Hi <b>x</b> [bad](javascript:alert) [ok](https://example.com)\n\n![social card](https://images.example.com/social.jpg)\n\n![youtube:dQw4w9WgXcQ]', published: 'on' });
     assert.equal(created.status, 303);
     assert.match(created.headers.get('Location'), /^\/posts\/[0-9a-f]{10}\?saved=1$/);
     const draftSave = await post('/posts', { title: 'Secret Draft', body: 'hidden' });
@@ -94,12 +94,22 @@ test('publishes posts to the public blog without drafts or library links', async
     assert.match(index, /aōrora ludens/);
     assert.match(index, new RegExp(`href="/post/${today}-hello-world"`));
     assert.match(index, /href="\/post\/2020-01-01-hello-world"/);
+    assert.match(index, /<link rel="canonical" href="https:\/\/ludens\.aorcsik\.com"\/?>/);
+    assert.match(index, /<meta property="og:type" content="website"\/?>/);
     assert.doesNotMatch(index, /Secret Draft/);
 
-    const article = await (await mf.dispatchFetch(url(`/post/${today}-hello-world`))).text();
+    const articleResponse = await mf.dispatchFetch(url(`/post/${today}-hello-world`));
+    const article = await articleResponse.text();
     assert.match(article, /&lt;b&gt;x&lt;\/b&gt;/);
     assert.doesNotMatch(article, /href="javascript:/);
     assert.match(article, /href="https:\/\/example\.com"/);
+    assert.match(article, /src="https:\/\/www\.youtube-nocookie\.com\/embed\/dQw4w9WgXcQ"/);
+    assert.match(articleResponse.headers.get('Content-Security-Policy'), /frame-src https:\/\/www\.youtube-nocookie\.com/);
+    assert.match(article, /<link rel="canonical" href="https:\/\/ludens\.aorcsik\.com\/post\/\d{4}-\d{2}-\d{2}-hello-world"\/?>/);
+    assert.match(article, /<meta property="og:type" content="article"\/?>/);
+    assert.match(article, /<meta property="og:image" content="https:\/\/images\.example\.com\/social\.jpg"\/?>/);
+    assert.match(article, /<meta name="twitter:card" content="summary_large_image"\/?>/);
+    assert.match(article, /<meta property="article:published_time" content="\d{4}-\d{2}-\d{2}T00:00:00Z"\/?>/);
     for (const html of [index, article]) assert.doesNotMatch(html, /href="\/(transactions|games|creators|posts|export)/);
     const older = await (await mf.dispatchFetch(url('/post/2020-01-01-hello-world'))).text();
     assert.match(older, /older/);
@@ -117,7 +127,7 @@ test('publishes posts to the public blog without drafts or library links', async
     }
     const preview = await mf.dispatchFetch(url(`/posts/${draftId}/preview`), { headers: auth });
     assert.equal(preview.status, 200);
-    await preview.arrayBuffer();
+    assert.match(await preview.text(), /<meta name="robots" content="noindex, nofollow"\/?>/);
 
     // Editing keeps the identity; moving the date changes the public URL.
     const edit = await post(`/posts/${draftId}`, { title: 'Secret Draft', body: 'now public', published: 'on', date: '2021-02-03' });
@@ -261,7 +271,8 @@ test('embeds game cards where the markdown asks, without exposing the library', 
     assert.equal(saved.status, 303);
 
     const html = await (await mf.dispatchFetch(url(`/post/${today}-cards`))).text();
-    assert.ok(html.indexOf('Before') < html.indexOf('game-card') && html.indexOf('game-card') < html.indexOf('After'), 'card renders in place');
+    const articleBody = html.slice(html.indexOf('<div class="post-body">'));
+    assert.ok(articleBody.indexOf('Before') < articleBody.indexOf('game-card') && articleBody.indexOf('game-card') < articleBody.indexOf('After'), 'card renders in place');
     assert.match(html, /Signalis/);
     assert.match(html, /<span title="2022-10-27">2022<\/span> • Horror/);
     assert.match(html, /Developers: <a href="https:\/\/rose-engine\.example" target="_blank" rel="noopener noreferrer">Rose-engine<\/a>/);

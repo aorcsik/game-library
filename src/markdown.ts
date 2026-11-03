@@ -16,7 +16,9 @@ export type Block =
   | { type: 'code'; value: string }
   | { type: 'rule' }
   /** `![game:<key>]` on its own line: a card for a game from the library. */
-  | { type: 'game'; key: string };
+  | { type: 'game'; key: string }
+  /** `![youtube:<video ID or URL>]` on its own line: an embedded YouTube video. */
+  | { type: 'youtube'; videoId: string };
 
 /** Returns the URL when it is http(s), mailto (links only), site-relative, or an anchor; otherwise null. */
 export const safeUrl = (url: string, image = false): string | null => {
@@ -62,9 +64,41 @@ const NUMBERED = /^\d+[.)]\s+(.*)$/;
 const QUOTE = /^>\s?(.*)$/;
 const RULE = /^(-{3,}|\*{3,})$/;
 const GAME_EMBED = /^!\[game:([a-z0-9-]{1,120})\]$/;
+const YOUTUBE_EMBED = /^!\[youtube:([^\]]+)\]$/;
+const YOUTUBE_VIDEO_ID = /^[A-Za-z0-9_-]{11}$/;
+
+export const parseYoutubeVideoId = (input: string): string | null => {
+  const value = input.trim();
+  if (YOUTUBE_VIDEO_ID.test(value)) return value;
+
+  const normalized = /^(?:www\.)?(?:youtube\.com|youtu\.be)\//i.test(value) ? `https://${value}` : value;
+  try {
+    const url = new URL(normalized);
+    if (url.protocol !== 'https:' && url.protocol !== 'http:') return null;
+
+    const host = url.hostname.toLowerCase();
+    if (host === 'youtu.be' || host === 'www.youtu.be') {
+      const parts = url.pathname.split('/').filter(Boolean);
+      return parts.length === 1 && YOUTUBE_VIDEO_ID.test(parts[0]) ? parts[0] : null;
+    }
+
+    if (!['youtube.com', 'www.youtube.com', 'm.youtube.com', 'youtube-nocookie.com', 'www.youtube-nocookie.com'].includes(host)) return null;
+    if (url.pathname === '/watch') {
+      const videoId = url.searchParams.get('v');
+      return videoId && YOUTUBE_VIDEO_ID.test(videoId) ? videoId : null;
+    }
+
+    const parts = url.pathname.split('/').filter(Boolean);
+    return parts.length === 2 && ['embed', 'shorts', 'live', 'v'].includes(parts[0]) && YOUTUBE_VIDEO_ID.test(parts[1])
+      ? parts[1]
+      : null;
+  } catch {
+    return null;
+  }
+};
 
 const startsBlock = (line: string): boolean =>
-  FENCE.test(line) || HEADING.test(line) || BULLET.test(line) || NUMBERED.test(line) || QUOTE.test(line) || RULE.test(line) || GAME_EMBED.test(line.trim());
+  FENCE.test(line) || HEADING.test(line) || BULLET.test(line) || NUMBERED.test(line) || QUOTE.test(line) || RULE.test(line) || GAME_EMBED.test(line.trim()) || YOUTUBE_EMBED.test(line.trim());
 
 export const parseMarkdown = (source: string): Block[] => {
   const lines = source.replace(/\r\n?/g, '\n').split('\n').map(line => line.trimEnd());
@@ -94,6 +128,10 @@ export const parseMarkdown = (source: string): Block[] => {
 
     const embed = GAME_EMBED.exec(line.trim());
     if (embed) { blocks.push({ type: 'game', key: embed[1] }); i++; continue; }
+
+    const youtube = YOUTUBE_EMBED.exec(line.trim());
+    const videoId = youtube && parseYoutubeVideoId(youtube[1]);
+    if (videoId) { blocks.push({ type: 'youtube', videoId }); i++; continue; }
 
     if (QUOTE.test(line)) {
       const quoted: string[] = [];

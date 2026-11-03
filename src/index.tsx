@@ -58,6 +58,7 @@ app.use(secureHeaders({
     styleSrc: ["'self'", "https://fonts.googleapis.com"],
     fontSrc: ["'self'", "https://fonts.gstatic.com"],
     formAction: ["'self'"],
+    frameSrc: ['https://www.youtube-nocookie.com'],
     frameAncestors: ["'none'"],
   },
 }));

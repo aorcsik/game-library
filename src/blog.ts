@@ -1,5 +1,6 @@
 import { slugify } from './games.ts';
 import { MEDIA_KEY_PATTERN, referencedMediaKeys } from './media.ts';
+import { parseMarkdown, type Block, type Inline } from './markdown.ts';
 
 export type Post = {
   /** Stable identity (storage key and admin URL); the public URL is built from the date and slug, which may change. */
@@ -31,16 +32,36 @@ const POST_PREFIX = 'post:';
 export const postKey = (id: string): string => `${POST_PREFIX}${id}`;
 export const newPostId = (): string => crypto.randomUUID().replaceAll('-', '').slice(0, 10);
 
-const bodyToExcerpt = (body?: string, maxLength = 200, ellipsis = '…'): string | undefined => {
-  const excerpt = body?.replace(/(\*+|!\[.*?\](\(.*?\))?)/g, '').replace(/\s+/g, ' ').slice(0, maxLength + 1);
-  if (!excerpt) return undefined;
-  if (excerpt.length <= maxLength) return excerpt;
-  if (excerpt[maxLength] === ' ') return excerpt.slice(0, maxLength) + ellipsis;
-  return excerpt.slice(0, excerpt.lastIndexOf(' ', maxLength)) + ellipsis;
+const inlineText = (nodes: Inline[]): string => nodes.map(node => {
+  switch (node.type) {
+    case 'text': case 'code': return node.value;
+    case 'image': return node.alt;
+    case 'strong': case 'em': case 'link': return inlineText(node.children);
+  }
+}).join('');
+
+const blockText = (blocks: Block[]): string => blocks.map(block => {
+  switch (block.type) {
+    case 'heading': case 'paragraph': return inlineText(block.children);
+    case 'quote': return blockText(block.children);
+    case 'list': return block.items.map(inlineText).join(' ');
+    case 'code': return block.value;
+    case 'rule': case 'game': case 'youtube': return '';
+  }
+}).join(' ');
+
+export const postExcerpt = (body?: string, maxLength = 200, ellipsis = '…'): string | undefined => {
+  const text = body ? blockText(parseMarkdown(body)).replace(/\s+/g, ' ').trim() : '';
+  if (!text) return undefined;
+  if (text.length <= maxLength) return text;
+
+  const cutoff = text.lastIndexOf(' ', maxLength);
+  const excerpt = text.slice(0, cutoff > 0 ? cutoff : maxLength).trimEnd();
+  return `${excerpt}${ellipsis}`;
 };
 
 export const toPostMeta = ({ slug, title, published, date, updatedAt, body }: Post): PostMeta => ({ 
-  slug, title, published, date, updatedAt, excerpt: bodyToExcerpt(body)
+  slug, title, published, date, updatedAt, excerpt: postExcerpt(body)
 });
 
 /** The last segment of a public post URL: `/post/<date>-<slug>`. */

@@ -1,11 +1,13 @@
 import { raw } from 'hono/html';
 import type { Child } from 'hono/jsx';
-import { BLOG_TITLE, postUrl, type Post, type PostRef } from '../blog';
+import { BLOG_TITLE, postExcerpt, postUrl, type Post, type PostRef } from '../blog';
 import type { CreditLink, GameCard } from '../gameCard';
 import { mapImages, parseMarkdown, type Block, type Inline } from '../markdown';
 import { MEDIA_PATH } from '../media';
 
-const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const BLOG_ORIGIN = 'https://ludens.aorcsik.com';
+const BLOG_DESCRIPTION = 'Personal writing from aōrora ludens.';
+// const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 const MONTHS_SHORT = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 export const formatDate = (date: string): string => {
@@ -13,16 +15,52 @@ export const formatDate = (date: string): string => {
   return `${day}∙${MONTHS_SHORT[month - 1].toLocaleLowerCase()}∙${year}`;
 };
 
+type SocialMetadata = {
+  canonicalUrl?: string;
+  image?: string;
+  imageAlt?: string;
+  type?: 'website' | 'article';
+  publishedTime?: string;
+  noindex?: boolean;
+};
+
 // The blog is public and must never link to the (authenticated) game library.
-export const BlogLayout = ({ title, description, children }: { title?: string; description?: string; children?: Child }) => (
+export const BlogLayout = ({ title, description, children, canonicalUrl = BLOG_ORIGIN, image, imageAlt, type = 'website', publishedTime, noindex }: {
+  title?: string; description?: string; children?: Child;
+} & SocialMetadata) => {
+  const pageTitle = title ? `${title} · ${BLOG_TITLE}` : BLOG_TITLE;
+  const pageDescription = description || BLOG_DESCRIPTION;
+  const socialTitle = title || BLOG_TITLE;
+  return (
   <>
     {raw('<!DOCTYPE html>')}
     <html lang="en">
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>{title ? `${title} · ${BLOG_TITLE}` : BLOG_TITLE}</title>
-        {description && <meta name="description" content={description} />}
+        <meta name="color-scheme" content="light" />
+        <meta name="theme-color" content="#faf6ef" />
+        <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:type" content={type} />
+        <meta property="og:site_name" content={BLOG_TITLE} />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:title" content={socialTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:url" content={canonicalUrl} />
+        {publishedTime && <meta property="article:published_time" content={`${publishedTime}T00:00:00Z`} />}
+        {image && <>
+          <meta property="og:image" content={image} />
+          <meta property="og:image:secure_url" content={image} />
+          <meta property="og:image:alt" content={imageAlt || socialTitle} />
+          <meta name="twitter:image" content={image} />
+          <meta name="twitter:image:alt" content={imageAlt || socialTitle} />
+        </>}
+        <meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
+        <meta name="twitter:title" content={socialTitle} />
+        <meta name="twitter:description" content={pageDescription} />
         <link rel="stylesheet" href="/assets/blog.css" />
         <script type="module" src="/assets/blog.js"></script>
       </head>
@@ -35,7 +73,35 @@ export const BlogLayout = ({ title, description, children }: { title?: string; d
       </body>
     </html>
   </>
-);
+  );
+};
+
+const firstSocialImage = (source: string, mediaBase = ''): { src: string; alt: string } | undefined => {
+  let found: { src: string; alt: string } | undefined;
+  const visitInlines = (nodes: Inline[]): void => {
+    for (const node of nodes) {
+      if (node.type === 'image' && !found) {
+        const src = node.src.startsWith(`${MEDIA_PATH}/`) && mediaBase
+          ? mediaBase + node.src.slice(MEDIA_PATH.length)
+          : node.src;
+        found = { src: new URL(src, `${BLOG_ORIGIN}/`).href, alt: node.alt };
+      } else if (node.type === 'strong' || node.type === 'em' || node.type === 'link') {
+        visitInlines(node.children);
+      }
+    }
+  };
+  const visitBlocks = (blocks: Block[]): void => {
+    for (const block of blocks) {
+      if (found) return;
+      if (block.type === 'heading' || block.type === 'paragraph') visitInlines(block.children);
+      else if (block.type === 'list') block.items.forEach(visitInlines);
+      else if (block.type === 'quote') visitBlocks(block.children);
+      else if (block.type === 'youtube') found = { src: `https://i.ytimg.com/vi/${block.videoId}/hqdefault.jpg`, alt: 'YouTube video thumbnail' };
+    }
+  };
+  visitBlocks(parseMarkdown(source));
+  return found;
+};
 
 const Inlines = ({ nodes }: { nodes: Inline[] }) => (
   <>
@@ -141,6 +207,18 @@ const Blocks = ({ blocks, games, showMissing }: { blocks: Block[] } & GameCards)
           if (card) return <GameCardView card={card} />;
           return showMissing ? <p class="preview">Unknown game: {block.key}</p> : null;
         }
+        case 'youtube': return (
+          <div class="youtube-embed">
+            <iframe
+              src={`https://www.youtube-nocookie.com/embed/${block.videoId}`}
+              title="YouTube video player"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            />
+          </div>
+        );
       }
     })}
   </>
@@ -154,7 +232,7 @@ export const Markdown = ({ source, mediaBase = '', games, showMissing }: { sourc
 export const PostArticle = ({ post, mediaBase, games, showMissing }: { post: Post; mediaBase?: string } & GameCards) => (
   <article class="post">
     <header>
-      <h1>{post.title}</h1>
+      <h1>{post.title.replace(/\s+/g, '∙')}</h1>
       {post.date && <p class="post-date"><time datetime={post.date}>/{formatDate(post.date)}/</time></p>}
     </header>
     <div class="post-body"><Markdown source={post.body} mediaBase={mediaBase} games={games} showMissing={showMissing} /></div>
@@ -162,14 +240,14 @@ export const PostArticle = ({ post, mediaBase, games, showMissing }: { post: Pos
 );
 
 export const BlogIndex = ({ posts }: { posts: PostRef[] }) => (
-  <BlogLayout>
+  <BlogLayout description={BLOG_DESCRIPTION}>
     {posts.length === 0
       ? <p class="empty">Nothing here yet.</p>
       : (
         <ol class="post-list">
           {posts.map(({ meta }) => (
             <li><a href={postUrl(meta)}>
-              <strong>{meta.title.replace(/--/g, '∙')}</strong>
+              <strong>{meta.title.replace(/\s+/g, '∙')}</strong>
               <time datetime={meta.date}>/{formatDate(meta.date!)}/</time>
               <span class="excerpt">{meta.excerpt}</span>
             </a></li>
@@ -179,16 +257,28 @@ export const BlogIndex = ({ posts }: { posts: PostRef[] }) => (
   </BlogLayout>
 );
 
-export const BlogPostPage = ({ post, preview = false, mediaBase, games }: { post: Post; preview?: boolean; mediaBase?: string; games?: ReadonlyMap<string, GameCard> }) => (
-  <BlogLayout title={post.title}>
+export const BlogPostPage = ({ post, preview = false, mediaBase, games }: { post: Post; preview?: boolean; mediaBase?: string; games?: ReadonlyMap<string, GameCard> }) => {
+  const socialImage = firstSocialImage(post.body, mediaBase);
+  return (
+  <BlogLayout
+    title={post.title}
+    description={postExcerpt(post.body) || BLOG_DESCRIPTION}
+    canonicalUrl={`${BLOG_ORIGIN}${postUrl(post)}`}
+    image={socialImage?.src}
+    imageAlt={socialImage?.alt}
+    type="article"
+    publishedTime={post.date}
+    noindex={preview}
+  >
     {preview && <p class="preview">Preview{post.published ? '' : ' — this draft is not public'}</p>}
     <PostArticle post={post} mediaBase={mediaBase} games={games} showMissing={preview} />
     <p class="back"><a href="/">← All posts</a></p>
   </BlogLayout>
-);
+  );
+};
 
 export const BlogNotFound = () => (
-  <BlogLayout title="Not found">
+  <BlogLayout title="Not found" noindex>
     <p class="empty">This page could not be found.</p>
     <p class="back"><a href="/">← All posts</a></p>
   </BlogLayout>

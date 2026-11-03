@@ -29,6 +29,23 @@ test('keeps metadata well under the KV limit for long titles and slugs', () => {
   assert.ok(new TextEncoder().encode(JSON.stringify(toPostMeta(post))).length < 1024);
 });
 
+test('creates readable excerpts by stripping Markdown syntax but keeping content', () => {
+  const { excerpt } = toPostMeta({
+    id: 'aaaaaaaaaa', slug: 'excerpt', title: 'Excerpt', published: true, date: '2026-10-29', updatedAt: context.now,
+    body: '# **A title**\n\nA *word* with `code`, [a link](https://example.com), and ![image alt](https://example.com/image.png).\n\n> A quote.\n\n- First\n- Second\n\n![game:game-key]\n\n![youtube:dQw4w9WgXcQ]',
+  });
+  assert.equal(excerpt, 'A title A word with code, a link, and image alt. A quote. First Second');
+});
+
+test('truncates excerpts at a word boundary and omits bodies with no text', () => {
+  const meta = body => toPostMeta({
+    id: 'aaaaaaaaaa', slug: 'excerpt', title: 'Excerpt', published: true, date: '2026-10-29', updatedAt: context.now, body,
+  });
+  assert.equal(meta('A '.repeat(120)).excerpt, `${Array(100).fill('A').join(' ')}…`);
+  assert.equal(meta('![youtube:dQw4w9WgXcQ]').excerpt, undefined);
+  assert.equal(meta('![alt](https://example.com/image.png)').excerpt, 'alt');
+});
+
 const ref = (id, slug, published, date, updatedAt = '2026-01-01') => ({ id, meta: { slug, title: slug, published, date, updatedAt } });
 
 test('builds public URLs from the date and slug', () => {
