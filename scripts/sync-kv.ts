@@ -8,7 +8,6 @@ import { join, resolve } from 'node:path';
 import JSON5 from 'json5';
 import { Miniflare, convertV4MiniflareOptions } from 'miniflare';
 
-type Binding = 'GAMES' | 'GAMEDB' | 'GAMESTATE' | 'CREATORS' | 'POSTS';
 type Key = { name: string; metadata?: unknown; expiration?: number };
 type Entry = { key: string; value: string; metadata?: unknown; expiration?: number };
 
@@ -18,18 +17,23 @@ const [direction, ...args] = process.argv.slice(2);
 const bindingIndex = args.indexOf('--binding');
 const binding = args[bindingIndex + 1];
 const confirmed = args.includes('--yes');
-const supported: Binding[] = ['GAMES', 'GAMEDB', 'GAMESTATE', 'CREATORS', 'POSTS'];
+const mirror = args.includes('--mirror');
+const configPath = resolve(root, 'wrangler.jsonc');
+const config = JSON5.parse(readFileSync(configPath, 'utf8')) as { kv_namespaces: { binding: string; id: string }[] };
+const supported = config.kv_namespaces.map(namespace => namespace.binding);
 
-if ((direction !== 'push' && direction !== 'pull') || !supported.includes(binding as Binding) ||
-    args.some((arg, index) => arg !== '--yes' && arg !== '--binding' && index !== bindingIndex + 1) ||
-    args.filter(arg => arg === '--binding').length !== 1 || args.filter(arg => arg === '--yes').length > 1) {
-  throw new Error('Usage: npm run kv:push|kv:pull -- --binding GAMES|GAMEDB|GAMESTATE|CREATORS|POSTS [--yes]');
+if ((direction !== 'push' && direction !== 'pull') || !supported.includes(binding) ||
+    (mirror && direction !== 'push') ||
+    args.some((arg, index) => arg !== '--yes' && arg !== '--mirror' && arg !== '--binding' && index !== bindingIndex + 1) ||
+    args.filter(arg => arg === '--binding').length !== 1 || args.filter(arg => arg === '--yes').length > 1 ||
+    args.filter(arg => arg === '--mirror').length > 1) {
+  throw new Error(`Usage: npm run kv:push|kv:pull -- --binding ${supported.join('|')} [--yes] [--mirror (push only)]`);
 }
 
 const source = direction === 'push' ? '--local' : '--remote';
 const destination = direction === 'push' ? '--remote' : '--local';
 const run = (command: string[], output = true): string =>
-  execFileSync(wrangler, ['kv', ...command, '--binding', binding, '--config', resolve(root, 'wrangler.jsonc')], {
+  execFileSync(wrangler, ['kv', ...command, '--binding', binding, '--config', configPath], {
     cwd: root,
     encoding: 'utf8',
     maxBuffer: 64 * 1024 * 1024,
@@ -37,8 +41,6 @@ const run = (command: string[], output = true): string =>
   }) ?? '';
 
 const listLocal = async (): Promise<Key[]> => {
-  const configPath = resolve(root, 'wrangler.jsonc');
-  const config = JSON5.parse(readFileSync(configPath, 'utf8')) as { kv_namespaces: { binding: string; id: string }[] };
   const namespaceId = config.kv_namespaces.find(namespace => namespace.binding === binding)?.id;
   if (!namespaceId) throw new Error(`Missing namespace ID for ${binding}`);
   const miniflare = new Miniflare(convertV4MiniflareOptions({
@@ -62,15 +64,18 @@ const listLocal = async (): Promise<Key[]> => {
 };
 const list = (location: string): Promise<Key[]> =>
   location === '--local' ? listLocal() : Promise.resolve(JSON.parse(run(['key', 'list', location])) as Key[]);
-const sourceKeys = (await list(source)).filter(key => key.name !== 'sync:dirty');
-const destinationKeys = new Set((await list(destination)).map(key => key.name));
+const listedSourceKeys = await list(source);
+const sourceKeys = listedSourceKeys.filter(key => key.name !== 'sync:dirty');
+const destinationKeys = new Set((await list(destination)).map(key => key.name).filter(key => key !== 'sync:dirty'));
+const sourceNames = new Set(sourceKeys.map(key => key.name));
+const deletions = mirror ? [...destinationKeys].filter(key => !sourceNames.has(key)) : [];
 const additions = sourceKeys.filter(key => !destinationKeys.has(key.name)).length;
 const existing = sourceKeys.length - additions;
 
 console.info(`${direction} ${binding}: ${sourceKeys.length} source keys -> ${destination}`);
-console.info(`${additions} new keys, ${existing} existing keys will be overwritten; destination-only keys are retained.`);
+console.info(`${additions} new keys, ${existing} existing keys will be overwritten; ${mirror ? `${deletions.length} destination-only keys will be deleted` : 'destination-only keys are retained'}.`);
 if (!confirmed) {
-  console.info('Dry run. Re-run with --yes to copy values and metadata.');
+  console.info('Dry run. Re-run with --yes to apply these changes.');
 } else {
   const directory = await mkdtemp(join(tmpdir(), 'game-library-kv-'));
   try {
@@ -106,6 +111,16 @@ if (!confirmed) {
       }
     }
     await upload();
+    for (let offset = 0; offset < deletions.length; offset += 10000) {
+      const file = join(directory, 'delete.json');
+      await writeFile(file, JSON.stringify(deletions.slice(offset, offset + 10000)), { mode: 0o600 });
+      run(['bulk', 'delete', file, destination, '--force'], false);
+      console.info(`Deleted ${Math.min(offset + 10000, deletions.length)}/${deletions.length} keys`);
+    }
+    if (mirror && binding === 'GAMEDB' && listedSourceKeys.some(key => key.name === 'sync:dirty')) {
+      run(['key', 'delete', 'sync:dirty', '--local'], false);
+      console.info('Cleared local game change tracking.');
+    }
   } finally {
     await rm(directory, { recursive: true, force: true });
   }

@@ -14,8 +14,9 @@ import { PlatformIcon, StoreLogo } from './PlatformIcon';
 import { PlatformFilter } from './PlatformFilter';
 import { PersonalHistory, PersonalSummaryView } from './PersonalHistory';
 import { CreatorLinks } from './Creators';
+import type { WishlistItem, WishlistOwnership } from '../wishlist';
 
-export type GameRow = { key: string; meta: GameMeta; purchases: Ownership[]; personal?: PersonalSummary };
+export type GameRow = { key: string; meta: GameMeta; purchases: Ownership[]; wishlisted?: WishlistItem[]; personal?: PersonalSummary };
 
 const CreatorCredits = ({ credits, source, links }: {
   credits: GameCreatorCredits; source: { key: string } | { game: Game }; links?: ReadonlyMap<string, CreatorGameLink>;
@@ -68,7 +69,7 @@ const visibleLabel = (p: Ownership): string | null => {
 const access = (purchases: Ownership[]): string =>
   !purchases.length ? '' : purchases.every(p => p.item.service && SUBSCRIPTION_SERVICES.includes(p.item.service)) ? 'subscription' : 'owned';
 
-type PlatformEntry = { label: string; physical: boolean; tooltip: string };
+type PlatformEntry = { label: string; physical: boolean; tooltip: string; wished?: boolean };
 
 /** One tooltip line per purchase behind an icon: date, item (and the transaction it came in) and store. */
 const purchaseLine = (p: Ownership): string => {
@@ -110,6 +111,31 @@ const platformGroups = (purchases: Ownership[]): [string, PlatformEntry[]][] => 
       entries.filter(e => platformGroup(e.label) === group).sort((a, b) => a.label.localeCompare(b.label)),
     ])
     .filter(([, list]) => list.length > 0);
+};
+
+/** Wishlist icons, one per platform; a purchase on the same platform takes precedence. */
+const wishlistEntries = (purchases: Ownership[], wishlisted: WishlistItem[] = []): PlatformEntry[] => {
+  const owned = new Set(purchases.map(visibleLabel));
+  const labels = new Map<string, WishlistItem[]>();
+  for (const item of wishlisted) if (!owned.has(item.platform)) labels.set(item.platform, [...(labels.get(item.platform) ?? []), item]);
+  return [...labels].map(([label, list]) => ({
+    label,
+    physical: false,
+    wished: true,
+    tooltip: [`${label} wishlist`, ...list.map(item => `${item.addedAt ?? item.firstSeen.slice(0, 10)}  ${item.title}`)].join('\n'),
+  }));
+};
+
+/** Platform icons of a row: owned labels per column group, plus wishlist platforms not already owned. */
+const rowPlatforms = (purchases: Ownership[], wishlisted?: WishlistItem[]): [string, PlatformEntry[]][] => {
+  const groups = platformGroups(purchases);
+  for (const entry of wishlistEntries(purchases, wishlisted)) {
+    const group = platformGroup(entry.label);
+    const existing = groups.find(([name]) => name === group);
+    if (existing) existing[1].push(entry);
+    else groups.push([group, [entry]]);
+  }
+  return groups;
 };
 
 const Checkboxes = ({ name, label, values, checkedValues = [] }: { name: string; label: string; values: readonly string[]; checkedValues?: readonly string[] }) => (
@@ -169,8 +195,8 @@ const COLUMNS = [
 
 const columnOf = (group: string): string => (COLUMNS.some(c => c.title === group) ? group : 'PC');
 
-export const GameList = ({ rows, unresolved, creatorIndex, creatorGameLinks }: {
-  rows: GameRow[]; unresolved: (Ownership & { ambiguous?: string[] })[]; creatorIndex: CreatorIndex;
+export const GameList = ({ rows, unresolved, wishlistUnresolved = [], creatorIndex, creatorGameLinks }: {
+  rows: GameRow[]; unresolved: (Ownership & { ambiguous?: string[] })[]; wishlistUnresolved?: WishlistOwnership[]; creatorIndex: CreatorIndex;
   creatorGameLinks?: CreatorGameLinks;
 }) => {
   const owned = rows.filter(r => r.purchases.length);
@@ -194,6 +220,32 @@ export const GameList = ({ rows, unresolved, creatorIndex, creatorGameLinks }: {
                     {!u.ambiguous && (
                       <form method="post" action="/games">
                         <input type="hidden" name="title" value={u.title} />
+                        <button type="submit">Create game</button>
+                      </form>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </details>
+      )}
+      {wishlistUnresolved.length > 0 && (
+        <details class="group">
+          <summary>Wishlist items without a game ({wishlistUnresolved.length})</summary>
+          <table class="list">
+            <tbody>
+              {wishlistUnresolved.map(({ item, ambiguous }) => (
+                <tr>
+                  <td class="date">{item.addedAt ?? item.firstSeen.slice(0, 10)}</td>
+                  <td>{item.url ? <a href={item.url} rel="noopener noreferrer" target="_blank">{item.title}</a> : item.title}</td>
+                  <td><PlatformIcon label={item.platform} withLabel /></td>
+                  <td>{ambiguous ? `ambiguous: ${ambiguous.join(', ')}` : ''}</td>
+                  <td class="num">
+                    {!ambiguous && (
+                      <form method="get" action="/games/new">
+                        <input type="hidden" name="title" value={item.title} />
+                        {item.platform === 'steam' && <input type="hidden" name="steam" value={item.id} />}
                         <button type="submit">Create game</button>
                       </form>
                     )}
@@ -253,9 +305,9 @@ export const GameList = ({ rows, unresolved, creatorIndex, creatorGameLinks }: {
           </tr>
         </thead>
         <tbody>
-          {rows.map(({ key, meta, purchases, personal }) => {
+          {rows.map(({ key, meta, purchases, wishlisted, personal }) => {
             const credits = listCredits(meta, creatorIndex, creatorGameLinks?.get(key));
-            const groups = platformGroups(purchases);
+            const groups = rowPlatforms(purchases, wishlisted);
             const purchaseDates = purchases.map(p => p.tx.date).sort();
             const purchased = purchaseDates.at(-1) ?? '';
             const firstPurchased = purchaseDates[0] ?? '';
@@ -266,8 +318,8 @@ export const GameList = ({ rows, unresolved, creatorIndex, creatorGameLinks }: {
                 data-title={meta.title.toLowerCase()}
                 data-search={`${meta.title} ${listCreatorSearch(meta, credits, creatorIndex, creatorGameLinks?.get(key))}`.toLowerCase()}
                 data-owned={purchases.length ? '1' : ''}
-                data-groups={groups.map(([g]) => g).join(',')}
-                data-labels={groups.flatMap(([, l]) => l.map(x => x.label)).join(',')}
+                data-groups={platformGroups(purchases).map(([g]) => g).join(',')}
+                data-labels={platformGroups(purchases).flatMap(([, l]) => l.map(x => x.label)).join(',')}
                 data-access={access(purchases) || 'not-owned'}
                 data-status-peak={personal?.peak?.state ?? 'none'}
                 data-status-latest={personal?.latest?.state ?? 'none'}
@@ -307,7 +359,7 @@ export const GameList = ({ rows, unresolved, creatorIndex, creatorGameLinks }: {
                     <span class="platform-group">
                       {groups.filter(([group]) => columnOf(group) === column.title)
                         .flatMap(([, labels]) => labels)
-                        .map(l => <PlatformIcon label={l.label} physical={l.physical} tooltip={l.tooltip} />)}
+                        .map(l => <PlatformIcon label={l.label} physical={l.physical} wished={l.wished} tooltip={l.tooltip} />)}
                     </span>
                   </td>
                 ))}
@@ -318,9 +370,9 @@ export const GameList = ({ rows, unresolved, creatorIndex, creatorGameLinks }: {
         </tbody>
       </table>
       <div id="game-cards" class="cards game-cards" hidden>
-        {rows.map(({ key, meta, purchases, personal }) => {
+        {rows.map(({ key, meta, purchases, wishlisted, personal }) => {
           const cover = gameMetaCover(meta);
-          const platforms = platformGroups(purchases).flatMap(([, labels]) => labels);
+          const platforms = rowPlatforms(purchases, wishlisted).flatMap(([, labels]) => labels);
           const scores = [meta.oc && `OC ${meta.oc}`, meta.mc && `MC ${meta.mc}`, meta.steam && `Steam ${steamReview(meta)}`].filter(Boolean).join(' · ');
           return (
             <article class="card game-card" data-game-card data-key={key}>
@@ -333,7 +385,7 @@ export const GameList = ({ rows, unresolved, creatorIndex, creatorGameLinks }: {
                 <span class="tags">{meta.release ? <span data-popover={meta.release} tabindex={0}>{meta.release.slice(0, 4)}</span> : 'Release unknown'}{purchases.length ? '' : ' · Not owned'}</span>
                 <span class="game-card-state" data-state-mode="peak"><PersonalSummaryView summary={personal} /></span>
                 <span class="game-card-platforms">
-                  {platforms.map(platform => <PlatformIcon label={platform.label} physical={platform.physical} tooltip={platform.tooltip} />)}
+                  {platforms.map(platform => <PlatformIcon label={platform.label} physical={platform.physical} wished={platform.wished} tooltip={platform.tooltip} />)}
                 </span>
                 {scores && <span class="tags game-card-scores">{scores}</span>}
               </div>
@@ -371,8 +423,8 @@ const SourceMetadata = ({ data, fetchedAt, creatorIndex, links }: {
   </details>
 );
 
-export const GamePage = ({ game, purchases, creatorIndex, creatorGameLinks, release, errors = [], saved, fetcher, autoRefresh, autoRefreshError, personalEntries = [], personalErrors = [], personalDraft, personalSaved, editingEntry }: {
-  game: Game; purchases: Ownership[]; release?: string; errors?: string[]; saved?: boolean; fetcher?: boolean;
+export const GamePage = ({ game, purchases, wishlisted = [], creatorIndex, creatorGameLinks, release, errors = [], saved, fetcher, autoRefresh, autoRefreshError, personalEntries = [], personalErrors = [], personalDraft, personalSaved, editingEntry, isNew }: {
+  game: Game; isNew?: boolean; purchases: Ownership[]; wishlisted?: WishlistItem[]; release?: string; errors?: string[]; saved?: boolean; fetcher?: boolean;
   autoRefresh?: Pick<RefreshJob, 'id' | 'state'>; autoRefreshError?: string;
   creatorIndex: CreatorIndex;
   creatorGameLinks?: ReadonlyMap<string, CreatorGameLink>;
@@ -458,7 +510,7 @@ export const GamePage = ({ game, purchases, creatorIndex, creatorGameLinks, rele
           {steam?.description && <p>{steam.description}</p>}
         </div>
       </div>
-      <PersonalHistory
+      {!isNew && <PersonalHistory
         gameKey={game.key}
         entries={personalEntries}
         errors={personalErrors}
@@ -466,10 +518,10 @@ export const GamePage = ({ game, purchases, creatorIndex, creatorGameLinks, rele
         editingEntry={editingEntry}
         draft={personalDraft ?? { date: new Date().toISOString().slice(0, 10), platform: '', state: '', rating: '', note: '' }}
         today={new Date().toISOString().slice(0, 10)}
-      />
+      />}
 
-      <h2>Purchases <small>{purchases.length}</small></h2>
-      {purchases.length === 0 ? <p class="meta">Not owned (kept for statistics).</p> : (
+      {!isNew && <h2>Purchases <small>{purchases.length}</small></h2>}
+      {isNew ? null : purchases.length === 0 ? <p class="meta">Not owned (kept for statistics).</p> : (
         <table class="list">
           <tbody>
             {purchases.map(p => {
@@ -491,8 +543,30 @@ export const GamePage = ({ game, purchases, creatorIndex, creatorGameLinks, rele
         </table>
       )}
 
-      <h2>Edit</h2>
-      <form method="post" action={`/games/${game.key}`} class="tx-form">
+      {!isNew && wishlisted.length > 0 && (
+        <>
+          <h2>Wishlist <small>{wishlisted.length}</small></h2>
+          <table class="list">
+            <thead><tr><th>Added</th><th>Title</th><th>Platform</th></tr></thead>
+            <tbody>
+              {wishlisted.map(item => (
+                <tr>
+                  <td class="date">{item.addedAt ?? item.firstSeen.slice(0, 10)}</td>
+                  <td>
+                    {item.url
+                      ? <a href={item.url} rel="noopener noreferrer" target="_blank">{item.title}</a>
+                      : item.title}
+                  </td>
+                  <td><PlatformIcon label={item.platform} withLabel /></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </>
+      )}
+
+      <h2>{isNew ? 'New game' : 'Edit'}</h2>
+      <form method="post" action={isNew ? '/games' : `/games/${game.key}`} class="tx-form">
         <div class="row">
           <label class="grow">Title<input name="title" value={game.title} required maxlength={300} /></label>
           <label>Manual release date<input type="date" name="releaseDate" value={game.releaseDate ?? ''} /></label>
@@ -529,14 +603,14 @@ export const GamePage = ({ game, purchases, creatorIndex, creatorGameLinks, rele
         <label>Manual developers (comma-separated)<textarea name="manualDevelopers" rows={2}>{(game.manualDevelopers ?? []).join(', ')}</textarea></label>
         <label>Manual publishers (comma-separated)<textarea name="manualPublishers" rows={2}>{(game.manualPublishers ?? []).join(', ')}</textarea></label>
         <label>Manual genres (comma-separated)<textarea name="manualGenres" rows={2}>{(game.manualGenres ?? []).join(', ')}</textarea></label>
-        <div class="actions"><button type="submit" class="primary">Save</button><a href="/games">Back to games</a></div>
+        <div class="actions"><button type="submit" class="primary">{isNew ? 'Create game' : 'Save'}</button><a href="/games">Back to games</a></div>
       </form>
-      <form method="post" action={`/games/${game.key}/delete`}
+      {!isNew && <form method="post" action={`/games/${game.key}/delete`}
         data-confirm={`Delete ${game.title} (${game.key})? This permanently removes its fetched source data and aliases. Purchases matching another game may move to that game.`}
         class="actions">
         <button type="submit" class="danger">Delete game</button>
-      </form>
-      <p class="meta">updated {game.updatedAt}</p>
+      </form>}
+      {!isNew && <p class="meta">updated {game.updatedAt}</p>}
     </Layout>
   );
 };

@@ -40,6 +40,7 @@ const makeWorker = (fetcher = 'on', resourcePersistencePath) => new Miniflare({
         GAMES: { type: 'kv', id: 'queue-test-transactions' },
         GAMESTATE: { type: 'kv', id: 'queue-test-state' },
         CREATORS: { type: 'kv', id: 'queue-test-creators' },
+        WISHLIST: { type: 'kv', id: 'queue-test-wishlist' },
         FETCHER: { type: 'text', value: fetcher },
         LOCAL_DEV: { type: 'text', value: 'on' },
       },

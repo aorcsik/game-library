@@ -58,7 +58,7 @@ export const deleteGame = async (kv: KVNamespace, key: string): Promise<void> =>
 
 export const DIRTY_KEY = 'sync:dirty';
 
-/** Games changed since the last publish to the remote namespace (see scripts/publish-games.ts). */
+/** Game changes tracked separately from published KV data; cleared after publishing GAMEDB. */
 export const getDirty = async (kv: KVNamespace): Promise<string[]> => (await kv.get<string[]>(DIRTY_KEY, 'json')) ?? [];
 
 const markDirty = async (kv: KVNamespace, key: string): Promise<void> => {

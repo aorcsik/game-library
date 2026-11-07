@@ -34,6 +34,7 @@ test('manual genres persist and appear in game details, list rows and genre filt
           GAMES: { type: 'kv', id: 'genres-transactions' },
           GAMESTATE: { type: 'kv', id: 'genres-state' },
           CREATORS: { type: 'kv', id: 'genres-creators' },
+          WISHLIST: { type: 'kv', id: 'genres-wishlist' },
           LOCAL_DEV: { type: 'text', value: 'on' },
         },
       },

@@ -28,9 +28,10 @@ type SocialMetadata = {
 export const BlogLayout = ({ title, description, children, canonicalUrl = BLOG_ORIGIN, image, imageAlt, type = 'website', publishedTime, noindex }: {
   title?: string; description?: string; children?: Child;
 } & SocialMetadata) => {
-  const pageTitle = title ? `${title} · ${BLOG_TITLE}` : BLOG_TITLE;
+  const blogTitle = BLOG_TITLE.replace(/\s+/g, '∙');
+  const pageTitle = title ? `${title.replace(/\s+/g, '∙')} / ${blogTitle}` : blogTitle;
   const pageDescription = description || BLOG_DESCRIPTION;
-  const socialTitle = title || BLOG_TITLE;
+  const socialTitle = title || blogTitle;
   return (
   <>
     {raw('<!DOCTYPE html>')}
@@ -45,7 +46,7 @@ export const BlogLayout = ({ title, description, children, canonicalUrl = BLOG_O
         <meta name="description" content={pageDescription} />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:type" content={type} />
-        <meta property="og:site_name" content={BLOG_TITLE} />
+        <meta property="og:site_name" content={blogTitle} />
         <meta property="og:locale" content="en_US" />
         <meta property="og:title" content={socialTitle} />
         <meta property="og:description" content={pageDescription} />
@@ -61,15 +62,16 @@ export const BlogLayout = ({ title, description, children, canonicalUrl = BLOG_O
         <meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
         <meta name="twitter:title" content={socialTitle} />
         <meta name="twitter:description" content={pageDescription} />
+        <link rel="stylesheet" href="/assets/fontawesome/css/all.min.css" />
         <link rel="stylesheet" href="/assets/blog.css" />
         <script type="module" src="/assets/blog.js"></script>
       </head>
       <body>
         <header class="site-header">
-          <a class="site-title" href="/">{BLOG_TITLE}</a>
+          <a class="site-title" href="/">{blogTitle}</a>
         </header>
         <main>{children}</main>
-        <footer class="site-footer">© {new Date().getFullYear()} {BLOG_TITLE}</footer>
+        <footer class="site-footer">© {new Date().getFullYear()} {blogTitle}</footer>
       </body>
     </html>
   </>
@@ -254,7 +256,26 @@ export const BlogIndex = ({ posts }: { posts: PostRef[] }) => (
           ))}
         </ol>
       )}
+      <AuthorSection />
   </BlogLayout>
+);
+
+export const AuthorSection = () => (
+  <section class="author">
+    <p><strong>aōrora</strong> <em>/ao_rora/</em> I'm the author of this blog.
+    I have a huge game library and I realised that I'll never be able to finish 
+    all of them, but I'll try to take a look at as many as I can and share my
+    thoughts.</p>
+    <div class="find-me-online">
+      You can find me online:
+      <ul>
+        <li><a class="gaming-profile" href="https://steamcommunity.com/id/aorcsik/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-steam"></i> aōrora</a></li>
+        <li><span class="gaming-profile"><i class="fa-brands fa-playstation"></i> ao_rora</span></li>
+        <li><span class="gaming-profile"><i class="riot-logo"></i> aohrora<span>#8494</span></span></li>
+        <li><a class="gaming-profile" href="https://discord.com/users/445671208395210763" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-discord"></i> aōrora</a></li>
+      </ul>
+    </div>
+  </section>
 );
 
 export const BlogPostPage = ({ post, preview = false, mediaBase, games }: { post: Post; preview?: boolean; mediaBase?: string; games?: ReadonlyMap<string, GameCard> }) => {
@@ -272,7 +293,8 @@ export const BlogPostPage = ({ post, preview = false, mediaBase, games }: { post
   >
     {preview && <p class="preview">Preview{post.published ? '' : ' — this draft is not public'}</p>}
     <PostArticle post={post} mediaBase={mediaBase} games={games} showMissing={preview} />
-    <p class="back"><a href="/">← All posts</a></p>
+    <AuthorSection />
+    <p class="back"><a href="/" class="button"><i class="fas fa-arrow-left"></i> All posts</a></p>
   </BlogLayout>
   );
 };

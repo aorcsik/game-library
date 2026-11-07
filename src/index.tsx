@@ -1,4 +1,4 @@
-import { Hono } from 'hono';
+import { Hono, type Context } from 'hono';
 import { basicAuth } from 'hono/basic-auth';
 import { csrf } from 'hono/csrf';
 import { secureHeaders } from 'hono/secure-headers';
@@ -14,6 +14,8 @@ import { needsGameRefresh } from './fetcher/refresh';
 import { buildCreatorIndex, creatorKey, creatorVerificationProgress, deleteCreatorGameLinks, deleteGameCreatorLinks, gameCreatorCredits, getCreator, getCreatorGameLink, getGameCreatorLinks, listCreatorGameLinks, listCreators, newCreatorKey, normalizeCreator, readCreatorDraft, saveCreator, saveCreatorGameLink, toCreatorDraft, validateCreator, type CreatorIndex, type CreatorRole } from './creators';
 import { deleteGame, getGame, getGames, getTitleIndex, listGames, saveGame } from './gamedb';
 import { itemLinks, joinOwnership, rawCreatorCredits, releaseDate, resolveTitle, slugify, type Game } from './games';
+import { getAllWishlistItems, resolveSteamTitles, syncSteamWishlist, type SyncResult } from './wishlistStore';
+import { joinWishlist } from './wishlist';
 import { PLATFORMS, isOneOf, itemsForPlatforms, normalizeTitle, ownedKeys } from './model';
 import { getAllPersonalEntries, getPersonalEntries, listPersonalSummaries, savePersonalEntries, deletePersonalEntry, validatePersonalDraft } from './personalStore';
 import type { PersonalEntry } from './personal';
@@ -29,6 +31,7 @@ import { PostEditor, PostList } from './views/Posts';
 import { RefreshPage } from './views/Refresh';
 import { TransactionForm } from './views/TransactionForm';
 import { TransactionList } from './views/TransactionList';
+import { WishlistPage, parseWishlistSort } from './views/Wishlist';
 
 type Env = {
   GAMES: KVNamespace;
@@ -36,6 +39,10 @@ type Env = {
   CREATORS: KVNamespace;
   GAMESTATE: KVNamespace;
   POSTS: KVNamespace;
+  /** Wishlist items per platform (first/last seen, archived when removed from the platform wishlist). */
+  WISHLIST: KVNamespace;
+  STEAM_API_KEY?: string;
+  STEAM_ID?: string;
   /** R2 bucket for blog images. */
   MEDIA: R2Bucket;
   /** Public base URL of the bucket (e.g. https://assets.example.com); `/media/…` image URLs are rewritten onto it. */
@@ -186,19 +193,59 @@ app.post(`/transactions/${DATE}/${ID}/delete`, async c => {
   return c.redirect('/transactions', 303);
 });
 
+const wishlistPage = async (c: Context<{ Bindings: Env }>, result?: SyncResult, error?: string) =>
+  c.html(<WishlistPage items={await getAllWishlistItems(c.env.WISHLIST)} index={await getTitleIndex(c.env.GAMEDB)}
+    canSync={!!c.env.STEAM_API_KEY && !!c.env.STEAM_ID} result={result} error={error} sort={parseWishlistSort(c.req.query('sort'), c.req.query('dir'))} />, error ? 502 : 200);
+
+app.get('/wishlist', c => wishlistPage(c));
+
+app.post('/wishlist/titles', async c => {
+  c.header('Cache-Control', 'no-store');
+  try {
+    return c.json(await resolveSteamTitles(c.env.WISHLIST));
+  } catch (error) {
+    console.error('Wishlist title lookup failed:', error);
+    return c.json({ resolved: 0, pending: -1, error: 'Title lookup failed.' }, 502);
+  }
+});
+
+app.post('/wishlist/sync', async c => {
+  if (!c.env.STEAM_API_KEY || !c.env.STEAM_ID) return wishlistPage(c, undefined, 'STEAM_API_KEY and STEAM_ID are not configured.');
+  try {
+    return await wishlistPage(c, await syncSteamWishlist(c.env.WISHLIST, c.env.STEAM_API_KEY, c.env.STEAM_ID));
+  } catch (error) {
+    console.error('Steam wishlist sync failed:', error);
+    return wishlistPage(c, undefined, error instanceof Error ? error.message : 'Steam wishlist sync failed.');
+  }
+});
+
 app.get('/games', async c => {
-  const [games, index, transactions, personal, creators, creatorGameLinks] = await Promise.all([
-    listGames(c.env.GAMEDB), getTitleIndex(c.env.GAMEDB), getAllTransactions(c.env.GAMES), listPersonalSummaries(c.env.GAMESTATE), listCreators(c.env.CREATORS), listCreatorGameLinks(c.env.CREATORS),
+  const [games, index, transactions, personal, creators, creatorGameLinks, wishlist] = await Promise.all([
+    listGames(c.env.GAMEDB), getTitleIndex(c.env.GAMEDB), getAllTransactions(c.env.GAMES), listPersonalSummaries(c.env.GAMESTATE), listCreators(c.env.CREATORS), listCreatorGameLinks(c.env.CREATORS), getAllWishlistItems(c.env.WISHLIST),
   ]);
   const { owned, unresolved } = joinOwnership(index, transactions);
+  const { wished, unresolved: wishlistUnresolved } = joinWishlist(index, wishlist);
   const rows = games
-    .map(({ key, meta }) => ({ key, meta, purchases: owned.get(key) ?? [], personal: personal.get(key) }))
+    .map(({ key, meta }) => ({ key, meta, purchases: owned.get(key) ?? [], wishlisted: wished.get(key), personal: personal.get(key) }))
     .sort((a, b) => a.meta.title.localeCompare(b.meta.title));
-  return c.html(<GameList rows={rows} unresolved={unresolved} creatorIndex={buildCreatorIndex(creators)} creatorGameLinks={creatorGameLinks} />);
+  return c.html(<GameList rows={rows} unresolved={unresolved} wishlistUnresolved={wishlistUnresolved} creatorIndex={buildCreatorIndex(creators)} creatorGameLinks={creatorGameLinks} />);
+});
+
+const newGamePage = async (env: Env, game: Game, errors: string[] = []) =>
+  <GamePage game={game} isNew errors={errors} purchases={[]} creatorIndex={buildCreatorIndex(await listCreators(env.CREATORS))} release={releaseDate(game)} />;
+
+app.get('/games/new', async c => {
+  const steam = c.req.query('steam') ?? '';
+  const game: Game = {
+    key: '', title: (c.req.query('title') ?? '').slice(0, 300), updatedAt: new Date().toISOString(),
+    ...(/^[1-9]\d{0,9}$/.test(steam) ? { steam: { id: Number(steam) } } : {}),
+  };
+  return c.html(await newGamePage(c.env, game));
 });
 
 app.post('/games', async c => {
-  const title = String((await c.req.formData()).get('title') ?? '').trim();
+  const form = await c.req.formData();
+  const title = String(form.get('title') ?? '').trim();
   if (!title || title.length > 300) return c.text('Title is required (max 300 characters).', 422);
   const index = await getTitleIndex(c.env.GAMEDB);
   const existing = resolveTitle(index, title);
@@ -206,7 +253,8 @@ app.post('/games', async c => {
   const base = slugify(title) || 'game';
   let key = base;
   for (let n = 2; await getGame(c.env.GAMEDB, key); n++) key = `${base}-${n}`;
-  const game: Game = { key, title, updatedAt: new Date().toISOString() };
+  const { game, errors } = applyGameForm(form, { key, title, updatedAt: new Date().toISOString() });
+  if (!game) return c.html(await newGamePage(c.env, { key: '', title, updatedAt: new Date().toISOString() }, errors), 422);
   await saveGame(c.env.GAMEDB, game);
   return c.redirect(`/games/${key}?saved=1`, 303);
 });
@@ -214,6 +262,11 @@ app.post('/games', async c => {
 const gamePurchases = async (env: Env, key: string) => {
   const [index, transactions] = await Promise.all([getTitleIndex(env.GAMEDB), getAllTransactions(env.GAMES)]);
   return joinOwnership(index, transactions, true).owned.get(key) ?? [];
+};
+
+const gameWishlist = async (env: Env, key: string) => {
+  const [index, items] = await Promise.all([getTitleIndex(env.GAMEDB), getAllWishlistItems(env.WISHLIST)]);
+  return joinWishlist(index, items).wished.get(key) ?? [];
 };
 
 const gamePersonal = (env: Env, key: string): Promise<PersonalEntry[]> => getPersonalEntries(env.GAMESTATE, key);
@@ -240,10 +293,10 @@ app.get(`/games/${GAME}`, async c => {
       autoRefreshError = error instanceof Error ? error.message : String(error);
     }
   }
-  const [purchases, personalEntries, creators, creatorGameLinks] = await Promise.all([gamePurchases(c.env, key), gamePersonal(c.env, key), listCreators(c.env.CREATORS), getGameCreatorLinks(c.env.CREATORS, key)]);
+  const [purchases, wishlisted, personalEntries, creators, creatorGameLinks] = await Promise.all([gamePurchases(c.env, key), gameWishlist(c.env, key), gamePersonal(c.env, key), listCreators(c.env.CREATORS), getGameCreatorLinks(c.env.CREATORS, key)]);
   const editingEntry = personalEntries.find(entry => entry.id === c.req.query('editState'));
   return c.html(
-    <GamePage game={game} purchases={purchases} creatorIndex={buildCreatorIndex(creators)} creatorGameLinks={creatorGameLinks} release={releaseDate(game)} saved={c.req.query('saved') === '1'} fetcher={c.env.FETCHER === 'on'} autoRefresh={autoRefresh} autoRefreshError={autoRefreshError} personalEntries={personalEntries} personalSaved={c.req.query('personalSaved') === '1'} personalDraft={editingEntry ? { date: editingEntry.date, platform: editingEntry.platform, state: editingEntry.state ?? '', rating: editingEntry.rating === undefined ? '' : String(editingEntry.rating), note: editingEntry.note ?? '' } : personalDraft()} editingEntry={editingEntry} />,
+    <GamePage game={game} purchases={purchases} wishlisted={wishlisted} creatorIndex={buildCreatorIndex(creators)} creatorGameLinks={creatorGameLinks} release={releaseDate(game)} saved={c.req.query('saved') === '1'} fetcher={c.env.FETCHER === 'on'} autoRefresh={autoRefresh} autoRefreshError={autoRefreshError} personalEntries={personalEntries} personalSaved={c.req.query('personalSaved') === '1'} personalDraft={editingEntry ? { date: editingEntry.date, platform: editingEntry.platform, state: editingEntry.state ?? '', rating: editingEntry.rating === undefined ? '' : String(editingEntry.rating), note: editingEntry.note ?? '' } : personalDraft()} editingEntry={editingEntry} />,
   );
 });
 
@@ -252,9 +305,9 @@ app.post(`/games/${GAME}/state`, async c => {
   const game = await getGame(c.env.GAMEDB, key);
   if (!game) return c.notFound();
   const { entry, errors, draft } = validatePersonalDraft(await c.req.formData());
-  const [purchases, personalEntries] = await Promise.all([gamePurchases(c.env, key), gamePersonal(c.env, key)]);
+  const [purchases, wishlisted, personalEntries] = await Promise.all([gamePurchases(c.env, key), gameWishlist(c.env, key), gamePersonal(c.env, key)]);
   if (!entry) return c.html(
-    <GamePage game={game} purchases={purchases} creatorIndex={buildCreatorIndex(await listCreators(c.env.CREATORS))} creatorGameLinks={await getGameCreatorLinks(c.env.CREATORS, key)} release={releaseDate(game)} personalEntries={personalEntries} personalErrors={errors} personalDraft={draft} fetcher={c.env.FETCHER === 'on'} />,
+    <GamePage game={game} purchases={purchases} wishlisted={wishlisted} creatorIndex={buildCreatorIndex(await listCreators(c.env.CREATORS))} creatorGameLinks={await getGameCreatorLinks(c.env.CREATORS, key)} release={releaseDate(game)} personalEntries={personalEntries} personalErrors={errors} personalDraft={draft} fetcher={c.env.FETCHER === 'on'} />,
     422,
   );
   await savePersonalEntries(c.env.GAMESTATE, key, [...personalEntries, entry]);
@@ -270,9 +323,9 @@ app.post(`/games/${GAME}/state/:entryId{[0-9a-f]{32}}`, async c => {
   const previous = personalEntries.find(entry => entry.id === entryId);
   if (!previous) return c.notFound();
   const { entry, errors, draft } = validatePersonalDraft(await c.req.formData());
-  const purchases = await gamePurchases(c.env, key);
+  const [purchases, wishlisted] = await Promise.all([gamePurchases(c.env, key), gameWishlist(c.env, key)]);
   if (!entry) return c.html(
-    <GamePage game={game} purchases={purchases} creatorIndex={buildCreatorIndex(await listCreators(c.env.CREATORS))} creatorGameLinks={await getGameCreatorLinks(c.env.CREATORS, key)} release={releaseDate(game)} personalEntries={personalEntries} personalErrors={errors} personalDraft={draft} editingEntry={previous} fetcher={c.env.FETCHER === 'on'} />,
+    <GamePage game={game} purchases={purchases} wishlisted={wishlisted} creatorIndex={buildCreatorIndex(await listCreators(c.env.CREATORS))} creatorGameLinks={await getGameCreatorLinks(c.env.CREATORS, key)} release={releaseDate(game)} personalEntries={personalEntries} personalErrors={errors} personalDraft={draft} editingEntry={previous} fetcher={c.env.FETCHER === 'on'} />,
     422,
   );
   await savePersonalEntries(c.env.GAMESTATE, key, personalEntries.map(item => item.id === entryId
@@ -294,7 +347,8 @@ app.post(`/games/${GAME}`, async c => {
   if (!existing) return c.notFound();
   const { game, errors } = applyGameForm(await c.req.formData(), existing);
   if (!game) {
-    return c.html(<GamePage game={existing} purchases={await gamePurchases(c.env, key)} creatorIndex={buildCreatorIndex(await listCreators(c.env.CREATORS))} creatorGameLinks={await getGameCreatorLinks(c.env.CREATORS, key)} release={releaseDate(existing)} errors={errors} />, 422);
+    const [purchases, wishlisted] = await Promise.all([gamePurchases(c.env, key), gameWishlist(c.env, key)]);
+    return c.html(<GamePage game={existing} purchases={purchases} wishlisted={wishlisted} creatorIndex={buildCreatorIndex(await listCreators(c.env.CREATORS))} creatorGameLinks={await getGameCreatorLinks(c.env.CREATORS, key)} release={releaseDate(existing)} errors={errors} />, 422);
   }
   await saveGame(c.env.GAMEDB, game);
   return c.redirect(`/games/${key}?saved=1`, 303);
@@ -304,17 +358,18 @@ app.post(`/games/${GAME}/delete`, async c => {
   const key = c.req.param('key');
   const game = await getGame(c.env.GAMEDB, key);
   if (!game) return c.notFound();
-  const [index, transactions, personalEntries] = await Promise.all([
-    getTitleIndex(c.env.GAMEDB), getAllTransactions(c.env.GAMES), getPersonalEntries(c.env.GAMESTATE, key),
+  const [index, transactions, personalEntries, wishlist] = await Promise.all([
+    getTitleIndex(c.env.GAMEDB), getAllTransactions(c.env.GAMES), getPersonalEntries(c.env.GAMESTATE, key), getAllWishlistItems(c.env.WISHLIST),
   ]);
   const purchases = joinOwnership(index, transactions, true).owned.get(key) ?? [];
+  const wishlisted = joinWishlist(index, wishlist).wished.get(key) ?? [];
   const explicitlyLinked = transactions.some(tx => tx.items.some(item => item.game === key));
   const errors = [
     ...(purchases.length || explicitlyLinked ? ['Remove or reassign purchases linked to this game before deleting it.'] : []),
     ...(personalEntries.length ? ['Remove or transfer personal entries before deleting this game.'] : []),
   ];
   if (errors.length) {
-    return c.html(<GamePage game={game} purchases={purchases} personalEntries={personalEntries}
+    return c.html(<GamePage game={game} purchases={purchases} wishlisted={wishlisted} personalEntries={personalEntries}
       creatorIndex={buildCreatorIndex(await listCreators(c.env.CREATORS))}
       creatorGameLinks={await getGameCreatorLinks(c.env.CREATORS, key)}
       release={releaseDate(game)} errors={errors} fetcher={c.env.FETCHER === 'on'} />, 409);
@@ -551,15 +606,15 @@ app.post(`/posts/${POST}/delete`, async c => {
 });
 
 app.get('/export.json', async c => {
-  const [transactions, libraries, gameRefs, personalStates, creators, links] = await Promise.all([
-    getAllTransactions(c.env.GAMES), getAllLibraries(c.env.GAMES), listGames(c.env.GAMEDB), getAllPersonalEntries(c.env.GAMESTATE), listCreators(c.env.CREATORS), listCreatorGameLinks(c.env.CREATORS),
+  const [transactions, libraries, gameRefs, personalStates, creators, links, wishlist] = await Promise.all([
+    getAllTransactions(c.env.GAMES), getAllLibraries(c.env.GAMES), listGames(c.env.GAMEDB), getAllPersonalEntries(c.env.GAMESTATE), listCreators(c.env.CREATORS), listCreatorGameLinks(c.env.CREATORS), getAllWishlistItems(c.env.WISHLIST),
   ]);
   const games = [...(await getGames(c.env.GAMEDB, gameRefs.map(r => r.key))).values()];
   const posts = (await Promise.all((await listPosts(c.env.POSTS)).map(ref => getPost(c.env.POSTS, ref.id)))).filter(post => post !== null);
   c.header('Content-Disposition', `attachment; filename="game-library-${new Date().toISOString().slice(0, 10)}.json"`);
   const creatorGameLinks = [...links].flatMap(([game, byCreator]) =>
     [...byCreator].map(([creator, link]) => ({ game, creator, ...link })));
-  return c.json({ exportedAt: new Date().toISOString(), transactions, libraries, games, personalStates, creators, creatorGameLinks, posts });
+  return c.json({ exportedAt: new Date().toISOString(), transactions, libraries, games, personalStates, creators, creatorGameLinks, posts, wishlist });
 });
 
 export default app;

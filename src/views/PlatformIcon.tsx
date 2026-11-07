@@ -25,13 +25,14 @@ const ICONS: Record<string, { icon: string; suffix?: string }> = {
   'xbox': { icon: 'xbox' },
 };
 
-export const PlatformIcon = ({ label, physical, withLabel, tooltip }: { label: string; physical?: boolean; withLabel?: boolean; tooltip?: string }) => {
+export const PlatformIcon = ({ label, physical, withLabel, tooltip, wished }: { label: string; physical?: boolean; withLabel?: boolean; tooltip?: string; wished?: boolean }) => {
   const entry = ICONS[label];
   const classes = [
     'platform',
     SUBSCRIPTION_LABELS.includes(label) && 'subscription',
     LEGACY_SYSTEM_LABELS.includes(label) && 'disabled',
     physical && 'physical',
+    wished && 'wishlist',
   ].filter(Boolean).join(' ');
   const title = `${label}${physical ? ' (physical)' : ''}`;
   // Detailed tooltips use the custom popover (client/popover.ts); simple ones the native title.

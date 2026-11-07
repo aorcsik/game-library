@@ -24,31 +24,56 @@ main { width: 100%; max-width: 40rem; margin: 0 auto; padding: 2rem 1.25rem 4rem
 a { color: var(--dawn); text-underline-offset: 0.18em; }
 a:hover { color: var(--ink); }
 
-.site-header { border-top: 6px solid transparent; border-image: linear-gradient(90deg, #f4b183, var(--dawn), #7a5a9a) 1; padding: 2.5rem 1.25rem 0; text-align: center; }
+.site-header { 
+  border-top: 6px solid transparent; 
+  border-image: linear-gradient(90deg, #f4b183, var(--dawn), #7a5a9a) 1;
+  padding: 2rem 1.25rem 0; 
+  text-align: center;
+}
+.site-header::after {
+  content: '';
+  width: 100px;
+  height: 6px;
+  display: block;
+  margin: 2rem auto 0;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #f4b183, var(--dawn), #7a5a9a);
+}
 .site-title { 
-  font-size: 2rem; 
+  font-size: 3rem; 
   color: var(--ink);
   text-decoration: none;
   font-family: var(--font-sans);
   font-weight: 600;
+  transition: color 0.2s;
 }
 .site-title:hover { color: var(--dawn); }
-.site-footer { padding: 2rem 1.25rem; text-align: center; color: var(--muted); font-size: 0.8rem; border-top: 1px solid var(--rule); }
+.site-footer { 
+  padding: 2rem 1.25rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.8rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--font-sans);
+}
 
 .post-list { list-style: none; margin: 0; padding: 0; }
 .post-list li { 
-  padding: 0.9rem 0 0.9rem 1rem; border-bottom: 1px solid var(--rule);
+  padding: 0.7rem 0 0.9rem 1rem; border-bottom: 1px solid var(--rule);
 }
 .post-list a { text-decoration: none; color: inherit; }
-.post-list a strong{ 
-  font-size: 1.2rem; text-decoration: none; color: var(--ink);
+.author strong,
+.post-list a strong { 
+  font-size: 1.2em; text-decoration: none;
+  color: var(--ink);
   font-family: var(--font-sans);
   font-weight: 600;
-  margin-left: -1rem;
+  margin-left: -.75rem;
+  transition: color 0.2s;
 }
-.post-list a strong + time { margin-left: .5rem; margin-right: .5rem; }
+.author em, .post-list a strong + time { margin-left: .5em; margin-right: .5em; }
 .post-list a:hover strong { color: var(--dawn); }
-.post-list time, .post-date { color: var(--muted); font-size: 0.85rem; white-space: nowrap; }
+.author em, .post-list time, .post-date { color: var(--muted); font-size: 0.85em; white-space: nowrap; }
 .preview { background: #f6e3d8; color: var(--dawn); text-align: center; padding: 0.4rem; margin: 0 0 1.5rem; font-size: 0.85rem; border-radius: 4px; }
 .empty { color: var(--muted); text-align: center; font-style: italic; }
 
@@ -84,7 +109,7 @@ a:hover { color: var(--ink); }
   background: var(--bg);
   color: var(--text);
   border: 1px solid var(--line);
-  border-radius: 6px;
+  border-radius: 12px;
   margin: 2rem 0;
   padding: 1rem;
   display: flex;
@@ -132,4 +157,110 @@ a:hover { color: var(--ink); }
   :root { font-size: 17px; }
   .post-list li { flex-direction: column; gap: 0; }
   .game-card { flex-direction: column; gap: 1rem; }
+}
+
+.back .button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  color: var(--ink);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s;
+  font-family: var(--font-sans);
+}
+.back .button i {
+  transition: transform 0.2s;
+}
+.back .button:hover {
+  color: var(--dawn);
+}
+.back .button:hover i {
+  transform: translateX(-0.25rem);
+}
+.back .button:active {
+  color: var(--dawn);
+}
+
+.author {
+  border-top: 1px solid var(--rule);
+  padding-left: 1em;
+  margin-top: 2px;
+}
+
+.gaming-profile {
+  font-family: var(--font-sans);
+  font-size: 0.9em;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 0.25rem;
+  text-decoration: none;
+  border-radius: 4px; 
+  margin-left: 0.25rem;
+  transition: color 0.2s;
+
+  i {
+    width: 1em;
+    height: 1em;
+    margin-right: 0.25rem;
+  }
+
+  span {
+    color: var(--muted);
+  }
+}
+
+a.gaming-profile {
+  color: inherit;
+}
+a.gaming-profile:hover {
+  color: var(--dawn);
+}
+
+.riot-logo {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  background-color: currentColor;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-image: url("/assets/platforms/riot.png");
+}
+
+.find-me-online {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 0.5rem;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 0.5rem;
+
+    li {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .find-me-online {
+    flex-direction: column;
+    gap: 0.25rem;
+    text-align: center;
+
+    ul {
+        justify-content: center;
+    }
+  }
 }

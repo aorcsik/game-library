@@ -4,3 +4,6 @@ ADMIN_PASSWORD=change-me
 LOCAL_DEV=on
 # Local-only metadata fetcher (scraping endpoints + /refresh page). Never set in production.
 FETCHER=on
+# Steam wishlist sync (Steam Web API key and 64-bit Steam ID; the profile's game details must be public).
+STEAM_API_KEY=
+STEAM_ID=

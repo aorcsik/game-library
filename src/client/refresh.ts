@@ -203,7 +203,7 @@ export const initRefreshOrchestrator = (root: HTMLElement): void => {
       logResult(entry, data, errors.length ? `errors: ${errors.join(', ')}` : data.changed ? 'updated' : 'unchanged');
       if (delay) await sleep(delay);
     }
-    progress.textContent = `${stopped ? 'Stopped' : 'Done'}: ${changed} games changed. Publish with \`npm run publish:games\`.`;
+    progress.textContent = `${stopped ? 'Stopped' : 'Done'}: ${changed} games changed. Publish with \`npm run publish -- --yes\`.`;
     setRunning(false);
   };
 

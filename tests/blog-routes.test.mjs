@@ -34,6 +34,7 @@ const makeWorker = () => new Miniflare({
         GAMESTATE: { type: 'kv', id: 'blog-state' },
         CREATORS: { type: 'kv', id: 'blog-creators' },
         POSTS: { type: 'kv', id: 'blog-posts' },
+        WISHLIST: { type: 'kv', id: 'blog-posts-wishlist' },
         MEDIA: { type: 'r2', name: 'blog-media' },
         MEDIA_BASE_URL: { type: 'text', value: 'https://assets.example.com' },
         ADMIN_USER: { type: 'text', value: 'admin' },

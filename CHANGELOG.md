@@ -1,5 +1,18 @@
 # Changelog
 
+## 4.3.0 - 2026-11-07
+
+### Added
+
+- Add a `WISHLIST` KV namespace and a `/wishlist` page that syncs the Steam wishlist (`STEAM_API_KEY`, `STEAM_ID`). Items keep `firstSeen`/`lastSeen`, are archived (never deleted) when they leave the wishlist, and are keyed per platform so PlayStation or GOG can be added later. Sync only stores ids; titles are then resolved in the background in batches of 10 while the page is open, and unresolvable ones are retried after 7 days.
+- List wishlist items that match no game under "Wishlist items without a game" on `/games`, with a Create game button.
+
+### Changed
+
+- Replace `publish:games` with `npm run publish` to mirror every configured local KV namespace to production. It is a dry run by default; `npm run publish -- --yes` overwrites matching keys and deletes production-only keys. The internal `sync:dirty` key is excluded and cleared locally after GAMEDB is published. Publish is not atomic; stop local edits while it runs, and rerun it if a namespace fails.
+- Include the Font Awesome brand webfont in copied assets so brand icons render.
+- Refuse to publish when any configured local KV namespace has not been initialized, preventing an empty source from deleting its production data.
+
 ## 4.2.0 - 2026-11-03
 
 ### Added

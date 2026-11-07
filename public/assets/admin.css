@@ -235,6 +235,7 @@ td.platforms { white-space: nowrap; }
 .platform.physical .platform-icon { outline: 1px solid var(--muted); outline-offset: 2px; mask-size: 75%; background-color: var(--bg); }
 .platform.physical .platform-label { color: var(--bg); margin-right: 0.2rem; }
 .platform.subscription .platform-label { color: #c9a0ff; }
+.platform.wishlist { color: #4da3ff; }
 
 /* Single-colour icons are masks (take the text colour); PS Plus and Netflix keep their brand colours. */
 .platform-icon {
@@ -301,6 +302,8 @@ th.platform-head { color: var(--muted); width: calc(var(--platform-head-size) * 
 .creator-list td:last-child { max-width: 20rem; }
 .creator-list .creator-sort { border: 0; background: transparent; padding: 0; color: inherit; }
 .creator-list .creator-sort:hover, .creator-list .creator-sort:focus-visible { color: var(--accent); }
+.list th .sort-link { color: inherit; text-decoration: none; }
+.list th .sort-link:hover, .list th .sort-link:focus-visible { color: var(--accent); }
 .creator-aliases { display: block; color: var(--muted); max-width: 40rem; }
 .creator-games, .creator-children { margin: 0.25rem 0; padding-left: 1.5rem; }
 .creator-games { list-style: none; padding-left: 0; }

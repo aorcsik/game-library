@@ -14,7 +14,8 @@
     "kv:push": "node scripts/sync-kv.ts push",
     "kv:pull": "node scripts/sync-kv.ts pull",
     "kv:restore": "node scripts/restore-kv.ts",
-    "publish:games": "node scripts/publish-games.ts",
+    "publish": "node scripts/publish-kv.ts",
+    "publish:posts": "node scripts/sync-kv.ts push --binding POSTS",
     "refresh:game-meta": "node scripts/refresh-game-meta.ts",
     "typecheck": "node ./node_modules/typescript-7/bin/tsc -p tsconfig.json && node ./node_modules/typescript-7/bin/tsc -p src/client/tsconfig.json && node ./node_modules/typescript-7/bin/tsc -p scripts/tsconfig.json",
     "deploy": "wrangler deploy --env=\"remote\""

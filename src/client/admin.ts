@@ -2,6 +2,7 @@ import { initGameList, initPersonalStateMode, syncGroupToggles, syncSelectAllTog
 import { initPopovers } from './popover';
 import { initPersonalDialog } from './personal';
 import { initRefreshQueue } from './queueStatus';
+import { initWishlistTitles } from './wishlist';
 import { initGameRefreshButton, initRefreshOrchestrator } from './refresh';
 
 const on = <K extends keyof DocumentEventMap>(type: K, selector: string, handler: (el: HTMLElement, event: DocumentEventMap[K]) => void): void => {
@@ -386,4 +387,5 @@ document.querySelectorAll<HTMLButtonElement>('[data-refresh-game]').forEach(init
 document.querySelectorAll<HTMLFormElement>('[data-game-controls]').forEach(initGameList);
 document.querySelectorAll<HTMLInputElement>('[data-personal-state-mode]').forEach(initPersonalStateMode);
 if (document.querySelector('[data-popover]')) initPopovers();
+void initWishlistTitles();
 document.querySelectorAll<HTMLDialogElement>('[data-personal-dialog]').forEach(initPersonalDialog);
