@@ -1,4 +1,4 @@
-import { mergeWishlist, needsTitle, toWishlistMeta, wishlistKey, type FetchedWishlistItem, type WishlistItem, type WishlistMeta } from './wishlist';
+import { isSteamSynced, mergeWishlist, needsTitle, toWishlistMeta, wishlistKey, type FetchedWishlistItem, type WishlistItem, type WishlistMeta } from './wishlist';
 
 const BULK_GET_LIMIT = 100;
 
@@ -20,6 +20,12 @@ export const getAllWishlistItems = async (kv: KVNamespace): Promise<WishlistItem
 
 export const saveWishlistItem = (kv: KVNamespace, item: WishlistItem): Promise<void> =>
   kv.put(wishlistKey(item.platform, item.id), JSON.stringify(item), { metadata: toWishlistMeta(item) });
+
+export const getWishlistItem = (kv: KVNamespace, platform: WishlistItem['platform'], id: string): Promise<WishlistItem | null> =>
+  kv.get<WishlistItem>(wishlistKey(platform, id), 'json');
+
+export const deleteWishlistItem = (kv: KVNamespace, platform: WishlistItem['platform'], id: string): Promise<void> =>
+  kv.delete(wishlistKey(platform, id));
 
 const STEAM_API = 'https://api.steampowered.com';
 const STEAM_STORE = 'https://store.steampowered.com';
@@ -52,7 +58,7 @@ export const syncSteamWishlist = async (
   kv: KVNamespace, apiKey: string, steamId: string, now = new Date().toISOString(),
 ): Promise<SyncResult> => {
   const [fetched, existing] = await Promise.all([fetchSteamWishlist(apiKey, steamId), getAllWishlistItems(kv)]);
-  const stored = new Map(existing.filter(item => item.platform === 'steam').map(item => [item.id, item]));
+  const stored = new Map(existing.filter(isSteamSynced).map(item => [item.id, item]));
   const changes = mergeWishlist('steam', existing, fetched, now);
   for (const { item } of changes) await saveWishlistItem(kv, item);
   const merged = new Map([...existing, ...changes.map(c => c.item)].map(item => [`${item.platform}:${item.id}`, item]));
@@ -71,7 +77,7 @@ export const syncSteamWishlist = async (
 export const resolveSteamTitles = async (
   kv: KVNamespace, limit = 10, now = new Date().toISOString(),
 ): Promise<{ resolved: number; pending: number; error?: string }> => {
-  const items = (await getAllWishlistItems(kv)).filter(item => item.platform === 'steam');
+  const items = (await getAllWishlistItems(kv)).filter(isSteamSynced);
   const pending = items.filter(item => needsTitle(item, now));
   let resolved = 0;
   let attempted = 0;

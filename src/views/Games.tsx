@@ -10,11 +10,11 @@ import type { PersonalDraft } from '../personalStore';
 import { PERSONAL_RATINGS, PROGRESS_STATES, type PersonalEntry, type PersonalSummary } from '../personal';
 import type { RefreshJob } from '../fetcher/queue';
 import { Layout, Select } from './Layout';
-import { PlatformIcon, StoreLogo } from './PlatformIcon';
+import { PlatformIcon, StoreLogo, StoreName } from './PlatformIcon';
 import { PlatformFilter } from './PlatformFilter';
 import { PersonalHistory, PersonalSummaryView } from './PersonalHistory';
 import { CreatorLinks } from './Creators';
-import type { WishlistItem, WishlistOwnership } from '../wishlist';
+import { wishlistStoreName, type WishlistItem, type WishlistOwnership } from '../wishlist';
 
 export type GameRow = { key: string; meta: GameMeta; purchases: Ownership[]; wishlisted?: WishlistItem[]; personal?: PersonalSummary };
 
@@ -235,17 +235,20 @@ export const GameList = ({ rows, unresolved, wishlistUnresolved = [], creatorInd
           <summary>Wishlist items without a game ({wishlistUnresolved.length})</summary>
           <table class="list">
             <tbody>
-              {wishlistUnresolved.map(({ item, ambiguous }) => (
+              {wishlistUnresolved.map(({ item, title, ambiguous }) => (
                 <tr>
                   <td class="date">{item.addedAt ?? item.firstSeen.slice(0, 10)}</td>
-                  <td>{item.url ? <a href={item.url} rel="noopener noreferrer" target="_blank">{item.title}</a> : item.title}</td>
+                  <td>{item.included?.length
+                    ? <>{title} <span class="meta">(in {item.title})</span>{item.url && <> <a href={item.url} rel="noopener noreferrer" target="_blank">store</a></>}</>
+                    : item.url ? <a href={item.url} rel="noopener noreferrer" target="_blank">{title}</a> : title}
+                  </td>
                   <td><PlatformIcon label={item.platform} withLabel /></td>
                   <td>{ambiguous ? `ambiguous: ${ambiguous.join(', ')}` : ''}</td>
                   <td class="num">
                     {!ambiguous && (
                       <form method="get" action="/games/new">
-                        <input type="hidden" name="title" value={item.title} />
-                        {item.platform === 'steam' && <input type="hidden" name="steam" value={item.id} />}
+                        <input type="hidden" name="title" value={title} />
+                        {item.platform === 'steam' && item.source !== 'manual' && !item.included?.length && <input type="hidden" name="steam" value={item.id} />}
                         <button type="submit">Create game</button>
                       </form>
                     )}
@@ -547,7 +550,7 @@ export const GamePage = ({ game, purchases, wishlisted = [], creatorIndex, creat
         <>
           <h2>Wishlist <small>{wishlisted.length}</small></h2>
           <table class="list">
-            <thead><tr><th>Added</th><th>Title</th><th>Platform</th></tr></thead>
+            <thead><tr><th>Added</th><th>Title</th><th>Platform</th><th>Store</th></tr></thead>
             <tbody>
               {wishlisted.map(item => (
                 <tr>
@@ -558,6 +561,7 @@ export const GamePage = ({ game, purchases, wishlisted = [], creatorIndex, creat
                       : item.title}
                   </td>
                   <td><PlatformIcon label={item.platform} withLabel /></td>
+                  <td><StoreName store={wishlistStoreName(item)} /></td>
                 </tr>
               ))}
             </tbody>

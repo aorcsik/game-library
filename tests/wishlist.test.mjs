@@ -60,3 +60,38 @@ test('titles are pending until looked up; failed lookups are retried only after 
   assert.equal(needsTitle({ ...base, titleFailedAt: t2 }, '2026-02-03T00:00:00.000Z'), false);
   assert.equal(needsTitle({ ...base, titleFailedAt: t2 }, '2026-02-09T00:00:00.000Z'), true);
 });
+
+test('bundle contents match individual games and survive sync, archival and restoration', () => {
+  const index = buildIndex([
+    { key: 'incoming', title: 'Incoming', updatedAt: t1 },
+    { key: 'bundle', title: 'Incoming + Incoming Forces', updatedAt: t1 },
+  ]);
+  const bundle = {
+    platform: 'steam', id: '42', title: 'Incoming + Incoming Forces', kind: 'bundle',
+    included: ['Incoming', 'Incoming Forces', 'INCOMING'], firstSeen: t1, lastSeen: t1,
+  };
+  const synced = mergeWishlist('steam', [bundle], [{ id: '42' }], t2)[0].item;
+  assert.deepEqual(synced.included, bundle.included);
+  const { wished, unresolved } = joinWishlist(index, [synced]);
+  assert.deepEqual([...wished.keys()], ['incoming']);
+  assert.deepEqual(wished.get('incoming'), [synced]);
+  assert.deepEqual(unresolved.map(entry => entry.title), ['Incoming Forces']);
+  const archived = mergeWishlist('steam', [synced], [], t3)[0].item;
+  assert.deepEqual(archived.included, bundle.included);
+  assert.equal(joinWishlist(index, [archived]).wished.size, 0);
+  const restored = mergeWishlist('steam', [archived], [{ id: '42' }], t3)[0].item;
+  assert.deepEqual(restored.included, bundle.included);
+});
+
+test('Steam sync and title lookup ignore manually created Steam entries', async () => {
+  const { needsTitle } = await import('../src/wishlist.ts');
+  const manual = { platform: 'steam', id: 'manual-123', source: 'manual', title: '', firstSeen: t1, lastSeen: t1, included: ['Game'] };
+  assert.equal(needsTitle(manual, t2), false);
+  assert.deepEqual(mergeWishlist('steam', [manual], [], t2), []);
+  const synced = mergeWishlist('steam', [manual], [{ id: '42', title: 'Game' }], t2);
+  assert.equal(synced.length, 1);
+  assert.equal(synced[0].isNew, true);
+  assert.equal(synced[0].item.id, '42');
+  assert.equal(synced[0].item.store, 'Steam Store');
+  assert.equal(mergeWishlist('steam', [{ ...synced[0].item, store: '' }], [{ id: '42' }], t3)[0].item.store, '');
+});

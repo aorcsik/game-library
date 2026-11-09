@@ -1,5 +1,19 @@
 # Changelog
 
+## 4.4.0 - 2026-11-09
+
+### Added
+
+- Treat published posts with the exact same title as a series. Chapters are numbered in publishing order, shown on the post and next to the title in the blog list, with links to the previous and next chapters on the post.
+- Edit wishlist entries to list included games, one per line. Bundle contents are matched to individual games and remain intact when the wishlist is synced.
+- Create, edit, and delete manual wishlist entries on any supported platform, including Steam. Steam-synced entries have read-only sync-managed fields; manual entries are never changed or archived by sync.
+- Add an optional store to wishlist entries, editable on both manual and synced entries using the transaction store suggestions. Steam-synced entries default to Steam Store; stores and their icons appear on the wishlist and game details and are preserved during sync.
+
+### Changed
+
+- Share the store field (with its suggestions) between the transaction and wishlist forms.
+- Enable Worker observability logs and invocation logs in `wrangler.jsonc`.
+
 ## 4.3.0 - 2026-11-07
 
 ### Added

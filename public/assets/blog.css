@@ -71,7 +71,10 @@ a:hover { color: var(--ink); }
   margin-left: -.75rem;
   transition: color 0.2s;
 }
-.author em, .post-list a strong + time { margin-left: .5em; margin-right: .5em; }
+.post-chapter, .post-list a .chapter {
+  font-family: var(--font-sans);
+}
+.author em, .post-list a time { margin-left: .5em; margin-right: .5em; }
 .post-list a:hover strong { color: var(--dawn); }
 .author em, .post-list time, .post-date { color: var(--muted); font-size: 0.85em; white-space: nowrap; }
 .preview { background: #f6e3d8; color: var(--dawn); text-align: center; padding: 0.4rem; margin: 0 0 1.5rem; font-size: 0.85rem; border-radius: 4px; }
@@ -94,6 +97,10 @@ a:hover { color: var(--ink); }
 .post-body pre { background: #efe7d9; padding: 0.9rem 1rem; overflow-x: auto; border-radius: 4px; }
 .post-body pre code { background: none; padding: 0; }
 .post-body hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
+.post-list .chapter { margin-left: 0.5rem; font-size: 0.8rem; opacity: 0.7; }
+.post-chapter { margin: 0.25rem 0; font-size: 0.9rem; opacity: 0.7; }
+.series-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 2rem; margin-bottom: 1rem; }
+.series-nav a[rel="next"] { margin-left: auto; }
 .back { margin-top: 3rem; font-size: 0.9rem; }
 
 /* Game card: a dark island that reuses the game details markup and the shared review styles. */
@@ -159,29 +166,34 @@ a:hover { color: var(--ink); }
   .game-card { flex-direction: column; gap: 1rem; }
 }
 
-.back .button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  color: var(--ink);
-  text-decoration: none;
-  cursor: pointer;
-  transition: color 0.2s;
-  font-family: var(--font-sans);
-}
-.back .button i {
-  transition: transform 0.2s;
-}
-.back .button:hover {
-  color: var(--dawn);
-}
-.back .button:hover i {
-  transform: translateX(-0.25rem);
-}
-.back .button:active {
-  color: var(--dawn);
+.back, .series-nav {
+  .button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    color: var(--ink);
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s;
+    font-family: var(--font-sans);
+  }
+  .button i {
+    transition: transform 0.2s;
+  }
+  .button:hover {
+    color: var(--dawn);
+  }
+  .button:hover i {
+    transform: translateX(-0.25rem);
+  }
+  .button[rel="next"]:hover i {
+    transform: translateX(0.25rem);
+  }
+  .back .button:active {
+    color: var(--dawn);
+  }
 }
 
 .author {

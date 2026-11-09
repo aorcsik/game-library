@@ -1,19 +1,23 @@
 import { resolveTitle, type TitleIndex } from './games.ts';
-import { normalizeTitle } from './model.ts';
+import { normalizeTitle, type Platform } from './model.ts';
 
-/** Platforms with a wishlist source; add e.g. 'playstation' or 'gog' together with a fetcher for it. */
-export const WISHLIST_PLATFORMS = ['steam'] as const;
-export type WishlistPlatform = typeof WISHLIST_PLATFORMS[number];
+export type WishlistPlatform = Platform;
 
 export type WishlistItem = {
   platform: WishlistPlatform;
-  /** Platform-specific product id (Steam app id). */
+  /** Platform-specific product id, or a generated id for a manual entry. */
   id: string;
+  /** Missing for legacy Steam-synced entries. */
+  source?: 'manual';
   /** Empty until the store lookup succeeds. */
   title: string;
   /** Store kind (e.g. "game", "dlc") when the platform reports it. */
   kind?: string;
   url?: string;
+  /** Store name, manually maintained independently of platform sync. */
+  store?: string;
+  /** Manually listed game titles for a bundle, instead of matching the listing title. */
+  included?: string[];
   /** When the platform says it was added to the wishlist (ISO date). */
   addedAt?: string;
   firstSeen: string;
@@ -35,13 +39,19 @@ export const toWishlistMeta = (item: WishlistItem): WishlistMeta =>
   ({ title: item.title, platform: item.platform, archived: !!item.archivedAt });
 
 /** Items whose title and kind make them a candidate for a game record. */
-export const isWishlistGame = (item: WishlistItem): boolean => !!item.title && (!item.kind || item.kind === 'game');
+export const isWishlistGame = (item: WishlistItem): boolean =>
+  !!item.included?.length || (!!item.title && (!item.kind || item.kind === 'game'));
 
 export const TITLE_RETRY_DAYS = 7;
 
+export const isSteamSynced = (item: WishlistItem): boolean => item.platform === 'steam' && item.source !== 'manual';
+
+export const wishlistStoreName = (item: WishlistItem): string =>
+  item.store ?? (isSteamSynced(item) ? 'Steam Store' : '');
+
 /** Active items still waiting for a title lookup (never looked up, or a failed lookup is old enough to retry). */
 export const needsTitle = (item: WishlistItem, now = new Date().toISOString()): boolean =>
-  !item.title && !item.archivedAt &&
+  isSteamSynced(item) && !item.title && !item.archivedAt &&
   (!item.titleFailedAt || Date.parse(now) - Date.parse(item.titleFailedAt) > TITLE_RETRY_DAYS * 86_400_000);
 
 export type WishlistChange = { item: WishlistItem; isNew: boolean };
@@ -53,7 +63,7 @@ export type WishlistChange = { item: WishlistItem; isNew: boolean };
 export const mergeWishlist = (
   platform: WishlistPlatform, existing: WishlistItem[], fetched: FetchedWishlistItem[], now: string,
 ): WishlistChange[] => {
-  const stored = new Map(existing.filter(item => item.platform === platform).map(item => [item.id, item]));
+  const stored = new Map(existing.filter(item => item.platform === platform && item.source !== 'manual').map(item => [item.id, item]));
   const seen = new Set<string>();
   const changes: WishlistChange[] = [];
   for (const entry of fetched) {
@@ -69,6 +79,7 @@ export const mergeWishlist = (
         platform,
         id: entry.id,
         title: entry.title || previous?.title || '',
+        ...(platform === 'steam' ? { store: previous?.store ?? 'Steam Store' } : {}),
         ...((entry.kind ?? previous?.kind) ? { kind: entry.kind ?? previous?.kind } : {}),
         ...((entry.url ?? previous?.url) ? { url: entry.url ?? previous?.url } : {}),
         ...((entry.addedAt ?? previous?.addedAt) ? { addedAt: entry.addedAt ?? previous?.addedAt } : {}),
@@ -83,7 +94,7 @@ export const mergeWishlist = (
   return changes;
 };
 
-export type WishlistOwnership = { item: WishlistItem; ambiguous?: string[] };
+export type WishlistOwnership = { item: WishlistItem; title: string; ambiguous?: string[] };
 
 /** Joins active wishlist items with the game database: wishlisted games by key, plus items that need a game or a link. */
 export const joinWishlist = (index: TitleIndex, items: WishlistItem[]): {
@@ -94,19 +105,22 @@ export const joinWishlist = (index: TitleIndex, items: WishlistItem[]): {
   const unresolved: WishlistOwnership[] = [];
   for (const item of items) {
     if (item.archivedAt || !isWishlistGame(item)) continue;
-    const resolution = resolveTitle(index, item.title);
-    if (resolution && 'key' in resolution) {
-      wished.set(resolution.key, [...(wished.get(resolution.key) ?? []), item]);
-    } else {
-      unresolved.push({ item, ...(resolution ? { ambiguous: resolution.ambiguous } : {}) });
+    for (const title of item.included?.length ? item.included : [item.title]) {
+      const resolution = resolveTitle(index, title);
+      if (resolution && 'key' in resolution) {
+        const matches = wished.get(resolution.key) ?? [];
+        if (!matches.includes(item)) wished.set(resolution.key, [...matches, item]);
+      } else {
+        unresolved.push({ item, title, ...(resolution ? { ambiguous: resolution.ambiguous } : {}) });
+      }
     }
   }
   // Same title wishlisted on several platforms is one entry to create.
   const seen = new Set<string>();
   return {
     wished,
-    unresolved: unresolved.filter(({ item }) => {
-      const title = normalizeTitle(item.title);
+    unresolved: unresolved.filter(({ title: name }) => {
+      const title = normalizeTitle(name);
       if (seen.has(title)) return false;
       seen.add(title);
       return true;

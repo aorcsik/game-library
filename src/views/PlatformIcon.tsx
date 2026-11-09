@@ -75,3 +75,7 @@ export const StoreLogo = ({ store }: { store: string }) => {
       : <img class="store-logo" src={`/assets/platforms/${logo}.svg`} alt="" />
     : <i class="fa-solid fa-cart-shopping store-logo store-icon" aria-hidden="true"></i>;
 };
+
+export const StoreName = ({ store }: { store: string }) => store
+  ? <span class="transaction-heading"><StoreLogo store={store} />{store}</span>
+  : null;

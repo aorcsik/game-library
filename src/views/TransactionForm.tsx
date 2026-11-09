@@ -3,6 +3,7 @@ import type { ItemLink } from '../games';
 import { KINDS, PLATFORMS, SERVICES, SYSTEMS, transactionDisplayTitle, type Transaction } from '../model';
 import { Layout, Options, Select } from './Layout';
 import { StoreLogo } from './PlatformIcon';
+import { StoreField } from './StoreField';
 
 const GameLinks = ({ links }: { links: ItemLink[] }) => (
   <p class="game-links">
@@ -107,11 +108,10 @@ export const TransactionForm = ({ draft, action, stores, errors = [], saved, exi
         <label>Date<input type="date" name="date" value={draft.date} required /></label>
         <label class="grow">Title<input name="title" value={draft.title} maxlength={300} /></label>
         <label>Invoice / order ID<input name="referenceId" value={draft.referenceId} maxlength={100} /></label>
-        <label>Store<input name="store" value={draft.store} list="stores" required maxlength={100} /></label>
+        <StoreField value={draft.store} stores={stores} required />
         <label class="narrow">Price<input name="price" value={draft.price} placeholder="unknown" /></label>
         <label class="check"><input type="checkbox" name="hidden" checked={draft.hidden} /> hidden</label>
       </div>
-      <datalist id="stores">{stores.map(s => <option value={s} />)}</datalist>
       <label>Notes<textarea name="notes" rows={2}>{draft.notes}</textarea></label>
 
       <h2>Items <small>{draft.items.length}</small></h2>

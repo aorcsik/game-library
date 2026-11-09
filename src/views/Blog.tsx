@@ -1,6 +1,6 @@
 import { raw } from 'hono/html';
 import type { Child } from 'hono/jsx';
-import { BLOG_TITLE, postExcerpt, postUrl, type Post, type PostRef } from '../blog';
+import { BLOG_TITLE, postExcerpt, postSeries, postUrl, type Post, type PostRef, type PostSeries } from '../blog';
 import type { CreditLink, GameCard } from '../gameCard';
 import { mapImages, parseMarkdown, type Block, type Inline } from '../markdown';
 import { MEDIA_PATH } from '../media';
@@ -231,14 +231,22 @@ export const Markdown = ({ source, mediaBase = '', games, showMissing }: { sourc
   return <Blocks games={games} showMissing={showMissing} blocks={mediaBase ? mapImages(blocks, src => src.startsWith(`${MEDIA_PATH}/`) ? mediaBase + src.slice(MEDIA_PATH.length) : src) : blocks} />;
 };
 
-export const PostArticle = ({ post, mediaBase, games, showMissing }: { post: Post; mediaBase?: string } & GameCards) => (
+export const PostArticle = ({ post, mediaBase, games, showMissing, series }: { post: Post; mediaBase?: string; series?: PostSeries } & GameCards) => (
   <article class="post">
     <header>
       <h1>{post.title.replace(/\s+/g, '∙')}</h1>
+      {series && <p class="post-chapter">Chapter {series.chapter} of {series.chapters}</p>}
       {post.date && <p class="post-date"><time datetime={post.date}>/{formatDate(post.date)}/</time></p>}
     </header>
     <div class="post-body"><Markdown source={post.body} mediaBase={mediaBase} games={games} showMissing={showMissing} /></div>
   </article>
+);
+
+const SeriesNav = ({ series }: { series: PostSeries }) => (
+  <nav class="series-nav" aria-label="Series">
+    {series.previous && <a class="button" rel="prev" href={postUrl(series.previous.meta)}><i class="fa-solid fa-arrow-left"></i> Previous chapter</a>}
+    {series.next && <a class="button" rel="next" href={postUrl(series.next.meta)}>Next chapter <i class="fa-solid fa-arrow-right"></i></a>}
+  </nav>
 );
 
 export const BlogIndex = ({ posts }: { posts: PostRef[] }) => (
@@ -247,9 +255,10 @@ export const BlogIndex = ({ posts }: { posts: PostRef[] }) => (
       ? <p class="empty">Nothing here yet.</p>
       : (
         <ol class="post-list">
-          {posts.map(({ meta }) => (
+          {posts.map(({ id, meta }) => (
             <li><a href={postUrl(meta)}>
               <strong>{meta.title.replace(/\s+/g, '∙')}</strong>
+              {(series => series && <span class="chapter">Ch. {series.chapter}</span>)(postSeries(posts, id))}
               <time datetime={meta.date}>/{formatDate(meta.date!)}/</time>
               <span class="excerpt">{meta.excerpt}</span>
             </a></li>
@@ -278,7 +287,7 @@ export const AuthorSection = () => (
   </section>
 );
 
-export const BlogPostPage = ({ post, preview = false, mediaBase, games }: { post: Post; preview?: boolean; mediaBase?: string; games?: ReadonlyMap<string, GameCard> }) => {
+export const BlogPostPage = ({ post, preview = false, mediaBase, games, series }: { post: Post; preview?: boolean; mediaBase?: string; series?: PostSeries; games?: ReadonlyMap<string, GameCard> }) => {
   const socialImage = firstSocialImage(post.body, mediaBase);
   return (
   <BlogLayout
@@ -292,7 +301,8 @@ export const BlogPostPage = ({ post, preview = false, mediaBase, games }: { post
     noindex={preview}
   >
     {preview && <p class="preview">Preview{post.published ? '' : ' — this draft is not public'}</p>}
-    <PostArticle post={post} mediaBase={mediaBase} games={games} showMissing={preview} />
+    <PostArticle post={post} mediaBase={mediaBase} games={games} showMissing={preview} series={series} />
+    {series && <SeriesNav series={series} />}
     <AuthorSection />
     <p class="back"><a href="/" class="button"><i class="fas fa-arrow-left"></i> All posts</a></p>
   </BlogLayout>

@@ -14,8 +14,9 @@ import { needsGameRefresh } from './fetcher/refresh';
 import { buildCreatorIndex, creatorKey, creatorVerificationProgress, deleteCreatorGameLinks, deleteGameCreatorLinks, gameCreatorCredits, getCreator, getCreatorGameLink, getGameCreatorLinks, listCreatorGameLinks, listCreators, newCreatorKey, normalizeCreator, readCreatorDraft, saveCreator, saveCreatorGameLink, toCreatorDraft, validateCreator, type CreatorIndex, type CreatorRole } from './creators';
 import { deleteGame, getGame, getGames, getTitleIndex, listGames, saveGame } from './gamedb';
 import { itemLinks, joinOwnership, rawCreatorCredits, releaseDate, resolveTitle, slugify, type Game } from './games';
-import { getAllWishlistItems, resolveSteamTitles, syncSteamWishlist, type SyncResult } from './wishlistStore';
+import { deleteWishlistItem, getAllWishlistItems, getWishlistItem, resolveSteamTitles, saveWishlistItem, syncSteamWishlist, type SyncResult } from './wishlistStore';
 import { joinWishlist } from './wishlist';
+import { readWishlistDraft, validateWishlistDraft, wishlistDraft } from './wishlistForm';
 import { PLATFORMS, isOneOf, itemsForPlatforms, normalizeTitle, ownedKeys } from './model';
 import { getAllPersonalEntries, getPersonalEntries, listPersonalSummaries, savePersonalEntries, deletePersonalEntry, validatePersonalDraft } from './personalStore';
 import type { PersonalEntry } from './personal';
@@ -32,6 +33,7 @@ import { RefreshPage } from './views/Refresh';
 import { TransactionForm } from './views/TransactionForm';
 import { TransactionList } from './views/TransactionList';
 import { WishlistPage, parseWishlistSort } from './views/Wishlist';
+import { WishlistForm } from './views/WishlistForm';
 
 type Env = {
   GAMES: KVNamespace;
@@ -195,9 +197,21 @@ app.post(`/transactions/${DATE}/${ID}/delete`, async c => {
 
 const wishlistPage = async (c: Context<{ Bindings: Env }>, result?: SyncResult, error?: string) =>
   c.html(<WishlistPage items={await getAllWishlistItems(c.env.WISHLIST)} index={await getTitleIndex(c.env.GAMEDB)}
-    canSync={!!c.env.STEAM_API_KEY && !!c.env.STEAM_ID} result={result} error={error} sort={parseWishlistSort(c.req.query('sort'), c.req.query('dir'))} />, error ? 502 : 200);
+    canSync={!!c.env.STEAM_API_KEY && !!c.env.STEAM_ID} result={result} error={error} saved={c.req.query('saved') === '1'} sort={parseWishlistSort(c.req.query('sort'), c.req.query('dir'))} />, error ? 502 : 200);
 
 app.get('/wishlist', c => wishlistPage(c));
+
+app.get('/wishlist/new', async c => c.html(<WishlistForm draft={wishlistDraft()} action="/wishlist" stores={await knownStores(c.env.GAMES)} />));
+
+app.post('/wishlist', async c => {
+  const form = await c.req.formData();
+  if (typeof form.get('included') !== 'string') return c.text('Included games must be supplied as text.', 400);
+  const draft = readWishlistDraft(form);
+  const { item, errors } = validateWishlistDraft(draft);
+  if (!item) return c.html(<WishlistForm draft={draft} action="/wishlist" stores={await knownStores(c.env.GAMES)} errors={errors} />, 422);
+  await saveWishlistItem(c.env.WISHLIST, item);
+  return c.redirect(`/wishlist/${item.platform}/${item.id}?saved=1`, 303);
+});
 
 app.post('/wishlist/titles', async c => {
   c.header('Cache-Control', 'no-store');
@@ -217,6 +231,42 @@ app.post('/wishlist/sync', async c => {
     console.error('Steam wishlist sync failed:', error);
     return wishlistPage(c, undefined, error instanceof Error ? error.message : 'Steam wishlist sync failed.');
   }
+});
+
+app.get('/wishlist/:platform/:id', async c => {
+  const { platform, id } = c.req.param();
+  if (!isOneOf(PLATFORMS, platform)) return c.notFound();
+  const item = await getWishlistItem(c.env.WISHLIST, platform, id);
+  if (!item) return c.notFound();
+  return c.html(<WishlistForm item={item} draft={wishlistDraft(item)} action={`/wishlist/${platform}/${id}`} stores={await knownStores(c.env.GAMES)} saved={c.req.query('saved') === '1'} />);
+});
+
+app.post('/wishlist/:platform/:id', async c => {
+  const { platform, id } = c.req.param();
+  if (!isOneOf(PLATFORMS, platform)) return c.notFound();
+  const existing = await getWishlistItem(c.env.WISHLIST, platform, id);
+  if (!existing) return c.notFound();
+  const form = await c.req.formData();
+  if (typeof form.get('included') !== 'string') return c.text('Included games must be supplied as text.', 400);
+  const draft = readWishlistDraft(form, existing);
+  const { item, errors } = validateWishlistDraft(draft, existing);
+  if (!item) return c.html(<WishlistForm item={existing} draft={draft} action={`/wishlist/${platform}/${id}`} stores={await knownStores(c.env.GAMES)} errors={errors} />, 422);
+  if (item.platform !== platform && await getWishlistItem(c.env.WISHLIST, item.platform, id)) {
+    return c.html(<WishlistForm item={existing} draft={draft} action={`/wishlist/${platform}/${id}`} stores={await knownStores(c.env.GAMES)} errors={['An entry with this ID already exists on the selected platform.']} />, 409);
+  }
+  await saveWishlistItem(c.env.WISHLIST, item);
+  if (item.platform !== platform) await deleteWishlistItem(c.env.WISHLIST, platform, id);
+  return c.redirect(`/wishlist/${item.platform}/${id}?saved=1`, 303);
+});
+
+app.post('/wishlist/:platform/:id/delete', async c => {
+  const { platform, id } = c.req.param();
+  if (!isOneOf(PLATFORMS, platform)) return c.notFound();
+  const item = await getWishlistItem(c.env.WISHLIST, platform, id);
+  if (!item) return c.notFound();
+  if (item.source !== 'manual') return c.text('Only manual wishlist entries can be deleted.', 403);
+  await deleteWishlistItem(c.env.WISHLIST, platform, id);
+  return c.redirect('/wishlist', 303);
 });
 
 app.get('/games', async c => {

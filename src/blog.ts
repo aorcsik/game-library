@@ -147,6 +147,24 @@ export const publishedPosts = (refs: PostRef[]): PostRef[] =>
     .filter(ref => ref.meta.published && ref.meta.date)
     .sort((a, b) => b.meta.date!.localeCompare(a.meta.date!) || a.meta.slug.localeCompare(b.meta.slug) || a.id.localeCompare(b.id));
 
+export type PostSeries = {
+  /** 1-based position among published posts sharing the exact same title, in publishing order. */
+  chapter: number;
+  chapters: number;
+  previous?: PostRef;
+  next?: PostRef;
+};
+
+/** Posts with an identical title form a series; undefined when the post is not part of one. */
+export const postSeries = (refs: PostRef[], id: string): PostSeries | undefined => {
+  const current = refs.find(ref => ref.id === id);
+  if (!current?.meta.published || !current.meta.date) return undefined;
+  const series = publishedPosts(refs).filter(ref => ref.meta.title === current.meta.title).reverse();
+  const index = series.findIndex(ref => ref.id === id);
+  if (series.length < 2 || index < 0) return undefined;
+  return { chapter: index + 1, chapters: series.length, previous: series[index - 1], next: series[index + 1] };
+};
+
 /** Drafts first, then newest by date. */
 export const adminPosts = (refs: PostRef[]): PostRef[] =>
   [...refs].sort((a, b) =>
@@ -159,7 +177,6 @@ export const listPosts = async (kv: KVNamespace): Promise<PostRef[]> => {
   do {
     const page = await kv.list<PostMeta>({ prefix: POST_PREFIX, cursor });
     for (const key of page.keys) if (key.metadata) {
-      console.log(key.metadata);
       refs.push({ id: key.name.slice(POST_PREFIX.length), meta: key.metadata });
     }
     cursor = page.list_complete ? undefined : page.cursor;

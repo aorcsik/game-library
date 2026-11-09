@@ -1,5 +1,5 @@
 import { Hono } from 'hono';
-import { findPublishedPost, getPost, listPosts, publishedPosts } from './blog';
+import { findPublishedPost, getPost, listPosts, postSeries, publishedPosts } from './blog';
 import { postGameCards } from './gameCard';
 import { MEDIA_KEY_PATTERN, mediaBaseUrl } from './media';
 import { BlogIndex, BlogNotFound, BlogPostPage } from './views/Blog';
@@ -16,11 +16,12 @@ blog.get('/', async c => {
 });
 
 blog.get('/post/:path{\\d{4}-\\d{2}-\\d{2}-[a-z0-9-]{1,120}}', async c => {
-  const ref = findPublishedPost(await listPosts(c.env.POSTS), c.req.param('path'));
+  const refs = await listPosts(c.env.POSTS);
+  const ref = findPublishedPost(refs, c.req.param('path'));
   const post = ref && await getPost(c.env.POSTS, ref.id);
   if (!post?.published || !post.date) return c.html(<BlogNotFound />, 404);
   c.header('Cache-Control', PUBLIC_CACHE);
-  return c.html(<BlogPostPage post={post} mediaBase={mediaBaseUrl(c.env)} games={await postGameCards(c.env, post.body)} />);
+  return c.html(<BlogPostPage post={post} series={postSeries(refs, post.id)} mediaBase={mediaBaseUrl(c.env)} games={await postGameCards(c.env, post.body)} />);
 });
 
 // Fallback for when MEDIA_BASE_URL is unset; otherwise image URLs are rewritten to the bucket's public domain.

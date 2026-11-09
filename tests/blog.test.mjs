@@ -101,3 +101,14 @@ test('attaches uploaded images and any the text references', () => {
   assert.ok(validatePost(draft({ images: ['blog/../etc.png'] }), context).errors.length);
   assert.ok(validatePost(draft({ images: Array.from({ length: 101 }, (_, i) => `blog/${String(i).padStart(32, '0')}.png`) }), context).errors.length);
 });
+
+test('posts with identical titles form a series in publishing order', async () => {
+  const { postSeries } = await import('../src/blog.ts');
+  const ref = (id, title, date, published = true) => ({ id, meta: { slug: id, title, date, published, updatedAt: '2026-01-01' } });
+  const refs = [ref('c', 'Saga', '2026-03-01'), ref('a', 'Saga', '2026-01-01'), ref('b', 'Saga', '2026-02-01'), ref('d', 'Saga', '2026-04-01', false), ref('x', 'Solo', '2026-01-01')];
+  const s = postSeries(refs, 'b');
+  assert.deepEqual([s.chapter, s.chapters, s.previous.id, s.next.id], [2, 3, 'a', 'c']);
+  assert.equal(postSeries(refs, 'a').previous, undefined);
+  assert.equal(postSeries(refs, 'x'), undefined);
+  assert.equal(postSeries(refs, 'd'), undefined);
+});
