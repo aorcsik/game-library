@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.4.1 - 2026-11-10
+
+### Changed
+
+- Add the chapter number ("Ch. N") to the page title and social title of series posts, and use "Ch. N" for the chapter label in the blog list.
+
 ## 4.4.0 - 2026-11-09
 
 ### Added

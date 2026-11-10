@@ -25,13 +25,14 @@ type SocialMetadata = {
 };
 
 // The blog is public and must never link to the (authenticated) game library.
-export const BlogLayout = ({ title, description, children, canonicalUrl = BLOG_ORIGIN, image, imageAlt, type = 'website', publishedTime, noindex }: {
-  title?: string; description?: string; children?: Child;
+export const BlogLayout = ({ title, description, children, canonicalUrl = BLOG_ORIGIN, image, imageAlt, type = 'website', publishedTime, noindex, chapter }: {
+  title?: string; description?: string; chapter?: number; children?: Child;
 } & SocialMetadata) => {
   const blogTitle = BLOG_TITLE.replace(/\s+/g, '∙');
-  const pageTitle = title ? `${title.replace(/\s+/g, '∙')} / ${blogTitle}` : blogTitle;
+  const chapterTitle = title && `${title.replace(/\s+/g, '∙')}${chapter ? ` Ch. ${chapter}` : ''}`;
+  const pageTitle = chapterTitle ? `${chapterTitle} / ${blogTitle}` : blogTitle;
   const pageDescription = description || BLOG_DESCRIPTION;
-  const socialTitle = title || blogTitle;
+  const socialTitle = chapterTitle || blogTitle;
   return (
   <>
     {raw('<!DOCTYPE html>')}
@@ -292,6 +293,7 @@ export const BlogPostPage = ({ post, preview = false, mediaBase, games, series }
   return (
   <BlogLayout
     title={post.title}
+    chapter={series?.chapter}
     description={postExcerpt(post.body) || BLOG_DESCRIPTION}
     canonicalUrl={`${BLOG_ORIGIN}${postUrl(post)}`}
     image={socialImage?.src}
