@@ -40,7 +40,7 @@ a:hover { color: var(--ink); }
   background: linear-gradient(90deg, #f4b183, var(--dawn), #7a5a9a);
 }
 .site-title { 
-  font-size: 3rem; 
+  font-size: 2.5rem; 
   color: var(--ink);
   text-decoration: none;
   font-family: var(--font-sans);
@@ -59,7 +59,26 @@ a:hover { color: var(--ink); }
 
 .post-list { list-style: none; margin: 0; padding: 0; }
 .post-list li { 
-  padding: 0.7rem 0 0.9rem 1rem; border-bottom: 1px solid var(--rule);
+  padding: 0.7rem 0 0.9rem 1rem; border-top: 1px solid var(--rule);
+}
+.post-list li:first-child {
+  border-top: 0;
+}
+.post-list .month {
+  display: block;
+  padding: 0;
+  border: 0;
+
+  h2 {
+    font-family: var(--font-sans);
+    font-size: 1.5rem;
+    color: var(--ink);
+    margin: 0 0 0.75rem 0;
+    text-transform: uppercase;
+  }
+}
+.post-list li + .month {
+  margin-top: 2rem;
 }
 .post-list a { text-decoration: none; color: inherit; }
 .author strong,
@@ -74,9 +93,20 @@ a:hover { color: var(--ink); }
 .post-chapter, .post-list a .chapter {
   font-family: var(--font-sans);
 }
-.author em, .post-list a time { margin-left: .5em; margin-right: .5em; }
 .post-list a:hover strong { color: var(--dawn); }
-.author em, .post-list time, .post-date { color: var(--muted); font-size: 0.85em; white-space: nowrap; }
+.author em, .post-list time, .post-date { 
+  color: var(--muted);
+  font-size: 0.85em;
+  white-space: nowrap;
+  font-style: italic;
+
+  &::before {
+    content: '/';
+  }
+  &::after {
+    content: '/';
+  }
+}
 .preview { background: #f6e3d8; color: var(--dawn); text-align: center; padding: 0.4rem; margin: 0 0 1.5rem; font-size: 0.85rem; border-radius: 4px; }
 .empty { color: var(--muted); text-align: center; font-style: italic; }
 
@@ -97,7 +127,7 @@ a:hover { color: var(--ink); }
 .post-body pre { background: #efe7d9; padding: 0.9rem 1rem; overflow-x: auto; border-radius: 4px; }
 .post-body pre code { background: none; padding: 0; }
 .post-body hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
-.post-list .chapter { margin-left: 0.5rem; font-size: 0.8rem; opacity: 0.7; }
+.post-list .chapter { font-size: 0.8rem; opacity: 0.7; white-space: nowrap; }
 .post-chapter { margin: 0.25rem 0; font-size: 0.9rem; opacity: 0.7; }
 .series-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 2rem; margin-bottom: 1rem; }
 .series-nav a[rel="next"] { margin-left: auto; }

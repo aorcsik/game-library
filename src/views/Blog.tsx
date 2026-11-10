@@ -237,7 +237,7 @@ export const PostArticle = ({ post, mediaBase, games, showMissing, series }: { p
     <header>
       <h1>{post.title.replace(/\s+/g, '∙')}</h1>
       {series && <p class="post-chapter">Chapter {series.chapter} of {series.chapters}</p>}
-      {post.date && <p class="post-date"><time datetime={post.date}>/{formatDate(post.date)}/</time></p>}
+      {post.date && <p class="post-date"><time datetime={post.date}>{formatDate(post.date)}</time></p>}
     </header>
     <div class="post-body"><Markdown source={post.body} mediaBase={mediaBase} games={games} showMissing={showMissing} /></div>
   </article>
@@ -250,19 +250,29 @@ const SeriesNav = ({ series }: { series: PostSeries }) => (
   </nav>
 );
 
+const monthHeading = (date: string): string => {
+  const [year, month] = date.split('-').map(Number);
+  return `${MONTHS_SHORT[month - 1]}∙${year}`;
+};
+
 export const BlogIndex = ({ posts }: { posts: PostRef[] }) => (
   <BlogLayout description={BLOG_DESCRIPTION}>
     {posts.length === 0
       ? <p class="empty">Nothing here yet.</p>
       : (
         <ol class="post-list">
-          {posts.map(({ id, meta }) => (
+          {posts.map(({ id, meta }, index) => (
+            <>
+            {(index === 0 || posts[index - 1].meta.date!.slice(0, 7) !== meta.date!.slice(0, 7)) && (
+              <li class="month"><h2>{monthHeading(meta.date!)}</h2></li>
+            )}
             <li><a href={postUrl(meta)}>
-              <strong>{meta.title.replace(/\s+/g, '∙')}</strong>
-              {(series => series && <span class="chapter">Ch. {series.chapter}</span>)(postSeries(posts, id))}
-              <time datetime={meta.date}>/{formatDate(meta.date!)}/</time>
+              <strong>{meta.title.replace(/\s+/g, '∙')}</strong>{' '}
+              {(series => series && <span class="chapter">Ch. {series.chapter}</span>)(postSeries(posts, id))}{' '}
+              <time datetime={meta.date}>{formatDate(meta.date!)}</time>{' '}
               <span class="excerpt">{meta.excerpt}</span>
             </a></li>
+            </>
           ))}
         </ol>
       )}
@@ -272,7 +282,7 @@ export const BlogIndex = ({ posts }: { posts: PostRef[] }) => (
 
 export const AuthorSection = () => (
   <section class="author">
-    <p><strong>aōrora</strong> <em>/ao_rora/</em> I'm the author of this blog.
+    <p><strong>aōrora</strong> <em>ao_rora</em> I'm the author of this blog.
     I have a huge game library and I realised that I'll never be able to finish 
     all of them, but I'll try to take a look at as many as I can and share my
     thoughts.</p>

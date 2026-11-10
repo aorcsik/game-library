@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.5.0 - 2026-11-10
+
+### Added
+
+- Group the blog post list by month with an `<h2>` heading (for example "NOV 26") above the first post of each month.
+
 ## 4.4.1 - 2026-11-10
 
 ### Changed

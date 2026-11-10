@@ -8,5 +8,5 @@
     "typescriptreact",
     "css"
   ],
-  "search.useIgnoreFiles": false
+  "search.useIgnoreFiles": true
 }
